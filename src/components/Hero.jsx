@@ -26,9 +26,9 @@ const Hero = () => {
   };
 
   return (
-    <section className="min-h-screen flex items-center justify-center pt-16">
+    <section className="min-h-screen flex items-center justify-center pt-16 sm:pt-20 lg:pt-24">
       <div className="container-custom">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 items-center">
           {/* Left Column - Content */}
           <motion.div
             variants={containerVariants}
@@ -37,23 +37,23 @@ const Hero = () => {
             className="space-y-8"
           >
             <motion.div variants={itemVariants} className="space-y-4">
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight">
                 Hi, I'm{' '}
                 <span className="text-gradient">Ancel Ajanga</span>
               </h1>
-              <h2 className="text-2xl sm:text-3xl text-gray-600 dark:text-gray-300 font-medium">
+              <h2 className="text-xl sm:text-2xl md:text-3xl text-gray-600 dark:text-gray-300 font-medium">
                 Fullstack Software Engineer
               </h2>
             </motion.div>
 
             <motion.p
               variants={itemVariants}
-              className="text-lg sm:text-xl text-gray-600 dark:text-gray-300 leading-relaxed max-w-2xl"
+              className="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 leading-relaxed max-w-2xl"
             >
               I craft complete software applications — mobile, web, and desktop — using diverse tech stacks to deliver impactful, high-performance solutions with attention to UX and scalability.
             </motion.p>
 
-            <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4">
+            <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-3 sm:gap-4">
               <Link
                 to="/projects"
                 className="btn-primary flex items-center justify-center space-x-2 group"
@@ -72,23 +72,23 @@ const Hero = () => {
               </a>
             </motion.div>
 
-            <motion.div variants={itemVariants} className="flex items-center space-x-6 text-sm text-gray-500 dark:text-gray-400">
+            <motion.div variants={itemVariants} className="flex flex-wrap items-center gap-4 sm:gap-6 text-xs sm:text-sm text-gray-500 dark:text-gray-400">
               <div className="flex items-center space-x-2">
-                <FiCode className="w-4 h-4" />
+                <FiCode className="w-3 h-3 sm:w-4 sm:h-4" />
                 <span>Web Development</span>
               </div>
               <div className="flex items-center space-x-2">
-                <FiSmartphone className="w-4 h-4" />
+                <FiSmartphone className="w-3 h-3 sm:w-4 sm:h-4" />
                 <span>Mobile Apps</span>
               </div>
               <div className="flex items-center space-x-2">
-                <FiMonitor className="w-4 h-4" />
+                <FiMonitor className="w-3 h-3 sm:w-4 sm:h-4" />
                 <span>Desktop Apps</span>
               </div>
             </motion.div>
           </motion.div>
 
-          {/* Right Column - Visual */}
+          {/* Right Column - Profile Photo & Visual */}
           <motion.div
             variants={itemVariants}
             initial="hidden"
@@ -96,14 +96,50 @@ const Hero = () => {
             className="relative"
           >
             <div className="relative">
-              {/* Code-like visual element */}
-              <div className="bg-gray-900 dark:bg-gray-800 rounded-2xl p-6 shadow-2xl">
-                <div className="flex items-center space-x-2 mb-4">
-                  <div className="w-3 h-3 bg-red-500 rounded-full"></div>
-                  <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
-                  <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+              {/* Profile Photo */}
+              <div className="relative mb-6 sm:mb-8">
+                <div className="w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 mx-auto relative">
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary-500 to-accent-500 rounded-full blur-xl opacity-30"></div>
+                  <img
+                    src="/assets/profile-photo.jpg"
+                    alt="Ancel Ajanga - Fullstack Software Engineer"
+                    className="relative w-full h-full object-cover rounded-full border-4 border-white dark:border-gray-800 shadow-2xl"
+                  />
                 </div>
-                <div className="space-y-3">
+                
+                {/* Floating elements around photo */}
+                <motion.div
+                  animate={{
+                    y: [0, -10, 0],
+                  }}
+                  transition={{
+                    duration: 3,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                  }}
+                  className="absolute -top-2 -right-2 sm:-top-4 sm:-right-4 w-8 h-8 sm:w-12 sm:h-12 md:w-16 md:h-16 bg-primary-500 rounded-full opacity-20"
+                ></motion.div>
+                <motion.div
+                  animate={{
+                    y: [0, 10, 0],
+                  }}
+                  transition={{
+                    duration: 4,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                  }}
+                  className="absolute -bottom-2 -left-2 sm:-bottom-4 sm:-left-4 w-6 h-6 sm:w-8 sm:h-8 md:w-12 md:h-12 bg-accent-500 rounded-full opacity-20"
+                ></motion.div>
+              </div>
+
+              {/* Code-like visual element */}
+              <div className="bg-gray-900 dark:bg-gray-800 rounded-xl sm:rounded-2xl p-4 sm:p-6 shadow-2xl">
+                <div className="flex items-center space-x-2 mb-3 sm:mb-4">
+                  <div className="w-2 h-2 sm:w-3 sm:h-3 bg-red-500 rounded-full"></div>
+                  <div className="w-2 h-2 sm:w-3 sm:h-3 bg-yellow-500 rounded-full"></div>
+                  <div className="w-2 h-2 sm:w-3 sm:h-3 bg-green-500 rounded-full"></div>
+                </div>
+                <div className="space-y-2 sm:space-y-3 text-xs sm:text-sm">
                   <div className="flex items-center space-x-2">
                     <span className="text-blue-400">const</span>
                     <span className="text-green-400">developer</span>
@@ -135,30 +171,6 @@ const Hero = () => {
                   </div>
                 </div>
               </div>
-              
-              {/* Floating elements */}
-              <motion.div
-                animate={{
-                  y: [0, -10, 0],
-                }}
-                transition={{
-                  duration: 3,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-                className="absolute -top-4 -right-4 w-16 h-16 bg-primary-500 rounded-full opacity-20"
-              ></motion.div>
-              <motion.div
-                animate={{
-                  y: [0, 10, 0],
-                }}
-                transition={{
-                  duration: 4,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-                className="absolute -bottom-4 -left-4 w-12 h-12 bg-accent-500 rounded-full opacity-20"
-              ></motion.div>
             </div>
           </motion.div>
         </div>

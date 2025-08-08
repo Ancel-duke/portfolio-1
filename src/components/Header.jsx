@@ -39,14 +39,14 @@ const Header = () => {
       }`}
     >
       <div className="container-custom">
-        <div className="flex items-center justify-between h-16 px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-16 sm:h-20">
           {/* Logo */}
           <Link
             to="/"
-            className="flex items-center space-x-2 text-xl font-bold text-gradient"
+            className="flex items-center space-x-2 text-lg sm:text-xl font-bold text-gradient"
             onClick={closeMobileMenu}
           >
-            <span className="text-2xl">AA</span>
+            <span className="text-xl sm:text-2xl">AA</span>
             <span className="hidden sm:block">Ancel Ajanga</span>
           </Link>
 

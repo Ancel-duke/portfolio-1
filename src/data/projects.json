@@ -1,0 +1,24 @@
+[
+  {
+    "id": 1,
+    "title": "Pizza Ordering Management System",
+    "description": "A comprehensive system designed to streamline food ordering between sellers and customers.",
+    "detailedDescription": "Features seamless order placement, tracking, payment processing, and delivery management. I implemented the frontend, backend endpoints, and order lifecycle management.",
+    "technologies": ["React", "Node.js", "MongoDB", "Express", "Tailwind CSS"],
+    "liveUrl": "https://magical-blancmange-0e77c8.netlify.app/",
+    "repoUrl": "https://github.com/Ancel-duke",
+    "image": "/assets/projects/pizza-1.jpg",
+    "outcomes": "Improved order processing accuracy and reduced average order handling time (metrics editable)."
+  },
+  {
+    "id": 2,
+    "title": "E-Commerce Website",
+    "description": "A full-featured online shopping platform with product catalog, shopping cart, and secure checkout.",
+    "detailedDescription": "Built the frontend store experience, payment integration, and backend inventory handling.",
+    "technologies": ["React", "Node.js", "Firebase", "Tailwind CSS"],
+    "liveUrl": "https://roaring-crepe-f217ec.netlify.app/",
+    "repoUrl": "https://github.com/Ancel-duke",
+    "image": "/assets/projects/ecommerce-1.jpg",
+    "outcomes": "Responsive design, secure checkout workflow, and inventory management (metrics editable)."
+  }
+]

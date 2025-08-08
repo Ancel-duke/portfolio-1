@@ -1,32 +1,62 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FiCalendar, FiAward, FiBookOpen } from 'react-icons/fi';
+import { FiCalendar, FiAward, FiBookOpen, FiHeart, FiMusic, FiCamera, FiCoffee, FiTarget, FiTrendingUp, FiUsers, FiZap } from 'react-icons/fi';
 
 const About = () => {
   const skills = [
     'React', 'React Native', 'Machine Learning', 'Node.js', 'MongoDB', 
     'Express', 'Laravel', 'Axios', 'PHP', 'Python', 'Django', 'Flask', 
-    'HTML', 'CSS', 'Tailwind CSS', 'Angular', 'Vue', 'JavaScript'
+    'HTML', 'CSS', 'Tailwind CSS', 'Angular', 'Vue', 'JavaScript',
+    'Java', '.NET', 'TypeScript', 'GraphQL', 'Docker', 'AWS'
   ];
 
   const timeline = [
     {
       icon: <FiBookOpen className="w-5 h-5" />,
       title: 'Full Stack Developer — Freelance / Personal Projects',
-      period: '2022 - Present',
-      description: 'Built and shipped multiple full-stack web apps; handled backend APIs, frontend UIs and deployment.'
+      period: '2021 - Present',
+      description: 'Building impactful solutions including RoadRescue service app and HeartSync relationship platform. Specializing in React, clean code, and beautiful UI design.'
     },
     {
       icon: <FiAward className="w-5 h-5" />,
-      title: 'Certificate — Full Stack Development — Moringa School',
-      period: 'Graduated: Feb 2022',
-      description: 'Completed comprehensive full-stack development program covering modern web technologies.'
+      title: 'Full Stack Development Certificate — Moringa School',
+      period: 'Completed 2022',
+      description: 'Comprehensive full-stack development program covering modern web technologies and best practices.'
     },
     {
       icon: <FiCalendar className="w-5 h-5" />,
-      title: 'Diploma (in progress) — Institute of Software Technologies',
-      period: 'Expected Graduation: Nov 2025',
-      description: 'Currently pursuing advanced software development studies and practical applications.'
+      title: 'Computer Science Degree — University of the People',
+      period: 'Currently Enrolled',
+      description: 'Pursuing advanced computer science studies while actively building real-world applications.'
+    },
+    {
+      icon: <FiAward className="w-5 h-5" />,
+      title: 'Diploma in Software Engineering',
+      period: 'Completed',
+      description: 'Foundation in software engineering principles and development methodologies.'
+    }
+  ];
+
+  const hobbies = [
+    {
+      icon: <FiMusic className="w-5 h-5" />,
+      title: 'Music & Travel',
+      description: 'I love listening to rap, R&B, pop, afrobeats, and Kenyan fusion. I also enjoy traveling and exploring new places.'
+    },
+    {
+      icon: <FiCamera className="w-5 h-5" />,
+      title: 'Photography',
+      description: 'I do photography really well - capturing moments and telling stories through visual art.'
+    },
+    {
+      icon: <FiHeart className="w-5 h-5" />,
+      title: 'Life Coaching & Therapy',
+      description: 'I act as a life coach and therapist on life and relationship matters, helping people grow and communicate better.'
+    },
+    {
+      icon: <FiCoffee className="w-5 h-5" />,
+      title: 'Morning Rituals',
+      description: 'I start my day by seeing loved ones first, then probably a cup of tea to set the right tone.'
     }
   ];
 
@@ -59,31 +89,181 @@ const About = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid lg:grid-cols-2 gap-12 items-start"
+          className="grid lg:grid-cols-2 gap-8 sm:gap-12 items-start"
         >
           {/* Left Column - Bio */}
           <motion.div variants={itemVariants} className="space-y-8">
             <div>
-              <h2 className="text-3xl sm:text-4xl font-bold mb-6">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6">
                 About <span className="text-gradient">Me</span>
               </h2>
-              <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
-                I'm a self-driven, innovative, and insightful software engineer with a friendly sense of humour. I thrive under pressure, communicate clearly, and solve problems proactively. I work effectively solo or in teams, and I step into leadership when projects need direction. I focus on building reliable, maintainable, and performant solutions.
+              <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
+                I'm a passionate Fullstack Software Engineer from Narok County, Kenya, with a love for creating impactful solutions that solve real-world problems. My journey in tech began in 2021, and since then, I've been crafting complete software applications — from mobile apps to web platforms — using diverse tech stacks.
               </p>
+              <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300 leading-relaxed mt-4">
+                I hold a diploma in Software Engineering and am currently pursuing a Computer Science degree at the University of the People, complemented by certifications from Moringa School for Fullstack Development. My approach combines clean code principles, beautiful UI design, and optimal performance to deliver solutions that make people smile.
+              </p>
+              <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300 leading-relaxed mt-4">
+                I believe in the power of technology to transform lives and create meaningful connections. Whether it's building user-friendly interfaces, optimizing performance, or architecting scalable solutions, I approach every project with creativity and attention to detail.
+              </p>
+            </div>
+
+            {/* Current Projects */}
+            <div>
+              <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4">Current Projects</h3>
+              <div className="space-y-3 sm:space-y-4">
+                <motion.div variants={itemVariants} className="p-4 bg-gray-50 dark:bg-gray-800 rounded-lg">
+                  <div className="flex items-start space-x-3">
+                    <div className="flex-shrink-0 w-8 h-8 bg-primary-100 dark:bg-primary-900 rounded-full flex items-center justify-center text-primary-600 dark:text-primary-400">
+                      <FiTarget className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <h4 className="font-medium text-gray-900 dark:text-gray-100 mb-1">RoadRescue Service App</h4>
+                      <p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
+                        A real-world problem-solving app that's currently in testing phase. This project demonstrates my ability to create practical solutions.
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
+                
+                <motion.div variants={itemVariants} className="p-4 bg-gray-50 dark:bg-gray-800 rounded-lg">
+                  <div className="flex items-start space-x-3">
+                    <div className="flex-shrink-0 w-8 h-8 bg-primary-100 dark:bg-primary-900 rounded-full flex items-center justify-center text-primary-600 dark:text-primary-400">
+                      <FiHeart className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <h4 className="font-medium text-gray-900 dark:text-gray-100 mb-1">HeartSync Platform</h4>
+                      <p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
+                        A relationship platform helping couples grow closer and learn better communication with intention. Currently in development.
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
+              </div>
             </div>
 
             {/* Skills */}
             <div>
-              <h3 className="text-xl font-semibold mb-4">Skills & Technologies</h3>
-              <div className="flex flex-wrap gap-3">
+              <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4">Skills & Technologies</h3>
+              <div className="flex flex-wrap gap-2 sm:gap-3">
                 {skills.map((skill, index) => (
                   <motion.span
                     key={skill}
                     variants={itemVariants}
-                    className="px-4 py-2 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full text-sm font-medium hover:bg-primary-100 dark:hover:bg-primary-900 hover:text-primary-700 dark:hover:text-primary-300 transition-colors duration-200"
+                    className="px-3 sm:px-4 py-1.5 sm:py-2 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full text-xs sm:text-sm font-medium hover:bg-primary-100 dark:hover:bg-primary-900 hover:text-primary-700 dark:hover:text-primary-300 transition-colors duration-200"
                   >
                     {skill}
                   </motion.span>
+                ))}
+              </div>
+            </div>
+
+            {/* Career Goals */}
+            <div>
+              <h3 className="text-xl font-semibold mb-4">Career Goals</h3>
+              <div className="space-y-4">
+                <motion.div variants={itemVariants} className="p-4 bg-gray-50 dark:bg-gray-800 rounded-lg">
+                  <div className="flex items-start space-x-3">
+                    <div className="flex-shrink-0 w-8 h-8 bg-primary-100 dark:bg-primary-900 rounded-full flex items-center justify-center text-primary-600 dark:text-primary-400">
+                      <FiTarget className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <h4 className="font-medium text-gray-900 dark:text-gray-100 mb-1">Short-term Goal</h4>
+                      <p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
+                        Lead Software Engineer at Microsoft, Google, or Oracle within 5 years.
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
+                
+                <motion.div variants={itemVariants} className="p-4 bg-gray-50 dark:bg-gray-800 rounded-lg">
+                  <div className="flex items-start space-x-3">
+                    <div className="flex-shrink-0 w-8 h-8 bg-primary-100 dark:bg-primary-900 rounded-full flex items-center justify-center text-primary-600 dark:text-primary-400">
+                      <FiUsers className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <h4 className="font-medium text-gray-900 dark:text-gray-100 mb-1">Long-term Vision</h4>
+                      <p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
+                        Use my coding expertise to start my own Tech College and empower the next generation of developers.
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
+              </div>
+            </div>
+
+            {/* Personal Philosophy */}
+            <div>
+              <h3 className="text-xl font-semibold mb-4">My Philosophy</h3>
+              <div className="space-y-4">
+                <motion.div variants={itemVariants} className="p-4 bg-gray-50 dark:bg-gray-800 rounded-lg">
+                  <div className="flex items-start space-x-3">
+                    <div className="flex-shrink-0 w-8 h-8 bg-primary-100 dark:bg-primary-900 rounded-full flex items-center justify-center text-primary-600 dark:text-primary-400">
+                      <FiTarget className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <h4 className="font-medium text-gray-900 dark:text-gray-100 mb-1">Problem Solving</h4>
+                      <p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
+                        I love solving problems and helping people. There's nothing better than seeing someone smile because of what I've created.
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
+                
+                <motion.div variants={itemVariants} className="p-4 bg-gray-50 dark:bg-gray-800 rounded-lg">
+                  <div className="flex items-start space-x-3">
+                    <div className="flex-shrink-0 w-8 h-8 bg-primary-100 dark:bg-primary-900 rounded-full flex items-center justify-center text-primary-600 dark:text-primary-400">
+                      <FiZap className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <h4 className="font-medium text-gray-900 dark:text-gray-100 mb-1">Coding Philosophy</h4>
+                      <p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
+                        Clean code, beautiful UI, and optimal performance. React is my number one choice - it's easy and engaging to use.
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
+
+                <motion.div variants={itemVariants} className="p-4 bg-gray-50 dark:bg-gray-800 rounded-lg">
+                  <div className="flex items-start space-x-3">
+                    <div className="flex-shrink-0 w-8 h-8 bg-primary-100 dark:bg-primary-900 rounded-full flex items-center justify-center text-primary-600 dark:text-primary-400">
+                      <FiTrendingUp className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <h4 className="font-medium text-gray-900 dark:text-gray-100 mb-1">Continuous Learning</h4>
+                      <p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
+                        I absorb new knowledge quickly and never say I know something completely - tech keeps evolving, so I keep learning.
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
+              </div>
+            </div>
+
+            {/* Hobbies */}
+            <div>
+              <h3 className="text-xl font-semibold mb-4">Hobbies & Interests</h3>
+              <div className="grid sm:grid-cols-2 gap-4">
+                {hobbies.map((hobby, index) => (
+                  <motion.div
+                    key={index}
+                    variants={itemVariants}
+                    className="p-4 bg-gray-50 dark:bg-gray-800 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-200"
+                  >
+                    <div className="flex items-start space-x-3">
+                      <div className="flex-shrink-0 w-8 h-8 bg-primary-100 dark:bg-primary-900 rounded-full flex items-center justify-center text-primary-600 dark:text-primary-400">
+                        {hobby.icon}
+                      </div>
+                      <div>
+                        <h4 className="font-medium text-gray-900 dark:text-gray-100 mb-1">
+                          {hobby.title}
+                        </h4>
+                        <p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
+                          {hobby.description}
+                        </p>
+                      </div>
+                    </div>
+                  </motion.div>
                 ))}
               </div>
             </div>

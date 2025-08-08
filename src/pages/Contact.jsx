@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { motion } from 'framer-motion';
-import { FiMail, FiPhone, FiMessageSquare, FiMapPin, FiSend, FiCheck, FiX } from 'react-icons/fi';
+import { FiMail, FiPhone, FiMessageSquare, FiSend, FiCheck, FiX, FiGithub, FiInstagram, FiLinkedin } from 'react-icons/fi';
+import emailjs from 'emailjs-com';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -12,6 +13,11 @@ const Contact = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null);
+
+  // Initialize EmailJS
+  useEffect(() => {
+    emailjs.init("BOBBy8dSFH-c2Eki0"); // Replace with your EmailJS User ID
+  }, []);
 
   const contactInfo = [
     {
@@ -38,17 +44,17 @@ const Contact = () => {
     {
       name: 'GitHub',
       url: 'https://github.com/Ancel-duke',
-      icon: 'github'
+      icon: <FiGithub className="w-5 h-5" />
     },
     {
       name: 'Instagram',
       url: 'https://www.instagram.com/lema.yian._/#',
-      icon: 'instagram'
+      icon: <FiInstagram className="w-5 h-5" />
     },
     {
       name: 'LinkedIn',
-      url: '#', // Placeholder
-      icon: 'linkedin'
+      url: '#', // Placeholder - update with your LinkedIn URL
+      icon: <FiLinkedin className="w-5 h-5" />
     }
   ];
 
@@ -72,25 +78,49 @@ const Contact = () => {
     setSubmitStatus(null);
 
     try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
+      // EmailJS configuration - matching your template variables
+      const templateParams = {
+        name: formData.name,
+        email: formData.email,
+        message: formData.message,
+        title: 'Portfolio Contact Form',
+        time: new Date().toLocaleString(),
+        reply_to: formData.email, // Add reply_to for better email handling
+      };
+
+      // Send email using EmailJS
+      await emailjs.send(
+        'service_pq4id6k', // Your actual Service ID from EmailJS dashboard
+        'template_pao1s2k', // Your Template ID
+        templateParams,
+        'BOBBy8dSFH-c2Eki0' // Your User ID
+      );
+      
+      setSubmitStatus('success');
+      setFormData({ name: '', email: '', message: '', honeypot: '' });
+    } catch (error) {
+      console.error('Contact form error:', error);
+      console.error('Error details:', {
+        serviceId: 'service_pq4id6k',
+        templateId: 'template_pao1s2k',
+        userId: 'BOBBy8dSFH-c2Eki0',
+        templateParams: {
           name: formData.name,
           email: formData.email,
-          message: formData.message
-        }),
+          message: formData.message,
+          title: 'Portfolio Contact Form',
+          time: new Date().toLocaleString(),
+        }
       });
-
-      if (response.ok) {
-        setSubmitStatus('success');
-        setFormData({ name: '', email: '', message: '', honeypot: '' });
-      } else {
-        setSubmitStatus('error');
+      
+      // Show more specific error message
+      if (error.text) {
+        console.error('EmailJS Error Text:', error.text);
       }
-    } catch (error) {
+      if (error.status) {
+        console.error('EmailJS Error Status:', error.status);
+      }
+      
       setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);
@@ -285,8 +315,7 @@ const Contact = () => {
                       className="p-3 bg-gray-100 dark:bg-gray-800 hover:bg-primary-100 dark:hover:bg-primary-900 text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 rounded-lg transition-colors duration-200"
                       aria-label={`Visit ${social.name}`}
                     >
-                      <span className="sr-only">{social.name}</span>
-                      {/* You can add social icons here */}
+                      {social.icon}
                     </a>
                   ))}
                 </div>

@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FiX, FiExternalLink, FiGithub, FiCalendar, FiCode } from 'react-icons/fi';
+import { FiX, FiExternalLink, FiGithub, FiCode } from 'react-icons/fi';
 
 const ProjectModal = ({ project, isOpen, onClose }) => {
   useEffect(() => {
