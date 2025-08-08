@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ancel-ajanga-portfolio.netlify.app/sitemap.xml
