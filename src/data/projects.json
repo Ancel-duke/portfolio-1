@@ -1,14 +1,14 @@
 [
   {
     "id": 1,
-    "title": "Pizza Ordering Management System",
-    "description": "A comprehensive system designed to streamline food ordering between sellers and customers.",
-    "detailedDescription": "Features seamless order placement, tracking, payment processing, and delivery management. I implemented the frontend, backend endpoints, and order lifecycle management.",
-    "technologies": ["React", "Node.js", "MongoDB", "Express", "Tailwind CSS"],
-    "liveUrl": "https://magical-blancmange-0e77c8.netlify.app/",
+    "title": "Personal Finance Tracker",
+    "description": "A modern, responsive web application that helps users track their personal income and expenses with visual analytics.",
+    "detailedDescription": "Built a comprehensive financial management tool with interactive pie charts showing expense breakdown by category. The app provides an intuitive interface for managing financial transactions and gaining insights into spending patterns through interactive charts. Features include real-time expense analytics, dark/light mode toggle, and responsive design that works seamlessly on desktop and mobile devices.",
+    "technologies": ["Vue.js 3", "TypeScript", "Vite", "Tailwind CSS", "Chart.js", "Vitest", "Playwright"],
+    "liveUrl": "https://tracks-finances.netlify.app",
     "repoUrl": "https://github.com/Ancel-duke",
-    "image": "/assets/projects/pizza-1.jpg",
-    "outcomes": "Improved order processing accuracy and reduced average order handling time (metrics editable)."
+    "image": "/assets/projects/finance-tracker.jpg",
+    "outcomes": "Modern, user-friendly web application with current best practices in frontend development, data visualization, and responsive design. Demonstrates full-stack development capabilities and modern web development practices."
   },
   {
     "id": 2,
