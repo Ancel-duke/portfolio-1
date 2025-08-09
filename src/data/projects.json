@@ -12,13 +12,25 @@
   },
   {
     "id": 2,
-    "title": "E-Commerce Website",
-    "description": "A full-featured online shopping platform with product catalog, shopping cart, and secure checkout.",
-    "detailedDescription": "Built the frontend store experience, payment integration, and backend inventory handling.",
-    "technologies": ["React", "Node.js", "Firebase", "Tailwind CSS"],
-    "liveUrl": "https://roaring-crepe-f217ec.netlify.app/",
+    "title": "Fitness Class Scheduler",
+    "description": "A modern Angular SSR app for planning weekly fitness classes with dark mode, responsive Tailwind styling, and client-side persistence.",
+    "detailedDescription": "Users can add classes with day and time, view the schedule in a table or card layout, and remove entries. The app supports dark mode with saved preference, subtle animations, and LocalStorage persistence. It is server-side rendered for fast first paint and SEO, then hydrates on the client.",
+    "technologies": [
+      "Angular 20",
+      "TypeScript",
+      "Angular SSR",
+      "Node.js",
+      "Express",
+      "Tailwind CSS",
+      "Angular Animations",
+      "Signals",
+      "LocalStorage",
+      "Karma",
+      "Jasmine"
+    ],
+    "liveUrl": "https://fitnessss-tracker.netlify.app",
     "repoUrl": "https://github.com/Ancel-duke",
-    "image": "/assets/projects/ecommerce-1.jpg",
-    "outcomes": "Responsive design, secure checkout workflow, and inventory management (metrics editable)."
+    "image": "/assets/projects/fitness.jpg",
+    "outcomes": "Fast, SEO-friendly SSR Angular application with a clean UX, responsive design, and persistent schedule management."
   }
 ]
