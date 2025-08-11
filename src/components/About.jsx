@@ -6,7 +6,7 @@ const About = () => {
   const skills = [
     'React', 'React Native', 'Machine Learning', 'Node.js', 'MongoDB', 
     'Express', 'Laravel', 'Axios', 'PHP', 'Python', 'Django', 'Flask', 
-    'HTML', 'CSS', 'Tailwind CSS', 'Angular', 'Vue', 'JavaScript',
+    'HTML', 'CSS', 'Tailwind CSS', 'Angular', 'Vue', 'SvelteKit', 'JavaScript',
     'Java', '.NET', 'TypeScript', 'GraphQL', 'Docker', 'AWS'
   ];
 
