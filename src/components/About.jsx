@@ -14,14 +14,20 @@ const About = () => {
     {
       icon: <FiBookOpen className="w-5 h-5" />,
       title: 'Full Stack Developer — Freelance / Personal Projects',
-      period: '2021 - Present',
-      description: 'Building impactful solutions including RoadRescue service app and HeartSync relationship platform. Specializing in React, clean code, and beautiful UI design.'
+      period: 'March 2024 - Present',
+      description: 'Started freelancing and building impactful solutions including RoadRescue service app and HeartSync relationship platform. Specializing in React, clean code, and beautiful UI design.'
     },
     {
       icon: <FiAward className="w-5 h-5" />,
       title: 'Full Stack Development Certificate — Moringa School',
       period: 'Completed 2022',
       description: 'Comprehensive full-stack development program covering modern web technologies and best practices.'
+    },
+    {
+      icon: <FiCalendar className="w-5 h-5" />,
+      title: 'Coding Journey Begins — Student Projects',
+      period: '2021 - March 2024',
+      description: 'Started learning to code as a student, building personal projects and developing foundational skills in web development and programming.'
     },
     {
       icon: <FiCalendar className="w-5 h-5" />,
@@ -98,7 +104,7 @@ const About = () => {
                 About <span className="text-gradient">Me</span>
               </h2>
               <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
-                I'm a passionate Fullstack Software Engineer from Narok County, Kenya, with a love for creating impactful solutions that solve real-world problems. My journey in tech began in 2021, and since then, I've been crafting complete software applications — from mobile apps to web platforms — using diverse tech stacks.
+                I'm a passionate Fullstack Software Engineer from Narok County, Kenya, with a love for creating impactful solutions that solve real-world problems. My journey in tech began in 2021 as a student, and I started freelancing in March 2024. Since then, I've been crafting complete software applications — from mobile apps to web platforms — using diverse tech stacks.
               </p>
               <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300 leading-relaxed mt-4">
                 I hold a diploma in Software Engineering and am currently pursuing a Computer Science degree at the University of the People, complemented by certifications from Moringa School for Fullstack Development. My approach combines clean code principles, beautiful UI design, and optimal performance to deliver solutions that make people smile.
