@@ -32,5 +32,29 @@
     "repoUrl": "https://github.com/Ancel-duke",
     "image": "/assets/projects/fitness.jpg",
     "outcomes": "Fast, SEO-friendly SSR Angular application with a clean UX, responsive design, and persistent schedule management."
+  },
+  {
+    "id": 3,
+    "title": "Habit Tracker & Streak Counter",
+    "description": "A modern Progressive Web App (PWA) for tracking daily habits and building momentum through streak counting.",
+    "detailedDescription": "A beautiful, responsive web application that helps users build and maintain daily habits through visual tracking and streak counting. The app features a clean, modern interface with glass morphism design elements and provides comprehensive analytics to help users stay motivated. Features include habit management, automatic streak calculation, analytics dashboard with visual charts, data persistence with local storage, and full PWA capabilities with offline support.",
+    "technologies": [
+      "React 19",
+      "Tailwind CSS",
+      "React Router DOM",
+      "Chart.js",
+      "react-chartjs-2",
+      "PWA",
+      "Service Worker",
+      "LocalStorage",
+      "Create React App",
+      "PostCSS",
+      "Autoprefixer",
+      "React Testing Library"
+    ],
+    "liveUrl": "https://habitss-tracker.netlify.app",
+    "repoUrl": "https://github.com/Ancel-duke",
+    "image": "/assets/projects/habit-tracker.jpg",
+    "outcomes": "Modern React PWA with data visualization, responsive design, and excellent UX demonstrating proficiency in modern React development, PWA implementation, and user-friendly interface design."
   }
 ]
