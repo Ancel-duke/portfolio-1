@@ -175,9 +175,9 @@ const About = () => {
                     </div>
                     <div>
                       <h4 className="font-medium text-gray-900 dark:text-gray-100 mb-1">Short-term Goal</h4>
-                      <p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
-                        Lead Software Engineer at Microsoft, Google, or Oracle within 5 years.
-                      </p>
+                                             <p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
+                         Lead Software Engineer at Microsoft, Google, or Oracle within 8-10 years.
+                       </p>
                     </div>
                   </div>
                 </motion.div>
