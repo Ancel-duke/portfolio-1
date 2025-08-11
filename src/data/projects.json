@@ -56,5 +56,31 @@
     "repoUrl": "https://github.com/Ancel-duke",
     "image": "/assets/projects/habit-tracker.jpg",
     "outcomes": "Modern React PWA with data visualization, responsive design, and excellent UX demonstrating proficiency in modern React development, PWA implementation, and user-friendly interface design."
+  },
+  {
+    "id": 4,
+    "title": "Event Countdown Timer",
+    "description": "A modern, feature-rich countdown timer web application for creating and managing multiple countdowns for various life events.",
+    "detailedDescription": "Perfect for tracking birthdays, anniversaries, graduations, and custom recurring events with automatic yearly repetition. Features include unlimited countdowns with list and individual views, recurring events with daily/weekly/monthly/yearly intervals, visual customization with color coding and themes, smart notifications with confetti animation and audio alerts, localStorage data persistence, and URL sharing for specific countdowns.",
+    "technologies": [
+      "HTML5",
+      "CSS3",
+      "Vanilla JavaScript",
+      "ES6+",
+      "localStorage API",
+      "Web Audio API",
+      "Canvas API",
+      "File API",
+      "Clipboard API",
+      "CSS Grid",
+      "Flexbox",
+      "CSS Custom Properties",
+      "Google Fonts",
+      "Netlify"
+    ],
+    "liveUrl": "https://event-countdowns.netlify.app",
+    "repoUrl": "https://github.com/Ancel-duke",
+    "image": "/assets/projects/events.jpg",
+    "outcomes": "Lightweight, fast-loading vanilla JavaScript application demonstrating modern web development best practices without frameworks, featuring responsive design, browser APIs integration, and excellent performance."
   }
 ]
