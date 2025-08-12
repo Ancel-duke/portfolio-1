@@ -46,7 +46,6 @@ const Header = () => {
             className="flex items-center space-x-2 text-lg sm:text-xl font-bold text-gradient"
             onClick={closeMobileMenu}
           >
-            <span className="text-xl sm:text-2xl">AA</span>
             <span className="hidden sm:block">Ancel Ajanga</span>
           </Link>
 

@@ -26,7 +26,6 @@ const Footer = () => {
             {/* Brand */}
             <div className="space-y-3 sm:space-y-4">
               <Link to="/" className="flex items-center space-x-2 text-lg sm:text-xl font-bold text-gradient">
-                <span className="text-xl sm:text-2xl">AA</span>
                 <span>Ancel Ajanga</span>
               </Link>
               <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300 max-w-md">
