@@ -274,29 +274,7 @@ const About = () => {
                </div>
              </div>
 
-             {/* Love for Pets */}
-             <div>
-               <h3 className="text-xl font-semibold mb-4">My Love for Animals</h3>
-               <motion.div variants={itemVariants} className="p-6 bg-gradient-to-br from-orange-50 to-amber-50 dark:from-orange-900/20 dark:to-amber-900/20 rounded-lg border border-orange-200 dark:border-orange-800">
-                 <div className="flex items-start space-x-4">
-                   <div className="flex-shrink-0 w-12 h-12 bg-orange-100 dark:bg-orange-900 rounded-full flex items-center justify-center text-orange-600 dark:text-orange-400">
-                     <FiHeart className="w-6 h-6" />
-                   </div>
-                   <div>
-                     <h4 className="font-medium text-gray-900 dark:text-gray-100 mb-3 text-lg">Cats & Dogs - My Furry Family</h4>
-                     <p className="text-gray-600 dark:text-gray-300 leading-relaxed mb-3">
-                       There's something incredibly special about the unconditional love and joy that animals bring into our lives. I have a deep affection for both cats and dogs, and I find myself drawn to their unique personalities and the way they make every day brighter.
-                     </p>
-                     <p className="text-gray-600 dark:text-gray-300 leading-relaxed mb-3">
-                       I'm particularly fond of ginger cats with their fiery personalities and warm, golden coats that seem to glow in the sunlight. There's something magical about their playful nature and the way they can be both fiercely independent and incredibly affectionate.
-                     </p>
-                     <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
-                       When it comes to dogs, I'm absolutely captivated by huskies and border collies. Huskies with their striking blue eyes and adventurous spirit remind me of the wild beauty of nature, while border collies amaze me with their intelligence and gentle, loyal nature. These breeds embody the perfect balance of energy, intelligence, and heart that I find so inspiring.
-                     </p>
-                   </div>
-                 </div>
-               </motion.div>
-             </div>
+             
           </motion.div>
 
           {/* Right Column - Timeline */}
