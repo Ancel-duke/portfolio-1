@@ -4,10 +4,10 @@ import { FiCalendar, FiAward, FiBookOpen, FiHeart, FiMusic, FiCamera, FiCoffee, 
 
 const About = () => {
   const skills = [
-    'React', 'React Native', 'Machine Learning', 'Node.js', 'MongoDB', 
+    'React', 'React Native', 'Flutter', 'Machine Learning', 'Node.js', 'MongoDB', 
     'Express', 'Laravel', 'Axios', 'PHP', 'Python', 'Django', 'Flask', 
     'HTML', 'CSS', 'Tailwind CSS', 'Angular', 'Vue', 'SvelteKit', 'JavaScript',
-    'Java', '.NET', 'TypeScript', 'GraphQL', 'Docker', 'AWS'
+    'Java', '.NET', 'TypeScript', 'GraphQL', 'Docker', 'AWS', 'Electron'
   ];
 
   const timeline = [
