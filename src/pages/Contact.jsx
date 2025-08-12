@@ -151,7 +151,7 @@ const Contact = () => {
   return (
     <>
       <Helmet>
-        <title>Contact - Ancel Ajanga</title>
+        <title>Ancel Ajanga</title>
         <meta name="description" content="Get in touch with Ancel Ajanga for collaboration opportunities, project inquiries, or just to say hello." />
       </Helmet>
 

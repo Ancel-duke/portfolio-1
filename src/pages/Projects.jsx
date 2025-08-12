@@ -45,7 +45,7 @@ const Projects = () => {
   return (
     <>
       <Helmet>
-        <title>Projects - Ancel Ajanga</title>
+        <title>Ancel Ajanga</title>
         <meta name="description" content="View my latest projects showcasing full-stack development skills with React, Node.js, and modern web technologies." />
       </Helmet>
 

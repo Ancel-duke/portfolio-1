@@ -9,7 +9,7 @@ const Home = () => {
   return (
     <>
       <Helmet>
-        <title>Ancel Ajanga - Fullstack Software Engineer</title>
+        <title>Ancel Ajanga</title>
         <meta name="description" content="Ancel Ajanga - Fullstack Software Engineer. Crafting complete software applications with diverse tech stacks to deliver impactful, high-performance solutions." />
         
         {/* Open Graph */}

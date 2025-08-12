@@ -6,7 +6,7 @@ const AboutPage = () => {
   return (
     <>
       <Helmet>
-        <title>About - Ancel Ajanga</title>
+        <title>Ancel Ajanga</title>
         <meta name="description" content="Learn more about Ancel Ajanga - a self-driven, innovative software engineer with expertise in full-stack development and modern technologies." />
       </Helmet>
 
