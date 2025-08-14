@@ -177,5 +177,32 @@
     "repoUrl": "https://github.com/Ancel-duke",
     "image": "/assets/projects/attendance.jpg",
     "outcomes": "Production-ready full-stack application demonstrating modern web development practices with focus on security, scalability, and user experience. Shows proficiency in both frontend and backend development, database management, and deployment strategies."
+  },
+  {
+    "id": 8,
+    "title": "E-Learning Platform",
+    "description": "A comprehensive e-learning platform that enables instructors to create and manage courses while allowing students to enroll, learn, and track their progress.",
+    "detailedDescription": "A full-stack e-learning platform featuring user authentication with JWT tokens, course creation and management for instructors, lesson upload and organization, student enrollment system, progress tracking, and a responsive web interface. The platform provides a complete learning management system with real-time API communication, secure authentication, and scalable architecture designed for both instructors and students.",
+    "technologies": [
+      "React",
+      "TypeScript",
+      "Axios",
+      "React Router",
+      "Tailwind CSS",
+      "Netlify",
+      "Django",
+      "Django REST Framework",
+      "Django CORS Headers",
+      "Django Simple JWT",
+      "SQLite",
+      "PostgreSQL",
+      "Gunicorn",
+      "WhiteNoise",
+      "Render"
+    ],
+    "liveUrl": "https://e-learningdash.netlify.app",
+    "repoUrl": "https://github.com/Ancel-duke",
+    "image": "/assets/projects/elearn.jpg",
+    "outcomes": "Production-ready full-stack e-learning platform demonstrating modern web development practices with focus on user experience, scalability, and maintainability. Shows proficiency in both frontend and backend development, API design, and deployment strategies."
   }
 ]
