@@ -45,8 +45,8 @@ const Projects = () => {
   return (
     <>
       <Helmet>
-        <title>Ancel Ajanga</title>
-        <meta name="description" content="View my latest projects showcasing full-stack development skills with React, Node.js, and modern web technologies." />
+        <title>Projects - Ancel Ajanga | Fullstack Software Engineer</title>
+        <meta name="description" content="View Ancel Ajanga's portfolio of 8+ software projects including finance trackers, e-learning platforms, mobile apps, and web applications built with React, Node.js, Python, and modern technologies." />
       </Helmet>
 
       <section className="section-padding pt-24">

@@ -104,13 +104,13 @@ const About = () => {
                 About <span className="text-gradient">Me</span>
               </h2>
               <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
-                I'm a passionate Fullstack Software Engineer from Narok County, Kenya, with a love for creating impactful solutions that solve real-world problems. My journey in tech began in 2021 as a student, and I started freelancing in March 2024. Since then, I've been crafting complete software applications — from mobile apps to web platforms — using diverse tech stacks.
+                I'm Ancel Ajanga, a fullstack software engineer from Narok County, Kenya, specializing in building complete software applications that solve real-world problems. I develop mobile apps, web platforms, and desktop applications using modern technologies like React, Node.js, Python, and MongoDB.
               </p>
               <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300 leading-relaxed mt-4">
-                I hold a diploma in Software Engineering and am currently pursuing a Computer Science degree at the University of the People, complemented by certifications from Moringa School for Fullstack Development. My approach combines clean code principles, beautiful UI design, and optimal performance to deliver solutions that make people smile.
+                My technical expertise includes frontend development with React, React Native, and Flutter; backend development with Node.js, Python, and Django; database design with MongoDB and SQL; and mobile app development for iOS and Android platforms. I focus on creating user-friendly applications with clean code, beautiful UI design, and optimal performance.
               </p>
               <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300 leading-relaxed mt-4">
-                I believe in the power of technology to transform lives and create meaningful connections. Whether it's building user-friendly interfaces, optimizing performance, or architecting scalable solutions, I approach every project with creativity and attention to detail.
+                I hold a diploma in Software Engineering and am currently pursuing a Computer Science degree at the University of the People, with additional certifications from Moringa School for Fullstack Development. My portfolio includes 8+ completed projects ranging from finance tracking applications to e-learning platforms and educational management systems.
               </p>
             </div>
 
@@ -126,7 +126,7 @@ const About = () => {
                     <div>
                       <h4 className="font-medium text-gray-900 dark:text-gray-100 mb-1">RoadRescue Service App</h4>
                       <p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
-                        A real-world problem-solving app that's currently in testing phase. This project demonstrates my ability to create practical solutions.
+                        A mobile application for emergency roadside assistance services. The app connects drivers with nearby rescue services, provides real-time location tracking, and includes emergency contact features. Built with React Native for cross-platform mobile development.
                       </p>
                     </div>
                   </div>
@@ -140,7 +140,7 @@ const About = () => {
                     <div>
                       <h4 className="font-medium text-gray-900 dark:text-gray-100 mb-1">HeartSync Platform</h4>
                       <p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
-                        A relationship platform helping couples grow closer and learn better communication with intention. Currently in development.
+                        A comprehensive relationship platform for couples featuring AI-assisted date planning, secure messaging, video calls, and relationship analytics. The platform helps couples improve communication, track relationship milestones, and strengthen their bond through technology.
                       </p>
                     </div>
                   </div>

@@ -15,7 +15,7 @@ const ProjectCard = ({ project, onOpenModal }) => {
         {image ? (
           <img
             src={image}
-            alt={title}
+            alt={`${title} - Software application by Ancel Ajanga`}
             className="w-full h-full object-cover"
             loading="lazy"
           />

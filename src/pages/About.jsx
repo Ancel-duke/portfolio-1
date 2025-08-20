@@ -6,8 +6,8 @@ const AboutPage = () => {
   return (
     <>
       <Helmet>
-        <title>Ancel Ajanga</title>
-        <meta name="description" content="Learn more about Ancel Ajanga - a self-driven, innovative software engineer with expertise in full-stack development and modern technologies." />
+        <title>About - Ancel Ajanga | Fullstack Software Engineer</title>
+        <meta name="description" content="Learn more about Ancel Ajanga, a fullstack software engineer from Kenya specializing in React, Node.js, Python, and mobile app development. View skills, experience, and career goals." />
       </Helmet>
 
       <div className="pt-16">

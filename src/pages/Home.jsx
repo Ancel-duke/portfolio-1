@@ -9,8 +9,8 @@ const Home = () => {
   return (
     <>
       <Helmet>
-        <title>Ancel Ajanga</title>
-        <meta name="description" content="Ancel Ajanga - Fullstack Software Engineer. Crafting complete software applications with diverse tech stacks to deliver impactful, high-performance solutions." />
+        <title>Ancel Ajanga - Fullstack Software Engineer Portfolio</title>
+        <meta name="description" content="Ancel Ajanga is a fullstack software engineer specializing in React, Node.js, Python, and modern web technologies. View portfolio of 8+ applications including finance trackers, e-learning platforms, and mobile apps. Based in Kenya." />
         
         {/* Open Graph */}
         <meta property="og:title" content="Ancel Ajanga - Fullstack Software Engineer" />

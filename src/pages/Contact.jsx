@@ -151,8 +151,8 @@ const Contact = () => {
   return (
     <>
       <Helmet>
-        <title>Ancel Ajanga</title>
-        <meta name="description" content="Get in touch with Ancel Ajanga for collaboration opportunities, project inquiries, or just to say hello." />
+        <title>Contact - Ancel Ajanga | Fullstack Software Engineer</title>
+        <meta name="description" content="Contact Ancel Ajanga, a fullstack software engineer from Kenya, for collaboration opportunities, project inquiries, or development services. Available for freelance and full-time opportunities." />
       </Helmet>
 
       <section className="section-padding pt-24">

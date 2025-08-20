@@ -2,8 +2,8 @@
   {
     "id": 1,
     "title": "Personal Finance Tracker",
-    "description": "A modern, responsive web application that helps users track their personal income and expenses with visual analytics.",
-    "detailedDescription": "Built a comprehensive financial management tool with interactive pie charts showing expense breakdown by category. The app provides an intuitive interface for managing financial transactions and gaining insights into spending patterns through interactive charts. Features include real-time expense analytics, dark/light mode toggle, and responsive design that works seamlessly on desktop and mobile devices.",
+    "description": "A modern web application that helps users track personal income and expenses with visual analytics and interactive pie charts showing expense breakdown by category.",
+    "detailedDescription": "Personal Finance Tracker is a comprehensive financial management application designed for individuals who want to monitor their spending habits and financial health. The app allows users to input income and expenses, categorize transactions, and view detailed analytics through interactive pie charts and graphs. Key features include real-time expense tracking, income management, visual analytics with Chart.js, dark/light mode toggle, and responsive design for desktop and mobile devices. The application helps users understand their spending patterns, set financial goals, and make informed financial decisions.",
     "technologies": ["Vue.js 3", "TypeScript", "Vite", "Tailwind CSS", "Chart.js", "Vitest", "Playwright"],
     "liveUrl": "https://tracks-finances.netlify.app",
     "repoUrl": "https://github.com/Ancel-duke",
@@ -13,8 +13,8 @@
   {
     "id": 2,
     "title": "Fitness Class Scheduler",
-    "description": "A modern Angular SSR app for planning weekly fitness classes with dark mode, responsive Tailwind styling, and client-side persistence.",
-    "detailedDescription": "Users can add classes with day and time, view the schedule in a table or card layout, and remove entries. The app supports dark mode with saved preference, subtle animations, and LocalStorage persistence. It is server-side rendered for fast first paint and SEO, then hydrates on the client.",
+    "description": "A modern Angular SSR application for planning weekly fitness classes with dark mode, responsive design, and client-side persistence.",
+    "detailedDescription": "Fitness Class Scheduler is a web application designed for fitness instructors and gym owners to manage and schedule weekly fitness classes. The app allows users to add, edit, and remove fitness classes with specific days and times, view schedules in both table and card layouts, and manage class information efficiently. Key features include server-side rendering for fast loading and SEO optimization, dark mode with user preference saving, responsive design for all devices, LocalStorage persistence for data retention, and smooth animations for enhanced user experience. The application is built with Angular 20 and TypeScript for type safety and maintainability.",
     "technologies": [
       "Angular 20",
       "TypeScript",
@@ -36,8 +36,8 @@
   {
     "id": 3,
     "title": "Habit Tracker & Streak Counter",
-    "description": "A modern Progressive Web App (PWA) for tracking daily habits and building momentum through streak counting.",
-    "detailedDescription": "A beautiful, responsive web application that helps users build and maintain daily habits through visual tracking and streak counting. The app features a clean, modern interface with glass morphism design elements and provides comprehensive analytics to help users stay motivated. Features include habit management, automatic streak calculation, analytics dashboard with visual charts, data persistence with local storage, and full PWA capabilities with offline support.",
+    "description": "A Progressive Web App (PWA) for tracking daily habits and building momentum through streak counting with comprehensive analytics and visual charts.",
+    "detailedDescription": "Habit Tracker & Streak Counter is a comprehensive productivity application designed to help users build and maintain positive daily habits. The app allows users to create custom habits, track daily completion, and visualize progress through streak counting and analytics dashboards. Key features include habit creation and management, automatic streak calculation, comprehensive analytics with Chart.js visualizations, data persistence using LocalStorage, Progressive Web App capabilities with offline support, glass morphism design elements, and responsive design for all devices. The application helps users stay motivated by providing visual feedback on their progress and maintaining momentum through streak tracking.",
     "technologies": [
       "React 19",
       "Tailwind CSS",
@@ -60,8 +60,8 @@
   {
     "id": 4,
     "title": "Event Countdown Timer",
-    "description": "A modern, feature-rich countdown timer web application for creating and managing multiple countdowns for various life events.",
-    "detailedDescription": "Perfect for tracking birthdays, anniversaries, graduations, and custom recurring events with automatic yearly repetition. Features include unlimited countdowns with list and individual views, recurring events with daily/weekly/monthly/yearly intervals, visual customization with color coding and themes, smart notifications with confetti animation and audio alerts, localStorage data persistence, and URL sharing for specific countdowns.",
+    "description": "A feature-rich countdown timer web application for creating and managing multiple countdowns for various life events with recurring events and smart notifications.",
+    "detailedDescription": "Event Countdown Timer is a comprehensive time management application designed to help users track and celebrate important life events. The app allows users to create unlimited countdowns for birthdays, anniversaries, graduations, and custom events with automatic yearly repetition. Key features include multiple countdown views (list and individual), recurring events with daily/weekly/monthly/yearly intervals, visual customization with color coding and themes, smart notifications with confetti animation and audio alerts, LocalStorage data persistence, and URL sharing for specific countdowns. The application is built with vanilla JavaScript for optimal performance and includes modern browser APIs for enhanced functionality.",
     "technologies": [
       "HTML5",
       "CSS3",
@@ -86,8 +86,8 @@
   {
     "id": 5,
     "title": "Travelogue - Travel Storytelling Website",
-    "description": "A beautiful, modern travel storytelling website that allows users to explore destinations around the world, read travel stories, and discover new places through an interactive world map.",
-    "detailedDescription": "Travelogue is a comprehensive travel platform featuring a responsive design with smooth animations, dark/light theme support, and a user-friendly interface for travel enthusiasts. The website includes a hero section with call-to-action, masonry-style photo grid with lightbox modal for full-size image viewing, blog-style layout showcasing travel experiences, interactive world map with clickable destination markers and popups, personal bio and mission statement, and theme toggle with localStorage persistence.",
+    "description": "A comprehensive travel platform featuring interactive world maps, travel stories, destination exploration, and responsive design for travel enthusiasts.",
+    "detailedDescription": "Travelogue is a comprehensive travel platform designed for travel enthusiasts who want to explore destinations, read travel stories, and discover new places. The website features an interactive world map with clickable destination markers and popups, allowing users to explore different locations and read detailed travel experiences. Key features include a hero section with call-to-action, masonry-style photo grid with lightbox modal for full-size image viewing, blog-style layout showcasing travel stories, interactive world map using Leaflet.js and OpenStreetMap, personal bio and mission statement, dark/light theme toggle with LocalStorage persistence, and responsive design for all devices. The platform serves as both a travel blog and destination discovery tool.",
     "technologies": [
       "React 18",
       "Create React App",
@@ -114,8 +114,8 @@
   {
     "id": 6,
     "title": "Rasoha Academy - School Website",
-    "description": "A modern, responsive website for a private school located in Narok, Kenya, serving as the official online presence for the academy.",
-    "detailedDescription": "Rasoha Academy website provides comprehensive information about the school, its programs, events, and resources for students, parents, and the community. Features include homepage with school overview and highlights, about page with school history and mission, events calendar and announcements, photo gallery showcasing school activities, contact information and location details, downloads section for forms and documents, FAQ section for common questions, and Progressive Web App (PWA) capabilities.",
+    "description": "A modern, responsive website for a private school in Narok, Kenya, providing comprehensive information about programs, events, and resources for students and parents.",
+    "detailedDescription": "Rasoha Academy website is the official online presence for a private school located in Narok, Kenya, designed to provide comprehensive information for students, parents, and the community. The website serves as a central hub for school information, featuring detailed pages about academic programs, school history and mission, upcoming events and announcements, photo gallery showcasing school activities, contact information and location details, downloads section for forms and documents, and FAQ section for common questions. Key features include Progressive Web App (PWA) capabilities for offline access, SEO optimization for better search visibility, responsive design for all devices, and modern web technologies for fast loading and excellent user experience.",
     "technologies": [
       "React 19.1.1",
       "React Router DOM 7.7.1",
@@ -146,8 +146,8 @@
   {
     "id": 7,
     "title": "Attendance System - Full Stack Application",
-    "description": "A modern, responsive web application for managing student attendance and performance tracking with comprehensive analytics and reporting.",
-    "detailedDescription": "A full-stack attendance management system providing a comprehensive solution for educational institutions to monitor student attendance, manage student records, and generate attendance reports. Features include secure user authentication with JWT tokens, student management (add, edit, delete, view records), attendance tracking and management, class organization, performance analytics with statistics and reports, responsive design for all devices, and dark mode theme toggle.",
+    "description": "A comprehensive full-stack attendance management system for educational institutions with secure authentication, student management, and performance analytics.",
+    "detailedDescription": "Attendance System is a comprehensive full-stack web application designed for educational institutions to manage student attendance, track performance, and generate detailed reports. The system provides a complete solution for schools and universities to monitor student attendance patterns, manage student records, and analyze performance data. Key features include secure user authentication using JWT tokens, comprehensive student management (add, edit, delete, view records), daily attendance tracking and management, class organization and scheduling, performance analytics with statistics and detailed reports, responsive design for all devices, and dark mode theme toggle. The application is built with React.js frontend and Node.js backend with MongoDB database for scalability and performance.",
     "technologies": [
       "React.js",
       "Create React App",
@@ -180,9 +180,9 @@
   },
   {
     "id": 8,
-    "title": "E-Learning Platform",
-    "description": "A comprehensive e-learning platform that enables instructors to create and manage courses while allowing students to enroll, learn, and track their progress.",
-    "detailedDescription": "A full-stack e-learning platform featuring user authentication with JWT tokens, course creation and management for instructors, lesson upload and organization, student enrollment system, progress tracking, and a responsive web interface. The platform provides a complete learning management system with real-time API communication, secure authentication, and scalable architecture designed for both instructors and students.",
+    "title": "E-Learning Platform - Full Stack Application",
+    "description": "A comprehensive e-learning platform enabling instructors to create and manage courses while allowing students to enroll, learn, and track their progress.",
+    "detailedDescription": "E-Learning Platform is a comprehensive full-stack learning management system designed for educational institutions and online learning providers. The platform enables instructors to create, manage, and deliver online courses while providing students with tools to enroll, access learning materials, and track their educational progress. Key features include secure user authentication with JWT tokens, comprehensive course creation and management tools for instructors, lesson upload and organization capabilities, student enrollment and registration system, detailed progress tracking and analytics, responsive web interface for all devices, real-time API communication, and scalable architecture designed for both instructors and students. The application is built with React frontend and Django backend for robust performance and maintainability.",
     "technologies": [
       "React",
       "TypeScript",
