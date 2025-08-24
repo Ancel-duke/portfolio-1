@@ -204,5 +204,36 @@
     "repoUrl": "https://github.com/Ancel-duke",
     "image": "/assets/projects/elearn.jpg",
     "outcomes": "Production-ready full-stack e-learning platform demonstrating modern web development practices with focus on user experience, scalability, and maintainability. Shows proficiency in both frontend and backend development, API design, and deployment strategies."
+  },
+  {
+    "id": 9,
+    "title": "TaskForge - Modern Task & Project Management Platform - Full Stack Application",
+    "description": "A comprehensive, modern task and project management platform designed for teams to collaborate efficiently, track progress, and achieve their goals faster with real-time updates and advanced analytics.",
+    "detailedDescription": "TaskForge is a comprehensive, modern task and project management platform designed for teams to collaborate efficiently, track progress, and achieve their goals faster. Built with cutting-edge technologies, it provides a seamless experience for managing projects, tasks, and team collaboration in real-time. Key features include Kanban board management with drag-and-drop functionality, real-time team collaboration with live updates via WebSocket connections, comprehensive analytics and insights with progress tracking, secure JWT-based authentication with role-based access control, responsive design that works seamlessly across all devices, project timeline management with calendar view and deadline tracking, document management with file uploads and project documentation, and modern UI/UX with beautiful, intuitive interface and smooth animations. The application follows a modern full-stack architecture with Next.js 14 frontend, Node.js with Express.js backend, MongoDB database, Socket.io for real-time communication, and Zustand for client-side state management.",
+    "technologies": [
+      "Next.js 14",
+      "React 18",
+      "TypeScript",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "Mongoose",
+      "Socket.io",
+      "JWT",
+      "Zustand",
+      "Tailwind CSS",
+      "Framer Motion",
+      "React Beautiful DnD",
+      "Recharts",
+      "Axios",
+      "bcryptjs",
+      "Multer",
+      "Helmet",
+      "CORS"
+    ],
+    "liveUrl": "https://taskfoge.netlify.app",
+    "repoUrl": "https://github.com/Ancel-duke",
+    "image": "/assets/projects/taskforge.jpg",
+    "outcomes": "Modern, production-ready full-stack project management platform demonstrating advanced web development practices with real-time collaboration, comprehensive analytics, and scalable architecture. Shows proficiency in modern React development, real-time communication, database design, and deployment strategies."
   }
 ]
