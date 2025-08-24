@@ -75,6 +75,10 @@ const Footer = () => {
                     href={social.url}
                     target="_blank"
                     rel="noopener noreferrer"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      window.open(social.url, '_blank', 'noopener,noreferrer');
+                    }}
                     className="p-1.5 sm:p-2 bg-gray-100 dark:bg-gray-800 hover:bg-primary-100 dark:hover:bg-primary-900 text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 rounded-lg transition-colors duration-200"
                     aria-label={`Visit ${social.name}`}
                   >
