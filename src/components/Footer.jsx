@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { FiGithub, FiInstagram } from 'react-icons/fi';
+import { FiGithub, FiInstagram, FiLinkedin } from 'react-icons/fi';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -10,6 +10,11 @@ const Footer = () => {
       name: 'GitHub',
       url: 'https://github.com/Ancel-duke',
       icon: <FiGithub className="w-5 h-5" />
+    },
+    {
+      name: 'LinkedIn',
+      url: 'https://www.linkedin.com/in/ajanga-ancel-42bbb7213',
+      icon: <FiLinkedin className="w-5 h-5" />
     },
     {
       name: 'Instagram',
