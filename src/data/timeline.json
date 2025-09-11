@@ -1,0 +1,129 @@
+[
+  {
+    "year": "2021",
+    "title": "First Steps in Coding",
+    "description": "Started learning programming in school — small experiments with HTML, CSS and Vanilla JavaScript.",
+    "icon": "Laptop",
+    "projects": [],
+    "milestones": [
+      "Learned HTML and CSS fundamentals",
+      "Built first simple calculator with JavaScript",
+      "Discovered passion for web development"
+    ]
+  },
+  {
+    "year": "2022",
+    "title": "Exploring the Web",
+    "description": "Built Event Countdown Timer (Vanilla JS) and began experiments with React and Vue.",
+    "icon": "Globe",
+    "projects": [
+      {
+        "title": "Event Countdown Timer",
+        "url": "https://event-countdowns.netlify.app",
+        "description": "Vanilla JavaScript countdown timer with recurring events"
+      }
+    ],
+    "milestones": [
+      "Built first real project - Event Countdown Timer",
+      "Learned DOM manipulation and local storage",
+      "Explored React and Vue.js frameworks"
+    ]
+  },
+  {
+    "year": "2023",
+    "title": "Diving into Frameworks",
+    "description": "Built Travelogue (React + Leaflet.js), Habit Tracker PWA, Personal Finance Tracker (Vue 3) and Fitness Class Scheduler (Angular SSR).",
+    "icon": "Code",
+    "projects": [
+      {
+        "title": "Travelogue",
+        "url": "https://travelslogue.netlify.app",
+        "description": "Travel storytelling website with interactive maps"
+      },
+      {
+        "title": "Habit Tracker & Streak Counter",
+        "url": "https://habitss-tracker.netlify.app",
+        "description": "Progressive Web App for habit tracking"
+      },
+      {
+        "title": "Personal Finance Tracker",
+        "url": "https://tracks-finances.netlify.app",
+        "description": "Vue 3 application for expense tracking"
+      },
+      {
+        "title": "Fitness Class Scheduler",
+        "url": "https://fitnessss-tracker.netlify.app",
+        "description": "Angular SSR application for fitness scheduling"
+      }
+    ],
+    "milestones": [
+      "Mastered React, Vue, and Angular frameworks",
+      "Built first Progressive Web App",
+      "Learned data visualization with Chart.js",
+      "Explored server-side rendering with Angular"
+    ]
+  },
+  {
+    "year": "March 2024",
+    "title": "Started Freelancing",
+    "description": "Began freelancing — delivering production sites and client projects.",
+    "icon": "Briefcase",
+    "projects": [
+      {
+        "title": "Rasoha Academy",
+        "url": "https://rasoha.netlify.app",
+        "description": "School website for private academy in Kenya"
+      }
+    ],
+    "milestones": [
+      "Launched freelance development career",
+      "Delivered first client project - Rasoha Academy",
+      "Learned client communication and project management",
+      "Built production-ready applications"
+    ]
+  },
+  {
+    "year": "2024",
+    "title": "Full-Stack Growth",
+    "description": "Built Attendance System (React + Node + MongoDB) and E-Learning Platform (React + Django + PostgreSQL).",
+    "icon": "Server",
+    "projects": [
+      {
+        "title": "Attendance System",
+        "url": "https://attendance-syst.netlify.app",
+        "description": "Full-stack attendance management system"
+      },
+      {
+        "title": "E-Learning Platform",
+        "url": "https://e-learningdash.netlify.app",
+        "description": "Comprehensive learning management system"
+      }
+    ],
+    "milestones": [
+      "Built first full-stack applications",
+      "Learned backend development with Node.js and Django",
+      "Mastered database design and API development",
+      "Implemented authentication and security best practices"
+    ]
+  },
+  {
+    "year": "2025",
+    "title": "Advanced Projects",
+    "description": "Launched TaskForge (Next.js + Socket.io + MongoDB) and continued to deliver modern full-stack solutions.",
+    "icon": "Rocket",
+    "projects": [
+      {
+        "title": "TaskForge",
+        "url": "https://taskfoge.netlify.app",
+        "description": "Real-time collaborative project management platform"
+      }
+    ],
+    "milestones": [
+      "Built real-time collaborative application",
+      "Mastered WebSocket communication and Socket.io",
+      "Implemented advanced state management with Zustand",
+      "Created production-ready full-stack solutions"
+    ]
+  }
+]
+

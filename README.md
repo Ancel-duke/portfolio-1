@@ -1,295 +1,181 @@
-# Ancel Ajanga Portfolio
+# Ancel Ajanga - Portfolio
 
-A modern, responsive portfolio website built with React and Tailwind CSS, showcasing Ancel Ajanga's full-stack development skills and projects.
+A premium, fully responsive portfolio website built with React 18, TypeScript, and Tailwind CSS. This portfolio showcases my journey as a full-stack developer, featuring 9 real projects and a comprehensive timeline of my growth since 2021.
 
 ## 🚀 Features
 
-- **Modern Design**: Clean, professional design with dark/light mode toggle
-- **Responsive**: Fully responsive across all devices
-- **Accessible**: WCAG compliant with proper ARIA attributes and keyboard navigation
-- **SEO Optimized**: Meta tags, Open Graph, Twitter Cards, and JSON-LD schema
-- **Performance**: Code splitting, lazy loading, and optimized assets
-- **Contact Form**: Functional contact form with server stub
-- **Project Showcase**: Detailed project cards with modal views
+- **Modern Tech Stack**: React 18, TypeScript, Tailwind CSS, Framer Motion
+- **Responsive Design**: Mobile-first approach, works from 320px to 1920+ screens
+- **Dark/Light Mode**: System preference detection with user toggle
+- **Accessibility**: WCAG AA compliant with keyboard navigation
+- **Performance**: Optimized for Lighthouse scores (Performance ≥90, Accessibility ≥95)
+- **Interactive Components**: Before/After sliders, charts, timeline, and more
 
-## 🛠️ Tech Stack
+## 📱 Sections
 
-- **Frontend**: React 18, React Router DOM
-- **Styling**: Tailwind CSS with custom design system
-- **Animations**: Framer Motion
-- **Icons**: React Icons (Feather Icons)
-- **SEO**: React Helmet Async
-- **Build Tool**: Create React App
-- **Deployment**: Netlify/Vercel ready
+### 1. **Home**
+- Hero section with introduction and social links
+- Featured case studies (3 projects)
+- Latest blog posts (3 articles)
+- Call-to-action section
 
-## 📋 Prerequisites
+### 2. **Case Studies**
+- 3 flagship projects with detailed breakdowns:
+  - **TaskForge**: Real-time collaborative project management
+  - **E-Learning Platform**: Scalable learning management system
+  - **Attendance System**: Educational analytics and management
 
-- Node.js 16+ 
-- npm or yarn
+### 3. **Blog & Insights**
+- 6 technical articles covering:
+  - Building TaskForge with Next.js and Socket.io
+  - Scaling E-Learning platforms with Django + React
+  - Vue 3 Finance Tracker development
+  - Angular 20 in production
+  - Journey from student to freelancer
+  - Power of maps in web applications
 
-## 🚀 Quick Start
+### 4. **Timeline**
+- Interactive timeline showing growth from 2021-2025
+- Key milestones and project highlights
+- Visual progression of skills and achievements
 
-### 1. Clone and Install
+### 5. **Tech Stack**
+- Visual representation of technologies used
+- Interactive charts showing frequency and proficiency
+- Technology categories and usage statistics
 
-```bash
-git clone <repository-url>
-cd ancel-ajanga-portfolio
-npm install
-```
+### 6. **Fun Section**
+- Now Playing music widget
+- Fun facts about my journey
+- Favorite tools and development stats
+- Labs panel for experimental features
 
-### 2. Start Development Server
+### 7. **Contact**
+- Contact form with validation
+- Social media links
+- Multiple contact methods
 
-```bash
-npm start
-```
+## 🛠️ Technologies Used
 
-The app will open at `http://localhost:3000`
+### Frontend
+- **React 18** - Modern React with concurrent features
+- **TypeScript** - Type-safe development
+- **Tailwind CSS** - Utility-first styling
+- **Framer Motion** - Smooth animations
+- **Recharts** - Interactive data visualization
+- **Lucide React** - Beautiful icons
 
-### 3. Build for Production
+### UI Components
+- **shadcn/ui** - Accessible component library
+- **Radix UI** - Headless UI primitives
+- **Custom Components** - BeforeAfterSlider, NowPlaying, etc.
 
-```bash
-npm run build
-```
+### Development Tools
+- **React Router** - Client-side routing
+- **React Helmet** - SEO optimization
+- **Local Storage** - Theme and settings persistence
+
+## 📊 Projects Showcased
+
+1. **Personal Finance Tracker** - Vue.js 3, TypeScript, Chart.js
+2. **Fitness Class Scheduler** - Angular 20, SSR
+3. **Habit Tracker & Streak Counter** - React 19, PWA
+4. **Event Countdown Timer** - Vanilla JS, Canvas, Web APIs
+5. **Travelogue** - React 18, Leaflet.js, OpenStreetMap
+6. **Rasoha Academy** - React 19.1.1, responsive school site
+7. **Attendance System** - Full-stack (React, Node, MongoDB)
+8. **E-Learning Platform** - React + Django (full-stack)
+9. **TaskForge** - Next.js 14, Socket.io, MongoDB
+
+## 🎨 Design System
+
+- **Container**: max-w-[1200px] with responsive gutters
+- **Typography**: Fluid sizes using clamp() for responsive text
+- **Colors**: CSS custom properties for theme switching
+- **Components**: Rounded corners (rounded-2xl), soft shadows, generous spacing
+- **Animations**: Respects prefers-reduced-motion
+
+## ♿ Accessibility Features
+
+- **WCAG AA Compliance**: Color contrast ≥4.5:1
+- **Keyboard Navigation**: Full keyboard support
+- **Screen Reader Support**: Semantic HTML and ARIA labels
+- **Focus Management**: Visible focus indicators
+- **Reduced Motion**: Respects user preferences
+
+## 🚀 Getting Started
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/Ancel-duke/portfolio.git
+   cd portfolio
+   ```
+
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
+
+3. **Start development server**
+   ```bash
+   npm start
+   ```
+
+4. **Build for production**
+   ```bash
+   npm run build
+   ```
 
 ## 📁 Project Structure
 
 ```
-ancel-ajanga-portfolio/
-├── public/
-│   ├── assets/
-│   │   ├── projects/          # Project images
-│   │   └── resume.pdf         # Resume file
-│   ├── index.html
-│   └── robots.txt
-├── src/
-│   ├── components/            # Reusable components
-│   ├── pages/                # Page components
-│   ├── hooks/                # Custom hooks
-│   ├── styles/               # CSS files
-│   ├── App.jsx
-│   └── index.js
-├── server/                   # Express server stub
-├── tailwind.config.js
-├── package.json
-└── README.md
+src/
+├── components/
+│   ├── ui/                 # Reusable UI components
+│   ├── sections/           # Page sections
+│   ├── forms/              # Form components
+│   └── layout/             # Layout components
+├── contexts/               # React contexts
+├── data/                   # JSON data files
+├── lib/                    # Utility functions
+└── App.tsx                 # Main app component
 ```
 
-## 🎨 Customization
+## 🎯 Performance Targets
 
-### Colors
-The project uses a custom color palette defined in `tailwind.config.js`:
-- **Primary**: `#0ea5a4` (Teal)
-- **Accent**: `#7c3aed` (Violet)
+- **Performance**: ≥90 (Lighthouse)
+- **Accessibility**: ≥95 (Lighthouse)
+- **Best Practices**: ≥95 (Lighthouse)
+- **SEO**: ≥95 (Lighthouse)
 
-### Content Updates
-1. **Personal Information**: Update content in components
-2. **Projects**: Add new projects in `src/pages/Projects.jsx`
-3. **Skills**: Modify skills array in `src/components/About.jsx`
-4. **Contact**: Update contact information in `src/pages/Contact.jsx`
+## 📱 Responsive Breakpoints
 
-### Images
-- Replace placeholder images in `public/assets/projects/`
-- Add your resume PDF to `public/assets/resume.pdf`
-- Update project screenshots as needed
+- **Mobile**: 320px - 767px
+- **Tablet**: 768px - 1023px
+- **Desktop**: 1024px - 1919px
+- **Large Desktop**: 1920px+
 
-## 🌐 Deployment
+## 🌐 Browser Support
 
-### Netlify Deployment
-
-1. **Connect Repository**:
-   - Push code to GitHub
-   - Connect repository to Netlify
-   - Set build command: `npm run build`
-   - Set publish directory: `build`
-
-2. **Environment Variables** (Optional):
-   ```
-   REACT_APP_CONTACT_ENDPOINT=https://your-backend.com/api/contact
-   ```
-
-3. **Custom Domain** (Optional):
-   - Add custom domain in Netlify settings
-   - Update `public/index.html` meta tags
-
-### Vercel Deployment
-
-1. **Install Vercel CLI**:
-   ```bash
-   npm i -g vercel
-   ```
-
-2. **Deploy**:
-   ```bash
-   vercel
-   ```
-
-3. **Environment Variables** (Optional):
-   - Add in Vercel dashboard
-   - Update contact form endpoint
-
-### Contact Form Backend
-
-The project includes a server stub in `server/` directory. For production:
-
-#### Option 1: Netlify Functions
-Create `netlify/functions/contact.js`:
-```javascript
-exports.handler = async (event) => {
-  if (event.httpMethod !== 'POST') {
-    return { statusCode: 405, body: 'Method Not Allowed' };
-  }
-  
-  const { name, email, message } = JSON.parse(event.body);
-  
-  // Add your email service logic here
-  // Example: SendGrid, AWS SES, etc.
-  
-  return {
-    statusCode: 200,
-    body: JSON.stringify({ success: true })
-  };
-};
-```
-
-#### Option 2: Vercel Serverless
-Create `api/contact.js`:
-```javascript
-export default function handler(req, res) {
-  if (req.method !== 'POST') {
-    return res.status(405).json({ message: 'Method not allowed' });
-  }
-  
-  const { name, email, message } = req.body;
-  
-  // Add your email service logic here
-  
-  res.status(200).json({ success: true });
-}
-```
-
-## 🔧 Development Scripts
-
-```bash
-npm start          # Start development server
-npm run build      # Build for production
-npm run test       # Run tests
-npm run lint       # Run ESLint
-npm run format     # Format code with Prettier
-npm run analyze    # Analyze bundle size
-```
-
-## 📊 Performance Checklist
-
-### Lighthouse Targets
-- **Performance**: 90+
-- **Accessibility**: 95+
-- **Best Practices**: 90+
-- **SEO**: 90+
-
-### Optimization Tips
-1. **Images**: Use WebP format, optimize sizes
-2. **Fonts**: Use `font-display: swap`
-3. **Code Splitting**: Already implemented with React.lazy
-4. **Bundle Size**: Monitor with `npm run analyze`
-
-## ♿ Accessibility
-
-### Implemented Features
-- ✅ Semantic HTML structure
-- ✅ ARIA labels and roles
-- ✅ Keyboard navigation
-- ✅ Focus management
-- ✅ Color contrast compliance
-- ✅ Screen reader support
-- ✅ Reduced motion support
-
-### Testing
-```bash
-# Install axe-core for testing
-npm install --save-dev axe-core
-
-# Run accessibility tests
-npx axe http://localhost:3000
-```
-
-## 🔍 SEO Optimization
-
-### Meta Tags
-- ✅ Open Graph tags
-- ✅ Twitter Card tags
-- ✅ JSON-LD schema
-- ✅ Proper title and description
-
-### Additional SEO
-- ✅ `robots.txt` configured
-- ✅ Sitemap ready (generate with build)
-- ✅ Structured data for Person schema
-
-## 📱 Responsive Design
-
-### Breakpoints
-- **Mobile**: 320px - 768px
-- **Tablet**: 768px - 1024px
-- **Desktop**: 1024px+
-
-### Components
-- ✅ Responsive navigation
-- ✅ Mobile-first design
-- ✅ Touch-friendly interactions
-
-## 🎯 Production Checklist
-
-### Before Deployment
-- [ ] Replace placeholder images
-- [ ] Add actual resume PDF
-- [ ] Update project links and descriptions
-- [ ] Test contact form functionality
-- [ ] Run Lighthouse audit
-- [ ] Test on multiple devices
-- [ ] Validate HTML/CSS
-- [ ] Check accessibility with axe-core
-
-### Post-Deployment
-- [ ] Verify all links work
-- [ ] Test contact form
-- [ ] Check mobile responsiveness
-- [ ] Validate meta tags
-- [ ] Test dark/light mode
-- [ ] Monitor performance
-
-## 📈 Analytics (Optional)
-
-### Recommended Services
-- **Plausible**: Privacy-focused analytics
-- **Fathom**: Simple, privacy-friendly
-- **Google Analytics**: Traditional option
-
-### Implementation
-Add to `public/index.html`:
-```html
-<!-- Plausible Analytics -->
-<script defer data-domain="your-domain.com" src="https://plausible.io/js/script.js"></script>
-```
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Test thoroughly
-5. Submit a pull request
+- Chrome (latest)
+- Firefox (latest)
+- Safari (latest)
+- Edge (latest)
 
 ## 📄 License
 
-MIT License - see LICENSE file for details
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 👤 Author
+## 🤝 Contributing
 
-**Ancel Ajanga**
-- Email: ancel.ajanga@yahoo.com
-- GitHub: [@Ancel-duke](https://github.com/Ancel-duke)
-- Portfolio: [ancel-ajanga-portfolio.netlify.app](https://ancel-ajanga-portfolio.netlify.app)
+Feel free to fork this project and submit pull requests for any improvements.
+
+## 📞 Contact
+
+- **Email**: ancel@example.com
+- **GitHub**: [@Ancel-duke](https://github.com/Ancel-duke)
+- **LinkedIn**: [Ancel Ajanga](https://linkedin.com/in/ancel-ajanga)
 
 ---
 
-**Built with ❤️ using React & Tailwind CSS**
+Built with ❤️ by Ancel Ajanga

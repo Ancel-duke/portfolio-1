@@ -1,0 +1,302 @@
+{
+  "technologies": [
+    {
+      "name": "React",
+      "category": "Frontend",
+      "icon": "react",
+      "frequency": 6,
+      "proficiency": 9,
+      "description": "JavaScript library for building user interfaces",
+      "projects": ["Habit Tracker", "Travelogue", "Rasoha Academy", "Attendance System", "E-Learning Platform", "TaskForge"]
+    },
+    {
+      "name": "Next.js",
+      "category": "Frontend",
+      "icon": "nextjs",
+      "frequency": 1,
+      "proficiency": 8,
+      "description": "React framework for production",
+      "projects": ["TaskForge"]
+    },
+    {
+      "name": "Vue.js",
+      "category": "Frontend",
+      "icon": "vue",
+      "frequency": 1,
+      "proficiency": 8,
+      "description": "Progressive JavaScript framework",
+      "projects": ["Personal Finance Tracker"]
+    },
+    {
+      "name": "Angular",
+      "category": "Frontend",
+      "icon": "angular",
+      "frequency": 1,
+      "proficiency": 7,
+      "description": "Platform for building mobile and desktop web applications",
+      "projects": ["Fitness Class Scheduler"]
+    },
+    {
+      "name": "TypeScript",
+      "category": "Language",
+      "icon": "typescript",
+      "frequency": 4,
+      "proficiency": 8,
+      "description": "Typed superset of JavaScript",
+      "projects": ["Personal Finance Tracker", "Fitness Class Scheduler", "E-Learning Platform", "TaskForge"]
+    },
+    {
+      "name": "JavaScript",
+      "category": "Language",
+      "icon": "javascript",
+      "frequency": 9,
+      "proficiency": 9,
+      "description": "Programming language for web development",
+      "projects": ["All projects"]
+    },
+    {
+      "name": "Node.js",
+      "category": "Backend",
+      "icon": "nodejs",
+      "frequency": 2,
+      "proficiency": 8,
+      "description": "JavaScript runtime for server-side development",
+      "projects": ["Attendance System", "TaskForge"]
+    },
+    {
+      "name": "Express.js",
+      "category": "Backend",
+      "icon": "express",
+      "frequency": 2,
+      "proficiency": 8,
+      "description": "Web application framework for Node.js",
+      "projects": ["Attendance System", "TaskForge"]
+    },
+    {
+      "name": "Django",
+      "category": "Backend",
+      "icon": "django",
+      "frequency": 1,
+      "proficiency": 7,
+      "description": "High-level Python web framework",
+      "projects": ["E-Learning Platform"]
+    },
+    {
+      "name": "Django REST Framework",
+      "category": "API",
+      "icon": "django",
+      "frequency": 1,
+      "proficiency": 7,
+      "description": "Powerful toolkit for building Web APIs",
+      "projects": ["E-Learning Platform"]
+    },
+    {
+      "name": "MongoDB",
+      "category": "Database",
+      "icon": "mongodb",
+      "frequency": 2,
+      "proficiency": 8,
+      "description": "NoSQL document database",
+      "projects": ["Attendance System", "TaskForge"]
+    },
+    {
+      "name": "PostgreSQL",
+      "category": "Database",
+      "icon": "postgresql",
+      "frequency": 1,
+      "proficiency": 7,
+      "description": "Open source relational database",
+      "projects": ["E-Learning Platform"]
+    },
+    {
+      "name": "SQLite",
+      "category": "Database",
+      "icon": "sqlite",
+      "frequency": 1,
+      "proficiency": 6,
+      "description": "Lightweight database engine",
+      "projects": ["E-Learning Platform"]
+    },
+    {
+      "name": "Tailwind CSS",
+      "category": "Styling",
+      "icon": "tailwind",
+      "frequency": 6,
+      "proficiency": 9,
+      "description": "Utility-first CSS framework",
+      "projects": ["Personal Finance Tracker", "Fitness Class Scheduler", "Habit Tracker", "Rasoha Academy", "Attendance System", "E-Learning Platform", "TaskForge"]
+    },
+    {
+      "name": "Chart.js",
+      "category": "Visualization",
+      "icon": "chartjs",
+      "frequency": 2,
+      "proficiency": 8,
+      "description": "Simple yet flexible charting library",
+      "projects": ["Personal Finance Tracker", "Habit Tracker"]
+    },
+    {
+      "name": "Leaflet.js",
+      "category": "Maps",
+      "icon": "leaflet",
+      "frequency": 1,
+      "proficiency": 7,
+      "description": "Open-source JavaScript library for mobile-friendly interactive maps",
+      "projects": ["Travelogue"]
+    },
+    {
+      "name": "Socket.io",
+      "category": "Real-time",
+      "icon": "socketio",
+      "frequency": 1,
+      "proficiency": 8,
+      "description": "Real-time bidirectional event-based communication",
+      "projects": ["TaskForge"]
+    },
+    {
+      "name": "Zustand",
+      "category": "State Management",
+      "icon": "zustand",
+      "frequency": 1,
+      "proficiency": 7,
+      "description": "Small, fast and scalable state management solution",
+      "projects": ["TaskForge"]
+    },
+    {
+      "name": "JWT",
+      "category": "Authentication",
+      "icon": "jwt",
+      "frequency": 3,
+      "proficiency": 8,
+      "description": "JSON Web Token for secure authentication",
+      "projects": ["Attendance System", "E-Learning Platform", "TaskForge"]
+    },
+    {
+      "name": "Axios",
+      "category": "HTTP Client",
+      "icon": "axios",
+      "frequency": 3,
+      "proficiency": 8,
+      "description": "Promise-based HTTP client for the browser and node.js",
+      "projects": ["Attendance System", "E-Learning Platform", "TaskForge"]
+    },
+    {
+      "name": "Framer Motion",
+      "category": "Animation",
+      "icon": "framer",
+      "frequency": 1,
+      "proficiency": 7,
+      "description": "Production-ready motion library for React",
+      "projects": ["TaskForge"]
+    },
+    {
+      "name": "Recharts",
+      "category": "Visualization",
+      "icon": "recharts",
+      "frequency": 1,
+      "proficiency": 6,
+      "description": "Composable charting library built on React and D3",
+      "projects": ["TaskForge"]
+    },
+    {
+      "name": "Jest",
+      "category": "Testing",
+      "icon": "jest",
+      "frequency": 2,
+      "proficiency": 7,
+      "description": "JavaScript testing framework",
+      "projects": ["Rasoha Academy", "E-Learning Platform"]
+    },
+    {
+      "name": "Vitest",
+      "category": "Testing",
+      "icon": "vitest",
+      "frequency": 1,
+      "proficiency": 6,
+      "description": "Fast unit test framework powered by Vite",
+      "projects": ["Personal Finance Tracker"]
+    },
+    {
+      "name": "Playwright",
+      "category": "Testing",
+      "icon": "playwright",
+      "frequency": 1,
+      "proficiency": 6,
+      "description": "End-to-end testing framework",
+      "projects": ["Personal Finance Tracker"]
+    }
+  ],
+  "categories": [
+    {
+      "name": "Frontend",
+      "color": "blue",
+      "count": 4
+    },
+    {
+      "name": "Backend",
+      "color": "green",
+      "count": 3
+    },
+    {
+      "name": "Database",
+      "color": "purple",
+      "count": 3
+    },
+    {
+      "name": "Styling",
+      "color": "pink",
+      "count": 1
+    },
+    {
+      "name": "Language",
+      "color": "yellow",
+      "count": 2
+    },
+    {
+      "name": "API",
+      "color": "indigo",
+      "count": 1
+    },
+    {
+      "name": "Visualization",
+      "color": "red",
+      "count": 2
+    },
+    {
+      "name": "Maps",
+      "color": "teal",
+      "count": 1
+    },
+    {
+      "name": "Real-time",
+      "color": "orange",
+      "count": 1
+    },
+    {
+      "name": "State Management",
+      "color": "cyan",
+      "count": 1
+    },
+    {
+      "name": "Authentication",
+      "color": "emerald",
+      "count": 1
+    },
+    {
+      "name": "HTTP Client",
+      "color": "violet",
+      "count": 1
+    },
+    {
+      "name": "Animation",
+      "color": "rose",
+      "count": 1
+    },
+    {
+      "name": "Testing",
+      "color": "amber",
+      "count": 3
+    }
+  ]
+}
+

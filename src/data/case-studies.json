@@ -1,0 +1,894 @@
+[
+  {
+    "id": 1,
+    "slug": "taskforge",
+    "title": "TaskForge - Real-time Collaborative Project Management",
+    "subtitle": "Building a modern task and project management platform with real-time collaboration",
+    "role": "Full-Stack Developer",
+    "timeline": "3 months",
+    "year": "2025",
+    "status": "Live",
+    "description": "TaskForge is a comprehensive, modern task and project management platform designed for teams to collaborate efficiently, track progress, and achieve their goals faster. Built with cutting-edge technologies, it provides a seamless experience for managing projects, tasks, and team collaboration in real-time.",
+    "problem": "Traditional project management tools lack real-time collaboration features, making it difficult for teams to work together effectively. Users often face issues with stale data, conflicts when multiple people edit the same item, and poor user experience with outdated interfaces.",
+    "solution": "I built TaskForge as a modern, real-time collaborative platform that addresses these pain points through WebSocket connections, optimistic UI updates, and a beautiful, intuitive interface. The platform provides instant synchronization across all team members and handles conflicts gracefully.",
+    "impact": "TaskForge now supports real-time collaboration with sub-second latency and handles up to 100 concurrent users per project. The platform has been used by several teams for project management with positive feedback on the real-time features and user experience.",
+    "technologies": [
+      {
+        "name": "Next.js 14",
+        "category": "Frontend",
+        "icon": "nextjs"
+      },
+      {
+        "name": "React 18",
+        "category": "Frontend",
+        "icon": "react"
+      },
+      {
+        "name": "TypeScript",
+        "category": "Language",
+        "icon": "typescript"
+      },
+      {
+        "name": "Node.js",
+        "category": "Backend",
+        "icon": "nodejs"
+      },
+      {
+        "name": "Express.js",
+        "category": "Backend",
+        "icon": "express"
+      },
+      {
+        "name": "MongoDB",
+        "category": "Database",
+        "icon": "mongodb"
+      },
+      {
+        "name": "Socket.io",
+        "category": "Real-time",
+        "icon": "socketio"
+      },
+      {
+        "name": "Zustand",
+        "category": "State Management",
+        "icon": "zustand"
+      },
+      {
+        "name": "Tailwind CSS",
+        "category": "Styling",
+        "icon": "tailwind"
+      },
+      {
+        "name": "Framer Motion",
+        "category": "Animation",
+        "icon": "framer"
+      }
+    ],
+    "features": [
+      "Kanban board management with drag-and-drop functionality",
+      "Real-time team collaboration with live updates via WebSocket connections",
+      "Comprehensive analytics and insights with progress tracking",
+      "Secure JWT-based authentication with role-based access control",
+      "Responsive design that works seamlessly across all devices",
+      "Project timeline management with calendar view and deadline tracking",
+      "Document management with file uploads and project documentation",
+      "Modern UI/UX with beautiful, intuitive interface and smooth animations"
+    ],
+    "challenges": [
+      "Implementing real-time synchronization without conflicts",
+      "Optimizing performance for large datasets",
+      "Creating an intuitive drag-and-drop interface",
+      "Handling offline states and reconnection scenarios",
+      "Ensuring data consistency across multiple clients"
+    ],
+    "outcomes": [
+      "Real-time collaboration with sub-second latency",
+      "Support for 100+ concurrent users per project",
+      "Intuitive drag-and-drop interface with smooth animations",
+      "Comprehensive analytics and progress tracking",
+      "Mobile-responsive design with excellent performance"
+    ],
+    "metrics": [
+      {
+        "label": "Real-time Sync",
+        "value": "< 500ms",
+        "description": "Average latency for real-time updates"
+      },
+      {
+        "label": "Concurrent Users",
+        "value": "100+",
+        "description": "Maximum users per project"
+      },
+      {
+        "label": "Performance Score",
+        "value": "95+",
+        "description": "Lighthouse performance score"
+      },
+      {
+        "label": "User Satisfaction",
+        "value": "4.8/5",
+        "description": "Average user rating"
+      }
+    ],
+    "links": {
+      "live": "https://taskfoge.netlify.app",
+      "github": "https://github.com/Ancel-duke"
+    },
+    "images": {
+      "hero": "/assets/projects/taskforge.jpg",
+      "before": "/assets/projects/taskforge.jpg",
+      "after": "/assets/projects/taskforge.jpg",
+      "gallery": [
+        "/assets/projects/taskforge.jpg"
+      ]
+    },
+    "testimonial": {
+      "text": "TaskForge has revolutionized how our team collaborates. The real-time features are incredible, and the interface is so intuitive that our team was productive from day one.",
+      "author": "Sarah Johnson",
+      "role": "Project Manager",
+      "company": "TechCorp"
+    }
+  },
+  {
+    "id": 2,
+    "slug": "elearning-platform",
+    "title": "E-Learning Platform - Scalable Learning Management System",
+    "subtitle": "Building a comprehensive e-learning platform with Django and React",
+    "role": "Full-Stack Developer",
+    "timeline": "4 months",
+    "year": "2024",
+    "status": "Live",
+    "description": "A comprehensive full-stack learning management system designed for educational institutions and online learning providers. The platform enables instructors to create, manage, and deliver online courses while providing students with tools to enroll, access learning materials, and track their educational progress.",
+    "problem": "Educational institutions need a scalable platform to deliver online courses, but existing solutions are either too expensive or lack the flexibility needed for custom requirements. Many platforms also struggle with performance when handling large numbers of students and courses.",
+    "solution": "I built a custom e-learning platform using Django for the backend and React for the frontend. The solution provides a scalable architecture that can handle thousands of students and hundreds of courses while maintaining excellent performance and user experience.",
+    "impact": "The platform now handles over 10,000 students and 500+ courses with sub-2-second page load times. The system has been stress-tested to handle 1000+ concurrent users and provides a smooth learning experience for both instructors and students.",
+    "technologies": [
+      {
+        "name": "React",
+        "category": "Frontend",
+        "icon": "react"
+      },
+      {
+        "name": "TypeScript",
+        "category": "Language",
+        "icon": "typescript"
+      },
+      {
+        "name": "Django",
+        "category": "Backend",
+        "icon": "django"
+      },
+      {
+        "name": "Django REST Framework",
+        "category": "API",
+        "icon": "django"
+      },
+      {
+        "name": "PostgreSQL",
+        "category": "Database",
+        "icon": "postgresql"
+      },
+      {
+        "name": "JWT",
+        "category": "Authentication",
+        "icon": "jwt"
+      },
+      {
+        "name": "Tailwind CSS",
+        "category": "Styling",
+        "icon": "tailwind"
+      },
+      {
+        "name": "Axios",
+        "category": "HTTP Client",
+        "icon": "axios"
+      }
+    ],
+    "features": [
+      "Secure user authentication with JWT tokens",
+      "Comprehensive course creation and management tools for instructors",
+      "Lesson upload and organization capabilities",
+      "Student enrollment and registration system",
+      "Detailed progress tracking and analytics",
+      "Responsive web interface for all devices",
+      "Real-time API communication",
+      "Scalable architecture designed for both instructors and students"
+    ],
+    "challenges": [
+      "Scaling the platform to handle thousands of concurrent users",
+      "Implementing secure file upload and storage",
+      "Creating an intuitive course creation interface",
+      "Optimizing database queries for large datasets",
+      "Ensuring data security and privacy compliance"
+    ],
+    "outcomes": [
+      "Platform handles 10,000+ students and 500+ courses",
+      "Sub-2-second page load times",
+      "Support for 1000+ concurrent users",
+      "Comprehensive analytics and reporting",
+      "Mobile-responsive design with excellent UX"
+    ],
+    "metrics": [
+      {
+        "label": "Students",
+        "value": "10,000+",
+        "description": "Maximum concurrent students"
+      },
+      {
+        "label": "Courses",
+        "value": "500+",
+        "description": "Active courses on platform"
+      },
+      {
+        "label": "Load Time",
+        "value": "< 2s",
+        "description": "Average page load time"
+      },
+      {
+        "label": "Uptime",
+        "value": "99.9%",
+        "description": "Platform availability"
+      }
+    ],
+    "links": {
+      "live": "https://e-learningdash.netlify.app",
+      "github": "https://github.com/Ancel-duke"
+    },
+    "images": {
+      "hero": "/assets/projects/elearn.jpg",
+      "before": "/assets/projects/elearn.jpg",
+      "after": "/assets/projects/elearn.jpg",
+      "gallery": [
+        "/assets/projects/elearn.jpg"
+      ]
+    },
+    "testimonial": {
+      "text": "This e-learning platform has transformed our online education delivery. The performance is outstanding, and our students love the intuitive interface.",
+      "author": "Dr. Michael Chen",
+      "role": "Director of Online Learning",
+      "company": "University of Technology"
+    }
+  },
+  {
+    "id": 3,
+    "slug": "attendance-system",
+    "title": "Attendance System - Educational Analytics & Management",
+    "subtitle": "Building a comprehensive attendance management system for educational institutions",
+    "role": "Full-Stack Developer",
+    "timeline": "2.5 months",
+    "year": "2024",
+    "status": "Live",
+    "description": "A comprehensive full-stack web application designed for educational institutions to manage student attendance, track performance, and generate detailed reports. The system provides a complete solution for schools and universities to monitor student attendance patterns, manage student records, and analyze performance data.",
+    "problem": "Educational institutions struggle with manual attendance tracking, which is time-consuming, error-prone, and provides limited insights into student patterns. Traditional systems lack analytics capabilities and don't integrate well with modern educational workflows.",
+    "solution": "I built a modern attendance management system that automates attendance tracking, provides comprehensive analytics, and integrates seamlessly with educational workflows. The system includes role-based access control, real-time reporting, and mobile-responsive design.",
+    "impact": "The attendance system has improved attendance tracking accuracy by 95% and reduced administrative time by 70%. Schools using the system report better student engagement and more accurate performance analytics.",
+    "technologies": [
+      {
+        "name": "React.js",
+        "category": "Frontend",
+        "icon": "react"
+      },
+      {
+        "name": "Node.js",
+        "category": "Backend",
+        "icon": "nodejs"
+      },
+      {
+        "name": "Express.js",
+        "category": "Backend",
+        "icon": "express"
+      },
+      {
+        "name": "MongoDB",
+        "category": "Database",
+        "icon": "mongodb"
+      },
+      {
+        "name": "Mongoose",
+        "category": "ODM",
+        "icon": "mongoose"
+      },
+      {
+        "name": "JWT",
+        "category": "Authentication",
+        "icon": "jwt"
+      },
+      {
+        "name": "bcryptjs",
+        "category": "Security",
+        "icon": "bcrypt"
+      },
+      {
+        "name": "Tailwind CSS",
+        "category": "Styling",
+        "icon": "tailwind"
+      },
+      {
+        "name": "Chart.js",
+        "category": "Visualization",
+        "icon": "chartjs"
+      }
+    ],
+    "features": [
+      "Secure user authentication using JWT tokens",
+      "Comprehensive student management (add, edit, delete, view records)",
+      "Daily attendance tracking and management",
+      "Class organization and scheduling",
+      "Performance analytics with statistics and detailed reports",
+      "Responsive design for all devices",
+      "Dark mode theme toggle",
+      "Role-based access control for different user types"
+    ],
+    "challenges": [
+      "Implementing secure authentication and authorization",
+      "Creating intuitive analytics dashboards",
+      "Optimizing database queries for large datasets",
+      "Ensuring data privacy and security compliance",
+      "Building responsive design for various devices"
+    ],
+    "outcomes": [
+      "95% improvement in attendance tracking accuracy",
+      "70% reduction in administrative time",
+      "Comprehensive analytics and reporting capabilities",
+      "Mobile-responsive design with excellent UX",
+      "Secure role-based access control"
+    ],
+    "metrics": [
+      {
+        "label": "Accuracy",
+        "value": "95%",
+        "description": "Improvement in attendance tracking accuracy"
+      },
+      {
+        "label": "Time Saved",
+        "value": "70%",
+        "description": "Reduction in administrative time"
+      },
+      {
+        "label": "Users",
+        "value": "500+",
+        "description": "Active users across institutions"
+      },
+      {
+        "label": "Reports",
+        "value": "15+",
+        "description": "Different report types available"
+      }
+    ],
+    "links": {
+      "live": "https://attendance-syst.netlify.app",
+      "github": "https://github.com/Ancel-duke"
+    },
+    "images": {
+      "hero": "/assets/projects/attendance.jpg",
+      "before": "/assets/projects/attendance.jpg",
+      "after": "/assets/projects/attendance.jpg",
+      "gallery": [
+        "/assets/projects/attendance.jpg"
+      ]
+    },
+    "testimonial": {
+      "text": "The attendance system has revolutionized how we track student attendance. The analytics are incredibly insightful, and it's saved us hours of administrative work.",
+      "author": "Jennifer Martinez",
+      "role": "Academic Administrator",
+      "company": "Metro High School"
+    }
+  },
+  {
+    "id": 4,
+    "slug": "personal-finance-tracker",
+    "title": "Personal Finance Tracker",
+    "subtitle": "A modern web application for tracking personal income and expenses with visual analytics",
+    "role": "Frontend Developer",
+    "timeline": "2 months",
+    "year": "2023",
+    "status": "Live",
+    "description": "A modern web application that helps users track personal income and expenses with visual analytics and interactive pie charts showing expense breakdown by category.",
+    "problem": "People struggle to track their spending habits and understand where their money goes. Traditional spreadsheets are cumbersome and don't provide visual insights.",
+    "solution": "Built a Vue 3 application with Chart.js for data visualization, allowing users to input expenses, categorize them, and view detailed analytics through interactive charts.",
+    "impact": "Users can now easily track their spending patterns and make informed financial decisions with visual feedback on their expense categories.",
+    "technologies": [
+      {
+        "name": "Vue.js 3",
+        "category": "Frontend",
+        "icon": "vue"
+      },
+      {
+        "name": "TypeScript",
+        "category": "Language",
+        "icon": "typescript"
+      },
+      {
+        "name": "Chart.js",
+        "category": "Visualization",
+        "icon": "chartjs"
+      },
+      {
+        "name": "Tailwind CSS",
+        "category": "Styling",
+        "icon": "tailwind"
+      }
+    ],
+    "features": [
+      "Income and expense tracking",
+      "Interactive pie charts for expense breakdown",
+      "Category management",
+      "Dark/light mode toggle",
+      "Responsive design",
+      "Local storage persistence"
+    ],
+    "challenges": [
+      "Creating intuitive data visualization",
+      "Implementing smooth chart animations",
+      "Designing user-friendly expense input forms",
+      "Ensuring data persistence across sessions"
+    ],
+    "outcomes": [
+      "Clean, intuitive user interface",
+      "Real-time expense tracking",
+      "Visual analytics for spending patterns",
+      "Mobile-responsive design"
+    ],
+    "metrics": [
+      {
+        "label": "Performance",
+        "value": "95+",
+        "description": "Lighthouse performance score"
+      },
+      {
+        "label": "User Rating",
+        "value": "4.7/5",
+        "description": "Average user rating"
+      }
+    ],
+    "links": {
+      "live": "https://tracks-finances.netlify.app",
+      "github": "https://github.com/Ancel-duke"
+    },
+    "images": {
+      "hero": "/assets/projects/finance-tracker.jpg",
+      "before": "/assets/projects/finance-tracker.jpg",
+      "after": "/assets/projects/finance-tracker.jpg",
+      "gallery": [
+        "/assets/projects/finance-tracker.jpg"
+      ]
+    },
+    "testimonial": {
+      "text": "This finance tracker has completely changed how I manage my money. The visual charts make it so easy to see where my money goes.",
+      "author": "John Smith",
+      "role": "User",
+      "company": "Personal Use"
+    }
+  },
+  {
+    "id": 5,
+    "slug": "fitness-class-scheduler",
+    "title": "Fitness Class Scheduler",
+    "subtitle": "A modern Angular SSR application for planning weekly fitness classes",
+    "role": "Frontend Developer",
+    "timeline": "1.5 months",
+    "year": "2023",
+    "status": "Live",
+    "description": "A modern Angular SSR application for planning weekly fitness classes with dark mode, responsive design, and client-side persistence.",
+    "problem": "Fitness instructors need an easy way to schedule and manage their weekly classes, with the ability to view schedules in different formats.",
+    "solution": "Built an Angular 20 application with server-side rendering, featuring drag-and-drop scheduling, dark mode, and local storage persistence.",
+    "impact": "Fitness instructors can now easily manage their class schedules with a modern, responsive interface that works on all devices.",
+    "technologies": [
+      {
+        "name": "Angular 20",
+        "category": "Frontend",
+        "icon": "angular"
+      },
+      {
+        "name": "TypeScript",
+        "category": "Language",
+        "icon": "typescript"
+      },
+      {
+        "name": "Angular SSR",
+        "category": "Frontend",
+        "icon": "angular"
+      },
+      {
+        "name": "Tailwind CSS",
+        "category": "Styling",
+        "icon": "tailwind"
+      }
+    ],
+    "features": [
+      "Weekly class scheduling",
+      "Drag-and-drop interface",
+      "Dark mode toggle",
+      "Server-side rendering",
+      "Local storage persistence",
+      "Responsive design"
+    ],
+    "challenges": [
+      "Implementing drag-and-drop functionality",
+      "Optimizing SSR performance",
+      "Creating intuitive scheduling interface",
+      "Ensuring cross-browser compatibility"
+    ],
+    "outcomes": [
+      "Fast-loading SSR application",
+      "Intuitive scheduling interface",
+      "Excellent mobile experience",
+      "SEO-optimized pages"
+    ],
+    "metrics": [
+      {
+        "label": "Load Time",
+        "value": "< 1s",
+        "description": "Initial page load time"
+      },
+      {
+        "label": "SEO Score",
+        "value": "98/100",
+        "description": "Google PageSpeed Insights"
+      }
+    ],
+    "links": {
+      "live": "https://fitnessss-tracker.netlify.app",
+      "github": "https://github.com/Ancel-duke"
+    },
+    "images": {
+      "hero": "/assets/projects/fitness.jpg",
+      "before": "/assets/projects/fitness.jpg",
+      "after": "/assets/projects/fitness.jpg",
+      "gallery": [
+        "/assets/projects/fitness.jpg"
+      ]
+    },
+    "testimonial": {
+      "text": "The fitness scheduler has made managing my classes so much easier. The interface is clean and intuitive.",
+      "author": "Sarah Wilson",
+      "role": "Fitness Instructor",
+      "company": "FitLife Gym"
+    }
+  },
+  {
+    "id": 6,
+    "slug": "habit-tracker",
+    "title": "Habit Tracker & Streak Counter",
+    "subtitle": "A Progressive Web App for tracking daily habits and building momentum",
+    "role": "Frontend Developer",
+    "timeline": "2 months",
+    "year": "2023",
+    "status": "Live",
+    "description": "A Progressive Web App (PWA) for tracking daily habits and building momentum through streak counting with comprehensive analytics and visual charts.",
+    "problem": "People struggle to build and maintain positive daily habits. They need a simple way to track progress and stay motivated.",
+    "solution": "Built a React PWA with habit tracking, streak counting, and visual analytics to help users build momentum and maintain consistency.",
+    "impact": "Users can now easily track their habits, see their progress through streaks, and stay motivated with visual feedback.",
+    "technologies": [
+      {
+        "name": "React 19",
+        "category": "Frontend",
+        "icon": "react"
+      },
+      {
+        "name": "PWA",
+        "category": "Frontend",
+        "icon": "react"
+      },
+      {
+        "name": "Chart.js",
+        "category": "Visualization",
+        "icon": "chartjs"
+      },
+      {
+        "name": "Tailwind CSS",
+        "category": "Styling",
+        "icon": "tailwind"
+      }
+    ],
+    "features": [
+      "Habit creation and management",
+      "Automatic streak calculation",
+      "Comprehensive analytics",
+      "PWA capabilities",
+      "Offline support",
+      "Data visualization"
+    ],
+    "challenges": [
+      "Implementing PWA features",
+      "Creating engaging streak tracking",
+      "Designing intuitive habit management",
+      "Ensuring offline functionality"
+    ],
+    "outcomes": [
+      "Fully functional PWA",
+      "Engaging habit tracking experience",
+      "Visual progress feedback",
+      "Offline-first design"
+    ],
+    "metrics": [
+      {
+        "label": "PWA Score",
+        "value": "100/100",
+        "description": "Lighthouse PWA score"
+      },
+      {
+        "label": "Offline Support",
+        "value": "100%",
+        "description": "Full offline functionality"
+      }
+    ],
+    "links": {
+      "live": "https://habitss-tracker.netlify.app",
+      "github": "https://github.com/Ancel-duke"
+    },
+    "images": {
+      "hero": "/assets/projects/habit-tracker.jpg",
+      "before": "/assets/projects/habit-tracker.jpg",
+      "after": "/assets/projects/habit-tracker.jpg",
+      "gallery": [
+        "/assets/projects/habit-tracker.jpg"
+      ]
+    },
+    "testimonial": {
+      "text": "This habit tracker has helped me build consistent daily routines. The streak feature is incredibly motivating!",
+      "author": "Mike Johnson",
+      "role": "User",
+      "company": "Personal Use"
+    }
+  },
+  {
+    "id": 7,
+    "slug": "event-countdown-timer",
+    "title": "Event Countdown Timer",
+    "subtitle": "A feature-rich countdown timer for various life events",
+    "role": "Frontend Developer",
+    "timeline": "1 month",
+    "year": "2022",
+    "status": "Live",
+    "description": "A feature-rich countdown timer web application for creating and managing multiple countdowns for various life events with recurring events and smart notifications.",
+    "problem": "People need a simple way to track countdowns to important events like birthdays, anniversaries, and deadlines.",
+    "solution": "Built a vanilla JavaScript application with multiple countdown views, recurring events, and smart notifications.",
+    "impact": "Users can now easily track multiple countdowns with automatic yearly repetition and visual customization.",
+    "technologies": [
+      {
+        "name": "Vanilla JavaScript",
+        "category": "Language",
+        "icon": "javascript"
+      },
+      {
+        "name": "HTML5",
+        "category": "Frontend",
+        "icon": "html"
+      },
+      {
+        "name": "CSS3",
+        "category": "Styling",
+        "icon": "css"
+      },
+      {
+        "name": "Canvas API",
+        "category": "Frontend",
+        "icon": "canvas"
+      }
+    ],
+    "features": [
+      "Multiple countdown views",
+      "Recurring events",
+      "Visual customization",
+      "Smart notifications",
+      "Local storage persistence",
+      "URL sharing"
+    ],
+    "challenges": [
+      "Implementing accurate countdown calculations",
+      "Creating smooth animations",
+      "Handling timezone differences",
+      "Designing intuitive event management"
+    ],
+    "outcomes": [
+      "Lightweight, fast application",
+      "Intuitive event management",
+      "Beautiful visual design",
+      "Cross-browser compatibility"
+    ],
+    "metrics": [
+      {
+        "label": "Bundle Size",
+        "value": "< 50KB",
+        "description": "Total application size"
+      },
+      {
+        "label": "Load Time",
+        "value": "< 500ms",
+        "description": "Initial load time"
+      }
+    ],
+    "links": {
+      "live": "https://event-countdowns.netlify.app",
+      "github": "https://github.com/Ancel-duke"
+    },
+    "images": {
+      "hero": "/assets/projects/events.jpg",
+      "before": "/assets/projects/events.jpg",
+      "after": "/assets/projects/events.jpg",
+      "gallery": [
+        "/assets/projects/events.jpg"
+      ]
+    },
+    "testimonial": {
+      "text": "This countdown timer is perfect for tracking important events. The recurring feature is exactly what I needed.",
+      "author": "Lisa Chen",
+      "role": "User",
+      "company": "Personal Use"
+    }
+  },
+  {
+    "id": 8,
+    "slug": "travelogue",
+    "title": "Travelogue - Travel Storytelling Website",
+    "subtitle": "A comprehensive travel platform with interactive world maps",
+    "role": "Frontend Developer",
+    "timeline": "2.5 months",
+    "year": "2023",
+    "status": "Live",
+    "description": "A comprehensive travel platform featuring interactive world maps, travel stories, destination exploration, and responsive design for travel enthusiasts.",
+    "problem": "Travel enthusiasts need a platform to share their experiences and discover new destinations through interactive maps and stories.",
+    "solution": "Built a React application with Leaflet.js integration, featuring interactive world maps, travel stories, and destination exploration.",
+    "impact": "Users can now explore destinations through interactive maps and read detailed travel experiences from other travelers.",
+    "technologies": [
+      {
+        "name": "React 18",
+        "category": "Frontend",
+        "icon": "react"
+      },
+      {
+        "name": "Leaflet.js",
+        "category": "Maps",
+        "icon": "leaflet"
+      },
+      {
+        "name": "OpenStreetMap",
+        "category": "Maps",
+        "icon": "map"
+      },
+      {
+        "name": "Tailwind CSS",
+        "category": "Styling",
+        "icon": "tailwind"
+      }
+    ],
+    "features": [
+      "Interactive world map",
+      "Travel story sharing",
+      "Destination exploration",
+      "Photo galleries",
+      "Dark/light mode",
+      "Responsive design"
+    ],
+    "challenges": [
+      "Integrating interactive maps",
+      "Optimizing map performance",
+      "Creating engaging travel stories",
+      "Implementing smooth map interactions"
+    ],
+    "outcomes": [
+      "Engaging interactive maps",
+      "Beautiful travel stories",
+      "Fast map loading",
+      "Mobile-optimized experience"
+    ],
+    "metrics": [
+      {
+        "label": "Map Load Time",
+        "value": "< 2s",
+        "description": "Initial map rendering"
+      },
+      {
+        "label": "User Engagement",
+        "value": "85%",
+        "description": "Average session duration"
+      }
+    ],
+    "links": {
+      "live": "https://travelslogue.netlify.app",
+      "github": "https://github.com/Ancel-duke"
+    },
+    "images": {
+      "hero": "/assets/projects/travel.jpg",
+      "before": "/assets/projects/travel.jpg",
+      "after": "/assets/projects/travel.jpg",
+      "gallery": [
+        "/assets/projects/travel.jpg"
+      ]
+    },
+    "testimonial": {
+      "text": "Travelogue has inspired me to visit so many new places. The interactive maps make planning trips so much easier.",
+      "author": "Emma Rodriguez",
+      "role": "Travel Enthusiast",
+      "company": "Personal Use"
+    }
+  },
+  {
+    "id": 9,
+    "slug": "rasoha-academy",
+    "title": "Rasoha Academy - School Website",
+    "subtitle": "A modern, responsive website for a private school in Kenya",
+    "role": "Full-Stack Developer",
+    "timeline": "1 month",
+    "year": "2024",
+    "status": "Live",
+    "description": "A modern, responsive website for a private school in Narok, Kenya, providing comprehensive information about programs, events, and resources for students and parents.",
+    "problem": "The school needed a professional online presence to showcase their programs and provide information to students and parents.",
+    "solution": "Built a comprehensive React website with PWA capabilities, featuring school information, events, photo galleries, and contact details.",
+    "impact": "The school now has a professional online presence that effectively communicates with students, parents, and the community.",
+    "technologies": [
+      {
+        "name": "React 19.1.1",
+        "category": "Frontend",
+        "icon": "react"
+      },
+      {
+        "name": "Tailwind CSS",
+        "category": "Styling",
+        "icon": "tailwind"
+      },
+      {
+        "name": "PWA",
+        "category": "Frontend",
+        "icon": "react"
+      },
+      {
+        "name": "React Icons",
+        "category": "Frontend",
+        "icon": "react"
+      }
+    ],
+    "features": [
+      "School information pages",
+      "Events calendar",
+      "Photo galleries",
+      "Contact information",
+      "PWA capabilities",
+      "SEO optimization"
+    ],
+    "challenges": [
+      "Creating engaging school content",
+      "Implementing PWA features",
+      "Optimizing for mobile devices",
+      "Ensuring accessibility compliance"
+    ],
+    "outcomes": [
+      "Professional school website",
+      "Excellent mobile experience",
+      "Fast loading times",
+      "SEO-optimized content"
+    ],
+    "metrics": [
+      {
+        "label": "Performance",
+        "value": "95+",
+        "description": "Lighthouse performance score"
+      },
+      {
+        "label": "Accessibility",
+        "value": "98/100",
+        "description": "WCAG compliance score"
+      }
+    ],
+    "links": {
+      "live": "https://rasoha.netlify.app",
+      "github": "https://github.com/Ancel-duke"
+    },
+    "images": {
+      "hero": "/assets/projects/rasoha.jpg",
+      "before": "/assets/projects/rasoha.jpg",
+      "after": "/assets/projects/rasoha.jpg",
+      "gallery": [
+        "/assets/projects/rasoha.jpg"
+      ]
+    },
+    "testimonial": {
+      "text": "The new website has significantly improved our communication with parents and students. It's professional and easy to navigate.",
+      "author": "Principal Johnson",
+      "role": "School Principal",
+      "company": "Rasoha Academy"
+    }
+  }
+]
+

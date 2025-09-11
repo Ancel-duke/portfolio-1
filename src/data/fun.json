@@ -1,0 +1,149 @@
+{
+  "nowPlaying": [
+    {
+      "id": 1,
+      "title": "Coding Vibes",
+      "artist": "Lofi Hip Hop",
+      "album": "Focus Sessions",
+      "cover": "/assets/music/coding-vibes.jpg",
+      "duration": 180,
+      "currentTime": 45,
+      "isPlaying": true
+    },
+    {
+      "id": 2,
+      "title": "Late Night Sessions",
+      "artist": "Chill Beats",
+      "album": "Developer's Choice",
+      "cover": "/assets/music/late-night.jpg",
+      "duration": 240,
+      "currentTime": 0,
+      "isPlaying": false
+    },
+    {
+      "id": 3,
+      "title": "Productivity Flow",
+      "artist": "Ambient Sounds",
+      "album": "Deep Work",
+      "cover": "/assets/music/productivity.jpg",
+      "duration": 300,
+      "currentTime": 0,
+      "isPlaying": false
+    }
+  ],
+  "funFacts": [
+    {
+      "id": 1,
+      "title": "Built 9 Projects from Solo to Full-Stack",
+      "description": "Started with simple HTML/CSS and now building complex real-time applications with WebSockets and databases.",
+      "icon": "Rocket",
+      "category": "Growth"
+    },
+    {
+      "id": 2,
+      "title": "Love Mapping with Leaflet.js",
+      "description": "Created interactive travel maps and discovered the power of geospatial data in web applications.",
+      "icon": "Map",
+      "category": "Passion"
+    },
+    {
+      "id": 3,
+      "title": "Always Testing with Jest/Playwright",
+      "description": "Believe in the importance of testing - from unit tests to end-to-end automation.",
+      "icon": "TestTube",
+      "category": "Quality"
+    },
+    {
+      "id": 4,
+      "title": "Started Freelancing in March 2024",
+      "description": "Made the leap from student to freelance developer, delivering real projects to real clients.",
+      "icon": "Briefcase",
+      "category": "Career"
+    },
+    {
+      "id": 5,
+      "title": "Real-time Collaboration Enthusiast",
+      "description": "Built TaskForge with Socket.io to solve the challenge of real-time team collaboration.",
+      "icon": "Users",
+      "category": "Innovation"
+    },
+    {
+      "id": 6,
+      "title": "Full-Stack Problem Solver",
+      "description": "From frontend animations to backend APIs, I love solving problems across the entire stack.",
+      "icon": "Layers",
+      "category": "Skills"
+    }
+  ],
+  "favoriteTools": [
+    {
+      "name": "VS Code",
+      "description": "My go-to code editor with amazing extensions",
+      "icon": "Code",
+      "category": "Editor",
+      "color": "blue"
+    },
+    {
+      "name": "Netlify",
+      "description": "Perfect for deploying static sites and JAMstack apps",
+      "icon": "Globe",
+      "category": "Deployment",
+      "color": "green"
+    },
+    {
+      "name": "Vercel",
+      "description": "Excellent for Next.js deployments and edge functions",
+      "icon": "Zap",
+      "category": "Deployment",
+      "color": "black"
+    },
+    {
+      "name": "Render",
+      "description": "Great for hosting full-stack applications and databases",
+      "icon": "Server",
+      "category": "Hosting",
+      "color": "purple"
+    },
+    {
+      "name": "GitHub",
+      "description": "Version control and collaboration platform",
+      "icon": "GitBranch",
+      "category": "Version Control",
+      "color": "gray"
+    },
+    {
+      "name": "Figma",
+      "description": "Design and prototyping tool for UI/UX",
+      "icon": "Palette",
+      "category": "Design",
+      "color": "pink"
+    }
+  ],
+  "labs": {
+    "customCursor": {
+      "enabled": false,
+      "description": "Custom cursor with particle effects"
+    },
+    "parallax": {
+      "enabled": false,
+      "description": "Parallax scrolling effects on hero sections"
+    },
+    "nowPlaying": {
+      "enabled": true,
+      "description": "Now playing music widget"
+    },
+    "animations": {
+      "enabled": true,
+      "description": "Enhanced animations and transitions"
+    }
+  },
+  "stats": {
+    "projectsBuilt": 9,
+    "yearsCoding": 4,
+    "frameworksLearned": 4,
+    "languagesUsed": 3,
+    "clientsServed": 5,
+    "linesOfCode": 1000000
+  }
+}
+
