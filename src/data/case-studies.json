@@ -103,11 +103,6 @@
         "label": "Performance Score",
         "value": "95+",
         "description": "Lighthouse performance score"
-      },
-      {
-        "label": "User Satisfaction",
-        "value": "4.8/5",
-        "description": "Average user rating"
       }
     ],
     "links": {
@@ -121,12 +116,6 @@
       "gallery": [
         "/assets/projects/taskforge.jpg"
       ]
-    },
-    "testimonial": {
-      "text": "TaskForge has revolutionized how our team collaborates. The real-time features are incredible, and the interface is so intuitive that our team was productive from day one.",
-      "author": "Sarah Johnson",
-      "role": "Project Manager",
-      "company": "TechCorp"
     }
   },
   {
@@ -241,12 +230,6 @@
       "gallery": [
         "/assets/projects/elearn.jpg"
       ]
-    },
-    "testimonial": {
-      "text": "This e-learning platform has transformed our online education delivery. The performance is outstanding, and our students love the intuitive interface.",
-      "author": "Dr. Michael Chen",
-      "role": "Director of Online Learning",
-      "company": "University of Technology"
     }
   },
   {
@@ -366,12 +349,6 @@
       "gallery": [
         "/assets/projects/attendance.jpg"
       ]
-    },
-    "testimonial": {
-      "text": "The attendance system has revolutionized how we track student attendance. The analytics are incredibly insightful, and it's saved us hours of administrative work.",
-      "author": "Jennifer Martinez",
-      "role": "Academic Administrator",
-      "company": "Metro High School"
     }
   },
   {
@@ -434,11 +411,6 @@
         "label": "Performance",
         "value": "95+",
         "description": "Lighthouse performance score"
-      },
-      {
-        "label": "User Rating",
-        "value": "4.7/5",
-        "description": "Average user rating"
       }
     ],
     "links": {
@@ -452,12 +424,6 @@
       "gallery": [
         "/assets/projects/finance-tracker.jpg"
       ]
-    },
-    "testimonial": {
-      "text": "This finance tracker has completely changed how I manage my money. The visual charts make it so easy to see where my money goes.",
-      "author": "John Smith",
-      "role": "User",
-      "company": "Personal Use"
     }
   },
   {
@@ -538,12 +504,6 @@
       "gallery": [
         "/assets/projects/fitness.jpg"
       ]
-    },
-    "testimonial": {
-      "text": "The fitness scheduler has made managing my classes so much easier. The interface is clean and intuitive.",
-      "author": "Sarah Wilson",
-      "role": "Fitness Instructor",
-      "company": "FitLife Gym"
     }
   },
   {
@@ -624,12 +584,6 @@
       "gallery": [
         "/assets/projects/habit-tracker.jpg"
       ]
-    },
-    "testimonial": {
-      "text": "This habit tracker has helped me build consistent daily routines. The streak feature is incredibly motivating!",
-      "author": "Mike Johnson",
-      "role": "User",
-      "company": "Personal Use"
     }
   },
   {
@@ -710,12 +664,6 @@
       "gallery": [
         "/assets/projects/events.jpg"
       ]
-    },
-    "testimonial": {
-      "text": "This countdown timer is perfect for tracking important events. The recurring feature is exactly what I needed.",
-      "author": "Lisa Chen",
-      "role": "User",
-      "company": "Personal Use"
     }
   },
   {
@@ -778,11 +726,6 @@
         "label": "Map Load Time",
         "value": "< 2s",
         "description": "Initial map rendering"
-      },
-      {
-        "label": "User Engagement",
-        "value": "85%",
-        "description": "Average session duration"
       }
     ],
     "links": {
@@ -796,12 +739,6 @@
       "gallery": [
         "/assets/projects/travel.jpg"
       ]
-    },
-    "testimonial": {
-      "text": "Travelogue has inspired me to visit so many new places. The interactive maps make planning trips so much easier.",
-      "author": "Emma Rodriguez",
-      "role": "Travel Enthusiast",
-      "company": "Personal Use"
     }
   },
   {
@@ -882,12 +819,6 @@
       "gallery": [
         "/assets/projects/rasoha.jpg"
       ]
-    },
-    "testimonial": {
-      "text": "The new website has significantly improved our communication with parents and students. It's professional and easy to navigate.",
-      "author": "Principal Johnson",
-      "role": "School Principal",
-      "company": "Rasoha Academy"
     }
   }
 ]

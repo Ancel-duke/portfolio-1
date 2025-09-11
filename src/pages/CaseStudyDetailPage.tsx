@@ -8,9 +8,58 @@ import { Badge } from '../components/ui/badge'
 import { ArrowLeft, ExternalLink, Github, Calendar, User, Zap, Lightbulb, CheckCircle, Code } from 'lucide-react'
 import { Helmet } from 'react-helmet-async'
 
+interface Technology {
+  name: string
+  category: string
+  icon: string
+}
+
+interface Metric {
+  label: string
+  value: string
+  description: string
+}
+
+interface Images {
+  hero?: string
+  before?: string
+  after?: string
+  gallery?: string[]
+}
+
+interface Testimonial {
+  text: string
+  author: string
+  role: string
+  company: string
+}
+
+interface CaseStudy {
+  id: number
+  slug: string
+  title: string
+  subtitle: string
+  role: string
+  timeline: string
+  year: string
+  status: string
+  description: string
+  problem: string
+  solution: string
+  impact: string
+  technologies: Technology[]
+  features: string[]
+  challenges: string[]
+  outcomes: string[]
+  metrics: Metric[]
+  links: { live?: string; github?: string }
+  images: Images
+  testimonial?: Testimonial
+}
+
 export function CaseStudyDetailPage() {
   const { slug } = useParams<{ slug: string }>()
-  const caseStudy = caseStudiesData.find(cs => cs.slug === slug)
+  const caseStudy = (caseStudiesData as CaseStudy[]).find((cs: CaseStudy) => cs.slug === slug)
 
   if (!caseStudy) {
     return (
