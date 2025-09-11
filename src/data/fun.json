@@ -138,11 +138,11 @@
     }
   },
   "stats": {
-    "projectsBuilt": 9,
+    "projectsBuilt": 30,
     "yearsCoding": 4,
     "frameworksLearned": 4,
-    "languagesUsed": 3,
-    "clientsServed": 5,
+    "languagesUsed": 8,
+    "clientsServed": 50,
     "linesOfCode": 1000000
   }
 }

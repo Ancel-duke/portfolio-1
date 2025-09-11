@@ -124,7 +124,7 @@ export function About({ className }: AboutProps) {
                   <img
                     src="/assets/profile_photo.jpg"
                     alt="Ancel Ajanga"
-                    className="w-full h-80 object-cover"
+                    className="w-full h-80 sm:h-96 object-cover object-top"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
                   <div className="absolute bottom-4 left-4 text-white">
