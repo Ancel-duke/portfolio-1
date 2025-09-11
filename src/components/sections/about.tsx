@@ -64,8 +64,8 @@ export function About({ className }: AboutProps) {
     },
     {
       icon: Award,
-      title: '9+ Projects Completed',
-      description: 'From simple websites to complex applications'
+      title: '30+ Projects Built & Completed',
+      description: 'Spanning fintech, edtech, fitness, travel, and productivity apps'
     },
     {
       icon: Calendar,
