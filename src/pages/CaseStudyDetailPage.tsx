@@ -6,7 +6,10 @@ import { Card, CardContent, CardTitle } from '../components/ui/card'
 import { Button } from '../components/ui/button'
 import { Badge } from '../components/ui/badge'
 import { ArrowLeft, ExternalLink, Github, Calendar, User, Zap, Lightbulb, CheckCircle, Code } from 'lucide-react'
-import { Helmet } from 'react-helmet-async'
+import SEOHead from '../components/seo/SEOHead'
+import { SkipLink } from '../components/ui/skip-link'
+import { Breadcrumb } from '../components/ui/breadcrumb'
+import { generateCaseStudySchema } from '../components/seo/schemas'
 
 interface Technology {
   name: string
@@ -63,21 +66,30 @@ export function CaseStudyDetailPage() {
 
   if (!caseStudy) {
     return (
-      <div className="min-h-[60vh] flex items-center justify-center py-16">
-        <Card className="w-full max-w-2xl text-center p-8">
-          <CardTitle className="text-4xl font-bold mb-4">404 - Case Study Not Found</CardTitle>
-          <CardContent>
-            <p className="text-lg text-muted-foreground mb-6">
-              The case study you are looking for does not exist or has been moved.
-            </p>
-            <Button asChild>
-              <Link to="/case-studies">
-                <ArrowLeft className="mr-2 h-4 w-4" /> Back to Case Studies
-              </Link>
-            </Button>
-          </CardContent>
-        </Card>
-      </div>
+      <>
+        <SEOHead
+          title="404 - Case Study Not Found"
+          description="The case study you are looking for does not exist or has been moved. Return to case studies to explore other projects."
+          canonical="/case-studies/404"
+          noindex={true}
+        />
+        <SkipLink />
+        <div className="min-h-[60vh] flex items-center justify-center py-16">
+          <Card className="w-full max-w-2xl text-center p-8">
+            <CardTitle className="text-4xl font-bold mb-4">404 - Case Study Not Found</CardTitle>
+            <CardContent>
+              <p className="text-lg text-muted-foreground mb-6">
+                The case study you are looking for does not exist or has been moved.
+              </p>
+              <Button asChild>
+                <Link to="/case-studies">
+                  <ArrowLeft className="mr-2 h-4 w-4" /> Back to Case Studies
+                </Link>
+              </Button>
+            </CardContent>
+          </Card>
+        </div>
+      </>
     )
   }
 
@@ -97,24 +109,40 @@ export function CaseStudyDetailPage() {
   }
 
   return (
-    <motion.div
-      className="py-16 container-custom"
-      variants={containerVariants}
-      initial="hidden"
-      animate="visible"
-    >
-      <Helmet>
-        <title>{caseStudy.title} | Ancel Ajanga Case Studies</title>
-        <meta name="description" content={caseStudy.subtitle} />
-      </Helmet>
+    <>
+      <SEOHead
+        title={caseStudy.title}
+        description={caseStudy.subtitle}
+        canonical={`/case-studies/${caseStudy.slug}`}
+        ogImage={caseStudy.images.hero}
+        ogType="article"
+        keywords={caseStudy.technologies.map(tech => tech.name)}
+        publishedTime={caseStudy.year}
+        jsonLd={generateCaseStudySchema(caseStudy)}
+      />
+      <SkipLink />
+      <motion.div
+        className="py-16 container-custom"
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+      >
+        <Breadcrumb 
+          items={[
+            { name: 'Home', url: '/' },
+            { name: 'Case Studies', url: '/case-studies' },
+            { name: caseStudy.title, url: `/case-studies/${caseStudy.slug}`, current: true }
+          ]}
+          className="mb-8"
+        />
 
-      <motion.div variants={itemVariants} className="mb-8">
-        <Button variant="outline" asChild>
-          <Link to="/case-studies">
-            <ArrowLeft className="mr-2 h-4 w-4" /> Back to Projects
-          </Link>
-        </Button>
-      </motion.div>
+        <motion.div variants={itemVariants} className="mb-8">
+          <Button variant="outline" asChild>
+            <Link to="/case-studies">
+              <ArrowLeft className="mr-2 h-4 w-4" /> Back to Projects
+            </Link>
+          </Button>
+        </motion.div>
 
       <Card className="p-6 md:p-10">
         <motion.div variants={itemVariants} className="mb-8">
@@ -238,6 +266,7 @@ export function CaseStudyDetailPage() {
           </motion.div>
         )}
       </Card>
-    </motion.div>
+      </motion.div>
+    </>
   )
 }

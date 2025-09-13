@@ -33,7 +33,7 @@ export function Header({ className }: HeaderProps) {
   }
 
   return (
-    <header className={cn("sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60", className)}>
+    <header className={cn("sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60", className)} role="banner">
       <div className="container-custom">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
@@ -42,7 +42,11 @@ export function Header({ className }: HeaderProps) {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <a href="/" className="flex items-center space-x-2">
+            <a 
+              href="/" 
+              className="flex items-center space-x-2 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-md p-1"
+              aria-label="Ancel Ajanga - Home"
+            >
               <div className="w-8 h-8 bg-gradient-to-br from-primary to-accent rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-sm">A</span>
               </div>
@@ -51,7 +55,7 @@ export function Header({ className }: HeaderProps) {
           </motion.div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-1">
+          <nav className="hidden md:flex items-center space-x-1" role="navigation" aria-label="Main navigation">
             {navigation.map((item) => {
               const IconComponent = item.icon
               return (
@@ -60,10 +64,13 @@ export function Header({ className }: HeaderProps) {
                   variant="ghost"
                   size="sm"
                   asChild
-                  className="flex items-center space-x-2"
+                  className="flex items-center space-x-2 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
                 >
-                  <a href={item.href}>
-                    <IconComponent className="h-4 w-4" />
+                  <a 
+                    href={item.href}
+                    aria-label={`Navigate to ${item.name}`}
+                  >
+                    <IconComponent className="h-4 w-4" aria-hidden="true" />
                     <span>{item.name}</span>
                   </a>
                 </Button>
@@ -77,11 +84,13 @@ export function Header({ className }: HeaderProps) {
             <Button
               variant="ghost"
               size="icon"
-              className="md:hidden"
+              className="md:hidden focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
               onClick={toggleMenu}
-              aria-label="Toggle menu"
+              aria-label={isOpen ? "Close navigation menu" : "Open navigation menu"}
+              aria-expanded={isOpen}
+              aria-controls="mobile-navigation"
             >
-              {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+              {isOpen ? <X className="h-5 w-5" aria-hidden="true" /> : <Menu className="h-5 w-5" aria-hidden="true" />}
             </Button>
           </div>
         </div>
@@ -95,20 +104,25 @@ export function Header({ className }: HeaderProps) {
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.2 }}
               className="md:hidden border-t"
+              id="mobile-navigation"
             >
-              <nav className="py-4 space-y-1">
+              <nav className="py-4 space-y-1" role="navigation" aria-label="Mobile navigation">
                 {navigation.map((item) => {
                   const IconComponent = item.icon
                   return (
                     <Button
                       key={item.name}
                       variant="ghost"
-                      className="w-full justify-start"
+                      className="w-full justify-start focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
                       asChild
                       onClick={closeMenu}
                     >
-                      <a href={item.href} className="flex items-center space-x-3">
-                        <IconComponent className="h-4 w-4" />
+                      <a 
+                        href={item.href} 
+                        className="flex items-center space-x-3"
+                        aria-label={`Navigate to ${item.name}`}
+                      >
+                        <IconComponent className="h-4 w-4" aria-hidden="true" />
                         <span>{item.name}</span>
                       </a>
                     </Button>

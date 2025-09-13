@@ -6,7 +6,10 @@ import { Card, CardContent, CardTitle } from '../components/ui/card'
 import { Button } from '../components/ui/button'
 import { ArrowLeft, Calendar, Tag, Clock } from 'lucide-react'
 import { formatDate } from '../lib/utils'
-import { Helmet } from 'react-helmet-async'
+import SEOHead from '../components/seo/SEOHead'
+import { SkipLink } from '../components/ui/skip-link'
+import { Breadcrumb } from '../components/ui/breadcrumb'
+import { generateBlogPostSchema } from '../components/seo/schemas'
 
 export function BlogDetailPage() {
   const { id } = useParams<{ id: string }>()
@@ -14,21 +17,30 @@ export function BlogDetailPage() {
 
   if (!post) {
     return (
-      <div className="min-h-[60vh] flex items-center justify-center py-16">
-        <Card className="w-full max-w-2xl text-center p-8">
-          <CardTitle className="text-4xl font-bold mb-4">404 - Blog Post Not Found</CardTitle>
-          <CardContent>
-            <p className="text-lg text-muted-foreground mb-6">
-              The blog post you are looking for does not exist or has been moved.
-            </p>
-            <Button asChild>
-              <Link to="/blog">
-                <ArrowLeft className="mr-2 h-4 w-4" /> Back to Blog
-              </Link>
-            </Button>
-          </CardContent>
-        </Card>
-      </div>
+      <>
+        <SEOHead
+          title="404 - Blog Post Not Found"
+          description="The blog post you are looking for does not exist or has been moved. Return to the blog to explore other articles."
+          canonical="/blog/404"
+          noindex={true}
+        />
+        <SkipLink />
+        <div className="min-h-[60vh] flex items-center justify-center py-16">
+          <Card className="w-full max-w-2xl text-center p-8">
+            <CardTitle className="text-4xl font-bold mb-4">404 - Blog Post Not Found</CardTitle>
+            <CardContent>
+              <p className="text-lg text-muted-foreground mb-6">
+                The blog post you are looking for does not exist or has been moved.
+              </p>
+              <Button asChild>
+                <Link to="/blog">
+                  <ArrowLeft className="mr-2 h-4 w-4" /> Back to Blog
+                </Link>
+              </Button>
+            </CardContent>
+          </Card>
+        </div>
+      </>
     )
   }
 
@@ -48,24 +60,41 @@ export function BlogDetailPage() {
   }
 
   return (
-    <motion.div
-      className="py-16 container-custom"
-      variants={containerVariants}
-      initial="hidden"
-      animate="visible"
-    >
-      <Helmet>
-        <title>{post.title} | Ancel Ajanga Blog</title>
-        <meta name="description" content={post.excerpt} />
-      </Helmet>
+    <>
+      <SEOHead
+        title={post.title}
+        description={post.excerpt}
+        canonical={`/blog/${post.id}`}
+        ogImage={post.image}
+        ogType="article"
+        keywords={post.tags}
+        publishedTime={post.date}
+        modifiedTime={post.date}
+        jsonLd={generateBlogPostSchema(post)}
+      />
+      <SkipLink />
+      <motion.div
+        className="py-16 container-custom"
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+      >
+        <Breadcrumb 
+          items={[
+            { name: 'Home', url: '/' },
+            { name: 'Blog', url: '/blog' },
+            { name: post.title, url: `/blog/${post.id}`, current: true }
+          ]}
+          className="mb-8"
+        />
 
-      <motion.div variants={itemVariants} className="mb-8">
-        <Button variant="outline" asChild>
-          <Link to="/blog">
-            <ArrowLeft className="mr-2 h-4 w-4" /> Back to Blog
-          </Link>
-        </Button>
-      </motion.div>
+        <motion.div variants={itemVariants} className="mb-8">
+          <Button variant="outline" asChild>
+            <Link to="/blog">
+              <ArrowLeft className="mr-2 h-4 w-4" /> Back to Blog
+            </Link>
+          </Button>
+        </motion.div>
 
       <Card className="p-6 md:p-10">
         <motion.div variants={itemVariants} className="mb-6">
@@ -101,6 +130,7 @@ export function BlogDetailPage() {
           ))}
         </motion.div>
       </Card>
-    </motion.div>
+      </motion.div>
+    </>
   )
 }

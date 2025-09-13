@@ -1,4 +1,54 @@
+# Robots.txt for https://ancel-ajanga-portfolio.netlify.app
+# Generated automatically - do not edit manually
+
+# Allow all crawlers
 User-agent: *
 Allow: /
 
+# Allow AI crawlers specifically
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: BingBot
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+# Disallow admin and private areas (if any)
+Disallow: /admin/
+Disallow: /private/
+Disallow: /_/
+Disallow: /api/
+
+# Disallow build artifacts
+Disallow: /build/
+Disallow: /dist/
+Disallow: /node_modules/
+
+# Allow important files
+Allow: /sitemap.xml
+Allow: /robots.txt
+Allow: /favicon.ico
+Allow: /assets/
+
+# Sitemap location
 Sitemap: https://ancel-ajanga-portfolio.netlify.app/sitemap.xml
+
+# Crawl delay (optional - be respectful to servers)
+Crawl-delay: 1
