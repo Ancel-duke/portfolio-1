@@ -14,7 +14,7 @@ const pages = [
   "/contact"
 ];
 
-const domain = "https://your-domain.com"; // change this to your real domain
+const domain = "https://ancel-ajanga.netlify.app";
 
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">

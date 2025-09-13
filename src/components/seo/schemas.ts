@@ -8,8 +8,8 @@ export const generatePersonSchema = () => ({
   "name": "Ancel Ajanga",
   "jobTitle": "Fullstack Software Engineer",
   "description": "Ancel Ajanga is a fullstack software engineer who crafts complete software applications — mobile, web, and desktop — using diverse tech stacks including React, Node.js, Python, and modern web technologies. Specializes in building user-friendly applications with clean code and beautiful UI design.",
-  "url": "https://ancel-ajanga-portfolio.netlify.app/",
-  "image": "https://ancel-ajanga-portfolio.netlify.app/assets/profile-photo.jpg",
+  "url": "https://ancel-ajanga.netlify.app/",
+  "image": "https://ancel-ajanga.netlify.app/assets/profile-photo.jpg",
   "email": "ancel.ajanga@yahoo.com",
   "telephone": "+254768901257",
   "address": {
@@ -63,8 +63,8 @@ export const generateProjectSchema = (project: any) => ({
   "datePublished": project.year || "2024",
   "programmingLanguage": project.technologies || [],
   "featureList": project.features || [],
-  "image": `https://ancel-ajanga-portfolio.netlify.app${project.image}`,
-  "screenshot": `https://ancel-ajanga-portfolio.netlify.app${project.image}`
+  "image": `https://ancel-ajanga.netlify.app${project.image}`,
+  "screenshot": `https://ancel-ajanga.netlify.app${project.image}`
 });
 
 // Blog Post Schema
@@ -73,25 +73,25 @@ export const generateBlogPostSchema = (post: any) => ({
   "@type": "BlogPosting",
   "headline": post.title,
   "description": post.excerpt,
-  "image": `https://ancel-ajanga-portfolio.netlify.app${post.image}`,
+  "image": `https://ancel-ajanga.netlify.app${post.image}`,
   "author": {
     "@type": "Person",
     "name": post.author.name,
-    "image": `https://ancel-ajanga-portfolio.netlify.app${post.author.avatar}`,
+    "image": `https://ancel-ajanga.netlify.app${post.author.avatar}`,
     "description": post.author.bio
   },
   "publisher": {
     "@type": "Person",
     "name": "Ancel Ajanga",
-    "image": "https://ancel-ajanga-portfolio.netlify.app/assets/profile-photo.jpg"
+    "image": "https://ancel-ajanga.netlify.app/assets/profile-photo.jpg"
   },
   "datePublished": post.date,
   "dateModified": post.date,
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": `https://ancel-ajanga-portfolio.netlify.app/blog/${post.id}`
+    "@id": `https://ancel-ajanga.netlify.app/blog/${post.id}`
   },
-  "url": `https://ancel-ajanga-portfolio.netlify.app/blog/${post.id}`,
+  "url": `https://ancel-ajanga.netlify.app/blog/${post.id}`,
   "keywords": post.tags.join(', '),
   "articleSection": "Technology",
   "wordCount": post.content.split(' ').length,
@@ -109,8 +109,8 @@ export const generateCaseStudySchema = (caseStudy: any) => ({
     "name": "Ancel Ajanga"
   },
   "datePublished": caseStudy.year,
-  "url": `https://ancel-ajanga-portfolio.netlify.app/case-studies/${caseStudy.slug}`,
-  "image": `https://ancel-ajanga-portfolio.netlify.app${caseStudy.images.hero}`,
+  "url": `https://ancel-ajanga.netlify.app/case-studies/${caseStudy.slug}`,
+  "image": `https://ancel-ajanga.netlify.app${caseStudy.images.hero}`,
   "keywords": caseStudy.technologies.map((tech: any) => tech.name).join(', '),
   "about": {
     "@type": "Thing",
@@ -129,14 +129,14 @@ export const generateWebsiteSchema = () => ({
   "@type": "WebSite",
   "name": "Ancel Ajanga Portfolio",
   "description": "Fullstack Software Engineer Portfolio showcasing modern web applications and mobile apps",
-  "url": "https://ancel-ajanga-portfolio.netlify.app",
+  "url": "https://ancel-ajanga.netlify.app",
   "author": {
     "@type": "Person",
     "name": "Ancel Ajanga"
   },
   "potentialAction": {
     "@type": "SearchAction",
-    "target": "https://ancel-ajanga-portfolio.netlify.app/search?q={search_term_string}",
+    "target": "https://ancel-ajanga.netlify.app/search?q={search_term_string}",
     "query-input": "required name=search_term_string"
   }
 });
@@ -149,7 +149,7 @@ export const generateBreadcrumbSchema = (items: Array<{name: string, url: string
     "@type": "ListItem",
     "position": index + 1,
     "name": item.name,
-    "item": `https://ancel-ajanga-portfolio.netlify.app${item.url}`
+    "item": `https://ancel-ajanga.netlify.app${item.url}`
   }))
 });
 
@@ -180,7 +180,7 @@ export const generatePortfolioSchema = (projects: any[] = []) => ({
     "datePublished": "2024",
     "programmingLanguage": project.technologies || [],
     "featureList": project.features || [],
-    "image": `https://ancel-ajanga-portfolio.netlify.app${project.image}`
+    "image": `https://ancel-ajanga.netlify.app${project.image}`
   }))
 });
 
@@ -211,8 +211,8 @@ export const generateOrganizationSchema = () => ({
   "@type": "Organization",
   "name": "Ancel Ajanga - Freelance Developer",
   "description": "Fullstack software development services specializing in React, Node.js, Python, and modern web technologies",
-  "url": "https://ancel-ajanga-portfolio.netlify.app",
-  "logo": "https://ancel-ajanga-portfolio.netlify.app/assets/profile-photo.jpg",
+  "url": "https://ancel-ajanga.netlify.app",
+  "logo": "https://ancel-ajanga.netlify.app/assets/profile-photo.jpg",
   "founder": {
     "@type": "Person",
     "name": "Ancel Ajanga"

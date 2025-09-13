@@ -23,7 +23,7 @@ export const Breadcrumb: React.FC<BreadcrumbProps> = ({ items, className }) => {
       "@type": "ListItem",
       "position": index + 1,
       "name": item.name,
-      "item": `https://ancel-ajanga-portfolio.netlify.app${item.url}`
+      "item": `https://ancel-ajanga.netlify.app${item.url}`
     }))
   };
 
