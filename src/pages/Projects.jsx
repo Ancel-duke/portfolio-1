@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Helmet } from 'react-helmet-async';
+import SEO from '../components/seo/SEO';
 import { motion } from 'framer-motion';
 import ProjectCard from '../components/ProjectCard';
 import ProjectModal from '../components/ProjectModal';
@@ -44,10 +44,11 @@ const Projects = () => {
 
   return (
     <>
-      <Helmet>
-        <title>Projects - Ancel Ajanga | Fullstack Software Engineer</title>
-        <meta name="description" content="View Ancel Ajanga's portfolio of 8+ software projects including finance trackers, e-learning platforms, mobile apps, and web applications built with React, Node.js, Python, and modern technologies." />
-      </Helmet>
+      <SEO
+        title="Projects - Ancel Ajanga | Fullstack Software Engineer"
+        description="View Ancel Ajanga's portfolio of 8+ software projects including finance trackers, e-learning platforms, mobile apps, and web applications built with React, Node.js, Python, and modern technologies."
+        canonicalUrl="https://ancel-ajanga.netlify.app/projects"
+      />
 
       <section className="section-padding pt-24">
         <div className="container-custom">

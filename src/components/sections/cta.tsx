@@ -40,7 +40,7 @@ export function CTA({ className }: CTAProps) {
     },
     {
       name: 'LinkedIn',
-      href: 'https://linkedin.com/in/ancel-ajanga',
+      href: 'https://www.linkedin.com/in/ajanga-ancel',
       icon: Linkedin,
       description: 'Connect professionally'
     },

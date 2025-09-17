@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Helmet } from 'react-helmet-async';
+import SEO from '../components/seo/SEO';
 import { motion } from 'framer-motion';
 import { FiMail, FiPhone, FiMessageSquare, FiSend, FiCheck, FiX, FiGithub, FiInstagram, FiLinkedin } from 'react-icons/fi';
 import emailjs from 'emailjs-com';
@@ -53,7 +53,7 @@ const Contact = () => {
     },
     {
       name: 'LinkedIn',
-      url: '#', // Placeholder - update with your LinkedIn URL
+      url: 'https://www.linkedin.com/in/ajanga-ancel',
       icon: <FiLinkedin className="w-5 h-5" />
     }
   ];
@@ -150,10 +150,11 @@ const Contact = () => {
 
   return (
     <>
-      <Helmet>
-        <title>Contact - Ancel Ajanga | Fullstack Software Engineer</title>
-        <meta name="description" content="Contact Ancel Ajanga, a fullstack software engineer from Kenya, for collaboration opportunities, project inquiries, or development services. Available for freelance and full-time opportunities." />
-      </Helmet>
+      <SEO
+        title="Contact - Ancel Ajanga | Fullstack Software Engineer"
+        description="Contact Ancel Ajanga, a fullstack software engineer from Kenya, for collaboration opportunities, project inquiries, or development services. Available for freelance and full-time opportunities."
+        canonicalUrl="https://ancel-ajanga.netlify.app/contact"
+      />
 
       <section className="section-padding pt-24">
         <div className="container-custom">

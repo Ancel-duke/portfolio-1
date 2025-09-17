@@ -13,7 +13,7 @@ const Footer = () => {
     },
     {
       name: 'LinkedIn',
-      url: 'https://www.linkedin.com/in/ajanga-ancel-42bbb7213',
+      url: 'https://www.linkedin.com/in/ajanga-ancel',
       icon: <FiLinkedin className="w-5 h-5" />
     },
     {
