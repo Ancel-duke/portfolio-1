@@ -36,8 +36,8 @@ function HomePage() {
   return (
     <>
       <SEO
-        title="Ancel Ajanga - Fullstack Software Engineer Portfolio"
-        description="Ancel Ajanga is a fullstack software engineer who crafts complete software applications — mobile, web, and desktop — using React, Node.js, Python, and modern web technologies. View portfolio of 8+ applications including finance trackers, e-learning platforms, and mobile apps. Based in Kenya."
+        title="Ancel Ajanga - Fullstack Software Engineer/Developer & App Developer"
+        description="Ancel Ajanga (Duke) — Fullstack Software Engineer/Developer & App Developer. Builder of apps, poet, and creative problem solver."
         canonicalUrl="https://ancel-ajanga.netlify.app/"
         jsonLd={[
           generatePersonSchema(),
@@ -61,7 +61,7 @@ function CaseStudiesPage() {
     <>
       <SEO
         title="Case Studies - Detailed Project Analysis"
-        description="Deep dives into my most challenging and rewarding projects, showcasing the development process, technical challenges, and measurable outcomes. Explore real-world applications including TaskForge, E-Learning Platform, and Attendance System."
+        description="Deep dives into my most challenging and rewarding projects, showcasing the development process, technical challenges, and measurable outcomes. Explore real-world applications including TaskForge, E-Learning Platform, and Attendance System built by Fullstack Software Engineer/Developer & App Developer Ancel Ajanga."
         canonicalUrl="https://ancel-ajanga.netlify.app/case-studies"
       />
       <SkipLink />
@@ -95,7 +95,7 @@ function BlogPage() {
     <>
       <SEO
         title="Blog & Insights - Web Development Articles"
-        description="Thoughts on web development, technology trends, and lessons learned from building real-world applications. Explore articles about React, Node.js, Python, and modern web development practices."
+        description="Thoughts on web development, technology trends, and lessons learned from building real-world applications. Explore articles about React, Node.js, Python, and modern web development practices by Fullstack Software Engineer/Developer & App Developer Ancel Ajanga."
         canonicalUrl="https://ancel-ajanga.netlify.app/blog"
       />
       <SkipLink />
@@ -129,7 +129,7 @@ function TimelinePage() {
     <>
       <SEO
         title="My Journey - Development Timeline"
-        description="From learning HTML and CSS in school to building full-stack applications for clients. Explore my development journey, key milestones, and growth as a software engineer."
+        description="From learning HTML and CSS in school to building full-stack applications for clients. Explore my development journey, key milestones, and growth as a Fullstack Software Engineer/Developer & App Developer."
         canonicalUrl="https://ancel-ajanga.netlify.app/timeline"
       />
       <SkipLink />
@@ -163,7 +163,7 @@ function StackPage() {
     <>
       <SEO
         title="Tech Stack - Technologies & Tools"
-        description="Technologies I use to build modern, scalable web applications. From frontend frameworks like React and Vue to backend services with Node.js and Python. Explore my complete technology stack."
+        description="Technologies I use to build modern, scalable web applications. From frontend frameworks like React and Vue to backend services with Node.js and Python. Explore my complete technology stack as a Fullstack Software Engineer/Developer & App Developer."
         canonicalUrl="https://ancel-ajanga.netlify.app/stack"
       />
       <SkipLink />
@@ -231,7 +231,7 @@ function AboutPage() {
     <>
       <SEO
         title="About - Ancel Ajanga"
-        description="Learn more about Ancel Ajanga, a fullstack software engineer from Kenya. Discover my background, skills, experience, and passion for building innovative software solutions."
+        description="Learn more about Ancel Ajanga (Duke), a Fullstack Software Engineer/Developer & App Developer from Kenya. Discover my background, skills, experience, and passion for building innovative software solutions."
         canonicalUrl="https://ancel-ajanga.netlify.app/about"
       />
       <SkipLink />
@@ -257,7 +257,7 @@ function ContactPage() {
     <>
       <SEO
         title="Contact - Get In Touch"
-        description="Have a project in mind? Let's discuss how we can work together to bring your ideas to life. Contact Ancel Ajanga for fullstack development services, web applications, and mobile app development."
+        description="Have a project in mind? Let's discuss how we can work together to bring your ideas to life. Contact Ancel Ajanga (Duke) for Fullstack Software Engineer/Developer & App Developer services, web applications, and mobile app development."
         canonicalUrl="https://ancel-ajanga.netlify.app/contact"
       />
       <SkipLink />

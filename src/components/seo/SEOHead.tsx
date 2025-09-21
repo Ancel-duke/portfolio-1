@@ -18,15 +18,23 @@ interface SEOHeadProps {
 }
 
 const defaultSEO = {
-  title: 'Ancel Ajanga - Fullstack Software Engineer Portfolio',
-  description: 'Ancel Ajanga is a fullstack software engineer who crafts complete software applications — mobile, web, and desktop — using React, Node.js, Python, and modern web technologies. View portfolio of 8+ applications including finance trackers, e-learning platforms, and mobile apps. Based in Kenya.',
+  title: 'Ancel Ajanga - Fullstack Software Engineer/Developer & App Developer',
+  description: 'Ancel Ajanga (Duke) — Fullstack Software Engineer/Developer & App Developer. Builder of apps, poet, and creative problem solver.',
   canonical: 'https://ancel-ajanga.netlify.app',
   ogImage: 'https://ancel-ajanga.netlify.app/assets/profile-photo.jpg',
   ogType: 'website',
   twitterCard: 'summary_large_image',
   keywords: [
     'Ancel Ajanga',
+    'Ajanga Ancel',
+    'Fullstack Developer',
     'Fullstack Software Engineer',
+    'App Developer',
+    'Narok Software Developer',
+    'Nairobi Software Developer',
+    'Nairobi Software Engineer',
+    'Ancel Ajanga Portfolio',
+    'Ajanga Ancel Portfolio',
     'React Developer',
     'Node.js Developer',
     'Python Developer',

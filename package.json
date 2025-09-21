@@ -52,7 +52,8 @@
     "generate-sitemap": "node scripts/generate-sitemap.js",
     "generate-robots": "node scripts/generate-robots.js",
     "validate-seo": "node scripts/validate-seo.js",
-    "seo-check": "npm run generate-seo && npm run validate-seo"
+    "seo-check": "npm run generate-seo && npm run validate-seo",
+    "minify-jsonld": "node scripts/minify-jsonld.js"
   },
   "eslintConfig": {
     "extends": [

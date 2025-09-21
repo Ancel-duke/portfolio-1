@@ -3,6 +3,7 @@ const path = require("path");
 
 const pages = [
   "/",
+  "/about",
   "/case-studies",
   "/case-studies/taskforge",
   "/case-studies/e-learning-platform",

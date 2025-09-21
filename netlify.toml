@@ -1,9 +1,12 @@
 [build]
   publish = "build"
-  command = "npm run build"
+  command = "npm run build && node scripts/minify-jsonld.js"
 
 [build.environment]
   NODE_VERSION = "18"
+
+[context.production.environment]
+  NODE_ENV = "production"
 
 [[redirects]]
   from = "/*"

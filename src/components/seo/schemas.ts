@@ -6,8 +6,9 @@ export const generatePersonSchema = () => ({
   "@context": "https://schema.org",
   "@type": "Person",
   "name": "Ancel Ajanga",
-  "jobTitle": "Fullstack Software Engineer",
-  "description": "Ancel Ajanga is a fullstack software engineer who crafts complete software applications — mobile, web, and desktop — using diverse tech stacks including React, Node.js, Python, and modern web technologies. Specializes in building user-friendly applications with clean code and beautiful UI design.",
+  "alternateName": ["Ajanga Ancel", "Duke"],
+  "jobTitle": "Fullstack Software Engineer/Developer & App Developer",
+  "description": "Ancel Ajanga (Duke) is a Fullstack Software Engineer/Developer & App Developer who loves building apps that solve real-world problems while expressing creativity through code. Builder of apps, poet, and creative problem solver.",
   "url": "https://ancel-ajanga.netlify.app/",
   "image": "https://ancel-ajanga.netlify.app/assets/profile-photo.jpg",
   "email": "ancel.ajanga@yahoo.com",
@@ -28,7 +29,7 @@ export const generatePersonSchema = () => ({
   ],
   "hasOccupation": {
     "@type": "Occupation",
-    "name": "Fullstack Software Engineer",
+    "name": "Fullstack Software Engineer/Developer & App Developer",
     "description": "Develops complete software applications across mobile, web, and desktop platforms"
   },
   "alumniOf": {
@@ -128,7 +129,8 @@ export const generateWebsiteSchema = () => ({
   "@context": "https://schema.org",
   "@type": "WebSite",
   "name": "Ancel Ajanga Portfolio",
-  "description": "Fullstack Software Engineer Portfolio showcasing modern web applications and mobile apps",
+  "alternateName": "Ajanga Ancel Portfolio",
+  "description": "Fullstack Software Engineer/Developer & App Developer Portfolio showcasing modern web applications and mobile apps",
   "url": "https://ancel-ajanga.netlify.app",
   "author": {
     "@type": "Person",
@@ -210,7 +212,8 @@ export const generateOrganizationSchema = () => ({
   "@context": "https://schema.org",
   "@type": "Organization",
   "name": "Ancel Ajanga - Freelance Developer",
-  "description": "Fullstack software development services specializing in React, Node.js, Python, and modern web technologies",
+  "alternateName": "Ajanga Ancel - Freelance Developer",
+  "description": "Fullstack Software Engineer/Developer & App Developer services specializing in React, Node.js, Python, and modern web technologies",
   "url": "https://ancel-ajanga.netlify.app",
   "logo": "https://ancel-ajanga.netlify.app/assets/profile-photo.jpg",
   "founder": {

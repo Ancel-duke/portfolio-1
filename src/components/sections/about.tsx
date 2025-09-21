@@ -129,7 +129,7 @@ export function About({ className }: AboutProps) {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
                   <div className="absolute bottom-4 left-4 text-white">
                     <h3 className="text-3xl font-bold">Ancel Ajanga</h3>
-                    <p className="text-lg text-muted-foreground">Full-Stack & App Developer</p>
+                    <p className="text-lg text-muted-foreground">Fullstack Software Engineer/Developer & App Developer</p>
                   </div>
                 </div>
                 <CardContent className="p-6">
@@ -189,9 +189,9 @@ export function About({ className }: AboutProps) {
                   <h3 className="text-2xl font-bold mb-4">About Me</h3>
                   <div className="space-y-4 text-muted-foreground">
                     <p>
-                      I'm a passionate full-stack and app developer with over 4 years of experience building 
-                      modern web applications and mobile apps. I started my coding journey in 2021 and have been 
-                      freelancing since March 2024, helping clients bring their digital ideas to life.
+                      Hi, I'm Ancel (also known as Duke). I'm a Fullstack Software Engineer/Developer as well as an App Developer. 
+                      I love building apps that solve real-world problems while also expressing my creativity through code. 
+                      Beyond tech, I enjoy connecting with people, sharing ideas, and expressing myself through writing poems.
                     </p>
                     <p>
                       Based in Narok, Kenya, I specialize in React, TypeScript, Node.js, Python, and Flutter. 
