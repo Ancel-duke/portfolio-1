@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from "framer-motion"
 import { Button } from "../../components/ui/button"
 import { ThemeToggle } from "../../components/ui/theme-toggle"
 import { cn } from "../../lib/utils"
-import { Menu, X, Home, User, FileText, Briefcase, Code, Calendar, Smile, Mail } from "lucide-react"
+import { Menu, X, Home, User, FileText, Briefcase, Code, Calendar, Smile, Mail, BookOpen } from "lucide-react"
 
 interface HeaderProps {
   className?: string
@@ -13,8 +13,9 @@ interface HeaderProps {
 const navigation = [
   { name: 'Home', href: '/', icon: Home },
   { name: 'About', href: '/about', icon: User },
-  { name: 'Case Studies', href: '/case-studies', icon: Briefcase },
-  { name: 'Blog', href: '/blog', icon: FileText },
+  { name: 'Projects', href: '/projects', icon: Briefcase },
+  { name: 'Case Studies', href: '/case-studies', icon: FileText },
+  { name: 'Blog', href: '/blog', icon: BookOpen },
   { name: 'Timeline', href: '/timeline', icon: Calendar },
   { name: 'Stack', href: '/stack', icon: Code },
   { name: 'Fun', href: '/fun', icon: Smile },

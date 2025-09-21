@@ -81,9 +81,11 @@ export function Hero({ className }: HeroProps) {
             className="flex flex-col sm:flex-row gap-4 justify-center mb-12"
             variants={itemVariants}
           >
-            <Button size="lg" className="group">
-              View My Work
-              <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+            <Button size="lg" className="group" asChild>
+              <a href="/projects">
+                View My Work
+                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+              </a>
             </Button>
             <Button size="lg" variant="outline" asChild>
               <a href="/assets/resume.pdf" download>

@@ -4,6 +4,7 @@ const path = require("path");
 const pages = [
   "/",
   "/about",
+  "/projects",
   "/case-studies",
   "/case-studies/taskforge",
   "/case-studies/e-learning-platform",

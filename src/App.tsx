@@ -15,6 +15,7 @@ import { ContactForm } from './components/forms/contact-form'
 import { About } from './components/sections/about'
 import { BlogDetailPage } from './pages/BlogDetailPage'
 import { CaseStudyDetailPage } from './pages/CaseStudyDetailPage'
+import Projects from './pages/Projects'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './components/ui/card'
 import { Button } from './components/ui/button'
 import { ArrowRight } from 'lucide-react'
@@ -336,6 +337,7 @@ function App() {
               <Routes>
                 <Route path="/" element={<HomePage />} />
                 <Route path="/about" element={<AboutPage />} />
+                <Route path="/projects" element={<Projects />} />
                 <Route path="/case-studies" element={<CaseStudiesPage />} />
                 <Route path="/case-studies/:slug" element={<CaseStudyDetailPage />} />
                 <Route path="/blog" element={<BlogPage />} />
