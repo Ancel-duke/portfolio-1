@@ -43,6 +43,15 @@ interface CaseStudiesGridProps {
 export function CaseStudiesGrid({ className, limit, showViewAll = true }: CaseStudiesGridProps) {
   const caseStudies = caseStudiesData
 
+  // Select only 4 items: 2 Full-Stack and 2 Frontend based on the role field
+  const fullstackPicks = caseStudies
+    .filter((cs: any) => (cs.role || '').toLowerCase().includes('full'))
+    .slice(0, 2)
+  const frontendPicks = caseStudies
+    .filter((cs: any) => (cs.role || '').toLowerCase().includes('front'))
+    .slice(0, 2)
+  const selectedCaseStudies = [...fullstackPicks, ...frontendPicks]
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -83,7 +92,7 @@ export function CaseStudiesGrid({ className, limit, showViewAll = true }: CaseSt
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
         >
-          {caseStudies.map((caseStudy: CaseStudy) => (
+          {(selectedCaseStudies as CaseStudy[]).map((caseStudy: CaseStudy) => (
             <motion.article
               key={caseStudy.id}
               variants={itemVariants}
@@ -186,7 +195,7 @@ export function CaseStudiesGrid({ className, limit, showViewAll = true }: CaseSt
           ))}
         </motion.div>
 
-        {showViewAll && limit && caseStudiesData.length > limit && (
+        {showViewAll && limit && selectedCaseStudies.length > limit && (
           <div className="text-center mt-12">
             <Button size="lg" variant="outline">
               View All Case Studies

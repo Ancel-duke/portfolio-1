@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FiX, FiExternalLink, FiGithub, FiCode } from 'react-icons/fi';
+import { X, ExternalLink, Github, Code } from 'lucide-react';
 
 const ProjectModal = ({ project, isOpen, onClose }) => {
   useEffect(() => {
@@ -66,7 +66,7 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
                 className="p-2 text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 transition-colors duration-200"
                 aria-label="Close modal"
               >
-                <FiX className="w-6 h-6" />
+                <X className="w-6 h-6" />
               </button>
             </div>
 
@@ -84,7 +84,7 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
                       />
                     ) : (
                       <div className="w-full h-full flex items-center justify-center text-gray-400">
-                        <FiCode className="w-16 h-16" />
+                        <Code className="w-16 h-16" />
                       </div>
                     )}
                   </div>
@@ -98,7 +98,7 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
                         rel="noopener noreferrer"
                         className="btn-primary flex items-center space-x-2"
                       >
-                        <FiExternalLink className="w-4 h-4" />
+                        <ExternalLink className="w-4 h-4" />
                         <span>Visit Live Site</span>
                       </a>
                     )}
@@ -110,7 +110,7 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
                         rel="noopener noreferrer"
                         className="btn-secondary flex items-center space-x-2"
                       >
-                        <FiGithub className="w-4 h-4" />
+                        <Github className="w-4 h-4" />
                         <span>View Code</span>
                       </a>
                     )}

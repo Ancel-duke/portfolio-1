@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { FiGithub, FiInstagram, FiLinkedin } from 'react-icons/fi';
+import { Github, Instagram, Linkedin } from 'lucide-react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -9,17 +9,17 @@ const Footer = () => {
     {
       name: 'GitHub',
       url: 'https://github.com/Ancel-duke',
-      icon: <FiGithub className="w-5 h-5" />
+      icon: <Github className="w-5 h-5" />
     },
     {
       name: 'LinkedIn',
       url: 'https://www.linkedin.com/in/ajanga-ancel',
-      icon: <FiLinkedin className="w-5 h-5" />
+      icon: <Linkedin className="w-5 h-5" />
     },
     {
       name: 'Instagram',
       url: 'https://www.instagram.com/lema.yian._/#',
-      icon: <FiInstagram className="w-5 h-5" />
+      icon: <Instagram className="w-5 h-5" />
     }
   ];
 

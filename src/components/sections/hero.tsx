@@ -70,11 +70,11 @@ export function Hero({ className }: HeroProps) {
           </motion.h1>
 
           <motion.p
-            className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto"
+            className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-4xl mx-auto"
             variants={itemVariants}
           >
-            A passionate full-stack developer who loves building modern, scalable web applications. 
-            I create digital experiences that make a difference.
+            Fullstack Software Engineer/Developer & App Developer crafting scalable web platforms and cross‑platform mobile apps (Android, iOS, web).
+            I ship clean, reliable software with thoughtful UX, strong performance, and measurable business impact.
           </motion.p>
 
           <motion.div

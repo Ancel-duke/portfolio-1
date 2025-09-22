@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FiExternalLink, FiGithub, FiEye } from 'react-icons/fi';
+import { ExternalLink, Github, Eye } from 'lucide-react';
 
 const ProjectCard = ({ project, onOpenModal }) => {
   const { title, description, technologies, liveUrl, repoUrl, image } = project;
@@ -21,7 +21,7 @@ const ProjectCard = ({ project, onOpenModal }) => {
           />
         ) : (
           <div className="w-full h-full flex items-center justify-center text-gray-400">
-            <FiEye className="w-12 h-12" />
+            <Eye className="w-12 h-12" />
           </div>
         )}
       </div>
@@ -56,7 +56,7 @@ const ProjectCard = ({ project, onOpenModal }) => {
             onClick={() => onOpenModal(project)}
             className="text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 font-medium text-sm flex items-center space-x-1 transition-colors duration-200"
           >
-            <FiEye className="w-4 h-4" />
+            <Eye className="w-4 h-4" />
             <span>View Details</span>
           </button>
           
@@ -69,7 +69,7 @@ const ProjectCard = ({ project, onOpenModal }) => {
                 className="p-2 text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200"
                 aria-label={`Visit ${title} live site`}
               >
-                <FiExternalLink className="w-4 h-4" />
+                <ExternalLink className="w-4 h-4" />
               </a>
             )}
             
@@ -81,7 +81,7 @@ const ProjectCard = ({ project, onOpenModal }) => {
                 className="p-2 text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200"
                 aria-label={`View ${title} repository`}
               >
-                <FiGithub className="w-4 h-4" />
+                <Github className="w-4 h-4" />
               </a>
             )}
           </div>

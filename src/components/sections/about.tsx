@@ -135,7 +135,7 @@ export function About({ className }: AboutProps) {
                 <CardContent className="p-6">
                   <div className="space-y-4 mb-6">
                     <div className="flex items-center text-muted-foreground">
-                      <MapPin className="h-5 w-5 mr-3 text-primary" /> Narok, Kenya
+                      <MapPin className="h-5 w-5 mr-3 text-primary" /> Nairobi, Kenya (from Narok)
                     </div>
                     <div className="flex items-center text-muted-foreground">
                       <Calendar className="h-5 w-5 mr-3 text-primary" /> Started coding in 2021
@@ -194,7 +194,7 @@ export function About({ className }: AboutProps) {
                       Beyond tech, I enjoy connecting with people, sharing ideas, and expressing myself through writing poems.
                     </p>
                     <p>
-                      Based in Narok, Kenya, I specialize in React, TypeScript, Node.js, Python, and Flutter. 
+                      Based in Nairobi, Kenya (originally from Narok), I specialize in React, TypeScript, Node.js, Python, and Flutter. 
                       I'm currently creating a Flutter app that will be available on Android, iOS, and web platforms. 
                       I love creating scalable, user-friendly applications that solve real-world problems 
                       and make a positive impact.
