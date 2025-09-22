@@ -50,7 +50,13 @@ export function CaseStudiesGrid({ className, limit, showViewAll = true }: CaseSt
   const frontendPicks = caseStudies
     .filter((cs: any) => (cs.role || '').toLowerCase().includes('front'))
     .slice(0, 2)
-  const selectedCaseStudies = [...fullstackPicks, ...frontendPicks]
+  // Ensure Banking System appears if present
+  const banking = caseStudies.find((cs: any) => cs.slug === 'banking-system')
+  let selectedCaseStudies = [...fullstackPicks, ...frontendPicks]
+  if (banking && !selectedCaseStudies.find(cs => cs.slug === 'banking-system')) {
+    // Replace the last item to keep total at 4 while featuring banking
+    selectedCaseStudies = [...selectedCaseStudies.slice(0, 3), banking]
+  }
 
   const containerVariants = {
     hidden: { opacity: 0 },

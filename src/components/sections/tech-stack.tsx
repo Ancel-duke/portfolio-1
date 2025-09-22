@@ -17,7 +17,7 @@ import {
   Layers,
   Server
 } from "lucide-react"
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, PieChart, Pie, Cell } from 'recharts'
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, PieChart, Pie, Cell, Legend } from 'recharts'
 import stackData from "../../data/stack.json"
 
 interface Technology {
@@ -94,23 +94,27 @@ export function TechStack({ className }: TechStackProps) {
   }
 
   // Prepare chart data
-  const frequencyData = stackData.technologies
+  const rawFrequency = stackData.technologies
     .sort((a, b) => b.frequency - a.frequency)
-    .slice(0, 10)
-    .map(tech => ({
-      name: tech.name,
-      frequency: tech.frequency,
-      proficiency: tech.proficiency
-    }))
+    .map(tech => ({ name: tech.name, frequency: tech.frequency, proficiency: tech.proficiency }))
+  let frequencyData = rawFrequency.slice(0, 10)
+  if (!frequencyData.find(t => t.name === 'Java')) {
+    const javaItem = rawFrequency.find(t => t.name === 'Java')
+    if (javaItem) {
+      frequencyData = [...frequencyData.slice(0, 9), javaItem]
+    }
+  }
 
-  const proficiencyData = stackData.technologies
+  const rawProficiency = stackData.technologies
     .sort((a, b) => b.proficiency - a.proficiency)
-    .slice(0, 10)
-    .map(tech => ({
-      name: tech.name,
-      frequency: tech.frequency,
-      proficiency: tech.proficiency
-    }))
+    .map(tech => ({ name: tech.name, frequency: tech.frequency, proficiency: tech.proficiency }))
+  let proficiencyData = rawProficiency.slice(0, 10)
+  if (!proficiencyData.find(t => t.name === 'Java')) {
+    const javaItem = rawProficiency.find(t => t.name === 'Java')
+    if (javaItem) {
+      proficiencyData = [...proficiencyData.slice(0, 9), javaItem]
+    }
+  }
 
   const categoryData = stackData.categories.map(category => ({
     name: category.name,
@@ -282,7 +286,7 @@ export function TechStack({ className }: TechStackProps) {
                       cx="50%"
                       cy="50%"
                       labelLine={false}
-                      label={({ name, percent }) => `${name} ${(percent * 100).toFixed(0)}%`}
+                      label={false}
                       outerRadius={80}
                       fill="#8884d8"
                       dataKey="value"
@@ -292,6 +296,7 @@ export function TechStack({ className }: TechStackProps) {
                       ))}
                     </Pie>
                     <Tooltip />
+                    <Legend layout="horizontal" verticalAlign="bottom" align="center" wrapperStyle={{ fontSize: 12 }} />
                   </PieChart>
                 </ResponsiveContainer>
               </div>

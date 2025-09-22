@@ -89,5 +89,21 @@
       "bio": "Full-stack developer passionate about building scalable web applications"
     }
   }
+  ,
+  {
+    "id": 7,
+    "title": "Designing a Console Banking System to Showcase OOP (Java)",
+    "excerpt": "A deep dive into a pure Java console application that demonstrates encapsulation, inheritance, abstraction, and polymorphism through realistic banking operations.",
+    "content": "This project intentionally avoids frameworks and databases to focus on the fundamentals of object‑oriented design.\n\n## Goals\n- Demonstrate core OOP principles clearly\n- Keep the runtime environment simple (pure Java)\n- Model realistic banking flows (accounts, customers, transactions)\n\n## Domain Model\n- Abstract `Account` defines shared state/behavior; `SavingsAccount` and `CheckingAccount` implement specifics (e.g., interest or overdraft rules)\n- `Bank` aggregates customers and accounts; coordinates transfers\n- `Transaction` logs operations with type (deposit, withdrawal, transfer) and timestamps\n\n## OOP Principles in Practice\n- **Encapsulation**: Private fields, validation inside methods like `deposit`/`withdraw`\n- **Inheritance**: Specialized accounts extend `Account`\n- **Abstraction**: Abstract base class for common behavior\n- **Polymorphism**: Methods operate on `Account` references regardless of concrete type\n\n## Running It\n```\njavac src/com/bankingsystem/*.java\njava -cp src com.bankingsystem.Main\n```\n\n## Why This Matters\nThis kind of focused project is great for interviews and code reviews—it shows clarity of thought, clean APIs, and attention to correctness.\n\nSource: https://github.com/Ancel-duke/banking",
+    "tags": ["Java", "OOP", "Design", "Console"],
+    "date": "2025-09-22",
+    "readTime": "5 min read",
+    "image": "/assets/projects/bank.jpg",
+    "author": {
+      "name": "Ancel Ajanga",
+      "avatar": "/assets/profile-photo.jpg",
+      "bio": "Fullstack Software Engineer/Developer & App Developer"
+    }
+  }
 ]
 

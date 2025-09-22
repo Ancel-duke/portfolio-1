@@ -821,5 +821,56 @@
       ]
     }
   }
+  ,
+  {
+    "id": 10,
+    "slug": "banking-system",
+    "title": "Banking System",
+    "subtitle": "Console-based banking system demonstrating OOP principles in Java",
+    "role": "Backend / Java Developer",
+    "timeline": "1 week",
+    "year": "2025",
+    "status": "Open Source",
+    "description": "A simple, console-based Banking System implemented in pure Java to demonstrate core OOP principles (Encapsulation, Inheritance, Abstraction, Polymorphism). Includes customer management, savings/checking accounts, deposits, withdrawals, transfers, and transaction logs.",
+    "problem": "Showcase solid object-oriented design and problem-solving skills without relying on external frameworks or databases.",
+    "solution": "Designed an extensible domain model with an abstract Account base class and concrete Savings/Checking accounts, a Bank aggregate to manage customers/accounts, and transaction records capturing all operations.",
+    "impact": "Clear demonstration of OOP fundamentals, clean architecture, and maintainable code suitable for technical interviews and backend design discussions.",
+    "technologies": [
+      { "name": "Java 17+", "category": "Language", "icon": "java" },
+      { "name": "OOP", "category": "Concept", "icon": "oop" },
+      { "name": "Maven", "category": "Build", "icon": "maven" },
+      { "name": "Gradle", "category": "Build", "icon": "gradle" }
+    ],
+    "features": [
+      "Create customers and open savings/checking accounts",
+      "Deposit, withdraw, transfer between accounts",
+      "View balances and transaction history",
+      "Encapsulation via private fields and public methods",
+      "Inheritance and polymorphism across account types",
+      "Abstraction with abstract base class for shared behavior"
+    ],
+    "challenges": [
+      "Designing a clean, extensible account hierarchy",
+      "Ensuring correctness of monetary operations",
+      "Maintaining clear separation of concerns"
+    ],
+    "outcomes": [
+      "Readable and testable code showcasing core OOP",
+      "Lightweight console interface requiring no external services"
+    ],
+    "metrics": [
+      { "label": "Frameworks", "value": "0", "description": "Pure Java only" }
+    ],
+    "links": {
+      "live": "",
+      "github": "https://github.com/Ancel-duke/banking"
+    },
+    "images": {
+      "hero": "/assets/projects/bank.jpg",
+      "before": "/assets/projects/bank.jpg",
+      "after": "/assets/projects/bank.jpg",
+      "gallery": ["/assets/projects/bank.jpg"]
+    }
+  }
 ]
 

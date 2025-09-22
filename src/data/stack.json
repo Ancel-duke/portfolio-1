@@ -55,6 +55,15 @@
       "projects": ["All projects"]
     },
     {
+      "name": "Java",
+      "category": "Language",
+      "icon": "java",
+      "frequency": 1,
+      "proficiency": 7,
+      "description": "General-purpose, strongly typed programming language",
+      "projects": ["Banking System"]
+    },
+    {
       "name": "Node.js",
       "category": "Backend",
       "icon": "nodejs",
@@ -250,7 +259,7 @@
     {
       "name": "Language",
       "color": "yellow",
-      "count": 2
+      "count": 3
     },
     {
       "name": "API",

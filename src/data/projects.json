@@ -236,4 +236,16 @@
     "image": "/assets/projects/taskforge.jpg",
     "outcomes": "Modern, production-ready full-stack project management platform demonstrating advanced web development practices with real-time collaboration, comprehensive analytics, and scalable architecture. Shows proficiency in modern React development, real-time communication, database design, and deployment strategies."
   }
+  ,
+  {
+    "id": 10,
+    "title": "Banking System",
+    "description": "A console-based Banking System built in Java to demonstrate core Object-Oriented Programming principles (Encapsulation, Inheritance, Abstraction, Polymorphism).",
+    "detailedDescription": "A simple, console-based Banking System implemented in pure Java (no external APIs, no DB, no frameworks). It demonstrates core OOP principles through account operations and customer management. Features include creating customers, opening savings/checking accounts, depositing, withdrawing, transferring, and viewing balances and transactions.",
+    "technologies": ["Java 17+", "OOP", "Maven (optional)", "Gradle (optional)"],
+    "liveUrl": "",
+    "repoUrl": "https://github.com/Ancel-duke/banking",
+    "image": "/assets/projects/bank.jpg",
+    "outcomes": "Clean OOP design showcasing encapsulation, inheritance, abstraction, and polymorphism; fully offline and lightweight; ideal for demonstrating problem-solving and software design skills."
+  }
 ]
