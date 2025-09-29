@@ -1,0 +1,76 @@
+{
+  "posts": [
+    {
+      "slug": "react-vue-angular-comparison-2025",
+      "title": "I Built the Same App in React, Vue, and Angular: Here's What I Learned in 2025",
+      "excerpt": "A real-world comparison of modern frontend frameworks through three production applications",
+      "content": "Full article content to be added...",
+      "date": "2025-09-29",
+      "readTime": "15 min read",
+      "author": "Ancel Ajanga",
+      "category": "Framework Comparison",
+      "image": "/assets/projects/taskforge.jpg",
+      "tags": ["React", "Vue", "Angular", "Frontend"]
+    },
+    {
+      "slug": "pwa-vs-native-apps-2025",
+      "title": "PWA vs Native Apps: How I Reached 10x More Users by Going Progressive",
+      "excerpt": "How turning two web applications into PWAs dramatically increased user engagement and retention",
+      "content": "Full article content to be added...",
+      "date": "2025-09-29",
+      "readTime": "12 min read",
+      "author": "Ancel Ajanga",
+      "category": "Progressive Web Apps",
+      "image": "/assets/projects/attendance.jpg", 
+      "tags": ["PWA", "Web Development", "Mobile"]
+    },
+    {
+      "slug": "building-travel-platform-guide",
+      "title": "How to Build a Travel Platform Users Actually Want to Use",
+      "excerpt": "A deep dive into creating an engaging travel platform with React, Leaflet.js, and modern UX principles",
+      "content": "Full article content to be added...",
+      "date": "2025-09-29",
+      "readTime": "10 min read",
+      "author": "Ancel Ajanga",
+      "category": "Case Study",
+      "image": "/assets/projects/travel.jpg",
+      "tags": ["React", "Maps", "UX"]
+    },
+    {
+      "slug": "solving-state-management",
+      "title": "How I Solved Complex State Management Across 8 Production Apps",
+      "excerpt": "Real-world strategies and patterns for managing state in modern web applications",
+      "content": "Full article content to be added...",
+      "date": "2025-09-29",
+      "readTime": "13 min read",
+      "author": "Ancel Ajanga",
+      "category": "State Management",
+      "image": "/assets/projects/bank.jpg",
+      "tags": ["Redux", "State Management", "Architecture"]
+    },
+    {
+      "slug": "vanilla-to-fullstack-journey",
+      "title": "From Vanilla JS to Full-Stack: A Developer's Journey",
+      "excerpt": "A candid look at evolving from frontend basics to complex full-stack applications",
+      "content": "Full article content to be added...",
+      "date": "2025-09-29",
+      "readTime": "12 min read",
+      "author": "Ancel Ajanga",
+      "category": "Career Growth",
+      "image": "/assets/projects/ecommerce-1.jpg",
+      "tags": ["Career", "Full Stack", "Learning"]
+    },
+    {
+      "slug": "building-for-scale",
+      "title": "Building for Scale: Lessons from 4 Full-Stack Applications",
+      "excerpt": "Real-world insights on architecting scalable applications from four production projects",
+      "content": "Full article content to be added...",
+      "date": "2025-09-29",
+      "readTime": "14 min read",
+      "author": "Ancel Ajanga",
+      "category": "Architecture",
+      "image": "/assets/projects/elearn.jpg",
+      "tags": ["Architecture", "Scaling", "Performance"]
+    }
+  ]
+}

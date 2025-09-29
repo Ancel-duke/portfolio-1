@@ -31,15 +31,15 @@ const About = () => {
     },
     {
       icon: <FiCalendar className="w-5 h-5" />,
-      title: 'Computer Science Degree — University of the People',
-      period: 'Currently Enrolled',
-      description: 'Pursuing advanced computer science studies while actively building real-world applications.'
+      title: 'Computer Science Degree',
+      period: 'Currently Enrolled (Part-time)',
+      description: 'Pursuing a part-time computer science degree while actively building real-world applications.'
     },
     {
       icon: <FiAward className="w-5 h-5" />,
       title: 'Diploma in Software Engineering',
       period: 'Completed',
-      description: 'Foundation in software engineering principles and development methodologies.'
+      description: 'Mastered core software engineering principles, development methodologies, and hands-on practical skills including system design, agile practices, and modern development workflows.'
     }
   ];
 
@@ -104,7 +104,7 @@ const About = () => {
                 About <span className="text-gradient">Me</span>
               </h2>
               <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
-                I'm Ancel Ajanga, a fullstack software engineer from Narok County, Kenya, specializing in building complete software applications that solve real-world problems. I develop mobile apps, web platforms, and desktop applications using modern technologies like React, Node.js, Python, and MongoDB.
+                I'm Ancel Ajanga, a fullstack software engineer from Narok County, Kenya, specializing in building complete software applications that solve real-world problems. I develop mobile apps, web platforms, and desktop applications, with expertise in AI integration and SEO optimization. I work with modern technologies like React, Node.js, Python, and MongoDB to create efficient, optimized solutions.
               </p>
               <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300 leading-relaxed mt-4">
                 My technical expertise includes frontend development with React, React Native, and Flutter; backend development with Node.js, Python, and Django; database design with MongoDB and SQL; and mobile app development for iOS and Android platforms. I focus on creating user-friendly applications with clean code, beautiful UI design, and optimal performance.

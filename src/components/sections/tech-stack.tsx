@@ -20,6 +20,11 @@ import {
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, PieChart, Pie, Cell, Legend } from 'recharts'
 import stackData from "../../data/stack.json"
 
+interface TechStackProps {
+  className?: string;
+  fullPage?: boolean;
+}
+
 interface Technology {
   name: string
   category: string

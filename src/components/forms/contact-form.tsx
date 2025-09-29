@@ -37,20 +37,31 @@ export function ContactForm({ className, onSuccess }: ContactFormProps) {
   const validateForm = (): boolean => {
     const newErrors: FormErrors = {}
 
+    // Name validation
     if (!formData.name.trim()) {
       newErrors.name = "Name is required"
+    } else if (formData.name.trim().length < 2) {
+      newErrors.name = "Name must be at least 2 characters long"
+    } else if (formData.name.trim().length > 50) {
+      newErrors.name = "Name must be less than 50 characters"
     }
 
+    // Email validation
     if (!formData.email.trim()) {
       newErrors.email = "Email is required"
     } else if (!isValidEmail(formData.email)) {
       newErrors.email = "Please enter a valid email address"
+    } else if (formData.email.length > 100) {
+      newErrors.email = "Email must be less than 100 characters"
     }
 
+    // Message validation
     if (!formData.message.trim()) {
       newErrors.message = "Message is required"
     } else if (formData.message.trim().length < 10) {
       newErrors.message = "Message must be at least 10 characters long"
+    } else if (formData.message.trim().length > 1000) {
+      newErrors.message = "Message must be less than 1000 characters"
     }
 
     setErrors(newErrors)
@@ -76,17 +87,19 @@ export function ContactForm({ className, onSuccess }: ContactFormProps) {
     setSubmitStatus('idle')
 
     try {
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 2000))
+      const subject = encodeURIComponent("Contact from Portfolio Website")
+      const body = encodeURIComponent(
+        `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
+      )
       
-      // In a real app, you would send the data to your backend
-      console.log('Form submitted:', formData)
+      window.open(`mailto:ancel.ajanga@yahoo.com?subject=${subject}&body=${body}`)
       
+      // Clear form and show success message
       setSubmitStatus('success')
       setFormData({ name: "", email: "", message: "" })
       onSuccess?.()
     } catch (error) {
-      console.error('Error submitting form:', error)
+      console.error('Error opening mail client:', error)
       setSubmitStatus('error')
     } finally {
       setIsSubmitting(false)
@@ -98,7 +111,7 @@ export function ContactForm({ className, onSuccess }: ContactFormProps) {
     const body = encodeURIComponent(
       `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
     )
-    window.open(`mailto:ancel@example.com?subject=${subject}&body=${body}`)
+    window.open(`mailto:ancel.ajanga@yahoo.com?subject=${subject}&body=${body}`)
   }
 
   return (

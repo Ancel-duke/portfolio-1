@@ -12,8 +12,12 @@ import { Breadcrumb } from '../components/ui/breadcrumb'
 import { generateBlogPostSchema } from '../components/seo/schemas'
 
 export function BlogDetailPage() {
-  const { id } = useParams<{ id: string }>()
-  const post = blogData.find(p => p.id === parseInt(id || '0'))
+  const { slug } = useParams<{ slug: string }>()
+  const post = blogData.find(p => {
+    // Convert title to slug format for comparison
+    const postSlug = p.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')
+    return postSlug === slug
+  })
 
   if (!post) {
     return (
@@ -91,7 +95,7 @@ export function BlogDetailPage() {
         <motion.div variants={itemVariants} className="mb-8">
           <Button variant="outline" asChild>
             <Link to="/blog">
-              <ArrowLeft className="mr-2 h-4 w-4" /> Back to Blog
+              <ArrowLeft className="mr-2 h-4 w-4" /> Back to Developer Journal
             </Link>
           </Button>
         </motion.div>

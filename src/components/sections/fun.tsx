@@ -20,6 +20,11 @@ import {
 } from "lucide-react"
 import funData from "../../data/fun.json"
 
+interface FunProps {
+  className?: string;
+  fullPage?: boolean;
+}
+
 interface FunFact {
   id: number
   title: string

@@ -15,7 +15,7 @@ const navigation = [
   { name: 'About', href: '/about', icon: User },
   { name: 'Projects', href: '/projects', icon: Briefcase },
   { name: 'Case Studies', href: '/case-studies', icon: FileText },
-  { name: 'Blog', href: '/blog', icon: BookOpen },
+  { name: 'Developer Journal', href: '/developer-journal', icon: BookOpen },
   { name: 'Timeline', href: '/timeline', icon: Calendar },
   { name: 'Stack', href: '/stack', icon: Code },
   { name: 'Fun', href: '/fun', icon: Smile },
@@ -48,10 +48,10 @@ export function Header({ className }: HeaderProps) {
               className="flex items-center space-x-2 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-md p-1"
               aria-label="Ancel Ajanga - Home"
             >
-              <div className="w-8 h-8 bg-gradient-to-br from-primary to-accent rounded-lg flex items-center justify-center">
+              <div className="w-7 h-7 bg-gradient-to-br from-primary to-accent rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-sm">A</span>
               </div>
-              <span className="font-bold text-lg">Ancel Ajanga</span>
+              <span className="font-bold text-base whitespace-nowrap">Ancel Ajanga</span>
             </a>
           </motion.div>
 

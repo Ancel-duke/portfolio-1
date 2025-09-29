@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "title": "From Student to Freelancer: My Journey Since 2021",
+    "excerpt": "Reflecting on my coding journey from learning HTML and CSS in school to becoming a freelance developer. The challenges, learnings, and growth over the past few years.",
+    "content": "Looking back at my coding journey since 2021, I'm amazed at how much I've learned and grown. From writing my first HTML page to building full-stack applications for clients, it's been an incredible journey.\n\nI. The Beginning (2021)\n\nI started learning programming in school with basic HTML, CSS, and JavaScript. My first project was a simple calculator that could perform basic arithmetic operations. It wasn't much, but it sparked my interest in web development.\n\nII. Early Projects (2022)\n\nIn 2022, I built my first real project - the Event Countdown Timer. This vanilla JavaScript application taught me about DOM manipulation, local storage, and user interface design. It was also my first experience with responsive design.\n\nIII. Framework Exploration (2023)\n\n2023 was a year of exploration. I built projects with React, Vue, and Angular:\n• Travelogue with React and Leaflet.js\n• Habit Tracker PWA with React\n• Personal Finance Tracker with Vue 3\n• Fitness Class Scheduler with Angular\n\nEach framework taught me different approaches to building web applications.\n\nIV. Going Freelance (March 2024)\n\nIn March 2024, I took the leap into freelancing. My first client project was a school website for Rasoha Academy. This project taught me about client communication, project management, and delivering production-ready applications.\n\nV. Full-Stack Growth (2024)\n\nIn late 2024, I built my first full-stack applications:\n• Attendance System with React, Node.js, and MongoDB\n• E-learning Platform with Django and React\n• TaskForge with Next.js and Socket.io\n\nVI. Learning Never Stops (2025)\n\nThis year, I'm focusing on:\n• DevOps and Cloud Services\n• Mobile Development with React Native\n• AI/ML Integration in Web Apps\n• System Design and Architecture\n\nLooking back, every project and challenge has contributed to my growth as a developer. The journey continues, and I'm excited to see what's next.",
+    "tags": ["Journey", "Learning", "Freelancing", "Growth", "Reflection"],
+    "date": "2024-09-15",
+    "readTime": "12 min read",
+    "image": "/assets/case-studies/journey.jpg",
+    "author": {
+      "name": "Ancel Ajanga",
+      "avatar": "/assets/profile-photo.jpg",
+      "bio": "Full-stack developer passionate about building scalable web applications"
+    }
+  },
+  {
+    "id": 2,
+    "title": "Why I Built a Finance Tracker in Vue 3",
+    "excerpt": "Exploring the decision to use Vue 3 for a personal finance application. Comparing Vue's reactivity system with other frameworks and the benefits for financial data visualization.",
+    "content": "When I decided to build a personal finance tracker, I had to choose between React, Angular, and Vue 3. Here's why Vue 3 won and how it shaped the application.\n\nI. Why Vue 3?\n\n1. Composition API\nVue 3's Composition API provides better logic reuse and type safety, which was crucial for financial calculations and data transformations.\n\n2. Reactivity System\nVue's reactivity system is more intuitive for financial data that needs to update in real-time. The automatic dependency tracking made it easier to build reactive charts and calculations.\n\n3. Performance\nVue 3's improved performance with the new virtual DOM implementation was perfect for handling large datasets of financial transactions.\n\nII. Key Features\n\n1. Data Visualization\n• Interactive pie charts showing expense breakdown\n• Line charts for income vs expenses over time\n• Responsive design that works on all devices\n\n2. Data Management\n• Local storage for offline functionality\n• Export capabilities (CSV, PDF)\n• Category management with custom icons\n\n3. User Experience\n• Dark/light mode toggle\n• Smooth animations and transitions\n• Intuitive form validation\n\nIII. Technical Implementation\n\nI used:\n• Vue 3 with Composition API\n• Chart.js for data visualization\n• Tailwind CSS for styling\n• Vite for fast development and building\n• TypeScript for type safety\n\nIV. Results\n\nThe application provides a smooth, responsive experience for tracking personal finances. The Vue 3 architecture made it easy to add new features and maintain the codebase.\n\nV. Lessons Learned\n\n1. Vue Ecosystem: The Vue ecosystem provides excellent tools for building interactive applications\n2. Performance Optimization: Proper state management and computed properties are crucial\n3. Type Safety: TypeScript integration helps catch errors early\n4. Component Design: Breaking down complex features into reusable components improves maintainability\n\nVI. Future Enhancements\n\nPlanned features:\n• Budget planning and forecasting\n• Bill payment reminders\n• Multiple currency support\n• Data visualization improvements\n\nThis project showcases Vue 3's strengths in building interactive financial applications with complex state management needs.",
+    "tags": ["Vue.js", "Finance", "Data Visualization", "TypeScript", "Chart.js"],
+    "date": "2024-11-10",
+    "readTime": "6 min read",
+    "image": "/assets/projects/finance-tracker.jpg",
+    "author": {
+      "name": "Ancel Ajanga",
+      "avatar": "/assets/profile-photo.jpg",
+      "bio": "Full-stack developer passionate about building scalable web applications"
+    }
+  }
+]

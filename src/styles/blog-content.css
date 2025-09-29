@@ -1,0 +1,71 @@
+.blog-content {
+  font-size: 1.125rem;
+  line-height: 1.75;
+}
+
+/* Main title (article title) */
+.blog-content h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+  color: var(--text-primary);
+}
+
+/* Roman numeral section titles (I., II., III., etc.) */
+.blog-content p:matches(/^[IVX]+\./),
+.blog-content p:matches(/^[IVX]+\s/) {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-top: 2.5rem;
+  margin-bottom: 1.25rem;
+  color: var(--text-primary);
+}
+
+/* Numeric sub-titles (1., 2., 3., etc.) */
+.blog-content p:matches(/^\d+\./),
+.blog-content p:matches(/^\d+\s/) {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+}
+
+/* Regular text content */
+.blog-content p:not(:matches(/^[IVX]+\./)):not(:matches(/^\d+\./)):not(:matches(/^[IVX]+\s/)):not(:matches(/^\d+\s/)) {
+  font-size: 1.125rem;
+  line-height: 1.75;
+  margin-bottom: 1rem;
+}
+
+/* Lists */
+.blog-content ul,
+.blog-content ol {
+  margin-top: 0.75rem;
+  margin-bottom: 1.5rem;
+  padding-left: 1.5rem;
+}
+
+/* List items */
+.blog-content li {
+  margin-bottom: 0.5rem;
+  font-size: 1.125rem;
+}
+
+/* Code blocks */
+.blog-content pre {
+  margin: 1.5rem 0;
+  padding: 1rem;
+  background-color: var(--code-bg);
+  border-radius: 0.5rem;
+  overflow-x: auto;
+}
+
+/* Inline code */
+.blog-content code {
+  font-family: var(--font-mono);
+  padding: 0.2em 0.4em;
+  background-color: var(--code-bg);
+  border-radius: 0.25rem;
+}

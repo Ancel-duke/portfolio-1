@@ -15,21 +15,27 @@ import {
 } from "lucide-react"
 import timelineData from "../../data/timeline.json"
 
+interface TimelineProps {
+  className?: string;
+  fullPage?: boolean;
+}
+
 interface TimelineItem {
-  year: string
-  title: string
-  description: string
-  icon: string
+  year: string;
+  title: string;
+  description: string;
+  icon: string;
   projects: Array<{
-    title: string
-    url: string
-    description: string
-  }>
-  milestones: string[]
+    title: string;
+    url: string;
+    description: string;
+  }>;
+  milestones: string[];
 }
 
 interface TimelineProps {
-  className?: string
+  className?: string;
+  fullPage?: boolean;
 }
 
 const iconMap = {

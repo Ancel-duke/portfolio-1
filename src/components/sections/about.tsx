@@ -6,7 +6,8 @@ import { Download, MapPin, Calendar, Code, Users, Award, Target, GraduationCap, 
 import { cn } from '../../lib/utils'
 
 interface AboutProps {
-  className?: string
+  className?: string;
+  fullPage?: boolean;
 }
 
 export function About({ className }: AboutProps) {
@@ -189,12 +190,12 @@ export function About({ className }: AboutProps) {
                   <h3 className="text-2xl font-bold mb-4">About Me</h3>
                   <div className="space-y-4 text-muted-foreground">
                     <p>
-                      Hi, I'm Ancel (also known as Duke). I'm a Fullstack Software Engineer/Developer as well as an App Developer. 
+                      Hi, I'm Ancel (also known as Duke). I'm a Fullstack Software Engineer/Developer specializing in web development, app development, AI integration, and SEO optimization. 
                       I love building apps that solve real-world problems while also expressing my creativity through code. 
                       Beyond tech, I enjoy connecting with people, sharing ideas, and expressing myself through writing poems.
                     </p>
                     <p>
-                      Based in Nairobi, Kenya (originally from Narok), I specialize in React, TypeScript, Node.js, Python, and Flutter. 
+                      Based in Nairobi, Kenya (originally from Narok), I specialize in React, TypeScript, Node.js, Python, Flutter, AI integration, and SEO optimization. 
                       I'm currently creating a Flutter app that will be available on Android, iOS, and web platforms. 
                       I love creating scalable, user-friendly applications that solve real-world problems 
                       and make a positive impact.
@@ -342,17 +343,17 @@ export function About({ className }: AboutProps) {
                   </p>
                 </div>
                 <div className="border-l-4 border-secondary pl-6 py-2">
-                  <h4 className="font-semibold text-lg">Computer Science Degree — University of the People</h4>
-                  <p className="text-sm text-secondary-foreground font-medium mb-2">Currently Enrolled</p>
+                  <h4 className="font-semibold text-lg">Computer Science Degree</h4>
+                  <p className="text-sm text-secondary-foreground font-medium mb-2">Currently Enrolled (Part-time)</p>
                   <p className="text-muted-foreground">
-                    Pursuing advanced computer science studies while actively building real-world applications.
+                    Pursuing a part-time computer science degree while actively building real-world applications.
                   </p>
                 </div>
                 <div className="border-l-4 border-muted pl-6 py-2">
                   <h4 className="font-semibold text-lg">Diploma in Software Engineering</h4>
                   <p className="text-sm text-muted-foreground mb-2">Completed</p>
                   <p className="text-muted-foreground">
-                    Foundation in software engineering principles and development methodologies.
+                    Mastered core software engineering principles, development methodologies, and hands-on practical skills including system design, agile practices, and modern development workflows.
                   </p>
                 </div>
               </div>
