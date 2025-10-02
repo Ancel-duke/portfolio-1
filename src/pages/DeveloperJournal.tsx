@@ -65,7 +65,7 @@ export function DeveloperJournal() {
           name="keywords" 
           content="web development, React, Vue, Angular, PWA, architecture, state management, full stack, developer blog"
         />
-        <link rel="canonical" href="https://ancel-ajanga.netlify.app/developer-journal" />
+  <link rel="canonical" href="https://ancel.co.ke/developer-journal" />
       </Helmet>
 
       <section className="py-16 md:py-24">

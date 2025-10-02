@@ -33,11 +33,11 @@ const validateSEO = () => {
 
     // Check for required pages
     const requiredPages = [
-      { path: '/', url: 'https://ancel-ajanga.netlify.app' },
-      { path: '/about', url: 'https://ancel-ajanga.netlify.app/about' },
-      { path: '/case-studies', url: 'https://ancel-ajanga.netlify.app/case-studies' },
-      { path: '/blog', url: 'https://ancel-ajanga.netlify.app/blog' },
-      { path: '/contact', url: 'https://ancel-ajanga.netlify.app/contact' }
+  { path: '/', url: 'https://ancel.co.ke' },
+  { path: '/about', url: 'https://ancel.co.ke/about' },
+  { path: '/case-studies', url: 'https://ancel.co.ke/case-studies' },
+  { path: '/blog', url: 'https://ancel.co.ke/blog' },
+  { path: '/contact', url: 'https://ancel.co.ke/contact' }
     ];
     
     requiredPages.forEach(page => {

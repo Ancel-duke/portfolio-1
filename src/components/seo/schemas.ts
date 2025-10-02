@@ -9,8 +9,8 @@ export const generatePersonSchema = () => ({
   "alternateName": ["Ajanga Ancel", "Duke"],
   "jobTitle": "Fullstack Software Engineer/Developer & App Developer",
   "description": "Ancel Ajanga (Duke) is a Fullstack Software Engineer/Developer & App Developer who loves building apps that solve real-world problems while expressing creativity through code. Builder of apps, poet, and creative problem solver.",
-  "url": "https://ancel-ajanga.netlify.app/",
-  "image": "https://ancel-ajanga.netlify.app/assets/profile-photo.jpg",
+  "url": "https://ancel.co.ke/",
+  "image": "https://ancel.co.ke/assets/profile-photo.jpg",
   "email": "ancel.ajanga@yahoo.com",
   "telephone": "+254768901257",
   "address": {
@@ -64,8 +64,8 @@ export const generateProjectSchema = (project: any) => ({
   "datePublished": project.year || "2024",
   "programmingLanguage": project.technologies || [],
   "featureList": project.features || [],
-  "image": `https://ancel-ajanga.netlify.app${project.image}`,
-  "screenshot": `https://ancel-ajanga.netlify.app${project.image}`
+  "image": `https://ancel.co.ke${project.image}`,
+  "screenshot": `https://ancel.co.ke${project.image}`
 });
 
 // Blog Post Schema
@@ -74,25 +74,25 @@ export const generateBlogPostSchema = (post: any) => ({
   "@type": "BlogPosting",
   "headline": post.title,
   "description": post.excerpt,
-  "image": `https://ancel-ajanga.netlify.app${post.image}`,
+  "image": `https://ancel.co.ke${post.image}`,
   "author": {
     "@type": "Person",
     "name": post.author.name,
-    "image": `https://ancel-ajanga.netlify.app${post.author.avatar}`,
+  "image": `https://ancel.co.ke${post.author.avatar}`,
     "description": post.author.bio
   },
   "publisher": {
     "@type": "Person",
     "name": "Ancel Ajanga",
-    "image": "https://ancel-ajanga.netlify.app/assets/profile-photo.jpg"
+  "image": "https://ancel.co.ke/assets/profile-photo.jpg"
   },
   "datePublished": post.date,
   "dateModified": post.date,
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": `https://ancel-ajanga.netlify.app/blog/${post.id}`
+  "@id": `https://ancel.co.ke/blog/${post.id}`
   },
-  "url": `https://ancel-ajanga.netlify.app/blog/${post.id}`,
+  "url": `https://ancel.co.ke/blog/${post.id}`,
   "keywords": post.tags.join(', '),
   "articleSection": "Technology",
   "wordCount": post.content.split(' ').length,
@@ -110,8 +110,8 @@ export const generateCaseStudySchema = (caseStudy: any) => ({
     "name": "Ancel Ajanga"
   },
   "datePublished": caseStudy.year,
-  "url": `https://ancel-ajanga.netlify.app/case-studies/${caseStudy.slug}`,
-  "image": `https://ancel-ajanga.netlify.app${caseStudy.images.hero}`,
+  "url": `https://ancel.co.ke/case-studies/${caseStudy.slug}`,
+  "image": `https://ancel.co.ke${caseStudy.images.hero}`,
   "keywords": caseStudy.technologies.map((tech: any) => tech.name).join(', '),
   "about": {
     "@type": "Thing",
@@ -131,14 +131,14 @@ export const generateWebsiteSchema = () => ({
   "name": "Ancel Ajanga Portfolio",
   "alternateName": "Ajanga Ancel Portfolio",
   "description": "Fullstack Software Engineer/Developer & App Developer Portfolio showcasing modern web applications and mobile apps",
-  "url": "https://ancel-ajanga.netlify.app",
+  "url": "https://ancel.co.ke",
   "author": {
     "@type": "Person",
     "name": "Ancel Ajanga"
   },
   "potentialAction": {
     "@type": "SearchAction",
-    "target": "https://ancel-ajanga.netlify.app/search?q={search_term_string}",
+  "target": "https://ancel.co.ke/search?q={search_term_string}",
     "query-input": "required name=search_term_string"
   }
 });
@@ -151,7 +151,7 @@ export const generateBreadcrumbSchema = (items: Array<{name: string, url: string
     "@type": "ListItem",
     "position": index + 1,
     "name": item.name,
-    "item": `https://ancel-ajanga.netlify.app${item.url}`
+  "item": `https://ancel.co.ke${item.url}`
   }))
 });
 
@@ -182,7 +182,7 @@ export const generatePortfolioSchema = (projects: any[] = []) => ({
     "datePublished": "2024",
     "programmingLanguage": project.technologies || [],
     "featureList": project.features || [],
-    "image": `https://ancel-ajanga.netlify.app${project.image}`
+  "image": `https://ancel.co.ke${project.image}`
   }))
 });
 
@@ -214,8 +214,8 @@ export const generateOrganizationSchema = () => ({
   "name": "Ancel Ajanga - Freelance Developer",
   "alternateName": "Ajanga Ancel - Freelance Developer",
   "description": "Fullstack Software Engineer/Developer & App Developer services specializing in React, Node.js, Python, and modern web technologies",
-  "url": "https://ancel-ajanga.netlify.app",
-  "logo": "https://ancel-ajanga.netlify.app/assets/profile-photo.jpg",
+  "url": "https://ancel.co.ke",
+  "logo": "https://ancel.co.ke/assets/profile-photo.jpg",
   "founder": {
     "@type": "Person",
     "name": "Ancel Ajanga"

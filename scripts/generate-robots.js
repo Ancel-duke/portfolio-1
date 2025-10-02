@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const baseUrl = 'https://ancel-ajanga.netlify.app';
+const baseUrl = 'https://ancel.co.ke';
 
 const generateRobotsTxt = () => {
   let robots = `# Robots.txt for ${baseUrl}

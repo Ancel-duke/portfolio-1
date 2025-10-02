@@ -41,7 +41,7 @@ export function BlogTemplate({ post }: BlogTemplateProps) {
       <SEO
         title={`${post.title} - Ancel Ajanga`}
         description={post.excerpt}
-        canonicalUrl={`https://ancel-ajanga.netlify.app/developer-journal/${post.slug}`}
+  canonicalUrl={`https://ancel.co.ke/developer-journal/${post.slug}`}
         jsonLd={generateBlogPostSchema(post)}
       />
 

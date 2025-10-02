@@ -56,13 +56,13 @@ export function BlogPost() {
         <title>{post.title} - Ancel Ajanga</title>
         <meta name="description" content={post.excerpt} />
         <meta name="keywords" content={post.tags.join(', ')} />
-        <link rel="canonical" href={`https://ancel-ajanga.netlify.app/developer-journal/${slug}`} />
+  <link rel="canonical" href={`https://ancel.co.ke/developer-journal/${slug}`} />
         
         {/* Open Graph */}
         <meta property="og:title" content={post.title} />
         <meta property="og:description" content={post.excerpt} />
         <meta property="og:image" content={post.image} />
-        <meta property="og:url" content={`https://ancel-ajanga.netlify.app/developer-journal/${slug}`} />
+  <meta property="og:url" content={`https://ancel.co.ke/developer-journal/${slug}`} />
         
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />

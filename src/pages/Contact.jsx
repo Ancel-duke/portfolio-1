@@ -153,7 +153,7 @@ const Contact = () => {
       <SEO
         title="Contact - Ancel Ajanga | Fullstack Software Engineer"
         description="Contact Ancel Ajanga, a fullstack software engineer from Kenya, for collaboration opportunities, project inquiries, or development services. Available for freelance and full-time opportunities."
-        canonicalUrl="https://ancel-ajanga.netlify.app/contact"
+  canonicalUrl="https://ancel.co.ke/contact"
       />
 
       <section className="section-padding pt-24">

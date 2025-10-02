@@ -20,8 +20,8 @@ interface SEOHeadProps {
 const defaultSEO = {
   title: 'Ancel Ajanga - Fullstack Software Engineer/Developer & App Developer',
   description: 'Ancel Ajanga (Duke) — Fullstack Software Engineer/Developer & App Developer. Builder of apps, poet, and creative problem solver.',
-  canonical: 'https://ancel-ajanga.netlify.app',
-  ogImage: 'https://ancel-ajanga.netlify.app/assets/profile-photo.jpg',
+  canonical: 'https://ancel.co.ke',
+  ogImage: 'https://ancel.co.ke/assets/profile-photo.jpg',
   ogType: 'website',
   twitterCard: 'summary_large_image',
   keywords: [

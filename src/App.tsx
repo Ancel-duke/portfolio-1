@@ -35,7 +35,7 @@ function HomePage() {
       <SEO
         title="Ancel Ajanga - Fullstack Software Engineer/Developer & App Developer"
         description="Ancel Ajanga (Duke) — Fullstack Software Engineer/Developer & App Developer. Builder of apps, poet, and creative problem solver."
-        canonicalUrl="https://ancel-ajanga.netlify.app/"
+  canonicalUrl="https://ancel.co.ke/"
         jsonLd={[
           generatePersonSchema(),
           generateWebsiteSchema(),

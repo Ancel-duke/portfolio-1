@@ -17,9 +17,9 @@ Your portfolio has excellent SEO setup that will help it rank for "Ancel Ajanga"
 
 ### **1. Submit to Google Search Console:**
 1. Go to [Google Search Console](https://search.google.com/search-console)
-2. Add your property: `https://ancel-ajanga-portfolio.netlify.app/`
+2. Add your property: `https://ancel.co.ke/`
 3. Verify ownership (Netlify will help)
-4. Submit your sitemap: `https://ancel-ajanga-portfolio.netlify.app/sitemap.xml`
+4. Submit your sitemap: `https://ancel.co.ke/sitemap.xml`
 
 ### **2. Submit to Bing Webmaster Tools:**
 1. Go to [Bing Webmaster Tools](https://www.bing.com/webmasters)

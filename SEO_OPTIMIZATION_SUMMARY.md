@@ -52,7 +52,7 @@
 <meta name="keywords" content="Ancel Ajanga, Fullstack Software Engineer, React Developer, Node.js Developer, Python Developer, Mobile App Developer, Web Developer, Kenya, Portfolio, Software Applications, React Native, Flutter, Django, MongoDB" />
 <meta name="author" content="Ancel Ajanga" />
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
-<link rel="canonical" href="https://ancel-ajanga-portfolio.netlify.app/" />
+<link rel="canonical" href="https://ancel.co.ke/" />
 ```
 
 #### **Open Graph** (Lines 14-22)

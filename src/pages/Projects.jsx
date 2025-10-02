@@ -47,7 +47,7 @@ const Projects = () => {
       <SEO
         title="Projects - Ancel Ajanga | Fullstack Software Engineer/Developer & App Developer"
         description="View Ancel Ajanga (Duke)'s portfolio of 8+ software projects including finance trackers, e-learning platforms, mobile apps, and web applications built with React, Node.js, Python, and modern technologies."
-        canonicalUrl="https://ancel-ajanga.netlify.app/projects"
+  canonicalUrl="https://ancel.co.ke/projects"
       />
 
       <section className="section-padding pt-24">

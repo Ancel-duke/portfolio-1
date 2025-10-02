@@ -12,16 +12,16 @@ export function generateBlogPostSchema(post: BlogPost) {
     "author": {
       "@type": "Person",
       "name": "Ancel Ajanga",
-      "url": "https://ancel-ajanga.netlify.app"
+  "url": "https://ancel.co.ke"
     },
     "publisher": {
       "@type": "Person",
       "name": "Ancel Ajanga",
-      "url": "https://ancel-ajanga.netlify.app"
+  "url": "https://ancel.co.ke"
     },
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": `https://ancel-ajanga.netlify.app/developer-journal/${post.slug}`
+  "@id": `https://ancel.co.ke/developer-journal/${post.slug}`
     },
     "keywords": post.tags.join(", ")
   };
@@ -33,13 +33,13 @@ export function generateBlogSchema(posts: BlogPost[]) {
     "@type": "Blog",
     "name": "Developer Journal - Ancel Ajanga",
     "description": "Deep dives into web development, architecture patterns, and lessons learned from building production applications.",
-    "url": "https://ancel-ajanga.netlify.app/developer-journal",
+  "url": "https://ancel.co.ke/developer-journal",
     "blogPost": posts.map((post: BlogPost) => ({
       "@type": "BlogPosting",
       "headline": post.title,
       "description": post.excerpt,
       "datePublished": post.date,
-      "url": `https://ancel-ajanga.netlify.app/developer-journal/${post.slug}`
+  "url": `https://ancel.co.ke/developer-journal/${post.slug}`
     }))
   };
 }
