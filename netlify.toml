@@ -10,6 +10,14 @@
 
 [[redirects]]
   from = "/*"
+  to = "https://ancel.co.ke/:splat"
+  status = 301
+  force = true
+  [redirects.conditions]
+    Host = ["ancel-ajanga.netlify.app"]
+
+[[redirects]]
+  from = "/*"
   to = "/index.html"
   status = 200
 
