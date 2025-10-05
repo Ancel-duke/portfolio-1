@@ -101,6 +101,37 @@ export function Fun({ className }: FunProps) {
     setCurrentTrackIndex((prev) => (prev - 1 + funData.nowPlaying.length) % funData.nowPlaying.length)
   }
 
+  // Ensure per-feature keys are respected on initial load for Labs
+  React.useEffect(() => {
+    const featureKeys = ['customCursor', 'parallax', 'nowPlaying', 'animations'] as const
+    let merged = { ...labs }
+    featureKeys.forEach((key) => {
+      try {
+        const stored = localStorage.getItem(`labs:${key}`)
+        if (stored !== null) {
+          const parsed = JSON.parse(stored)
+          if (typeof parsed === 'boolean') {
+            merged = {
+              ...merged,
+              [key]: {
+                ...merged[key as keyof typeof merged],
+                enabled: parsed
+              }
+            }
+          }
+        }
+      } catch {
+        // ignore malformed values for robustness
+      }
+    })
+    // Only update state if something changed
+    const changed = featureKeys.some((k) => merged[k].enabled !== labs[k].enabled)
+    if (changed) {
+      setLabs(merged)
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
   const handleLabToggle = (labKey: string) => {
     const newLabs = {
       ...labs,
@@ -111,7 +142,32 @@ export function Fun({ className }: FunProps) {
     }
     setLabs(newLabs)
     saveToLocalStorage('labs', newLabs)
+    // Also persist individual feature key immediately
+    const enabled = newLabs[labKey as keyof typeof newLabs].enabled
+    try {
+      localStorage.setItem(`labs:${labKey}`, JSON.stringify(!!enabled))
+    } catch {
+      // non-fatal
+    }
   }
+
+  // Reflect lab flags immediately in the UI (classes that CSS/JS can hook into)
+  React.useEffect(() => {
+    const root = document.documentElement
+    const flagClassMap: Record<string, string> = {
+      customCursor: 'labs-custom-cursor',
+      parallax: 'labs-parallax',
+      animations: 'labs-animations'
+    }
+    Object.entries(flagClassMap).forEach(([key, className]) => {
+      const enabled = (labs as any)[key]?.enabled
+      if (enabled) {
+        root.classList.add(className)
+      } else {
+        root.classList.remove(className)
+      }
+    })
+  }, [labs])
 
   const getIcon = (iconName: string) => {
     const IconComponent = iconMap[iconName as keyof typeof iconMap] || Code2
@@ -137,28 +193,30 @@ export function Fun({ className }: FunProps) {
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
         >
-          {/* Now Playing */}
-          <motion.div variants={itemVariants}>
-            <Card className="h-full">
-              <CardHeader>
-                <CardTitle className="flex items-center space-x-2">
-                  <Music className="h-5 w-5" />
-                  <span>Now Playing</span>
-                </CardTitle>
-                <CardDescription>
-                  What I'm listening to while coding
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <NowPlaying
-                  track={currentTrack}
-                  onPlayPause={handlePlayPause}
-                  onNext={handleNext}
-                  onPrevious={handlePrevious}
-                />
-              </CardContent>
-            </Card>
-          </motion.div>
+          {/* Now Playing (respects Labs toggle) */}
+          {labs.nowPlaying?.enabled && (
+            <motion.div variants={itemVariants}>
+              <Card className="h-full">
+                <CardHeader>
+                  <CardTitle className="flex items-center space-x-2">
+                    <Music className="h-5 w-5" />
+                    <span>Now Playing</span>
+                  </CardTitle>
+                  <CardDescription>
+                    What I'm listening to while coding
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <NowPlaying
+                    track={currentTrack}
+                    onPlayPause={handlePlayPause}
+                    onNext={handleNext}
+                    onPrevious={handlePrevious}
+                  />
+                </CardContent>
+              </Card>
+            </motion.div>
+          )}
 
           {/* Fun Facts */}
           <motion.div variants={itemVariants}>
