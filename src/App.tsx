@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Suspense, lazy } from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { HelmetProvider } from 'react-helmet-async'
 import { ThemeProvider } from './contexts/ThemeContext'
@@ -12,10 +12,6 @@ import { Fun } from './components/sections/fun'
 import { CTA } from './components/sections/cta'
 import { ContactForm } from './components/forms/contact-form'
 import { About } from './components/sections/about'
-import { BlogDetailPage } from './pages/BlogDetailPage'
-import { CaseStudyDetailPage } from './pages/CaseStudyDetailPage'
-import Projects from './pages/Projects'
-import { DeveloperJournal } from './pages/DeveloperJournal'
 import { Button } from './components/ui/button'
 import SEO from './components/seo/SEO'
 import { SkipLink } from './components/ui/skip-link'
@@ -27,6 +23,19 @@ import {
 } from './components/seo/schemas'
 import WebVitals from './components/performance/WebVitals'
 import projectsData from './data/projects.json'
+
+// Lazy load pages for code splitting
+const BlogDetailPage = lazy(() => import('./pages/BlogDetailPage').then(module => ({ default: module.BlogDetailPage })))
+const CaseStudyDetailPage = lazy(() => import('./pages/CaseStudyDetailPage').then(module => ({ default: module.CaseStudyDetailPage })))
+const Projects = lazy(() => import('./pages/Projects'))
+const DeveloperJournal = lazy(() => import('./pages/DeveloperJournal').then(module => ({ default: module.DeveloperJournal })))
+
+// Loading fallback component
+const PageLoader = () => (
+  <div className="min-h-screen flex items-center justify-center">
+    <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
+  </div>
+)
 
 // Home Page Component
 function HomePage() {
@@ -137,21 +146,23 @@ function App() {
             <WebVitals />
             <Header />
             <main id="main-content" role="main">
-              <Routes>
-                <Route path="/" element={<HomePage />} />
-                <Route path="/about" element={<AboutPage />} />
-                <Route path="/projects" element={<Projects />} />
-                <Route path="/case-studies" element={<CaseStudiesPage />} />
-                <Route path="/case-studies/:slug" element={<CaseStudyDetailPage />} />
-                <Route path="/developer-journal" element={<DeveloperJournal />} />
-                <Route path="/developer-journal/:slug" element={<BlogDetailPage />} />
-                <Route path="/blog" element={<DeveloperJournal />} />
-                <Route path="/timeline" element={<TimelinePage />} />
-                <Route path="/stack" element={<StackPage />} />
-                <Route path="/fun" element={<FunPage />} />
-                <Route path="/contact" element={<ContactPage />} />
-                <Route path="*" element={<NotFoundPage />} />
-              </Routes>
+              <Suspense fallback={<PageLoader />}>
+                <Routes>
+                  <Route path="/" element={<HomePage />} />
+                  <Route path="/about" element={<AboutPage />} />
+                  <Route path="/projects" element={<Projects />} />
+                  <Route path="/case-studies" element={<CaseStudiesPage />} />
+                  <Route path="/case-studies/:slug" element={<CaseStudyDetailPage />} />
+                  <Route path="/developer-journal" element={<DeveloperJournal />} />
+                  <Route path="/developer-journal/:slug" element={<BlogDetailPage />} />
+                  <Route path="/blog" element={<DeveloperJournal />} />
+                  <Route path="/timeline" element={<TimelinePage />} />
+                  <Route path="/stack" element={<StackPage />} />
+                  <Route path="/fun" element={<FunPage />} />
+                  <Route path="/contact" element={<ContactPage />} />
+                  <Route path="*" element={<NotFoundPage />} />
+                </Routes>
+              </Suspense>
             </main>
             <Footer />
           </div>

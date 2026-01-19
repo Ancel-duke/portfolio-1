@@ -56,7 +56,7 @@ export function Header({ className }: HeaderProps) {
           </motion.div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-1" role="navigation" aria-label="Main navigation">
+          <nav className="hidden lg:flex items-center space-x-1" role="navigation" aria-label="Main navigation">
             {navigation.map((item) => {
               const IconComponent = item.icon
               return (
@@ -65,14 +65,14 @@ export function Header({ className }: HeaderProps) {
                   variant="ghost"
                   size="sm"
                   asChild
-                  className="flex items-center space-x-2 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+                  className="flex items-center space-x-2 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 min-h-[44px]"
                 >
                   <a 
                     href={item.href}
                     aria-label={`Navigate to ${item.name}`}
                   >
                     <IconComponent className="h-4 w-4" aria-hidden="true" />
-                    <span>{item.name}</span>
+                    <span className="hidden xl:inline">{item.name}</span>
                   </a>
                 </Button>
               )
@@ -85,7 +85,7 @@ export function Header({ className }: HeaderProps) {
             <Button
               variant="ghost"
               size="icon"
-              className="md:hidden focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+              className="lg:hidden focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 min-w-[44px] min-h-[44px]"
               onClick={toggleMenu}
               aria-label={isOpen ? "Close navigation menu" : "Open navigation menu"}
               aria-expanded={isOpen}
@@ -104,26 +104,26 @@ export function Header({ className }: HeaderProps) {
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.2 }}
-              className="md:hidden border-t"
+              className="lg:hidden border-t"
               id="mobile-navigation"
             >
-              <nav className="py-4 space-y-1" role="navigation" aria-label="Mobile navigation">
+              <nav className="py-2 space-y-1" role="navigation" aria-label="Mobile navigation">
                 {navigation.map((item) => {
                   const IconComponent = item.icon
                   return (
                     <Button
                       key={item.name}
                       variant="ghost"
-                      className="w-full justify-start focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+                      className="w-full justify-start focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 min-h-[48px] text-base"
                       asChild
                       onClick={closeMenu}
                     >
                       <a 
                         href={item.href} 
-                        className="flex items-center space-x-3"
+                        className="flex items-center space-x-3 px-4"
                         aria-label={`Navigate to ${item.name}`}
                       >
-                        <IconComponent className="h-4 w-4" aria-hidden="true" />
+                        <IconComponent className="h-5 w-5 flex-shrink-0" aria-hidden="true" />
                         <span>{item.name}</span>
                       </a>
                     </Button>

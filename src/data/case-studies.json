@@ -871,6 +871,141 @@
       "after": "/assets/projects/bank.jpg",
       "gallery": ["/assets/projects/bank.jpg"]
     }
+  },
+  {
+    "id": 11,
+    "slug": "educhain",
+    "title": "EduChain - Blockchain Certificate Management",
+    "subtitle": "Full-stack Web3 application for issuing verifiable academic certificates as NFTs",
+    "role": "Full-Stack Developer",
+    "timeline": "3 months",
+    "year": "2026",
+    "status": "Live",
+    "description": "EduChain is a full-stack Web3 application that revolutionizes educational certificate management by issuing verifiable academic certificates as ERC721 NFTs on the Ethereum blockchain. The platform enables educational institutions to issue tamper-proof, blockchain-verified certificates while providing students with permanent, verifiable proof of their achievements.",
+    "problem": "Traditional paper certificates and digital PDFs are easily forged, difficult to verify, and can be lost or damaged. Educational institutions need a secure, decentralized solution to issue and verify academic credentials that cannot be tampered with and remain permanently accessible.",
+    "solution": "I built EduChain as a blockchain-based certificate management system that leverages ERC721 NFT standards to create immutable, verifiable certificates. Each certificate is permanently stored on the Ethereum blockchain with metadata on IPFS, ensuring tamper-proof verification and permanent accessibility.",
+    "impact": "EduChain provides a secure, decentralized solution for certificate management with instant verification capabilities. The platform ensures certificates are permanently accessible, tamper-proof, and easily verifiable by anyone with the certificate token ID.",
+    "technologies": [
+      {
+        "name": "React 19",
+        "category": "Frontend",
+        "icon": "react"
+      },
+      {
+        "name": "Tailwind CSS",
+        "category": "Styling",
+        "icon": "tailwind"
+      },
+      {
+        "name": "RainbowKit",
+        "category": "Frontend",
+        "icon": "web3"
+      },
+      {
+        "name": "Wagmi",
+        "category": "Frontend",
+        "icon": "web3"
+      },
+      {
+        "name": "ethers.js",
+        "category": "Frontend",
+        "icon": "ethereum"
+      },
+      {
+        "name": "Node.js",
+        "category": "Backend",
+        "icon": "nodejs"
+      },
+      {
+        "name": "Express.js",
+        "category": "Backend",
+        "icon": "express"
+      },
+      {
+        "name": "MongoDB",
+        "category": "Database",
+        "icon": "mongodb"
+      },
+      {
+        "name": "Mongoose",
+        "category": "ODM",
+        "icon": "mongoose"
+      },
+      {
+        "name": "Solidity",
+        "category": "Blockchain",
+        "icon": "solidity"
+      },
+      {
+        "name": "Hardhat",
+        "category": "Blockchain",
+        "icon": "hardhat"
+      },
+      {
+        "name": "IPFS",
+        "category": "Storage",
+        "icon": "ipfs"
+      }
+    ],
+    "features": [
+      "Secure certificate minting with owner-only access control",
+      "IPFS integration for decentralized metadata storage",
+      "Wallet-based certificate viewing for students",
+      "Public certificate verification using token IDs",
+      "Batch management through MongoDB",
+      "Clean grayscale UI design",
+      "Real-time blockchain state updates",
+      "Non-transferable NFTs to prevent certificate trading"
+    ],
+    "challenges": [
+      "Integrating multiple Web3 libraries with proper async handling",
+      "Coordinating frontend, backend, and blockchain interactions",
+      "Implementing automatic metadata upload and retrieval from IPFS",
+      "Resolving Node.js version conflicts and peer dependency issues",
+      "Fixing ethers.js v6 async signer issues",
+      "Configuring multi-network support with proper chain switching"
+    ],
+    "outcomes": [
+      "Fully functional Web3 application with all core features implemented",
+      "Production deployment on Netlify, Render, and Sepolia testnet",
+      "Secure smart contract with owner-only minting and ReentrancyGuard",
+      "Dual storage system with MongoDB for queries and IPFS for metadata",
+      "Comprehensive error handling and loading states"
+    ],
+    "metrics": [
+      {
+        "label": "Smart Contract",
+        "value": "ERC721-compliant",
+        "description": "OpenZeppelin audited patterns"
+      },
+      {
+        "label": "API Endpoints",
+        "value": "5 RESTful",
+        "description": "Comprehensive error handling"
+      },
+      {
+        "label": "Security",
+        "value": "Owner-only",
+        "description": "ReentrancyGuard protection"
+      },
+      {
+        "label": "Storage",
+        "value": "Dual system",
+        "description": "MongoDB + IPFS + Blockchain"
+      }
+    ],
+    "links": {
+      "live": "https://educhainn.netlify.app",
+      "github": "https://github.com/Ancel-duke/EduChain"
+    },
+    "images": {
+      "hero": "/assets/projects/EduChain.jpg",
+      "before": "/assets/projects/EduChain.jpg",
+      "after": "/assets/projects/EduChain.jpg",
+      "gallery": [
+        "/assets/projects/EduChain.jpg"
+      ]
+    }
   }
 ]
 

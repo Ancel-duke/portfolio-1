@@ -62,7 +62,7 @@ export function Hero({ className }: HeroProps) {
         >
 
           <motion.h1
-            className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-6 leading-tight"
             variants={itemVariants}
           >
             Hi, I'm{" "}
@@ -70,7 +70,7 @@ export function Hero({ className }: HeroProps) {
           </motion.h1>
 
           <motion.p
-            className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-4xl mx-auto"
+            className="text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground mb-6 sm:mb-8 max-w-4xl mx-auto px-4 sm:px-0 leading-relaxed"
             variants={itemVariants}
           >
             Fullstack Software Engineer/Developer & App Developer crafting scalable web platforms and cross‑platform mobile apps (Android, iOS, web).
@@ -78,16 +78,16 @@ export function Hero({ className }: HeroProps) {
           </motion.p>
 
           <motion.div
-            className="flex flex-col sm:flex-row gap-4 justify-center mb-12"
+            className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center mb-8 sm:mb-12 px-4 sm:px-0"
             variants={itemVariants}
           >
-            <Button size="lg" className="group" asChild>
+            <Button size="lg" className="group w-full sm:w-auto min-h-[48px] text-base sm:text-lg" asChild>
               <a href="/projects">
                 View My Work
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </a>
             </Button>
-            <Button size="lg" variant="outline" asChild>
+            <Button size="lg" variant="outline" className="w-full sm:w-auto min-h-[48px] text-base sm:text-lg" asChild>
               <a href="/assets/resume.pdf" download>
                 <Download className="mr-2 h-5 w-5" />
                 Download Resume
@@ -120,20 +120,20 @@ export function Hero({ className }: HeroProps) {
           </motion.div>
 
           <motion.div
-            className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 text-center"
+            className="mt-12 sm:mt-16 grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 text-center px-4 sm:px-0"
             variants={itemVariants}
           >
             <div className="space-y-2">
-              <div className="text-3xl font-bold text-primary">9+</div>
-              <div className="text-sm text-muted-foreground">Projects Built</div>
+              <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-primary">30+</div>
+              <div className="text-xs sm:text-sm text-muted-foreground">Projects Built</div>
             </div>
             <div className="space-y-2">
-              <div className="text-3xl font-bold text-primary">4+</div>
-              <div className="text-sm text-muted-foreground">Years Coding</div>
+              <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-primary">4+</div>
+              <div className="text-xs sm:text-sm text-muted-foreground">Years Coding</div>
             </div>
             <div className="space-y-2">
-              <div className="text-3xl font-bold text-primary">50+</div>
-              <div className="text-sm text-muted-foreground">Happy Clients</div>
+              <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-primary">50+</div>
+              <div className="text-xs sm:text-sm text-muted-foreground">Happy Clients</div>
             </div>
           </motion.div>
         </motion.div>

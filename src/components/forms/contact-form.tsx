@@ -135,8 +135,8 @@ export function ContactForm({ className, onSuccess }: ContactFormProps) {
             </Button>
           </div>
         ) : (
-          <form onSubmit={handleSubmit} className="space-y-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="space-y-2">
                 <label htmlFor="name" className="text-sm font-medium">
                   Name *
@@ -146,7 +146,7 @@ export function ContactForm({ className, onSuccess }: ContactFormProps) {
                   type="text"
                   value={formData.name}
                   onChange={(e) => handleInputChange('name', e.target.value)}
-                  className={cn(errors.name && "border-destructive")}
+                  className={cn(errors.name && "border-destructive", "min-h-[48px] text-base")}
                   placeholder="Your name"
                   disabled={isSubmitting}
                 />
@@ -181,7 +181,7 @@ export function ContactForm({ className, onSuccess }: ContactFormProps) {
                 id="message"
                 value={formData.message}
                 onChange={(e) => handleInputChange('message', e.target.value)}
-                className={cn(errors.message && "border-destructive", "min-h-[120px]")}
+                className={cn(errors.message && "border-destructive", "min-h-[120px] sm:min-h-[150px] text-base")}
                 placeholder="Tell me about your project..."
                 disabled={isSubmitting}
               />
@@ -203,7 +203,7 @@ export function ContactForm({ className, onSuccess }: ContactFormProps) {
               <Button
                 type="submit"
                 disabled={isSubmitting}
-                className="flex-1"
+                className="flex-1 min-h-[48px] text-base"
               >
                 {isSubmitting ? (
                   <>

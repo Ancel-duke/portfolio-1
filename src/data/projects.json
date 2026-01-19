@@ -247,5 +247,34 @@
     "repoUrl": "https://github.com/Ancel-duke/banking",
     "image": "/assets/projects/bank.jpg",
     "outcomes": "Clean OOP design showcasing encapsulation, inheritance, abstraction, and polymorphism; fully offline and lightweight; ideal for demonstrating problem-solving and software design skills."
+  },
+  {
+    "id": 11,
+    "title": "EduChain - Blockchain Certificate Management",
+    "description": "A full-stack Web3 application that issues verifiable academic certificates as ERC721 NFTs on the Ethereum blockchain, enabling tamper-proof certificate management for educational institutions.",
+    "detailedDescription": "EduChain is a full-stack Web3 application that revolutionizes educational certificate management by issuing verifiable academic certificates as ERC721 NFTs on the Ethereum blockchain. The platform enables educational institutions to issue tamper-proof, blockchain-verified certificates while providing students with permanent, verifiable proof of their achievements. Key features include secure certificate minting with owner-only access control, IPFS integration for decentralized metadata storage, wallet-based certificate viewing for students, public certificate verification using token IDs, batch management through MongoDB, and a clean grayscale UI design. The application is built with React 19 frontend, Node.js and Express.js backend, MongoDB database, Solidity smart contracts deployed on Sepolia testnet, and IPFS for metadata storage via Pinata API.",
+    "technologies": [
+      "React 19",
+      "Tailwind CSS",
+      "RainbowKit",
+      "Wagmi",
+      "ethers.js v6",
+      "React Router",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "Mongoose",
+      "IPFS",
+      "Pinata API",
+      "Solidity 0.8.20",
+      "Hardhat",
+      "OpenZeppelin v5",
+      "Netlify",
+      "Render"
+    ],
+    "liveUrl": "https://educhainn.netlify.app",
+    "repoUrl": "https://github.com/Ancel-duke/EduChain",
+    "image": "/assets/projects/EduChain.jpg",
+    "outcomes": "Production-ready Web3 application demonstrating full-stack development, smart contract deployment, blockchain integration, and decentralized storage. Shows proficiency in Web3 technologies, NFT standards, IPFS integration, and production deployment across multiple platforms."
   }
 ]

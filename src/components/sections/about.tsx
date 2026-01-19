@@ -40,6 +40,7 @@ export function About({ className }: AboutProps) {
     { name: 'MongoDB', level: 75, category: 'Database' },
     { name: 'PostgreSQL', level: 80, category: 'Database' },
     { name: 'MySQL', level: 70, category: 'Database' },
+    { name: 'Solidity', level: 70, category: 'Blockchain' },
     { name: 'AWS', level: 70, category: 'Cloud' },
     { name: 'Git', level: 85, category: 'Tools' },
     { name: 'Docker', level: 65, category: 'DevOps' },
@@ -53,6 +54,7 @@ export function About({ className }: AboutProps) {
     'Backend': ['Node.js', 'Python', 'Django', 'Express.js'],
     'Mobile': ['Flutter', 'Dart', 'React Native'],
     'Database': ['MongoDB', 'PostgreSQL', 'MySQL', 'Redis'],
+    'Blockchain & Web3': ['Solidity', 'Hardhat', 'OpenZeppelin', 'RainbowKit', 'Wagmi', 'ethers.js', 'IPFS'],
     'Cloud & DevOps': ['AWS', 'Docker', 'Git', 'CI/CD'],
     'Tools': ['VS Code', 'Figma', 'Postman', 'GitHub']
   }

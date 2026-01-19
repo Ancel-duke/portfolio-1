@@ -4,10 +4,10 @@
       "name": "React",
       "category": "Frontend",
       "icon": "react",
-      "frequency": 6,
+      "frequency": 7,
       "proficiency": 9,
       "description": "JavaScript library for building user interfaces",
-      "projects": ["Habit Tracker", "Travelogue", "Rasoha Academy", "Attendance System", "E-Learning Platform", "TaskForge"]
+      "projects": ["Habit Tracker", "Travelogue", "Rasoha Academy", "Attendance System", "E-Learning Platform", "TaskForge", "EduChain"]
     },
     {
       "name": "Next.js",
@@ -67,19 +67,19 @@
       "name": "Node.js",
       "category": "Backend",
       "icon": "nodejs",
-      "frequency": 2,
+      "frequency": 3,
       "proficiency": 8,
       "description": "JavaScript runtime for server-side development",
-      "projects": ["Attendance System", "TaskForge"]
+      "projects": ["Attendance System", "TaskForge", "EduChain"]
     },
     {
       "name": "Express.js",
       "category": "Backend",
       "icon": "express",
-      "frequency": 2,
+      "frequency": 3,
       "proficiency": 8,
       "description": "Web application framework for Node.js",
-      "projects": ["Attendance System", "TaskForge"]
+      "projects": ["Attendance System", "TaskForge", "EduChain"]
     },
     {
       "name": "Django",
@@ -103,10 +103,10 @@
       "name": "MongoDB",
       "category": "Database",
       "icon": "mongodb",
-      "frequency": 2,
+      "frequency": 3,
       "proficiency": 8,
       "description": "NoSQL document database",
-      "projects": ["Attendance System", "TaskForge"]
+      "projects": ["Attendance System", "TaskForge", "EduChain"]
     },
     {
       "name": "PostgreSQL",
@@ -130,10 +130,10 @@
       "name": "Tailwind CSS",
       "category": "Styling",
       "icon": "tailwind",
-      "frequency": 6,
+      "frequency": 7,
       "proficiency": 9,
       "description": "Utility-first CSS framework",
-      "projects": ["Personal Finance Tracker", "Fitness Class Scheduler", "Habit Tracker", "Rasoha Academy", "Attendance System", "E-Learning Platform", "TaskForge"]
+      "projects": ["Personal Finance Tracker", "Fitness Class Scheduler", "Habit Tracker", "Rasoha Academy", "Attendance System", "E-Learning Platform", "TaskForge", "EduChain"]
     },
     {
       "name": "Chart.js",
@@ -233,6 +233,87 @@
       "proficiency": 6,
       "description": "End-to-end testing framework",
       "projects": ["Personal Finance Tracker"]
+    },
+    {
+      "name": "Mongoose",
+      "category": "ODM",
+      "icon": "mongoose",
+      "frequency": 2,
+      "proficiency": 8,
+      "description": "MongoDB object modeling for Node.js",
+      "projects": ["Attendance System", "EduChain"]
+    },
+    {
+      "name": "Solidity",
+      "category": "Blockchain",
+      "icon": "solidity",
+      "frequency": 1,
+      "proficiency": 7,
+      "description": "Programming language for writing smart contracts",
+      "projects": ["EduChain"]
+    },
+    {
+      "name": "Hardhat",
+      "category": "Blockchain",
+      "icon": "hardhat",
+      "frequency": 1,
+      "proficiency": 7,
+      "description": "Development environment for Ethereum software",
+      "projects": ["EduChain"]
+    },
+    {
+      "name": "OpenZeppelin",
+      "category": "Blockchain",
+      "icon": "openzeppelin",
+      "frequency": 1,
+      "proficiency": 7,
+      "description": "Library for secure smart contract development",
+      "projects": ["EduChain"]
+    },
+    {
+      "name": "RainbowKit",
+      "category": "Web3",
+      "icon": "rainbowkit",
+      "frequency": 1,
+      "proficiency": 7,
+      "description": "React library for wallet connection",
+      "projects": ["EduChain"]
+    },
+    {
+      "name": "Wagmi",
+      "category": "Web3",
+      "icon": "wagmi",
+      "frequency": 1,
+      "proficiency": 7,
+      "description": "React Hooks for Ethereum",
+      "projects": ["EduChain"]
+    },
+    {
+      "name": "ethers.js",
+      "category": "Web3",
+      "icon": "ethers",
+      "frequency": 1,
+      "proficiency": 7,
+      "description": "JavaScript library for interacting with Ethereum",
+      "projects": ["EduChain"]
+    },
+    {
+      "name": "IPFS",
+      "category": "Storage",
+      "icon": "ipfs",
+      "frequency": 1,
+      "proficiency": 7,
+      "description": "InterPlanetary File System for decentralized storage",
+      "projects": ["EduChain"]
+    },
+    {
+      "name": "Pinata",
+      "category": "Storage",
+      "icon": "pinata",
+      "frequency": 1,
+      "proficiency": 7,
+      "description": "IPFS pinning service for decentralized storage",
+      "projects": ["EduChain"]
     }
   ],
   "categories": [
@@ -305,6 +386,26 @@
       "name": "Testing",
       "color": "amber",
       "count": 3
+    },
+    {
+      "name": "ODM",
+      "color": "indigo",
+      "count": 1
+    },
+    {
+      "name": "Blockchain",
+      "color": "slate",
+      "count": 3
+    },
+    {
+      "name": "Web3",
+      "color": "blue",
+      "count": 3
+    },
+    {
+      "name": "Storage",
+      "color": "teal",
+      "count": 2
     }
   ]
 }

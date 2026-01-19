@@ -1,11 +1,48 @@
 # Robots.txt for https://ancel.co.ke
 # Generated automatically - do not edit manually
 
-# Allow all crawlers
+# Allow all crawlers by default
 User-agent: *
 Allow: /
 
-# Allow AI crawlers specifically
+# Explicitly allow all major search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Googlebot-Video
+Allow: /
+
+User-agent: BingBot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+User-agent: Sogou
+Allow: /
+
+User-agent: Exabot
+Allow: /
+
+User-agent: facebot
+Allow: /
+
+User-agent: ia_archiver
+Allow: /
+
+# Explicitly allow all AI crawlers
 User-agent: GPTBot
 Allow: /
 
@@ -24,10 +61,10 @@ Allow: /
 User-agent: Google-Extended
 Allow: /
 
-User-agent: BingBot
+User-agent: PerplexityBot
 Allow: /
 
-User-agent: Googlebot
+User-agent: Applebot-Extended
 Allow: /
 
 # Disallow admin and private areas (if any)

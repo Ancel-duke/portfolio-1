@@ -16,7 +16,7 @@ interface BlogGridProps {
   showViewAll?: boolean
 }
 
-export function BlogGrid({ className, limit, showViewAll = true }: BlogGridProps) {
+export const BlogGrid = React.memo(function BlogGrid({ className, limit, showViewAll = true }: BlogGridProps) {
   const posts: BlogPost[] = limit ? (blogData as BlogPost[]).slice(0, limit) : (blogData as BlogPost[])
 
   const containerVariants = {
@@ -70,7 +70,12 @@ export function BlogGrid({ className, limit, showViewAll = true }: BlogGridProps
                   <img
                     src={post.image}
                     alt={post.title}
-                    className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                    className="w-full h-40 sm:h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                    loading="lazy"
+                    decoding="async"
+                    fetchPriority="low"
+                    width="800"
+                    height="384"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
                   <div className="absolute bottom-4 left-4 right-4">
@@ -140,4 +145,4 @@ export function BlogGrid({ className, limit, showViewAll = true }: BlogGridProps
       </div>
     </section>
   )
-}
+})

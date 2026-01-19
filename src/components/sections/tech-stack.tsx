@@ -167,7 +167,7 @@ export function TechStack({ className }: TechStackProps) {
                 <CardHeader>
                   <CardTitle>Technology Usage Frequency</CardTitle>
                   <CardDescription>
-                    How many of my 9 projects use each technology
+                    How many of my 30+ projects use each technology
                   </CardDescription>
                 </CardHeader>
                 <CardContent>

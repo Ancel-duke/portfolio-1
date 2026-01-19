@@ -7,11 +7,48 @@ const generateRobotsTxt = () => {
   let robots = `# Robots.txt for ${baseUrl}
 # Generated automatically - do not edit manually
 
-# Allow all crawlers
+# Allow all crawlers by default
 User-agent: *
 Allow: /
 
-# Allow AI crawlers specifically
+# Explicitly allow all major search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Googlebot-Video
+Allow: /
+
+User-agent: BingBot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+User-agent: Sogou
+Allow: /
+
+User-agent: Exabot
+Allow: /
+
+User-agent: facebot
+Allow: /
+
+User-agent: ia_archiver
+Allow: /
+
+# Explicitly allow all AI crawlers
 User-agent: GPTBot
 Allow: /
 
@@ -30,10 +67,10 @@ Allow: /
 User-agent: Google-Extended
 Allow: /
 
-User-agent: BingBot
+User-agent: PerplexityBot
 Allow: /
 
-User-agent: Googlebot
+User-agent: Applebot-Extended
 Allow: /
 
 # Disallow admin and private areas (if any)
@@ -75,7 +112,8 @@ if (!fs.existsSync(publicDir)) {
 
 fs.writeFileSync(robotsPath, robotsContent);
 console.log('✅ Robots.txt generated successfully at:', robotsPath);
-console.log('🤖 Configured for AI crawlers: GPTBot, ChatGPT-User, CCBot, Claude-Web, Google-Extended');
-console.log('🔍 Allowed search engines: Googlebot, BingBot');
+console.log('🤖 Configured for AI crawlers: GPTBot, ChatGPT-User, CCBot, Claude-Web, Google-Extended, PerplexityBot, Applebot-Extended');
+console.log('🔍 Allowed search engines: All major search engines (Google, Bing, Yahoo, DuckDuckGo, Baidu, Yandex, Sogou, and more)');
+console.log('🌐 Universal access: User-agent: * allows all crawlers by default');
 console.log('🚫 Disallowed: admin, private, build directories');
 
