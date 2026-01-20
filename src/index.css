@@ -101,24 +101,41 @@
   }
 
   .section-padding {
-    @apply py-12 sm:py-16 md:py-20 lg:py-24 xl:py-28 2xl:py-32;
+    padding-top: clamp(3rem, 6vw, 8rem);
+    padding-bottom: clamp(3rem, 6vw, 8rem);
   }
 
   .container-custom {
-    @apply max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: clamp(1rem, 4vw, 3rem);
+    padding-right: clamp(1rem, 4vw, 3rem);
   }
   
-  /* Responsive typography improvements */
+  /* Fluid responsive typography with clamp() */
   h1 {
-    @apply text-3xl sm:text-4xl md:text-5xl lg:text-6xl;
+    font-size: clamp(1.875rem, 5vw, 3.75rem);
+    line-height: 1.2;
   }
   
   h2 {
-    @apply text-2xl sm:text-3xl md:text-4xl lg:text-5xl;
+    font-size: clamp(1.5rem, 4vw, 3rem);
+    line-height: 1.3;
   }
   
   h3 {
-    @apply text-xl sm:text-2xl md:text-3xl lg:text-4xl;
+    font-size: clamp(1.25rem, 3vw, 2.25rem);
+    line-height: 1.4;
+  }
+  
+  /* Fluid spacing utilities */
+  .fluid-padding {
+    padding: clamp(1rem, 4vw, 3rem);
+  }
+  
+  .fluid-gap {
+    gap: clamp(1rem, 3vw, 2rem);
   }
   
   /* Minimum touch target size for mobile */
@@ -131,9 +148,17 @@
     @apply px-4 py-6 sm:px-6 sm:py-8 md:px-8 md:py-12;
   }
   
-  /* Responsive grid improvements */
+  /* Fluid responsive grid improvements */
   .responsive-grid {
-    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, clamp(280px, 30vw, 400px)), 1fr));
+    gap: clamp(1rem, 3vw, 2rem);
+  }
+  
+  /* Standard responsive grid pattern */
+  .grid-responsive {
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3;
+    gap: clamp(1rem, 2.5vw, 2rem);
   }
 
   .text-gradient {

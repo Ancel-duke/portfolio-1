@@ -4,19 +4,19 @@
       "name": "React",
       "category": "Frontend",
       "icon": "react",
-      "frequency": 7,
+      "frequency": 8,
       "proficiency": 9,
       "description": "JavaScript library for building user interfaces",
-      "projects": ["Habit Tracker", "Travelogue", "Rasoha Academy", "Attendance System", "E-Learning Platform", "TaskForge", "EduChain"]
+      "projects": ["Habit Tracker & Streak Counter", "Travelogue - Travel Storytelling Website", "Rasoha Academy - School Website", "Attendance System - Full Stack Application", "E-Learning Platform", "TaskForge - Modern Task & Project Management Platform - Full Stack Application", "EduChain", "LedgerX - Finance Management Application"]
     },
     {
       "name": "Next.js",
       "category": "Frontend",
       "icon": "nextjs",
-      "frequency": 1,
+      "frequency": 2,
       "proficiency": 8,
       "description": "React framework for production",
-      "projects": ["TaskForge"]
+      "projects": ["TaskForge - Modern Task & Project Management Platform - Full Stack Application", "LedgerX - Finance Management Application"]
     },
     {
       "name": "Vue.js",
@@ -40,16 +40,16 @@
       "name": "TypeScript",
       "category": "Language",
       "icon": "typescript",
-      "frequency": 4,
+      "frequency": 5,
       "proficiency": 8,
       "description": "Typed superset of JavaScript",
-      "projects": ["Personal Finance Tracker", "Fitness Class Scheduler", "E-Learning Platform", "TaskForge"]
+      "projects": ["Personal Finance Tracker", "Fitness Class Scheduler", "E-Learning Platform", "TaskForge - Modern Task & Project Management Platform - Full Stack Application", "LedgerX - Finance Management Application"]
     },
     {
       "name": "JavaScript",
       "category": "Language",
       "icon": "javascript",
-      "frequency": 9,
+      "frequency": 12,
       "proficiency": 9,
       "description": "Programming language for web development",
       "projects": ["All projects"]
@@ -67,19 +67,19 @@
       "name": "Node.js",
       "category": "Backend",
       "icon": "nodejs",
-      "frequency": 3,
+      "frequency": 4,
       "proficiency": 8,
       "description": "JavaScript runtime for server-side development",
-      "projects": ["Attendance System", "TaskForge", "EduChain"]
+      "projects": ["Fitness Class Scheduler", "Attendance System - Full Stack Application", "TaskForge - Modern Task & Project Management Platform - Full Stack Application", "EduChain"]
     },
     {
       "name": "Express.js",
       "category": "Backend",
       "icon": "express",
-      "frequency": 3,
+      "frequency": 4,
       "proficiency": 8,
       "description": "Web application framework for Node.js",
-      "projects": ["Attendance System", "TaskForge", "EduChain"]
+      "projects": ["Fitness Class Scheduler", "Attendance System - Full Stack Application", "TaskForge - Modern Task & Project Management Platform - Full Stack Application", "EduChain"]
     },
     {
       "name": "Django",
@@ -89,6 +89,15 @@
       "proficiency": 7,
       "description": "High-level Python web framework",
       "projects": ["E-Learning Platform"]
+    },
+    {
+      "name": "NestJS",
+      "category": "Backend",
+      "icon": "nestjs",
+      "frequency": 1,
+      "proficiency": 8,
+      "description": "Progressive Node.js framework for building efficient and scalable server-side applications",
+      "projects": ["LedgerX - Finance Management Application"]
     },
     {
       "name": "Django REST Framework",
@@ -103,19 +112,19 @@
       "name": "MongoDB",
       "category": "Database",
       "icon": "mongodb",
-      "frequency": 3,
+      "frequency": 4,
       "proficiency": 8,
       "description": "NoSQL document database",
-      "projects": ["Attendance System", "TaskForge", "EduChain"]
+      "projects": ["Attendance System - Full Stack Application", "TaskForge - Modern Task & Project Management Platform - Full Stack Application", "EduChain", "LedgerX - Finance Management Application"]
     },
     {
       "name": "PostgreSQL",
       "category": "Database",
       "icon": "postgresql",
-      "frequency": 1,
+      "frequency": 2,
       "proficiency": 7,
       "description": "Open source relational database",
-      "projects": ["E-Learning Platform"]
+      "projects": ["E-Learning Platform - Full Stack Application", "LedgerX - Finance Management Application"]
     },
     {
       "name": "SQLite",
@@ -130,10 +139,10 @@
       "name": "Tailwind CSS",
       "category": "Styling",
       "icon": "tailwind",
-      "frequency": 7,
+      "frequency": 8,
       "proficiency": 9,
       "description": "Utility-first CSS framework",
-      "projects": ["Personal Finance Tracker", "Fitness Class Scheduler", "Habit Tracker", "Rasoha Academy", "Attendance System", "E-Learning Platform", "TaskForge", "EduChain"]
+      "projects": ["Personal Finance Tracker", "Fitness Class Scheduler", "Habit Tracker & Streak Counter", "Rasoha Academy - School Website", "Attendance System - Full Stack Application", "E-Learning Platform - Full Stack Application", "TaskForge - Modern Task & Project Management Platform - Full Stack Application", "EduChain - Blockchain Certificate Management", "LedgerX - Finance Management Application"]
     },
     {
       "name": "Chart.js",
@@ -142,7 +151,7 @@
       "frequency": 2,
       "proficiency": 8,
       "description": "Simple yet flexible charting library",
-      "projects": ["Personal Finance Tracker", "Habit Tracker"]
+      "projects": ["Personal Finance Tracker", "Habit Tracker & Streak Counter"]
     },
     {
       "name": "Leaflet.js",
@@ -151,7 +160,7 @@
       "frequency": 1,
       "proficiency": 7,
       "description": "Open-source JavaScript library for mobile-friendly interactive maps",
-      "projects": ["Travelogue"]
+      "projects": ["Travelogue - Travel Storytelling Website"]
     },
     {
       "name": "Socket.io",
@@ -160,7 +169,7 @@
       "frequency": 1,
       "proficiency": 8,
       "description": "Real-time bidirectional event-based communication",
-      "projects": ["TaskForge"]
+      "projects": ["TaskForge - Modern Task & Project Management Platform - Full Stack Application"]
     },
     {
       "name": "Zustand",
@@ -169,25 +178,34 @@
       "frequency": 1,
       "proficiency": 7,
       "description": "Small, fast and scalable state management solution",
-      "projects": ["TaskForge"]
+      "projects": ["TaskForge - Modern Task & Project Management Platform - Full Stack Application"]
+    },
+    {
+      "name": "TanStack Query",
+      "category": "State Management",
+      "icon": "reactquery",
+      "frequency": 1,
+      "proficiency": 8,
+      "description": "Powerful data synchronization for React",
+      "projects": ["LedgerX - Finance Management Application"]
     },
     {
       "name": "JWT",
       "category": "Authentication",
       "icon": "jwt",
-      "frequency": 3,
+      "frequency": 4,
       "proficiency": 8,
       "description": "JSON Web Token for secure authentication",
-      "projects": ["Attendance System", "E-Learning Platform", "TaskForge"]
+      "projects": ["Attendance System - Full Stack Application", "E-Learning Platform", "TaskForge - Modern Task & Project Management Platform - Full Stack Application", "LedgerX - Finance Management Application"]
     },
     {
       "name": "Axios",
       "category": "HTTP Client",
       "icon": "axios",
-      "frequency": 3,
+      "frequency": 4,
       "proficiency": 8,
       "description": "Promise-based HTTP client for the browser and node.js",
-      "projects": ["Attendance System", "E-Learning Platform", "TaskForge"]
+      "projects": ["Attendance System - Full Stack Application", "E-Learning Platform", "TaskForge - Modern Task & Project Management Platform - Full Stack Application", "LedgerX - Finance Management Application"]
     },
     {
       "name": "Framer Motion",
@@ -196,16 +214,16 @@
       "frequency": 1,
       "proficiency": 7,
       "description": "Production-ready motion library for React",
-      "projects": ["TaskForge"]
+      "projects": ["TaskForge - Modern Task & Project Management Platform - Full Stack Application"]
     },
     {
       "name": "Recharts",
       "category": "Visualization",
       "icon": "recharts",
-      "frequency": 1,
+      "frequency": 2,
       "proficiency": 6,
       "description": "Composable charting library built on React and D3",
-      "projects": ["TaskForge"]
+      "projects": ["TaskForge - Modern Task & Project Management Platform - Full Stack Application", "LedgerX - Finance Management Application"]
     },
     {
       "name": "Jest",
@@ -214,7 +232,7 @@
       "frequency": 2,
       "proficiency": 7,
       "description": "JavaScript testing framework",
-      "projects": ["Rasoha Academy", "E-Learning Platform"]
+      "projects": ["Rasoha Academy - School Website", "E-Learning Platform - Full Stack Application"]
     },
     {
       "name": "Vitest",
@@ -238,10 +256,19 @@
       "name": "Mongoose",
       "category": "ODM",
       "icon": "mongoose",
-      "frequency": 2,
+      "frequency": 4,
       "proficiency": 8,
       "description": "MongoDB object modeling for Node.js",
-      "projects": ["Attendance System", "EduChain"]
+      "projects": ["Attendance System - Full Stack Application", "TaskForge - Modern Task & Project Management Platform - Full Stack Application", "EduChain", "LedgerX - Finance Management Application"]
+    },
+    {
+      "name": "Prisma",
+      "category": "ORM",
+      "icon": "prisma",
+      "frequency": 1,
+      "proficiency": 8,
+      "description": "Next-generation ORM for Node.js and TypeScript",
+      "projects": ["LedgerX - Finance Management Application"]
     },
     {
       "name": "Solidity",
@@ -314,18 +341,135 @@
       "proficiency": 7,
       "description": "IPFS pinning service for decentralized storage",
       "projects": ["EduChain"]
+    },
+    {
+      "name": "Python",
+      "category": "Language",
+      "icon": "python",
+      "frequency": 1,
+      "proficiency": 7,
+      "description": "High-level programming language",
+      "projects": ["E-Learning Platform"]
+    },
+    {
+      "name": "React Router",
+      "category": "Frontend",
+      "icon": "react",
+      "frequency": 6,
+      "proficiency": 8,
+      "description": "Declarative routing for React applications",
+      "projects": ["Habit Tracker & Streak Counter", "Travelogue - Travel Storytelling Website", "Rasoha Academy - School Website", "Attendance System - Full Stack Application", "E-Learning Platform - Full Stack Application", "EduChain - Blockchain Certificate Management"]
+    },
+    {
+      "name": "PWA",
+      "category": "Frontend",
+      "icon": "pwa",
+      "frequency": 2,
+      "proficiency": 7,
+      "description": "Progressive Web App capabilities",
+      "projects": ["Habit Tracker & Streak Counter", "Rasoha Academy - School Website"]
+    },
+    {
+      "name": "HTML5",
+      "category": "Frontend",
+      "icon": "html5",
+      "frequency": 1,
+      "proficiency": 9,
+      "description": "Latest version of HTML markup language",
+      "projects": ["Event Countdown Timer"]
+    },
+    {
+      "name": "CSS3",
+      "category": "Styling",
+      "icon": "css3",
+      "frequency": 1,
+      "proficiency": 9,
+      "description": "Latest version of CSS styling language",
+      "projects": ["Event Countdown Timer"]
+    },
+    {
+      "name": "bcryptjs",
+      "category": "Security",
+      "icon": "bcrypt",
+      "frequency": 2,
+      "proficiency": 8,
+      "description": "Password hashing library for Node.js",
+      "projects": ["Attendance System - Full Stack Application", "TaskForge - Modern Task & Project Management Platform - Full Stack Application"]
+    },
+    {
+      "name": "CORS",
+      "category": "Backend",
+      "icon": "cors",
+      "frequency": 2,
+      "proficiency": 8,
+      "description": "Cross-Origin Resource Sharing middleware",
+      "projects": ["Attendance System - Full Stack Application", "TaskForge - Modern Task & Project Management Platform - Full Stack Application"]
+    },
+    {
+      "name": "Helmet",
+      "category": "Security",
+      "icon": "helmet",
+      "frequency": 2,
+      "proficiency": 8,
+      "description": "Security middleware for Express.js",
+      "projects": ["Attendance System - Full Stack Application", "TaskForge - Modern Task & Project Management Platform - Full Stack Application"]
+    },
+    {
+      "name": "Netlify",
+      "category": "Deployment",
+      "icon": "netlify",
+      "frequency": 6,
+      "proficiency": 9,
+      "description": "Cloud platform for deploying web applications",
+      "projects": ["Event Countdown Timer", "Rasoha Academy - School Website", "Attendance System - Full Stack Application", "E-Learning Platform", "EduChain", "LedgerX - Finance Management Application"]
+    },
+    {
+      "name": "Render",
+      "category": "Deployment",
+      "icon": "render",
+      "frequency": 4,
+      "proficiency": 8,
+      "description": "Cloud platform for hosting applications and databases",
+      "projects": ["Attendance System - Full Stack Application", "E-Learning Platform", "EduChain", "LedgerX - Finance Management Application"]
+    },
+    {
+      "name": "Git",
+      "category": "Tools",
+      "icon": "git",
+      "frequency": 12,
+      "proficiency": 9,
+      "description": "Version control system",
+      "projects": ["All projects"]
+    },
+    {
+      "name": "PostCSS",
+      "category": "Tools",
+      "icon": "postcss",
+      "frequency": 3,
+      "proficiency": 8,
+      "description": "Tool for transforming CSS with JavaScript plugins",
+      "projects": ["Habit Tracker & Streak Counter", "Travelogue - Travel Storytelling Website", "Attendance System - Full Stack Application"]
+    },
+    {
+      "name": "ESLint",
+      "category": "Tools",
+      "icon": "eslint",
+      "frequency": 2,
+      "proficiency": 8,
+      "description": "JavaScript linter for code quality",
+      "projects": ["Travelogue - Travel Storytelling Website", "Rasoha Academy - School Website"]
     }
   ],
   "categories": [
     {
       "name": "Frontend",
       "color": "blue",
-      "count": 4
+      "count": 7
     },
     {
       "name": "Backend",
       "color": "green",
-      "count": 3
+      "count": 5
     },
     {
       "name": "Database",
@@ -333,14 +477,19 @@
       "count": 3
     },
     {
+      "name": "ORM",
+      "color": "cyan",
+      "count": 1
+    },
+    {
       "name": "Styling",
       "color": "pink",
-      "count": 1
+      "count": 2
     },
     {
       "name": "Language",
       "color": "yellow",
-      "count": 3
+      "count": 4
     },
     {
       "name": "API",
@@ -365,7 +514,7 @@
     {
       "name": "State Management",
       "color": "cyan",
-      "count": 1
+      "count": 2
     },
     {
       "name": "Authentication",
@@ -385,6 +534,21 @@
     {
       "name": "Testing",
       "color": "amber",
+      "count": 3
+    },
+    {
+      "name": "Security",
+      "color": "red",
+      "count": 2
+    },
+    {
+      "name": "Deployment",
+      "color": "green",
+      "count": 2
+    },
+    {
+      "name": "Tools",
+      "color": "gray",
       "count": 3
     },
     {

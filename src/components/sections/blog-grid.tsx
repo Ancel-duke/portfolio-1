@@ -44,16 +44,16 @@ export const BlogGrid = React.memo(function BlogGrid({ className, limit, showVie
     <section className={cn("py-16", className)}>
       <div className="container-custom">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <h2 className="text-[clamp(1.875rem,4vw,2.5rem)] font-bold mb-[clamp(1rem,2.5vw,1.5rem)]">
             Latest <span className="text-gradient">Insights</span>
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-[clamp(1rem,2vw,1.125rem)] text-muted-foreground max-w-2xl mx-auto">
             Thoughts on web development, technology trends, and lessons learned from building real-world applications.
           </p>
         </div>
 
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[clamp(1rem,2.5vw,1.5rem)]"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"

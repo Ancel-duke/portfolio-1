@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { ExternalLink, Github, Eye } from 'lucide-react';
 
-const ProjectCard = ({ project, onOpenModal }) => {
+const ProjectCard = ({ project, onOpenModal, priority = false }) => {
   const { title, description, technologies, liveUrl, repoUrl, image } = project;
 
   return (
@@ -17,9 +17,9 @@ const ProjectCard = ({ project, onOpenModal }) => {
             src={image}
             alt={`${title} - Software application by Ancel Ajanga`}
             className="w-full h-full object-cover"
-            loading="lazy"
+            loading={priority ? "eager" : "lazy"}
             decoding="async"
-            fetchPriority="low"
+            fetchPriority={priority ? "high" : "low"}
             width="800"
             height="450"
           />

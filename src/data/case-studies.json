@@ -1006,6 +1006,153 @@
         "/assets/projects/EduChain.jpg"
       ]
     }
+  },
+  {
+    "id": 10,
+    "slug": "ledgerx",
+    "title": "LedgerX - Finance Management Platform",
+    "subtitle": "Building a comprehensive finance management application with multi-tenant architecture and real-time analytics",
+    "role": "Full-Stack Developer",
+    "timeline": "3 months",
+    "year": "2026",
+    "status": "Live",
+    "description": "LedgerX is a full-stack finance management application designed to streamline invoice processing, payment tracking, and financial analytics for businesses. Built with modern web technologies, it provides a comprehensive solution for managing client relationships, generating invoices, processing payments, and gaining real-time insights into financial performance.",
+    "problem": "Businesses struggle with manual invoice and payment tracking, leading to errors, delayed payments, and lack of financial visibility. Traditional systems lack real-time updates, multi-tenant support, and comprehensive analytics needed for modern business operations.",
+    "solution": "I built LedgerX as a modern, full-stack finance management platform with multi-tenant architecture, real-time data synchronization, and comprehensive analytics. The platform automates invoice status updates, tracks payments with balance calculations, and provides real-time insights into financial performance through interactive dashboards.",
+    "impact": "LedgerX enables businesses to manage their finances more efficiently with automated invoice tracking, real-time payment processing, and comprehensive analytics. The multi-tenant architecture allows organizations to securely manage their financial data with complete isolation.",
+    "technologies": [
+      {
+        "name": "Next.js 14",
+        "category": "Frontend",
+        "icon": "nextjs"
+      },
+      {
+        "name": "React 18",
+        "category": "Frontend",
+        "icon": "react"
+      },
+      {
+        "name": "TypeScript",
+        "category": "Language",
+        "icon": "typescript"
+      },
+      {
+        "name": "NestJS",
+        "category": "Backend",
+        "icon": "nestjs"
+      },
+      {
+        "name": "PostgreSQL",
+        "category": "Database",
+        "icon": "postgresql"
+      },
+      {
+        "name": "Prisma",
+        "category": "ORM",
+        "icon": "prisma"
+      },
+      {
+        "name": "MongoDB",
+        "category": "Database",
+        "icon": "mongodb"
+      },
+      {
+        "name": "Mongoose",
+        "category": "ODM",
+        "icon": "mongoose"
+      },
+      {
+        "name": "JWT",
+        "category": "Authentication",
+        "icon": "jwt"
+      },
+      {
+        "name": "Passport.js",
+        "category": "Authentication",
+        "icon": "passport"
+      },
+      {
+        "name": "TanStack Query",
+        "category": "State Management",
+        "icon": "reactquery"
+      },
+      {
+        "name": "Recharts",
+        "category": "Visualization",
+        "icon": "recharts"
+      },
+      {
+        "name": "Tailwind CSS",
+        "category": "Styling",
+        "icon": "tailwind"
+      },
+      {
+        "name": "Axios",
+        "category": "HTTP Client",
+        "icon": "axios"
+      }
+    ],
+    "features": [
+      "Invoice management with detailed line items and automatic status updates",
+      "Payment processing with automatic invoice status updates and balance tracking",
+      "Client management with organization-scoped data isolation",
+      "Real-time analytics dashboard with interactive charts and metrics",
+      "Activity logging with complete audit trail stored in MongoDB",
+      "Multi-tenant architecture with secure data isolation and role-based access control",
+      "Responsive design for desktop and mobile devices",
+      "Automatic data synchronization with refresh intervals (10-30 seconds)"
+    ],
+    "challenges": [
+      "Implementing multi-tenant data isolation with organization-scoped queries",
+      "Configuring automatic data refresh intervals without overwhelming the server",
+      "Building automatic invoice status updates based on payment processing",
+      "Maintaining end-to-end TypeScript type safety across API boundaries",
+      "Automating Prisma migrations in production environment without shell access",
+      "Properly configuring CORS for deployed frontend and backend"
+    ],
+    "outcomes": [
+      "Production-ready full-stack finance management application",
+      "Multi-tenant architecture with complete data isolation",
+      "Real-time data synchronization with automatic refresh",
+      "Comprehensive analytics and reporting capabilities",
+      "Secure authentication and authorization system",
+      "Mobile-responsive design with excellent UX"
+    ],
+    "metrics": [
+      {
+        "label": "Data Refresh",
+        "value": "10-30s",
+        "description": "Automatic refresh intervals"
+      },
+      {
+        "label": "Databases",
+        "value": "2",
+        "description": "PostgreSQL + MongoDB architecture"
+      },
+      {
+        "label": "API Endpoints",
+        "value": "20+",
+        "description": "RESTful API with comprehensive features"
+      },
+      {
+        "label": "Type Safety",
+        "value": "100%",
+        "description": "End-to-end TypeScript coverage"
+      }
+    ],
+    "links": {
+      "live": "https://ledgerxx.netlify.app/auth/login",
+      "github": "https://github.com/Ancel-duke/LedgerX"
+    },
+    "images": {
+      "hero": "/assets/projects/LedgerX.jpg",
+      "before": "/assets/projects/LedgerX.jpg",
+      "after": "/assets/projects/LedgerX2.jpg",
+      "gallery": [
+        "/assets/projects/LedgerX.jpg",
+        "/assets/projects/LedgerX2.jpg"
+      ]
+    }
   }
 ]
 

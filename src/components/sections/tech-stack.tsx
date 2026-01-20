@@ -74,7 +74,7 @@ const categoryColors = {
   Testing: '#eab308'
 }
 
-export function TechStack({ className }: TechStackProps) {
+export const TechStack = React.memo(function TechStack({ className }: TechStackProps) {
   const [activeTab, setActiveTab] = React.useState('frequency')
 
   const containerVariants = {
@@ -98,34 +98,42 @@ export function TechStack({ className }: TechStackProps) {
     }
   }
 
-  // Prepare chart data
-  const rawFrequency = stackData.technologies
-    .sort((a, b) => b.frequency - a.frequency)
-    .map(tech => ({ name: tech.name, frequency: tech.frequency, proficiency: tech.proficiency }))
-  let frequencyData = rawFrequency.slice(0, 10)
-  if (!frequencyData.find(t => t.name === 'Java')) {
-    const javaItem = rawFrequency.find(t => t.name === 'Java')
-    if (javaItem) {
-      frequencyData = [...frequencyData.slice(0, 9), javaItem]
+  // Memoize chart data preparation to prevent unnecessary recalculations
+  const { frequencyData, proficiencyData, categoryData } = React.useMemo(() => {
+    const rawFrequency = stackData.technologies
+      .sort((a, b) => b.frequency - a.frequency)
+      .map(tech => ({ name: tech.name, frequency: tech.frequency, proficiency: tech.proficiency }))
+    let freqData = rawFrequency.slice(0, 10)
+    if (!freqData.find(t => t.name === 'Java')) {
+      const javaItem = rawFrequency.find(t => t.name === 'Java')
+      if (javaItem) {
+        freqData = [...freqData.slice(0, 9), javaItem]
+      }
     }
-  }
 
-  const rawProficiency = stackData.technologies
-    .sort((a, b) => b.proficiency - a.proficiency)
-    .map(tech => ({ name: tech.name, frequency: tech.frequency, proficiency: tech.proficiency }))
-  let proficiencyData = rawProficiency.slice(0, 10)
-  if (!proficiencyData.find(t => t.name === 'Java')) {
-    const javaItem = rawProficiency.find(t => t.name === 'Java')
-    if (javaItem) {
-      proficiencyData = [...proficiencyData.slice(0, 9), javaItem]
+    const rawProficiency = stackData.technologies
+      .sort((a, b) => b.proficiency - a.proficiency)
+      .map(tech => ({ name: tech.name, frequency: tech.frequency, proficiency: tech.proficiency }))
+    let profData = rawProficiency.slice(0, 10)
+    if (!profData.find(t => t.name === 'Java')) {
+      const javaItem = rawProficiency.find(t => t.name === 'Java')
+      if (javaItem) {
+        profData = [...profData.slice(0, 9), javaItem]
+      }
     }
-  }
 
-  const categoryData = stackData.categories.map(category => ({
-    name: category.name,
-    value: category.count,
-    color: categoryColors[category.name as keyof typeof categoryColors] || '#6b7280'
-  }))
+    const catData = stackData.categories.map(category => ({
+      name: category.name,
+      value: category.count,
+      color: categoryColors[category.name as keyof typeof categoryColors] || '#6b7280'
+    }))
+
+    return {
+      frequencyData: freqData,
+      proficiencyData: profData,
+      categoryData: catData
+    }
+  }, [])
 
   const getCategoryIcon = (categoryName: string) => {
     const IconComponent = categoryIconMap[categoryName as keyof typeof categoryIconMap] || Code2
@@ -136,10 +144,10 @@ export function TechStack({ className }: TechStackProps) {
     <section className={cn("py-16", className)}>
       <div className="container-custom">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <h2 className="text-[clamp(1.875rem,4vw,2.5rem)] font-bold mb-[clamp(1rem,2.5vw,1.5rem)]">
             Tech <span className="text-gradient">Stack</span>
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-[clamp(1rem,2vw,1.125rem)] text-muted-foreground max-w-2xl mx-auto">
             Technologies I use to build modern, scalable web applications. From frontend frameworks to backend services.
           </p>
         </div>
@@ -233,7 +241,7 @@ export function TechStack({ className }: TechStackProps) {
 
         {/* Technology Grid */}
         <motion.div
-          className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4 mt-12"
+          className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-[clamp(0.75rem,2vw,1rem)] mt-12"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -311,4 +319,4 @@ export function TechStack({ className }: TechStackProps) {
       </div>
     </section>
   )
-}
+})

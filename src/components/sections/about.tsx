@@ -50,10 +50,10 @@ export function About({ className }: AboutProps) {
   ]
 
   const technologies = {
-    'Frontend': ['React', 'Vue.js', 'Angular', 'TypeScript', 'JavaScript', 'HTML5', 'CSS3', 'Tailwind CSS'],
-    'Backend': ['Node.js', 'Python', 'Django', 'Express.js'],
+    'Frontend': ['React', 'Vue.js', 'Angular', 'TypeScript', 'JavaScript', 'HTML5', 'CSS3', 'Tailwind CSS', 'Next.js'],
+    'Backend': ['Node.js', 'Python', 'Django', 'Express.js', 'NestJS'],
     'Mobile': ['Flutter', 'Dart', 'React Native'],
-    'Database': ['MongoDB', 'PostgreSQL', 'MySQL', 'Redis'],
+    'Database': ['MongoDB', 'PostgreSQL', 'MySQL', 'Redis', 'Prisma'],
     'Blockchain & Web3': ['Solidity', 'Hardhat', 'OpenZeppelin', 'RainbowKit', 'Wagmi', 'ethers.js', 'IPFS'],
     'Cloud & DevOps': ['AWS', 'Docker', 'Git', 'CI/CD'],
     'Tools': ['VS Code', 'Figma', 'Postman', 'GitHub']
@@ -109,10 +109,10 @@ export function About({ className }: AboutProps) {
         animate="visible"
       >
         <motion.div variants={itemVariants} className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+          <h2 className="text-[clamp(2rem,5vw,3rem)] font-bold mb-[clamp(1rem,2.5vw,1.5rem)]">
             About <span className="text-gradient">Me</span>
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-[clamp(1rem,2vw,1.125rem)] text-muted-foreground max-w-2xl mx-auto">
             Get to know the person behind the code and the passion that drives my work.
           </p>
         </motion.div>

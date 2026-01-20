@@ -1,15 +1,20 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import SEO from '../components/seo/SEO';
 import { motion } from 'framer-motion';
 import ProjectCard from '../components/ProjectCard';
 import ProjectModal from '../components/ProjectModal';
 import projectsData from '../data/projects.json';
+import { getMasterSortedProjects } from '../utils/projectSorter';
 
 const Projects = () => {
   const [selectedProject, setSelectedProject] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const projects = projectsData;
+  // Use useMemo to prevent flicker on reload - sorted projects remain stable
+  // Master sort: fullstack before frontend, most recent first within each type
+  const projects = useMemo(() => {
+    return getMasterSortedProjects(projectsData);
+  }, []);
 
   const handleOpenModal = (project) => {
     setSelectedProject(project);
@@ -59,12 +64,12 @@ const Projects = () => {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <motion.h1 variants={itemVariants} className="text-4xl sm:text-5xl font-bold mb-6">
+            <motion.h1 variants={itemVariants} className="text-[clamp(2rem,5vw,3rem)] font-bold mb-[clamp(1.5rem,3vw,2rem)]">
               My <span className="text-gradient">Projects</span>
             </motion.h1>
             <motion.p
               variants={itemVariants}
-              className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto"
+              className="text-[clamp(1rem,2vw,1.125rem)] text-gray-600 dark:text-gray-300 max-w-3xl mx-auto"
             >
               Here are some of the projects I've built, showcasing my skills in full-stack development, 
               mobile applications, and modern web technologies.
@@ -76,13 +81,14 @@ const Projects = () => {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8"
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[clamp(1rem,3vw,2rem)]"
           >
-            {projects.map((project) => (
+            {projects.map((project, index) => (
               <motion.div key={project.id} variants={itemVariants}>
                 <ProjectCard
                   project={project}
                   onOpenModal={handleOpenModal}
+                  priority={index < 3}
                 />
               </motion.div>
             ))}

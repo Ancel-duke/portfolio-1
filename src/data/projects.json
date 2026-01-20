@@ -2,6 +2,7 @@
   {
     "id": 1,
     "title": "Personal Finance Tracker",
+    "type": "frontend",
     "description": "A modern web application that helps users track personal income and expenses with visual analytics and interactive pie charts showing expense breakdown by category.",
     "detailedDescription": "Personal Finance Tracker is a comprehensive financial management application designed for individuals who want to monitor their spending habits and financial health. The app allows users to input income and expenses, categorize transactions, and view detailed analytics through interactive pie charts and graphs. Key features include real-time expense tracking, income management, visual analytics with Chart.js, dark/light mode toggle, and responsive design for desktop and mobile devices. The application helps users understand their spending patterns, set financial goals, and make informed financial decisions.",
     "technologies": ["Vue.js 3", "TypeScript", "Vite", "Tailwind CSS", "Chart.js", "Vitest", "Playwright"],
@@ -13,6 +14,7 @@
   {
     "id": 2,
     "title": "Fitness Class Scheduler",
+    "type": "frontend",
     "description": "A modern Angular SSR application for planning weekly fitness classes with dark mode, responsive design, and client-side persistence.",
     "detailedDescription": "Fitness Class Scheduler is a web application designed for fitness instructors and gym owners to manage and schedule weekly fitness classes. The app allows users to add, edit, and remove fitness classes with specific days and times, view schedules in both table and card layouts, and manage class information efficiently. Key features include server-side rendering for fast loading and SEO optimization, dark mode with user preference saving, responsive design for all devices, LocalStorage persistence for data retention, and smooth animations for enhanced user experience. The application is built with Angular 20 and TypeScript for type safety and maintainability.",
     "technologies": [
@@ -36,6 +38,7 @@
   {
     "id": 3,
     "title": "Habit Tracker & Streak Counter",
+    "type": "frontend",
     "description": "A Progressive Web App (PWA) for tracking daily habits and building momentum through streak counting with comprehensive analytics and visual charts.",
     "detailedDescription": "Habit Tracker & Streak Counter is a comprehensive productivity application designed to help users build and maintain positive daily habits. The app allows users to create custom habits, track daily completion, and visualize progress through streak counting and analytics dashboards. Key features include habit creation and management, automatic streak calculation, comprehensive analytics with Chart.js visualizations, data persistence using LocalStorage, Progressive Web App capabilities with offline support, glass morphism design elements, and responsive design for all devices. The application helps users stay motivated by providing visual feedback on their progress and maintaining momentum through streak tracking.",
     "technologies": [
@@ -60,6 +63,7 @@
   {
     "id": 4,
     "title": "Event Countdown Timer",
+    "type": "frontend",
     "description": "A feature-rich countdown timer web application for creating and managing multiple countdowns for various life events with recurring events and smart notifications.",
     "detailedDescription": "Event Countdown Timer is a comprehensive time management application designed to help users track and celebrate important life events. The app allows users to create unlimited countdowns for birthdays, anniversaries, graduations, and custom events with automatic yearly repetition. Key features include multiple countdown views (list and individual), recurring events with daily/weekly/monthly/yearly intervals, visual customization with color coding and themes, smart notifications with confetti animation and audio alerts, LocalStorage data persistence, and URL sharing for specific countdowns. The application is built with vanilla JavaScript for optimal performance and includes modern browser APIs for enhanced functionality.",
     "technologies": [
@@ -86,6 +90,7 @@
   {
     "id": 5,
     "title": "Travelogue - Travel Storytelling Website",
+    "type": "frontend",
     "description": "A comprehensive travel platform featuring interactive world maps, travel stories, destination exploration, and responsive design for travel enthusiasts.",
     "detailedDescription": "Travelogue is a comprehensive travel platform designed for travel enthusiasts who want to explore destinations, read travel stories, and discover new places. The website features an interactive world map with clickable destination markers and popups, allowing users to explore different locations and read detailed travel experiences. Key features include a hero section with call-to-action, masonry-style photo grid with lightbox modal for full-size image viewing, blog-style layout showcasing travel stories, interactive world map using Leaflet.js and OpenStreetMap, personal bio and mission statement, dark/light theme toggle with LocalStorage persistence, and responsive design for all devices. The platform serves as both a travel blog and destination discovery tool.",
     "technologies": [
@@ -114,6 +119,7 @@
   {
     "id": 6,
     "title": "Rasoha Academy - School Website",
+    "type": "frontend",
     "description": "A modern, responsive website for a private school in Narok, Kenya, providing comprehensive information about programs, events, and resources for students and parents.",
     "detailedDescription": "Rasoha Academy website is the official online presence for a private school located in Narok, Kenya, designed to provide comprehensive information for students, parents, and the community. The website serves as a central hub for school information, featuring detailed pages about academic programs, school history and mission, upcoming events and announcements, photo gallery showcasing school activities, contact information and location details, downloads section for forms and documents, and FAQ section for common questions. Key features include Progressive Web App (PWA) capabilities for offline access, SEO optimization for better search visibility, responsive design for all devices, and modern web technologies for fast loading and excellent user experience.",
     "technologies": [
@@ -146,6 +152,7 @@
   {
     "id": 7,
     "title": "Attendance System - Full Stack Application",
+    "type": "fullstack",
     "description": "A comprehensive full-stack attendance management system for educational institutions with secure authentication, student management, and performance analytics.",
     "detailedDescription": "Attendance System is a comprehensive full-stack web application designed for educational institutions to manage student attendance, track performance, and generate detailed reports. The system provides a complete solution for schools and universities to monitor student attendance patterns, manage student records, and analyze performance data. Key features include secure user authentication using JWT tokens, comprehensive student management (add, edit, delete, view records), daily attendance tracking and management, class organization and scheduling, performance analytics with statistics and detailed reports, responsive design for all devices, and dark mode theme toggle. The application is built with React.js frontend and Node.js backend with MongoDB database for scalability and performance.",
     "technologies": [
@@ -181,6 +188,7 @@
   {
     "id": 8,
     "title": "E-Learning Platform - Full Stack Application",
+    "type": "fullstack",
     "description": "A comprehensive e-learning platform enabling instructors to create and manage courses while allowing students to enroll, learn, and track their progress.",
     "detailedDescription": "E-Learning Platform is a comprehensive full-stack learning management system designed for educational institutions and online learning providers. The platform enables instructors to create, manage, and deliver online courses while providing students with tools to enroll, access learning materials, and track their educational progress. Key features include secure user authentication with JWT tokens, comprehensive course creation and management tools for instructors, lesson upload and organization capabilities, student enrollment and registration system, detailed progress tracking and analytics, responsive web interface for all devices, real-time API communication, and scalable architecture designed for both instructors and students. The application is built with React frontend and Django backend for robust performance and maintainability.",
     "technologies": [
@@ -208,6 +216,7 @@
   {
     "id": 9,
     "title": "TaskForge - Modern Task & Project Management Platform - Full Stack Application",
+    "type": "fullstack",
     "description": "A comprehensive, modern task and project management platform designed for teams to collaborate efficiently, track progress, and achieve their goals faster with real-time updates and advanced analytics.",
     "detailedDescription": "TaskForge is a comprehensive, modern task and project management platform designed for teams to collaborate efficiently, track progress, and achieve their goals faster. Built with cutting-edge technologies, it provides a seamless experience for managing projects, tasks, and team collaboration in real-time. Key features include Kanban board management with drag-and-drop functionality, real-time team collaboration with live updates via WebSocket connections, comprehensive analytics and insights with progress tracking, secure JWT-based authentication with role-based access control, responsive design that works seamlessly across all devices, project timeline management with calendar view and deadline tracking, document management with file uploads and project documentation, and modern UI/UX with beautiful, intuitive interface and smooth animations. The application follows a modern full-stack architecture with Next.js 14 frontend, Node.js with Express.js backend, MongoDB database, Socket.io for real-time communication, and Zustand for client-side state management.",
     "technologies": [
@@ -240,6 +249,7 @@
   {
     "id": 10,
     "title": "Banking System",
+    "type": "frontend",
     "description": "A console-based Banking System built in Java to demonstrate core Object-Oriented Programming principles (Encapsulation, Inheritance, Abstraction, Polymorphism).",
     "detailedDescription": "A simple, console-based Banking System implemented in pure Java (no external APIs, no DB, no frameworks). It demonstrates core OOP principles through account operations and customer management. Features include creating customers, opening savings/checking accounts, depositing, withdrawing, transferring, and viewing balances and transactions.",
     "technologies": ["Java 17+", "OOP", "Maven (optional)", "Gradle (optional)"],
@@ -251,6 +261,7 @@
   {
     "id": 11,
     "title": "EduChain - Blockchain Certificate Management",
+    "type": "fullstack",
     "description": "A full-stack Web3 application that issues verifiable academic certificates as ERC721 NFTs on the Ethereum blockchain, enabling tamper-proof certificate management for educational institutions.",
     "detailedDescription": "EduChain is a full-stack Web3 application that revolutionizes educational certificate management by issuing verifiable academic certificates as ERC721 NFTs on the Ethereum blockchain. The platform enables educational institutions to issue tamper-proof, blockchain-verified certificates while providing students with permanent, verifiable proof of their achievements. Key features include secure certificate minting with owner-only access control, IPFS integration for decentralized metadata storage, wallet-based certificate viewing for students, public certificate verification using token IDs, batch management through MongoDB, and a clean grayscale UI design. The application is built with React 19 frontend, Node.js and Express.js backend, MongoDB database, Solidity smart contracts deployed on Sepolia testnet, and IPFS for metadata storage via Pinata API.",
     "technologies": [
@@ -276,5 +287,34 @@
     "repoUrl": "https://github.com/Ancel-duke/EduChain",
     "image": "/assets/projects/EduChain.jpg",
     "outcomes": "Production-ready Web3 application demonstrating full-stack development, smart contract deployment, blockchain integration, and decentralized storage. Shows proficiency in Web3 technologies, NFT standards, IPFS integration, and production deployment across multiple platforms."
+  },
+  {
+    "id": 12,
+    "title": "LedgerX - Finance Management Application",
+    "type": "fullstack",
+    "description": "A full-stack finance management application for managing invoices, payments, clients, and organizations with real-time analytics and activity tracking.",
+    "detailedDescription": "LedgerX is a full-stack finance management application designed to streamline invoice processing, payment tracking, and financial analytics for businesses. Built with modern web technologies, it provides a comprehensive solution for managing client relationships, generating invoices, processing payments, and gaining real-time insights into financial performance. Key features include invoice management with detailed line items and automatic status updates, payment processing with automatic invoice status updates and balance tracking, client management with organization-scoped data isolation, real-time analytics dashboard with interactive charts and metrics, activity logging with complete audit trail stored in MongoDB, multi-tenant architecture with secure data isolation and role-based access control, and responsive design for desktop and mobile devices. The application is built with NestJS backend, Next.js 14 frontend, PostgreSQL database with Prisma ORM, MongoDB for activity logs, JWT authentication, and TanStack Query for efficient state management.",
+    "technologies": [
+      "Next.js 14",
+      "React 18",
+      "TypeScript",
+      "NestJS",
+      "PostgreSQL",
+      "Prisma",
+      "MongoDB",
+      "Mongoose",
+      "JWT",
+      "Passport.js",
+      "TanStack Query",
+      "Recharts",
+      "Tailwind CSS",
+      "Axios",
+      "Render",
+      "Netlify"
+    ],
+    "liveUrl": "https://ledgerxx.netlify.app/auth/login",
+    "repoUrl": "https://github.com/Ancel-duke/LedgerX",
+    "image": "/assets/projects/LedgerX.jpg",
+    "outcomes": "Production-ready full-stack finance management application demonstrating modern web development practices with multi-database architecture, real-time data synchronization, multi-tenant support, and comprehensive analytics. Shows proficiency in NestJS, Next.js, TypeScript, database design, authentication systems, and production deployment."
   }
 ]

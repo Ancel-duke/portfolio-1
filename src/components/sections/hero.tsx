@@ -52,7 +52,7 @@ export function Hero({ className }: HeroProps) {
   ]
 
   return (
-    <section className={cn("py-16 md:py-24 lg:py-32", className)}>
+    <section className={cn("py-[clamp(4rem,8vw,8rem)]", className)}>
       <div className="container-custom">
         <motion.div
           className="text-center max-w-4xl mx-auto"
@@ -62,7 +62,7 @@ export function Hero({ className }: HeroProps) {
         >
 
           <motion.h1
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-6 leading-tight"
+            className="text-[clamp(1.875rem,5vw,4.5rem)] font-bold mb-[clamp(1rem,3vw,1.5rem)] leading-tight"
             variants={itemVariants}
           >
             Hi, I'm{" "}
@@ -70,7 +70,7 @@ export function Hero({ className }: HeroProps) {
           </motion.h1>
 
           <motion.p
-            className="text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground mb-6 sm:mb-8 max-w-4xl mx-auto px-4 sm:px-0 leading-relaxed"
+            className="text-[clamp(1rem,2.5vw,1.5rem)] text-muted-foreground mb-[clamp(1.5rem,4vw,2rem)] max-w-4xl mx-auto px-4 sm:px-0 leading-relaxed"
             variants={itemVariants}
           >
             Fullstack Software Engineer/Developer & App Developer crafting scalable web platforms and cross‑platform mobile apps (Android, iOS, web).
@@ -124,16 +124,16 @@ export function Hero({ className }: HeroProps) {
             variants={itemVariants}
           >
             <div className="space-y-2">
-              <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-primary">30+</div>
-              <div className="text-xs sm:text-sm text-muted-foreground">Projects Built</div>
+              <div className="text-[clamp(1.5rem,4vw,2.5rem)] font-bold text-primary">30+</div>
+              <div className="text-[clamp(0.75rem,1.5vw,0.875rem)] text-muted-foreground">Projects Built</div>
             </div>
             <div className="space-y-2">
-              <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-primary">4+</div>
-              <div className="text-xs sm:text-sm text-muted-foreground">Years Coding</div>
+              <div className="text-[clamp(1.5rem,4vw,2.5rem)] font-bold text-primary">4+</div>
+              <div className="text-[clamp(0.75rem,1.5vw,0.875rem)] text-muted-foreground">Years Coding</div>
             </div>
             <div className="space-y-2">
-              <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-primary">50+</div>
-              <div className="text-xs sm:text-sm text-muted-foreground">Happy Clients</div>
+              <div className="text-[clamp(1.5rem,4vw,2.5rem)] font-bold text-primary">50+</div>
+              <div className="text-[clamp(0.75rem,1.5vw,0.875rem)] text-muted-foreground">Happy Clients</div>
             </div>
           </motion.div>
         </motion.div>
