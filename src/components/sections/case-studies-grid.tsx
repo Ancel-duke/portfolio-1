@@ -116,7 +116,6 @@ export const CaseStudiesGrid = React.memo(function CaseStudiesGrid({ className, 
                     className="w-full h-40 sm:h-48 object-cover group-hover:scale-105 transition-transform duration-500"
                     loading={index < 2 ? "eager" : "lazy"}
                     decoding="async"
-                    fetchPriority={index < 2 ? "high" : "low"}
                     width="800"
                     height="384"
                   />

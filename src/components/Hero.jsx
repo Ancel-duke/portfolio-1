@@ -104,6 +104,10 @@ const Hero = () => {
                     src="/assets/profile-photo.jpg"
                     alt="Ancel Ajanga - Fullstack Software Engineer"
                     className="relative w-full h-full object-cover rounded-full border-4 border-white dark:border-gray-800 shadow-2xl"
+                    loading="eager"
+                    decoding="async"
+                    width="256"
+                    height="256"
                   />
                 </div>
                 

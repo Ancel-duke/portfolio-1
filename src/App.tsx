@@ -11,6 +11,7 @@ import { TechStack } from './components/sections/tech-stack'
 import { Fun } from './components/sections/fun'
 import { CTA } from './components/sections/cta'
 import { ContactForm } from './components/forms/contact-form'
+import { TodaysHighlights } from './components/sections/todays-highlights'
 import { About } from './components/sections/about'
 import { Button } from './components/ui/button'
 import SEO from './components/seo/SEO'
@@ -56,6 +57,7 @@ function HomePage() {
       <div className="min-h-screen">
         <Hero />
         <About />
+        <TodaysHighlights />
         <CaseStudiesGrid limit={3} showViewAll={true} />
         <TechStack />
         <Fun />

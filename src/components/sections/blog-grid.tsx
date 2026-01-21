@@ -73,7 +73,6 @@ export const BlogGrid = React.memo(function BlogGrid({ className, limit, showVie
                     className="w-full h-40 sm:h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                     loading="lazy"
                     decoding="async"
-                    fetchPriority="low"
                     width="800"
                     height="384"
                   />

@@ -1,0 +1,198 @@
+import * as React from 'react'
+import { motion } from 'framer-motion'
+import { Link } from 'react-router-dom'
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../ui/card'
+import { Badge } from '../ui/badge'
+import { Button } from '../ui/button'
+import { cn } from '../../lib/utils'
+import { ArrowRight, FileText, BookOpen } from 'lucide-react'
+import { useDailyFeaturedContent } from '../../hooks/useDailyFeaturedContent'
+
+interface TodaysHighlightsProps {
+  className?: string
+}
+
+/**
+ * Component to display today's featured content (2 case studies + 2 journal entries)
+ * Content rotates daily using date-based seeded randomization
+ */
+export function TodaysHighlights({ className }: TodaysHighlightsProps) {
+  const featuredItems = useDailyFeaturedContent()
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+      },
+    },
+  }
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+      },
+    },
+  }
+
+  if (featuredItems.length === 0) {
+    return null
+  }
+
+  return (
+    <section className={cn('py-16 bg-muted/30', className)}>
+      <div className="container-custom">
+        <div className="text-center mb-12">
+          <h2 className="text-[clamp(1.875rem,4vw,2.5rem)] font-bold mb-[clamp(1rem,2.5vw,1.5rem)]">
+            Today's <span className="text-gradient">Highlights</span>
+          </h2>
+          <p className="text-[clamp(1rem,2vw,1.125rem)] text-muted-foreground max-w-2xl mx-auto">
+            Curated selection of case studies and insights, refreshed daily.
+          </p>
+        </div>
+
+        <motion.div
+          className="grid grid-cols-1 md:grid-cols-2 gap-[clamp(1rem,3vw,1.5rem)]"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: '-100px' }}
+        >
+          {featuredItems.map((item) => (
+            <motion.article
+              key={`${item.type}-${item.id}`}
+              variants={itemVariants}
+              className="group"
+            >
+              <Card className="h-full hover:shadow-lg transition-all duration-300 border-0 bg-card/50 backdrop-blur-sm">
+                {/* Image */}
+                {item.image && (
+                  <div className="relative overflow-hidden rounded-t-lg">
+                    <img
+                      src={item.image}
+                      alt={item.title}
+                      className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                      loading="lazy"
+                      decoding="async"
+                      width="800"
+                      height="384"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+                    <div className="absolute top-4 left-4">
+                      <Badge
+                        variant="secondary"
+                        className={cn(
+                          'bg-white/20 text-white border-white/30 hover:bg-white/30',
+                          item.type === 'case-study'
+                            ? 'bg-blue-500/20 text-blue-100 border-blue-400/30'
+                            : 'bg-purple-500/20 text-purple-100 border-purple-400/30'
+                        )}
+                      >
+                        {item.type === 'case-study' ? (
+                          <>
+                            <FileText className="mr-1.5 h-3.5 w-3.5" />
+                            Case Study
+                          </>
+                        ) : (
+                          <>
+                            <BookOpen className="mr-1.5 h-3.5 w-3.5" />
+                            Developer Journal
+                          </>
+                        )}
+                      </Badge>
+                    </div>
+                  </div>
+                )}
+
+                {/* Content */}
+                <CardHeader className={cn('pb-3', !item.image && 'pt-6')}>
+                  <div className="flex items-start justify-between gap-2 mb-2">
+                    <CardTitle className="text-xl line-clamp-2 group-hover:text-primary transition-colors flex-1">
+                      {item.title}
+                    </CardTitle>
+                    {!item.image && (
+                      <Badge
+                        variant="secondary"
+                        className={cn(
+                          'shrink-0',
+                          item.type === 'case-study'
+                            ? 'bg-blue-500/10 text-blue-700 dark:text-blue-300 border-blue-200 dark:border-blue-800'
+                            : 'bg-purple-500/10 text-purple-700 dark:text-purple-300 border-purple-200 dark:border-purple-800'
+                        )}
+                      >
+                        {item.type === 'case-study' ? (
+                          <>
+                            <FileText className="mr-1.5 h-3.5 w-3.5" />
+                            Case Study
+                          </>
+                        ) : (
+                          <>
+                            <BookOpen className="mr-1.5 h-3.5 w-3.5" />
+                            Journal
+                          </>
+                        )}
+                      </Badge>
+                    )}
+                  </div>
+                  {item.subtitle && (
+                    <p className="text-sm text-muted-foreground mb-2">{item.subtitle}</p>
+                  )}
+                  <CardDescription className="line-clamp-3">
+                    {item.summary}
+                  </CardDescription>
+                </CardHeader>
+
+                <CardContent className="pt-0">
+                  {/* Tags for journal entries */}
+                  {item.type === 'journal' && item.tags && item.tags.length > 0 && (
+                    <div className="flex flex-wrap gap-2 mb-4">
+                      {item.tags.slice(0, 3).map((tag) => (
+                        <Badge
+                          key={tag}
+                          variant="outline"
+                          className="text-xs"
+                        >
+                          {tag}
+                        </Badge>
+                      ))}
+                    </div>
+                  )}
+
+                  {/* Role for case studies */}
+                  {item.type === 'case-study' && item.role && (
+                    <p className="text-sm text-muted-foreground mb-4">
+                      Role: {item.role}
+                    </p>
+                  )}
+
+                  {/* Read time for journal entries */}
+                  {item.type === 'journal' && item.readTime && (
+                    <p className="text-sm text-muted-foreground mb-4">
+                      {item.readTime}
+                    </p>
+                  )}
+
+                  <Button
+                    variant="ghost"
+                    className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-colors"
+                    asChild
+                  >
+                    <Link to={item.slug}>
+                      {item.type === 'case-study' ? 'View Case Study' : 'Read Article'}
+                      <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                    </Link>
+                  </Button>
+                </CardContent>
+              </Card>
+            </motion.article>
+          ))}
+        </motion.div>
+      </div>
+    </section>
+  )
+}

@@ -18,7 +18,7 @@ export function getDailySeed(): string {
  * Simple hash function to convert date string to numeric seed
  * Uses Mulberry32-like algorithm
  */
-function hashString(str: string): number {
+export function hashString(str: string): number {
   let hash = 0;
   for (let i = 0; i < str.length; i++) {
     const char = str.charCodeAt(i);
@@ -44,7 +44,7 @@ function seededRandom(seed: number): () => number {
 /**
  * Shuffle array using seeded random number generator
  */
-function seededShuffle<T>(array: T[], seed: number): T[] {
+export function seededShuffle<T>(array: T[], seed: number): T[] {
   const shuffled = [...array];
   const random = seededRandom(seed);
   

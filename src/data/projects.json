@@ -316,5 +316,17 @@
     "repoUrl": "https://github.com/Ancel-duke/LedgerX",
     "image": "/assets/projects/LedgerX.jpg",
     "outcomes": "Production-ready full-stack finance management application demonstrating modern web development practices with multi-database architecture, real-time data synchronization, multi-tenant support, and comprehensive analytics. Shows proficiency in NestJS, Next.js, TypeScript, database design, authentication systems, and production deployment."
+  },
+  {
+    "id": 13,
+    "title": "OpsFlow",
+    "type": "fullstack",
+    "description": "Incident & Workflow Management Platform - A production-ready incident and operations management platform for engineering teams, combining core concepts from PagerDuty, Jira, and Notion into a single system.",
+    "detailedDescription": "OpsFlow is a full-stack production-ready incident and workflow management platform built for engineering teams, incident leads and operations managers. It centralizes incident response, operational workflows, task coordination and knowledge sharing into a single secure team-based system. The platform combines ideas from PagerDuty (incident response), Jira (task tracking) and Notion (knowledge base) while remaining lightweight and optimized for free-tier cloud infrastructure. Key features include incident management with enforced lifecycle states and SLA breach detection, real-time updates using WebSockets for live incident activity, workflow and task management scoped to teams, a knowledge base with markdown support, versioning and search, team-based multi-tenancy with strict data isolation, role-based access control (Admin, Manager, Engineer and Viewer), audit trails and timelines for all incident activity and postmortem documentation linked to resolved incidents.",
+    "technologies": ["NestJS", "Next.js", "PostgreSQL", "MongoDB", "Prisma", "WebSockets", "JWT", "RBAC", "TypeScript", "Tailwind CSS", "Socket.IO"],
+    "liveUrl": "",
+    "repoUrl": "https://github.com/Ancel-duke/OpsFlow",
+    "image": "/assets/projects/opsflow.jpg",
+    "outcomes": "Production-ready system with 50+ API endpoints and real-time incident updates without paid infrastructure. Secure team-based multi-tenant architecture with fully documented setup and deployment guides. Responsive UI across mobile, tablet and desktop devices. Demonstrates strong backend and system design skills with real-world SaaS architecture and security awareness. Proven ability to build production-ready systems under real constraints using real-time communication and multi-tenant data models. End-to-end ownership from initial design to deployment readiness."
   }
 ]
