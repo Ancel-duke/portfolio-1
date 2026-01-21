@@ -1288,6 +1288,135 @@
         "/assets/projects/opsflow.jpg"
       ]
     }
+  },
+  {
+    "id": 14,
+    "slug": "signflow",
+    "title": "SignFlow - Real-Time Assistive Tech Simulation for Sign Language",
+    "subtitle": "Building a high-fidelity assistive technology simulation for real-time sign language translation",
+    "role": "Full-Stack Software Engineer",
+    "timeline": "4 months",
+    "year": "2026",
+    "status": "Completed",
+    "description": "SignFlow is a high-fidelity assistive technology simulation exploring the architectural requirements for scaling real-time sign language translation platforms. Inspired by modern accessibility tools like Signvrse's Terp 360, this project demonstrates how text can be transformed into a live, immersive, avatar-driven signing experience.",
+    "problem": "Current text-to-sign demonstrations often suffer from a robotic user experience with repetition, static nature, latency issues and UX gaps. Identical animations play for every word without variation, there's a lack of timing, facial expression or prosody, poor real-time feedback loops, and negligible consideration for accessibility or interface polish. For assistive technology to be trusted by the Deaf and Hard-of-Hearing community, naturalness and responsiveness are as critical as linguistic correctness.",
+    "solution": "SignFlow simulates a live sign language interpreter through a sophisticated technical stack with dynamic logic for per-word and phrase-based animation sequences, live streaming via WebSocket-powered translation for near-zero latency, responsive interface with a high-fidelity 3D avatar that reacts to user input, and accessibility-first design with a UI built specifically for inclusive user experiences. By applying subtle variations to repeated inputs, SignFlow creates the illusion of a living interpreter rather than a looped animation.",
+    "impact": "Fully implemented assistive technology prototype demonstrating real-time system design using WebSockets, scalable cloud architecture with MongoDB Atlas, intentional UX for specialized user bases, and product-level thinking that bridges the gap between a coding project and a viable market solution. The platform features high-fidelity 3D avatar simulation, natural variation in animations, comprehensive analytics dashboard, and full accessibility compliance.",
+    "technologies": [
+      {
+        "name": "React",
+        "category": "Frontend",
+        "icon": "react"
+      },
+      {
+        "name": "Node.js",
+        "category": "Backend",
+        "icon": "nodejs"
+      },
+      {
+        "name": "Express",
+        "category": "Backend",
+        "icon": "express"
+      },
+      {
+        "name": "MongoDB",
+        "category": "Database",
+        "icon": "mongodb"
+      },
+      {
+        "name": "WebSockets",
+        "category": "Real-time",
+        "icon": "socketio"
+      },
+      {
+        "name": "Three.js",
+        "category": "3D Graphics",
+        "icon": "threejs"
+      },
+      {
+        "name": "React Three Fiber",
+        "category": "3D Graphics",
+        "icon": "react"
+      },
+      {
+        "name": "JWT",
+        "category": "Authentication",
+        "icon": "jwt"
+      },
+      {
+        "name": "Recharts",
+        "category": "Visualization",
+        "icon": "recharts"
+      },
+      {
+        "name": "Framer Motion",
+        "category": "Animation",
+        "icon": "framer"
+      }
+    ],
+    "features": [
+      "Real-time translation engine with streaming input via WebSockets",
+      "Believable avatar simulation with phrase mapping and animation pooling",
+      "Natural variation with variable animation speeds and micro-expressions",
+      "Immersive and accessible UI with split-screen design",
+      "Analytics and insights dashboard with session metrics",
+      "Full accessibility support with ARIA compliance and keyboard navigation",
+      "High-contrast modes and adjustable font sizes",
+      "Interactive timeline with hover previews and AI-powered suggestions"
+    ],
+    "challenges": [
+      "Implementing real-time WebSocket streaming for near-zero latency translation",
+      "Creating natural variation in animations to prevent robotic movement",
+      "Building high-fidelity 3D avatar with micro-expressions and natural body movements",
+      "Designing accessible UI for specialized user bases with full ARIA compliance",
+      "Optimizing animation performance for smooth real-time rendering",
+      "Implementing phrase detection and special animation sequences"
+    ],
+    "outcomes": [
+      "Fully functional assistive technology prototype with production-grade architecture",
+      "Real-time translation system with WebSocket-powered streaming",
+      "High-fidelity 3D avatar with natural variation and micro-expressions",
+      "Comprehensive analytics dashboard with interactive charts and user insights",
+      "Full accessibility compliance with WCAG standards",
+      "Scalable cloud architecture with MongoDB Atlas"
+    ],
+    "metrics": [
+      {
+        "label": "Real-time Latency",
+        "value": "Near-zero",
+        "description": "WebSocket-powered streaming"
+      },
+      {
+        "label": "Animation Variations",
+        "value": "Multiple",
+        "description": "Per-word animation pools with natural variation"
+      },
+      {
+        "label": "Accessibility",
+        "value": "WCAG Compliant",
+        "description": "Full ARIA support and keyboard navigation"
+      },
+      {
+        "label": "Database",
+        "value": "MongoDB Atlas",
+        "description": "Cloud-hosted with indexed collections"
+      }
+    ],
+    "links": {
+      "live": "",
+      "github": "https://github.com/Ancel-duke/SignFlow"
+    },
+    "images": {
+      "hero": "/assets/projects/signflow1.jpg",
+      "before": "/assets/projects/signflow1.jpg",
+      "after": "/assets/projects/signflow2.jpg",
+      "gallery": [
+        "/assets/projects/signflow1.jpg",
+        "/assets/projects/signflow2.jpg",
+        "/assets/projects/flow.jpg",
+        "/assets/projects/flow2.jpg"
+      ]
+    }
   }
 ]
 

@@ -328,5 +328,17 @@
     "repoUrl": "https://github.com/Ancel-duke/OpsFlow",
     "image": "/assets/projects/opsflow.jpg",
     "outcomes": "Production-ready system with 50+ API endpoints and real-time incident updates without paid infrastructure. Secure team-based multi-tenant architecture with fully documented setup and deployment guides. Responsive UI across mobile, tablet and desktop devices. Demonstrates strong backend and system design skills with real-world SaaS architecture and security awareness. Proven ability to build production-ready systems under real constraints using real-time communication and multi-tenant data models. End-to-end ownership from initial design to deployment readiness."
+  },
+  {
+    "id": 14,
+    "title": "SignFlow",
+    "type": "fullstack",
+    "description": "Real-Time Assistive Tech Simulation for Sign Language - A high-fidelity assistive technology simulation exploring architectural requirements for scaling real-time sign language translation platforms with immersive 3D avatar-driven signing experience.",
+    "detailedDescription": "SignFlow is a high-fidelity assistive technology simulation exploring the architectural requirements for scaling real-time sign language translation platforms. Inspired by modern accessibility tools like Signvrse's Terp 360, this project demonstrates how text can be transformed into a live, immersive, avatar-driven signing experience. The development focuses on three core pillars: realism, accessibility, and robust system design. Rather than a static demonstration, SignFlow is engineered to function like a production-grade accessibility product—responsive, dynamic, and intuitive—while remaining technically lightweight and maintainable. Key features include real-time translation engine with streaming input via WebSockets, believable avatar simulation with phrase mapping and animation pooling, natural variation with variable animation speeds and micro-expressions, immersive and accessible UI with split-screen design and high-contrast modes, analytics and insights dashboard with session metrics and user trends, and full accessibility support with ARIA compliance and keyboard navigation.",
+    "technologies": ["React", "Node.js", "Express", "MongoDB", "WebSockets", "Three.js", "React Three Fiber", "JWT", "Recharts", "Framer Motion", "Mongoose"],
+    "liveUrl": "",
+    "repoUrl": "https://github.com/Ancel-duke/SignFlow",
+    "image": "/assets/projects/signflow1.jpg",
+    "outcomes": "Fully implemented assistive technology prototype demonstrating real-time system design using WebSockets, scalable cloud architecture with MongoDB Atlas, intentional UX for specialized user bases, and product-level thinking that bridges the gap between a coding project and a viable market solution. Features high-fidelity 3D avatar simulation, natural variation in animations, comprehensive analytics dashboard, and full accessibility compliance."
   }
 ]
