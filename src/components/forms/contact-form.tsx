@@ -115,14 +115,16 @@ export function ContactForm({ className, onSuccess }: ContactFormProps) {
   }
 
   return (
-    <Card className={cn("w-full max-w-2xl mx-auto", className)}>
-      <CardHeader>
-        <CardTitle>Get in Touch</CardTitle>
-        <CardDescription>
-          Have a project in mind? Let's discuss how we can work together to bring your ideas to life.
-        </CardDescription>
-      </CardHeader>
-      <CardContent>
+    <section className={cn("py-8 sm:py-12 md:py-16", className)}>
+      <div className="container-custom">
+        <Card className={cn("w-full max-w-2xl mx-auto", className)}>
+          <CardHeader className="p-4 sm:p-6">
+            <CardTitle className="text-xl sm:text-2xl">Get in Touch</CardTitle>
+            <CardDescription className="text-sm sm:text-base mt-2">
+              Reach out to discuss building resilient, scalable, high-impact systems. Whether you need enterprise-grade architecture, hybrid database solutions, or real-time platforms, I design systems that scale with your business.
+            </CardDescription>
+          </CardHeader>
+          <CardContent className="p-4 sm:p-6">
         {submitStatus === 'success' ? (
           <div className="text-center py-8">
             <CheckCircle className="h-16 w-16 text-green-500 mx-auto mb-4" />
@@ -228,8 +230,10 @@ export function ContactForm({ className, onSuccess }: ContactFormProps) {
             </div>
           </form>
         )}
-      </CardContent>
-    </Card>
+          </CardContent>
+        </Card>
+      </div>
+    </section>
   )
 }
 

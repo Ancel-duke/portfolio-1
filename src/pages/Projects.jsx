@@ -55,24 +55,24 @@ const Projects = () => {
   canonicalUrl="https://ancel.co.ke/projects"
       />
 
-      <section className="section-padding pt-24">
-        <div className="container-custom">
+      <section className="section-padding pt-24 w-full overflow-x-hidden">
+        <div className="container-custom max-w-full">
           <motion.div
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="text-center mb-12"
+            className="text-center mb-12 px-4 sm:px-0"
           >
             <motion.h1 variants={itemVariants} className="text-[clamp(2rem,5vw,3rem)] font-bold mb-[clamp(1.5rem,3vw,2rem)]">
               My <span className="text-gradient">Projects</span>
             </motion.h1>
             <motion.p
               variants={itemVariants}
-              className="text-[clamp(1rem,2vw,1.125rem)] text-gray-600 dark:text-gray-300 max-w-3xl mx-auto"
+              className="text-[clamp(1rem,2vw,1.125rem)] text-gray-600 dark:text-gray-300 max-w-3xl mx-auto px-4 sm:px-0"
             >
-              Here are some of the projects I've built, showcasing my skills in full-stack development, 
-              mobile applications, and modern web technologies.
+              Enterprise-grade systems showcasing resilient architecture, hybrid databases, and scalable solutions. 
+              Click on any project to explore detailed architecture, design decisions, and real-world impact.
             </motion.p>
           </motion.div>
 
@@ -81,7 +81,7 @@ const Projects = () => {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[clamp(1rem,3vw,2rem)]"
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-[clamp(1rem,3vw,2rem)] w-full"
           >
             {projects.map((project, index) => (
               <motion.div key={project.id} variants={itemVariants}>

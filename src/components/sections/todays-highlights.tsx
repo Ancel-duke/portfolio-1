@@ -45,19 +45,19 @@ export function TodaysHighlights({ className }: TodaysHighlightsProps) {
   }
 
   return (
-    <section className={cn('py-16 bg-muted/30', className)}>
-      <div className="container-custom">
-        <div className="text-center mb-12">
+    <section id="highlights" className={cn('py-16 bg-muted/30 w-full overflow-x-hidden', className)}>
+      <div className="container-custom max-w-full">
+        <div className="text-center mb-12 px-4 sm:px-0">
           <h2 className="text-[clamp(1.875rem,4vw,2.5rem)] font-bold mb-[clamp(1rem,2.5vw,1.5rem)]">
             Today's <span className="text-gradient">Highlights</span>
           </h2>
           <p className="text-[clamp(1rem,2vw,1.125rem)] text-muted-foreground max-w-2xl mx-auto">
-            Curated selection of case studies and insights, refreshed daily.
+            Curated selection of case studies and insights.
           </p>
         </div>
 
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 gap-[clamp(1rem,3vw,1.5rem)]"
+          className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 md:gap-[clamp(1rem,3vw,1.5rem)]"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"

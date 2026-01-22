@@ -62,18 +62,18 @@ export function About({ className }: AboutProps) {
   const achievements = [
     {
       icon: Users,
-      title: '50+ Happy Clients',
-      description: 'Satisfied customers across various industries'
+      title: '10K+ Users Supported',
+      description: 'Scalable systems handling thousands of concurrent users'
     },
     {
       icon: Award,
-      title: '30+ Projects Built & Completed',
-      description: 'Spanning fintech, edtech, fitness, travel, and productivity apps'
+      title: '50+ API Endpoints',
+      description: 'Enterprise-grade RESTful APIs with comprehensive features'
     },
     {
-      icon: Calendar,
-      title: '4+ Years Experience',
-      description: 'Continuous learning and growth since 2021'
+      icon: Target,
+      title: 'Multi-Tenant Architectures',
+      description: 'Secure, isolated systems supporting multiple organizations'
     }
   ]
 
@@ -101,14 +101,14 @@ export function About({ className }: AboutProps) {
   ]
 
   return (
-    <section id="about" className={cn('section-padding', className)}>
+    <section id="about" className={cn('section-padding w-full overflow-x-hidden', className)}>
       <motion.div
-        className="container-custom"
+        className="container-custom max-w-full"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
       >
-        <motion.div variants={itemVariants} className="text-center mb-16">
+        <motion.div variants={itemVariants} className="text-center mb-16 px-4 sm:px-0">
           <h2 className="text-[clamp(2rem,5vw,3rem)] font-bold mb-[clamp(1rem,2.5vw,1.5rem)]">
             About <span className="text-gradient">Me</span>
           </h2>
@@ -117,7 +117,7 @@ export function About({ className }: AboutProps) {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-10 lg:gap-12 items-start">
           {/* Left Column: Profile & Philosophy */}
           <div className="space-y-8">
             {/* Profile Card */}
@@ -125,7 +125,7 @@ export function About({ className }: AboutProps) {
               <Card className="overflow-hidden">
                 <div className="relative">
                   <img
-                    src="/assets/profile-photo.jpg"
+                    src="/assets/profile_photo.jpg"
                     alt="Ancel Ajanga"
                     loading="eager"
                     decoding="async"
@@ -134,21 +134,24 @@ export function About({ className }: AboutProps) {
                     className="w-full h-80 sm:h-96 object-cover object-top"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
-                  <div className="absolute bottom-4 left-4 text-white">
-                    <h3 className="text-3xl font-bold">Ancel Ajanga</h3>
-                    <p className="text-lg text-muted-foreground">Fullstack Software Engineer/Developer & App Developer</p>
+                  <div className="absolute bottom-3 sm:bottom-4 left-3 sm:left-4 right-3 sm:right-4 text-white">
+                    <h3 className="text-xl sm:text-2xl md:text-3xl font-bold">Ancel Ajanga</h3>
+                    <p className="text-sm sm:text-base md:text-lg text-white/90">Fullstack Software Engineer/Developer & App Developer</p>
                   </div>
                 </div>
-                <CardContent className="p-6">
-                  <div className="space-y-4 mb-6">
-                    <div className="flex items-center text-muted-foreground">
-                      <MapPin className="h-5 w-5 mr-3 text-primary" /> Nairobi, Kenya (from Narok)
+                <CardContent className="p-4 sm:p-5 md:p-6">
+                  <div className="space-y-3 sm:space-y-4 mb-4 sm:mb-6">
+                    <div className="flex items-center text-muted-foreground text-sm sm:text-base">
+                      <MapPin className="h-4 w-4 sm:h-5 sm:w-5 mr-2 sm:mr-3 text-primary flex-shrink-0" /> 
+                      <span className="break-words">Nairobi, Kenya (from Narok)</span>
                     </div>
-                    <div className="flex items-center text-muted-foreground">
-                      <Calendar className="h-5 w-5 mr-3 text-primary" /> Started coding in 2021
+                    <div className="flex items-center text-muted-foreground text-sm sm:text-base">
+                      <Calendar className="h-4 w-4 sm:h-5 sm:w-5 mr-2 sm:mr-3 text-primary flex-shrink-0" /> 
+                      <span>Started coding in 2021</span>
                     </div>
-                    <div className="flex items-center text-muted-foreground">
-                      <Users className="h-5 w-5 mr-3 text-primary" /> Freelancing since March 2024
+                    <div className="flex items-center text-muted-foreground text-sm sm:text-base">
+                      <Users className="h-4 w-4 sm:h-5 sm:w-5 mr-2 sm:mr-3 text-primary flex-shrink-0" /> 
+                      <span>Freelancing since March 2024</span>
                     </div>
                   </div>
 
@@ -164,22 +167,23 @@ export function About({ className }: AboutProps) {
             {/* Philosophy */}
             <motion.div variants={itemVariants}>
               <Card>
-                <CardContent className="p-6">
-                  <h3 className="text-2xl font-bold mb-4 flex items-center">
-                    <Lightbulb className="h-6 w-6 mr-2 text-primary" /> My Philosophy
+                <CardContent className="p-4 sm:p-5 md:p-6">
+                  <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 flex items-center">
+                    <Lightbulb className="h-5 w-5 sm:h-6 sm:w-6 mr-2 text-primary flex-shrink-0" /> 
+                    <span>My Philosophy</span>
                   </h3>
-                  <div className="space-y-4 text-muted-foreground">
+                  <div className="space-y-3 sm:space-y-4 text-muted-foreground text-sm sm:text-base leading-relaxed">
                     <p>
-                      I believe in creating technology that serves people, not the other way around. 
-                      Every line of code should have a purpose, every feature should solve a real problem.
+                      I specialize in architecting resilient, scalable systems that handle real-world complexity across fintech, enterprise, and real-time domains. 
+                      My approach combines hybrid database architectures, microservices design, containerization, and fault-tolerant patterns to build systems that scale with business needs.
                     </p>
                     <p>
-                      My approach combines technical excellence with user-centered design, ensuring that 
-                      the applications I build are not only powerful but also intuitive and accessible.
+                      I design systems with service isolation, ensuring one failure doesn't bring down the entire system. 
+                      Every architectural decision balances scalability, maintainability, and real-world constraints.
                     </p>
                     <p>
-                      I'm passionate about continuous learning and staying at the forefront of technology 
-                      to deliver the best solutions for my clients.
+                      Beyond enterprise systems, I explore modern UI patterns and creative interactions to complement my system design work, 
+                      ensuring both technical excellence and exceptional user experiences.
                     </p>
                   </div>
                 </CardContent>
@@ -192,23 +196,22 @@ export function About({ className }: AboutProps) {
             {/* About Me */}
             <motion.div variants={itemVariants}>
               <Card>
-                <CardContent className="p-6">
-                  <h3 className="text-2xl font-bold mb-4">About Me</h3>
-                  <div className="space-y-4 text-muted-foreground">
+                <CardContent className="p-4 sm:p-5 md:p-6">
+                  <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">About Me</h3>
+                  <div className="space-y-3 sm:space-y-4 text-muted-foreground text-sm sm:text-base leading-relaxed">
                     <p>
-                      Hi, I'm Ancel (also known as Duke). I'm a Fullstack Software Engineer/Developer specializing in web development, app development, AI integration, and SEO optimization. 
-                      I love building apps that solve real-world problems while also expressing my creativity through code. 
-                      Beyond tech, I enjoy connecting with people, sharing ideas, and expressing myself through writing poems.
+                      Hi, I'm Ancel (also known as Duke). I'm a Fullstack Software Engineer specializing in enterprise-grade system architecture, 
+                      hybrid database solutions, microservices, and real-time platforms. I architect resilient systems that scale to thousands of users 
+                      and handle complex business requirements across fintech, enterprise, and real-time domains.
                     </p>
                     <p>
-                      Based in Nairobi, Kenya (originally from Narok), I specialize in React, TypeScript, Node.js, Python, Flutter, AI integration, and SEO optimization. 
-                      I'm currently creating a Flutter app that will be available on Android, iOS, and web platforms. 
-                      I love creating scalable, user-friendly applications that solve real-world problems 
-                      and make a positive impact.
+                      Based in Nairobi, Kenya (originally from Narok), I design systems with service isolation, containerization, and fault-tolerant patterns. 
+                      My work spans multi-tenant architectures, hybrid database setups (PostgreSQL + MongoDB), WebSocket-powered real-time systems, 
+                      and containerized deployments that scale with business needs.
                     </p>
                     <p>
-                      When I'm not coding, you'll find me exploring new technologies, contributing to 
-                      open-source projects, or sharing my knowledge with the developer community.
+                      When I'm not architecting enterprise systems, you'll find me exploring modern UI patterns, 
+                      contributing to open-source projects, or sharing knowledge with the developer community.
                     </p>
                   </div>
                 </CardContent>
@@ -218,9 +221,9 @@ export function About({ className }: AboutProps) {
             {/* Skills */}
             <motion.div variants={itemVariants}>
               <Card>
-                <CardContent className="p-6">
-                  <h3 className="text-2xl font-bold mb-6">Technical Skills</h3>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <CardContent className="p-4 sm:p-5 md:p-6">
+                  <h3 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6">Technical Skills</h3>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                     {skills.map((skill, index) => (
                       <div key={index}>
                         <div className="flex justify-between items-center mb-2">
@@ -243,9 +246,9 @@ export function About({ className }: AboutProps) {
             {/* Achievements */}
             <motion.div variants={itemVariants}>
               <Card>
-                <CardContent className="p-6">
-                  <h3 className="text-2xl font-bold mb-6">Key Achievements</h3>
-                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <CardContent className="p-4 sm:p-5 md:p-6">
+                  <h3 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6">Key Achievements</h3>
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
                     {achievements.map((achievement, index) => (
                       <div key={index} className="text-center">
                         <div className="flex justify-center mb-2">

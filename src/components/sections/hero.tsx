@@ -52,10 +52,10 @@ export function Hero({ className }: HeroProps) {
   ]
 
   return (
-    <section className={cn("py-[clamp(4rem,8vw,8rem)]", className)}>
-      <div className="container-custom">
+    <section className={cn("py-[clamp(4rem,8vw,8rem)] w-full overflow-x-hidden", className)}>
+      <div className="container-custom max-w-full">
         <motion.div
-          className="text-center max-w-4xl mx-auto"
+          className="text-center max-w-4xl mx-auto px-4 sm:px-0"
           variants={containerVariants}
           initial="hidden"
           animate="visible"
@@ -73,8 +73,8 @@ export function Hero({ className }: HeroProps) {
             className="text-[clamp(1rem,2.5vw,1.5rem)] text-muted-foreground mb-[clamp(1.5rem,4vw,2rem)] max-w-4xl mx-auto px-4 sm:px-0 leading-relaxed"
             variants={itemVariants}
           >
-            Fullstack Software Engineer/Developer & App Developer crafting scalable web platforms and cross‑platform mobile apps (Android, iOS, web).
-            I ship clean, reliable software with thoughtful UX, strong performance, and measurable business impact.
+            I build resilient, scalable systems that handle real-world complexity across fintech, enterprise, and real-time domains.
+            Architecting hybrid database solutions, microservices, and containerized deployments that scale to thousands of users and transactions.
           </motion.p>
 
           <motion.div
@@ -96,7 +96,7 @@ export function Hero({ className }: HeroProps) {
           </motion.div>
 
           <motion.div
-            className="flex flex-wrap justify-center gap-6"
+            className="flex flex-wrap justify-center gap-3 sm:gap-4 md:gap-6"
             variants={itemVariants}
           >
             {socialLinks.map((link) => {
@@ -107,33 +107,33 @@ export function Hero({ className }: HeroProps) {
                   href={link.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group flex items-center space-x-2 p-3 rounded-lg bg-muted/50 hover:bg-muted/80 transition-all duration-300"
+                  className="group flex items-center space-x-2 p-2.5 sm:p-3 rounded-lg bg-muted/50 hover:bg-muted/80 transition-all duration-300 min-h-[44px]"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   aria-label={link.description}
                 >
-                  <IconComponent className="h-5 w-5 text-primary group-hover:text-accent transition-colors" />
-                  <span className="font-medium">{link.name}</span>
+                  <IconComponent className="h-4 w-4 sm:h-5 sm:w-5 text-primary group-hover:text-accent transition-colors flex-shrink-0" />
+                  <span className="font-medium text-sm sm:text-base">{link.name}</span>
                 </motion.a>
               )
             })}
           </motion.div>
 
           <motion.div
-            className="mt-12 sm:mt-16 grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 text-center px-4 sm:px-0"
+            className="mt-8 sm:mt-12 md:mt-16 grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 md:gap-8 text-center px-4 sm:px-0"
             variants={itemVariants}
           >
-            <div className="space-y-2">
-              <div className="text-[clamp(1.5rem,4vw,2.5rem)] font-bold text-primary">30+</div>
-              <div className="text-[clamp(0.75rem,1.5vw,0.875rem)] text-muted-foreground">Projects Built</div>
+            <div className="space-y-1 sm:space-y-2">
+              <div className="text-[clamp(1.5rem,4vw,2.5rem)] font-bold text-primary">10K+</div>
+              <div className="text-[clamp(0.75rem,1.5vw,0.875rem)] text-muted-foreground px-2">Users Supported</div>
             </div>
-            <div className="space-y-2">
-              <div className="text-[clamp(1.5rem,4vw,2.5rem)] font-bold text-primary">4+</div>
-              <div className="text-[clamp(0.75rem,1.5vw,0.875rem)] text-muted-foreground">Years Coding</div>
-            </div>
-            <div className="space-y-2">
+            <div className="space-y-1 sm:space-y-2">
               <div className="text-[clamp(1.5rem,4vw,2.5rem)] font-bold text-primary">50+</div>
-              <div className="text-[clamp(0.75rem,1.5vw,0.875rem)] text-muted-foreground">Happy Clients</div>
+              <div className="text-[clamp(0.75rem,1.5vw,0.875rem)] text-muted-foreground px-2">API Endpoints</div>
+            </div>
+            <div className="space-y-1 sm:space-y-2">
+              <div className="text-[clamp(1.5rem,4vw,2.5rem)] font-bold text-primary">Multi-Tenant</div>
+              <div className="text-[clamp(0.75rem,1.5vw,0.875rem)] text-muted-foreground px-2">Architectures</div>
             </div>
           </motion.div>
         </motion.div>

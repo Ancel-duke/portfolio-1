@@ -175,19 +175,19 @@ export function Fun({ className }: FunProps) {
   }
 
   return (
-    <section className={cn("py-16", className)}>
-      <div className="container-custom">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+    <section className={cn("py-16 w-full overflow-x-hidden", className)}>
+      <div className="container-custom max-w-full">
+        <div className="text-center mb-8 sm:mb-12 px-4 sm:px-0">
+          <h2 className="text-[clamp(1.875rem,4vw,2.5rem)] font-bold mb-3 sm:mb-4">
             Fun <span className="text-gradient">Stuff</span>
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-[clamp(1rem,2vw,1.125rem)] text-muted-foreground max-w-2xl mx-auto">
             A peek into my personality, interests, and the tools I love to use.
           </p>
         </div>
 
         <motion.div
-          className="grid grid-cols-1 lg:grid-cols-2 gap-8"
+          className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -268,7 +268,7 @@ export function Fun({ className }: FunProps) {
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3 sm:gap-4">
                 {funData.favoriteTools.map((tool: FavoriteTool) => (
                   <motion.div
                     key={tool.name}
@@ -312,7 +312,7 @@ export function Fun({ className }: FunProps) {
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 sm:gap-6">
                 {Object.entries(funData.stats).map(([key, value]) => (
                   <motion.div
                     key={key}

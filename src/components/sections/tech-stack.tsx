@@ -141,26 +141,28 @@ export const TechStack = React.memo(function TechStack({ className }: TechStackP
   }
 
   return (
-    <section className={cn("py-16", className)}>
-      <div className="container-custom">
-        <div className="text-center mb-12">
+    <section className={cn("py-16 w-full overflow-x-hidden", className)}>
+      <div className="container-custom max-w-full">
+        <div className="text-center mb-12 px-4 sm:px-0">
           <h2 className="text-[clamp(1.875rem,4vw,2.5rem)] font-bold mb-[clamp(1rem,2.5vw,1.5rem)]">
             Tech <span className="text-gradient">Stack</span>
           </h2>
           <p className="text-[clamp(1rem,2vw,1.125rem)] text-muted-foreground max-w-2xl mx-auto">
-            Technologies I use to build modern, scalable web applications. From frontend frameworks to backend services.
+            Enterprise-grade technologies for building resilient, scalable systems. From hybrid database architectures to microservices, containerization, and real-time communication.
           </p>
         </div>
 
         <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
-          <TabsList className="grid w-full grid-cols-2 mb-8">
-            <TabsTrigger value="frequency" className="flex items-center space-x-2">
-              <TrendingUp className="h-4 w-4" />
-              <span>By Frequency</span>
+          <TabsList className="grid w-full grid-cols-2 mb-6 sm:mb-8">
+            <TabsTrigger value="frequency" className="flex items-center space-x-1 sm:space-x-2 text-xs sm:text-sm">
+              <TrendingUp className="h-3 w-3 sm:h-4 sm:w-4" />
+              <span className="hidden sm:inline">By Frequency</span>
+              <span className="sm:hidden">Frequency</span>
             </TabsTrigger>
-            <TabsTrigger value="proficiency" className="flex items-center space-x-2">
-              <BarChart3 className="h-4 w-4" />
-              <span>By Proficiency</span>
+            <TabsTrigger value="proficiency" className="flex items-center space-x-1 sm:space-x-2 text-xs sm:text-sm">
+              <BarChart3 className="h-3 w-3 sm:h-4 sm:w-4" />
+              <span className="hidden sm:inline">By Proficiency</span>
+              <span className="sm:hidden">Proficiency</span>
             </TabsTrigger>
           </TabsList>
 
@@ -175,11 +177,11 @@ export const TechStack = React.memo(function TechStack({ className }: TechStackP
                 <CardHeader>
                   <CardTitle>Technology Usage Frequency</CardTitle>
                   <CardDescription>
-                    How many of my 30+ projects use each technology
+                    How many of my enterprise projects use each technology
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <div className="h-80">
+                  <div className="h-64 sm:h-80">
                     <ResponsiveContainer width="100%" height="100%">
                       <BarChart data={frequencyData}>
                         <CartesianGrid strokeDasharray="3 3" />
@@ -187,10 +189,11 @@ export const TechStack = React.memo(function TechStack({ className }: TechStackP
                           dataKey="name" 
                           angle={-45}
                           textAnchor="end"
-                          height={100}
-                          fontSize={12}
+                          height={80}
+                          fontSize={10}
+                          tick={{ fontSize: 10 }}
                         />
-                        <YAxis />
+                        <YAxis fontSize={10} />
                         <Tooltip />
                         <Bar dataKey="frequency" fill="#3b82f6" />
                       </BarChart>
@@ -216,7 +219,7 @@ export const TechStack = React.memo(function TechStack({ className }: TechStackP
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <div className="h-80">
+                  <div className="h-64 sm:h-80">
                     <ResponsiveContainer width="100%" height="100%">
                       <BarChart data={proficiencyData}>
                         <CartesianGrid strokeDasharray="3 3" />
@@ -224,10 +227,11 @@ export const TechStack = React.memo(function TechStack({ className }: TechStackP
                           dataKey="name" 
                           angle={-45}
                           textAnchor="end"
-                          height={100}
-                          fontSize={12}
+                          height={80}
+                          fontSize={10}
+                          tick={{ fontSize: 10 }}
                         />
-                        <YAxis domain={[0, 10]} />
+                        <YAxis domain={[0, 10]} fontSize={10} />
                         <Tooltip />
                         <Bar dataKey="proficiency" fill="#10b981" />
                       </BarChart>
@@ -241,7 +245,7 @@ export const TechStack = React.memo(function TechStack({ className }: TechStackP
 
         {/* Technology Grid */}
         <motion.div
-          className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-[clamp(0.75rem,2vw,1rem)] mt-12"
+          className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3 sm:gap-4 md:gap-[clamp(0.75rem,2vw,1rem)] mt-8 sm:mt-12"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -291,7 +295,7 @@ export const TechStack = React.memo(function TechStack({ className }: TechStackP
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="h-80">
+              <div className="h-64 sm:h-80">
                 <ResponsiveContainer width="100%" height="100%">
                   <PieChart>
                     <Pie
@@ -300,7 +304,7 @@ export const TechStack = React.memo(function TechStack({ className }: TechStackP
                       cy="50%"
                       labelLine={false}
                       label={false}
-                      outerRadius={80}
+                      outerRadius={60}
                       fill="#8884d8"
                       dataKey="value"
                     >
@@ -309,7 +313,13 @@ export const TechStack = React.memo(function TechStack({ className }: TechStackP
                       ))}
                     </Pie>
                     <Tooltip />
-                    <Legend layout="horizontal" verticalAlign="bottom" align="center" wrapperStyle={{ fontSize: 12 }} />
+                    <Legend 
+                      layout="horizontal" 
+                      verticalAlign="bottom" 
+                      align="center" 
+                      wrapperStyle={{ fontSize: 10 }} 
+                      iconSize={8}
+                    />
                   </PieChart>
                 </ResponsiveContainer>
               </div>

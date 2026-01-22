@@ -74,18 +74,37 @@ export function useDailyFeaturedContent(): FeaturedContentItem[] {
       readTime?: string
     }>
 
+    // Separate case studies into fullstack and frontend
+    const fullstackCaseStudies = caseStudies.filter(cs => {
+      const role = (cs.role || '').toLowerCase()
+      return role.includes('full') || role.includes('stack')
+    })
+
+    const frontendCaseStudies = caseStudies.filter(cs => {
+      const role = (cs.role || '').toLowerCase()
+      const title = (cs.title || '').toLowerCase()
+      return role.includes('frontend') || 
+             title.includes('tracker') || 
+             title.includes('timer') || 
+             title.includes('travelogue') ||
+             title.includes('scheduler') ||
+             title.includes('academy')
+    })
+
     // Shuffle each array independently using date-based seed
-    // Use different seed modifiers to ensure different randomization for case studies vs journals
-    // Create different seeds for case studies and journals to ensure independent shuffling
-    const caseStudiesSeed = hashString(dateSeed + '-case-studies')
+    const fullstackSeed = hashString(dateSeed + '-case-studies-fullstack')
+    const frontendSeed = hashString(dateSeed + '-case-studies-frontend')
     const journalsSeed = hashString(dateSeed + '-journals')
     
-    const shuffledCaseStudies = seededShuffle([...caseStudies], caseStudiesSeed)
+    const shuffledFullstack = seededShuffle([...fullstackCaseStudies], fullstackSeed)
+    const shuffledFrontend = seededShuffle([...frontendCaseStudies], frontendSeed)
     const shuffledJournals = seededShuffle([...journalEntries], journalsSeed)
 
-    // Select first 2 from each (or all if fewer than 2 available)
-    // Ensure we only take exactly 2 items (or fewer if not enough available)
-    const selectedCaseStudies = shuffledCaseStudies.slice(0, 2)
+    // Select 1 frontend + 1 fullstack for case studies (total 2)
+    // Then 2 journals
+    const selectedFrontend = shuffledFrontend.slice(0, 1)
+    const selectedFullstack = shuffledFullstack.slice(0, 1)
+    const selectedCaseStudies = [...selectedFrontend, ...selectedFullstack]
     const selectedJournals = shuffledJournals.slice(0, 2)
 
     // Transform case studies to unified format

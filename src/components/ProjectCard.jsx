@@ -41,23 +41,28 @@ const ProjectCard = ({ project, onOpenModal, priority = false }) => {
         </p>
 
         {/* Technologies */}
-        <div className="mb-6">
-          <div className="flex flex-wrap gap-2">
-            {technologies.slice(0, 4).map((tech, index) => (
-              <span
-                key={index}
-                className="px-2 sm:px-3 py-1 bg-primary-100 dark:bg-primary-900 text-primary-700 dark:text-primary-300 rounded-full text-xs font-medium"
-              >
-                {tech}
-              </span>
-            ))}
-            {technologies.length > 4 && (
-              <span className="px-2 sm:px-3 py-1 bg-primary-100 dark:bg-primary-900 text-primary-700 dark:text-primary-300 rounded-full text-xs font-medium">
-                +{technologies.length - 4}
-              </span>
-            )}
+        {technologies && technologies.length > 0 && (
+          <div className="mb-6">
+            <div className="flex flex-wrap gap-2">
+              {technologies.slice(0, 4).map((tech, index) => {
+                const techName = typeof tech === 'string' ? tech : tech.name;
+                return (
+                  <span
+                    key={index}
+                    className="px-2 sm:px-3 py-1 bg-primary-100 dark:bg-primary-900 text-primary-700 dark:text-primary-300 rounded-full text-xs font-medium"
+                  >
+                    {techName}
+                  </span>
+                );
+              })}
+              {technologies.length > 4 && (
+                <span className="px-2 sm:px-3 py-1 bg-primary-100 dark:bg-primary-900 text-primary-700 dark:text-primary-300 rounded-full text-xs font-medium">
+                  +{technologies.length - 4}
+                </span>
+              )}
+            </div>
           </div>
-        </div>
+        )}
 
         {/* Action Buttons */}
         <div className="flex items-center justify-between mt-auto">

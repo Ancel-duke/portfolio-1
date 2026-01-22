@@ -6,6 +6,7 @@ import { Header } from './components/layout/header'
 import { Footer } from './components/layout/footer'
 import { Hero } from './components/sections/hero'
 import { CaseStudiesGrid } from './components/sections/case-studies-grid'
+import { LabsExperiments } from './components/sections/labs-experiments'
 import { Timeline } from './components/sections/timeline'
 import { TechStack } from './components/sections/tech-stack'
 import { Fun } from './components/sections/fun'
@@ -14,6 +15,7 @@ import { ContactForm } from './components/forms/contact-form'
 import { TodaysHighlights } from './components/sections/todays-highlights'
 import { About } from './components/sections/about'
 import { Button } from './components/ui/button'
+import { ArrowRight } from 'lucide-react'
 import SEO from './components/seo/SEO'
 import { SkipLink } from './components/ui/skip-link'
 import { 
@@ -40,6 +42,19 @@ const PageLoader = () => (
 
 // Home Page Component
 function HomePage() {
+  React.useEffect(() => {
+    // Handle hash links on page load
+    const hash = window.location.hash
+    if (hash) {
+      setTimeout(() => {
+        const element = document.getElementById(hash.substring(1))
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' })
+        }
+      }, 100)
+    }
+  }, [])
+
   return (
     <>
       <SEO
@@ -59,6 +74,7 @@ function HomePage() {
         <About />
         <TodaysHighlights />
         <CaseStudiesGrid limit={3} showViewAll={true} />
+        <LabsExperiments limit={3} showViewAll={true} />
         <TechStack />
         <Fun />
         <CTA />
@@ -114,9 +130,42 @@ function ContactPage() {
 
 // Case Studies Page Component
 function CaseStudiesPage() {
+  const [showAll, setShowAll] = React.useState(false)
+  
   return (
     <>
-      <CaseStudiesGrid showViewAll={false} />
+      <div className="py-16 w-full overflow-x-hidden">
+        <div className="container-custom max-w-full">
+          <div className="text-center mb-12 px-4 sm:px-0">
+            <h1 className="text-[clamp(2rem,5vw,3.5rem)] font-bold mb-4">
+              {showAll ? "All" : "Featured"} <span className="text-gradient">Case Studies</span>
+            </h1>
+            <p className="text-[clamp(1rem,2vw,1.125rem)] text-muted-foreground max-w-2xl mx-auto">
+              {showAll 
+                ? "Deep dives into my most challenging and rewarding projects, showcasing the process, challenges, and outcomes."
+                : "Enterprise-grade systems showcasing resilient architecture, hybrid databases, and scalable solutions."}
+            </p>
+          </div>
+        </div>
+        <CaseStudiesGrid limit={showAll ? undefined : 6} showViewAll={false} />
+        {!showAll && (
+          <div className="text-center mt-12 px-4">
+            <Button size="lg" variant="outline" onClick={() => setShowAll(true)}>
+              Show All Case Studies
+              <ArrowRight className="ml-2 h-4 w-4" />
+            </Button>
+          </div>
+        )}
+      </div>
+    </>
+  )
+}
+
+// Labs & Experiments Page Component
+function LabsExperimentsPage() {
+  return (
+    <>
+      <LabsExperiments showViewAll={false} fullPage={true} />
     </>
   )
 }
@@ -144,10 +193,10 @@ function App() {
     <HelmetProvider>
       <ThemeProvider>
         <Router>
-          <div className="min-h-screen bg-background text-foreground">
+          <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
             <WebVitals />
             <Header />
-            <main id="main-content" role="main">
+            <main id="main-content" role="main" className="overflow-x-hidden">
               <Suspense fallback={<PageLoader />}>
                 <Routes>
                   <Route path="/" element={<HomePage />} />
@@ -155,6 +204,7 @@ function App() {
                   <Route path="/projects" element={<Projects />} />
                   <Route path="/case-studies" element={<CaseStudiesPage />} />
                   <Route path="/case-studies/:slug" element={<CaseStudyDetailPage />} />
+                  <Route path="/labs-experiments" element={<LabsExperimentsPage />} />
                   <Route path="/developer-journal" element={<DeveloperJournal />} />
                   <Route path="/developer-journal/:slug" element={<BlogDetailPage />} />
                   <Route path="/blog" element={<DeveloperJournal />} />

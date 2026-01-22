@@ -51,16 +51,25 @@ export const CaseStudiesGrid = React.memo(function CaseStudiesGrid({ className, 
     type: (cs.role || '').toLowerCase().includes('full') ? 'fullstack' : 'frontend'
   }))
   
+  // Filter to only show fullstack/enterprise projects (exclude frontend experiments)
+  const enterpriseCaseStudies = React.useMemo(() => {
+    return caseStudiesWithType.filter(cs => {
+      const role = (cs.role || '').toLowerCase()
+      // Only include fullstack projects (exclude frontend experiments)
+      return role.includes('full') || role.includes('stack')
+    })
+  }, [caseStudiesWithType])
+
   // Use useMemo to prevent flicker on reload - seeded shuffle remains stable for the day
   const selectedCaseStudies = React.useMemo(() => {
-    // If no limit, show all case studies sorted by master sort
+    // If no limit, show all enterprise case studies sorted by master sort
     if (!limit) {
-      return getMasterSortedProjects(caseStudiesWithType) as CaseStudy[]
+      return getMasterSortedProjects(enterpriseCaseStudies) as CaseStudy[]
     }
     
-    // If limit is provided, use daily selection to pick 4 projects
-    return getDailySelection(caseStudiesWithType, 4) as CaseStudy[]
-  }, [limit, caseStudiesWithType])
+    // If limit is provided, use daily selection to pick that many projects
+    return getDailySelection(enterpriseCaseStudies, limit) as CaseStudy[]
+  }, [limit, enterpriseCaseStudies])
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -84,19 +93,19 @@ export const CaseStudiesGrid = React.memo(function CaseStudiesGrid({ className, 
   }
 
   return (
-    <section className={cn("py-16", className)}>
-      <div className="container-custom">
-        <div className="text-center mb-12">
+    <section className={cn("py-16 w-full overflow-x-hidden", className)}>
+      <div className="container-custom max-w-full">
+        <div className="text-center mb-12 px-4 sm:px-0">
           <h2 className="text-[clamp(1.875rem,4vw,2.5rem)] font-bold mb-[clamp(1rem,2.5vw,1.5rem)]">
             {limit ? "Featured" : "All"} <span className="text-gradient">Case Studies</span>
           </h2>
           <p className="text-[clamp(1rem,2vw,1.125rem)] text-muted-foreground max-w-2xl mx-auto">
-            Deep dives into my most challenging and rewarding projects, showcasing the process, challenges, and outcomes.
+            {limit ? "Enterprise-grade systems showcasing resilient architecture, hybrid databases, and scalable solutions." : "Deep dives into my most challenging and rewarding projects, showcasing the process, challenges, and outcomes."}
           </p>
         </div>
 
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[clamp(1rem,3vw,2rem)]"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-[clamp(1rem,3vw,2rem)] w-full"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -108,12 +117,12 @@ export const CaseStudiesGrid = React.memo(function CaseStudiesGrid({ className, 
               variants={itemVariants}
               className="group"
             >
-              <Card className="h-full hover:shadow-xl transition-all duration-300 border-0 bg-card/50 backdrop-blur-sm overflow-hidden">
-                <div className="relative overflow-hidden">
+              <Card className="h-full hover:shadow-xl transition-all duration-300 border-0 bg-card/50 backdrop-blur-sm overflow-hidden w-full">
+                <div className="relative overflow-hidden w-full">
                   <img
                     src={caseStudy.images.hero}
                     alt={caseStudy.title}
-                    className="w-full h-40 sm:h-48 object-cover group-hover:scale-105 transition-transform duration-500"
+                    className="w-full h-36 sm:h-40 md:h-48 object-cover group-hover:scale-105 transition-transform duration-500"
                     loading={index < 2 ? "eager" : "lazy"}
                     decoding="async"
                     width="800"
@@ -125,33 +134,33 @@ export const CaseStudiesGrid = React.memo(function CaseStudiesGrid({ className, 
                       {caseStudy.status}
                     </Badge>
                   </div>
-                  <div className="absolute bottom-4 left-4 right-4">
-                    <h3 className="text-white font-semibold text-lg mb-1">
+                  <div className="absolute bottom-3 sm:bottom-4 left-3 sm:left-4 right-3 sm:right-4">
+                    <h3 className="text-white font-semibold text-base sm:text-lg mb-1 line-clamp-1">
                       {caseStudy.title}
                     </h3>
-                    <p className="text-white/90 text-sm">
+                    <p className="text-white/90 text-xs sm:text-sm line-clamp-2">
                       {caseStudy.subtitle}
                     </p>
                   </div>
                 </div>
 
-                <CardHeader className="pb-3">
+                <CardHeader className="pb-3 px-4 sm:px-6">
                   <div className="flex items-center justify-between text-sm text-muted-foreground mb-3">
                     <div className="flex items-center space-x-1">
-                      <Calendar className="h-4 w-4" />
-                      <span>{caseStudy.year}</span>
+                      <Calendar className="h-4 w-4 flex-shrink-0" />
+                      <span className="text-xs sm:text-sm">{caseStudy.year}</span>
                     </div>
                     <div className="flex items-center space-x-1">
-                      <Clock className="h-4 w-4" />
-                      <span>{caseStudy.timeline}</span>
+                      <Clock className="h-4 w-4 flex-shrink-0" />
+                      <span className="text-xs sm:text-sm">{caseStudy.timeline}</span>
                     </div>
                   </div>
-                  <CardDescription className="line-clamp-3">
+                  <CardDescription className="line-clamp-3 text-sm sm:text-base">
                     {caseStudy.description}
                   </CardDescription>
                 </CardHeader>
 
-                <CardContent className="pt-0">
+                <CardContent className="pt-0 px-4 sm:px-6 pb-4 sm:pb-6">
                   <div className="mb-4">
                     <h4 className="text-sm font-medium mb-2">Technologies Used</h4>
                     <div className="flex flex-wrap gap-2">
@@ -168,17 +177,17 @@ export const CaseStudiesGrid = React.memo(function CaseStudiesGrid({ className, 
                     </div>
                   </div>
 
-                  <div className="flex space-x-2">
+                  <div className="flex flex-col sm:flex-row gap-2 w-full">
                     {caseStudy.links.live && (
                       <Button
                         variant="default"
                         size="sm"
-                        className="flex-1"
+                        className="flex-1 min-h-[44px] text-xs sm:text-sm"
                         asChild
                       >
-                        <a href={caseStudy.links.live} target="_blank" rel="noopener noreferrer">
-                          <ExternalLink className="h-4 w-4 mr-2" />
-                          Live Demo
+                        <a href={caseStudy.links.live} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center">
+                          <ExternalLink className="h-3 w-3 sm:h-4 sm:w-4 mr-1.5 sm:mr-2 flex-shrink-0" />
+                          <span className="truncate">Live Demo</span>
                         </a>
                       </Button>
                     )}
@@ -186,12 +195,12 @@ export const CaseStudiesGrid = React.memo(function CaseStudiesGrid({ className, 
                       <Button
                         variant="outline"
                         size="sm"
-                        className="flex-1"
+                        className="flex-1 min-h-[44px] text-xs sm:text-sm"
                         asChild
                       >
-                        <a href={caseStudy.links.github} target="_blank" rel="noopener noreferrer">
-                          <Github className="h-4 w-4 mr-2" />
-                          Code
+                        <a href={caseStudy.links.github} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center">
+                          <Github className="h-3 w-3 sm:h-4 sm:w-4 mr-1.5 sm:mr-2 flex-shrink-0" />
+                          <span className="truncate">Code</span>
                         </a>
                       </Button>
                     )}
@@ -199,12 +208,12 @@ export const CaseStudiesGrid = React.memo(function CaseStudiesGrid({ className, 
 
                   <Button
                     variant="ghost"
-                    className="w-full mt-3 group-hover:bg-primary group-hover:text-primary-foreground transition-colors"
+                    className="w-full mt-3 min-h-[44px] text-xs sm:text-sm group-hover:bg-primary group-hover:text-primary-foreground transition-colors"
                     asChild
                   >
-                    <a href={`/case-studies/${caseStudy.slug}`}>
-                      Read Case Study
-                      <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                    <a href={`/case-studies/${caseStudy.slug}`} className="flex items-center justify-center">
+                      <span>Read Case Study</span>
+                      <ArrowRight className="ml-2 h-3 w-3 sm:h-4 sm:w-4 group-hover:translate-x-1 transition-transform flex-shrink-0" />
                     </a>
                   </Button>
                 </CardContent>
@@ -213,11 +222,11 @@ export const CaseStudiesGrid = React.memo(function CaseStudiesGrid({ className, 
           ))}
         </motion.div>
 
-        {showViewAll && limit && selectedCaseStudies.length >= limit && (
+        {showViewAll && limit && (
           <div className="text-center mt-12">
             <Button size="lg" variant="outline" asChild>
               <a href="/case-studies">
-                View All Case Studies
+                {selectedCaseStudies.length >= limit ? "Show All Case Studies" : "View All Case Studies"}
                 <ArrowRight className="ml-2 h-4 w-4" />
               </a>
             </Button>

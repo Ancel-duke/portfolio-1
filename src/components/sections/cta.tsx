@@ -53,47 +53,47 @@ export function CTA({ className }: CTAProps) {
   ]
 
   return (
-    <section className={cn("py-16", className)}>
-      <div className="container-custom">
+    <section className={cn("py-16 w-full overflow-x-hidden", className)}>
+      <div className="container-custom max-w-full">
         <motion.div
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
         >
-          <Card className="relative overflow-hidden border-0 bg-gradient-to-br from-primary/10 via-accent/10 to-primary/10">
+          <Card className="relative overflow-hidden border-0 bg-gradient-to-br from-primary/10 via-accent/10 to-primary/10 w-full">
             <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5" />
-            <CardContent className="relative p-8 md:p-12">
+            <CardContent className="relative p-6 sm:p-8 md:p-12">
               <motion.div
-                className="text-center max-w-4xl mx-auto"
+                className="text-center max-w-4xl mx-auto px-4 sm:px-0"
                 variants={itemVariants}
               >
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
-                  Let's build something{" "}
-                  <span className="text-gradient">amazing</span> together
+                <h2 className="text-[clamp(1.75rem,4vw,3rem)] font-bold mb-4 sm:mb-6">
+                  Let's build{" "}
+                  <span className="text-gradient">resilient, scalable systems</span> together
                 </h2>
-                <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-                  I'm always excited to work on new projects and collaborate with passionate people. 
-                  Whether you have a startup idea, need a full-stack developer, or want to discuss technology, 
-                  I'd love to hear from you.
+                <p className="text-[clamp(1rem,2vw,1.25rem)] text-muted-foreground mb-6 sm:mb-8 max-w-2xl mx-auto px-4">
+                  Reach out to discuss building resilient, scalable, high-impact systems. 
+                  Whether you need enterprise-grade architecture, hybrid database solutions, or real-time platforms, 
+                  I design systems that scale with your business.
                 </p>
 
-                <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-                  <Button size="lg" className="group">
-                    <MessageCircle className="mr-2 h-5 w-5" />
+                <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center mb-8 sm:mb-12">
+                  <Button size="lg" className="group w-full sm:w-auto min-h-[48px] text-base sm:text-lg">
+                    <MessageCircle className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
                     Start a Conversation
-                    <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                    <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5 group-hover:translate-x-1 transition-transform" />
                   </Button>
-                  <Button size="lg" variant="outline" asChild>
+                  <Button size="lg" variant="outline" className="w-full sm:w-auto min-h-[48px] text-base sm:text-lg" asChild>
                     <a href="mailto:ancel@example.com">
-                      <Mail className="mr-2 h-5 w-5" />
+                      <Mail className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
                       Send Email
                     </a>
                   </Button>
                 </div>
 
                 <motion.div
-                  className="flex flex-wrap justify-center gap-6"
+                  className="flex flex-wrap justify-center gap-3 sm:gap-4 md:gap-6"
                   variants={itemVariants}
                 >
                   {socialLinks.map((link) => {
@@ -104,14 +104,14 @@ export function CTA({ className }: CTAProps) {
                         href={link.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="group flex items-center space-x-2 p-3 rounded-lg bg-background/50 hover:bg-background/80 transition-all duration-300 hover:scale-105"
+                        className="group flex items-center space-x-2 p-2.5 sm:p-3 rounded-lg bg-background/50 hover:bg-background/80 transition-all duration-300 hover:scale-105 min-h-[44px]"
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                       >
-                        <IconComponent className="h-5 w-5 text-primary group-hover:text-accent transition-colors" />
+                        <IconComponent className="h-4 w-4 sm:h-5 sm:w-5 text-primary group-hover:text-accent transition-colors flex-shrink-0" />
                         <div className="text-left">
-                          <div className="font-medium text-sm">{link.name}</div>
-                          <div className="text-xs text-muted-foreground">{link.description}</div>
+                          <div className="font-medium text-xs sm:text-sm">{link.name}</div>
+                          <div className="text-[10px] sm:text-xs text-muted-foreground hidden sm:block">{link.description}</div>
                         </div>
                       </motion.a>
                     )

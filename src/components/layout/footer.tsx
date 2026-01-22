@@ -14,7 +14,7 @@ const navigation = [
   { name: 'Blog', href: '/blog' },
   { name: 'Timeline', href: '/timeline' },
   { name: 'Stack', href: '/stack' },
-  { name: 'Fun', href: '/fun' },
+  { name: 'Labs & Experiments', href: '/labs-experiments' },
   { name: 'Contact', href: '/contact' },
 ]
 
@@ -47,10 +47,10 @@ export function Footer({ className }: FooterProps) {
   const currentYear = new Date().getFullYear()
 
   return (
-    <footer className={cn("border-t bg-background", className)}>
-      <div className="container-custom">
-        <div className="py-12">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+    <footer className={cn("border-t bg-background w-full overflow-x-hidden", className)}>
+      <div className="container-custom max-w-full">
+        <div className="py-8 sm:py-10 md:py-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 w-full">
             {/* Brand */}
             <div className="space-y-4">
               <motion.div
@@ -91,40 +91,32 @@ export function Footer({ className }: FooterProps) {
               <h3 className="font-semibold">Featured Projects</h3>
               <nav className="space-y-2">
                 <motion.a
-                  href="https://taskfoge.netlify.app"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="/case-studies/opsflow"
                   className="block text-sm text-muted-foreground hover:text-foreground transition-colors"
                   whileHover={{ x: 4 }}
                 >
-                  TaskForge
+                  OpsFlow
                 </motion.a>
                 <motion.a
-                  href="https://e-learningdash.netlify.app"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="/case-studies/signflow"
                   className="block text-sm text-muted-foreground hover:text-foreground transition-colors"
                   whileHover={{ x: 4 }}
                 >
-                  E-Learning Platform
+                  SignFlow
                 </motion.a>
                 <motion.a
-                  href="https://attendance-syst.netlify.app"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="/case-studies/ledgerx"
                   className="block text-sm text-muted-foreground hover:text-foreground transition-colors"
                   whileHover={{ x: 4 }}
                 >
-                  Attendance System
+                  LedgerX
                 </motion.a>
                 <motion.a
-                  href="https://tracks-finances.netlify.app"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="/case-studies/educhain"
                   className="block text-sm text-muted-foreground hover:text-foreground transition-colors"
                   whileHover={{ x: 4 }}
                 >
-                  Finance Tracker
+                  EduChain
                 </motion.a>
               </nav>
             </div>
@@ -156,16 +148,16 @@ export function Footer({ className }: FooterProps) {
         </div>
 
         {/* Bottom Bar */}
-        <div className="py-6 border-t flex flex-col sm:flex-row items-center justify-between space-y-4 sm:space-y-0">
-          <div className="text-sm text-muted-foreground">
+        <div className="py-4 sm:py-6 border-t flex flex-col sm:flex-row items-center justify-between space-y-3 sm:space-y-0 gap-3">
+          <div className="text-xs sm:text-sm text-muted-foreground text-center sm:text-left">
             © {currentYear} Ancel Ajanga. All rights reserved.
           </div>
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center">
             <Button
               variant="ghost"
               size="sm"
               onClick={scrollToTop}
-              className="flex items-center space-x-2"
+              className="flex items-center space-x-2 min-h-[44px] text-xs sm:text-sm"
             >
               <ArrowUp className="h-4 w-4" />
               <span>Back to top</span>
