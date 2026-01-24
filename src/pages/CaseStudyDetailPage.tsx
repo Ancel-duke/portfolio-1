@@ -5,7 +5,7 @@ import caseStudiesData from '../data/case-studies.json'
 import { Card, CardContent, CardTitle } from '../components/ui/card'
 import { Button } from '../components/ui/button'
 import { Badge } from '../components/ui/badge'
-import { ArrowLeft, ExternalLink, Github, Calendar, User, Zap, Lightbulb, CheckCircle, Code, Layers, Shield, TrendingUp, Rocket, Settings } from 'lucide-react'
+import { ArrowLeft, ExternalLink, Github, FileText, Calendar, User, Zap, Lightbulb, CheckCircle, Code, Layers, Shield, TrendingUp, Rocket, Settings } from 'lucide-react'
 import SEOHead from '../components/seo/SEOHead'
 import { SkipLink } from '../components/ui/skip-link'
 import { Breadcrumb } from '../components/ui/breadcrumb'
@@ -170,57 +170,77 @@ export function CaseStudyDetailPage() {
 
       <Card className="p-4 sm:p-6 md:p-8 lg:p-10">
         <motion.div variants={itemVariants} className="mb-8">
-          {caseStudy.images.hero && (
-            <img
-              src={caseStudy.images.hero}
-              alt={`${caseStudy.title} Hero`}
-              className="w-full h-48 sm:h-64 md:h-80 lg:h-96 object-cover rounded-lg mb-4 sm:mb-6"
-            />
-          )}
-          <CardTitle className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4 leading-tight">
-            {caseStudy.title}
-          </CardTitle>
-          <p className="text-base sm:text-lg md:text-xl text-muted-foreground mb-4 sm:mb-6">{caseStudy.subtitle}</p>
-
-          <div className="flex flex-wrap gap-2 sm:gap-3 mb-4 sm:mb-6">
-            <Badge variant="secondary" className="flex items-center text-xs sm:text-sm">
-              <User className="h-3 w-3 sm:h-4 sm:w-4 mr-1" /> 
-              <span className="truncate max-w-[150px] sm:max-w-none">{caseStudy.role}</span>
-            </Badge>
-            <Badge variant="secondary" className="flex items-center text-xs sm:text-sm">
-              <Calendar className="h-3 w-3 sm:h-4 sm:w-4 mr-1" /> 
-              <span className="truncate">{caseStudy.timeline} ({caseStudy.year})</span>
-            </Badge>
-            <Badge variant="secondary" className="flex items-center text-xs sm:text-sm">
-              <Zap className="h-3 w-3 sm:h-4 sm:w-4 mr-1" /> {caseStudy.status}
-            </Badge>
-          </div>
-
-          <div className="flex flex-wrap gap-2 mb-4 sm:mb-6">
-            {caseStudy.technologies.map((tech, index) => (
-              <Badge key={index} variant="outline" className="text-xs sm:text-sm">
-                {tech.name}
-              </Badge>
-            ))}
-          </div>
-
-          <p className="text-sm sm:text-base md:text-lg leading-relaxed mb-6 sm:mb-8">{caseStudy.description}</p>
-
-          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-            {caseStudy.links.live && (
-              <Button className="w-full sm:w-auto min-h-[44px] text-sm sm:text-base" asChild>
-                <a href={caseStudy.links.live} target="_blank" rel="noopener noreferrer">
-                  <ExternalLink className="mr-2 h-4 w-4" /> Live Demo
-                </a>
-              </Button>
+          <div className="grid grid-cols-1 md:grid-cols-[260px,1fr] gap-4 sm:gap-6 items-start">
+            {caseStudy.images.hero && (
+              <img
+                src={caseStudy.images.hero}
+                alt={`${caseStudy.title} Preview`}
+                className="w-full h-40 sm:h-48 md:h-40 object-contain rounded-lg bg-muted/30"
+                loading="eager"
+                decoding="async"
+              />
             )}
-            {caseStudy.links.github && (
-              <Button variant="outline" className="w-full sm:w-auto min-h-[44px] text-sm sm:text-base" asChild>
-                <a href={caseStudy.links.github} target="_blank" rel="noopener noreferrer">
-                  <Github className="mr-2 h-4 w-4" /> GitHub Repo
-                </a>
-              </Button>
-            )}
+
+            <div className="space-y-4">
+              <div>
+                <CardTitle className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4 leading-tight">
+                  {caseStudy.title}
+                </CardTitle>
+                <p className="text-base sm:text-lg md:text-xl text-muted-foreground">
+                  {caseStudy.subtitle}
+                </p>
+              </div>
+
+              <div className="flex flex-wrap gap-2 sm:gap-3">
+                <Badge variant="secondary" className="flex items-center text-xs sm:text-sm">
+                  <User className="h-3 w-3 sm:h-4 sm:w-4 mr-1" />
+                  <span className="truncate max-w-[150px] sm:max-w-none">{caseStudy.role}</span>
+                </Badge>
+                <Badge variant="secondary" className="flex items-center text-xs sm:text-sm">
+                  <Calendar className="h-3 w-3 sm:h-4 sm:w-4 mr-1" />
+                  <span className="truncate">{caseStudy.timeline} ({caseStudy.year})</span>
+                </Badge>
+                <Badge variant="secondary" className="flex items-center text-xs sm:text-sm">
+                  <Zap className="h-3 w-3 sm:h-4 sm:w-4 mr-1" /> {caseStudy.status}
+                </Badge>
+              </div>
+
+              <div className="flex flex-wrap gap-2">
+                {caseStudy.technologies.map((tech, index) => (
+                  <Badge key={index} variant="outline" className="text-xs sm:text-sm">
+                    {tech.name}
+                  </Badge>
+                ))}
+              </div>
+
+              <p className="text-sm sm:text-base md:text-lg leading-relaxed text-muted-foreground">
+                {caseStudy.description}
+              </p>
+
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+                {caseStudy.links.live && (
+                  <Button className="w-full sm:w-auto min-h-[44px] text-sm sm:text-base" asChild>
+                    <a href={caseStudy.links.live} target="_blank" rel="noopener noreferrer">
+                      <ExternalLink className="mr-2 h-4 w-4" /> Live Demo
+                    </a>
+                  </Button>
+                )}
+                {caseStudy.links.github && (
+                  <Button variant="outline" className="w-full sm:w-auto min-h-[44px] text-sm sm:text-base" asChild>
+                    <a href={caseStudy.links.github} target="_blank" rel="noopener noreferrer">
+                      <Github className="mr-2 h-4 w-4" /> GitHub Repo
+                    </a>
+                  </Button>
+                )}
+                {(caseStudy.links as any).docs && (
+                  <Button variant="outline" className="w-full sm:w-auto min-h-[44px] text-sm sm:text-base" asChild>
+                    <a href={(caseStudy.links as any).docs} target="_blank" rel="noopener noreferrer">
+                      <FileText className="mr-2 h-4 w-4" /> Docs
+                    </a>
+                  </Button>
+                )}
+              </div>
+            </div>
           </div>
         </motion.div>
 

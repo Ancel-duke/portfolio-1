@@ -15,7 +15,6 @@ import { ContactForm } from './components/forms/contact-form'
 import { TodaysHighlights } from './components/sections/todays-highlights'
 import { About } from './components/sections/about'
 import { Button } from './components/ui/button'
-import { ArrowRight } from 'lucide-react'
 import SEO from './components/seo/SEO'
 import { SkipLink } from './components/ui/skip-link'
 import { 
@@ -128,40 +127,22 @@ function ContactPage() {
   )
 }
 
-// Case Studies Page Component
+// Case Studies Page Component - Uses same layout as Featured section
 function CaseStudiesPage() {
-  const [showAll, setShowAll] = React.useState(false)
-  
   return (
     <>
-      <div className="py-16 w-full overflow-x-hidden">
-        <div className="container-custom max-w-full">
-          <div className="text-center mb-12 px-4 sm:px-0">
-            <h1 className="text-[clamp(2rem,5vw,3.5rem)] font-bold mb-4">
-              {showAll ? "All" : "Featured"} <span className="text-gradient">Case Studies</span>
-            </h1>
-            <p className="text-[clamp(1rem,2vw,1.125rem)] text-muted-foreground max-w-2xl mx-auto">
-              {showAll 
-                ? "Deep dives into my most challenging and rewarding projects, showcasing the process, challenges, and outcomes."
-                : "Enterprise-grade systems showcasing resilient architecture, hybrid databases, and scalable solutions."}
-            </p>
-          </div>
-        </div>
-        <CaseStudiesGrid
-          className="py-0"
-          limit={showAll ? undefined : 6}
-          showViewAll={false}
-          showHeader={false}
-        />
-        {!showAll && (
-          <div className="text-center mt-12 px-4">
-            <Button size="lg" variant="outline" onClick={() => setShowAll(true)}>
-              Show All Case Studies
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </Button>
-          </div>
-        )}
-      </div>
+      {/* 
+        SAME PROFESSIONAL LAYOUT AS FEATURED:
+        - Uses CaseStudiesGrid with showHeader={true}
+        - No limit = shows all case studies
+        - showViewAll={false} = no "View All" button
+        - Identical spacing, typography, and card design
+      */}
+      <CaseStudiesGrid 
+        showHeader={true}
+        showViewAll={false}
+        limit={undefined}
+      />
     </>
   )
 }

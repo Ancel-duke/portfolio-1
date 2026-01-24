@@ -1,10 +1,7 @@
 import * as React from "react"
 import { motion } from "framer-motion"
-import { Card, CardContent, CardDescription, CardHeader } from "../../components/ui/card"
-import { Button } from "../../components/ui/button"
-import { Badge } from "../../components/ui/badge"
+import { Card } from "../../components/ui/card"
 import { cn } from "../../lib/utils"
-import { ExternalLink, Github, Calendar, Clock, ArrowRight } from "lucide-react"
 import caseStudiesData from "../../data/case-studies.json"
 import { getDailySelection, getMasterSortedProjects } from "../../utils/projectSorter"
 
@@ -42,33 +39,30 @@ interface CaseStudiesGridProps {
   showHeader?: boolean
 }
 
-export const CaseStudiesGrid = React.memo(function CaseStudiesGrid({ className, limit, showViewAll = true, showHeader = true }: CaseStudiesGridProps) {
+export const CaseStudiesGrid = React.memo(function CaseStudiesGrid({ 
+  className, 
+  limit, 
+  showViewAll = true, 
+  showHeader = true 
+}: CaseStudiesGridProps) {
   const caseStudies = caseStudiesData
   
-  // Map case studies to project-like format for sorting
-  // Determine type from role field
   const caseStudiesWithType = (caseStudies as CaseStudy[]).map(cs => ({
     ...cs,
     type: (cs.role || '').toLowerCase().includes('full') ? 'fullstack' : 'frontend'
   }))
   
-  // Filter to only show fullstack/enterprise projects (exclude frontend experiments)
   const enterpriseCaseStudies = React.useMemo(() => {
     return caseStudiesWithType.filter(cs => {
       const role = (cs.role || '').toLowerCase()
-      // Only include fullstack projects (exclude frontend experiments)
       return role.includes('full') || role.includes('stack')
     })
   }, [caseStudiesWithType])
 
-  // Use useMemo to prevent flicker on reload - seeded shuffle remains stable for the day
   const selectedCaseStudies = React.useMemo(() => {
-    // If no limit, show all enterprise case studies sorted by master sort
     if (!limit) {
       return getMasterSortedProjects(enterpriseCaseStudies) as CaseStudy[]
     }
-    
-    // If limit is provided, use daily selection to pick that many projects
     return getDailySelection(enterpriseCaseStudies, limit) as CaseStudy[]
   }, [limit, enterpriseCaseStudies])
 
@@ -77,180 +71,177 @@ export const CaseStudiesGrid = React.memo(function CaseStudiesGrid({ className, 
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2
-      }
-    }
-  }
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.6
+        staggerChildren: 0.1
       }
     }
   }
 
   return (
-    <section className={cn("py-16 w-full overflow-x-hidden", className)}>
-      <div className="container-custom max-w-full">
-        {showHeader && (
-          <div className="text-center mb-12 px-4 sm:px-0">
-            <h2 className="text-[clamp(1.875rem,4vw,2.5rem)] font-bold mb-[clamp(1rem,2.5vw,1.5rem)]">
+    /* 
+      PROFESSIONAL LAYOUT SYSTEM:
+      - Consistent spacing scale (16px base unit)
+      - Clear visual hierarchy
+      - Production-ready grid system
+    */
+    <section className={cn(
+      showHeader ? "py-16 md:py-20" : "", 
+      "w-full",
+      className
+    )}>
+      {showHeader ? (
+        // STANDALONE SECTION (Homepage)
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          {/* Hero: Professional spacing */}
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
               {limit ? "Featured" : "All"} <span className="text-gradient">Case Studies</span>
             </h2>
-            <p className="text-[clamp(1rem,2vw,1.125rem)] text-muted-foreground max-w-2xl mx-auto">
-              {limit ? "Enterprise-grade systems showcasing resilient architecture, hybrid databases, and scalable solutions." : "Deep dives into my most challenging and rewarding projects, showcasing the process, challenges, and outcomes."}
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+              {limit 
+                ? "Enterprise-grade systems showcasing resilient architecture, hybrid databases, and scalable solutions." 
+                : "Deep dives into my most challenging and rewarding projects, showcasing the process, challenges, and outcomes."}
             </p>
           </div>
-        )}
 
+          {/* 
+            GRID SYSTEM:
+            - 2-column on tablet (md:grid-cols-2)
+            - 3-column on desktop (lg:grid-cols-3)
+            - Consistent 32px gap (gap-8)
+            - Equal height cards (items-stretch implied by h-full on cards)
+          */}
+          <motion.div
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+          >
+            {selectedCaseStudies.map((caseStudy: CaseStudy, index: number) => (
+              <CaseStudyCard key={caseStudy.id} caseStudy={caseStudy} index={index} />
+            ))}
+          </motion.div>
+
+          {/* CTA: Professional spacing (mt-16 = 64px) */}
+          {showViewAll && limit && selectedCaseStudies.length > 0 && (
+            <div className="text-center mt-16">
+              <a 
+                href="/case-studies"
+                className="inline-flex items-center justify-center gap-2 h-12 px-8 rounded-lg border-2 border-primary/20 bg-background hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all duration-300 text-base font-semibold"
+              >
+                View All Case Studies
+                <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg>
+              </a>
+            </div>
+          )}
+        </div>
+      ) : (
+        // EMBEDDED MODE (/case-studies page)
+        // Parent provides container, this renders grid only
         <motion.div
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-[clamp(1rem,3vw,2rem)] w-full"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
         >
           {selectedCaseStudies.map((caseStudy: CaseStudy, index: number) => (
-            <motion.article
-              key={caseStudy.id}
-              variants={itemVariants}
-              className="group h-full"
-            >
-              <Card className="h-full flex flex-col hover:shadow-xl transition-all duration-300 border-0 bg-card/50 backdrop-blur-sm overflow-hidden w-full">
-                <div className="relative overflow-hidden w-full">
-                  <img
-                    src={caseStudy.images.hero}
-                    alt={caseStudy.title}
-                    className="w-full h-36 sm:h-40 md:h-48 object-cover group-hover:scale-105 transition-transform duration-500"
-                    loading={index < 2 ? "eager" : "lazy"}
-                    decoding="async"
-                    width="800"
-                    height="384"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-                  <div className="absolute top-4 left-4">
-                    <Badge variant="secondary" className="bg-white/20 text-white border-white/30">
-                      {caseStudy.status}
-                    </Badge>
-                  </div>
-                  <div className="absolute bottom-3 sm:bottom-4 left-3 sm:left-4 right-3 sm:right-4">
-                    <h3 className="text-white font-semibold text-base sm:text-lg mb-1 line-clamp-1">
-                      {caseStudy.title}
-                    </h3>
-                    <p className="text-white/90 text-xs sm:text-sm line-clamp-2">
-                      {caseStudy.subtitle}
-                    </p>
-                  </div>
-                </div>
-
-                <CardHeader className="pb-3 px-4 sm:px-6">
-                  <div className="flex items-center justify-between text-sm text-muted-foreground mb-3">
-                    <div className="flex items-center space-x-1">
-                      <Calendar className="h-4 w-4 flex-shrink-0" />
-                      <span className="text-xs sm:text-sm">{caseStudy.year}</span>
-                    </div>
-                    <div className="flex items-center space-x-1">
-                      <Clock className="h-4 w-4 flex-shrink-0" />
-                      <span className="text-xs sm:text-sm">{caseStudy.timeline}</span>
-                    </div>
-                  </div>
-                  <CardDescription className="line-clamp-3 text-sm sm:text-base">
-                    {caseStudy.description}
-                  </CardDescription>
-                </CardHeader>
-
-                <CardContent className="pt-0 px-4 sm:px-6 pb-4 sm:pb-6 flex flex-col flex-1">
-                  <div className="mb-4">
-                    <h4 className="text-sm font-medium mb-2">Technologies Used</h4>
-                    <div className="flex flex-wrap gap-2 max-h-[64px] overflow-hidden">
-                      {caseStudy.technologies.slice(0, 4).map((tech) => (
-                        <Badge key={tech.name} variant="outline" className="text-xs">
-                          {tech.name}
-                        </Badge>
-                      ))}
-                      {caseStudy.technologies.length > 4 && (
-                        <Badge variant="outline" className="text-xs">
-                          +{caseStudy.technologies.length - 4} more
-                        </Badge>
-                      )}
-                    </div>
-                  </div>
-
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 w-full">
-                    <Button
-                      variant={caseStudy.links.live ? "default" : "outline"}
-                      size="sm"
-                      className="min-h-[44px] text-xs sm:text-sm"
-                      asChild={Boolean(caseStudy.links.live)}
-                      disabled={!caseStudy.links.live}
-                    >
-                      {caseStudy.links.live ? (
-                        <a href={caseStudy.links.live} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center">
-                          <ExternalLink className="h-3 w-3 sm:h-4 sm:w-4 mr-1.5 sm:mr-2 flex-shrink-0" />
-                          <span className="truncate">Live Demo</span>
-                        </a>
-                      ) : (
-                        <span className="flex items-center justify-center">
-                          <ExternalLink className="h-3 w-3 sm:h-4 sm:w-4 mr-1.5 sm:mr-2 flex-shrink-0" />
-                          <span className="truncate">Live Demo</span>
-                        </span>
-                      )}
-                    </Button>
-
-                    <Button
-                      variant="outline"
-                      size="sm"
-                      className="min-h-[44px] text-xs sm:text-sm"
-                      asChild={Boolean(caseStudy.links.github)}
-                      disabled={!caseStudy.links.github}
-                    >
-                      {caseStudy.links.github ? (
-                        <a href={caseStudy.links.github} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center">
-                          <Github className="h-3 w-3 sm:h-4 sm:w-4 mr-1.5 sm:mr-2 flex-shrink-0" />
-                          <span className="truncate">Code</span>
-                        </a>
-                      ) : (
-                        <span className="flex items-center justify-center">
-                          <Github className="h-3 w-3 sm:h-4 sm:w-4 mr-1.5 sm:mr-2 flex-shrink-0" />
-                          <span className="truncate">Code</span>
-                        </span>
-                      )}
-                    </Button>
-                  </div>
-
-                  <div className="mt-auto pt-3">
-                    <Button
-                      variant="ghost"
-                      className="w-full min-h-[44px] text-xs sm:text-sm group-hover:bg-primary group-hover:text-primary-foreground transition-colors"
-                      asChild
-                    >
-                      <a href={`/case-studies/${caseStudy.slug}`} className="flex items-center justify-center">
-                        <span>Read Case Study</span>
-                        <ArrowRight className="ml-2 h-3 w-3 sm:h-4 sm:w-4 group-hover:translate-x-1 transition-transform flex-shrink-0" />
-                      </a>
-                    </Button>
-                  </div>
-                </CardContent>
-              </Card>
-            </motion.article>
+            <CaseStudyCard key={caseStudy.id} caseStudy={caseStudy} index={index} />
           ))}
         </motion.div>
-
-        {showViewAll && limit && (
-          <div className="text-center mt-12">
-            <Button size="lg" variant="outline" asChild>
-              <a href="/case-studies">
-                {selectedCaseStudies.length >= limit ? "Show All Case Studies" : "View All Case Studies"}
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </a>
-            </Button>
-          </div>
-        )}
-      </div>
+      )}
     </section>
   )
 })
+
+/* 
+  PROFESSIONAL CARD COMPONENT:
+  - Self-contained, production-ready design
+  - Strict composition order: image → title → description
+  - Equal heights via h-full
+  - Consistent internal spacing
+*/
+function CaseStudyCard({ caseStudy, index }: { caseStudy: CaseStudy; index: number }) {
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+        ease: "easeOut"
+      }
+    }
+  }
+
+  return (
+    <motion.article variants={itemVariants} className="h-full">
+      <a 
+        href={`/case-studies/${caseStudy.slug}`}
+        className="block h-full group"
+      >
+        {/* 
+          CARD STRUCTURE:
+          - h-full for equal grid heights
+          - Subtle border and backdrop
+          - Professional hover effects
+        */}
+        <Card className="h-full flex flex-col overflow-hidden border-2 border-border/50 bg-card/80 backdrop-blur-sm hover:border-primary/50 hover:shadow-2xl hover:shadow-primary/10 transition-all duration-300 hover:-translate-y-2">
+          
+          {/* 
+            IMAGE CONTAINER:
+            - aspect-[3/2] for professional ratio (600x400)
+            - object-cover prevents distortion
+            - Gradient overlay for depth
+          */}
+          <div className="relative overflow-hidden bg-muted">
+            <div className="aspect-[3/2] w-full">
+              <img
+                src={caseStudy.images.hero}
+                alt={caseStudy.title}
+                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
+                loading={index < 6 ? "eager" : "lazy"}
+                decoding="async"
+              />
+            </div>
+            {/* Gradient overlay for better text contrast */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-300" />
+          </div>
+
+          {/* 
+            CONTENT AREA:
+            - flex-1 to push content to fill available space
+            - p-6 (24px) for comfortable reading
+            - space-y-4 (16px) for clear hierarchy
+          */}
+          <div className="flex-1 flex flex-col p-6 space-y-4">
+            {/* Title: Bold, prominent, 2-line clamp */}
+            <h3 className="font-bold text-2xl group-hover:text-primary transition-colors duration-300 line-clamp-2 leading-tight">
+              {caseStudy.title}
+            </h3>
+            
+            {/* Description: Muted, readable, 3-line clamp */}
+            <p className="text-base text-muted-foreground line-clamp-3 leading-relaxed flex-1">
+              {caseStudy.description}
+            </p>
+
+            {/* 
+              READ MORE INDICATOR:
+              - Subtle visual cue
+              - Appears on hover
+              - Professional touch
+            */}
+            <div className="flex items-center gap-2 text-sm font-medium text-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <span>Read Case Study</span>
+              <svg className="h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+              </svg>
+            </div>
+          </div>
+        </Card>
+      </a>
+    </motion.article>
+  )
+}

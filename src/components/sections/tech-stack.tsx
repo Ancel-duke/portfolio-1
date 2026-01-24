@@ -143,11 +143,27 @@ export const TechStack = React.memo(function TechStack({ className }: TechStackP
       }
     }
 
-    const catData = stackData.categories.map(category => ({
-      name: category.name,
-      value: category.count,
-      color: categoryColors[category.name as keyof typeof categoryColors] || '#6b7280'
-    }))
+    // Derive category counts from technologies to keep charts accurate
+    const categoryCounts = stackData.technologies.reduce<Record<string, number>>((acc, tech) => {
+      const key = tech.category
+      acc[key] = (acc[key] || 0) + 1
+      return acc
+    }, {})
+
+    const categoryNames = Array.from(
+      new Set([
+        ...stackData.categories.map((c) => c.name),
+        ...Object.keys(categoryCounts)
+      ])
+    )
+
+    const catData = categoryNames
+      .map((name) => ({
+        name,
+        value: categoryCounts[name] || 0,
+        color: categoryColors[name as keyof typeof categoryColors] || '#6b7280'
+      }))
+      .filter((c) => c.value > 0)
 
     return {
       frequencyData: freqData,
