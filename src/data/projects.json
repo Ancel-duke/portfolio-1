@@ -346,7 +346,7 @@
     "title": "NestFi",
     "type": "fullstack",
     "description": "NestFi is a resilient financial coordination platform built to handle real-world constraints such as unreliable networks, asynchronous mobile money payments, and partial system failures. It uses a stateless NestJS backend with a hybrid database architecture—PostgreSQL for financial correctness, MongoDB for events and logs, and Redis for low-latency ephemeral state—so failures in non-critical services do not compromise core financial operations.",
-    "detailedDescription": "NestFi is a stateless financial platform designed to handle real-world constraints such as unreliable networks, asynchronous M-Pesa payments, and partial system failures. It integrates mobile and web clients with a single NestJS backend and a hybrid database architecture—PostgreSQL for financial correctness (wallets/ledgers), MongoDB for events/logs/payment callbacks, and Redis for low-latency ephemeral state (caching, rate limits, temporary correlation). The system is designed under the assumption that failures are normal, not exceptional: caches can fail, logs can be unavailable, and callbacks can be delayed or duplicated. Each failure mode is handled explicitly with timeouts, retries with backoff, circuit breakers, and graceful degradation. Security-first baselines include JWT authentication, input validation, rate limiting, callback IP allowlisting, network isolation via Docker, and TLS at the edge (Cloudflare). Current status is ~90% complete; core architecture, hybrid databases, and Dockerized infrastructure are implemented, with remaining work focused on frontend polish, an optional KYC module, and operational refinements.",
+    "detailedDescription": "NestFi is a stateless financial platform designed to handle real-world constraints such as unreliable networks, asynchronous M-Pesa payments, and partial system failures. It integrates mobile and web clients with a single NestJS backend and a hybrid database architecture—PostgreSQL for financial correctness (wallets/ledgers), MongoDB for events/logs/payment callbacks, and Redis for low-latency ephemeral state (caching, rate limits, temporary correlation). The system is designed under the assumption that failures are normal, not exceptional: caches can fail, logs can be unavailable, and callbacks can be delayed or duplicated. Each failure mode is handled explicitly with timeouts, retries with backoff, circuit breakers, and graceful degradation. Security-first baselines include JWT authentication, input validation, rate limiting, callback IP allowlisting, network isolation via Docker, and TLS at the edge (Cloudflare). Current status is ~75% complete; core architecture and key integrations are in place, with remaining work focused on frontend polish, an optional KYC module, and operational refinements.",
     "technologies": [
       "NestJS",
       "TypeScript",
@@ -363,7 +363,30 @@
     ],
     "liveUrl": "",
     "repoUrl": "https://github.com/Ancel-duke/NestFi",
+    "docsUrl": "https://github.com/Ancel-duke/NestFi/blob/main/docs/ARCHITECTURE.md",
     "image": "/assets/projects/nestfi.jpg",
     "outcomes": "Failure-aware, production-grade system design that prioritizes correctness and fault isolation for financial workflows. Hybrid data modeling (PostgreSQL + MongoDB + Redis), idempotent/async callback handling, and security-first controls reflect real payment system constraints. Remaining work is infrastructure hardening and operational refinement rather than core architecture."
+  },
+  {
+    "id": 16,
+    "title": "EduManage",
+    "type": "fullstack",
+    "description": "EduManage is a multi-tenant school management SaaS designed for real-world scale. It enforces tenant isolation, hierarchical RBAC, and failure-aware backend design so multiple institutions can safely share one platform without permission complexity becoming a bottleneck.",
+    "detailedDescription": "EduManage solves the hard problem most school systems avoid: running multiple institutions on one platform with strict tenant isolation and complex permissions. The architecture uses a multi-tenant Express/NestJS backend with tenant-scoped access at the data layer, MongoDB for flexible academic domain models, JWT-based stateless authentication with hierarchical RBAC, and Socket.io for real-time events (notifications and updates). The system is designed for graceful degradation under partial failures and is supported by a Dockerized development/deployment workflow. Status: MVP Complete (~85%). Planned but deferred for the next hardening phase: advanced rate limiting, deep automated testing, and caching.",
+    "technologies": [
+      "NestJS",
+      "Express.js",
+      "MongoDB",
+      "JWT",
+      "RBAC",
+      "Socket.io",
+      "TypeScript",
+      "Docker"
+    ],
+    "liveUrl": "",
+    "repoUrl": "https://github.com/Ancel-duke/edumanage",
+    "docsUrl": "https://github.com/Ancel-duke/edumanage/blob/main/docs/ARCHITECTURE.md",
+    "image": "/assets/projects/edumanage.jpg",
+    "outcomes": "Multi-tenant MVP structured for scale: tenant-scoped access, hierarchical permissions, real-time events, and failure-aware service boundaries. Remaining work focuses on hardening (rate limiting, testing, caching) rather than redesigning core architecture."
   }
 ]

@@ -1468,7 +1468,7 @@
     "impact": "NestFi demonstrates capstone-level engineering: hybrid databases chosen by data guarantees, explicit failure modes and containment, and real payment infrastructure integration. The platform is designed under the assumption that failures are normal — not exceptional — and that core financial correctness must remain intact even when non-critical components degrade.",
     "isolation": "Core responsibilities run independently: the backend orchestrates logic and is safe to restart; PostgreSQL remains the financial source of truth with no silent corruption; MongoDB (events/logs) is optional during failure; Redis is a performance layer that can be bypassed; M-Pesa callbacks are processed in an idempotent, delay-tolerant manner. Security and network isolation are enforced via Docker and minimal exposed ports, with TLS at the edge via Cloudflare.",
     "tradeoffs": "Hybrid storage increases operational complexity, but it matches real financial system constraints: strong correctness guarantees in PostgreSQL for ledgers, flexible event/log storage in MongoDB, and low-latency ephemeral state in Redis. The design prioritizes correctness, resilience, and auditability over feature count, intentionally deferring non-critical UI polish and optional modules.",
-    "implementationStatus": "Current status (~90%): Core architecture, business logic, hybrid databases, and Dockerized infrastructure are fully implemented. Remaining work is frontend polish, an optional KYC module, and operational refinements. Backend build is fully deterministic and the Docker build now succeeds without errors (e.g., `docker-compose build --no-cache api`).",
+    "implementationStatus": "Current status (~75%): Core architecture, hybrid data model, and key integrations are implemented. Remaining work is frontend polish, an optional KYC module, and operational refinements. Documentation is maintained alongside the codebase, and the Dockerized workflow supports deterministic builds.",
     "potentialExpansion": "Frontend polish and UX refinement across mobile and web. Optional KYC module and expanded compliance workflows. Operational refinements: deeper observability, trace correlation across callbacks, runbooks, and replay tooling for event/callback recovery.",
     "technologies": [
       { "name": "NestJS", "category": "Backend", "icon": "nestjs" },
@@ -1506,14 +1506,15 @@
       "Deterministic Dockerized infrastructure suitable for production hardening"
     ],
     "metrics": [
-      { "label": "Completion", "value": "~90%", "description": "Core architecture, hybrid DBs, and Dockerized infra implemented" },
+      { "label": "Completion", "value": "~75%", "description": "MVP complete with core architecture + integrations; hardening and polish remain" },
       { "label": "Datastores", "value": "3", "description": "PostgreSQL + MongoDB + Redis hybrid model" },
       { "label": "Payment Integration", "value": "M-Pesa", "description": "Asynchronous callbacks, idempotent processing" },
       { "label": "Resilience", "value": "Circuit breakers", "description": "Timeouts + safe retries + graceful degradation" }
     ],
     "links": {
       "live": "",
-      "github": "https://github.com/Ancel-duke/NestFi"
+      "github": "https://github.com/Ancel-duke/NestFi",
+      "docs": "https://github.com/Ancel-duke/NestFi/blob/main/docs/ARCHITECTURE.md"
     },
     "images": {
       "hero": "/assets/projects/nestfi.jpg",
@@ -1521,6 +1522,73 @@
       "after": "/assets/projects/nestfi.jpg",
       "gallery": [
         "/assets/projects/nestfi.jpg"
+      ]
+    }
+  },
+  {
+    "id": 16,
+    "slug": "edumanage",
+    "title": "EduManage — Multi-Tenant School Management SaaS",
+    "subtitle": "Tenant isolation, hierarchical RBAC, and real-time events for school operations at scale",
+    "role": "Full-Stack Software Engineer",
+    "timeline": "Ongoing",
+    "year": "2026",
+    "status": "MVP Complete",
+    "description": "EduManage is a multi-tenant school management SaaS designed for real-world scale. It enforces tenant isolation, role-based access control, and failure-aware backend design from day one so multiple institutions can safely share one platform without permission complexity becoming a bottleneck.",
+    "problem": "Most school management systems break down when multiple institutions share the same platform or when permissions become complex. Data leakage risk increases, authorization logic becomes fragile, and real-time operational workflows (notifications, updates) drift out of sync. EduManage solves this with tenant-scoped access at the data layer and hierarchical RBAC that stays predictable as roles and institutions grow.",
+    "solution": "EduManage uses a multi-tenant Express/NestJS backend with tenant-scoped data access, MongoDB for flexible academic domain models, JWT-based stateless authentication with hierarchical RBAC, and Socket.io for real-time events (notifications and updates). The system is designed for graceful degradation under partial failures and ships with a Dockerized development/deployment workflow for consistency and isolated service restarts.",
+    "impact": "MVP Complete (~85%) with production-minded foundations: strict tenant isolation, predictable authorization boundaries, real-time operational updates, and a design that anticipates partial failures. Remaining work focuses on hardening (rate limiting, deeper automated testing, and caching) rather than rewriting core architecture.",
+    "isolation": "Tenant isolation is enforced at the data access layer so every request is scoped to an institution. Auth and authorization are stateless (JWT) and hierarchical (RBAC), and real-time event delivery is isolated through Socket.io channels to prevent cross-tenant leakage. The system is built to degrade gracefully when non-critical subsystems are impaired.",
+    "tradeoffs": "EduManage ships at ~85% to reflect real-world constraints. Advanced rate limiting, deep automated testing, and caching are intentionally deferred in favor of delivering a stable, well-structured MVP with strong tenant and authorization boundaries.",
+    "implementationStatus": "Status: MVP Complete (~85%). Core multi-tenancy, RBAC, and real-time events are implemented. Deferred: advanced rate limiting, deeper automated test coverage, and advanced caching layers.",
+    "potentialExpansion": "Add advanced caching for hot reads, rate limiting and abuse protection, deeper automated testing (unit + integration), audit trails for sensitive operations, and expanded real-time notification pipelines.",
+    "technologies": [
+      { "name": "NestJS", "category": "Backend", "icon": "nestjs" },
+      { "name": "Express.js", "category": "Backend", "icon": "express" },
+      { "name": "MongoDB", "category": "Database", "icon": "mongodb" },
+      { "name": "JWT", "category": "Authentication", "icon": "jwt" },
+      { "name": "RBAC", "category": "Security", "icon": "security" },
+      { "name": "Socket.io", "category": "Real-time", "icon": "socketio" },
+      { "name": "TypeScript", "category": "Language", "icon": "typescript" },
+      { "name": "Docker", "category": "DevOps", "icon": "docker" }
+    ],
+    "features": [
+      "Multi-tenant backend with tenant-scoped data access",
+      "JWT-based stateless authentication",
+      "Hierarchical RBAC for complex school permissions",
+      "Real-time notifications and updates via Socket.io",
+      "Failure-aware design with graceful degradation",
+      "Dockerized development and deployment workflow"
+    ],
+    "challenges": [
+      "Enforcing tenant isolation across all access paths",
+      "Keeping authorization logic predictable as roles and permissions expand",
+      "Designing real-time events without cross-tenant leakage",
+      "Modeling flexible academic domain entities in MongoDB",
+      "Building for partial failures without degrading core workflows"
+    ],
+    "outcomes": [
+      "MVP complete with production-ready tenant and authorization boundaries",
+      "Real-time operational workflows supported via event-driven updates",
+      "Architecture documented and maintained in GitHub docs"
+    ],
+    "metrics": [
+      { "label": "Status", "value": "~85%", "description": "MVP complete; hardening and optimizations deferred" },
+      { "label": "Multi-Tenancy", "value": "Tenant-scoped", "description": "Institution isolation enforced at data layer" },
+      { "label": "AuthZ", "value": "Hierarchical RBAC", "description": "Role and permission boundaries designed to scale" },
+      { "label": "Real-time", "value": "Socket.io", "description": "Notifications and operational updates" }
+    ],
+    "links": {
+      "live": "",
+      "github": "https://github.com/Ancel-duke/edumanage",
+      "docs": "https://github.com/Ancel-duke/edumanage/blob/main/docs/ARCHITECTURE.md"
+    },
+    "images": {
+      "hero": "/assets/projects/edumanage.jpg",
+      "before": "/assets/projects/edumanage.jpg",
+      "after": "/assets/projects/edumanage.jpg",
+      "gallery": [
+        "/assets/projects/edumanage.jpg"
       ]
     }
   }

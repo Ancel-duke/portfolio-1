@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, ExternalLink, Github, Shield, TrendingUp, Rocket, Settings, Code, Lightbulb, CheckCircle, Database, Server, Zap } from 'lucide-react';
+import { X, ExternalLink, Github, FileText, Shield, TrendingUp, Rocket, Settings, Code, Lightbulb, CheckCircle, Database, Server, Zap } from 'lucide-react';
 import caseStudiesData from '../data/case-studies.json';
 
 const ProjectModal = ({ project, isOpen, onClose }) => {
@@ -58,6 +58,7 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
         // Use case study links if available
         liveUrl: caseStudy.links?.live || project.liveUrl,
         repoUrl: caseStudy.links?.github || project.repoUrl,
+        docsUrl: caseStudy.links?.docs || project.docsUrl,
         // Keep project description for short preview
         description: project.description,
         // Use detailed description from case study or project
@@ -124,6 +125,7 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
     technologies, 
     liveUrl, 
     repoUrl, 
+    docsUrl,
     image, 
     outcomes,
     problem,
@@ -216,16 +218,32 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
                       </a>
                     )}
                     
-                    {repoUrl && (
-                      <a
-                        href={repoUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="btn-secondary flex items-center justify-center space-x-2 min-h-[48px] text-sm sm:text-base"
-                      >
-                        <Github className="w-4 h-4 sm:w-5 sm:h-5" />
-                        <span>View Code</span>
-                      </a>
+                    {(repoUrl || docsUrl) && (
+                      <div className="flex flex-col gap-2 w-full sm:w-auto">
+                        {repoUrl && (
+                          <a
+                            href={repoUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="btn-secondary flex items-center justify-center space-x-2 min-h-[48px] text-sm sm:text-base"
+                          >
+                            <Github className="w-4 h-4 sm:w-5 sm:h-5" />
+                            <span>View Code</span>
+                          </a>
+                        )}
+
+                        {docsUrl && (
+                          <a
+                            href={docsUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="btn-secondary flex items-center justify-center space-x-2 min-h-[48px] text-sm sm:text-base"
+                          >
+                            <FileText className="w-4 h-4 sm:w-5 sm:h-5" />
+                            <span>View Docs (ARCHITECTURE.md)</span>
+                          </a>
+                        )}
+                      </div>
                     )}
                   </div>
                 </div>
