@@ -4,19 +4,19 @@
       "name": "React",
       "category": "Frontend",
       "icon": "react",
-      "frequency": 8,
+      "frequency": 10,
       "proficiency": 9,
       "description": "JavaScript library for building user interfaces",
-      "projects": ["Habit Tracker & Streak Counter", "Travelogue - Travel Storytelling Website", "Rasoha Academy - School Website", "Attendance System - Full Stack Application", "E-Learning Platform", "TaskForge - Modern Task & Project Management Platform - Full Stack Application", "EduChain", "LedgerX - Finance Management Application"]
+      "projects": ["Habit Tracker & Streak Counter", "Travelogue - Travel Storytelling Website", "Rasoha Academy - School Website", "Attendance System - Full Stack Application", "E-Learning Platform", "TaskForge - Modern Task & Project Management Platform - Full Stack Application", "EduChain", "LedgerX - Finance Management Application", "OpsFlow", "SignFlow"]
     },
     {
       "name": "Next.js",
       "category": "Frontend",
       "icon": "nextjs",
-      "frequency": 2,
+      "frequency": 4,
       "proficiency": 8,
       "description": "React framework for production",
-      "projects": ["TaskForge - Modern Task & Project Management Platform - Full Stack Application", "LedgerX - Finance Management Application"]
+      "projects": ["TaskForge - Modern Task & Project Management Platform - Full Stack Application", "LedgerX - Finance Management Application", "OpsFlow", "NestFi"]
     },
     {
       "name": "Vue.js",
@@ -40,10 +40,10 @@
       "name": "TypeScript",
       "category": "Language",
       "icon": "typescript",
-      "frequency": 5,
+      "frequency": 7,
       "proficiency": 8,
       "description": "Typed superset of JavaScript",
-      "projects": ["Personal Finance Tracker", "Fitness Class Scheduler", "E-Learning Platform", "TaskForge - Modern Task & Project Management Platform - Full Stack Application", "LedgerX - Finance Management Application"]
+      "projects": ["Personal Finance Tracker", "Fitness Class Scheduler", "E-Learning Platform", "TaskForge - Modern Task & Project Management Platform - Full Stack Application", "LedgerX - Finance Management Application", "OpsFlow", "NestFi"]
     },
     {
       "name": "JavaScript",
@@ -67,19 +67,19 @@
       "name": "Node.js",
       "category": "Backend",
       "icon": "nodejs",
-      "frequency": 4,
+      "frequency": 6,
       "proficiency": 8,
       "description": "JavaScript runtime for server-side development",
-      "projects": ["Fitness Class Scheduler", "Attendance System - Full Stack Application", "TaskForge - Modern Task & Project Management Platform - Full Stack Application", "EduChain"]
+      "projects": ["Fitness Class Scheduler", "Attendance System - Full Stack Application", "TaskForge - Modern Task & Project Management Platform - Full Stack Application", "EduChain", "OpsFlow", "SignFlow"]
     },
     {
       "name": "Express.js",
       "category": "Backend",
       "icon": "express",
-      "frequency": 4,
+      "frequency": 5,
       "proficiency": 8,
       "description": "Web application framework for Node.js",
-      "projects": ["Fitness Class Scheduler", "Attendance System - Full Stack Application", "TaskForge - Modern Task & Project Management Platform - Full Stack Application", "EduChain"]
+      "projects": ["Fitness Class Scheduler", "Attendance System - Full Stack Application", "TaskForge - Modern Task & Project Management Platform - Full Stack Application", "EduChain", "SignFlow"]
     },
     {
       "name": "Django",
@@ -94,10 +94,10 @@
       "name": "NestJS",
       "category": "Backend",
       "icon": "nestjs",
-      "frequency": 1,
+      "frequency": 3,
       "proficiency": 8,
       "description": "Progressive Node.js framework for building efficient and scalable server-side applications",
-      "projects": ["LedgerX - Finance Management Application"]
+      "projects": ["LedgerX - Finance Management Application", "OpsFlow", "NestFi"]
     },
     {
       "name": "Django REST Framework",
@@ -112,19 +112,28 @@
       "name": "MongoDB",
       "category": "Database",
       "icon": "mongodb",
-      "frequency": 4,
+      "frequency": 7,
       "proficiency": 8,
       "description": "NoSQL document database",
-      "projects": ["Attendance System - Full Stack Application", "TaskForge - Modern Task & Project Management Platform - Full Stack Application", "EduChain", "LedgerX - Finance Management Application"]
+      "projects": ["Attendance System - Full Stack Application", "TaskForge - Modern Task & Project Management Platform - Full Stack Application", "EduChain", "LedgerX - Finance Management Application", "OpsFlow", "SignFlow", "NestFi"]
     },
     {
       "name": "PostgreSQL",
       "category": "Database",
       "icon": "postgresql",
-      "frequency": 2,
-      "proficiency": 7,
+      "frequency": 4,
+      "proficiency": 8,
       "description": "Open source relational database",
-      "projects": ["E-Learning Platform - Full Stack Application", "LedgerX - Finance Management Application"]
+      "projects": ["E-Learning Platform - Full Stack Application", "LedgerX - Finance Management Application", "OpsFlow", "NestFi"]
+    },
+    {
+      "name": "Redis",
+      "category": "Cache",
+      "icon": "redis",
+      "frequency": 1,
+      "proficiency": 7,
+      "description": "In-memory data store used for caching and ephemeral state",
+      "projects": ["NestFi"]
     },
     {
       "name": "SQLite",
@@ -166,10 +175,19 @@
       "name": "Socket.io",
       "category": "Real-time",
       "icon": "socketio",
-      "frequency": 1,
+      "frequency": 3,
       "proficiency": 8,
       "description": "Real-time bidirectional event-based communication",
-      "projects": ["TaskForge - Modern Task & Project Management Platform - Full Stack Application"]
+      "projects": ["TaskForge - Modern Task & Project Management Platform - Full Stack Application", "OpsFlow", "SignFlow"]
+    },
+    {
+      "name": "WebSockets",
+      "category": "Real-time",
+      "icon": "websockets",
+      "frequency": 2,
+      "proficiency": 8,
+      "description": "Low-latency real-time communication for streaming and live updates",
+      "projects": ["OpsFlow", "SignFlow"]
     },
     {
       "name": "Zustand",
@@ -193,10 +211,10 @@
       "name": "JWT",
       "category": "Authentication",
       "icon": "jwt",
-      "frequency": 4,
+      "frequency": 5,
       "proficiency": 8,
       "description": "JSON Web Token for secure authentication",
-      "projects": ["Attendance System - Full Stack Application", "E-Learning Platform", "TaskForge - Modern Task & Project Management Platform - Full Stack Application", "LedgerX - Finance Management Application"]
+      "projects": ["Attendance System - Full Stack Application", "E-Learning Platform", "TaskForge - Modern Task & Project Management Platform - Full Stack Application", "LedgerX - Finance Management Application", "NestFi"]
     },
     {
       "name": "Axios",
@@ -211,10 +229,10 @@
       "name": "Framer Motion",
       "category": "Animation",
       "icon": "framer",
-      "frequency": 1,
+      "frequency": 2,
       "proficiency": 7,
       "description": "Production-ready motion library for React",
-      "projects": ["TaskForge - Modern Task & Project Management Platform - Full Stack Application"]
+      "projects": ["TaskForge - Modern Task & Project Management Platform - Full Stack Application", "SignFlow"]
     },
     {
       "name": "Recharts",
@@ -415,6 +433,15 @@
       "projects": ["Attendance System - Full Stack Application", "TaskForge - Modern Task & Project Management Platform - Full Stack Application"]
     },
     {
+      "name": "RBAC",
+      "category": "Security",
+      "icon": "security",
+      "frequency": 2,
+      "proficiency": 8,
+      "description": "Role-based access control for tenant-safe authorization",
+      "projects": ["OpsFlow", "LedgerX - Finance Management Application"]
+    },
+    {
       "name": "Netlify",
       "category": "Deployment",
       "icon": "netlify",
@@ -458,6 +485,51 @@
       "proficiency": 8,
       "description": "JavaScript linter for code quality",
       "projects": ["Travelogue - Travel Storytelling Website", "Rasoha Academy - School Website"]
+    },
+    {
+      "name": "Docker",
+      "category": "DevOps",
+      "icon": "docker",
+      "frequency": 1,
+      "proficiency": 7,
+      "description": "Containerization for service isolation and consistent environments",
+      "projects": ["NestFi"]
+    },
+    {
+      "name": "Cloudflare Workers",
+      "category": "Edge",
+      "icon": "cloudflare",
+      "frequency": 1,
+      "proficiency": 6,
+      "description": "Edge runtime used for callback and notification handling",
+      "projects": ["NestFi"]
+    },
+    {
+      "name": "M-Pesa Daraja",
+      "category": "Integration",
+      "icon": "api",
+      "frequency": 1,
+      "proficiency": 7,
+      "description": "Mobile money payments integration using asynchronous callbacks",
+      "projects": ["NestFi"]
+    },
+    {
+      "name": "React Native",
+      "category": "Mobile",
+      "icon": "react",
+      "frequency": 1,
+      "proficiency": 7,
+      "description": "Mobile app client with offline-tolerant, API-driven architecture",
+      "projects": ["NestFi"]
+    },
+    {
+      "name": "Turborepo",
+      "category": "Tools",
+      "icon": "turborepo",
+      "frequency": 1,
+      "proficiency": 6,
+      "description": "Monorepo build system for shared packages and apps",
+      "projects": ["NestFi"]
     }
   ],
   "categories": [
@@ -475,6 +547,11 @@
       "name": "Database",
       "color": "purple",
       "count": 3
+    },
+    {
+      "name": "Cache",
+      "color": "violet",
+      "count": 1
     },
     {
       "name": "ORM",
@@ -549,7 +626,7 @@
     {
       "name": "Tools",
       "color": "gray",
-      "count": 3
+      "count": 4
     },
     {
       "name": "ODM",
@@ -570,6 +647,26 @@
       "name": "Storage",
       "color": "teal",
       "count": 2
+    },
+    {
+      "name": "DevOps",
+      "color": "slate",
+      "count": 1
+    },
+    {
+      "name": "Edge",
+      "color": "cyan",
+      "count": 1
+    },
+    {
+      "name": "Integration",
+      "color": "indigo",
+      "count": 1
+    },
+    {
+      "name": "Mobile",
+      "color": "blue",
+      "count": 1
     }
   ]
 }

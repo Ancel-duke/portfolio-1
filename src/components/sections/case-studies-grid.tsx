@@ -39,9 +39,10 @@ interface CaseStudiesGridProps {
   className?: string
   limit?: number
   showViewAll?: boolean
+  showHeader?: boolean
 }
 
-export const CaseStudiesGrid = React.memo(function CaseStudiesGrid({ className, limit, showViewAll = true }: CaseStudiesGridProps) {
+export const CaseStudiesGrid = React.memo(function CaseStudiesGrid({ className, limit, showViewAll = true, showHeader = true }: CaseStudiesGridProps) {
   const caseStudies = caseStudiesData
   
   // Map case studies to project-like format for sorting
@@ -95,14 +96,16 @@ export const CaseStudiesGrid = React.memo(function CaseStudiesGrid({ className, 
   return (
     <section className={cn("py-16 w-full overflow-x-hidden", className)}>
       <div className="container-custom max-w-full">
-        <div className="text-center mb-12 px-4 sm:px-0">
-          <h2 className="text-[clamp(1.875rem,4vw,2.5rem)] font-bold mb-[clamp(1rem,2.5vw,1.5rem)]">
-            {limit ? "Featured" : "All"} <span className="text-gradient">Case Studies</span>
-          </h2>
-          <p className="text-[clamp(1rem,2vw,1.125rem)] text-muted-foreground max-w-2xl mx-auto">
-            {limit ? "Enterprise-grade systems showcasing resilient architecture, hybrid databases, and scalable solutions." : "Deep dives into my most challenging and rewarding projects, showcasing the process, challenges, and outcomes."}
-          </p>
-        </div>
+        {showHeader && (
+          <div className="text-center mb-12 px-4 sm:px-0">
+            <h2 className="text-[clamp(1.875rem,4vw,2.5rem)] font-bold mb-[clamp(1rem,2.5vw,1.5rem)]">
+              {limit ? "Featured" : "All"} <span className="text-gradient">Case Studies</span>
+            </h2>
+            <p className="text-[clamp(1rem,2vw,1.125rem)] text-muted-foreground max-w-2xl mx-auto">
+              {limit ? "Enterprise-grade systems showcasing resilient architecture, hybrid databases, and scalable solutions." : "Deep dives into my most challenging and rewarding projects, showcasing the process, challenges, and outcomes."}
+            </p>
+          </div>
+        )}
 
         <motion.div
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-[clamp(1rem,3vw,2rem)] w-full"

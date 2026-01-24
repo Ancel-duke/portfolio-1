@@ -1452,6 +1452,76 @@
         "/assets/projects/flow2.jpg"
       ]
     }
+  },
+  {
+    "id": 15,
+    "slug": "nestfi",
+    "title": "NestFi — A Resilient Financial Coordination Platform",
+    "subtitle": "Designing for correctness, fault isolation, and real-world payment constraints (M-Pesa)",
+    "role": "Full-Stack Software Engineer",
+    "timeline": "Ongoing",
+    "year": "2026",
+    "status": "In Progress",
+    "description": "NestFi is a financial coordination platform designed for individuals and couples to manage transactions, wallets, and automated savings while integrating with real-world payment infrastructure (M-Pesa). The core challenge is reliability and correctness under failure: asynchronous callbacks, partial outages, and multi-store consistency across a hybrid data model.",
+    "problem": "Most portfolio “finance apps” are CRUD demos. NestFi targets the real production problem: maintaining ledger correctness and predictable behavior when external payment providers are asynchronous, callbacks can be delayed or duplicated, caches can fail, and non-critical subsystems (logs/events) may be temporarily unavailable.",
+    "solution": "I designed NestFi as a stateless NestJS backend with strict separation of concerns and explicit failure handling. PostgreSQL is the system of record for wallets/ledgers, MongoDB stores events/logs/callback payloads, and Redis accelerates reads and holds ephemeral state (rate limits, short-lived correlation). External payment flows are treated as idempotent and delay-tolerant, with timeouts, safe retries, and circuit breakers to prevent cascading failures.",
+    "impact": "NestFi demonstrates capstone-level system design: hybrid databases chosen by data guarantees, fault isolation so non-critical services can fail without compromising financial correctness, and real payment infrastructure integration with failure-aware patterns. The remaining work is infrastructure hardening and UI expansion rather than core architecture changes.",
+    "isolation": "Core responsibilities are isolated so failures don’t cascade: PostgreSQL remains authoritative; MongoDB (events/logs) is optional during partial failures; Redis can be bypassed safely; payment callbacks are processed idempotently and tolerate delays/duplicates. Network boundaries and minimal exposed ports are enforced via Docker, and edge TLS is handled via Cloudflare.",
+    "tradeoffs": "Hybrid storage adds operational complexity (multiple datastores and consistency boundaries) but matches real financial constraints: ACID correctness for ledgers in PostgreSQL, flexible append-only event storage in MongoDB, and low-latency ephemeral state in Redis. The design favors correctness and resilience over feature count, intentionally deferring non-critical UX features until infrastructure hardening is complete.",
+    "implementationStatus": "Current status (~80%): Core architecture, business logic, and M-Pesa integration are implemented. Remaining work focuses on container hardening, operational refinements, and UI expansion. Known issue: Docker build currently fails due to a NestJS build artifact path mismatch in a Turborepo monorepo; backend runs correctly outside Docker.",
+    "potentialExpansion": "Container hardening and deployment automation (multi-service Compose, environment hardening, secrets management). Expanded observability (structured logs, trace correlation across callbacks, dashboards). Further resilience work (dead-letter handling for callbacks, replay tooling, stronger idempotency keys).",
+    "technologies": [
+      { "name": "NestJS", "category": "Backend", "icon": "nestjs" },
+      { "name": "TypeScript", "category": "Language", "icon": "typescript" },
+      { "name": "PostgreSQL", "category": "Database", "icon": "postgresql" },
+      { "name": "MongoDB", "category": "Database", "icon": "mongodb" },
+      { "name": "Redis", "category": "Cache", "icon": "redis" },
+      { "name": "Docker", "category": "DevOps", "icon": "docker" },
+      { "name": "Cloudflare Workers", "category": "Edge", "icon": "cloudflare" },
+      { "name": "M-Pesa Daraja", "category": "Integration", "icon": "api" },
+      { "name": "JWT", "category": "Authentication", "icon": "jwt" },
+      { "name": "React Native", "category": "Frontend", "icon": "react" },
+      { "name": "Next.js", "category": "Frontend", "icon": "nextjs" }
+    ],
+    "features": [
+      "Wallets, transactions, and automated savings flows",
+      "Stateless NestJS backend (horizontally scalable, restart-safe)",
+      "Hybrid data model: PostgreSQL (ledger correctness), MongoDB (events/logs), Redis (ephemeral state)",
+      "M-Pesa integration with asynchronous callback handling",
+      "Explicit failure handling: timeouts, safe retries, circuit breakers, graceful degradation",
+      "Security baseline: JWT auth, input validation, rate limiting, callback IP allowlisting"
+    ],
+    "challenges": [
+      "Designing idempotent and delay-tolerant callback processing for payment providers",
+      "Preventing cascading failures across cache/log/payment dependencies",
+      "Choosing data stores by guarantees (ACID vs append-only events vs ephemeral state)",
+      "Container isolation and keeping service boundaries minimal and secure",
+      "Documenting known infra limitations (Docker build path mismatch) while keeping runtime correct"
+    ],
+    "outcomes": [
+      "Failure-aware system design focused on correctness under partial outages",
+      "Hybrid architecture aligned with real financial system constraints",
+      "Clear isolation boundaries so non-critical components can fail safely",
+      "Practical engineering notes documenting known infra gaps and resolution plan"
+    ],
+    "metrics": [
+      { "label": "Completion", "value": "~80%", "description": "Core architecture and integrations implemented" },
+      { "label": "Datastores", "value": "3", "description": "PostgreSQL + MongoDB + Redis hybrid model" },
+      { "label": "Payment Integration", "value": "M-Pesa", "description": "Asynchronous callbacks, idempotent processing" },
+      { "label": "Resilience", "value": "Circuit breakers", "description": "Timeouts + safe retries + graceful degradation" }
+    ],
+    "links": {
+      "live": "",
+      "github": "https://github.com/Ancel-duke/NestFi"
+    },
+    "images": {
+      "hero": "/assets/projects/nestfi.jpg",
+      "before": "/assets/projects/nestfi.jpg",
+      "after": "/assets/projects/nestfi.jpg",
+      "gallery": [
+        "/assets/projects/nestfi.jpg"
+      ]
+    }
   }
 ]
 

@@ -26,8 +26,62 @@ const navigation = [
 
 export function Header({ className }: HeaderProps) {
   const [isOpen, setIsOpen] = useState(false)
+  const [isVisible, setIsVisible] = useState(() => {
+    // Initialize based on current scroll position
+    if (typeof window !== 'undefined') {
+      const scrollY = window.scrollY || window.pageYOffset || document.documentElement.scrollTop || 0
+      return scrollY <= 10 // Show if at top, hide if scrolled down
+    }
+    return true
+  })
+  const lastScrollYRef = React.useRef(0)
   const location = useLocation()
   const navigate = useNavigate()
+
+  // Handle scroll visibility - hide on scroll down, show immediately on scroll up
+  React.useEffect(() => {
+    // Initialize scroll position
+    const initialScrollY = window.scrollY || window.pageYOffset || document.documentElement.scrollTop || 0
+    lastScrollYRef.current = initialScrollY
+    
+    // Set initial visibility state
+    if (initialScrollY <= 10) {
+      setIsVisible(true)
+    } else if (initialScrollY > 100) {
+      setIsVisible(false)
+    }
+    
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY || window.pageYOffset || document.documentElement.scrollTop || 0
+      const previousScrollY = lastScrollYRef.current
+      
+      // Skip if scroll position hasn't changed
+      if (Math.abs(currentScrollY - previousScrollY) < 1) return
+      
+      // Always show header at the top of the page
+      if (currentScrollY <= 10) {
+        setIsVisible(true)
+      } 
+      // Show header immediately when scrolling up - ANY upward movement
+      else if (currentScrollY < previousScrollY) {
+        setIsVisible(true)
+      } 
+      // Hide header when scrolling down past 100px
+      else if (currentScrollY > previousScrollY && currentScrollY > 100) {
+        setIsVisible(false)
+      }
+      
+      // Update last scroll position
+      lastScrollYRef.current = currentScrollY
+    }
+    
+    // Add scroll listener
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
 
   const toggleMenu = () => {
     setIsOpen(!isOpen)
@@ -62,7 +116,19 @@ export function Header({ className }: HeaderProps) {
   }
 
   return (
-    <header className={cn("sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 overflow-x-hidden", className)} role="banner">
+    <motion.header 
+      className={cn("sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 overflow-x-hidden", className)} 
+      role="banner"
+      initial={{ y: 0 }}
+      animate={{ 
+        y: isVisible ? 0 : -80
+      }}
+      transition={{ 
+        duration: 0.25, 
+        ease: "easeInOut",
+        type: "tween"
+      }}
+    >
       <div className="container-custom max-w-full">
         <div className="flex h-16 items-center justify-between overflow-x-auto">
           {/* Logo */}
@@ -189,7 +255,7 @@ export function Header({ className }: HeaderProps) {
           )}
         </AnimatePresence>
       </div>
-    </header>
+    </motion.header>
   )
 }
 

@@ -340,5 +340,30 @@
     "repoUrl": "https://github.com/Ancel-duke/SignFlow",
     "image": "/assets/projects/signflow1.jpg",
     "outcomes": "Fully implemented assistive technology prototype demonstrating real-time system design using WebSockets, scalable cloud architecture with MongoDB Atlas, intentional UX for specialized user bases, and product-level thinking bridging coding projects and viable market solutions. Features high-fidelity 3D avatar simulation, natural variation in animations, comprehensive analytics dashboard, and full WCAG accessibility compliance. Vision includes scaling to 10,000+ concurrent users through WebSocket load balancing, Redis for session management, and CDN integration for 3D assets."
+  },
+  {
+    "id": 15,
+    "title": "NestFi",
+    "type": "fullstack",
+    "description": "NestFi is a resilient financial coordination platform built to handle real-world constraints such as unreliable networks, asynchronous mobile money payments, and partial system failures. It uses a stateless NestJS backend with a hybrid database architecture—PostgreSQL for financial correctness, MongoDB for events and logs, and Redis for low-latency ephemeral state—so failures in non-critical services do not compromise core financial operations.",
+    "detailedDescription": "NestFi is a financial coordination platform designed for individuals and couples to manage transactions, wallets, and automated savings while integrating with real-world payment infrastructure (M-Pesa). The core architectural challenge is not CRUD — it is reliability, correctness, and fault isolation in a system that interacts with external payment providers, asynchronous callbacks, and financial ledgers. The system is designed under the assumption that failures are normal, not exceptional. Service responsibilities are isolated (API, PostgreSQL system-of-record, MongoDB events/logs, Redis cache/ephemeral state, external providers) so one failure doesn’t cascade. Resilience patterns include timeouts, retries with backoff where safe, circuit breakers, graceful degradation, and health checks. Security-first baselines include JWT authentication, input validation, rate limiting, callback IP allowlisting, network isolation via Docker, and TLS at the edge (Cloudflare). Current status is ~80% complete; the backend runs correctly outside Docker, with a known Docker build issue due to a NestJS build artifact path mismatch in a Turborepo setup.",
+    "technologies": [
+      "NestJS",
+      "TypeScript",
+      "PostgreSQL",
+      "MongoDB",
+      "Redis",
+      "Docker",
+      "Cloudflare Workers",
+      "M-Pesa Daraja API",
+      "JWT",
+      "React Native",
+      "Next.js",
+      "Turborepo"
+    ],
+    "liveUrl": "",
+    "repoUrl": "https://github.com/Ancel-duke/NestFi",
+    "image": "/assets/projects/nestfi.jpg",
+    "outcomes": "Failure-aware, production-grade system design that prioritizes correctness and fault isolation for financial workflows. Hybrid data modeling (PostgreSQL + MongoDB + Redis), idempotent/async callback handling, and security-first controls reflect real payment system constraints. Remaining work is infrastructure hardening and operational refinement rather than core architecture."
   }
 ]

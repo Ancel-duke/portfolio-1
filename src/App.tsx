@@ -147,7 +147,7 @@ function CaseStudiesPage() {
             </p>
           </div>
         </div>
-        <CaseStudiesGrid limit={showAll ? undefined : 6} showViewAll={false} />
+        <CaseStudiesGrid limit={showAll ? undefined : 6} showViewAll={false} showHeader={false} />
         {!showAll && (
           <div className="text-center mt-12 px-4">
             <Button size="lg" variant="outline" onClick={() => setShowAll(true)}>

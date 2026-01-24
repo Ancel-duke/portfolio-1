@@ -36,22 +36,31 @@ interface Technology {
 }
 
 
-interface TechStackProps {
-  className?: string
-}
-
 const categoryIconMap = {
   Frontend: Code2,
   Backend: Server,
   Database: Database,
+  Cache: Database,
   Styling: Palette,
   Language: Globe,
   API: Zap,
+  Integration: Zap,
+  Edge: Globe,
+  DevOps: Layers,
+  Deployment: Layers,
+  Tools: Code2,
+  ORM: Layers,
+  ODM: Layers,
+  Storage: Database,
+  Blockchain: Layers,
+  Web3: Layers,
   Visualization: BarChart3,
   Maps: Globe,
   'Real-time': Zap,
+  Mobile: Code2,
   'State Management': Layers,
   Authentication: Shield,
+  Security: Shield,
   'HTTP Client': Zap,
   Animation: Palette,
   Testing: TestTube
@@ -61,14 +70,26 @@ const categoryColors = {
   Frontend: '#3b82f6',
   Backend: '#10b981',
   Database: '#8b5cf6',
+  Cache: '#6366f1',
   Styling: '#ec4899',
   Language: '#f59e0b',
   API: '#06b6d4',
+  Integration: '#4f46e5',
+  Edge: '#0ea5e9',
+  DevOps: '#64748b',
+  Deployment: '#22c55e',
+  Tools: '#6b7280',
+  ORM: '#06b6d4',
+  ODM: '#6366f1',
+  Storage: '#14b8a6',
+  Blockchain: '#475569',
+  Web3: '#3b82f6',
   Visualization: '#ef4444',
   Maps: '#22c55e',
   'Real-time': '#f97316',
   'State Management': '#6366f1',
   Authentication: '#84cc16',
+  Security: '#ef4444',
   'HTTP Client': '#14b8a6',
   Animation: '#a855f7',
   Testing: '#eab308'
