@@ -1,6 +1,5 @@
 import { useMemo, useState, useEffect } from 'react'
 import caseStudiesData from '../data/case-studies.json'
-import blogData from '../data/blog.json'
 import { getDailySeed, hashString, seededShuffle } from '../utils/projectSorter'
 
 /**
@@ -24,10 +23,13 @@ export interface FeaturedContentItem {
 }
 
 /**
- * Hook to get daily featured content (2 case studies + 2 journal entries)
- * Uses date-based seeded randomization to ensure consistent selection throughout the day
- * 
- * @returns Array of 4 featured content items (2 case studies, 2 journal entries)
+ * Hook to get daily featured content (4 projects)
+ *
+ * Rules:
+ * - Exactly 4 projects total
+ * - 1 frontend case study + 3 fullstack case studies
+ * - No duplicates within the same day
+ * - Avoid repeating yesterday’s selected projects when possible
  */
 export function useDailyFeaturedContent(): FeaturedContentItem[] {
   // Track the current date seed to trigger recalculation when date changes
@@ -52,7 +54,7 @@ export function useDailyFeaturedContent(): FeaturedContentItem[] {
   }, [dateSeed])
   
   return useMemo(() => {
-    // Get all case studies and journal entries
+    // Get all case studies
     const caseStudies = caseStudiesData as Array<{
       id: number
       slug: string
@@ -62,16 +64,6 @@ export function useDailyFeaturedContent(): FeaturedContentItem[] {
       role?: string
       year?: string
       images?: { hero?: string }
-    }>
-
-    const journalEntries = blogData as Array<{
-      id: number
-      title: string
-      excerpt: string
-      date: string
-      tags?: string[]
-      image?: string
-      readTime?: string
     }>
 
     // Separate case studies into fullstack and frontend
@@ -91,21 +83,78 @@ export function useDailyFeaturedContent(): FeaturedContentItem[] {
              title.includes('academy')
     })
 
-    // Shuffle each array independently using date-based seed
-    const fullstackSeed = hashString(dateSeed + '-case-studies-fullstack')
-    const frontendSeed = hashString(dateSeed + '-case-studies-frontend')
-    const journalsSeed = hashString(dateSeed + '-journals')
-    
-    const shuffledFullstack = seededShuffle([...fullstackCaseStudies], fullstackSeed)
-    const shuffledFrontend = seededShuffle([...frontendCaseStudies], frontendSeed)
-    const shuffledJournals = seededShuffle([...journalEntries], journalsSeed)
+    const getSeedOffset = (seed: string, daysOffset: number) => {
+      // seed is YYYY-MM-DD
+      const [y, m, d] = seed.split('-').map(Number)
+      const dt = new Date(y, (m || 1) - 1, d || 1)
+      dt.setDate(dt.getDate() + daysOffset)
+      const year = dt.getFullYear()
+      const month = String(dt.getMonth() + 1).padStart(2, '0')
+      const day = String(dt.getDate()).padStart(2, '0')
+      return `${year}-${month}-${day}`
+    }
 
-    // Select 1 frontend + 1 fullstack for case studies (total 2)
-    // Then 2 journals
-    const selectedFrontend = shuffledFrontend.slice(0, 1)
-    const selectedFullstack = shuffledFullstack.slice(0, 1)
-    const selectedCaseStudies = [...selectedFrontend, ...selectedFullstack]
-    const selectedJournals = shuffledJournals.slice(0, 2)
+    const buildSelection = (seed: string, excludeIds: Set<number>) => {
+      // Shuffle each array independently using date-based seed
+      const fullstackSeed = hashString(seed + '-highlights-fullstack')
+      const frontendSeed = hashString(seed + '-highlights-frontend')
+
+      const shuffledFullstack = seededShuffle([...fullstackCaseStudies], fullstackSeed).filter(cs => !excludeIds.has(cs.id))
+      const shuffledFrontend = seededShuffle([...frontendCaseStudies], frontendSeed).filter(cs => !excludeIds.has(cs.id))
+
+      const selected: Array<typeof caseStudies[number] & { type?: string }> = []
+      const used = new Set<number>()
+
+      // Pick exactly 1 frontend (if available)
+      for (const cs of shuffledFrontend) {
+        if (!used.has(cs.id)) {
+          selected.push(cs)
+          used.add(cs.id)
+          break
+        }
+      }
+
+      // Pick 3 fullstack
+      for (const cs of shuffledFullstack) {
+        if (selected.length >= 4) break
+        if (!used.has(cs.id)) {
+          selected.push(cs)
+          used.add(cs.id)
+        }
+      }
+
+      // If we couldn't reach 4 (edge case), fill from remaining fullstack then frontend
+      if (selected.length < 4) {
+        for (const cs of shuffledFullstack) {
+          if (selected.length >= 4) break
+          if (!used.has(cs.id)) {
+            selected.push(cs)
+            used.add(cs.id)
+          }
+        }
+      }
+
+      if (selected.length < 4) {
+        for (const cs of shuffledFrontend) {
+          if (selected.length >= 4) break
+          if (!used.has(cs.id)) {
+            selected.push(cs)
+            used.add(cs.id)
+          }
+        }
+      }
+
+      // Ensure we always return at most 4
+      return selected.slice(0, 4)
+    }
+
+    // Yesterday's selection (used only to avoid repeats today)
+    const yesterdaySeed = getSeedOffset(dateSeed, -1)
+    const yesterdaySelected = buildSelection(yesterdaySeed, new Set<number>())
+    const yesterdayIds = new Set<number>(yesterdaySelected.map(cs => cs.id))
+
+    // Today's selection, avoiding yesterday's IDs when possible
+    const selectedCaseStudies = buildSelection(dateSeed, yesterdayIds)
 
     // Transform case studies to unified format
     const caseStudyItems: FeaturedContentItem[] = selectedCaseStudies.map(cs => ({
@@ -120,24 +169,8 @@ export function useDailyFeaturedContent(): FeaturedContentItem[] {
       image: cs.images?.hero,
     }))
 
-    // Transform journal entries to unified format
-    // Generate slug from title (matching the pattern used in DeveloperJournal.tsx)
-    const journalItems: FeaturedContentItem[] = selectedJournals.map(journal => ({
-      id: journal.id,
-      title: journal.title,
-      summary: journal.excerpt,
-      type: 'journal' as const,
-      date: journal.date,
-      slug: `/developer-journal/${journal.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')}`,
-      tags: journal.tags,
-      excerpt: journal.excerpt,
-      readTime: journal.readTime,
-      image: journal.image,
-    }))
-
-    // Combine and return (case studies first, then journals)
-    // The order can be shuffled if desired, but keeping it simple for now
-    return [...caseStudyItems, ...journalItems]
+    // Return only projects (4 items)
+    return caseStudyItems
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [dateSeed]) // Recalculate when date seed changes (daily) - dateSeed is intentionally used
 }

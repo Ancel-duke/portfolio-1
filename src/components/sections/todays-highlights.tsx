@@ -13,8 +13,8 @@ interface TodaysHighlightsProps {
 }
 
 /**
- * Component to display today's featured content (2 case studies + 2 journal entries)
- * Content rotates daily using date-based seeded randomization
+ * Component to display today's featured projects (1 frontend + 3 fullstack)
+ * Content rotates daily using date-based seeded randomization, avoiding yesterday’s picks when possible
  */
 export function TodaysHighlights({ className }: TodaysHighlightsProps) {
   const featuredItems = useDailyFeaturedContent()

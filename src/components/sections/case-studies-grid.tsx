@@ -118,9 +118,9 @@ export const CaseStudiesGrid = React.memo(function CaseStudiesGrid({ className, 
             <motion.article
               key={caseStudy.id}
               variants={itemVariants}
-              className="group"
+              className="group h-full"
             >
-              <Card className="h-full hover:shadow-xl transition-all duration-300 border-0 bg-card/50 backdrop-blur-sm overflow-hidden w-full">
+              <Card className="h-full flex flex-col hover:shadow-xl transition-all duration-300 border-0 bg-card/50 backdrop-blur-sm overflow-hidden w-full">
                 <div className="relative overflow-hidden w-full">
                   <img
                     src={caseStudy.images.hero}
@@ -163,10 +163,10 @@ export const CaseStudiesGrid = React.memo(function CaseStudiesGrid({ className, 
                   </CardDescription>
                 </CardHeader>
 
-                <CardContent className="pt-0 px-4 sm:px-6 pb-4 sm:pb-6">
+                <CardContent className="pt-0 px-4 sm:px-6 pb-4 sm:pb-6 flex flex-col flex-1">
                   <div className="mb-4">
                     <h4 className="text-sm font-medium mb-2">Technologies Used</h4>
-                    <div className="flex flex-wrap gap-2">
+                    <div className="flex flex-wrap gap-2 max-h-[64px] overflow-hidden">
                       {caseStudy.technologies.slice(0, 4).map((tech) => (
                         <Badge key={tech.name} variant="outline" className="text-xs">
                           {tech.name}
@@ -180,45 +180,60 @@ export const CaseStudiesGrid = React.memo(function CaseStudiesGrid({ className, 
                     </div>
                   </div>
 
-                  <div className="flex flex-col sm:flex-row gap-2 w-full">
-                    {caseStudy.links.live && (
-                      <Button
-                        variant="default"
-                        size="sm"
-                        className="flex-1 min-h-[44px] text-xs sm:text-sm"
-                        asChild
-                      >
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 w-full">
+                    <Button
+                      variant={caseStudy.links.live ? "default" : "outline"}
+                      size="sm"
+                      className="min-h-[44px] text-xs sm:text-sm"
+                      asChild={Boolean(caseStudy.links.live)}
+                      disabled={!caseStudy.links.live}
+                    >
+                      {caseStudy.links.live ? (
                         <a href={caseStudy.links.live} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center">
                           <ExternalLink className="h-3 w-3 sm:h-4 sm:w-4 mr-1.5 sm:mr-2 flex-shrink-0" />
                           <span className="truncate">Live Demo</span>
                         </a>
-                      </Button>
-                    )}
-                    {caseStudy.links.github && (
-                      <Button
-                        variant="outline"
-                        size="sm"
-                        className="flex-1 min-h-[44px] text-xs sm:text-sm"
-                        asChild
-                      >
+                      ) : (
+                        <span className="flex items-center justify-center">
+                          <ExternalLink className="h-3 w-3 sm:h-4 sm:w-4 mr-1.5 sm:mr-2 flex-shrink-0" />
+                          <span className="truncate">Live Demo</span>
+                        </span>
+                      )}
+                    </Button>
+
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      className="min-h-[44px] text-xs sm:text-sm"
+                      asChild={Boolean(caseStudy.links.github)}
+                      disabled={!caseStudy.links.github}
+                    >
+                      {caseStudy.links.github ? (
                         <a href={caseStudy.links.github} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center">
                           <Github className="h-3 w-3 sm:h-4 sm:w-4 mr-1.5 sm:mr-2 flex-shrink-0" />
                           <span className="truncate">Code</span>
                         </a>
-                      </Button>
-                    )}
+                      ) : (
+                        <span className="flex items-center justify-center">
+                          <Github className="h-3 w-3 sm:h-4 sm:w-4 mr-1.5 sm:mr-2 flex-shrink-0" />
+                          <span className="truncate">Code</span>
+                        </span>
+                      )}
+                    </Button>
                   </div>
 
-                  <Button
-                    variant="ghost"
-                    className="w-full mt-3 min-h-[44px] text-xs sm:text-sm group-hover:bg-primary group-hover:text-primary-foreground transition-colors"
-                    asChild
-                  >
-                    <a href={`/case-studies/${caseStudy.slug}`} className="flex items-center justify-center">
-                      <span>Read Case Study</span>
-                      <ArrowRight className="ml-2 h-3 w-3 sm:h-4 sm:w-4 group-hover:translate-x-1 transition-transform flex-shrink-0" />
-                    </a>
-                  </Button>
+                  <div className="mt-auto pt-3">
+                    <Button
+                      variant="ghost"
+                      className="w-full min-h-[44px] text-xs sm:text-sm group-hover:bg-primary group-hover:text-primary-foreground transition-colors"
+                      asChild
+                    >
+                      <a href={`/case-studies/${caseStudy.slug}`} className="flex items-center justify-center">
+                        <span>Read Case Study</span>
+                        <ArrowRight className="ml-2 h-3 w-3 sm:h-4 sm:w-4 group-hover:translate-x-1 transition-transform flex-shrink-0" />
+                      </a>
+                    </Button>
+                  </div>
                 </CardContent>
               </Card>
             </motion.article>

@@ -178,54 +178,57 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
 
             {/* Content */}
             <div className="p-4 sm:p-6 space-y-6 sm:space-y-8">
-              {/* Hero Image */}
-              {image && (
-                <div className="relative rounded-lg overflow-hidden bg-gray-100 dark:bg-gray-700 aspect-video w-full">
-                  <img
-                    src={image}
-                    alt={title}
-                    className="w-full h-full object-cover"
-                    loading="eager"
-                    decoding="async"
-                    fetchPriority="high"
-                    width="1200"
-                    height="675"
-                  />
+              {/* Summary (small image + text) */}
+              <div className="grid grid-cols-1 md:grid-cols-[260px,1fr] gap-4 sm:gap-6 items-start">
+                {image && (
+                  <div className="relative rounded-lg overflow-hidden bg-gray-100 dark:bg-gray-700 w-full h-40 sm:h-48 md:h-40">
+                    <img
+                      src={image}
+                      alt={title}
+                      className="w-full h-full object-contain"
+                      loading="eager"
+                      decoding="async"
+                      fetchPriority="high"
+                      width="800"
+                      height="450"
+                    />
+                  </div>
+                )}
+
+                <div className="space-y-4">
+                  <div className="prose prose-sm sm:prose-base dark:prose-invert max-w-none">
+                    <p className="text-base sm:text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+                      {description}
+                    </p>
+                  </div>
+
+                  {/* Action Buttons */}
+                  <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
+                    {liveUrl && (
+                      <a
+                        href={liveUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="btn-primary flex items-center justify-center space-x-2 min-h-[48px] text-sm sm:text-base"
+                      >
+                        <ExternalLink className="w-4 h-4 sm:w-5 sm:h-5" />
+                        <span>Visit Live Site</span>
+                      </a>
+                    )}
+                    
+                    {repoUrl && (
+                      <a
+                        href={repoUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="btn-secondary flex items-center justify-center space-x-2 min-h-[48px] text-sm sm:text-base"
+                      >
+                        <Github className="w-4 h-4 sm:w-5 sm:h-5" />
+                        <span>View Code</span>
+                      </a>
+                    )}
+                  </div>
                 </div>
-              )}
-
-              {/* Action Buttons */}
-              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
-                {liveUrl && (
-                  <a
-                    href={liveUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn-primary flex items-center justify-center space-x-2 min-h-[48px] text-sm sm:text-base"
-                  >
-                    <ExternalLink className="w-4 h-4 sm:w-5 sm:h-5" />
-                    <span>Visit Live Site</span>
-                  </a>
-                )}
-                
-                {repoUrl && (
-                  <a
-                    href={repoUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn-secondary flex items-center justify-center space-x-2 min-h-[48px] text-sm sm:text-base"
-                  >
-                    <Github className="w-4 h-4 sm:w-5 sm:h-5" />
-                    <span>View Code</span>
-                  </a>
-                )}
-              </div>
-
-              {/* Short Description */}
-              <div className="prose prose-sm sm:prose-base dark:prose-invert max-w-none">
-                <p className="text-base sm:text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-                  {description}
-                </p>
               </div>
 
               {/* Full-Stack Project Sections */}

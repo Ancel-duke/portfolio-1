@@ -26,14 +26,8 @@ const navigation = [
 
 export function Header({ className }: HeaderProps) {
   const [isOpen, setIsOpen] = useState(false)
-  const [isVisible, setIsVisible] = useState(() => {
-    // Initialize based on current scroll position
-    if (typeof window !== 'undefined') {
-      const scrollY = window.scrollY || window.pageYOffset || document.documentElement.scrollTop || 0
-      return scrollY <= 10 // Show if at top, hide if scrolled down
-    }
-    return true
-  })
+  // Always render the navbar on initial load (prevents it being hidden on refresh at /#highlights)
+  const [isVisible, setIsVisible] = useState(true)
   const lastScrollYRef = React.useRef(0)
   const location = useLocation()
   const navigate = useNavigate()
@@ -43,13 +37,7 @@ export function Header({ className }: HeaderProps) {
     // Initialize scroll position
     const initialScrollY = window.scrollY || window.pageYOffset || document.documentElement.scrollTop || 0
     lastScrollYRef.current = initialScrollY
-    
-    // Set initial visibility state
-    if (initialScrollY <= 10) {
-      setIsVisible(true)
-    } else if (initialScrollY > 100) {
-      setIsVisible(false)
-    }
+    setIsVisible(true)
     
     const handleScroll = () => {
       const currentScrollY = window.scrollY || window.pageYOffset || document.documentElement.scrollTop || 0
