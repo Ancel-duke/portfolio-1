@@ -1591,6 +1591,79 @@
         "/assets/projects/edumanage.jpg"
       ]
     }
+  },
+  {
+    "id": 17,
+    "slug": "aegis",
+    "title": "Aegis — Self-Healing Infrastructure with Policy and AI",
+    "subtitle": "Intelligent monitoring, policy-driven decisions, and safe Kubernetes automation",
+    "role": "Full-Stack Software Engineer",
+    "timeline": "Ongoing",
+    "year": "2026",
+    "status": "Live",
+    "description": "Aegis monitors infrastructure behavior, detects anomalies using AI, evaluates security policies, and executes tightly controlled remediation actions. It is built with strict isolation boundaries, auditability, and failure-aware automation to avoid unsafe self-healing.",
+    "problem": "Modern infrastructure fails silently. Teams only react after damage is done, and automation often introduces more risk than it removes. Monitoring tools detect issues but don't act; automation tools act but aren't safe; security and operations are disconnected; AI systems make decisions without accountability.",
+    "solution": "Aegis introduces four controlled layers: Observation (metrics, logs, traces, events), Intelligence (AI-driven anomaly detection), Policy (explicit, auditable rules for what is allowed), and Execution (isolated, signed, least-privilege actions). Automation is only allowed when policy, identity, and safety constraints all pass.",
+    "impact": "Aegis guarantees: no unaudited actions, no blind AI execution, no privilege escalation, no silent failures. Security highlights include JWT + RBAC, HMAC-signed executor actions, namespace allowlisting, immutable audit logs, and default-deny network policies. The platform is designed so an ethical hacker can reason about what cannot happen.",
+    "architecture": "Core services: Backend (NestJS) — Auth, policies, audit, APIs; AI Engine (FastAPI) — Anomaly detection and recommendations; Executor Service — Secure Kubernetes actions; Frontend (Next.js) — Observability and control plane UI. Infrastructure: Docker and Kubernetes, PostgreSQL and Redis, Prometheus, Grafana, Loki, Tempo, CI/CD with security scanning, Cloudflare (WAF, webhook protection). Every service is isolated, auditable, and deployable independently.",
+    "isolation": "The AI detects anomalies, assigns severity, and recommends actions—but cannot execute actions directly, override policies, or bypass audit logging. AI informs decisions; policy authorizes actions; humans retain control. Self-healing means restarting unhealthy pods, scaling deployments safely, rolling back bad releases, and temporarily isolating services. Explicitly not supported: arbitrary command execution, destructive actions, unbounded automation loops.",
+    "tradeoffs": "Implemented (~95%): Backend APIs and security, AI anomaly detection, executor with Kubernetes RBAC, full observability stack, production-ready frontend, Docker and Kubernetes manifests, CI/CD with rollback. Not yet implemented: mTLS between services, WebSocket backend, full E2E test suite, AI model persistence, external security audit. Known gaps are documented, intentional, and scoped.",
+    "implementationStatus": "Implemented (~95%): Backend APIs and security, AI anomaly detection, executor with Kubernetes RBAC, full observability stack, production-ready frontend, Docker and Kubernetes manifests, CI/CD with rollback. Not yet: mTLS, WebSocket backend, full E2E test suite, AI model persistence, external security audit.",
+    "potentialExpansion": "Architecture avoids unsafe automation, prioritizes auditability, separates decision from execution, and scales from single cluster to multi-cluster. Matches real production failure modes. Aegis reflects how I think about production systems: assume failure, design for abuse, automate carefully, and leave a trail of evidence for every decision.",
+    "technologies": [
+      { "name": "NestJS", "category": "Backend", "icon": "nestjs" },
+      { "name": "FastAPI", "category": "Backend", "icon": "python" },
+      { "name": "Next.js", "category": "Frontend", "icon": "nextjs" },
+      { "name": "PostgreSQL", "category": "Database", "icon": "postgresql" },
+      { "name": "Redis", "category": "Cache", "icon": "redis" },
+      { "name": "Kubernetes", "category": "DevOps", "icon": "kubernetes" },
+      { "name": "Docker", "category": "DevOps", "icon": "docker" },
+      { "name": "Prometheus", "category": "Observability", "icon": "prometheus" },
+      { "name": "Grafana", "category": "Observability", "icon": "grafana" },
+      { "name": "JWT", "category": "Authentication", "icon": "jwt" },
+      { "name": "TypeScript", "category": "Language", "icon": "typescript" },
+      { "name": "Python", "category": "Language", "icon": "python" }
+    ],
+    "features": [
+      "Policy-driven access control and self-healing decisions",
+      "ML-based anomaly and failure detection (AI engine)",
+      "Safe Kubernetes operations (restart, scale, rollback)",
+      "HMAC-signed executor actions and namespace allowlisting",
+      "Immutable audit logs and default-deny network policies",
+      "Full observability stack (Prometheus, Grafana, Loki, Tempo)",
+      "Production-ready Next.js dashboard and control plane UI"
+    ],
+    "challenges": [
+      "Keeping AI recommendations strictly advisory—no direct execution",
+      "Enforcing policy evaluation and audit for every action",
+      "Isolating executor with minimal Kubernetes RBAC",
+      "Designing for failure and partial outages without unsafe automation"
+    ],
+    "outcomes": [
+      "No unaudited actions; no blind AI execution; no privilege escalation",
+      "Self-healing within policy: pod restart, scale, rollback only when allowed",
+      "Documented architecture and honest status (implemented vs not yet)",
+      "Production mindset: assume failure, design for abuse, automate carefully"
+    ],
+    "metrics": [
+      { "label": "Status", "value": "~95%", "description": "Backend, AI engine, executor, frontend, observability complete" },
+      { "label": "Security", "value": "Policy + HMAC", "description": "Every action policy-evaluated and signed" },
+      { "label": "AI Role", "value": "Recommend only", "description": "AI informs; policy authorizes; humans control" },
+      { "label": "Audit", "value": "Immutable", "description": "Trail of evidence for every decision" }
+    ],
+    "links": {
+      "live": "",
+      "github": "https://github.com/Ancel-duke/Aegis",
+      "docs": "https://github.com/Ancel-duke/Aegis/blob/main/ARCHITECTURE.md"
+    },
+    "images": {
+      "hero": "/assets/projects/aegis.jpg",
+      "before": "/assets/projects/aegis.jpg",
+      "after": "/assets/projects/aegis.jpg",
+      "gallery": [
+        "/assets/projects/aegis.jpg"
+      ]
+    }
   }
 ]
 

@@ -388,5 +388,35 @@
     "docsUrl": "https://github.com/Ancel-duke/edumanage/blob/main/docs/ARCHITECTURE.md",
     "image": "/assets/projects/edumanage.jpg",
     "outcomes": "Multi-tenant MVP structured for scale: tenant-scoped access, hierarchical permissions, real-time events, and failure-aware service boundaries. Remaining work focuses on hardening (rate limiting, testing, caching) rather than redesigning core architecture."
+  },
+  {
+    "id": 17,
+    "title": "Aegis",
+    "type": "fullstack",
+    "description": "Aegis monitors infrastructure behavior, detects anomalies using AI, evaluates security policies, and executes tightly controlled remediation actions. It is built with strict isolation boundaries, auditability, and failure-aware automation to avoid unsafe self-healing.",
+    "detailedDescription": "Aegis is a self-healing infrastructure platform that combines policy-driven access control, ML-based anomaly and failure detection, and safe Kubernetes remediation. It addresses reacting to infrastructure failures and anomalies in a governed, auditable way: instead of ad-hoc scripts or manual intervention, operators define policies that determine which automated actions are allowed, and an AI engine recommends actions that an executor can perform only after policy evaluation and signature validation. Core services include a NestJS backend (auth, policies, audit, APIs), Python/FastAPI AI engine (anomaly detection and recommendations), standalone NestJS executor (secure Kubernetes actions), and Next.js frontend for observability and control plane UI. Security guarantees: no unaudited actions, no blind AI execution, no privilege escalation, no silent failures—JWT + RBAC, HMAC-signed executor actions, namespace allowlisting, immutable audit logs, default-deny network policies.",
+    "technologies": [
+      "NestJS",
+      "FastAPI",
+      "Next.js",
+      "PostgreSQL",
+      "Redis",
+      "Kubernetes",
+      "Docker",
+      "Prometheus",
+      "Grafana",
+      "Loki",
+      "Tempo",
+      "Python",
+      "TypeScript",
+      "JWT",
+      "HMAC",
+      "RBAC"
+    ],
+    "liveUrl": "",
+    "repoUrl": "https://github.com/Ancel-duke/Aegis",
+    "docsUrl": "https://github.com/Ancel-duke/Aegis/blob/main/ARCHITECTURE.md",
+    "image": "/assets/projects/aegis.jpg",
+    "outcomes": "Aegis reflects how I think about production systems: assume failure, design for abuse, automate carefully, and leave a trail of evidence for every decision. Implemented (~95%): backend APIs and security, AI anomaly detection, executor with Kubernetes RBAC, full observability stack, production-ready frontend, Docker and Kubernetes manifests, CI/CD with rollback."
   }
 ]

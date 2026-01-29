@@ -164,6 +164,21 @@
       "avatar": "/assets/profile-photo.jpg",
       "bio": "Fullstack Software Engineer/Developer & App Developer"
     }
+  },
+  {
+    "id": 9,
+    "title": "Aegis: Production Systems with Restraint — Assume Failure, Design for Abuse",
+    "excerpt": "Building a self-healing infrastructure platform where AI recommends, policy authorizes, and humans retain control. How Aegis enforces no unaudited actions, no blind AI execution, and a trail of evidence for every decision.",
+    "content": "Aegis is a self-healing infrastructure platform I built to address a real problem: modern infrastructure fails silently, and automation often introduces more risk than it removes.\n\nI. The Problem\n\nMonitoring tools detect issues but don't act. Automation tools act but aren't safe. Security and operations are disconnected. AI systems make decisions without accountability. Aegis solves this by design.\n\nII. Four Controlled Layers\n\n• Observation — Metrics, logs, traces, events\n• Intelligence — AI-driven anomaly detection (severity, recommendations)\n• Policy — Explicit, auditable rules for what is allowed\n• Execution — Isolated, signed, least-privilege actions\n\nAutomation is only allowed when policy, identity, and safety constraints all pass.\n\nIII. Security and Trust\n\nAegis guarantees: no unaudited actions, no blind AI execution, no privilege escalation, no silent failures. JWT + RBAC, HMAC-signed executor actions, namespace allowlisting, immutable audit logs, default-deny network policies. The system is designed so an ethical hacker can reason about what cannot happen.\n\nIV. AI With Restraint\n\nWhat the AI does: detects anomalies, assigns severity, recommends actions. What the AI cannot do: execute actions directly, override policies, bypass audit logging. AI informs decisions. Policy authorizes actions. Humans retain control.\n\nV. What's Done vs Not Done\n\nImplemented (~95%): Backend APIs and security, AI anomaly detection, executor with Kubernetes RBAC, full observability stack, production-ready frontend, Docker and Kubernetes manifests, CI/CD with rollback. Not yet: mTLS between services, WebSocket backend, full E2E test suite, AI model persistence, external security audit. Known gaps are documented and intentional.\n\nVI. Final Takeaway\n\nAegis reflects how I think about production systems: assume failure, design for abuse, automate carefully, and leave a trail of evidence for every decision.\n\nArchitecture: https://github.com/Ancel-duke/Aegis/blob/main/ARCHITECTURE.md\nRepo: https://github.com/Ancel-duke/Aegis",
+    "tags": ["Backend", "Security", "AI", "DevOps", "Kubernetes", "Observability", "Policy", "Self-Healing"],
+    "date": "2026-01-30",
+    "readTime": "8 min read",
+    "image": "/assets/projects/aegis.jpg",
+    "author": {
+      "name": "Ancel Ajanga",
+      "avatar": "/assets/profile-photo.jpg",
+      "bio": "Fullstack Software Engineer/Developer & App Developer"
+    }
   }
 ]
 

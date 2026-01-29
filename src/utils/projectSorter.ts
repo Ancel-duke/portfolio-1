@@ -56,89 +56,55 @@ export function seededShuffle<T>(array: T[], seed: number): T[] {
   return shuffled;
 }
 
-/**
- * Master sorting function for projects
- * 
- * Rules:
- * 1. Sort by type: fullstack projects appear before frontend
- * 2. Within each type, sort by ID descending (most recent first)
- *    - Higher ID = more recent project
- *    - This ensures LedgerX (12) and EduChain (11) are at the top
- *    - New projects added will automatically be first in their type
- */
-const PINNED_SLUGS = ['nestfi'] as const
+/** Project titles/slugs that appear in fixed order after the newest (2nd, 3rd, …). */
+const PINNED_AFTER_NEWEST = ['nestfi', 'edumanage'] as const;
 
-function isPinnedProject(project: { slug?: string; title?: string }): boolean {
-  const slug = (project.slug || '').toLowerCase().trim()
-  const title = (project.title || '').toLowerCase().trim()
-  return PINNED_SLUGS.includes(slug as (typeof PINNED_SLUGS)[number]) || title === 'nestfi'
+function getProjectKey(p: { slug?: string; title?: string }): string {
+  const slug = (p.slug || '').toLowerCase().trim();
+  const title = (p.title || '').toLowerCase().trim();
+  if (slug) return slug;
+  // Match "NestFi" -> "nestfi", "EduManage" -> "edumanage", "Aegis" -> "aegis"
+  return title.replace(/[^a-z0-9]+/g, '');
 }
 
 export function getMasterSortedProjects<T extends { id: number; type?: string; slug?: string; title?: string }>(
   projects: T[]
 ): T[] {
-  const sorted = [...projects].sort((a, b) => {
-    const aType = (a.type || '').toLowerCase();
-    const bType = (b.type || '').toLowerCase();
-    
-    // First, sort by type: fullstack before frontend
-    if (aType === 'fullstack' && bType !== 'fullstack') return -1;
-    if (aType !== 'fullstack' && bType === 'fullstack') return 1;
-    
-    // Within same type, sort by ID descending (most recent first)
-    // Higher ID = more recent project
-    return b.id - a.id;
+  if (projects.length === 0) return [];
+
+  const byKey = new Map<string, T>();
+  projects.forEach((p) => {
+    const key = getProjectKey(p);
+    if (key) byKey.set(key, p);
   });
 
-  // Pin specific projects (e.g., NestFi) to the top
-  const pinned = sorted.filter(isPinnedProject)
-  if (pinned.length === 0) return sorted
-
-  const pinnedOrdered: T[] = []
-  for (const slug of PINNED_SLUGS) {
-    const foundBySlug = pinned.find(p => (p.slug || '').toLowerCase() === slug)
-    if (foundBySlug) {
-      pinnedOrdered.push(foundBySlug)
-      continue
-    }
-    // Fallback: allow pinning by title if slug is missing
-    if (slug === 'nestfi') {
-      const foundByTitle = pinned.find(p => (p.title || '').toLowerCase() === 'nestfi')
-      if (foundByTitle) pinnedOrdered.push(foundByTitle)
-    }
+  const newest = projects.reduce((a, b) => (a.id >= b.id ? a : b));
+  const pinned: T[] = [];
+  for (const slug of PINNED_AFTER_NEWEST) {
+    const found = byKey.get(slug);
+    if (found && found !== newest && !pinned.includes(found)) pinned.push(found);
   }
 
-  const rest = sorted.filter(p => !isPinnedProject(p))
-  return [...pinnedOrdered, ...rest]
+  const used = new Set<T>([newest, ...pinned]);
+  const rest = projects.filter((p) => !used.has(p)).sort((a, b) => b.id - a.id);
+
+  return [newest, ...pinned, ...rest];
 }
 
 /**
  * Daily featured selection helper
- * Picks a specified number of projects from the master sorted list using date-seeded randomization
- * 
- * @param projects - The master sorted list of projects
+ * Returns the first N projects from the master sorted list (newest first).
+ *
+ * @param projects - The list of projects
  * @param count - Number of projects to select (default: 4)
- * @returns Array of selected projects
+ * @returns Array of selected projects (newest first)
  */
 export function getDailySelection<T extends { id: number; type?: string; slug?: string; title?: string }>(
   projects: T[],
   count: number = 4
 ): T[] {
-  // Ensure we have a sorted list (master sort)
   const sortedProjects = getMasterSortedProjects(projects);
-  
-  // Get daily seed and create hash
-  const dateSeed = getDailySeed();
-  const numericSeed = hashString(dateSeed);
-  
-  // Keep pinned projects at the top, shuffle the rest
-  const pinned = sortedProjects.filter((p) => isPinnedProject(p))
-  const rest = sortedProjects.filter((p) => !isPinnedProject(p))
-
-  const shuffledRest = seededShuffle(rest, numericSeed)
-  const remainingCount = Math.max(0, count - pinned.length)
-
-  return [...pinned.slice(0, count), ...shuffledRest.slice(0, remainingCount)]
+  return sortedProjects.slice(0, count);
 }
 
 /**
