@@ -26,10 +26,28 @@ interface Post {
   slug?: string;
 }
 
-const posts = (blogData as Post[]).map(post => ({
+/** Featured journal posts shown first, in this order (by title match). */
+const FEATURED_JOURNAL_ORDER = ['aegis', 'nestfi', 'ledgerx', 'edumanage', 'opsflow'] as const;
+
+function getFeaturedIndex(title: string): number {
+  const t = title.toLowerCase();
+  const idx = FEATURED_JOURNAL_ORDER.findIndex(
+    (name) => t.includes(name) || t.startsWith(name)
+  );
+  return idx >= 0 ? idx : FEATURED_JOURNAL_ORDER.length;
+}
+
+const rawPosts = (blogData as Post[]).map((post) => ({
   ...post,
   slug: post.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')
 }));
+
+const posts = [...rawPosts].sort((a, b) => {
+  const orderA = getFeaturedIndex(a.title);
+  const orderB = getFeaturedIndex(b.title);
+  if (orderA !== orderB) return orderA - orderB;
+  return new Date(b.date).getTime() - new Date(a.date).getTime();
+});
 
 export function DeveloperJournal() {
   const containerVariants = {

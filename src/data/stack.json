@@ -7,16 +7,16 @@
       "frequency": 10,
       "proficiency": 9,
       "description": "React (v18) for building modern user interfaces",
-      "projects": ["Habit Tracker & Streak Counter", "Travelogue - Travel Storytelling Website", "Rasoha Academy - School Website", "Attendance System - Full Stack Application", "E-Learning Platform", "TaskForge - Modern Task & Project Management Platform - Full Stack Application", "EduChain", "LedgerX - Finance Management Application", "OpsFlow", "SignFlow"]
+      "projects": ["Habit Tracker & Streak Counter", "Travelogue - Travel Storytelling Website", "Rasoha Academy - School Website", "Attendance System - Full Stack Application", "E-Learning Platform", "TaskForge - Modern Task & Project Management Platform - Full Stack Application", "EduChain", "LedgerX - Finance Management Application", "OpsFlow", "SignFlow", "Aegis"]
     },
     {
       "name": "Next.js",
       "category": "Frontend",
       "icon": "nextjs",
-      "frequency": 4,
+      "frequency": 5,
       "proficiency": 8,
       "description": "React framework for production",
-      "projects": ["TaskForge - Modern Task & Project Management Platform - Full Stack Application", "LedgerX - Finance Management Application", "OpsFlow", "NestFi"]
+      "projects": ["TaskForge - Modern Task & Project Management Platform - Full Stack Application", "LedgerX - Finance Management Application", "OpsFlow", "NestFi", "Aegis"]
     },
     {
       "name": "Vue.js",
@@ -43,7 +43,7 @@
       "frequency": 8,
       "proficiency": 8,
       "description": "TypeScript (v4.9) for type-safe JavaScript at scale",
-      "projects": ["Personal Finance Tracker", "Fitness Class Scheduler", "E-Learning Platform", "TaskForge - Modern Task & Project Management Platform - Full Stack Application", "LedgerX - Finance Management Application", "OpsFlow", "NestFi", "EduManage"]
+      "projects": ["Personal Finance Tracker", "Fitness Class Scheduler", "E-Learning Platform", "TaskForge - Modern Task & Project Management Platform - Full Stack Application", "LedgerX - Finance Management Application", "OpsFlow", "NestFi", "EduManage", "Aegis"]
     },
     {
       "name": "JavaScript",
@@ -91,13 +91,22 @@
       "projects": ["E-Learning Platform"]
     },
     {
+      "name": "FastAPI",
+      "category": "Backend",
+      "icon": "python",
+      "frequency": 1,
+      "proficiency": 8,
+      "description": "High-performance Python API framework for ML and async services",
+      "projects": ["Aegis"]
+    },
+    {
       "name": "NestJS",
       "category": "Backend",
       "icon": "nestjs",
-      "frequency": 4,
+      "frequency": 5,
       "proficiency": 8,
       "description": "Progressive Node.js framework for building efficient and scalable server-side applications",
-      "projects": ["LedgerX - Finance Management Application", "OpsFlow", "NestFi", "EduManage"]
+      "projects": ["LedgerX - Finance Management Application", "OpsFlow", "NestFi", "EduManage", "Aegis"]
     },
     {
       "name": "Django REST Framework",
@@ -121,19 +130,19 @@
       "name": "PostgreSQL",
       "category": "Database",
       "icon": "postgresql",
-      "frequency": 4,
+      "frequency": 5,
       "proficiency": 8,
       "description": "Open source relational database",
-      "projects": ["E-Learning Platform - Full Stack Application", "LedgerX - Finance Management Application", "OpsFlow", "NestFi"]
+      "projects": ["E-Learning Platform - Full Stack Application", "LedgerX - Finance Management Application", "OpsFlow", "NestFi", "Aegis"]
     },
     {
       "name": "Redis",
       "category": "Cache",
       "icon": "redis",
-      "frequency": 2,
+      "frequency": 3,
       "proficiency": 7,
       "description": "In-memory data store used for caching and ephemeral state",
-      "projects": ["NestFi", "EduManage"]
+      "projects": ["NestFi", "EduManage", "Aegis"]
     },
     {
       "name": "SQLite",
@@ -211,10 +220,10 @@
       "name": "JWT",
       "category": "Authentication",
       "icon": "jwt",
-      "frequency": 6,
+      "frequency": 7,
       "proficiency": 8,
       "description": "JSON Web Token for secure authentication",
-      "projects": ["Attendance System - Full Stack Application", "E-Learning Platform", "TaskForge - Modern Task & Project Management Platform - Full Stack Application", "LedgerX - Finance Management Application", "NestFi", "EduManage"]
+      "projects": ["Attendance System - Full Stack Application", "E-Learning Platform", "TaskForge - Modern Task & Project Management Platform - Full Stack Application", "LedgerX - Finance Management Application", "NestFi", "EduManage", "Aegis"]
     },
     {
       "name": "Axios",
@@ -364,10 +373,10 @@
       "name": "Python",
       "category": "Language",
       "icon": "python",
-      "frequency": 1,
+      "frequency": 2,
       "proficiency": 7,
       "description": "High-level programming language",
-      "projects": ["E-Learning Platform"]
+      "projects": ["E-Learning Platform", "Aegis"]
     },
     {
       "name": "React Router DOM 6",
@@ -436,10 +445,10 @@
       "name": "RBAC",
       "category": "Security",
       "icon": "security",
-      "frequency": 3,
+      "frequency": 4,
       "proficiency": 8,
       "description": "Role-based access control for tenant-safe authorization",
-      "projects": ["OpsFlow", "LedgerX - Finance Management Application", "EduManage"]
+      "projects": ["OpsFlow", "LedgerX - Finance Management Application", "EduManage", "Aegis"]
     },
     {
       "name": "Netlify",
@@ -490,10 +499,73 @@
       "name": "Docker",
       "category": "DevOps",
       "icon": "docker",
-      "frequency": 2,
+      "frequency": 3,
       "proficiency": 7,
       "description": "Containerization for service isolation and consistent environments",
-      "projects": ["NestFi", "EduManage"]
+      "projects": ["NestFi", "EduManage", "Aegis"]
+    },
+    {
+      "name": "Kubernetes",
+      "category": "DevOps",
+      "icon": "kubernetes",
+      "frequency": 1,
+      "proficiency": 7,
+      "description": "Orchestration for containers, RBAC, and safe remediation",
+      "projects": ["Aegis"]
+    },
+    {
+      "name": "Prometheus",
+      "category": "Observability",
+      "icon": "prometheus",
+      "frequency": 1,
+      "proficiency": 7,
+      "description": "Metrics collection and alerting for production systems",
+      "projects": ["Aegis"]
+    },
+    {
+      "name": "Grafana",
+      "category": "Observability",
+      "icon": "grafana",
+      "frequency": 1,
+      "proficiency": 7,
+      "description": "Dashboards and visualization for metrics and logs",
+      "projects": ["Aegis"]
+    },
+    {
+      "name": "Loki",
+      "category": "Observability",
+      "icon": "loki",
+      "frequency": 1,
+      "proficiency": 6,
+      "description": "Log aggregation for querying and correlation",
+      "projects": ["Aegis"]
+    },
+    {
+      "name": "Tempo",
+      "category": "Observability",
+      "icon": "tempo",
+      "frequency": 1,
+      "proficiency": 6,
+      "description": "Distributed tracing for request flows",
+      "projects": ["Aegis"]
+    },
+    {
+      "name": "HMAC",
+      "category": "Security",
+      "icon": "security",
+      "frequency": 1,
+      "proficiency": 8,
+      "description": "Signed requests for executor and service-to-service auth",
+      "projects": ["Aegis"]
+    },
+    {
+      "name": "Stripe",
+      "category": "Integration",
+      "icon": "stripe",
+      "frequency": 1,
+      "proficiency": 7,
+      "description": "Payment processing and webhooks for fintech",
+      "projects": ["LedgerX - Finance Management Application"]
     },
     {
       "name": "Cloudflare Workers",
@@ -508,10 +580,10 @@
       "name": "M-Pesa Daraja",
       "category": "Integration",
       "icon": "api",
-      "frequency": 1,
+      "frequency": 2,
       "proficiency": 7,
       "description": "Mobile money payments integration using asynchronous callbacks",
-      "projects": ["NestFi"]
+      "projects": ["NestFi", "LedgerX - Finance Management Application"]
     },
     {
       "name": "React Native",
@@ -616,7 +688,7 @@
     {
       "name": "Security",
       "color": "red",
-      "count": 2
+      "count": 3
     },
     {
       "name": "Deployment",
@@ -651,7 +723,12 @@
     {
       "name": "DevOps",
       "color": "slate",
-      "count": 1
+      "count": 2
+    },
+    {
+      "name": "Observability",
+      "color": "violet",
+      "count": 4
     },
     {
       "name": "Edge",
@@ -661,7 +738,7 @@
     {
       "name": "Integration",
       "color": "indigo",
-      "count": 1
+      "count": 2
     },
     {
       "name": "Mobile",

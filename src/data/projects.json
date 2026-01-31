@@ -292,8 +292,8 @@
     "id": 12,
     "title": "LedgerX - Finance Management Application",
     "type": "fullstack",
-    "description": "A resilient, multi-tenant finance management platform architected to handle invoice processing, payment tracking, and financial analytics for businesses at scale. The system features hybrid database architecture (PostgreSQL + MongoDB), real-time data synchronization, and comprehensive analytics with complete data isolation across organizations.",
-    "detailedDescription": "LedgerX is a resilient, multi-tenant finance management platform architected to handle invoice processing, payment tracking, and financial analytics for businesses at scale. The system features hybrid database architecture (PostgreSQL + MongoDB), real-time data synchronization, and comprehensive analytics with complete data isolation across organizations. The platform follows a hybrid database architecture with PostgreSQL (via Prisma ORM) for transactional financial data and MongoDB (via Mongoose) for append-only activity logs. The backend uses NestJS modular architecture with feature-based modules. Multi-tenant isolation is enforced at the database query level, ensuring all operations are scoped to organization IDs. Real-time updates are achieved through TanStack Query's refetch intervals (10-30 seconds) without WebSocket overhead.",
+    "description": "LedgerX is a production-grade, multi-tenant financial platform for invoicing, payments, double-entry accounting, audit/compliance, fraud detection, and system diagnostics—designed to be auditable, resilient, secure, and operationally observable.",
+    "detailedDescription": "LedgerX is a production-grade, multi-tenant financial platform designed to handle invoicing, payments, accounting (double-entry ledger), audit/compliance, fraud detection, and system diagnostics in a single, cohesive system. Design goals: strong multi-tenant isolation (every request and query is organization-scoped), auditability by default (important actions are events and recorded), financial correctness (payments reflected in a true double-entry ledger with append-only hash chain), resilience under failure (circuit breakers, graceful degradation), operational visibility (health, metrics, diagnostics, feature flags, controlled remediation), and security that earns respect (JWT + refresh, token versioning, rate limiting, role-restricted audit/diagnostics). Backend: NestJS, PostgreSQL (Prisma), MongoDB (activity logs). Frontend: Next.js 14 App Router, React 18, TanStack Query. Payments: Stripe and M-Pesa adapters, idempotent intents, verified webhooks. Deployed on Render (backend) and Netlify (frontend).",
     "technologies": [
       "Next.js 14",
       "React 18",
@@ -309,13 +309,16 @@
       "Recharts",
       "Tailwind CSS",
       "Axios",
+      "Stripe",
+      "M-Pesa",
       "Render",
       "Netlify"
     ],
     "liveUrl": "https://ledgerxx.netlify.app/auth/login",
     "repoUrl": "https://github.com/Ancel-duke/LedgerX",
+    "docsUrl": "https://github.com/Ancel-duke/LedgerX/blob/main/ARCHITECTURE.md",
     "image": "/assets/projects/LedgerX.jpg",
-    "outcomes": "Multi-tenant architecture supports multiple organizations with complete data isolation and role-based access control. Features 20+ API endpoints, dual-database architecture for optimal performance, 100% TypeScript coverage for type safety, and automatic data refresh intervals (10-30 seconds) for near-real-time updates. Vision includes scaling to 1,000+ organizations through PostgreSQL read replicas, Redis caching, and microservices extraction."
+    "outcomes": "Production-grade multi-tenant fintech with event-driven core, double-entry ledger, fraud signals, diagnostics and self-protection (health, metrics, feature flags, remediation). Security by design: JWT + token versioning, rate limiting, role-restricted audit/diagnostics, structured logging with secret redaction. Demonstrates senior-level backend architecture, security-first thinking, and operational maturity beyond CRUD."
   },
   {
     "id": 13,

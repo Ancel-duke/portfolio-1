@@ -1038,21 +1038,21 @@
   {
     "id": 11,
     "slug": "ledgerx",
-    "title": "LedgerX - Finance Management Platform",
-    "subtitle": "Building a comprehensive finance management application with multi-tenant architecture and real-time analytics",
+    "title": "LedgerX — Secure, Multi-Tenant Financial Platform",
+    "subtitle": "Production-grade invoicing, payments, double-entry ledger, audit, fraud detection, and diagnostics",
     "role": "Full-Stack Software Engineer",
-    "timeline": "3 months",
+    "timeline": "Ongoing",
     "year": "2026",
     "status": "Live",
-    "description": "LedgerX is a resilient, multi-tenant finance management platform architected to handle invoice processing, payment tracking, and financial analytics for businesses at scale. The system features hybrid database architecture (PostgreSQL + MongoDB), real-time data synchronization, and comprehensive analytics with complete data isolation across organizations.",
-    "problem": "Businesses struggle with manual invoice and payment tracking, leading to errors, delayed payments, and lack of financial visibility. Traditional systems lack real-time updates, multi-tenant support, and comprehensive analytics needed for modern business operations. Organizations require secure, isolated data management with automated workflows, real-time insights, and the ability to scale across multiple teams and departments.",
-    "solution": "I architected LedgerX as a modern, full-stack finance management platform with enterprise-grade multi-tenant architecture, hybrid database design, and real-time data synchronization. The platform automates invoice status updates, tracks payments with balance calculations, and provides real-time insights through interactive dashboards. Built with NestJS for modular backend services, Next.js for performant frontend, PostgreSQL for transactional data, and MongoDB for activity logs, ensuring optimal performance and scalability.",
-    "impact": "LedgerX enables businesses to manage finances efficiently with automated invoice tracking, real-time payment processing, and comprehensive analytics. The multi-tenant architecture supports multiple organizations with complete data isolation and role-based access control. The platform features 20+ API endpoints, dual-database architecture for optimal performance, 100% TypeScript coverage for type safety, and automatic data refresh intervals (10-30 seconds) for near-real-time updates.",
-    "architecture": "LedgerX follows a hybrid database architecture with PostgreSQL (via Prisma ORM) for transactional financial data and MongoDB (via Mongoose) for append-only activity logs. The backend uses NestJS modular architecture with feature-based modules (invoices, payments, clients, organizations). The frontend uses Next.js 14 App Router with TanStack Query for efficient server state management and automatic data refetching. Authentication uses JWT with Passport.js strategies. Multi-tenant isolation is enforced at the database query level, ensuring all operations are scoped to organization IDs. Real-time updates are achieved through TanStack Query's refetch intervals (10-30 seconds) without WebSocket overhead.",
-    "isolation": "Multi-tenant isolation is enforced through organization-scoped queries at every API endpoint, preventing cross-organization data access. Database transactions ensure atomic operations for invoice and payment updates. Service isolation is achieved through NestJS modules, separating invoice management, payment processing, and analytics. Error handling is centralized with exception filters, preventing cascading failures. Database connection pooling prevents connection exhaustion. Frontend error boundaries isolate component failures. Activity logging is isolated in MongoDB, preventing impact on transactional PostgreSQL performance.",
-    "tradeoffs": "Chose hybrid database architecture (PostgreSQL + MongoDB) over single database for optimal performance: PostgreSQL for ACID transactions, MongoDB for high-volume activity logs. Implemented automatic refresh intervals over WebSockets for simplicity and cost efficiency, trading real-time updates for reduced infrastructure complexity. Selected Prisma ORM for type safety and migrations, trading some flexibility for developer experience. Used TanStack Query over Redux for server state management, prioritizing API integration over complex middleware. Deferred advanced features like payment gateway integration and automated reminders to focus on core financial management.",
-    "implementationStatus": "Completed (~75%): Core invoice management, payment processing, client management, multi-tenant architecture, real-time analytics dashboard, activity logging, role-based access control, and mobile-responsive UI. Deferred: Payment gateway integrations (Stripe, PayPal), automated email notifications, PDF invoice generation, advanced reporting, mobile native apps, and third-party accounting software integrations.",
-    "potentialExpansion": "Vision includes scaling to 1,000+ organizations through PostgreSQL read replicas, Redis caching for frequently accessed data, and microservices extraction for payment processing and notifications. Planned containerization with Docker and Kubernetes for orchestration. Advanced features include AI-powered cash flow forecasting, automated payment reminders, multi-currency support, and comprehensive audit trails. Enterprise features include SSO integration, advanced permissions, and white-label customization.",
+    "description": "LedgerX is a production-grade, multi-tenant financial platform designed to handle invoicing, payments, accounting (double-entry ledger), audit/compliance, fraud detection, and system diagnostics in a single, cohesive system.",
+    "problem": "Most small-to-mid business financial tools suffer from weak multi-tenancy boundaries, poor auditability and compliance trails, payments tightly coupled to providers, no real fraud model beyond manual review, little observability when things degrade, and frontends that break under real usage. LedgerX was designed to solve these problems holistically.",
+    "solution": "LedgerX was built around six non-negotiables: strong multi-tenant isolation (every request and query organization-scoped), auditability by default (important actions are events and recorded), financial correctness (true double-entry ledger with append-only hash chain), resilience under failure (circuit breakers, graceful degradation), operational visibility (health, metrics, diagnostics, feature flags, controlled remediation), and security that earns respect (JWT + token versioning, rate limiting, role-restricted audit/diagnostics).",
+    "impact": "LedgerX demonstrates senior-level backend architecture, security-first thinking, event-driven system design, fintech-grade data integrity, and operational maturity beyond CRUD. It is designed to be read, reviewed, and respected by experienced engineers.",
+    "architecture": "Backend: NestJS, single process. PostgreSQL (Prisma) for core transactional and compliance data; MongoDB for activity logs (high-volume, flexible schema). Domain event bus (in-process) for PaymentCompleted, LedgerTransactionPosted, InvoiceOverdue, DiagnosticsRemediationExecuted—powering audit, fraud, and diagnostics. Stripe and M-Pesa adapters behind circuit breakers; idempotent payment intents; verified webhooks with raw body. Double-entry ledger with append-only hash chain. Frontend: Next.js 14 App Router, React 18, TanStack Query, role-gated navigation, org switcher. Deployed on Render (backend) and Netlify (frontend).",
+    "isolation": "Organization as isolation boundary: all business data is organization-scoped. UserOrganization and Role (ADMIN, MANAGER, MEMBER) per org. Org-scoped queries and guards on every endpoint. Fraud signals and risk aggregation per org. Diagnostics and remediation audited. No DB-per-tenant; shared schema with org-scoped queries.",
+    "tradeoffs": "LedgerX intentionally avoids Docker to reflect environments where containerization isn't available; uses E2E tests for real system confidence over exhaustive unit tests; keeps fraud rules deterministic rather than ML-heavy; focuses on operational correctness over UI animations. Synchronous event bus (no out-of-process queue); single region/process. These decisions are documented transparently.",
+    "implementationStatus": "Production-capable multi-tenant fintech: auth (JWT + refresh, token versioning), org-scoped CRUD, payments (Stripe/M-Pesa), double-entry ledger, domain events, audit/compliance, fraud signals and aggregation, diagnostics (snapshots, reports, feature flags, remediation). E2E coverage is smoke-level; no built-in queue or horizontal scaling.",
+    "potentialExpansion": "Documented limitations: single region/process, synchronous event bus, MongoDB for activity only, no built-in queue. Path to extend: add queue, more E2E, horizontal scaling. LLM summarization for diagnostics is feature-flagged and optional.",
     "technologies": [
       {
         "name": "Next.js 14",
@@ -1126,58 +1126,41 @@
       }
     ],
     "features": [
-      "Invoice management with detailed line items and automatic status updates",
-      "Payment processing with automatic invoice status updates and balance tracking",
-      "Client management with organization-scoped data isolation",
-      "Real-time analytics dashboard with interactive charts and metrics",
-      "Activity logging with complete audit trail stored in MongoDB",
-      "Multi-tenant architecture with secure data isolation and role-based access control",
-      "Responsive design for desktop and mobile devices",
-      "Automatic data synchronization with refresh intervals (10-30 seconds)"
+      "Strong multi-tenant isolation with organization-scoped queries and role-based access (ADMIN, MANAGER, MEMBER)",
+      "Event-driven core: domain event bus for audit, fraud, and diagnostics",
+      "Double-entry ledger with append-only hash chain for financial correctness",
+      "Stripe and M-Pesa payment adapters with idempotent intents and verified webhooks",
+      "Fraud detection: signals from domain events, org-level risk aggregation, policy enforcement",
+      "Diagnostics and self-protection: health, metrics, snapshots, feature flags, controlled remediation",
+      "JWT + refresh tokens, token versioning, rate limiting, role-restricted audit/diagnostics",
+      "Next.js 14 App Router frontend with org switcher and responsive dashboard"
     ],
     "challenges": [
-      "Implementing multi-tenant data isolation with organization-scoped queries across all endpoints",
-      "Configuring automatic data refresh intervals (10-30s) without overwhelming the server using TanStack Query",
-      "Building automatic invoice status updates based on payment processing with balance tracking",
-      "Maintaining end-to-end TypeScript type safety across API boundaries with shared types",
-      "Automating Prisma migrations in production environment without shell access on Render",
-      "Properly configuring CORS for deployed frontend (Netlify) and backend (Render)",
-      "Designing dual-database architecture with PostgreSQL for transactions and MongoDB for activity logs"
+      "Enforcing multi-tenant isolation at every API and query boundary",
+      "Designing domain event bus and subscribers for audit, fraud, and diagnostics without coupling",
+      "Implementing double-entry ledger and hash chain with atomic posts",
+      "Webhook signature verification with raw body for Stripe and M-Pesa",
+      "Circuit breakers and graceful degradation when providers fail",
+      "Diagnostics and remediation actions that are audited and safe"
     ],
     "outcomes": [
-      "Production-ready full-stack finance management application with 20+ API endpoints",
-      "Multi-tenant architecture with complete data isolation and organization-scoped queries",
-      "Real-time data synchronization with automatic refresh intervals (10-30 seconds)",
-      "Comprehensive analytics and reporting capabilities with Recharts visualizations",
-      "Secure authentication and authorization system with JWT and Passport.js",
-      "Mobile-responsive design with excellent UX across all devices",
-      "100% TypeScript coverage ensuring type safety throughout the application"
+      "Production-grade multi-tenant fintech with event-driven architecture",
+      "Auditability by default; financial correctness via double-entry and hash chain",
+      "Fraud model and risk enforcement built into the core workflow",
+      "Operational visibility: health, metrics, diagnostics, feature flags, remediation",
+      "Security by design: JWT, token versioning, rate limiting, secret redaction",
+      "Deployed on Render (backend) and Netlify (frontend); live and GitHub retained"
     ],
     "metrics": [
-      {
-        "label": "Data Refresh",
-        "value": "10-30s",
-        "description": "Automatic refresh intervals"
-      },
-      {
-        "label": "Databases",
-        "value": "2",
-        "description": "PostgreSQL + MongoDB architecture"
-      },
-      {
-        "label": "API Endpoints",
-        "value": "20+",
-        "description": "RESTful API with comprehensive features"
-      },
-      {
-        "label": "Type Safety",
-        "value": "100%",
-        "description": "End-to-end TypeScript coverage"
-      }
+      { "label": "Multi-Tenancy", "value": "Org-scoped", "description": "Every request and query organization-scoped" },
+      { "label": "Ledger", "value": "Double-entry", "description": "Append-only hash chain for integrity" },
+      { "label": "Payments", "value": "Stripe + M-Pesa", "description": "Adapters behind circuit breakers" },
+      { "label": "Observability", "value": "Health + Metrics", "description": "Diagnostics, feature flags, remediation" }
     ],
     "links": {
       "live": "https://ledgerxx.netlify.app/auth/login",
-      "github": "https://github.com/Ancel-duke/LedgerX"
+      "github": "https://github.com/Ancel-duke/LedgerX",
+      "docs": "https://github.com/Ancel-duke/LedgerX/blob/main/ARCHITECTURE.md"
     },
     "images": {
       "hero": "/assets/projects/LedgerX.jpg",
