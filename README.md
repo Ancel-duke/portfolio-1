@@ -174,7 +174,7 @@ Feel free to fork this project and submit pull requests for any improvements.
 
 - **Email**: ancel@example.com
 - **GitHub**: [@Ancel-duke](https://github.com/Ancel-duke)
-- **LinkedIn**: [Ancel Ajanga](https://linkedin.com/in/ancel-ajanga)
+- **LinkedIn**: [Ancel Ajanga](https://www.linkedin.com/in/ajanga-ancel)
 
 ---
 

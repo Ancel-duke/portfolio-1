@@ -39,7 +39,7 @@ export function Hero({ className }: HeroProps) {
     },
     {
       name: 'LinkedIn',
-      href: 'https://www.linkedin.com/in/ajanga-ancel-42bbb7213',
+      href: 'https://www.linkedin.com/in/ajanga-ancel',
       icon: Linkedin,
       description: 'Connect professionally'
     },
