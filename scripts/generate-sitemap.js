@@ -5,6 +5,9 @@ const domain = "https://ancel.co.ke";
 const publicDir = path.join(__dirname, "../public");
 const dataDir = path.join(__dirname, "../src/data");
 
+// BraveBot and other crawlers use <lastmod> to detect changes (ISO 8601 date)
+const lastmod = new Date().toISOString().split("T")[0];
+
 // Static routes (always included)
 const staticPages = [
   { path: "/", changefreq: "weekly", priority: "0.8" },
@@ -97,6 +100,7 @@ ${allUrls
     (item) => `
   <url>
     <loc>${domain}${item.path}</loc>
+    <lastmod>${lastmod}</lastmod>
     <changefreq>${item.changefreq}</changefreq>
     <priority>${item.priority}</priority>
   </url>`
