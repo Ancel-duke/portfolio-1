@@ -167,7 +167,7 @@ export function About({ className }: AboutProps) {
                   </div>
 
                   <Button className="w-full" asChild>
-                    <a href="/assets/resume.pdf" download>
+                    <a href="/assets/Resume%20(1).pdf" download>
                       <Download className="mr-2 h-4 w-4" /> Download Resume
                     </a>
                   </Button>

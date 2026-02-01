@@ -94,7 +94,7 @@ export function Hero({ className }: HeroProps) {
               </a>
             </Button>
             <Button size="lg" variant="outline" className="w-full sm:w-auto min-h-[48px] text-base sm:text-lg" asChild>
-              <a href="/assets/resume.pdf" download>
+              <a href="/assets/Resume%20(1).pdf" download>
                 <Download className="mr-2 h-5 w-5" />
                 Download Resume
               </a>

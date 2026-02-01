@@ -77,7 +77,7 @@ const Header = () => {
             </button>
             
             <a
-              href="/assets/resume.pdf"
+              href="/assets/Resume%20(1).pdf"
               download
               className="btn-primary flex items-center space-x-2"
             >
@@ -131,7 +131,7 @@ const Header = () => {
                   </button>
                   
                   <a
-                    href="/assets/resume.pdf"
+                    href="/assets/Resume%20(1).pdf"
                     download
                     className="btn-primary flex items-center space-x-2"
                     onClick={closeMobileMenu}

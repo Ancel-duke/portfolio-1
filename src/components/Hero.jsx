@@ -63,7 +63,7 @@ const Hero = () => {
               </Link>
               
               <a
-                href="/assets/resume.pdf"
+                href="/assets/Resume%20(1).pdf"
                 download
                 className="btn-secondary flex items-center justify-center space-x-2"
               >
