@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import blogData from '../data/blog.json'
 import { Card, CardContent, CardTitle } from '../components/ui/card'
 import { Button } from '../components/ui/button'
+import { OptimizedImage } from '../components/ui/optimized-image'
 import { ArrowLeft, Calendar, Tag, Clock } from 'lucide-react'
 import { formatDate } from '../lib/utils'
 import SEOHead from '../components/seo/SEOHead'
@@ -100,16 +101,19 @@ export function BlogDetailPage() {
           </Button>
         </motion.div>
 
+      <article aria-labelledby="blog-post-title">
       <Card className="p-6 md:p-10">
         <motion.div variants={itemVariants} className="mb-6">
           {post.image && (
-            <img
+            <OptimizedImage
               src={post.image}
               alt={post.title}
               className="w-full h-64 object-cover rounded-lg mb-6"
+              priority
+              loading="eager"
             />
           )}
-          <CardTitle className="text-4xl md:text-5xl font-bold mb-4 leading-tight">
+          <CardTitle id="blog-post-title" className="text-4xl md:text-5xl font-bold mb-4 leading-tight">
             {post.title}
           </CardTitle>
           <div className="flex items-center text-muted-foreground text-sm mb-4 space-x-4">
@@ -133,7 +137,43 @@ export function BlogDetailPage() {
             </p>
           ))}
         </motion.div>
+
+        {/* Related posts (same tags/category) — internal linking for crawlability */}
+        {(() => {
+          const postTags = new Set((post.tags || []).map((t) => t.toLowerCase()))
+          const slugFromTitle = (title: string) => title?.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '') || ''
+          const currentSlug = slugFromTitle(post.title)
+          const related = blogData
+            .filter((p) => slugFromTitle(p.title) !== currentSlug)
+            .map((p) => ({
+              ...p,
+              slug: slugFromTitle(p.title),
+              score: (p.tags || []).filter((t) => postTags.has(t.toLowerCase())).length
+            }))
+            .filter((p) => p.score > 0)
+            .sort((a, b) => b.score - a.score)
+            .slice(0, 3)
+          if (related.length === 0) return null
+          return (
+            <aside className="mt-8" aria-label="Related posts">
+              <h2 className="text-xl sm:text-2xl font-bold mb-4">Related</h2>
+              <ul className="space-y-2">
+                {related.map((p) => (
+                  <li key={p.slug}>
+                    <Link
+                      to={`/developer-journal/${p.slug}`}
+                      className="text-primary hover:underline font-medium"
+                    >
+                      {p.title}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </aside>
+          )
+        })()}
       </Card>
+      </article>
       </motion.div>
     </>
   )

@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "title": "Personal Finance Tracker",
+    "title": "Finance Tracker - Personal Income & Expense Management",
     "type": "frontend",
     "description": "A modern web application that helps users track personal income and expenses with visual analytics and interactive pie charts showing expense breakdown by category.",
     "detailedDescription": "Personal Finance Tracker is a comprehensive financial management application designed for individuals who want to monitor their spending habits and financial health. The app allows users to input income and expenses, categorize transactions, and view detailed analytics through interactive pie charts and graphs. Key features include real-time expense tracking, income management, visual analytics with Chart.js, dark/light mode toggle, and responsive design for desktop and mobile devices. The application helps users understand their spending patterns, set financial goals, and make informed financial decisions.",
@@ -13,7 +13,7 @@
   },
   {
     "id": 2,
-    "title": "Fitness Class Scheduler",
+    "title": "Fitness Scheduler - Weekly Class Planning",
     "type": "frontend",
     "description": "A modern Angular SSR application for planning weekly fitness classes with dark mode, responsive design, and client-side persistence.",
     "detailedDescription": "Fitness Class Scheduler is a web application designed for fitness instructors and gym owners to manage and schedule weekly fitness classes. The app allows users to add, edit, and remove fitness classes with specific days and times, view schedules in both table and card layouts, and manage class information efficiently. Key features include server-side rendering for fast loading and SEO optimization, dark mode with user preference saving, responsive design for all devices, LocalStorage persistence for data retention, and smooth animations for enhanced user experience. The application is built with Angular 20 and TypeScript for type safety and maintainability.",
@@ -37,7 +37,7 @@
   },
   {
     "id": 3,
-    "title": "Habit Tracker & Streak Counter",
+    "title": "Habit Tracker - Streak Counter & Productivity",
     "type": "frontend",
     "description": "A Progressive Web App (PWA) for tracking daily habits and building momentum through streak counting with comprehensive analytics and visual charts.",
     "detailedDescription": "Habit Tracker & Streak Counter is a comprehensive productivity application designed to help users build and maintain positive daily habits. The app allows users to create custom habits, track daily completion, and visualize progress through streak counting and analytics dashboards. Key features include habit creation and management, automatic streak calculation, comprehensive analytics with Chart.js visualizations, data persistence using LocalStorage, Progressive Web App capabilities with offline support, glass morphism design elements, and responsive design for all devices. The application helps users stay motivated by providing visual feedback on their progress and maintaining momentum through streak tracking.",
@@ -62,7 +62,7 @@
   },
   {
     "id": 4,
-    "title": "Event Countdown Timer",
+    "title": "Event Countdown - Life Events Timer",
     "type": "frontend",
     "description": "A feature-rich countdown timer web application for creating and managing multiple countdowns for various life events with recurring events and smart notifications.",
     "detailedDescription": "Event Countdown Timer is a comprehensive time management application designed to help users track and celebrate important life events. The app allows users to create unlimited countdowns for birthdays, anniversaries, graduations, and custom events with automatic yearly repetition. Key features include multiple countdown views (list and individual), recurring events with daily/weekly/monthly/yearly intervals, visual customization with color coding and themes, smart notifications with confetti animation and audio alerts, LocalStorage data persistence, and URL sharing for specific countdowns. The application is built with vanilla JavaScript for optimal performance and includes modern browser APIs for enhanced functionality.",
@@ -248,7 +248,7 @@
   ,
   {
     "id": 10,
-    "title": "Banking System",
+    "title": "Banking System - Java Console OOP Application",
     "type": "frontend",
     "description": "A console-based Banking System built in Java to demonstrate core Object-Oriented Programming principles (Encapsulation, Inheritance, Abstraction, Polymorphism).",
     "detailedDescription": "A simple, console-based Banking System implemented in pure Java (no external APIs, no DB, no frameworks). It demonstrates core OOP principles through account operations and customer management. Features include creating customers, opening savings/checking accounts, depositing, withdrawing, transferring, and viewing balances and transactions.",
@@ -289,7 +289,7 @@
     "outcomes": "Secure, decentralized solution for certificate management with instant verification capabilities. Uses OpenZeppelin audited patterns for security, includes dual storage (MongoDB for queries, IPFS for metadata, Blockchain for verification), and demonstrates production-grade Web3 architecture. Vision includes multi-chain deployment (Polygon, Arbitrum), certificate revocation mechanism, and enterprise features like institution-specific smart contracts."
   },
   {
-    "id": 12,
+    "id": 15,
     "title": "LedgerX - Finance Management Application",
     "type": "fullstack",
     "description": "LedgerX is a production-grade, multi-tenant financial platform for invoicing, payments, double-entry accounting, audit/compliance, fraud detection, and system diagnostics—designed to be auditable, resilient, secure, and operationally observable.",
@@ -321,8 +321,8 @@
     "outcomes": "Production-grade multi-tenant fintech with event-driven core, double-entry ledger, fraud signals, diagnostics and self-protection (health, metrics, feature flags, remediation). Security by design: JWT + token versioning, rate limiting, role-restricted audit/diagnostics, structured logging with secret redaction. Demonstrates senior-level backend architecture, security-first thinking, and operational maturity beyond CRUD."
   },
   {
-    "id": 13,
-    "title": "OpsFlow",
+    "id": 12,
+    "title": "OpsFlow - Incident & Operations Management Platform",
     "type": "fullstack",
     "description": "A production-ready incident and operations management platform architected for engineering teams, combining incident response, workflow management, task coordination, and knowledge sharing into a single secure team-based system. The platform features dual-database architecture (PostgreSQL + MongoDB), real-time WebSocket updates, and team-based multi-tenancy with 50+ API endpoints.",
     "detailedDescription": "OpsFlow is a production-ready incident and operations management platform architected for engineering teams, combining incident response, workflow management, task coordination, and knowledge sharing into a single secure team-based system. The platform features dual-database architecture (PostgreSQL + MongoDB), real-time WebSocket updates, and team-based multi-tenancy with 50+ API endpoints. The system follows a dual-database architecture: PostgreSQL (via Prisma ORM) for structured relational data (incidents, workflows, teams) and MongoDB for append-only event logs and timelines. The backend uses NestJS modular architecture with feature-based modules. Real-time updates are handled through WebSocket connections (Socket.IO) without background workers, computing SLA calculations and breach detection on-demand during API requests. Multi-tenant isolation is enforced at the database query level with team-scoped filtering.",
@@ -333,8 +333,8 @@
     "outcomes": "Production-ready system with 50+ API endpoints and real-time incident updates without paid infrastructure. Secure team-based multi-tenant architecture with complete data isolation, fully documented setup and deployment guides, and responsive UI across mobile, tablet, and desktop. Demonstrates enterprise-grade backend and system design skills with real-world SaaS architecture. Vision includes scaling to 1,000+ teams through PostgreSQL read replicas, Redis pub-sub for WebSocket message distribution, and microservices extraction."
   },
   {
-    "id": 14,
-    "title": "SignFlow",
+    "id": 13,
+    "title": "SignFlow - Real-Time Sign Language Translation Platform",
     "type": "fullstack",
     "description": "A high-fidelity assistive technology platform architected for real-time sign language translation, exploring the architectural requirements for scaling accessibility platforms. The system features WebSocket-powered streaming, 3D avatar simulation with natural variation, and accessibility-first design with WCAG compliance, demonstrating production-grade architecture for specialized user bases.",
     "detailedDescription": "SignFlow is a high-fidelity assistive technology platform architected for real-time sign language translation, exploring the architectural requirements for scaling accessibility platforms. The system features WebSocket-powered streaming, 3D avatar simulation with natural variation, and accessibility-first design with WCAG compliance, demonstrating production-grade architecture for specialized user bases. The architecture follows a real-time streaming design: React frontend with Three.js (React Three Fiber) for 3D avatar rendering, Node.js/Express backend for translation processing, MongoDB Atlas for cloud-hosted data with indexed collections, and WebSocket connections for near-zero latency streaming. Animation pools store multiple variations per word/phrase, with seed-based selection for natural variation. Service isolation is achieved through separate layers: 3D rendering is isolated from translation processing, WebSocket connections are handled independently from REST API routes, and error handling is centralized with custom exception handlers.",
@@ -345,8 +345,8 @@
     "outcomes": "Fully implemented assistive technology prototype demonstrating real-time system design using WebSockets, scalable cloud architecture with MongoDB Atlas, intentional UX for specialized user bases, and product-level thinking bridging coding projects and viable market solutions. Features high-fidelity 3D avatar simulation, natural variation in animations, comprehensive analytics dashboard, and full WCAG accessibility compliance. Vision includes scaling to 10,000+ concurrent users through WebSocket load balancing, Redis for session management, and CDN integration for 3D assets."
   },
   {
-    "id": 15,
-    "title": "NestFi",
+    "id": 16,
+    "title": "NestFi - Resilient Financial Coordination Platform",
     "type": "fullstack",
     "description": "NestFi is a resilient financial coordination platform built to handle real-world constraints such as unreliable networks, asynchronous mobile money payments, and partial system failures. It uses a stateless NestJS backend with a hybrid database architecture—PostgreSQL for financial correctness, MongoDB for events and logs, and Redis for low-latency ephemeral state—so failures in non-critical services do not compromise core financial operations.",
     "detailedDescription": "NestFi is a stateless financial platform designed to handle real-world constraints such as unreliable networks, asynchronous M-Pesa payments, and partial system failures. It integrates mobile and web clients with a single NestJS backend and a hybrid database architecture—PostgreSQL for financial correctness (wallets/ledgers), MongoDB for events/logs/payment callbacks, and Redis for low-latency ephemeral state (caching, rate limits, temporary correlation). The system is designed under the assumption that failures are normal, not exceptional: caches can fail, logs can be unavailable, and callbacks can be delayed or duplicated. Each failure mode is handled explicitly with timeouts, retries with backoff, circuit breakers, and graceful degradation. Security-first baselines include JWT authentication, input validation, rate limiting, callback IP allowlisting, network isolation via Docker, and TLS at the edge (Cloudflare). Current status is ~75% complete; core architecture and key integrations are in place, with remaining work focused on frontend polish, an optional KYC module, and operational refinements.",
@@ -371,8 +371,8 @@
     "outcomes": "Failure-aware, production-grade system design that prioritizes correctness and fault isolation for financial workflows. Hybrid data modeling (PostgreSQL + MongoDB + Redis), idempotent/async callback handling, and security-first controls reflect real payment system constraints. Remaining work is infrastructure hardening and operational refinement rather than core architecture."
   },
   {
-    "id": 16,
-    "title": "EduManage",
+    "id": 14,
+    "title": "EduManage - Multi-Tenant School Management SaaS",
     "type": "fullstack",
     "description": "EduManage is a multi-tenant school management SaaS designed for real-world scale. It enforces tenant isolation, hierarchical RBAC, and failure-aware backend design so multiple institutions can safely share one platform without permission complexity becoming a bottleneck.",
     "detailedDescription": "EduManage solves the hard problem most school systems avoid: running multiple institutions on one platform with strict tenant isolation and complex permissions. The architecture uses a multi-tenant Express/NestJS backend with tenant-scoped access at the data layer, MongoDB for flexible academic domain models, JWT-based stateless authentication with hierarchical RBAC, and Socket.io for real-time events (notifications and updates). The system is designed for graceful degradation under partial failures and is supported by a Dockerized development/deployment workflow. Status: MVP Complete (~85%). Planned but deferred for the next hardening phase: advanced rate limiting, deep automated testing, and caching.",
@@ -394,7 +394,7 @@
   },
   {
     "id": 17,
-    "title": "Aegis",
+    "title": "Aegis - Self-Healing Infrastructure & Security Platform",
     "type": "fullstack",
     "description": "Aegis monitors infrastructure behavior, detects anomalies using AI, evaluates security policies, and executes tightly controlled remediation actions. It is built with strict isolation boundaries, auditability, and failure-aware automation to avoid unsafe self-healing.",
     "detailedDescription": "Aegis is a self-healing infrastructure platform that combines policy-driven access control, ML-based anomaly and failure detection, and safe Kubernetes remediation. It addresses reacting to infrastructure failures and anomalies in a governed, auditable way: instead of ad-hoc scripts or manual intervention, operators define policies that determine which automated actions are allowed, and an AI engine recommends actions that an executor can perform only after policy evaluation and signature validation. Core services include a NestJS backend (auth, policies, audit, APIs), Python/FastAPI AI engine (anomaly detection and recommendations), standalone NestJS executor (secure Kubernetes actions), and Next.js frontend for observability and control plane UI. Security guarantees: no unaudited actions, no blind AI execution, no privilege escalation, no silent failures—JWT + RBAC, HMAC-signed executor actions, namespace allowlisting, immutable audit logs, default-deny network policies.",

@@ -48,6 +48,13 @@ Allow: /
 User-agent: ia_archiver
 Allow: /
 
+# High-priority crawlers (Brave Search, Google AI Overviews / Gemini)
+User-agent: BraveBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
 # Explicitly allow all AI crawlers
 User-agent: GPTBot
 Allow: /
@@ -62,9 +69,6 @@ User-agent: anthropic-ai
 Allow: /
 
 User-agent: Claude-Web
-Allow: /
-
-User-agent: Google-Extended
 Allow: /
 
 User-agent: PerplexityBot
@@ -112,7 +116,8 @@ if (!fs.existsSync(publicDir)) {
 
 fs.writeFileSync(robotsPath, robotsContent);
 console.log('✅ Robots.txt generated successfully at:', robotsPath);
-console.log('🤖 Configured for AI crawlers: GPTBot, ChatGPT-User, CCBot, Claude-Web, Google-Extended, PerplexityBot, Applebot-Extended');
+console.log('🤖 High-priority: BraveBot (Brave Search), Google-Extended (Google AI Overviews/Gemini)');
+console.log('🤖 AI crawlers: GPTBot, ChatGPT-User, CCBot, Claude-Web, PerplexityBot, Applebot-Extended');
 console.log('🔍 Allowed search engines: All major search engines (Google, Bing, Yahoo, DuckDuckGo, Baidu, Yandex, Sogou, and more)');
 console.log('🌐 Universal access: User-agent: * allows all crawlers by default');
 console.log('🚫 Disallowed: admin, private, build directories');

@@ -1,48 +1,76 @@
 // Note: JSON imports are handled dynamically in the components
 // This avoids build-time import issues with JSON files
 
-// Person Schema for Homepage
-export const generatePersonSchema = () => ({
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Ancel Ajanga",
-  "alternateName": ["Ajanga Ancel", "Duke"],
-  "jobTitle": "Fullstack Software Engineer/Developer & App Developer",
-  "description": "Ancel Ajanga (Duke) is a Fullstack Software Engineer/Developer & App Developer who loves building apps that solve real-world problems while expressing creativity through code. Builder of apps, poet, and creative problem solver.",
-  "url": "https://ancel.co.ke/",
-  "image": "https://ancel.co.ke/assets/profile-photo.jpg",
-  "email": "ancel.ajanga@yahoo.com",
-  "telephone": "+254768901257",
-  "address": {
-    "@type": "PostalAddress",
-    "addressCountry": "Kenya"
-  },
-  "sameAs": [
-    "https://github.com/Ancel-duke",
-    "https://www.instagram.com/lema.yian._/#"
-  ],
-  "knowsAbout": [
-    "React", "React Native", "Flutter", "Node.js", "Python", "JavaScript", 
-    "MongoDB", "Express", "Laravel", "Machine Learning", "Angular", "Vue", 
-    "TypeScript", "Django", "Full Stack Development", "Mobile App Development",
-    "Web Development", "UI/UX Design", "API Development", "Database Design"
-  ],
-  "hasOccupation": {
-    "@type": "Occupation",
-    "name": "Fullstack Software Engineer/Developer & App Developer",
-    "description": "Develops complete software applications across mobile, web, and desktop platforms"
-  },
-  "alumniOf": {
-    "@type": "EducationalOrganization",
-    "name": "Moringa School"
-  },
-  "worksFor": {
-    "@type": "Organization",
-    "name": "Freelance Developer"
-  }
-});
+/** E-A-T: Build knowsAbout as Thing[] with sameAs to authoritative sources (Wikidata/official docs) */
+export function getKnowsAboutAsThings(
+  techNames: string[],
+  techToAuthoritative: Record<string, string>
+): Array<{ "@type": "Thing"; name: string; sameAs?: string }> {
+  const seen = new Set<string>();
+  return techNames
+    .filter((name) => {
+      const key = name.trim();
+      if (!key || seen.has(key)) return false;
+      seen.add(key);
+      return true;
+    })
+    .map((name) => {
+      const url = techToAuthoritative[name] ?? techToAuthoritative[name.replace(/\s*\d+\.?\d*$/, "").trim()];
+      const thing: { "@type": "Thing"; name: string; sameAs?: string } = { "@type": "Thing", name };
+      if (url) thing.sameAs = url;
+      return thing;
+    });
+}
 
-// Project Schema for individual projects
+/** Person Schema for Homepage. Pass stack tech names + techToAuthoritative for E-A-T knowsAbout as Thing[]. */
+export const generatePersonSchema = (opts?: {
+  knowsAboutThings?: Array<{ "@type": "Thing"; name: string; sameAs?: string }>;
+}) => {
+  const knowsAbout = opts?.knowsAboutThings?.length
+    ? opts.knowsAboutThings
+    : [
+        "React", "React Native", "Flutter", "Node.js", "Python", "JavaScript",
+        "MongoDB", "Express", "Laravel", "Machine Learning", "Angular", "Vue",
+        "TypeScript", "Django", "Full Stack Development", "Mobile App Development",
+        "Web Development", "UI/UX Design", "API Development", "Database Design"
+      ];
+  return {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Ancel Ajanga",
+    "alternateName": ["Ajanga Ancel", "Duke"],
+    "jobTitle": "Fullstack Software Engineer/Developer & App Developer",
+    "description": "Ancel Ajanga (Duke) is a Fullstack Software Engineer/Developer & App Developer who loves building apps that solve real-world problems while expressing creativity through code. Builder of apps, poet, and creative problem solver.",
+    "url": "https://ancel.co.ke/",
+    "image": "https://ancel.co.ke/assets/profile-photo.jpg",
+    "email": "ancel.ajanga@yahoo.com",
+    "telephone": "+254768901257",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "Kenya"
+    },
+    "sameAs": [
+      "https://github.com/Ancel-duke",
+      "https://www.instagram.com/lema.yian._/#"
+    ],
+    "knowsAbout": knowsAbout,
+    "hasOccupation": {
+      "@type": "Occupation",
+      "name": "Fullstack Software Engineer/Developer & App Developer",
+      "description": "Develops complete software applications across mobile, web, and desktop platforms"
+    },
+    "alumniOf": {
+      "@type": "EducationalOrganization",
+      "name": "Moringa School"
+    },
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Freelance Developer"
+    }
+  };
+};
+
+// Project Schema for individual projects (SoftwareApplication)
 export const generateProjectSchema = (project: any) => ({
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
@@ -67,6 +95,26 @@ export const generateProjectSchema = (project: any) => ({
   "image": `https://ancel.co.ke${project.image}`,
   "screenshot": `https://ancel.co.ke${project.image}`
 });
+
+/** SoftwareSourceCode schema for projects — links codeRepository to GitHub for E-A-T and crawlability */
+export const generateSoftwareSourceCodeSchema = (project: any) => {
+  const repoUrl = project.repoUrl || project.links?.github;
+  if (!repoUrl) return null;
+  return {
+    "@context": "https://schema.org",
+    "@type": "SoftwareSourceCode",
+    "name": project.title,
+    "description": project.description,
+    "codeRepository": repoUrl,
+    "author": {
+      "@type": "Person",
+      "name": "Ancel Ajanga"
+    },
+    "programmingLanguage": Array.isArray(project.technologies) ? project.technologies.slice(0, 5) : [],
+    "runtimePlatform": "Web Browser",
+    "url": project.liveUrl ? `https://ancel.co.ke/projects` : undefined
+  };
+};
 
 // Blog Post Schema
 export const generateBlogPostSchema = (post: any) => ({

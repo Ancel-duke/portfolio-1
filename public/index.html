@@ -5,6 +5,26 @@
     <link rel="icon" href="%PUBLIC_URL%/favicon.svg" type="image/svg+xml" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes" />
+
+    <!-- Resource hints: early connection to external origins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://www.googletagmanager.com" />
+
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" as="style">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" media="print" onload="this.media='all'">
+
+    <style>
+      /* Critical Path CSS: Zero Layout Shift (CLS) */
+      :root { --theme-color: #0ea5a4; }
+      body {
+        font-family: 'Inter', system-ui, -apple-system, sans-serif;
+        margin: 0;
+        background-color: #ffffff;
+      }
+      #root { min-height: 100vh; display: block; }
+    </style>
+
     <meta name="theme-color" content="#0ea5a4" />
     <meta name="description" content="Ancel Ajanga (Duke) — Fullstack Software Engineer/Developer & App Developer. Builder of apps, poet, and creative problem solver." />
     <meta name="keywords" content="Ancel Ajanga, Ajanga Ancel, Fullstack Developer, Fullstack Software Engineer, App Developer, Narok Software Developer, Nairobi Software Developer, Nairobi Software Engineer, Ancel Ajanga Portfolio, Ajanga Ancel Portfolio, React Developer, Node.js Developer, Python Developer, Mobile App Developer, Web Developer, Kenya, Portfolio, Software Applications, React Native, Flutter, Django, MongoDB" />
@@ -40,22 +60,43 @@
     <meta name="msapplication-TileColor" content="#0ea5a4" />
     <meta name="theme-color" content="#0ea5a4" />
 
-    <!-- Performance: Optimized Font Loading -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <!-- Preload critical LCP assets (Hero/About profile, first project card) -->
+    <link rel="preload" href="%PUBLIC_URL%/assets/profile_photo.jpg" as="image" type="image/jpeg" fetchpriority="high">
+    <link rel="preload" href="%PUBLIC_URL%/assets/projects/taskforge.jpg" as="image" type="image/jpeg" fetchpriority="high">
+
+    <!-- Speculation Rules API: instant navigation (prefetch on hover/viewport, prerender for key routes) -->
+    <script type="speculationrules">
+    {
+      "prefetch": [
+        {
+          "source": "document",
+          "where": {
+            "and": [
+              { "href_matches": "https://ancel.co.ke/*" },
+              { "not": { "href_matches": "/*\\.*" } }
+            ]
+          },
+          "eagerness": "moderate"
+        }
+      ],
+      "prerender": [
+        {
+          "source": "document",
+          "where": {
+            "href_matches": [
+              "https://ancel.co.ke/projects",
+              "https://ancel.co.ke/case-studies"
+            ]
+          },
+          "eagerness": "moderate"
+        }
+      ]
+    }
+    </script>
+
     <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"></noscript>
-    <style>
-      /* Font fallback to prevent FOIT */
-      body { font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
-      .font-loaded { font-family: 'Inter', system-ui, sans-serif; }
-    </style>
-    
-    <!-- Preload critical assets -->
-    <link rel="preload" href="%PUBLIC_URL%/assets/profile-photo.jpg" as="image" type="image/jpeg" fetchpriority="high">
-    <link rel="preload" href="%PUBLIC_URL%/assets/projects/taskforge.jpg" as="image" type="image/jpeg">
-    
-    <title>Ancel Ajanga</title>
+
+    <title>Ancel Ajanga | Fullstack Developer</title>
     
     <!-- Schema.org JSON-LD for AI Search Optimization -->
     <script type="application/ld+json">

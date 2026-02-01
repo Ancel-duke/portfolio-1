@@ -129,8 +129,10 @@ export function About({ className }: AboutProps) {
                     alt="Ancel Ajanga"
                     loading="eager"
                     decoding="async"
+                    fetchPriority="high"
                     width="400"
                     height="400"
+                    sizes="(max-width: 1024px) 100vw, 50vw"
                     className="w-full h-80 sm:h-96 object-cover object-top"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />

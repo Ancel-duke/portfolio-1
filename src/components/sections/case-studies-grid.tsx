@@ -202,8 +202,10 @@ function CaseStudyCard({ caseStudy, index }: { caseStudy: CaseStudy; index: numb
                 src={caseStudy.images.hero}
                 alt={caseStudy.title}
                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
-                loading={index < 6 ? "eager" : "lazy"}
+                loading={index < 2 ? "eager" : "lazy"}
                 decoding="async"
+                fetchPriority={index < 2 ? "high" : undefined}
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               />
             </div>
             {/* Gradient overlay for better text contrast */}

@@ -56,43 +56,15 @@ export function seededShuffle<T>(array: T[], seed: number): T[] {
   return shuffled;
 }
 
-/** Project titles/slugs that appear in fixed order after the newest (2nd, 3rd, 4th, …). */
-const PINNED_AFTER_NEWEST = ['nestfi', 'edumanage', 'ledgerx'] as const;
-
-function getProjectKey(p: { slug?: string; title?: string }): string {
-  const slug = (p.slug || '').toLowerCase().trim();
-  const title = (p.title || '').toLowerCase().trim();
-  if (slug) return slug;
-  // Match "NestFi" -> "nestfi", "EduManage" -> "edumanage", "LedgerX - ..." -> need ledgerx
-  const firstWord = title.split(/\s+/)[0] || '';
-  return firstWord.replace(/[^a-z0-9]+/g, '');
-}
-
+/**
+ * Sorts projects by id descending (newest / highest id first).
+ * No pinning: when you add a new project with the next id, it appears in position 1.
+ */
 export function getMasterSortedProjects<T extends { id: number; type?: string; slug?: string; title?: string }>(
   projects: T[]
 ): T[] {
   if (projects.length === 0) return [];
-
-  const byKey = new Map<string, T>();
-  projects.forEach((p) => {
-    const key = getProjectKey(p);
-    if (key) byKey.set(key, p);
-  });
-  // Ensure LedgerX (title "LedgerX - Finance Management Application") is findable as "ledgerx"
-  const ledgerxProject = projects.find((p) => (p.title || '').toLowerCase().startsWith('ledgerx'));
-  if (ledgerxProject) byKey.set('ledgerx', ledgerxProject);
-
-  const newest = projects.reduce((a, b) => (a.id >= b.id ? a : b));
-  const pinned: T[] = [];
-  for (const slug of PINNED_AFTER_NEWEST) {
-    const found = byKey.get(slug);
-    if (found && found !== newest && !pinned.includes(found)) pinned.push(found);
-  }
-
-  const used = new Set<T>([newest, ...pinned]);
-  const rest = projects.filter((p) => !used.has(p)).sort((a, b) => b.id - a.id);
-
-  return [newest, ...pinned, ...rest];
+  return [...projects].sort((a, b) => b.id - a.id);
 }
 
 /**

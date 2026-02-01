@@ -63,24 +63,26 @@ export function TodaysHighlights({ className }: TodaysHighlightsProps) {
           whileInView="visible"
           viewport={{ once: true, margin: '-100px' }}
         >
-          {featuredItems.map((item) => (
+          {featuredItems.map((item, index) => (
             <motion.article
               key={`${item.type}-${item.id}`}
               variants={itemVariants}
               className="group"
             >
               <Card className="h-full hover:shadow-lg transition-all duration-300 border-0 bg-card/50 backdrop-blur-sm">
-                {/* Image */}
+                {/* Image: priority + eager for first 2 (above fold), sizes to avoid oversizing */}
                 {item.image && (
                   <div className="relative overflow-hidden rounded-t-lg">
                     <img
                       src={item.image}
                       alt={item.title}
                       className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
-                      loading="lazy"
+                      loading={index < 2 ? "eager" : "lazy"}
                       decoding="async"
+                      fetchPriority={index < 2 ? "high" : undefined}
                       width="800"
                       height="384"
+                      sizes="(max-width: 768px) 100vw, 50vw"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
                     <div className="absolute top-4 left-4">

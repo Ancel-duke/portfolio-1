@@ -12,7 +12,7 @@ interface SEOHeadProps {
   author?: string;
   publishedTime?: string;
   modifiedTime?: string;
-  jsonLd?: object;
+  jsonLd?: object | object[];
   noindex?: boolean;
   nofollow?: boolean;
 }
@@ -123,7 +123,7 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
       {/* JSON-LD Structured Data */}
       {jsonLd && (
         <script type="application/ld+json">
-          {JSON.stringify(jsonLd)}
+          {JSON.stringify(Array.isArray(jsonLd) ? jsonLd : jsonLd)}
         </script>
       )}
     </Helmet>

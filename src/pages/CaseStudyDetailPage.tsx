@@ -5,6 +5,7 @@ import caseStudiesData from '../data/case-studies.json'
 import { Card, CardContent, CardTitle } from '../components/ui/card'
 import { Button } from '../components/ui/button'
 import { Badge } from '../components/ui/badge'
+import { OptimizedImage } from '../components/ui/optimized-image'
 import { ArrowLeft, ExternalLink, Github, FileText, Calendar, User, Zap, Lightbulb, CheckCircle, Code, Layers, Shield, TrendingUp, Rocket, Settings } from 'lucide-react'
 import SEOHead from '../components/seo/SEOHead'
 import { SkipLink } from '../components/ui/skip-link'
@@ -168,22 +169,23 @@ export function CaseStudyDetailPage() {
           </Button>
         </motion.div>
 
+      <article aria-labelledby="case-study-title">
       <Card className="p-4 sm:p-6 md:p-8 lg:p-10">
         <motion.div variants={itemVariants} className="mb-8">
           <div className="grid grid-cols-1 md:grid-cols-[260px,1fr] gap-4 sm:gap-6 items-start">
             {caseStudy.images.hero && (
-              <img
+              <OptimizedImage
                 src={caseStudy.images.hero}
                 alt={`${caseStudy.title} Preview`}
                 className="w-full h-40 sm:h-48 md:h-40 object-contain rounded-lg bg-muted/30"
+                priority
                 loading="eager"
-                decoding="async"
               />
             )}
 
             <div className="space-y-4">
               <div>
-                <CardTitle className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4 leading-tight">
+                <CardTitle id="case-study-title" className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4 leading-tight">
                   {caseStudy.title}
                 </CardTitle>
                 <p className="text-base sm:text-lg md:text-xl text-muted-foreground">
@@ -346,11 +348,13 @@ export function CaseStudyDetailPage() {
             <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-3 sm:mb-4">Project Gallery</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
               {caseStudy.images.gallery.map((img, index) => (
-                <img
+                <OptimizedImage
                   key={index}
                   src={img}
                   alt={`${caseStudy.title} Gallery ${index + 1}`}
                   className="w-full h-40 sm:h-48 object-cover rounded-lg"
+                  placeholder="blur"
+                  blurDataURL="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10'%3E%3Crect fill='%23e5e7eb' width='10' height='10'/%3E%3C/svg%3E"
                 />
               ))}
             </div>
@@ -375,7 +379,40 @@ export function CaseStudyDetailPage() {
             </Card>
           </motion.div>
         )}
+
+        {/* Related case studies (same tech / category) — internal linking for crawlability */}
+        {(() => {
+          const techNames = new Set(caseStudy.technologies.map((t) => t.name.toLowerCase()))
+          const related = (caseStudiesData as CaseStudy[])
+            .filter((cs) => cs.slug !== caseStudy.slug)
+            .map((cs) => ({
+              ...cs,
+              score: cs.technologies.filter((t) => techNames.has(t.name.toLowerCase())).length
+            }))
+            .filter((cs) => cs.score > 0)
+            .sort((a, b) => b.score - a.score)
+            .slice(0, 3)
+          if (related.length === 0) return null
+          return (
+            <motion.aside variants={itemVariants} className="mt-8 sm:mt-10" aria-label="Related case studies">
+              <h2 className="text-xl sm:text-2xl font-bold mb-4">Related</h2>
+              <ul className="space-y-2">
+                {related.map((cs) => (
+                  <li key={cs.slug}>
+                    <Link
+                      to={`/case-studies/${cs.slug}`}
+                      className="text-primary hover:underline font-medium"
+                    >
+                      {cs.title}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </motion.aside>
+          )
+        })()}
       </Card>
+      </article>
       </motion.div>
     </>
   )

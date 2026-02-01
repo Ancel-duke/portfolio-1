@@ -21,10 +21,14 @@ import {
   generatePersonSchema, 
   generateWebsiteSchema, 
   generatePortfolioSchema,
-  generateOrganizationSchema 
+  generateOrganizationSchema,
+  getKnowsAboutAsThings,
+  generateSoftwareSourceCodeSchema
 } from './components/seo/schemas'
 import WebVitals from './components/performance/WebVitals'
 import projectsData from './data/projects.json'
+import stackData from './data/stack.json'
+import techAuthoritative from './data/tech-authoritative-sources.json'
 
 // Lazy load pages for code splitting
 const BlogDetailPage = lazy(() => import('./pages/BlogDetailPage').then(module => ({ default: module.BlogDetailPage })))
@@ -54,17 +58,26 @@ function HomePage() {
     }
   }, [])
 
+  const knowsAboutThings = getKnowsAboutAsThings(
+    stackData.technologies.map((t: { name: string }) => t.name),
+    techAuthoritative.techToAuthoritative
+  )
+  const softwareSourceCodeSchemas = projectsData
+    .map((p: { repoUrl?: string; links?: { github?: string } }) => generateSoftwareSourceCodeSchema(p))
+    .filter(Boolean)
+
   return (
     <>
       <SEO
         title="Ancel Ajanga - Fullstack Software Engineer/Developer & App Developer"
         description="Ancel Ajanga (Duke) — Fullstack Software Engineer/Developer & App Developer. Builder of apps, poet, and creative problem solver."
-  canonicalUrl="https://ancel.co.ke/"
+        canonicalUrl="https://ancel.co.ke/"
         jsonLd={[
-          generatePersonSchema(),
+          generatePersonSchema({ knowsAboutThings }),
           generateWebsiteSchema(),
           generatePortfolioSchema(projectsData),
-          generateOrganizationSchema()
+          generateOrganizationSchema(),
+          ...softwareSourceCodeSchemas
         ]}
       />
       <SkipLink />

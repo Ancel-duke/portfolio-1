@@ -1,36 +1,113 @@
 const fs = require("fs");
 const path = require("path");
 
-const pages = [
-  "/",
-  "/about",
-  "/projects",
-  "/case-studies",
-  "/case-studies/taskforge",
-  "/case-studies/e-learning-platform",
-  "/case-studies/attendance-system",
-  "/blog",
-  "/timeline",
-  "/stack",
-  "/fun",
-  "/contact"
+const domain = "https://ancel.co.ke";
+const publicDir = path.join(__dirname, "../public");
+const dataDir = path.join(__dirname, "../src/data");
+
+// Static routes (always included)
+const staticPages = [
+  { path: "/", changefreq: "weekly", priority: "0.8" },
+  { path: "/about", changefreq: "weekly", priority: "0.8" },
+  { path: "/projects", changefreq: "weekly", priority: "0.8" },
+  { path: "/case-studies", changefreq: "weekly", priority: "0.8" },
+  { path: "/blog", changefreq: "weekly", priority: "0.8" },
+  { path: "/developer-journal", changefreq: "weekly", priority: "0.8" },
+  { path: "/timeline", changefreq: "weekly", priority: "0.8" },
+  { path: "/stack", changefreq: "weekly", priority: "0.8" },
+  { path: "/fun", changefreq: "weekly", priority: "0.8" },
+  { path: "/labs-experiments", changefreq: "weekly", priority: "0.8" },
+  { path: "/contact", changefreq: "weekly", priority: "0.8" },
 ];
 
-const domain = "https://ancel.co.ke";
+function loadJson(filePath) {
+  try {
+    const fullPath = path.join(dataDir, filePath);
+    if (fs.existsSync(fullPath)) {
+      return JSON.parse(fs.readFileSync(fullPath, "utf8"));
+    }
+  } catch (e) {
+    console.warn("Warning: could not load", filePath, e.message);
+  }
+  return null;
+}
+
+// Dynamic: case-studies from case-studies.json
+let caseStudyPaths = [];
+const caseStudiesData = loadJson("case-studies.json");
+if (Array.isArray(caseStudiesData)) {
+  caseStudyPaths = caseStudiesData.map((cs) => ({
+    path: `/case-studies/${cs.slug}`,
+    changefreq: "weekly",
+    priority: "0.8",
+  }));
+} else if (caseStudiesData && Array.isArray(caseStudiesData.caseStudies)) {
+  caseStudyPaths = caseStudiesData.caseStudies.map((cs) => ({
+    path: `/case-studies/${cs.slug}`,
+    changefreq: "weekly",
+    priority: "0.8",
+  }));
+}
+
+// Dynamic: blog posts — App uses /developer-journal/:slug (slug from title)
+function slugFromTitle(title) {
+  if (!title) return "";
+  return title.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
+}
+
+let blogPaths = [];
+const blogData = loadJson("blog.json");
+if (Array.isArray(blogData)) {
+  blogData.forEach((post) => {
+    const slug = slugFromTitle(post.title);
+    if (slug) {
+      blogPaths.push({
+        path: `/developer-journal/${slug}`,
+        changefreq: "weekly",
+        priority: "0.8",
+      });
+    }
+  });
+}
+
+// If blog-posts.json exists with slugs, add any missing developer-journal URLs
+const blogPostsData = loadJson("blog-posts.json");
+if (blogPostsData && Array.isArray(blogPostsData.posts)) {
+  blogPostsData.posts.forEach((post) => {
+    const slug = post.slug || slugFromTitle(post.title);
+    if (slug) {
+      const path = `/developer-journal/${slug}`;
+      if (!blogPaths.some((p) => p.path === path)) {
+        blogPaths.push({ path, changefreq: "weekly", priority: "0.8" });
+      }
+    }
+  });
+}
+
+const allUrls = [
+  ...staticPages,
+  ...caseStudyPaths,
+  ...blogPaths,
+];
 
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${pages
+${allUrls
   .map(
-    (page) => `
+    (item) => `
   <url>
-    <loc>${domain}${page}</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <loc>${domain}${item.path}</loc>
+    <changefreq>${item.changefreq}</changefreq>
+    <priority>${item.priority}</priority>
   </url>`
   )
   .join("")}
 </urlset>`;
 
-fs.writeFileSync(path.join(__dirname, "../public/sitemap.xml"), sitemap);
+if (!fs.existsSync(publicDir)) {
+  fs.mkdirSync(publicDir, { recursive: true });
+}
+
+fs.writeFileSync(path.join(publicDir, "sitemap.xml"), sitemap);
 console.log("✅ sitemap.xml generated");
+console.log(`   Static: ${staticPages.length}, Case studies: ${caseStudyPaths.length}, Blog: ${blogPaths.length}, Total: ${allUrls.length}`);
