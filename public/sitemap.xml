@@ -170,6 +170,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://ancel.co.ke/case-studies/fits-by-aliv</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://ancel.co.ke/developer-journal/building-taskforge-with-next-js-and-socket-io-lessons-learned</loc>
     <lastmod>2026-02-01</lastmod>
     <changefreq>weekly</changefreq>
@@ -242,6 +248,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://ancel.co.ke/developer-journal/fits-by-aliv-kenya-first-e-commerce-with-payment-safe-workflows</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://ancel.co.ke/developer-journal/react-vue-angular-comparison-2025</loc>
     <lastmod>2026-02-01</lastmod>
     <changefreq>weekly</changefreq>
@@ -273,6 +285,12 @@
   </url>
   <url>
     <loc>https://ancel.co.ke/developer-journal/building-for-scale</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ancel.co.ke/developer-journal/fits-by-aliv-kenya-ecommerce</loc>
     <lastmod>2026-02-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>

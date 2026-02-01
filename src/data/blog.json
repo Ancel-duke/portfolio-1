@@ -179,6 +179,21 @@
       "avatar": "/assets/profile-photo.jpg",
       "bio": "Fullstack Software Engineer/Developer & App Developer"
     }
+  },
+  {
+    "id": 13,
+    "title": "Fits by Aliv: Kenya-First E-Commerce with Payment-Safe Workflows",
+    "excerpt": "Building a production-grade e-commerce backend designed around failure, abuse, and latency. Soft reservations, idempotent orders, M-Pesa verification, and bounded self-healing.",
+    "content": "Fits by Aliv is a Kenya-first e-commerce marketplace (thrift/sustainable fashion) I built to answer: How do you run commerce when payments are asynchronous, networks are unreliable, and inventory errors mean lost revenue and trust?\n\nI. The Problem\n\nE-commerce in emerging markets fails differently. Most platforms assume synchronous payments, over-trust callbacks, allow double-spend scenarios, or leak business logic across client and backend. Inventory overselling, voucher abuse, replay attacks, and unsafe automation are common. Kenya adds M-Pesa STK Push (asynchronous, non-authoritative), strict VAT/WHT, and resource-constrained mobile devices.\n\nII. The Solution\n\nFits by Aliv treats failure, abuse, and latency as first-class concerns. Soft inventory reservations with TTL; idempotent order creation; payment reconciliation only after Daraja STK Query verification; BullMQ for reservation expiry, payment verification, and dead-letters. Payments are never trusted at face value. Inventory is never hard-deducted before confirmation. Automation is bounded, auditable, and reversible.\n\nIII. Architecture (High-Level)\n\n• Request layer: Flutter clients, Firebase JWT, X-Idempotency-Key on mutations.\n• Transactional core: Orders, vouchers, reservations, tax in a single Prisma transaction. Voucher redemption uses conditional UPDATE; 0 rows updated → rollback.\n• Async layer: BullMQ + Redis — reservation-expiry, payment-verification, DLQ.\n• Verification: M-Pesa callback IP allowlist, optional HMAC; backend always calls STK Query before updating order/payment state.\n• Healing: Jobs classify (transient, latency, abandonment); release inventory, extend TTL, requeue payment, or flag; decisions/actions written to healing_decisions and healing_actions.\n• Audit: AuditLog and SecurityEvent for every sensitive action.\n\nIV. Security Guarantees\n\nNo inventory oversell (reservations + TTL + atomic order creation). No voucher double-spend (conditional UPDATE in transaction). No unaudited state changes. No blind trust in callbacks (STK Query verification). No unbounded automation (DLQ quarantined; jobs signed and idempotent). Replay mitigated by X-Request-Timestamp + X-Nonce (Redis).\n\nV. Tech Stack\n\nBackend: NestJS, TypeScript, PostgreSQL, Prisma, Redis, BullMQ. Auth: Firebase (JWT verification only). Payments: Safaricom Daraja (STK Push, STK Query). Clients: Flutter (mobile, web, desktop). Observability: Structured logging, audit logs, security events, optional Sentry.\n\nVI. What's Done vs Not Done\n\nImplemented (~90–95%): Full NestJS backend, PostgreSQL schema, soft reservations, idempotent orders, M-Pesa integration with verification, BullMQ jobs, streaming CSV exports, rate limiting, replay prevention, webhook protection, audit and security logging. Not yet (intentional): multi-region, external pentest, automated tax filing, full E2E mobile suite. Gaps are documented.\n\nVII. Takeaway\n\nFits by Aliv reflects how I design production systems: assume failure, distrust inputs, verify asynchronously, automate carefully, and leave evidence behind. It is not a demo — it is a failure-aware commerce backend built for real conditions.\n\nView Code: https://github.com/Ancel-duke/Aliv\nArchitecture: https://github.com/Ancel-duke/Aliv/blob/master/ARCHITECTURE.md",
+    "tags": ["NestJS", "Flutter", "M-Pesa", "E-Commerce", "PostgreSQL", "BullMQ", "Firebase", "Security"],
+    "date": "2026-02-02",
+    "readTime": "14 min read",
+    "image": "/assets/projects/fitsbyaliv.jpg",
+    "author": {
+      "name": "Ancel Ajanga",
+      "avatar": "/assets/profile-photo.jpg",
+      "bio": "Fullstack Software Engineer/Developer & App Developer"
+    }
   }
 ]
 

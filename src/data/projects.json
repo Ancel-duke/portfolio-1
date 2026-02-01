@@ -421,5 +421,29 @@
     "docsUrl": "https://github.com/Ancel-duke/Aegis/blob/main/ARCHITECTURE.md",
     "image": "/assets/projects/aegis.jpg",
     "outcomes": "Aegis reflects how I think about production systems: assume failure, design for abuse, automate carefully, and leave a trail of evidence for every decision. Implemented (~95%): backend APIs and security, AI anomaly detection, executor with Kubernetes RBAC, full observability stack, production-ready frontend, Docker and Kubernetes manifests, CI/CD with rollback."
+  },
+  {
+    "id": 18,
+    "title": "Fits by Aliv - Kenya-First E-Commerce Marketplace",
+    "type": "fullstack",
+    "description": "Kenya-first e-commerce system with payment-safe workflows, inventory self-healing, and hardened security. NestJS + PostgreSQL backend, Flutter clients; M-Pesa STK Push, vouchers, VAT/WHT, soft reservations.",
+    "detailedDescription": "Fits by Aliv is a production-grade e-commerce marketplace (thrift/sustainable fashion) for the Kenyan market. The system supports product catalog, cart, checkout, M-Pesa STK Push payments, vouchers, referrals, tax (VAT/WHT), inventory reservations, and admin operations. Backend is NestJS with PostgreSQL (Prisma); clients are Flutter (mobile, web, desktop). Identity is Firebase Auth; payments are M-Pesa via Safaricom Daraja API. The system is designed around failure, abuse, and latency as first-class concerns: soft inventory reservations, idempotent order creation, verified payment reconciliation (STK Query before state changes), and AI-assisted self-healing background jobs (BullMQ). No inventory oversell, no voucher double-spend, no blind trust in callbacks.",
+    "technologies": [
+      "NestJS",
+      "TypeScript",
+      "PostgreSQL",
+      "Prisma",
+      "Redis",
+      "BullMQ",
+      "Flutter",
+      "Firebase Auth",
+      "M-Pesa Daraja (STK Push & Query)",
+      "Dart"
+    ],
+    "liveUrl": "",
+    "repoUrl": "https://github.com/Ancel-duke/Aliv",
+    "docsUrl": "https://github.com/Ancel-duke/Aliv/blob/master/ARCHITECTURE.md",
+    "image": "/assets/projects/fitsbyaliv.jpg",
+    "outcomes": "Production-grade Kenya-first e-commerce: payment-safe workflows, inventory self-healing, hardened security. Guarantees: no inventory oversell, no voucher double-spend, no unaudited state changes, no blind trust in payment callbacks. ~90–95% complete; remaining work is operational, not architectural."
   }
 ]

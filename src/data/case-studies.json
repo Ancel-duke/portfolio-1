@@ -1647,6 +1647,77 @@
         "/assets/projects/aegis.jpg"
       ]
     }
+  },
+  {
+    "id": 18,
+    "slug": "fits-by-aliv",
+    "title": "Fits by Aliv — Kenya-First E-Commerce with Payment-Safe Workflows",
+    "subtitle": "Production-grade e-commerce with inventory self-healing, M-Pesa verification, and hardened security",
+    "role": "Full-Stack Software Engineer",
+    "timeline": "Ongoing",
+    "year": "2026",
+    "status": "Live",
+    "description": "Fits by Aliv is a Kenya-first e-commerce marketplace (thrift/sustainable fashion) with payment-safe workflows, inventory self-healing, and hardened security. Backend is NestJS with PostgreSQL (Prisma); clients are Flutter (mobile, web, desktop). Identity is Firebase Auth; payments are M-Pesa via Safaricom Daraja API.",
+    "problem": "E-commerce systems in emerging markets fail differently. Payments are asynchronous, networks are unreliable, and inventory errors directly translate to lost revenue and customer trust. Most platforms assume synchronous payments, over-trust callbacks, allow double-spend scenarios, or leak business logic across client and backend boundaries. Inventory overselling, voucher abuse, replay attacks, and unsafe automation are common failure modes. Kenya-specific constraints compound the problem: M-Pesa STK Push is asynchronous and non-authoritative, VAT/WHT rules are strict, and mobile devices are often resource-constrained.",
+    "solution": "Fits by Aliv is a production-grade e-commerce backend designed around failure, abuse, and latency as first-class concerns. The system introduces soft inventory reservations, idempotent order creation, verified payment reconciliation (Daraja STK Query before state changes), and AI-assisted self-healing background jobs. Payments are never trusted at face value; inventory is never hard-deducted before confirmation; automation is bounded, auditable, and reversible. All business logic lives in a single NestJS backend with PostgreSQL transactions. Clients never touch the database. Firebase is used strictly for identity; authorization, rate-limiting, replay prevention, and auditability are enforced server-side.",
+    "impact": "The system guarantees: no inventory oversell due to race conditions, no voucher double-spend, no unaudited state changes, no blind trust in payment callbacks, no unbounded automation. Security highlights: Firebase JWT verification + server-side authorization, idempotency keys on all critical mutations, replay-prevention via nonce + timestamp, IP allowlisting and optional HMAC for webhooks, immutable audit and security event logs. The system is designed so an ethical hacker can reason about what cannot happen.",
+    "architecture": "Request layer: Flutter clients authenticate via Firebase JWT; every mutation supports idempotency. Transactional core: Orders, vouchers, inventory reservations, and tax records are created atomically in a single Prisma transaction. Asynchronous layer: BullMQ + Redis handle reservation expiry, payment verification, retries, and dead-letters. Verification layer: M-Pesa callbacks are validated, allowlisted, and verified via STK Query before state changes. Healing layer: Background jobs classify failures and execute bounded recovery actions. Audit layer: Every sensitive action leaves a durable trail. Modules: Auth, Users, Orders, Payments, Products, Categories, Cart, Wishlist, Vouchers, Referrals, Notifications, Admin, Audit, Healing, Tax, Upload, Security, Common, Prisma, Firebase, Mpesa.",
+    "isolation": "Self-healing exists, but automation is constrained. Inventory reservations expire automatically if payment does not complete. Payment verification retries are bounded and adaptive. Dead-letter jobs are quarantined and never auto-replayed blindly. AI can classify and recommend actions but cannot execute arbitrary commands, bypass policies, override transactional rules, or mutate data without audit logs. Explicitly not supported: client-side inventory mutation, trusting payment callbacks without verification, hard inventory deduction before payment, unbounded retries or automation loops.",
+    "tradeoffs": "Supabase was removed in favor of single NestJS backend and Prisma for vendor decoupling and full control over migrations. Firebase Auth retained for JWT issuance and SDK support; backend only verifies tokens. Prisma over raw SQL for type safety and migrations; raw SQL only for conditional voucher UPDATE. Redis required for BullMQ (reservation-expiry, payment-verification, dead-letter); replay-prevention also uses Redis when configured.",
+    "implementationStatus": "~90–95% Complete: Backend APIs & database schema, inventory reservation & expiry, payment verification & reconciliation, AI-assisted self-healing jobs, admin analytics & exports, security hardening & audit trails. Remaining work is operational, not architectural. Not yet (intentional): multi-region deployment, external penetration test, automated tax filing integrations, full E2E mobile test suite.",
+    "potentialExpansion": "Additional payment providers (schema-compatible), multi-seller inventory, regional tax rules, event-driven analytics, fraud scoring models feeding the healing layer. The core system already assumes failure, retries, abuse, and human oversight.",
+    "technologies": [
+      { "name": "NestJS", "category": "Backend", "icon": "nestjs" },
+      { "name": "TypeScript", "category": "Language", "icon": "typescript" },
+      { "name": "PostgreSQL", "category": "Database", "icon": "postgresql" },
+      { "name": "Prisma", "category": "ORM", "icon": "prisma" },
+      { "name": "Redis", "category": "Cache", "icon": "redis" },
+      { "name": "BullMQ", "category": "Queue", "icon": "redis" },
+      { "name": "Flutter", "category": "Mobile", "icon": "flutter" },
+      { "name": "Firebase Auth", "category": "Authentication", "icon": "firebase" },
+      { "name": "M-Pesa Daraja", "category": "Integration", "icon": "api" }
+    ],
+    "features": [
+      "Soft inventory reservations with TTL; no hard deduction before payment",
+      "Idempotent order creation with X-Idempotency-Key",
+      "M-Pesa STK Push + STK Query verification before state changes",
+      "BullMQ jobs: reservation-expiry, payment-verification, dead-letter",
+      "Voucher redemption inside order transaction (pessimistic conditional UPDATE)",
+      "Rate limiting, replay prevention, webhook IP allowlisting",
+      "Audit logs and security event logging",
+      "Streaming CSV exports for admin; VAT/WHT tax handling"
+    ],
+    "challenges": [
+      "Designing for asynchronous M-Pesa flows without over-trusting callbacks",
+      "Preventing voucher double-spend with conditional UPDATE in transaction",
+      "Bounded self-healing without unbounded automation",
+      "Kenya-specific VAT/WHT and mobile-first constraints"
+    ],
+    "outcomes": [
+      "No inventory oversell; no voucher double-spend; no unaudited state changes",
+      "Payment-safe: Daraja verification before any order/payment state update",
+      "Self-healing with constrained automation and audit trail",
+      "Production mindset: assume failure, verify asynchronously, automate carefully"
+    ],
+    "metrics": [
+      { "label": "Status", "value": "~90–95%", "description": "Backend, DB, payments, healing, security complete" },
+      { "label": "Payment", "value": "Verify first", "description": "STK Query before trusting callback" },
+      { "label": "Voucher", "value": "Pessimistic", "description": "Conditional UPDATE in transaction" },
+      { "label": "Audit", "value": "Immutable", "description": "Trail for every sensitive action" }
+    ],
+    "links": {
+      "live": "",
+      "github": "https://github.com/Ancel-duke/Aliv",
+      "docs": "https://github.com/Ancel-duke/Aliv/blob/master/ARCHITECTURE.md"
+    },
+    "images": {
+      "hero": "/assets/projects/fitsbyaliv.jpg",
+      "before": "/assets/projects/fitsbyaliv.jpg",
+      "after": "/assets/projects/fitsbyaliv.jpg",
+      "gallery": [
+        "/assets/projects/fitsbyaliv.jpg"
+      ]
+    }
   }
 ]
 

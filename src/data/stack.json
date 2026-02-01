@@ -103,10 +103,10 @@
       "name": "NestJS",
       "category": "Backend",
       "icon": "nestjs",
-      "frequency": 5,
+      "frequency": 6,
       "proficiency": 8,
       "description": "Progressive Node.js framework for building efficient and scalable server-side applications",
-      "projects": ["LedgerX - Finance Management Application", "OpsFlow", "NestFi", "EduManage", "Aegis"]
+      "projects": ["LedgerX - Finance Management Application", "OpsFlow", "NestFi", "EduManage", "Aegis", "Fits by Aliv"]
     },
     {
       "name": "Django REST Framework",
@@ -130,19 +130,19 @@
       "name": "PostgreSQL",
       "category": "Database",
       "icon": "postgresql",
-      "frequency": 5,
+      "frequency": 6,
       "proficiency": 8,
       "description": "Open source relational database",
-      "projects": ["E-Learning Platform - Full Stack Application", "LedgerX - Finance Management Application", "OpsFlow", "NestFi", "Aegis"]
+      "projects": ["E-Learning Platform - Full Stack Application", "LedgerX - Finance Management Application", "OpsFlow", "NestFi", "Aegis", "Fits by Aliv"]
     },
     {
       "name": "Redis",
       "category": "Cache",
       "icon": "redis",
-      "frequency": 3,
+      "frequency": 4,
       "proficiency": 7,
       "description": "In-memory data store used for caching and ephemeral state",
-      "projects": ["NestFi", "EduManage", "Aegis"]
+      "projects": ["NestFi", "EduManage", "Aegis", "Fits by Aliv"]
     },
     {
       "name": "SQLite",
@@ -292,10 +292,10 @@
       "name": "Prisma",
       "category": "ORM",
       "icon": "prisma",
-      "frequency": 1,
+      "frequency": 2,
       "proficiency": 8,
       "description": "Next-generation ORM for Node.js and TypeScript",
-      "projects": ["LedgerX - Finance Management Application"]
+      "projects": ["LedgerX - Finance Management Application", "Fits by Aliv"]
     },
     {
       "name": "Solidity",
@@ -580,10 +580,10 @@
       "name": "M-Pesa Daraja",
       "category": "Integration",
       "icon": "api",
-      "frequency": 2,
+      "frequency": 3,
       "proficiency": 7,
       "description": "Mobile money payments integration using asynchronous callbacks",
-      "projects": ["NestFi", "LedgerX - Finance Management Application"]
+      "projects": ["NestFi", "LedgerX - Finance Management Application", "Fits by Aliv"]
     },
     {
       "name": "React Native",
@@ -593,6 +593,33 @@
       "proficiency": 7,
       "description": "Mobile app client with offline-tolerant, API-driven architecture",
       "projects": ["NestFi"]
+    },
+    {
+      "name": "Flutter",
+      "category": "Mobile",
+      "icon": "flutter",
+      "frequency": 1,
+      "proficiency": 7,
+      "description": "Cross-platform UI toolkit for mobile, web, and desktop (Dart)",
+      "projects": ["Fits by Aliv"]
+    },
+    {
+      "name": "BullMQ",
+      "category": "Queue",
+      "icon": "redis",
+      "frequency": 1,
+      "proficiency": 7,
+      "description": "Redis-backed job queue for Node.js (reservation expiry, payment verification, DLQ)",
+      "projects": ["Fits by Aliv"]
+    },
+    {
+      "name": "Firebase Auth",
+      "category": "Authentication",
+      "icon": "firebase",
+      "frequency": 1,
+      "proficiency": 7,
+      "description": "Identity provider with JWT issuance; backend verifies tokens only",
+      "projects": ["Fits by Aliv"]
     },
     {
       "name": "Turborepo",
@@ -623,6 +650,11 @@
     {
       "name": "Cache",
       "color": "violet",
+      "count": 1
+    },
+    {
+      "name": "Queue",
+      "color": "orange",
       "count": 1
     },
     {
@@ -668,7 +700,7 @@
     {
       "name": "Authentication",
       "color": "emerald",
-      "count": 1
+      "count": 2
     },
     {
       "name": "HTTP Client",
@@ -743,7 +775,7 @@
     {
       "name": "Mobile",
       "color": "blue",
-      "count": 1
+      "count": 2
     }
   ]
 }

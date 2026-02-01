@@ -71,6 +71,18 @@
       "category": "Architecture",
       "image": "/assets/projects/elearn.jpg",
       "tags": ["Architecture", "Scaling", "Performance"]
+    },
+    {
+      "slug": "fits-by-aliv-kenya-ecommerce",
+      "title": "Fits by Aliv: Kenya-First E-Commerce with Payment-Safe Workflows",
+      "excerpt": "Building a production-grade e-commerce backend designed around failure, abuse, and latency. Soft reservations, idempotent orders, M-Pesa verification, and bounded self-healing.",
+      "content": "Full article content in blog.json (id 13).",
+      "date": "2026-02-02",
+      "readTime": "14 min read",
+      "author": "Ancel Ajanga",
+      "category": "Case Study",
+      "image": "/assets/projects/fitsbyaliv.jpg",
+      "tags": ["NestJS", "Flutter", "M-Pesa", "E-Commerce", "PostgreSQL", "BullMQ", "Firebase", "Security"]
     }
   ]
 }
