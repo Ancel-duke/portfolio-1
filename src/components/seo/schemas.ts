@@ -42,7 +42,7 @@ export const generatePersonSchema = (opts?: {
     "jobTitle": "Fullstack Software Engineer/Developer & App Developer",
     "description": "Ancel Ajanga (Duke) is a Fullstack Software Engineer/Developer & App Developer who loves building apps that solve real-world problems while expressing creativity through code. Builder of apps, poet, and creative problem solver.",
     "url": "https://ancel.co.ke/",
-    "image": "https://ancel.co.ke/assets/profile-photo.jpg",
+    "image": "https://ancel.co.ke/assets/profile_photo.jpg",
     "email": "ancel.ajanga@yahoo.com",
     "telephone": "+254768901257",
     "address": {
@@ -132,7 +132,7 @@ export const generateBlogPostSchema = (post: any) => ({
   "publisher": {
     "@type": "Person",
     "name": "Ancel Ajanga",
-  "image": "https://ancel.co.ke/assets/profile-photo.jpg"
+  "image": "https://ancel.co.ke/assets/profile_photo.jpg"
   },
   "datePublished": post.date,
   "dateModified": post.date,
@@ -263,7 +263,7 @@ export const generateOrganizationSchema = () => ({
   "alternateName": "Ajanga Ancel - Freelance Developer",
   "description": "Fullstack Software Engineer/Developer & App Developer services specializing in React, Node.js, Python, and modern web technologies",
   "url": "https://ancel.co.ke",
-  "logo": "https://ancel.co.ke/assets/profile-photo.jpg",
+  "logo": "https://ancel.co.ke/assets/profile_photo.jpg",
   "founder": {
     "@type": "Person",
     "name": "Ancel Ajanga"

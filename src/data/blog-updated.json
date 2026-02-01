@@ -10,7 +10,7 @@
     "image": "/assets/case-studies/journey.jpg",
     "author": {
       "name": "Ancel Ajanga",
-      "avatar": "/assets/profile-photo.jpg",
+      "avatar": "/assets/profile_photo.jpg",
       "bio": "Full-stack developer passionate about building scalable web applications"
     }
   },
@@ -25,7 +25,7 @@
     "image": "/assets/projects/finance-tracker.jpg",
     "author": {
       "name": "Ancel Ajanga",
-      "avatar": "/assets/profile-photo.jpg",
+      "avatar": "/assets/profile_photo.jpg",
       "bio": "Full-stack developer passionate about building scalable web applications"
     }
   }

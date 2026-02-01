@@ -22,16 +22,13 @@ root.render(
   </React.StrictMode>
 );
 
-// Register service worker for caching (if available)
-if ('serviceWorker' in navigator && process.env.NODE_ENV === 'production') {
+// Unregister service worker so updates are never blocked by stale cache.
+// (Previously registered SW was serving old files on normal refresh.)
+if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
-    navigator.serviceWorker.register('/service-worker.js')
-      .then((registration) => {
-        console.log('SW registered: ', registration);
-      })
-      .catch((registrationError) => {
-        console.log('SW registration failed: ', registrationError);
-      });
+    navigator.serviceWorker.getRegistrations().then((registrations) => {
+      registrations.forEach((registration) => registration.unregister());
+    });
   });
 }
 

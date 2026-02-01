@@ -6,7 +6,7 @@ const RUNTIME_CACHE = 'ancel-portfolio-runtime-v1';
 const PRECACHE_ASSETS = [
   '/',
   '/index.html',
-  '/assets/profile-photo.jpg',
+  '/assets/profile_photo.jpg',
   '/assets/projects/LedgerX.jpg',
   '/assets/projects/EduChain.jpg',
   '/assets/projects/taskforge.jpg',

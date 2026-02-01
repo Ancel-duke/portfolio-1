@@ -51,7 +51,7 @@ export const usePerformanceOptimization = () => {
 
       // Preload critical images
       const criticalImages = [
-        '/assets/profile-photo.jpg',
+        '/assets/profile_photo.jpg',
         '/assets/projects/taskforge.jpg',
         '/assets/projects/elearn.jpg'
       ];

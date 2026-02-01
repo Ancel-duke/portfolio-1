@@ -101,7 +101,7 @@ const Hero = () => {
                 <div className="w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 mx-auto relative">
                   <div className="absolute inset-0 bg-gradient-to-br from-primary-500 to-accent-500 rounded-full blur-xl opacity-30"></div>
                   <img
-                    src="/assets/profile-photo.jpg"
+                    src="/assets/profile_photo.jpg"
                     alt="Ancel Ajanga - Fullstack Software Engineer"
                     className="relative w-full h-full object-cover rounded-full border-4 border-white dark:border-gray-800 shadow-2xl"
                     loading="eager"
