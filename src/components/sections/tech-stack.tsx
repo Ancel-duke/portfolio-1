@@ -189,7 +189,7 @@ export const TechStack = React.memo(function TechStack({ className }: TechStackP
           </p>
         </div>
 
-        <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
+        <Tabs value={activeTab} onValueChange={(v) => React.startTransition(() => setActiveTab(v))} className="w-full">
           <TabsList className="grid w-full grid-cols-2 mb-6 sm:mb-8">
             <TabsTrigger value="frequency" className="flex items-center space-x-1 sm:space-x-2 text-xs sm:text-sm">
               <TrendingUp className="h-3 w-3 sm:h-4 sm:w-4" />

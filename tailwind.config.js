@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  // Purge: Tailwind removes unused styles in production when content paths are correct
   content: [
     "./src/**/*.{js,jsx,ts,tsx}",
     "./public/index.html"

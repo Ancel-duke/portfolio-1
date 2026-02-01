@@ -42,6 +42,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "npm run generate-seo && react-scripts build",
+    "build:deploy": "npm run build && echo Deploy the contents of the build/ folder (e.g. netlify deploy --dir=build)",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "eslint src --ext .js,.jsx,.ts,.tsx",

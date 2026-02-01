@@ -61,6 +61,8 @@ export function NowPlaying({
             src={track.cover}
             alt={`${track.album} cover`}
             className="w-12 h-12 rounded-lg object-cover"
+            loading="lazy"
+            decoding="async"
           />
           {isPlaying && (
             <div className="absolute inset-0 flex items-center justify-center">

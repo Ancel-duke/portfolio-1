@@ -188,11 +188,11 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
                       src={image}
                       alt={title}
                       className="w-full h-full object-contain"
-                      loading="eager"
+                      loading="lazy"
                       decoding="async"
-                      fetchPriority="high"
                       width="800"
                       height="450"
+                      sizes="(max-width: 768px) 100vw, 260px"
                     />
                   </div>
                 )}

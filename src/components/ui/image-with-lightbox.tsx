@@ -24,6 +24,8 @@ export function ImageWithLightbox({ src, alt, className = '' }: ImageWithLightbo
         className={`cursor-zoom-in ${className}`}
         onClick={() => setIsOpen(true)}
         loading="lazy"
+        decoding="async"
+        sizes="(max-width: 768px) 100vw, 80vw"
       />
 
       <AnimatePresence>

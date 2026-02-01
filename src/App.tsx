@@ -11,7 +11,6 @@ import { Timeline } from './components/sections/timeline'
 import { TechStack } from './components/sections/tech-stack'
 import { Fun } from './components/sections/fun'
 import { CTA } from './components/sections/cta'
-import { ContactForm } from './components/forms/contact-form'
 import { TodaysHighlights } from './components/sections/todays-highlights'
 import { About } from './components/sections/about'
 import { Button } from './components/ui/button'
@@ -30,11 +29,13 @@ import projectsData from './data/projects.json'
 import stackData from './data/stack.json'
 import techAuthoritative from './data/tech-authoritative-sources.json'
 
-// Lazy load pages for code splitting
+// Lazy load pages for code splitting (only load chunk when route is visited)
 const BlogDetailPage = lazy(() => import('./pages/BlogDetailPage').then(module => ({ default: module.BlogDetailPage })))
 const CaseStudyDetailPage = lazy(() => import('./pages/CaseStudyDetailPage').then(module => ({ default: module.CaseStudyDetailPage })))
 const Projects = lazy(() => import('./pages/Projects'))
 const DeveloperJournal = lazy(() => import('./pages/DeveloperJournal').then(module => ({ default: module.DeveloperJournal })))
+const AboutSection = lazy(() => import('./components/sections/about').then(m => ({ default: () => <m.About fullPage /> })))
+const ContactFormLazy = lazy(() => import('./components/forms/contact-form').then(m => ({ default: m.ContactForm })))
 
 // Loading fallback component
 const PageLoader = () => (
@@ -95,13 +96,9 @@ function HomePage() {
   )
 }
 
-// About Page Component
+// About page: lazy-loaded section
 function AboutPage() {
-  return (
-    <>
-      <About fullPage />
-    </>
-  )
+  return <AboutSection />
 }
 
 // Stack Page Component
@@ -131,13 +128,9 @@ function TimelinePage() {
   )
 }
 
-// Contact Page Component
+// Contact page: lazy-loaded form
 function ContactPage() {
-  return (
-    <>
-      <ContactForm />
-    </>
-  )
+  return <ContactFormLazy />
 }
 
 // Case Studies Page Component - Uses same layout as Featured section

@@ -106,8 +106,10 @@ const Hero = () => {
                     className="relative w-full h-full object-cover rounded-full border-4 border-white dark:border-gray-800 shadow-2xl"
                     loading="eager"
                     decoding="async"
+                    fetchPriority="high"
                     width="256"
                     height="256"
+                    sizes="(max-width: 640px) 192px, 256px"
                   />
                 </div>
                 

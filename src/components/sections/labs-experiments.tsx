@@ -214,8 +214,10 @@ export function LabsExperiments({ className, limit, showViewAll = true, fullPage
                     className="w-full h-40 sm:h-48 object-cover group-hover:scale-105 transition-transform duration-500"
                     loading={index < 2 ? "eager" : "lazy"}
                     decoding="async"
+                    fetchPriority={index < 2 ? "high" : undefined}
                     width="800"
                     height="384"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                   <div className="absolute top-4 left-4">
