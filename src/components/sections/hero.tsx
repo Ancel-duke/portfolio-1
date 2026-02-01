@@ -62,7 +62,7 @@ export function Hero({ className }: HeroProps) {
         >
 
           <motion.h1
-            className="text-[clamp(1.875rem,5vw,4.5rem)] font-bold mb-[clamp(1rem,3vw,1.5rem)] leading-tight"
+            className="text-[clamp(1.875rem,5vw,4.5rem)] font-bold mb-2 leading-tight"
             variants={itemVariants}
           >
             Hi, I'm{" "}
@@ -70,11 +70,17 @@ export function Hero({ className }: HeroProps) {
           </motion.h1>
 
           <motion.p
-            className="text-[clamp(1rem,2.5vw,1.5rem)] text-muted-foreground mb-[clamp(1.5rem,4vw,2rem)] max-w-4xl mx-auto px-4 sm:px-0 leading-relaxed"
+            className="text-[clamp(1.125rem,2.5vw,1.5rem)] font-semibold text-foreground mb-[clamp(1rem,3vw,1.5rem)]"
             variants={itemVariants}
           >
-            I build resilient, scalable systems that handle real-world complexity across fintech, enterprise, and real-time domains.
-            Architecting hybrid database solutions, microservices, and containerized deployments that scale to thousands of users and transactions.
+            Fullstack Software Engineer & Systems Architect
+          </motion.p>
+
+          <motion.p
+            className="text-[clamp(1rem,2.5vw,1.25rem)] text-muted-foreground mb-[clamp(1.5rem,4vw,2rem)] max-w-4xl mx-auto px-4 sm:px-0 leading-relaxed"
+            variants={itemVariants}
+          >
+            I build resilient, scalable systems that handle real-world complexity across fintech, enterprise, and real-time domains. From crafting high-performance Flutter interfaces to architecting hybrid database solutions and self-healing microservices, I deliver end-to-end solutions that scale to thousands of users and transactions.
           </motion.p>
 
           <motion.div

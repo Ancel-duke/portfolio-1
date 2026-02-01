@@ -2,7 +2,7 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { Card, CardContent } from '../ui/card'
 import { Button } from '../ui/button'
-import { Download, MapPin, Calendar, Code, Users, Award, Target, GraduationCap, Lightbulb, Rocket } from 'lucide-react'
+import { Download, MapPin, Calendar, Code, Users, Award, Target, GraduationCap, Rocket } from 'lucide-react'
 import { cn } from '../../lib/utils'
 
 interface AboutProps {
@@ -58,6 +58,15 @@ export function About({ className }: AboutProps) {
     'Cloud & DevOps': ['AWS', 'Docker', 'Git', 'CI/CD'],
     'Tools': ['VS Code', 'Figma', 'Postman', 'GitHub']
   }
+
+  const technicalArsenal: { domain: string; tools: string[] }[] = [
+    { domain: 'Frontend & Mobile', tools: ['Flutter 3.x (Dart)', 'Next.js 14', 'React 18', 'TypeScript', 'TanStack Query', 'Material 3', 'Tailwind CSS'] },
+    { domain: 'Backend & APIs', tools: ['NestJS 10', 'Node.js', 'Prisma ORM', 'RESTful APIs', 'WebSockets (Socket.io)', 'Firebase Admin SDK'] },
+    { domain: 'Architecture & Reliability', tools: ['Microservices', 'Multi-tenant SaaS', 'Circuit Breakers', 'Event-Driven Design', 'Distributed Systems'] },
+    { domain: 'Infrastructure & Cloud', tools: ['Kubernetes (K8s)', 'Docker', 'Terraform', 'Prometheus & Grafana', 'Cloudflare', 'Render', 'Netlify'] },
+    { domain: 'Data & Security', tools: ['PostgreSQL (Transactional)', 'MongoDB (Logs)', 'Redis (Caching)', 'HMAC Signature Verification', 'JWT/RBAC'] },
+    { domain: 'Specialized Tech', tools: ['AIOps (Anomaly Detection)', 'Double-entry Ledgers', 'Cryptographic Hash Chains', 'Twilio OTP'] }
+  ]
 
   const achievements = [
     {
@@ -138,7 +147,7 @@ export function About({ className }: AboutProps) {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
                   <div className="absolute bottom-3 sm:bottom-4 left-3 sm:left-4 right-3 sm:right-4 text-white">
                     <h3 className="text-xl sm:text-2xl md:text-3xl font-bold">Ancel Ajanga</h3>
-                    <p className="text-sm sm:text-base md:text-lg text-white/90">Fullstack Software Engineer/Developer & App Developer</p>
+                    <p className="text-sm sm:text-base md:text-lg text-white/90">Fullstack Software Engineer & Systems Architect</p>
                   </div>
                 </div>
                 <CardContent className="p-4 sm:p-5 md:p-6">
@@ -166,31 +175,6 @@ export function About({ className }: AboutProps) {
               </Card>
             </motion.div>
 
-            {/* Philosophy */}
-            <motion.div variants={itemVariants}>
-              <Card>
-                <CardContent className="p-4 sm:p-5 md:p-6">
-                  <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 flex items-center">
-                    <Lightbulb className="h-5 w-5 sm:h-6 sm:w-6 mr-2 text-primary flex-shrink-0" /> 
-                    <span>My Philosophy</span>
-                  </h3>
-                  <div className="space-y-3 sm:space-y-4 text-muted-foreground text-sm sm:text-base leading-relaxed">
-                    <p>
-                      I specialize in architecting resilient, scalable systems that handle real-world complexity across fintech, enterprise, and real-time domains. 
-                      My approach combines hybrid database architectures, microservices design, containerization, and fault-tolerant patterns to build systems that scale with business needs.
-                    </p>
-                    <p>
-                      I design systems with service isolation, ensuring one failure doesn't bring down the entire system. 
-                      Every architectural decision balances scalability, maintainability, and real-world constraints.
-                    </p>
-                    <p>
-                      Beyond enterprise systems, I explore modern UI patterns and creative interactions to complement my system design work, 
-                      ensuring both technical excellence and exceptional user experiences.
-                    </p>
-                  </div>
-                </CardContent>
-              </Card>
-            </motion.div>
           </div>
 
           {/* Right Column: About Me, Skills & Achievements */}
@@ -202,18 +186,22 @@ export function About({ className }: AboutProps) {
                   <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">About Me</h3>
                   <div className="space-y-3 sm:space-y-4 text-muted-foreground text-sm sm:text-base leading-relaxed">
                     <p>
-                      Hi, I'm Ancel (also known as Duke). I'm a Fullstack Software Engineer specializing in enterprise-grade system architecture, 
-                      hybrid database solutions, microservices, and real-time platforms. I architect resilient systems that scale to thousands of users 
-                      and handle complex business requirements across fintech, enterprise, and real-time domains.
+                      Hi, I'm Ancel Ajanga (also known as Duke). I am a Fullstack Software Engineer specializing in enterprise-grade system architecture. My passion lies at the intersection of robust backend engineering and seamless user experiences. While I love building polished interfaces, I view software through the lens of resilience and governance—ensuring every application is as stable as it is functional.
                     </p>
                     <p>
-                      Based in Nairobi, Kenya (originally from Narok), I design systems with service isolation, containerization, and fault-tolerant patterns. 
-                      My work spans multi-tenant architectures, hybrid database setups (PostgreSQL + MongoDB), WebSocket-powered real-time systems, 
-                      and containerized deployments that scale with business needs.
+                      Based in Nairobi, Kenya, I design and deploy full-cycle solutions that bridge the gap between high-level theory and gritty, production-ready execution. My work is defined by three core technical pillars:
                     </p>
                     <p>
-                      When I'm not architecting enterprise systems, you'll find me exploring modern UI patterns, 
-                      contributing to open-source projects, or sharing knowledge with the developer community.
+                      <strong className="text-foreground">Resilient Fullstack Architecture:</strong> I build end-to-end systems like Fits by Aliv, blending responsive Flutter frontends with NestJS backends and complex migration strategies from BaaS to self-hosted PostgreSQL.
+                    </p>
+                    <p>
+                      <strong className="text-foreground">Infrastructure & AIOps:</strong> I engineer "self-healing" control planes like Aegis that use Machine Learning to detect anomalies and automate Kubernetes remediation, ensuring 99.9% uptime.
+                    </p>
+                    <p>
+                      <strong className="text-foreground">Financial & Data Integrity:</strong> In projects like LedgerX, I implement double-entry accounting engines secured by append-only cryptographic hash chains to guarantee 100% auditability.
+                    </p>
+                    <p>
+                      Whether I'm optimizing WebSocket-powered real-time systems (SignFlow) or architecting multi-tenant enterprise SaaS (EduManage), I focus on service isolation, containerization, and fault-tolerant patterns. I don't just write code; I architect the engines that drive digital transformation.
                     </p>
                   </div>
                 </CardContent>
@@ -266,6 +254,29 @@ export function About({ className }: AboutProps) {
             </motion.div>
           </div>
         </div>
+
+        {/* Technical Arsenal */}
+        <motion.div variants={itemVariants} className="mt-12">
+          <Card>
+            <CardContent className="p-4 sm:p-6">
+              <h3 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 flex items-center">
+                <Code className="h-6 w-6 mr-2 text-primary" /> Technical Arsenal
+              </h3>
+              <div className="overflow-x-auto">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 min-w-[280px]">
+                  {technicalArsenal.map((item, index) => (
+                    <div key={index} className="space-y-2">
+                      <h4 className="font-semibold text-sm text-primary border-b border-border pb-1">{item.domain}</h4>
+                      <p className="text-sm text-muted-foreground leading-relaxed">
+                        {item.tools.join(' · ')}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </motion.div>
 
         {/* Technologies & Career Goals */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-12">
