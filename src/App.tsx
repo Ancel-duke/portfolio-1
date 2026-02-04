@@ -17,9 +17,6 @@ import {
   generateSoftwareSourceCodeSchema
 } from './components/seo/schemas'
 import WebVitals from './components/performance/WebVitals'
-import projectsData from './data/projects.json'
-import stackData from './data/stack.json'
-import techAuthoritative from './data/tech-authoritative-sources.json'
 
 // Lazy load pages for code splitting (only load chunk when route is visited)
 const BlogDetailPage = lazy(() => import('./pages/BlogDetailPage').then(module => ({ default: module.BlogDetailPage })))
@@ -49,8 +46,17 @@ const PageLoader = () => (
 // Minimal placeholder for below-fold sections (no spinner — avoids layout shift, lets LCP complete)
 const BelowFoldPlaceholder = () => <div className="min-h-[1px]" aria-hidden="true" />
 
+// Minimal JSON-LD for first paint (no heavy data). Full schemas injected after async data load.
+const initialJsonLd = [
+  generatePersonSchema(),
+  generateWebsiteSchema(),
+  generateOrganizationSchema()
+]
+
 // Home Page Component
 function HomePage() {
+  const [jsonLd, setJsonLd] = React.useState<object[]>(initialJsonLd)
+
   React.useEffect(() => {
     // Handle hash links on page load
     const hash = window.location.hash
@@ -64,13 +70,32 @@ function HomePage() {
     }
   }, [])
 
-  const knowsAboutThings = getKnowsAboutAsThings(
-    stackData.technologies.map((t: { name: string }) => t.name),
-    techAuthoritative.techToAuthoritative
-  )
-  const softwareSourceCodeSchemas = projectsData
-    .map((p: { repoUrl?: string; links?: { github?: string } }) => generateSoftwareSourceCodeSchema(p))
-    .filter(Boolean)
+  // Defer heavy JSON and full schema so main bundle stays light; schemas load in a separate chunk.
+  React.useEffect(() => {
+    Promise.all([
+      import('./data/projects.json'),
+      import('./data/stack.json'),
+      import('./data/tech-authoritative-sources.json')
+    ]).then(([p, s, t]) => {
+      const projectsData = p.default
+      const stackData = s.default
+      const techAuthoritative = t.default
+      const knowsAboutThings = getKnowsAboutAsThings(
+        stackData.technologies.map((x: { name: string }) => x.name),
+        techAuthoritative.techToAuthoritative
+      )
+      const softwareSourceCodeSchemas = (projectsData
+        .map((proj: { repoUrl?: string; links?: { github?: string } }) => generateSoftwareSourceCodeSchema(proj))
+        .filter(Boolean) as object[])
+      setJsonLd([
+        generatePersonSchema({ knowsAboutThings }),
+        generateWebsiteSchema(),
+        generatePortfolioSchema(projectsData),
+        generateOrganizationSchema(),
+        ...softwareSourceCodeSchemas
+      ])
+    })
+  }, [])
 
   return (
     <>
@@ -78,13 +103,7 @@ function HomePage() {
         title="Ancel Ajanga - Fullstack Engineer | System Resilience & Scale"
         description="Ancel Ajanga is a Fullstack Engineer and Software Engineer specializing in system resilience: hardened backends, fluid frontends, and self-healing infrastructure. Scale and resilience from UI to database. Based in Kenya."
         canonicalUrl="https://ancel.co.ke/"
-        jsonLd={[
-          generatePersonSchema({ knowsAboutThings }),
-          generateWebsiteSchema(),
-          generatePortfolioSchema(projectsData),
-          generateOrganizationSchema(),
-          ...softwareSourceCodeSchemas
-        ]}
+        jsonLd={jsonLd}
       />
       <SkipLink />
       <div className="min-h-screen">
