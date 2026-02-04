@@ -39,7 +39,7 @@ const socialLinks = [
   }
 ]
 
-export function Footer({ className }: FooterProps) {
+function FooterComponent({ className }: FooterProps) {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
@@ -72,7 +72,7 @@ export function Footer({ className }: FooterProps) {
             {/* Quick Links */}
             <div className="space-y-4">
               <h3 className="font-semibold">Quick Links</h3>
-              <nav className="space-y-2">
+              <nav className="space-y-2" aria-label="Footer quick links">
                 {navigation.map((item) => (
                   <motion.a
                     key={item.name}
@@ -176,3 +176,4 @@ export function Footer({ className }: FooterProps) {
   )
 }
 
+export const Footer = React.memo(FooterComponent)

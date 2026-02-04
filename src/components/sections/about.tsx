@@ -130,7 +130,7 @@ export function About({ className }: AboutProps) {
             {/* Profile Card */}
             <motion.div variants={itemVariants}>
               <Card className="overflow-hidden">
-                <div className="relative w-full h-80 sm:h-96">
+                <div className="relative w-full flex-shrink-0 h-80 sm:h-96 overflow-hidden rounded-t-lg">
                   <OptimizedImage
                     src="/assets/profile_photo.jpg"
                     alt="Ancel Ajanga"
@@ -138,11 +138,11 @@ export function About({ className }: AboutProps) {
                     height={400}
                     priority
                     sizes="(max-width: 1024px) 100vw, 50vw"
-                    className="absolute inset-0 w-full h-full"
-                    style={{ objectPosition: 'top' }}
+                    className="w-full h-full"
+                    imgClassName="object-cover object-top"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
-                  <div className="absolute bottom-3 sm:bottom-4 left-3 sm:left-4 right-3 sm:right-4 text-white">
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent pointer-events-none" />
+                  <div className="absolute bottom-3 sm:bottom-4 left-3 sm:left-4 right-3 sm:right-4 text-white pointer-events-none">
                     <h3 className="text-xl sm:text-2xl md:text-3xl font-bold">Ancel Ajanga</h3>
                     <p className="text-sm sm:text-base md:text-lg text-white/90">Fullstack Software Engineer &amp; Systems Architect</p>
                   </div>

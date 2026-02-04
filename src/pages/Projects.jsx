@@ -55,9 +55,23 @@ const Projects = () => {
   return (
     <>
       <SEO
-        title="Projects - Ancel Ajanga | Fullstack Engineer — System Resilience"
-        description="15 software projects by Fullstack Engineer Ancel Ajanga: resilient systems, fintech, e-learning, real-time collaboration, and self-healing infrastructure. System resilience from UI to database."
+        title="Projects — Aegis, OpsFlow, SignFlow, LedgerX, Fits by Aliv | Ancel Ajanga"
+        description="Software projects by Fullstack Engineer Ancel Ajanga: Aegis (AI infrastructure), OpsFlow (incident response), SignFlow (real-time sign language), LedgerX (finance), Fits by Aliv (e-commerce), EduChain, NestFi, EduManage. System resilience from UI to database. Kenya."
         canonicalUrl="https://ancel.co.ke/projects"
+        keywords={[
+          'Ancel Ajanga',
+          'Fullstack Engineer',
+          'Projects',
+          'Aegis',
+          'OpsFlow',
+          'SignFlow',
+          'LedgerX',
+          'Fits by Aliv',
+          'EduChain',
+          'NestFi',
+          'EduManage',
+          'Software Engineer Kenya',
+        ]}
       />
       <StructuredData data={[itemListSchema, ...projectSchemas]} />
 

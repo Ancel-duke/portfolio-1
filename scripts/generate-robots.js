@@ -94,11 +94,8 @@ Allow: /robots.txt
 Allow: /favicon.ico
 Allow: /assets/
 
-# Sitemap location
+# Sitemap location (Brave Search, Google, Bing, DuckDuckGo and all crawlers)
 Sitemap: ${baseUrl}/sitemap.xml
-
-# Crawl delay (optional - be respectful to servers)
-Crawl-delay: 1
 `;
 
   return robots;

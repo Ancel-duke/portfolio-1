@@ -20,8 +20,9 @@ export const WebVitals: React.FC = () => {
     // Only measure in production
     if (process.env.NODE_ENV === 'production') {
       measureWebVitals((metric) => {
-        // Log to console for debugging
-        console.log('Web Vital:', metric);
+        if (process.env.NODE_ENV === 'development') {
+          console.log('Web Vital:', metric);
+        }
         
         // Send to analytics service (replace with your preferred service)
         // Example: gtag('event', metric.name, {

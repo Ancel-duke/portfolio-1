@@ -71,31 +71,41 @@ export const generatePersonSchema = (opts?: {
   };
 };
 
-// Project Schema for individual projects (SoftwareApplication) — AI-Overview / SGE-friendly
-export const generateProjectSchema = (project: any) => ({
-  "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  "name": project.title,
-  "description": project.description,
-  "applicationCategory": project.applicationCategory || getApplicationCategory(project.title, project.type),
-  "operatingSystem": "Web Browser",
-  "url": project.liveUrl || undefined,
-  "author": {
-    "@type": "Person",
-    "name": "Ancel Ajanga"
-  },
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  },
-  "softwareVersion": "1.0",
-  "datePublished": project.year || "2024",
-  "programmingLanguage": Array.isArray(project.technologies) ? project.technologies.slice(0, 12) : [],
-  "featureList": project.featureList || project.features || [],
-  "image": project.image ? `https://ancel.co.ke${project.image}` : undefined,
-  "screenshot": project.image ? `https://ancel.co.ke${project.image}` : undefined
-});
+// Project Schema for individual projects (SoftwareApplication) — AI-Overview / SGE-friendly; includes contribution and links
+export const generateProjectSchema = (project: any) => {
+  const techList = Array.isArray(project.technologies)
+    ? project.technologies.slice(0, 12).map((t: any) => (typeof t === 'string' ? t : t.name))
+    : [];
+  const base = "https://ancel.co.ke";
+  return {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": project.displayTitle || project.title,
+    "description": project.longDescription || project.description,
+    "applicationCategory": project.applicationCategory || getApplicationCategory(project.title, project.type),
+    "operatingSystem": "Web Browser",
+    "url": project.liveUrl ? project.liveUrl : `${base}/projects`,
+    "author": {
+      "@type": "Person",
+      "name": "Ancel Ajanga",
+      "jobTitle": "Fullstack Engineer"
+    },
+    "contributor": {
+      "@type": "Person",
+      "name": "Ancel Ajanga",
+      "jobTitle": "Fullstack Engineer"
+    },
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "softwareVersion": "1.0",
+    "datePublished": project.year || "2024",
+    "programmingLanguage": techList,
+    "featureList": project.featureList || project.features || [],
+    "image": project.image ? (project.image.startsWith('http') ? project.image : base + (project.image.startsWith('/') ? project.image : '/' + project.image)) : undefined,
+    "screenshot": project.image ? (project.image.startsWith('http') ? project.image : base + (project.image.startsWith('/') ? project.image : '/' + project.image)) : undefined,
+    "codeRepository": project.repoUrl || project.links?.github || undefined,
+    "keywords": [project.displayTitle || project.title, "Ancel Ajanga", "Fullstack Engineer", ...techList].join(", ")
+  };
+};
 
 /** SoftwareSourceCode schema for projects — links codeRepository to GitHub for E-A-T and crawlability */
 export const generateSoftwareSourceCodeSchema = (project: any) => {
@@ -123,28 +133,28 @@ export const generateBlogPostSchema = (post: any) => ({
   "@type": "BlogPosting",
   "headline": post.title,
   "description": post.excerpt,
-  "image": `https://ancel.co.ke${post.image}`,
+  "image": post.image ? (post.image.startsWith("http") ? post.image : `https://ancel.co.ke${post.image.startsWith("/") ? "" : "/"}${post.image}`) : undefined,
   "author": {
     "@type": "Person",
-    "name": post.author.name,
-  "image": `https://ancel.co.ke${post.author.avatar}`,
-    "description": post.author.bio
+    "name": post.author?.name || "Ancel Ajanga",
+    "image": post.author?.avatar ? `https://ancel.co.ke${post.author.avatar}` : undefined,
+    "description": post.author?.bio
   },
   "publisher": {
     "@type": "Person",
     "name": "Ancel Ajanga",
-  "image": "https://ancel.co.ke/assets/profile_photo.jpg"
+    "image": "https://ancel.co.ke/assets/profile_photo.jpg"
   },
   "datePublished": post.date,
   "dateModified": post.date,
   "mainEntityOfPage": {
     "@type": "WebPage",
-  "@id": `https://ancel.co.ke/blog/${post.id}`
+    "@id": `https://ancel.co.ke/developer-journal/${post.slug || post.id}`
   },
-  "url": `https://ancel.co.ke/blog/${post.id}`,
-  "keywords": post.tags.join(', '),
+  "url": `https://ancel.co.ke/developer-journal/${post.slug || post.id}`,
+  "keywords": Array.isArray(post.tags) ? post.tags.join(", ") : "",
   "articleSection": "Technology",
-  "wordCount": post.content.split(' ').length,
+  "wordCount": typeof post.content === "string" ? post.content.split(/\s+/).filter(Boolean).length : 0,
   "timeRequired": post.readTime
 });
 

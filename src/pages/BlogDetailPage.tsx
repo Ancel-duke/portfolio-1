@@ -64,15 +64,17 @@ export function BlogDetailPage() {
     visible: { opacity: 1, y: 0 },
   }
 
+  const canonicalPath = slug ? `/developer-journal/${slug}` : `/developer-journal`
+
   return (
     <>
       <SEOHead
         title={post.title}
         description={post.excerpt}
-        canonical={`/blog/${post.id}`}
+        canonical={canonicalPath}
         ogImage={post.image}
         ogType="article"
-        keywords={post.tags}
+        keywords={['Ancel Ajanga', 'Developer Journal', ...(post.tags || [])]}
         publishedTime={post.date}
         modifiedTime={post.date}
         jsonLd={generateBlogPostSchema(post)}

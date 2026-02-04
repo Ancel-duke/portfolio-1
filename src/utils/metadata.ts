@@ -14,32 +14,43 @@ export interface PageMetadata {
   keywords?: string[];
 }
 
-/** Project metadata from projects.json entry */
-export function getProjectMetadata(project: { title: string; description: string; id: number }): PageMetadata {
+/** Project metadata from projects.json entry (for project list page or modal context) */
+export function getProjectMetadata(project: {
+  title: string
+  description: string
+  id: number
+  displayTitle?: string
+  technologies?: Array<{ name: string }>
+  image?: string
+}): PageMetadata {
+  const name = (project.displayTitle || project.title).split(/[:|-]/)[0].trim()
+  const techKeywords = (project.technologies || []).slice(0, 8).map((t) => (typeof t === 'string' ? t : t.name))
   return {
-    title: project.title,
+    title: `${name} — Project by Ancel Ajanga`,
     description: project.description,
     canonical: `${BASE_URL}/projects`,
-    ogImage: project.description ? undefined : undefined,
-    keywords: [],
-  };
+    ogImage: project.image ? `${BASE_URL}${project.image}` : undefined,
+    keywords: [name, 'Ancel Ajanga', 'Fullstack Engineer', ...techKeywords],
+  }
 }
 
 /** Case study metadata from case-studies.json entry */
 export function getCaseStudyMetadata(caseStudy: {
-  title: string;
-  subtitle: string;
-  slug: string;
-  images?: { hero?: string };
-  technologies?: Array<{ name: string }>;
+  title: string
+  subtitle: string
+  slug: string
+  images?: { hero?: string }
+  technologies?: Array<{ name: string }>
 }): PageMetadata {
+  const projectName = caseStudy.title.split(' - ')[0]?.trim() || caseStudy.title
+  const techNames = (caseStudy.technologies || []).map((t) => (typeof t === 'string' ? t : t.name))
   return {
     title: caseStudy.title,
     description: caseStudy.subtitle,
     canonical: `${BASE_URL}/case-studies/${caseStudy.slug}`,
-    ogImage: caseStudy.images?.hero,
-    keywords: caseStudy.technologies?.map((t) => t.name) ?? [],
-  };
+    ogImage: caseStudy.images?.hero ? `${BASE_URL}${caseStudy.images.hero}` : undefined,
+    keywords: [projectName, 'Ancel Ajanga', 'Fullstack Engineer', 'Case Study', ...techNames],
+  }
 }
 
 /** Max length for meta description (AI Overviews / Discover). */
@@ -103,19 +114,21 @@ export function getCaseStudyOgTitle(caseStudy: { slug: string; title?: string })
 
 /** Blog post metadata from blog.json entry */
 export function getBlogPostMetadata(post: {
-  title: string;
-  excerpt: string;
-  id: number;
-  image?: string;
-  tags?: string[];
+  title: string
+  excerpt: string
+  id: number
+  slug?: string
+  image?: string
+  tags?: string[]
 }): PageMetadata {
+  const path = post.slug ? `/developer-journal/${post.slug}` : `/developer-journal/${post.id}`
   return {
     title: post.title,
     description: post.excerpt,
-    canonical: `${BASE_URL}/blog/${post.id}`,
-    ogImage: post.image,
-    keywords: post.tags ?? [],
-  };
+    canonical: `${BASE_URL}${path}`,
+    ogImage: post.image ? `${BASE_URL}${post.image}` : undefined,
+    keywords: ['Ancel Ajanga', 'Developer Journal', ...(post.tags ?? [])],
+  }
 }
 
 /** Static page metadata (about, contact, etc.) */

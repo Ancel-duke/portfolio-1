@@ -26,7 +26,7 @@ const navigation = [
   { name: 'Contact', href: '/contact', icon: Mail },
 ]
 
-export function Header({ className }: HeaderProps) {
+function HeaderComponent({ className }: HeaderProps) {
   const [isOpen, setIsOpen] = useState(false)
   // Always render the navbar on initial load (prevents it being hidden on refresh at /#highlights)
   const [isVisible, setIsVisible] = useState(true)
@@ -258,3 +258,4 @@ export function Header({ className }: HeaderProps) {
   )
 }
 
+export const Header = React.memo(HeaderComponent)

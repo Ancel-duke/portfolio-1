@@ -125,26 +125,17 @@ export const OptimizedImage: React.FC<OptimizedImageProps> = ({
     onError?.();
   };
 
-  const imgCommon = {
-    width,
-    height: effectiveHeight,
-    className: cn(
-      'block w-full h-full object-cover transition-opacity duration-300',
-      imgClassName,
-      isLoaded ? 'opacity-100' : 'opacity-0'
-    ),
-    loading: priority ? ('eager' as const) : loading,
-    decoding: 'async' as const,
-    fetchPriority: priority ? ('high' as const) : undefined,
-    onLoad: handleLoad,
-    onError: handleError,
-    sizes,
-  };
+  // Picture/img absolutely positioned so image never affects layout; wrapper size comes from parent only.
+  const imageClassName = cn(
+    'block w-full h-full object-cover transition-opacity duration-300',
+    imgClassName,
+    isLoaded ? 'opacity-100' : 'opacity-0'
+  );
 
   return (
     <div
       ref={imgRef}
-      className={cn('relative block overflow-hidden w-full h-full min-h-0', className)}
+      className={cn('relative block overflow-hidden w-full h-full min-h-0 flex-shrink-0', className)}
     >
       {!isLoaded && !hasError && (
         <div
@@ -177,13 +168,13 @@ export const OptimizedImage: React.FC<OptimizedImageProps> = ({
 
       {isInView && !hasError &&
         (useNetlify && (srcSetAvif || srcSetWebP) ? (
-          <picture className="block w-full h-full">
+          <picture className="absolute inset-0 block w-full h-full overflow-hidden">
             {srcSetAvif && <source type="image/avif" srcSet={srcSetAvif} sizes={sizes} />}
             {srcSetWebP && <source type="image/webp" srcSet={srcSetWebP} sizes={sizes} />}
-            <img src={singleSrc} alt={alt} {...imgCommon} {...props} />
+            <img src={singleSrc} alt={alt} className={imageClassName} width={width} height={effectiveHeight} loading={priority ? 'eager' : loading} decoding="async" fetchPriority={priority ? 'high' : undefined} onLoad={handleLoad} onError={handleError} sizes={sizes} {...props} />
           </picture>
         ) : (
-          <img src={singleSrc} alt={alt} {...imgCommon} {...props} />
+          <img src={singleSrc} alt={alt} className={cn(imageClassName, 'absolute inset-0')} width={width} height={effectiveHeight} loading={priority ? 'eager' : loading} decoding="async" fetchPriority={priority ? 'high' : undefined} onLoad={handleLoad} onError={handleError} sizes={sizes} {...props} />
         ))
       }
     </div>

@@ -20,8 +20,8 @@ interface SEOHeadProps {
 }
 
 const defaultSEO = {
-  title: 'Ancel Ajanga - Fullstack Software Engineer/Developer & App Developer',
-  description: 'Ancel Ajanga (Duke) — Fullstack Software Engineer/Developer & App Developer. Builder of apps, poet, and creative problem solver.',
+  title: 'Ancel Ajanga — Fullstack Engineer & Systems Architect | Kenya',
+  description: 'Ancel Ajanga: Fullstack Engineer and Systems Architect from Narok, Kenya. Builds resilient systems—Aegis, OpsFlow, SignFlow, LedgerX, Fits by Aliv. Hardened backends, fluid frontends, self-healing infrastructure.',
   canonical: 'https://ancel.co.ke',
   ogImage: 'https://ancel.co.ke/assets/profile_photo.jpg',
   ogType: 'website',
@@ -29,26 +29,30 @@ const defaultSEO = {
   keywords: [
     'Ancel Ajanga',
     'Ajanga Ancel',
-    'Fullstack Developer',
+    'Fullstack Engineer',
     'Fullstack Software Engineer',
-    'App Developer',
-    'Narok Software Developer',
-    'Nairobi Software Developer',
+    'Software Engineer Narok',
+    'Systems Architect',
     'Nairobi Software Engineer',
+    'Narok Software Developer',
+    'Kenya Developer',
     'Ancel Ajanga Portfolio',
-    'Ajanga Ancel Portfolio',
+    'Aegis',
+    'OpsFlow',
+    'SignFlow',
+    'LedgerX',
+    'EduChain',
+    'NestFi',
+    'Fits by Aliv',
+    'EduManage',
     'React Developer',
     'Node.js Developer',
-    'Python Developer',
-    'Mobile App Developer',
-    'Web Developer',
-    'Kenya',
-    'Portfolio',
-    'Software Applications',
-    'React Native',
+    'NestJS',
     'Flutter',
-    'Django',
-    'MongoDB'
+    'TypeScript',
+    'PostgreSQL',
+    'System Resilience',
+    'Web Developer Kenya'
   ],
   author: 'Ancel Ajanga'
 };
@@ -69,7 +73,7 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
   noindex = false,
   nofollow = false
 }) => {
-  const fullTitle = title === defaultSEO.title ? title : `${title} | Ancel Ajanga`;
+  const fullTitle = title === defaultSEO.title ? title : `${title} | Ancel Ajanga — Fullstack Engineer`;
   const fullCanonical = canonical.startsWith('http') ? canonical : `${defaultSEO.canonical}${canonical}`;
   const fullOgImage = ogImage.startsWith('http') ? ogImage : `${defaultSEO.canonical}${ogImage}`;
   const displayOgTitle = ogTitle || fullTitle;
