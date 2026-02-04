@@ -62,20 +62,20 @@ const Projects = () => {
       <StructuredData data={[itemListSchema, ...projectSchemas]} />
 
       <section className="section-padding pt-24 w-full overflow-x-hidden">
-        <div className="container-custom max-w-full">
+        <div className="max-w-7xl mx-auto px-4">
           <motion.div
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="text-center mb-12 px-4 sm:px-0"
+            className="text-center mb-12"
           >
-            <motion.h1 variants={itemVariants} className="text-[clamp(2rem,5vw,3rem)] font-bold mb-[clamp(1.5rem,3vw,2rem)]">
+            <motion.h1 variants={itemVariants} className="text-[clamp(2rem,5vw,3rem)] font-bold tracking-tight mb-4">
               My <span className="text-gradient">Projects</span>
             </motion.h1>
             <motion.p
               variants={itemVariants}
-              className="text-[clamp(1rem,2vw,1.125rem)] text-gray-600 dark:text-gray-300 max-w-3xl mx-auto px-4 sm:px-0"
+              className="text-sm md:text-base text-slate-400 max-w-3xl mx-auto"
             >
               Enterprise-grade systems showcasing resilient architecture, hybrid databases, and scalable solutions. 
               Click on any project to explore detailed architecture, design decisions, and real-world impact.
@@ -87,13 +87,13 @@ const Projects = () => {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-[clamp(1rem,3vw,2rem)] w-full"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full"
             itemScope
             itemType="https://schema.org/ItemList"
             aria-label="Portfolio of 15 projects by Fullstack Engineer Ancel Ajanga"
           >
             {projects.map((project, index) => (
-              <motion.div key={project.id} variants={itemVariants}>
+              <motion.div key={project.id} variants={itemVariants} className="min-w-0 flex">
                 <ProjectCard
                   project={project}
                   onOpenModal={handleOpenModal}
@@ -111,11 +111,11 @@ const Projects = () => {
             viewport={{ once: true }}
             className="text-center mt-12"
           >
-            <div className="card p-8 border-2 border-dashed border-gray-300 dark:border-gray-600">
-              <h3 className="text-xl font-semibold mb-4 text-gray-600 dark:text-gray-400">
+            <div className="p-6 md:p-8 rounded-xl border border-dashed border-slate-700 bg-slate-900/30">
+              <h3 className="text-xl md:text-2xl font-bold tracking-tight mb-2 text-slate-300">
                 More Projects Coming Soon
               </h3>
-              <p className="text-gray-500 dark:text-gray-500">
+              <p className="text-sm md:text-base text-slate-400">
                 I'm constantly working on new projects. Check back soon for more updates!
               </p>
             </div>

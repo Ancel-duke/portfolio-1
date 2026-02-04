@@ -2,7 +2,7 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { Card, CardContent } from '../ui/card'
 import { Button } from '../ui/button'
-import { Download, MapPin, Calendar, Code, Users, Award, Target, GraduationCap, Rocket } from 'lucide-react'
+import { Download, MapPin, Calendar, Code, Users, Award, Target, GraduationCap, Rocket, Briefcase } from 'lucide-react'
 import { cn } from '../../lib/utils'
 
 interface AboutProps {
@@ -144,7 +144,7 @@ export function About({ className }: AboutProps) {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
                   <div className="absolute bottom-3 sm:bottom-4 left-3 sm:left-4 right-3 sm:right-4 text-white">
                     <h3 className="text-xl sm:text-2xl md:text-3xl font-bold">Ancel Ajanga</h3>
-                    <p className="text-sm sm:text-base md:text-lg text-white/90">Fullstack Engineer — System Resilience &amp; Scale</p>
+                    <p className="text-sm sm:text-base md:text-lg text-white/90">Fullstack Software Engineer &amp; Systems Architect</p>
                   </div>
                 </div>
                 <CardContent className="p-4 sm:p-5 md:p-6">
@@ -159,7 +159,7 @@ export function About({ className }: AboutProps) {
                     </div>
                     <div className="flex items-center text-muted-foreground text-sm sm:text-base">
                       <Users className="h-4 w-4 sm:h-5 sm:w-5 mr-2 sm:mr-3 text-primary flex-shrink-0" /> 
-                      <span>Freelancing since March 2024</span>
+                      <span>Software Engineer (Independent Consultant) | 2024– Present</span>
                     </div>
                   </div>
 
@@ -330,50 +330,49 @@ export function About({ className }: AboutProps) {
           </motion.div>
         </div>
 
-        {/* Education */}
+        {/* Professional Experience & Education */}
         <motion.div variants={itemVariants} className="mt-12">
           <Card>
             <CardContent className="p-6">
               <h3 className="text-2xl font-bold mb-6 flex items-center">
-                <GraduationCap className="h-6 w-6 mr-2 text-primary" /> Education & Learning Journey
+                <Briefcase className="h-6 w-6 mr-2 text-primary" /> Professional Experience &amp; Education
               </h3>
-              <div className="space-y-6">
-                <div className="border-l-4 border-primary pl-6 py-2">
-                  <h4 className="font-semibold text-lg">Full Stack Developer — Freelance / Personal Projects</h4>
-                  <p className="text-sm text-primary font-medium mb-2">March 2024 - Present</p>
-                  <p className="text-muted-foreground">
-                    Started freelancing and building impactful solutions including RoadRescue service app and HeartSync relationship platform. 
-                    Specializing in React, clean code, and beautiful UI design.
+              <div className="space-y-8">
+                {/* Lead Systems Engineer */}
+                <div>
+                  <h4 className="font-semibold text-lg text-foreground">Lead Systems Engineer (Independent Consultant)</h4>
+                  <p className="text-sm text-primary font-medium mb-2">March 2024 – Present</p>
+                  <p className="text-muted-foreground mb-4">
+                    Architecting resilient, production-grade infrastructure and financial systems for private clients and enterprise-level scale.
                   </p>
+                  <ul className="space-y-3 text-muted-foreground text-sm pl-4 border-l-2 border-primary/30">
+                    <li><strong className="text-foreground">NestFi (Fintech):</strong> Engineered a resilient financial coordination platform using a PostgreSQL/MongoDB hybrid architecture to ensure ACID compliance for transactions while maintaining high-throughput event logging for asynchronous mobile money payments.</li>
+                    <li><strong className="text-foreground">Aegis (AI-Driven Security):</strong> Developed an autonomous infrastructure monitoring system that uses AI to detect behavioral anomalies and execute controlled remediation actions within strict isolation boundaries.</li>
+                    <li><strong className="text-foreground">LedgerX (Enterprise Finance):</strong> Built a multi-tenant finance engine featuring a SHA-256 Cryptographic Hash Layer, creating an immutable, tamper-evident audit trail for every financial record.</li>
+                  </ul>
                 </div>
-                <div className="border-l-4 border-accent pl-6 py-2">
-                  <h4 className="font-semibold text-lg">Full Stack Development Certificate — Moringa School</h4>
-                  <p className="text-sm text-accent font-medium mb-2">Completed 2022</p>
-                  <p className="text-muted-foreground">
-                    Comprehensive full-stack development program covering modern web technologies and best practices.
+                {/* Software Engineer Contract & Project Lead */}
+                <div>
+                  <h4 className="font-semibold text-lg text-foreground">Software Engineer (Contract &amp; Project Lead)</h4>
+                  <p className="text-muted-foreground mb-4">
+                    Focused on scaling operational platforms and complex multi-tenant SaaS architectures.
                   </p>
+                  <ul className="space-y-3 text-muted-foreground text-sm pl-4 border-l-2 border-accent/30">
+                    <li><strong className="text-foreground">OpsFlow (Operations Management):</strong> Designed a real-time incident response platform using WebSockets for sub-second synchronization and a dual-database strategy to separate transactional workflows from analytical reporting.</li>
+                    <li><strong className="text-foreground">EduManage (Multi-tenant SaaS):</strong> Architected a school management system with Hierarchical RBAC and strict tenant isolation, ensuring secure data boundaries for multiple institutions on a single shared infrastructure.</li>
+                    <li><strong className="text-foreground">Full-Stack Development:</strong> Delivered various production-ready solutions (RoadRescue, HeartSync) focusing on React performance and clean code standards.</li>
+                  </ul>
                 </div>
-                <div className="border-l-4 border-muted pl-6 py-2">
-                  <h4 className="font-semibold text-lg">Coding Journey Begins — Student Projects</h4>
-                  <p className="text-sm text-muted-foreground mb-2">2021 - March 2024</p>
-                  <p className="text-muted-foreground">
-                    Started learning to code as a student, building personal projects and developing foundational skills 
-                    in web development and programming.
-                  </p>
-                </div>
-                <div className="border-l-4 border-secondary pl-6 py-2">
-                  <h4 className="font-semibold text-lg">Computer Science Degree</h4>
-                  <p className="text-sm text-secondary-foreground font-medium mb-2">Currently Enrolled (Part-time)</p>
-                  <p className="text-muted-foreground">
-                    Pursuing a part-time computer science degree while actively building real-world applications.
-                  </p>
-                </div>
-                <div className="border-l-4 border-muted pl-6 py-2">
-                  <h4 className="font-semibold text-lg">Diploma in Software Engineering</h4>
-                  <p className="text-sm text-muted-foreground mb-2">Completed</p>
-                  <p className="text-muted-foreground">
-                    Mastered core software engineering principles, development methodologies, and hands-on practical skills including system design, agile practices, and modern development workflows.
-                  </p>
+                {/* Education */}
+                <div>
+                  <h4 className="font-semibold text-lg text-foreground mb-4 flex items-center">
+                    <GraduationCap className="h-5 w-5 mr-2 text-primary" /> Education
+                  </h4>
+                  <ul className="space-y-2 text-muted-foreground text-sm pl-4 border-l-2 border-muted">
+                    <li><strong className="text-foreground">B.S. in Computer Science</strong> — Currently Enrolled (Part-time)</li>
+                    <li><strong className="text-foreground">Diploma in Software Engineering</strong> — Completed</li>
+                    <li><strong className="text-foreground">Full Stack Development Certificate</strong> — Moringa School (2022)</li>
+                  </ul>
                 </div>
               </div>
             </CardContent>

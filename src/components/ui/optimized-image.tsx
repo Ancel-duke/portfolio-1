@@ -96,16 +96,17 @@ export const OptimizedImage: React.FC<OptimizedImageProps> = ({
     onError?.();
   };
 
+  // Wrapper has no fixed dimensions — parent (e.g. aspect-video container) controls size so each card stays self-contained and image-to-card association is preserved.
+
   return (
     <div
       ref={imgRef}
       className={cn(
-        'relative overflow-hidden',
+        'relative block overflow-hidden w-full h-full min-h-0',
         className
       )}
-      style={{ width, height }}
     >
-      {/* Skeleton / blur-up placeholder — stable layout while image loads */}
+      {/* Skeleton — absolute so it doesn't affect layout; image area is reserved by parent */}
       {!isLoaded && !hasError && (
         <div
           className={cn(
@@ -141,13 +142,15 @@ export const OptimizedImage: React.FC<OptimizedImageProps> = ({
         </div>
       )}
 
-      {/* Actual Image */}
+      {/* Actual Image — block + object-cover so it fills container and clips to rounded parent */}
       {isInView && !hasError && (
         <img
           src={imageSrc}
           alt={alt}
+          width={width}
+          height={height}
           className={cn(
-            'w-full h-full object-cover transition-opacity duration-300',
+            'block w-full h-full object-cover transition-opacity duration-300',
             isLoaded ? 'opacity-100' : 'opacity-0'
           )}
           loading={priority ? 'eager' : loading}
