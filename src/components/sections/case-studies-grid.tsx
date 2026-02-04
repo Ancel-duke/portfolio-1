@@ -191,6 +191,7 @@ function CaseStudyCard({ caseStudy, index, itemVariants }: { caseStudy: CaseStud
               className="w-full h-full group-hover:scale-110 transition-transform duration-700 ease-out"
               priority={index < 2}
               loading={index < 2 ? "eager" : "lazy"}
+              skipNetlifyCDN
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               width={600}
               height={400}

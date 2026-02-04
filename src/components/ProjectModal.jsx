@@ -191,6 +191,7 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
                       width={520}
                       height={293}
                       loading="lazy"
+                      skipNetlifyCDN
                       sizes="(max-width: 768px) 100vw, 260px"
                       className="w-full h-full"
                       imgClassName="object-contain"

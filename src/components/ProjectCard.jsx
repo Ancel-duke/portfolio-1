@@ -40,6 +40,7 @@ const ProjectCard = ({ project, onOpenModal, priority = false }) => {
             loading={priority ? "eager" : "lazy"}
             width={800}
             height={450}
+            skipNetlifyCDN
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           />
         ) : (

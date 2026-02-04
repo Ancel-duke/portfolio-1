@@ -206,6 +206,7 @@ export function CaseStudyDetailPage() {
                 height={293}
                 priority
                 loading="eager"
+                skipNetlifyCDN
                 sizes="(max-width: 768px) 100vw, 260px"
                 className="w-full h-40 sm:h-48 md:h-40 rounded-lg bg-muted/30"
                 imgClassName="object-contain"
@@ -422,6 +423,7 @@ export function CaseStudyDetailPage() {
                   alt={getCaseStudyImageAlt(caseStudy.title, `Gallery Image ${index + 1}`)}
                   className="w-full h-40 sm:h-48 object-cover rounded-lg"
                   placeholder="blur"
+                  skipNetlifyCDN
                   blurDataURL="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10'%3E%3Crect fill='%23e5e7eb' width='10' height='10'/%3E%3C/svg%3E"
                 />
               ))}
