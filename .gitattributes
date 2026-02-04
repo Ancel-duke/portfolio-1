@@ -1,0 +1,4 @@
+# Normalize line endings to LF in the repo (cross-platform).
+# Git will convert to CRLF on checkout on Windows if core.autocrlf is true.
+* text=auto eol=lf
+*.{cmd,bat} text eol=crlf

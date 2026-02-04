@@ -2,8 +2,14 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { ExternalLink, Github, Eye } from 'lucide-react';
 import { OptimizedImage } from './ui/optimized-image';
+import { useAnimationsEnabled } from '../contexts/AnimationsContext';
+import { getHoverScaleCard, getHoverTransition } from '../lib/animation-variants';
 
 const ProjectCard = ({ project, onOpenModal, priority = false }) => {
+  const animationsEnabled = useAnimationsEnabled();
+  const hoverScale = getHoverScaleCard(animationsEnabled);
+  const hoverTransition = getHoverTransition(animationsEnabled);
+
   const { title, displayTitle, description, technologies, liveUrl, repoUrl, image, problemSummary } = project;
   const techStack = technologies?.length
     ? technologies.slice(0, 5).map((t) => (typeof t === 'string' ? t : t.name)).join(', ')
@@ -17,7 +23,8 @@ const ProjectCard = ({ project, onOpenModal, priority = false }) => {
 
   return (
     <motion.div
-      whileHover={{ y: -4 }}
+      whileHover={hoverScale ?? undefined}
+      transition={hoverTransition}
       className="flex flex-col h-full min-w-0 rounded-xl bg-slate-900/50 backdrop-blur-sm border border-slate-800 hover:border-blue-500/50 transition-all duration-300 p-4 md:p-6"
       aria-description={techStackSummary}
       data-ai-context={dataAiContext}

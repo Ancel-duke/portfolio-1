@@ -5,7 +5,11 @@ import { Input } from "../../components/ui/input"
 import { Textarea } from "../../components/ui/textarea"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../../components/ui/card"
 import { cn, isValidEmail } from "../../lib/utils"
-import { Send, CheckCircle, AlertCircle } from "lucide-react"
+import { Send, CheckCircle, AlertCircle, Phone, MessageCircle } from "lucide-react"
+
+const PHONE = "0793558755"
+const WHATSAPP = "0793558755"
+const WHATSAPP_LINK = `https://wa.me/254793558755`
 
 interface FormData {
   name: string
@@ -86,23 +90,47 @@ export function ContactForm({ className, onSuccess }: ContactFormProps) {
     setIsSubmitting(true)
     setSubmitStatus('idle')
 
-    try {
-      const subject = encodeURIComponent("Contact from Portfolio Website")
-      const body = encodeURIComponent(
-        `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
-      )
-      
-      window.open(`mailto:ancel.ajanga@yahoo.com?subject=${subject}&body=${body}`)
-      
-      // Clear form and show success message
-      setSubmitStatus('success')
-      setFormData({ name: "", email: "", message: "" })
-      onSuccess?.()
-    } catch (error) {
-      console.error('Error opening mail client:', error)
-      setSubmitStatus('error')
-    } finally {
-      setIsSubmitting(false)
+    const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID
+    const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID
+    const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
+
+    if (serviceId && templateId && publicKey && typeof window !== 'undefined') {
+      try {
+        const emailjs = (await import('emailjs-com')).default
+        emailjs.init(publicKey)
+        await emailjs.send(serviceId, templateId, {
+          from_name: formData.name,
+          from_email: formData.email,
+          message: formData.message,
+          reply_to: formData.email,
+          to_email: 'ancel.ajanga@yahoo.com',
+        })
+        setSubmitStatus('success')
+        setFormData({ name: "", email: "", message: "" })
+        onSuccess?.()
+      } catch (error) {
+        console.error('EmailJS error:', error)
+        setSubmitStatus('error')
+      } finally {
+        setIsSubmitting(false)
+      }
+    } else {
+      // Fallback: open mailto
+      try {
+        const subject = encodeURIComponent("Contact from Portfolio Website")
+        const body = encodeURIComponent(
+          `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
+        )
+        window.open(`mailto:ancel.ajanga@yahoo.com?subject=${subject}&body=${body}`)
+        setSubmitStatus('success')
+        setFormData({ name: "", email: "", message: "" })
+        onSuccess?.()
+      } catch (error) {
+        console.error('Error opening mail client:', error)
+        setSubmitStatus('error')
+      } finally {
+        setIsSubmitting(false)
+      }
     }
   }
 
@@ -123,6 +151,16 @@ export function ContactForm({ className, onSuccess }: ContactFormProps) {
             <CardDescription className="text-sm sm:text-base mt-2">
               Reach out to discuss building resilient, scalable, high-impact systems. Whether you need enterprise-grade architecture, hybrid database solutions, or real-time platforms, I design systems that scale with your business.
             </CardDescription>
+            <div className="flex flex-wrap items-center gap-4 mt-4 pt-4 border-t border-border">
+              <a href={`tel:${PHONE.replace(/\s/g, '')}`} className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
+                <Phone className="h-4 w-4" />
+                <span>{PHONE}</span>
+              </a>
+              <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
+                <MessageCircle className="h-4 w-4" />
+                <span>WhatsApp {WHATSAPP}</span>
+              </a>
+            </div>
           </CardHeader>
           <CardContent className="p-4 sm:p-6">
         {submitStatus === 'success' ? (

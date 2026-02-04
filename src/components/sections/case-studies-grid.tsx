@@ -1,5 +1,8 @@
 import * as React from "react"
+import Link from "next/link"
 import { motion } from "framer-motion"
+import { useAnimationsEnabled } from "../../contexts/AnimationsContext"
+import { getSectionVariants } from "../../lib/animation-variants"
 import { Card } from "../../components/ui/card"
 import { OptimizedImage } from "../../components/ui/optimized-image"
 import { cn } from "../../lib/utils"
@@ -67,15 +70,11 @@ export const CaseStudiesGrid = React.memo(function CaseStudiesGrid({
     return getDailySelection(enterpriseCaseStudies, limit) as CaseStudy[]
   }, [limit, enterpriseCaseStudies])
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1
-      }
-    }
-  }
+  const animationsEnabled = useAnimationsEnabled()
+  const { containerVariants, itemVariants } = React.useMemo(
+    () => getSectionVariants(animationsEnabled),
+    [animationsEnabled]
+  )
 
   return (
     /* 
@@ -119,14 +118,14 @@ export const CaseStudiesGrid = React.memo(function CaseStudiesGrid({
             viewport={{ once: true, margin: "-100px" }}
           >
             {selectedCaseStudies.map((caseStudy: CaseStudy, index: number) => (
-              <CaseStudyCard key={caseStudy.id} caseStudy={caseStudy} index={index} />
+              <CaseStudyCard key={caseStudy.id} caseStudy={caseStudy} index={index} itemVariants={itemVariants} />
             ))}
           </motion.div>
 
           {/* CTA: Professional spacing (mt-16 = 64px) */}
           {showViewAll && limit && selectedCaseStudies.length > 0 && (
             <div className="text-center mt-16">
-              <a 
+              <Link 
                 href="/case-studies"
                 className="inline-flex items-center justify-center gap-2 h-12 px-8 rounded-lg border-2 border-primary/20 bg-background hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all duration-300 text-base font-semibold"
               >
@@ -134,7 +133,7 @@ export const CaseStudiesGrid = React.memo(function CaseStudiesGrid({
                 <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
                 </svg>
-              </a>
+              </Link>
             </div>
           )}
         </div>
@@ -149,7 +148,7 @@ export const CaseStudiesGrid = React.memo(function CaseStudiesGrid({
           viewport={{ once: true, margin: "-100px" }}
         >
           {selectedCaseStudies.map((caseStudy: CaseStudy, index: number) => (
-            <CaseStudyCard key={caseStudy.id} caseStudy={caseStudy} index={index} />
+            <CaseStudyCard key={caseStudy.id} caseStudy={caseStudy} index={index} itemVariants={itemVariants} />
           ))}
         </motion.div>
       )}
@@ -164,22 +163,10 @@ export const CaseStudiesGrid = React.memo(function CaseStudiesGrid({
   - Equal heights via h-full
   - Consistent internal spacing
 */
-function CaseStudyCard({ caseStudy, index }: { caseStudy: CaseStudy; index: number }) {
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.5,
-        ease: "easeOut"
-      }
-    }
-  }
-
+function CaseStudyCard({ caseStudy, index, itemVariants }: { caseStudy: CaseStudy; index: number; itemVariants: { hidden: object; visible: object } }) {
   return (
     <motion.article variants={itemVariants} className="h-full">
-      <a 
+      <Link 
         href={`/case-studies/${caseStudy.slug}`}
         className="block h-full group"
       >
@@ -243,7 +230,7 @@ function CaseStudyCard({ caseStudy, index }: { caseStudy: CaseStudy; index: numb
             </div>
           </div>
         </Card>
-      </a>
+      </Link>
     </motion.article>
   )
 }

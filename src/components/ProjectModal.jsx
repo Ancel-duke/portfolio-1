@@ -162,7 +162,7 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
             animate={{ scale: 1, opacity: 1, y: 0 }}
             exit={{ scale: 0.95, opacity: 0, y: 20 }}
             transition={{ duration: 0.2 }}
-            className="relative bg-white dark:bg-gray-900 rounded-lg sm:rounded-2xl shadow-2xl max-w-5xl w-full max-h-[95vh] sm:max-h-[90vh] overflow-y-auto mx-auto"
+            className="relative bg-white dark:bg-gray-900 rounded-lg sm:rounded-2xl shadow-2xl w-[calc(100%-2rem)] sm:w-[calc(100%-3rem)] max-w-5xl max-h-[90vh] sm:max-h-[90vh] overflow-y-auto mx-auto my-4 sm:my-6"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Header: H3 for AI-Overview / SGE semantic clarity */}

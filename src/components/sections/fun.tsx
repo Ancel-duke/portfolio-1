@@ -3,7 +3,12 @@ import { motion } from "framer-motion"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../../components/ui/card"
 import { Switch } from "../../components/ui/switch"
 import { NowPlaying } from "../../components/ui/now-playing"
-import { cn, loadFromLocalStorage, saveToLocalStorage } from "../../lib/utils"
+import { useBackgroundAudioState } from "../../contexts/BackgroundAudioContext"
+import { useAnimationsEnabled } from "../../contexts/AnimationsContext"
+import { getSectionVariants } from "../../lib/animation-variants"
+import { useLocalStorageToggle } from "../../hooks/useLocalStorageToggle"
+import { LAB_DEFAULTS, LAB_DESCRIPTIONS, LAB_STORAGE_KEYS } from "../../data/lab-toggles"
+import { cn } from "../../lib/utils"
 import { 
   Music, 
   Lightbulb, 
@@ -61,37 +66,45 @@ const iconMap = {
 
 export function Fun({ className }: FunProps) {
   const [currentTrackIndex, setCurrentTrackIndex] = React.useState(0)
-  const [isPlaying, setIsPlaying] = React.useState(false)
-  const [labs, setLabs] = React.useState(() => 
-    loadFromLocalStorage('labs', funData.labs)
+  const [animationsEnabled, setAnimationsEnabled] = useLocalStorageToggle(LAB_STORAGE_KEYS.animations, LAB_DEFAULTS.animations)
+  const [parallaxEnabled, setParallaxEnabled] = useLocalStorageToggle(LAB_STORAGE_KEYS.parallax, LAB_DEFAULTS.parallax)
+  const [customCursorEnabled, setCustomCursorEnabled] = useLocalStorageToggle(LAB_STORAGE_KEYS.customCursor, LAB_DEFAULTS.customCursor)
+  const [nowPlayingEnabled, setNowPlayingEnabled] = useLocalStorageToggle(LAB_STORAGE_KEYS.nowPlaying, LAB_DEFAULTS.nowPlaying)
+  const { isPlaying, setPlaying, playFailed, clearPlayFailed } = useBackgroundAudioState()
+
+  const currentTrackFromData = funData.nowPlaying[currentTrackIndex]
+  const currentTrack = React.useMemo(
+    () => ({ ...currentTrackFromData, isPlaying }),
+    [currentTrackFromData, isPlaying]
   )
 
-  const currentTrack = funData.nowPlaying[currentTrackIndex]
+  const animationsEnabledFromContext = useAnimationsEnabled()
+  const { containerVariants, itemVariants } = getSectionVariants(animationsEnabledFromContext)
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1
-      }
-    }
-  }
+  const labEntries: Array<{ key: keyof typeof LAB_STORAGE_KEYS; enabled: boolean; setEnabled: (v: boolean) => void; description: string }> = React.useMemo(
+    () => [
+      { key: "customCursor", enabled: customCursorEnabled, setEnabled: setCustomCursorEnabled, description: LAB_DESCRIPTIONS.customCursor },
+      { key: "parallax", enabled: parallaxEnabled, setEnabled: setParallaxEnabled, description: LAB_DESCRIPTIONS.parallax },
+      { key: "nowPlaying", enabled: nowPlayingEnabled, setEnabled: setNowPlayingEnabled, description: LAB_DESCRIPTIONS.nowPlaying },
+      { key: "animations", enabled: animationsEnabled, setEnabled: setAnimationsEnabled, description: LAB_DESCRIPTIONS.animations },
+    ],
+    [animationsEnabled, parallaxEnabled, customCursorEnabled, nowPlayingEnabled, setAnimationsEnabled, setParallaxEnabled, setCustomCursorEnabled, setNowPlayingEnabled]
+  )
 
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.5
-      }
-    }
-  }
+  React.useEffect(() => {
+    const root = document.documentElement
+    if (customCursorEnabled) root.classList.add("labs-custom-cursor")
+    else root.classList.remove("labs-custom-cursor")
+    if (parallaxEnabled) root.classList.add("labs-parallax")
+    else root.classList.remove("labs-parallax")
+    if (animationsEnabled) root.classList.add("labs-animations")
+    else root.classList.remove("labs-animations")
+  }, [customCursorEnabled, parallaxEnabled, animationsEnabled])
 
-  const handlePlayPause = () => {
-    setIsPlaying(!isPlaying)
-  }
+  const handlePlayPause = React.useCallback(() => {
+    setPlaying((prev) => !prev)
+    clearPlayFailed()
+  }, [setPlaying, clearPlayFailed])
 
   const handleNext = () => {
     setCurrentTrackIndex((prev) => (prev + 1) % funData.nowPlaying.length)
@@ -100,74 +113,6 @@ export function Fun({ className }: FunProps) {
   const handlePrevious = () => {
     setCurrentTrackIndex((prev) => (prev - 1 + funData.nowPlaying.length) % funData.nowPlaying.length)
   }
-
-  // Ensure per-feature keys are respected on initial load for Labs
-  React.useEffect(() => {
-    const featureKeys = ['customCursor', 'parallax', 'nowPlaying', 'animations'] as const
-    let merged = { ...labs }
-    featureKeys.forEach((key) => {
-      try {
-        const stored = localStorage.getItem(`labs:${key}`)
-        if (stored !== null) {
-          const parsed = JSON.parse(stored)
-          if (typeof parsed === 'boolean') {
-            merged = {
-              ...merged,
-              [key]: {
-                ...merged[key as keyof typeof merged],
-                enabled: parsed
-              }
-            }
-          }
-        }
-      } catch {
-        // ignore malformed values for robustness
-      }
-    })
-    // Only update state if something changed
-    const changed = featureKeys.some((k) => merged[k].enabled !== labs[k].enabled)
-    if (changed) {
-      setLabs(merged)
-    }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
-
-  const handleLabToggle = (labKey: string) => {
-    const newLabs = {
-      ...labs,
-      [labKey]: {
-        ...labs[labKey as keyof typeof labs],
-        enabled: !labs[labKey as keyof typeof labs].enabled
-      }
-    }
-    setLabs(newLabs)
-    saveToLocalStorage('labs', newLabs)
-    // Also persist individual feature key immediately
-    const enabled = newLabs[labKey as keyof typeof newLabs].enabled
-    try {
-      localStorage.setItem(`labs:${labKey}`, JSON.stringify(!!enabled))
-    } catch {
-      // non-fatal
-    }
-  }
-
-  // Reflect lab flags immediately in the UI (classes that CSS/JS can hook into)
-  React.useEffect(() => {
-    const root = document.documentElement
-    const flagClassMap: Record<string, string> = {
-      customCursor: 'labs-custom-cursor',
-      parallax: 'labs-parallax',
-      animations: 'labs-animations'
-    }
-    Object.entries(flagClassMap).forEach(([key, className]) => {
-      const enabled = (labs as any)[key]?.enabled
-      if (enabled) {
-        root.classList.add(className)
-      } else {
-        root.classList.remove(className)
-      }
-    })
-  }, [labs])
 
   const getIcon = (iconName: string) => {
     const IconComponent = iconMap[iconName as keyof typeof iconMap] || Code2
@@ -194,7 +139,7 @@ export function Fun({ className }: FunProps) {
           viewport={{ once: true, margin: "-100px" }}
         >
           {/* Now Playing (respects Labs toggle) */}
-          {labs.nowPlaying?.enabled && (
+          {nowPlayingEnabled && (
             <motion.div variants={itemVariants}>
               <Card className="h-full">
                 <CardHeader>
@@ -207,6 +152,11 @@ export function Fun({ className }: FunProps) {
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
+                  {playFailed && (
+                    <p className="text-xs text-muted-foreground mb-2">
+                      Autoplay was blocked. Click Play to start.
+                    </p>
+                  )}
                   <NowPlaying
                     track={currentTrack}
                     onPlayPause={handlePlayPause}
@@ -349,20 +299,18 @@ export function Fun({ className }: FunProps) {
             </CardHeader>
             <CardContent>
               <div className="space-y-4">
-                {Object.entries(labs).map(([key, lab]) => (
+                {labEntries.map(({ key, enabled, setEnabled, description }) => (
                   <div key={key} className="flex items-center justify-between p-4 bg-muted/50 rounded-lg">
                     <div>
-                      <h4 className="font-medium">{lab.description}</h4>
-                      <p className="text-sm text-muted-foreground">
-                        {key === 'customCursor' && 'Custom cursor with particle effects'}
-                        {key === 'parallax' && 'Parallax scrolling effects on hero sections'}
-                        {key === 'nowPlaying' && 'Now playing music widget'}
-                        {key === 'animations' && 'Enhanced animations and transitions'}
-                      </p>
+                      <h4 className="font-medium">{description}</h4>
+                      <p className="text-sm text-muted-foreground">{description}</p>
                     </div>
                     <Switch
-                      checked={lab.enabled}
-                      onCheckedChange={() => handleLabToggle(key)}
+                      checked={enabled}
+                      onCheckedChange={(next) => {
+                        setEnabled(next)
+                        if (key === "nowPlaying") setPlaying(next)
+                      }}
                     />
                   </div>
                 ))}

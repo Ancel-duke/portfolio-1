@@ -1,6 +1,6 @@
 [build]
-  publish = "build"
-  command = "npm run build && node scripts/minify-jsonld.js"
+  publish = "out"
+  command = "npm run build"
 
 [build.environment]
   NODE_VERSION = "22"
@@ -20,10 +20,11 @@
   [redirects.conditions]
     Host = ["ancel-ajanga.netlify.app"]
 
+# Static export redirects (define here; next.config redirects don't run with output: export)
 [[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
+  from = "/blog"
+  to = "/developer-journal"
+  status = 301
 
 [[headers]]
   for = "/*"

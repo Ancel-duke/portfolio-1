@@ -1,5 +1,6 @@
 import React from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useRouter } from 'next/router';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
 import { ArrowLeft } from 'lucide-react';
@@ -15,7 +16,8 @@ import blogData from '../data/blog-posts.json';
 const posts = blogData.posts as BlogPostType[];
 
 export function BlogPost() {
-  const { slug } = useParams<{ slug: string }>();
+  const router = useRouter();
+  const slug = typeof router.query.slug === 'string' ? router.query.slug : undefined;
   const post = posts.find((p: BlogPostType) => p.slug === slug);
 
   if (!post) {
@@ -23,7 +25,7 @@ export function BlogPost() {
       <div className="container-custom py-16">
         <h1>Post not found</h1>
         <Button asChild>
-          <Link to="/developer-journal">Back to Developer Journal</Link>
+          <Link href="/developer-journal">Back to Developer Journal</Link>
         </Button>
       </div>
     );
@@ -89,7 +91,7 @@ export function BlogPost() {
                 className="mb-4"
               />
               <Button variant="outline" asChild>
-                <Link to="/developer-journal">
+                <Link href="/developer-journal">
                   <ArrowLeft className="mr-2 h-4 w-4" /> Back to Developer Journal
                 </Link>
               </Button>

@@ -3,6 +3,8 @@ import { motion } from 'framer-motion'
 import { Card, CardContent } from '../ui/card'
 import { Button } from '../ui/button'
 import { OptimizedImage } from '../ui/optimized-image'
+import { useAnimationsEnabled } from '../../contexts/AnimationsContext'
+import { getSectionVariants } from '../../lib/animation-variants'
 import { Download, MapPin, Calendar, Code, Users, Award, Target, GraduationCap, Rocket, Briefcase } from 'lucide-react'
 import { cn } from '../../lib/utils'
 
@@ -11,21 +13,9 @@ interface AboutProps {
   fullPage?: boolean;
 }
 
-export function About({ className }: AboutProps) {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1
-      }
-    }
-  }
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0 }
-  }
+export function About({ className, fullPage }: AboutProps) {
+  const animationsEnabled = useAnimationsEnabled()
+  const { containerVariants, itemVariants } = getSectionVariants(animationsEnabled)
 
   const skills = [
     { name: 'React', level: 95, category: 'Frontend' },
@@ -119,9 +109,15 @@ export function About({ className }: AboutProps) {
         animate="visible"
       >
         <motion.div variants={itemVariants} className="text-center mb-16 px-4 sm:px-0">
-          <h2 className="text-[clamp(2rem,5vw,3rem)] font-bold mb-[clamp(1rem,2.5vw,1.5rem)]">
-            About <span className="text-gradient">Me</span>
-          </h2>
+          {fullPage ? (
+            <h1 className="text-[clamp(2rem,5vw,3rem)] font-bold mb-[clamp(1rem,2.5vw,1.5rem)]">
+              About <span className="text-gradient">Me</span>
+            </h1>
+          ) : (
+            <h2 className="text-[clamp(2rem,5vw,3rem)] font-bold mb-[clamp(1rem,2.5vw,1.5rem)]">
+              About <span className="text-gradient">Me</span>
+            </h2>
+          )}
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-10 lg:gap-12 items-start">

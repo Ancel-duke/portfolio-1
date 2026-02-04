@@ -5,6 +5,8 @@ import { Button } from "../ui/button"
 import { Badge } from "../ui/badge"
 import { cn, formatDate } from "../../lib/utils"
 import { Calendar, Clock, ArrowRight } from "lucide-react"
+import { useAnimationsEnabled } from "../../contexts/AnimationsContext"
+import { getSectionVariants } from "../../lib/animation-variants"
 import { OptimizedImage } from "../ui/optimized-image"
 import blogData from "../../data/blog.json"
 
@@ -19,27 +21,8 @@ interface BlogGridProps {
 
 export const BlogGrid = React.memo(function BlogGrid({ className, limit, showViewAll = true }: BlogGridProps) {
   const posts: BlogPost[] = limit ? (blogData as BlogPost[]).slice(0, limit) : (blogData as BlogPost[])
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1
-      }
-    }
-  }
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.5
-      }
-    }
-  }
+  const animationsEnabled = useAnimationsEnabled()
+  const { containerVariants, itemVariants } = getSectionVariants(animationsEnabled)
 
   return (
     <section className={cn("py-16", className)}>

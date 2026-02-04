@@ -4,6 +4,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../..
 import { Button } from "../../components/ui/button"
 import { Badge } from "../../components/ui/badge"
 import { cn } from "../../lib/utils"
+import { useAnimationsEnabled } from "../../contexts/AnimationsContext"
+import { getSectionVariants } from "../../lib/animation-variants"
 import { 
   Laptop, 
   Globe, 
@@ -48,37 +50,20 @@ const iconMap = {
 }
 
 export function Timeline({ className }: TimelineProps) {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.3
+  const animationsEnabled = useAnimationsEnabled()
+  const { containerVariants } = getSectionVariants(animationsEnabled)
+  const itemVariants = animationsEnabled
+    ? {
+        hidden: { opacity: 0, x: -50 },
+        visible: { opacity: 1, x: 0, transition: { duration: 0.6 } },
       }
-    }
-  }
-
-  const itemVariants = {
-    hidden: { opacity: 0, x: -50 },
-    visible: {
-      opacity: 1,
-      x: 0,
-      transition: {
-        duration: 0.6
+    : { hidden: { opacity: 1, x: 0 }, visible: { opacity: 1, x: 0, transition: { duration: 0 } } }
+  const rightItemVariants = animationsEnabled
+    ? {
+        hidden: { opacity: 0, x: 50 },
+        visible: { opacity: 1, x: 0, transition: { duration: 0.6 } },
       }
-    }
-  }
-
-  const rightItemVariants = {
-    hidden: { opacity: 0, x: 50 },
-    visible: {
-      opacity: 1,
-      x: 0,
-      transition: {
-        duration: 0.6
-      }
-    }
-  }
+    : { hidden: { opacity: 1, x: 0 }, visible: { opacity: 1, x: 0, transition: { duration: 0 } } }
 
   return (
     <section className={cn("py-16", className)}>

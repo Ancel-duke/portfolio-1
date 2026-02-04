@@ -1,7 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Helmet } from 'react-helmet-async';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { Card, CardContent } from '../components/ui/card';
 import { OptimizedImage } from '../components/ui/optimized-image';
 import { formatDate } from '../lib/utils';
@@ -74,19 +73,6 @@ export function DeveloperJournal() {
 
   return (
     <>
-      <Helmet>
-        <title>Developer Journal - Ancel Ajanga | Full Stack Developer</title>
-        <meta 
-          name="description" 
-          content="Explore technical articles, tutorials, and insights about web development, architecture, and software engineering from Ancel Ajanga's developer journal."
-        />
-        <meta 
-          name="keywords" 
-          content="web development, React, Vue, Angular, PWA, architecture, state management, full stack, developer blog"
-        />
-  <link rel="canonical" href="https://ancel.co.ke/developer-journal" />
-      </Helmet>
-
       <section className="py-16 md:py-24">
         <div className="container-custom">
           <motion.div
@@ -117,7 +103,7 @@ export function DeveloperJournal() {
                   variants={itemVariants}
                   className="group"
                 >
-                  <Link to={`/developer-journal/${post.slug}`}>
+                  <Link href={`/developer-journal/${post.slug}`}>
                     <Card className="h-full hover:shadow-xl transition-all duration-300 border-0 bg-card/50 backdrop-blur-sm overflow-hidden">
                       {/* Image */}
                       <div className="relative aspect-video overflow-hidden">

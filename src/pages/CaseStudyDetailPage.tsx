@@ -1,5 +1,6 @@
 import React from 'react'
-import { useParams, Link } from 'react-router-dom'
+import { useRouter } from 'next/router'
+import Link from 'next/link'
 import { motion } from 'framer-motion'
 import caseStudiesData from '../data/case-studies.json'
 import { Card, CardContent, CardTitle } from '../components/ui/card'
@@ -75,7 +76,8 @@ interface CaseStudy {
 }
 
 export function CaseStudyDetailPage() {
-  const { slug } = useParams<{ slug: string }>()
+  const router = useRouter()
+  const slug = typeof router.query.slug === 'string' ? router.query.slug : undefined
   const caseStudy = (caseStudiesData as CaseStudy[]).find((cs: CaseStudy) => cs.slug === slug)
 
   // Determine if this is a lab/experiment project (frontend project)
@@ -110,7 +112,7 @@ export function CaseStudyDetailPage() {
                 The case study you are looking for does not exist or has been moved.
               </p>
               <Button asChild>
-                <Link to="/case-studies">
+                <Link href="/case-studies">
                   <ArrowLeft className="mr-2 h-4 w-4" /> Back to Case Studies
                 </Link>
               </Button>
@@ -176,7 +178,7 @@ export function CaseStudyDetailPage() {
 
         <motion.div variants={itemVariants} className="mb-4 sm:mb-6 md:mb-8">
           <Button variant="outline" size="sm" className="min-h-[44px] text-sm sm:text-base" asChild>
-            <Link to={parentUrl}>
+            <Link href={parentUrl}>
               <ArrowLeft className="mr-2 h-4 w-4" /> {backButtonText}
             </Link>
           </Button>
@@ -466,7 +468,7 @@ export function CaseStudyDetailPage() {
                 {related.map((cs) => (
                   <li key={cs.slug}>
                     <Link
-                      to={`/case-studies/${cs.slug}`}
+                      href={`/case-studies/${cs.slug}`}
                       className="text-primary hover:underline font-medium"
                     >
                       {cs.title}

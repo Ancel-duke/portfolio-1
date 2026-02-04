@@ -4,6 +4,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../..
 import { Badge } from "../../components/ui/badge"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../../components/ui/tabs"
 import { cn } from "../../lib/utils"
+import { useAnimationsEnabled } from "../../contexts/AnimationsContext"
+import { getSectionVariants } from "../../lib/animation-variants"
 import { 
   BarChart3, 
   TrendingUp, 
@@ -97,27 +99,8 @@ const categoryColors = {
 
 export const TechStack = React.memo(function TechStack({ className }: TechStackProps) {
   const [activeTab, setActiveTab] = React.useState('frequency')
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1
-      }
-    }
-  }
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.5
-      }
-    }
-  }
+  const animationsEnabled = useAnimationsEnabled()
+  const { containerVariants, itemVariants } = getSectionVariants(animationsEnabled)
 
   // Memoize chart data preparation to prevent unnecessary recalculations
   const { frequencyData, proficiencyData, categoryData } = React.useMemo(() => {

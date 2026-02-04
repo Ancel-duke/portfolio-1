@@ -7,10 +7,14 @@ import StructuredData from '../components/seo/StructuredData';
 import { generateProjectSchema, generatePortfolioSchema } from '../components/seo/schemas';
 import projectsData from '../data/projects.json';
 import { getMasterSortedProjects } from '../utils/projectSorter';
+import { useAnimationsEnabled } from '../contexts/AnimationsContext';
+import { getSectionVariants } from '../lib/animation-variants';
 
 const Projects = () => {
   const [selectedProject, setSelectedProject] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const animationsEnabled = useAnimationsEnabled();
+  const { containerVariants, itemVariants } = getSectionVariants(animationsEnabled);
 
   // Use useMemo to prevent flicker on reload - sorted projects remain stable
   // Master sort: fullstack before frontend, most recent first within each type
@@ -28,49 +32,28 @@ const Projects = () => {
     setSelectedProject(null);
   };
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.5,
-      },
-    },
-  };
-
   const projectSchemas = useMemo(() => projects.map((p) => generateProjectSchema(p)), [projects]);
   const itemListSchema = useMemo(() => generatePortfolioSchema(projects), [projects]);
 
   return (
     <>
       <SEO
-        title="Projects — Aegis, OpsFlow, SignFlow, LedgerX, Fits by Aliv | Ancel Ajanga"
-        description="Software projects by Fullstack Engineer Ancel Ajanga: Aegis (AI infrastructure), OpsFlow (incident response), SignFlow (real-time sign language), LedgerX (finance), Fits by Aliv (e-commerce), EduChain, NestFi, EduManage. System resilience from UI to database. Kenya."
+        title="Projects — NestFi, SignFlow, OpsFlow, Aegis, LedgerX, EduChain, EduManage, TaskForge | Ancel Ajanga"
+        description="Software projects by Ancel Ajanga: Fullstack Software Engineer Narok & Nairobi, Kenya. NestFi, SignFlow, OpsFlow, Aegis, LedgerX, EduChain, EduManage, TaskForge, Fits by Aliv. Security, AIOps, full-stack developer East Africa."
         canonicalUrl="https://ancel.co.ke/projects"
         keywords={[
-          'Ancel Ajanga',
-          'Fullstack Engineer',
-          'Projects',
-          'Aegis',
-          'OpsFlow',
-          'SignFlow',
-          'LedgerX',
-          'Fits by Aliv',
-          'EduChain',
           'NestFi',
+          'SignFlow',
+          'OpsFlow',
+          'Aegis',
+          'LedgerX',
+          'EduChain',
           'EduManage',
-          'Software Engineer Kenya',
+          'TaskForge',
+          'Narok software engineer',
+          'Nairobi software architect',
+          'Full-stack developer Kenya',
+          'Projects Ancel Ajanga',
         ]}
       />
       <StructuredData data={[itemListSchema, ...projectSchemas]} />

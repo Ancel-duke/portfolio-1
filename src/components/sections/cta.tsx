@@ -3,6 +3,8 @@ import { motion } from "framer-motion"
 import { Button } from "../../components/ui/button"
 import { Card, CardContent } from "../../components/ui/card"
 import { cn } from "../../lib/utils"
+import { useAnimationsEnabled } from "../../contexts/AnimationsContext"
+import { getSectionVariants } from "../../lib/animation-variants"
 import { ArrowRight, Mail, Github, Linkedin, MessageCircle } from "lucide-react"
 
 interface CTAProps {
@@ -10,26 +12,8 @@ interface CTAProps {
 }
 
 export function CTA({ className }: CTAProps) {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2
-      }
-    }
-  }
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.6
-      }
-    }
-  }
+  const animationsEnabled = useAnimationsEnabled()
+  const { containerVariants, itemVariants } = getSectionVariants(animationsEnabled)
 
   const socialLinks = [
     {

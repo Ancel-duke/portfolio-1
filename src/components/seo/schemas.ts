@@ -22,6 +22,9 @@ export function getKnowsAboutAsThings(
     });
 }
 
+/** Top projects for JSON-LD and SEO (NestFi, SignFlow, OpsFlow, Aegis, LedgerX, EduChain, EduManage, TaskForge). */
+export const TOP_PROJECT_NAMES = ["NestFi", "SignFlow", "OpsFlow", "Aegis", "LedgerX", "EduChain", "EduManage", "TaskForge"] as const;
+
 /** Person Schema for Homepage. Pass stack tech names + techToAuthoritative for E-A-T knowsAbout as Thing[]. */
 export const generatePersonSchema = (opts?: {
   knowsAboutThings?: Array<{ "@type": "Thing"; name: string; sameAs?: string }>;
@@ -30,7 +33,7 @@ export const generatePersonSchema = (opts?: {
   const knowsAbout = opts?.knowsAboutThings?.length
     ? [systemResilienceThing, ...opts.knowsAboutThings]
     : [
-        "System Resilience", "React", "React Native", "Flutter", "Node.js", "Python", "JavaScript",
+        "System Resilience", "Security", "AIOps", "React", "React Native", "Flutter", "Node.js", "Python", "JavaScript",
         "MongoDB", "Express", "NestJS", "PostgreSQL", "Redis", "BullMQ", "Laravel", "Machine Learning", "Angular", "Vue",
         "TypeScript", "Django", "Full Stack Development", "Mobile App Development",
         "Web Development", "UI/UX Design", "API Development", "Database Design"
@@ -41,24 +44,27 @@ export const generatePersonSchema = (opts?: {
     "name": "Ancel Ajanga",
     "alternateName": ["Ajanga Ancel", "Duke"],
     "jobTitle": "Fullstack Engineer",
-    "description": "Ancel Ajanga (Duke) is a Fullstack Engineer specializing in system resilience: hardened backends, fluid frontends, and self-healing infrastructure. He owns the full lifecycle of a request—from Flutter UI to M-Pesa STK Query and the database transaction.",
+    "description": "Ancel Ajanga (Duke) is a Fullstack Engineer and Software Architect based in Narok and Nairobi, Kenya. Specializes in system resilience, security, and AIOps: hardened backends, fluid frontends, and self-healing infrastructure. Full-stack developer Kenya and East Africa—NestFi, SignFlow, OpsFlow, Aegis, LedgerX, EduChain, EduManage, TaskForge.",
     "url": "https://ancel.co.ke/",
     "image": "https://ancel.co.ke/assets/profile_photo.jpg",
     "email": "ancel.ajanga@yahoo.com",
-    "telephone": "+254768901257",
+    "telephone": "+254793558755",
     "address": {
       "@type": "PostalAddress",
-      "addressCountry": "Kenya"
+      "addressLocality": "Narok, Nairobi",
+      "addressRegion": "Kenya",
+      "addressCountry": "KE"
     },
     "sameAs": [
       "https://github.com/Ancel-duke",
+      "https://www.linkedin.com/in/ajanga-ancel",
       "https://www.instagram.com/lema.yian._/#"
     ],
     "knowsAbout": knowsAbout,
     "hasOccupation": {
       "@type": "Occupation",
       "name": "Fullstack Engineer",
-      "description": "Architects resilience for high-stakes systems across mobile, web, and backend; full request lifecycle from UI to database"
+      "description": "Software engineer and architect—Narok and Nairobi, Kenya. Builds resilient systems with focus on security and AIOps; full request lifecycle from UI to database."
     },
     "alumniOf": {
       "@type": "EducationalOrganization",
@@ -70,6 +76,29 @@ export const generatePersonSchema = (opts?: {
     }
   };
 };
+
+/** Software Developer profile JSON-LD: skills, top projects, location Kenya/East Africa, contact. For crawlers and rich results. */
+export function generateSoftwareDeveloperSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "ProfilePage",
+    "mainEntity": {
+      "@type": "Person",
+      "name": "Ancel Ajanga",
+      "alternateName": ["Ajanga Ancel", "Duke"],
+      "jobTitle": "Fullstack Software Engineer",
+      "description": "Narok and Nairobi software engineer and architect. Full-stack developer Kenya and East Africa. Security and AIOps. Projects: NestFi, SignFlow, OpsFlow, Aegis, LedgerX, EduChain, EduManage, TaskForge.",
+      "url": "https://ancel.co.ke",
+      "image": "https://ancel.co.ke/assets/profile_photo.jpg",
+      "email": "ancel.ajanga@yahoo.com",
+      "telephone": "+254793558755",
+      "address": { "@type": "PostalAddress", "addressLocality": "Nairobi", "addressCountry": "Kenya" },
+      "knowsAbout": ["Full-stack development", "Security", "AIOps", "System resilience", "NestFi", "SignFlow", "OpsFlow", "Aegis", "LedgerX", "EduChain", "EduManage", "TaskForge", "React", "Node.js", "TypeScript", "NestJS", "Flutter", "PostgreSQL", "MongoDB"],
+      "hasCredential": [],
+      "sameAs": ["https://github.com/Ancel-duke", "https://www.linkedin.com/in/ajanga-ancel"]
+    }
+  };
+}
 
 // Project Schema for individual projects (SoftwareApplication) — AI-Overview / SGE-friendly; includes contribution and links
 export const generateProjectSchema = (project: any) => {
@@ -331,7 +360,7 @@ export const generateOrganizationSchema = () => ({
   },
   "contactPoint": {
     "@type": "ContactPoint",
-    "telephone": "+254768901257",
+    "telephone": "+254793558755",
     "contactType": "customer service",
     "email": "ancel.ajanga@yahoo.com"
   },

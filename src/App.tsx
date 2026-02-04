@@ -2,6 +2,7 @@ import React, { Suspense, lazy } from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { HelmetProvider } from 'react-helmet-async'
 import { ThemeProvider } from './contexts/ThemeContext'
+import { AnimationsProvider } from './contexts/AnimationsContext'
 import { Header } from './components/layout/header'
 import { Footer } from './components/layout/footer'
 import { Hero } from './components/sections/hero'
@@ -210,6 +211,7 @@ function App() {
   return (
     <HelmetProvider>
       <ThemeProvider>
+        <AnimationsProvider>
         <Router>
           <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
             <WebVitals />
@@ -237,6 +239,7 @@ function App() {
             <Footer />
           </div>
         </Router>
+        </AnimationsProvider>
       </ThemeProvider>
     </HelmetProvider>
   )

@@ -1,12 +1,14 @@
 import * as React from 'react'
 import { motion } from 'framer-motion'
-import { Link } from 'react-router-dom'
+import Link from 'next/link'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../ui/card'
 import { Badge } from '../ui/badge'
 import { Button } from '../ui/button'
 import { cn } from '../../lib/utils'
 import { ArrowRight, FileText, BookOpen } from 'lucide-react'
 import { useDailyFeaturedContent } from '../../hooks/useDailyFeaturedContent'
+import { useAnimationsEnabled } from '../../contexts/AnimationsContext'
+import { getSectionVariants } from '../../lib/animation-variants'
 import { OptimizedImage } from '../ui/optimized-image'
 
 interface TodaysHighlightsProps {
@@ -19,27 +21,8 @@ interface TodaysHighlightsProps {
  */
 export function TodaysHighlights({ className }: TodaysHighlightsProps) {
   const featuredItems = useDailyFeaturedContent()
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-      },
-    },
-  }
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.5,
-      },
-    },
-  }
+  const animationsEnabled = useAnimationsEnabled()
+  const { containerVariants, itemVariants } = getSectionVariants(animationsEnabled)
 
   if (featuredItems.length === 0) {
     return null
@@ -184,7 +167,7 @@ export function TodaysHighlights({ className }: TodaysHighlightsProps) {
                     className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-colors"
                     asChild
                   >
-                    <Link to={item.slug}>
+                    <Link href={item.slug}>
                       {item.type === 'case-study' ? 'View Case Study' : 'Read Article'}
                       <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                     </Link>

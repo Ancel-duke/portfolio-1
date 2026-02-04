@@ -5,11 +5,15 @@ import { Button } from "../../components/ui/button"
 import { Badge } from "../../components/ui/badge"
 import { Switch } from "../../components/ui/switch"
 import { NowPlaying } from "../../components/ui/now-playing"
-import { cn, loadFromLocalStorage, saveToLocalStorage } from "../../lib/utils"
+import { useBackgroundAudioState } from "../../contexts/BackgroundAudioContext"
+import { getSectionVariants } from "../../lib/animation-variants"
+import { useLocalStorageToggle } from "../../hooks/useLocalStorageToggle"
+import { LAB_DEFAULTS, LAB_DESCRIPTIONS, LAB_STORAGE_KEYS } from "../../data/lab-toggles"
+import { cn } from "../../lib/utils"
 import { ExternalLink, Github, Calendar, Clock, ArrowRight, FlaskConical, Music, Lightbulb, Rocket, Map, TestTube, Briefcase, Layers, Code2, Palette, Globe, Server, GitBranch } from "lucide-react"
 import caseStudiesData from "../../data/case-studies.json"
 import funData from "../../data/fun.json"
-import { Link } from "react-router-dom"
+import Link from "next/link"
 import { OptimizedImage } from "../../components/ui/optimized-image"
 
 interface CaseStudy {
@@ -78,16 +82,42 @@ const iconMap = {
 
 export function LabsExperiments({ className, limit, showViewAll = true, fullPage = false }: LabsExperimentsProps) {
   const [currentTrackIndex, setCurrentTrackIndex] = React.useState(0)
-  const [isPlaying, setIsPlaying] = React.useState(false)
-  const [labs, setLabs] = React.useState(() => 
-    loadFromLocalStorage('labs', funData.labs)
+  const [animationsEnabled, setAnimationsEnabled] = useLocalStorageToggle(LAB_STORAGE_KEYS.animations, LAB_DEFAULTS.animations)
+  const [parallaxEnabled, setParallaxEnabled] = useLocalStorageToggle(LAB_STORAGE_KEYS.parallax, LAB_DEFAULTS.parallax)
+  const [customCursorEnabled, setCustomCursorEnabled] = useLocalStorageToggle(LAB_STORAGE_KEYS.customCursor, LAB_DEFAULTS.customCursor)
+  const [nowPlayingEnabled, setNowPlayingEnabled] = useLocalStorageToggle(LAB_STORAGE_KEYS.nowPlaying, LAB_DEFAULTS.nowPlaying)
+  const { isPlaying, setPlaying, playFailed, clearPlayFailed } = useBackgroundAudioState()
+
+  const currentTrackFromData = funData.nowPlaying[currentTrackIndex]
+  const currentTrack = React.useMemo(
+    () => ({ ...currentTrackFromData, isPlaying }),
+    [currentTrackFromData, isPlaying]
   )
 
-  const currentTrack = funData.nowPlaying[currentTrackIndex]
+  const labEntries: Array<{ key: keyof typeof LAB_STORAGE_KEYS; enabled: boolean; setEnabled: (v: boolean) => void; description: string }> = React.useMemo(
+    () => [
+      { key: "customCursor", enabled: customCursorEnabled, setEnabled: setCustomCursorEnabled, description: LAB_DESCRIPTIONS.customCursor },
+      { key: "parallax", enabled: parallaxEnabled, setEnabled: setParallaxEnabled, description: LAB_DESCRIPTIONS.parallax },
+      { key: "nowPlaying", enabled: nowPlayingEnabled, setEnabled: setNowPlayingEnabled, description: LAB_DESCRIPTIONS.nowPlaying },
+      { key: "animations", enabled: animationsEnabled, setEnabled: setAnimationsEnabled, description: LAB_DESCRIPTIONS.animations },
+    ],
+    [animationsEnabled, parallaxEnabled, customCursorEnabled, nowPlayingEnabled, setAnimationsEnabled, setParallaxEnabled, setCustomCursorEnabled, setNowPlayingEnabled]
+  )
 
-  const handlePlayPause = () => {
-    setIsPlaying(!isPlaying)
-  }
+  React.useEffect(() => {
+    const root = document.documentElement
+    if (customCursorEnabled) root.classList.add("labs-custom-cursor")
+    else root.classList.remove("labs-custom-cursor")
+    if (parallaxEnabled) root.classList.add("labs-parallax")
+    else root.classList.remove("labs-parallax")
+    if (animationsEnabled) root.classList.add("labs-animations")
+    else root.classList.remove("labs-animations")
+  }, [customCursorEnabled, parallaxEnabled, animationsEnabled])
+
+  const handlePlayPause = React.useCallback(() => {
+    setPlaying((prev) => !prev)
+    clearPlayFailed()
+  }, [setPlaying, clearPlayFailed])
 
   const handleNext = () => {
     setCurrentTrackIndex((prev) => (prev + 1) % funData.nowPlaying.length)
@@ -96,40 +126,6 @@ export function LabsExperiments({ className, limit, showViewAll = true, fullPage
   const handlePrevious = () => {
     setCurrentTrackIndex((prev) => (prev - 1 + funData.nowPlaying.length) % funData.nowPlaying.length)
   }
-
-  const handleLabToggle = (labKey: string) => {
-    const newLabs = {
-      ...labs,
-      [labKey]: {
-        ...labs[labKey as keyof typeof labs],
-        enabled: !labs[labKey as keyof typeof labs].enabled
-      }
-    }
-    setLabs(newLabs)
-    saveToLocalStorage('labs', newLabs)
-    try {
-      localStorage.setItem(`labs:${labKey}`, JSON.stringify(!!newLabs[labKey as keyof typeof newLabs].enabled))
-    } catch {
-      // non-fatal
-    }
-  }
-
-  React.useEffect(() => {
-    const root = document.documentElement
-    const flagClassMap: Record<string, string> = {
-      customCursor: 'labs-custom-cursor',
-      parallax: 'labs-parallax',
-      animations: 'labs-animations'
-    }
-    Object.entries(flagClassMap).forEach(([key, className]) => {
-      const enabled = (labs as any)[key]?.enabled
-      if (enabled) {
-        root.classList.add(className)
-      } else {
-        root.classList.remove(className)
-      }
-    })
-  }, [labs])
 
   const getIcon = (iconName: string) => {
     const IconComponent = iconMap[iconName as keyof typeof iconMap] || Code2
@@ -152,27 +148,10 @@ export function LabsExperiments({ className, limit, showViewAll = true, fullPage
   }, [])
 
   const displayedProjects = limit ? labsProjects.slice(0, limit) : labsProjects
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2
-      }
-    }
-  }
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.6
-      }
-    }
-  }
+  const { containerVariants, itemVariants } = React.useMemo(
+    () => getSectionVariants(animationsEnabled),
+    [animationsEnabled]
+  )
 
   if (displayedProjects.length === 0) {
     return null
@@ -303,7 +282,7 @@ export function LabsExperiments({ className, limit, showViewAll = true, fullPage
                     className="w-full mt-3 group-hover:bg-primary group-hover:text-primary-foreground transition-colors"
                     asChild
                   >
-                    <Link to={`/case-studies/${project.slug}`}>
+                    <Link href={`/case-studies/${project.slug}`}>
                       View Details
                       <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                     </Link>
@@ -317,7 +296,7 @@ export function LabsExperiments({ className, limit, showViewAll = true, fullPage
         {showViewAll && limit && displayedProjects.length >= limit && (
           <div className="text-center mt-12">
             <Button size="lg" variant="outline" asChild>
-              <Link to="/labs-experiments">
+              <Link href="/labs-experiments">
                 View All Experiments
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
@@ -346,7 +325,7 @@ export function LabsExperiments({ className, limit, showViewAll = true, fullPage
                 viewport={{ once: true, margin: "-100px" }}
               >
                 {/* Now Playing */}
-                {labs.nowPlaying?.enabled && (
+                {nowPlayingEnabled && (
                   <motion.div variants={itemVariants}>
                     <Card className="h-full">
                       <CardHeader>
@@ -359,6 +338,11 @@ export function LabsExperiments({ className, limit, showViewAll = true, fullPage
                         </CardDescription>
                       </CardHeader>
                       <CardContent>
+                        {playFailed && (
+                          <p className="text-xs text-muted-foreground mb-2">
+                            Autoplay was blocked. Click Play to start.
+                          </p>
+                        )}
                         <NowPlaying
                           track={currentTrack}
                           onPlayPause={handlePlayPause}
@@ -465,20 +449,18 @@ export function LabsExperiments({ className, limit, showViewAll = true, fullPage
                   </CardHeader>
                   <CardContent>
                     <div className="space-y-4">
-                      {Object.entries(labs).map(([key, lab]) => (
+                      {labEntries.map(({ key, enabled, setEnabled, description }) => (
                         <div key={key} className="flex items-center justify-between p-4 bg-muted/50 rounded-lg hover:bg-muted/80 transition-colors">
                           <div>
-                            <h4 className="font-medium">{lab.description}</h4>
-                            <p className="text-sm text-muted-foreground">
-                              {key === 'customCursor' && 'Custom cursor with particle effects'}
-                              {key === 'parallax' && 'Parallax scrolling effects on hero sections'}
-                              {key === 'nowPlaying' && 'Now playing music widget'}
-                              {key === 'animations' && 'Enhanced animations and transitions'}
-                            </p>
+                            <h4 className="font-medium">{description}</h4>
+                            <p className="text-sm text-muted-foreground">{description}</p>
                           </div>
                           <Switch
-                            checked={lab.enabled}
-                            onCheckedChange={() => handleLabToggle(key)}
+                            checked={enabled}
+                            onCheckedChange={(next) => {
+                              setEnabled(next)
+                              if (key === "nowPlaying") setPlaying(next)
+                            }}
                           />
                         </div>
                       ))}

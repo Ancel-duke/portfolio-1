@@ -1,5 +1,6 @@
 import React from 'react'
-import { useParams, Link } from 'react-router-dom'
+import { useRouter } from 'next/router'
+import Link from 'next/link'
 import { motion } from 'framer-motion'
 import blogData from '../data/blog.json'
 import { Card, CardContent, CardTitle } from '../components/ui/card'
@@ -13,7 +14,8 @@ import { Breadcrumb } from '../components/ui/breadcrumb'
 import { generateBlogPostSchema } from '../components/seo/schemas'
 
 export function BlogDetailPage() {
-  const { slug } = useParams<{ slug: string }>()
+  const router = useRouter()
+  const slug = typeof router.query.slug === 'string' ? router.query.slug : undefined
   const post = blogData.find(p => {
     // Convert title to slug format for comparison
     const postSlug = p.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')
@@ -38,7 +40,7 @@ export function BlogDetailPage() {
                 The blog post you are looking for does not exist or has been moved.
               </p>
               <Button asChild>
-                <Link to="/blog">
+                <Link href="/blog">
                   <ArrowLeft className="mr-2 h-4 w-4" /> Back to Blog
                 </Link>
               </Button>
@@ -97,7 +99,7 @@ export function BlogDetailPage() {
 
         <motion.div variants={itemVariants} className="mb-8">
           <Button variant="outline" asChild>
-            <Link to="/blog">
+            <Link href="/blog">
               <ArrowLeft className="mr-2 h-4 w-4" /> Back to Developer Journal
             </Link>
           </Button>
@@ -166,7 +168,7 @@ export function BlogDetailPage() {
                 {related.map((p) => (
                   <li key={p.slug}>
                     <Link
-                      to={`/developer-journal/${p.slug}`}
+                      href={`/developer-journal/${p.slug}`}
                       className="text-primary hover:underline font-medium"
                     >
                       {p.title}

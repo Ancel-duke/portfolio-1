@@ -1,20 +1,29 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  // Purge: Tailwind removes unused styles in production when content paths are correct
   content: [
     "./src/**/*.{js,jsx,ts,tsx}",
-    "./public/index.html"
+    "./pages/**/*.{js,jsx,ts,tsx}"
   ],
   darkMode: 'class',
   theme: {
     container: {
       center: true,
-      padding: "2rem",
+      padding: "clamp(1rem, 4vw, 2rem)",
       screens: {
+        sm: "640px",
+        md: "768px",
+        lg: "1024px",
+        xl: "1280px",
         "2xl": "1200px",
+        "3xl": "1920px",
+        "4xl": "2560px",
       },
     },
     extend: {
+      screens: {
+        "3xl": "1920px",
+        "4xl": "2560px",
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
