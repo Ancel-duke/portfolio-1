@@ -26,11 +26,12 @@ export function getKnowsAboutAsThings(
 export const generatePersonSchema = (opts?: {
   knowsAboutThings?: Array<{ "@type": "Thing"; name: string; sameAs?: string }>;
 }) => {
+  const systemResilienceThing = { "@type": "Thing" as const, name: "System Resilience" };
   const knowsAbout = opts?.knowsAboutThings?.length
-    ? opts.knowsAboutThings
+    ? [systemResilienceThing, ...opts.knowsAboutThings]
     : [
-        "React", "React Native", "Flutter", "Node.js", "Python", "JavaScript",
-        "MongoDB", "Express", "Laravel", "Machine Learning", "Angular", "Vue",
+        "System Resilience", "React", "React Native", "Flutter", "Node.js", "Python", "JavaScript",
+        "MongoDB", "Express", "NestJS", "PostgreSQL", "Redis", "BullMQ", "Laravel", "Machine Learning", "Angular", "Vue",
         "TypeScript", "Django", "Full Stack Development", "Mobile App Development",
         "Web Development", "UI/UX Design", "API Development", "Database Design"
       ];
@@ -39,8 +40,8 @@ export const generatePersonSchema = (opts?: {
     "@type": "Person",
     "name": "Ancel Ajanga",
     "alternateName": ["Ajanga Ancel", "Duke"],
-    "jobTitle": "Fullstack Software Engineer/Developer & App Developer",
-    "description": "Ancel Ajanga (Duke) is a Fullstack Software Engineer/Developer & App Developer who loves building apps that solve real-world problems while expressing creativity through code. Builder of apps, poet, and creative problem solver.",
+    "jobTitle": "Fullstack Engineer",
+    "description": "Ancel Ajanga (Duke) is a Fullstack Engineer specializing in system resilience: hardened backends, fluid frontends, and self-healing infrastructure. He owns the full lifecycle of a request—from Flutter UI to M-Pesa STK Query and the database transaction.",
     "url": "https://ancel.co.ke/",
     "image": "https://ancel.co.ke/assets/profile_photo.jpg",
     "email": "ancel.ajanga@yahoo.com",
@@ -56,8 +57,8 @@ export const generatePersonSchema = (opts?: {
     "knowsAbout": knowsAbout,
     "hasOccupation": {
       "@type": "Occupation",
-      "name": "Fullstack Software Engineer/Developer & App Developer",
-      "description": "Develops complete software applications across mobile, web, and desktop platforms"
+      "name": "Fullstack Engineer",
+      "description": "Architects resilience for high-stakes systems across mobile, web, and backend; full request lifecycle from UI to database"
     },
     "alumniOf": {
       "@type": "EducationalOrganization",
@@ -70,15 +71,15 @@ export const generatePersonSchema = (opts?: {
   };
 };
 
-// Project Schema for individual projects (SoftwareApplication)
+// Project Schema for individual projects (SoftwareApplication) — AI-Overview / SGE-friendly
 export const generateProjectSchema = (project: any) => ({
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
   "name": project.title,
   "description": project.description,
-  "applicationCategory": getApplicationCategory(project.title),
+  "applicationCategory": project.applicationCategory || getApplicationCategory(project.title, project.type),
   "operatingSystem": "Web Browser",
-  "url": project.liveUrl,
+  "url": project.liveUrl || undefined,
   "author": {
     "@type": "Person",
     "name": "Ancel Ajanga"
@@ -90,10 +91,10 @@ export const generateProjectSchema = (project: any) => ({
   },
   "softwareVersion": "1.0",
   "datePublished": project.year || "2024",
-  "programmingLanguage": project.technologies || [],
-  "featureList": project.features || [],
-  "image": `https://ancel.co.ke${project.image}`,
-  "screenshot": `https://ancel.co.ke${project.image}`
+  "programmingLanguage": Array.isArray(project.technologies) ? project.technologies.slice(0, 12) : [],
+  "featureList": project.featureList || project.features || [],
+  "image": project.image ? `https://ancel.co.ke${project.image}` : undefined,
+  "screenshot": project.image ? `https://ancel.co.ke${project.image}` : undefined
 });
 
 /** SoftwareSourceCode schema for projects — links codeRepository to GitHub for E-A-T and crawlability */
@@ -147,7 +148,7 @@ export const generateBlogPostSchema = (post: any) => ({
   "timeRequired": post.readTime
 });
 
-// Case Study Schema
+// Case Study Schema (CreativeWork)
 export const generateCaseStudySchema = (caseStudy: any) => ({
   "@context": "https://schema.org",
   "@type": "CreativeWork",
@@ -159,18 +160,58 @@ export const generateCaseStudySchema = (caseStudy: any) => ({
   },
   "datePublished": caseStudy.year,
   "url": `https://ancel.co.ke/case-studies/${caseStudy.slug}`,
-  "image": `https://ancel.co.ke${caseStudy.images.hero}`,
-  "keywords": caseStudy.technologies.map((tech: any) => tech.name).join(', '),
+  "image": caseStudy.images?.hero ? `https://ancel.co.ke${caseStudy.images.hero}` : undefined,
+  "keywords": (caseStudy.technologies || []).map((tech: any) => (typeof tech === 'string' ? tech : tech.name)).join(', '),
   "about": {
     "@type": "Thing",
     "name": "Software Development",
     "description": "Full-stack software development and project management"
   },
-  "mentions": caseStudy.technologies.map((tech: any) => ({
+  "mentions": (caseStudy.technologies || []).map((tech: any) => ({
     "@type": "Thing",
-    "name": tech.name
+    "name": typeof tech === 'string' ? tech : tech.name
   }))
 });
+
+// TechArticle schema for case study pages (AI-first). Maps Architecture, Resilience, Trade-offs, Problem, Solution, Impact.
+export function generateTechArticleSchema(caseStudy: any) {
+  const baseUrl = 'https://ancel.co.ke';
+  const slug = caseStudy.slug;
+  const url = `${baseUrl}/case-studies/${slug}`;
+  const sections: Array<{ "@type": string; name: string; articleSection: string; articleBody?: string }> = [
+    { "@type": "Article", name: caseStudy.title, articleSection: "The Problem", articleBody: caseStudy.problem },
+    { "@type": "Article", name: caseStudy.title, articleSection: "The Solution", articleBody: caseStudy.solution },
+    { "@type": "Article", name: caseStudy.title, articleSection: "The Impact", articleBody: caseStudy.impact }
+  ];
+  if (caseStudy.architecture) {
+    sections.push({ "@type": "Article", name: caseStudy.title, articleSection: "Architecture", articleBody: caseStudy.architecture });
+  }
+  if (caseStudy.failureModes) {
+    sections.push({ "@type": "Article", name: caseStudy.title, articleSection: "Resilience", articleBody: caseStudy.failureModes });
+  }
+  if (caseStudy.tradeoffs) {
+    sections.push({ "@type": "Article", name: caseStudy.title, articleSection: "Trade-offs", articleBody: caseStudy.tradeoffs });
+  }
+  const articleSectionStr = sections.map((s) => s.articleSection).join('; ');
+  return {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "name": caseStudy.title,
+    "description": caseStudy.description,
+    "author": { "@type": "Person", "name": "Ancel Ajanga", "jobTitle": "Fullstack Engineer" },
+    "datePublished": caseStudy.year,
+    "url": url,
+    "image": caseStudy.images?.hero ? `${baseUrl}${caseStudy.images.hero}` : undefined,
+    "mainEntityOfPage": { "@type": "WebPage", "@id": url },
+    "articleSection": articleSectionStr,
+    "hasPart": sections.map((s) => ({
+      "@type": "Article",
+      "name": s.name,
+      "articleSection": s.articleSection,
+      "articleBody": s.articleBody
+    }))
+  };
+}
 
 // Website Schema
 export const generateWebsiteSchema = () => ({
@@ -191,6 +232,24 @@ export const generateWebsiteSchema = () => ({
   }
 });
 
+// SiteNavigationElement schema for Nav (AI/crawler discovery)
+const BASE_URL = 'https://ancel.co.ke';
+
+export function generateSiteNavigationSchema(navItems: Array<{ name: string; href: string }>): object {
+  return {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Main site navigation",
+    "description": "Navigation for Ancel Ajanga portfolio — Fullstack Engineer, system resilience.",
+    "itemListElement": navItems.map((item, index) => ({
+      "@type": "SiteNavigationElement",
+      "position": index + 1,
+      "name": item.name,
+      "url": item.href === '/' ? BASE_URL + '/' : BASE_URL + item.href
+    }))
+  };
+}
+
 // Breadcrumb Schema
 export const generateBreadcrumbSchema = (items: Array<{name: string, url: string}>) => ({
   "@context": "https://schema.org",
@@ -203,7 +262,7 @@ export const generateBreadcrumbSchema = (items: Array<{name: string, url: string
   }))
 });
 
-// Portfolio Collection Schema
+// Portfolio Collection Schema (ItemList of SoftwareApplications)
 export const generatePortfolioSchema = (projects: any[] = []) => ({
   "@context": "https://schema.org",
   "@type": "ItemList",
@@ -214,46 +273,34 @@ export const generatePortfolioSchema = (projects: any[] = []) => ({
     "position": index + 1,
     "name": project.title,
     "description": project.description,
-    "applicationCategory": getApplicationCategory(project.title),
+    "applicationCategory": project.applicationCategory || getApplicationCategory(project.title, project.type),
     "operatingSystem": "Web Browser",
-    "url": project.liveUrl,
-    "author": {
-      "@type": "Person",
-      "name": "Ancel Ajanga"
-    },
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "USD"
-    },
+    "url": project.liveUrl || undefined,
+    "author": { "@type": "Person", "name": "Ancel Ajanga" },
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
     "softwareVersion": "1.0",
-    "datePublished": "2024",
-    "programmingLanguage": project.technologies || [],
-    "featureList": project.features || [],
-  "image": `https://ancel.co.ke${project.image}`
+    "datePublished": project.year || "2024",
+    "programmingLanguage": Array.isArray(project.technologies) ? project.technologies.slice(0, 12) : [],
+    "featureList": project.featureList || project.features || [],
+    "image": project.image ? `https://ancel.co.ke${project.image}` : undefined
   }))
 });
 
-// Helper function to determine application category
-const getApplicationCategory = (title: string): string => {
-  const titleLower = title.toLowerCase();
-  
-  if (titleLower.includes('finance') || titleLower.includes('money')) {
-    return 'FinanceApplication';
-  } else if (titleLower.includes('fitness') || titleLower.includes('health')) {
-    return 'HealthApplication';
-  } else if (titleLower.includes('habit') || titleLower.includes('productivity')) {
-    return 'ProductivityApplication';
-  } else if (titleLower.includes('travel') || titleLower.includes('trip')) {
-    return 'TravelApplication';
-  } else if (titleLower.includes('school') || titleLower.includes('education') || titleLower.includes('learning')) {
-    return 'EducationalApplication';
-  } else if (titleLower.includes('attendance') || titleLower.includes('management')) {
-    return 'BusinessApplication';
-  } else {
-    return 'WebApplication';
-  }
-};
+// Helper: application category for SoftwareApplication schema (SGE/AI-Overview)
+function getApplicationCategory(title: string, type?: string): string {
+  const t = title.toLowerCase();
+  if (t.includes('ledgerx') || t.includes('nestfi') || t.includes('finance') || t.includes('banking') || t.includes('money')) return 'FinanceApplication';
+  if (t.includes('fitness') || t.includes('health')) return 'HealthApplication';
+  if (t.includes('habit') || t.includes('taskforge') || t.includes('productivity')) return 'ProductivityApplication';
+  if (t.includes('travel')) return 'TravelApplication';
+  if (t.includes('rasoha') || t.includes('edumanage') || t.includes('educhain') || t.includes('e-learning') || t.includes('attendance') || t.includes('school') || t.includes('education') || t.includes('learning')) return 'EducationApplication';
+  if (t.includes('opsflow') || t.includes('incident') || t.includes('operations')) return 'BusinessApplication';
+  if (t.includes('signflow') || t.includes('sign language') || t.includes('accessibility')) return 'AccessibilityApplication';
+  if (t.includes('aegis') || t.includes('infrastructure') || t.includes('security')) return 'UtilitiesApplication';
+  if (t.includes('fits by aliv') || t.includes('e-commerce') || t.includes('marketplace')) return 'ShoppingApplication';
+  if (t.includes('event') && t.includes('countdown')) return 'UtilitiesApplication';
+  return 'WebApplication';
+}
 
 // Organization Schema for the portfolio
 export const generateOrganizationSchema = () => ({

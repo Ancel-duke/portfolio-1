@@ -164,11 +164,11 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
             className="relative bg-white dark:bg-gray-900 rounded-lg sm:rounded-2xl shadow-2xl max-w-5xl w-full max-h-[95vh] sm:max-h-[90vh] overflow-y-auto mx-auto"
             onClick={(e) => e.stopPropagation()}
           >
-            {/* Header */}
+            {/* Header: H3 for AI-Overview / SGE semantic clarity */}
             <div className="sticky top-0 bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700 z-10 flex items-center justify-between p-4 sm:p-6">
-              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 dark:text-gray-100 pr-4 line-clamp-2">
+              <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 dark:text-gray-100 pr-4 line-clamp-2">
                 {title}
-              </h2>
+              </h3>
               <button
                 onClick={onClose}
                 className="p-2 text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 transition-colors duration-200 min-w-[44px] min-h-[44px] flex items-center justify-center flex-shrink-0"

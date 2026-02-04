@@ -6,11 +6,13 @@ import { Card, CardContent, CardTitle } from '../components/ui/card'
 import { Button } from '../components/ui/button'
 import { Badge } from '../components/ui/badge'
 import { OptimizedImage } from '../components/ui/optimized-image'
-import { ArrowLeft, ExternalLink, Github, FileText, Calendar, User, Zap, Lightbulb, CheckCircle, Code, Layers, Shield, TrendingUp, Rocket, Settings } from 'lucide-react'
+import { ArrowLeft, ExternalLink, Github, FileText, Calendar, User, Zap, Lightbulb, CheckCircle, Code, Layers, Shield, TrendingUp, Rocket, Settings, AlertTriangle, BookOpen } from 'lucide-react'
 import SEOHead from '../components/seo/SEOHead'
 import { SkipLink } from '../components/ui/skip-link'
 import { Breadcrumb } from '../components/ui/breadcrumb'
-import { generateCaseStudySchema } from '../components/seo/schemas'
+import { TechSummaryTable } from '../components/sections/TechSummaryTable'
+import { generateCaseStudySchema, generateTechArticleSchema } from '../components/seo/schemas'
+import { getCaseStudyMetaDescription, getCaseStudyImageAlt, getCaseStudyOgTitle } from '../utils/metadata'
 
 interface Technology {
   name: string
@@ -64,6 +66,12 @@ interface CaseStudy {
   tradeoffs?: string
   implementationStatus?: string
   potentialExpansion?: string
+  /** Bridge sentence between Problem and Solution (AI summary snippet) */
+  problemSolutionBridge?: string
+  /** How the system handles errors — Resilient Architecture brand */
+  failureModes?: string
+  /** Top 3 complex terms explained in relation to project goal */
+  keyTerms?: { term: string; explanation: string }[]
 }
 
 export function CaseStudyDetailPage() {
@@ -133,17 +141,22 @@ export function CaseStudyDetailPage() {
   const parentUrl = isLabProject ? '/labs-experiments' : '/case-studies'
   const backButtonText = isLabProject ? 'Back to Labs & Experiments' : 'Back to Case Studies'
 
+  const metaDescription = getCaseStudyMetaDescription(caseStudy)
+  const ogTitle = getCaseStudyOgTitle(caseStudy)
+  const jsonLd = [generateCaseStudySchema(caseStudy), generateTechArticleSchema(caseStudy)]
+
   return (
     <>
       <SEOHead
         title={caseStudy.title}
-        description={caseStudy.subtitle}
+        description={metaDescription}
         canonical={`/case-studies/${caseStudy.slug}`}
         ogImage={caseStudy.images.hero}
+        ogTitle={ogTitle}
         ogType="article"
         keywords={caseStudy.technologies.map(tech => tech.name)}
         publishedTime={caseStudy.year}
-        jsonLd={generateCaseStudySchema(caseStudy)}
+        jsonLd={jsonLd}
       />
       <SkipLink />
       <motion.div
@@ -171,12 +184,22 @@ export function CaseStudyDetailPage() {
 
       <article aria-labelledby="case-study-title">
       <Card className="p-4 sm:p-6 md:p-8 lg:p-10">
+        {/* AI-first: Tech summary table at top */}
+        <motion.div variants={itemVariants} className="mb-6 sm:mb-8">
+          <TechSummaryTable
+            stack={caseStudy.technologies.map((t: Technology) => t.name)}
+            role={caseStudy.role}
+            year={caseStudy.year}
+            status={caseStudy.status}
+          />
+        </motion.div>
+
         <motion.div variants={itemVariants} className="mb-8">
           <div className="grid grid-cols-1 md:grid-cols-[260px,1fr] gap-4 sm:gap-6 items-start">
             {caseStudy.images.hero && (
               <OptimizedImage
                 src={caseStudy.images.hero}
-                alt={`${caseStudy.title} Preview`}
+                alt={getCaseStudyImageAlt(caseStudy.title, 'Hero Preview')}
                 className="w-full h-40 sm:h-48 md:h-40 object-contain rounded-lg bg-muted/30"
                 priority
                 loading="eager"
@@ -255,6 +278,15 @@ export function CaseStudyDetailPage() {
           <p className="text-sm sm:text-base md:text-lg leading-relaxed text-muted-foreground">{caseStudy.problem}</p>
         </motion.div>
 
+        {/* Bridge: Problem → Solution (AI summary snippet) */}
+        {caseStudy.problemSolutionBridge && (
+          <motion.div variants={itemVariants} className="mb-6 sm:mb-8">
+            <p className="text-base sm:text-lg font-medium text-foreground border-l-4 border-primary pl-4 py-2 bg-muted/30 rounded-r">
+              {caseStudy.problemSolutionBridge}
+            </p>
+          </motion.div>
+        )}
+
         {/* Solution Section */}
         <motion.div variants={itemVariants} className="mb-6 sm:mb-8 md:mb-10">
           <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-3 sm:mb-4 flex items-center">
@@ -263,6 +295,24 @@ export function CaseStudyDetailPage() {
           </h2>
           <p className="text-sm sm:text-base md:text-lg leading-relaxed text-muted-foreground">{caseStudy.solution}</p>
         </motion.div>
+
+        {/* Key Terms (entity linking — 3 complex terms explained for project goal) */}
+        {caseStudy.keyTerms && caseStudy.keyTerms.length > 0 && (
+          <motion.div variants={itemVariants} className="mb-6 sm:mb-8 md:mb-10">
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-3 sm:mb-4 flex items-center">
+              <BookOpen className="h-5 w-5 sm:h-6 sm:w-6 mr-2 text-primary flex-shrink-0" /> 
+              <span>Key Technical Terms</span>
+            </h2>
+            <ul className="space-y-3 sm:space-y-4">
+              {caseStudy.keyTerms.map((item, index) => (
+                <li key={index} className="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-3">
+                  <span className="font-semibold text-foreground shrink-0">{item.term}:</span>
+                  <span className="text-sm sm:text-base text-muted-foreground">{item.explanation}</span>
+                </li>
+              ))}
+            </ul>
+          </motion.div>
+        )}
 
         {/* Impact Section */}
         <motion.div variants={itemVariants} className="mb-6 sm:mb-8 md:mb-10">
@@ -289,6 +339,18 @@ export function CaseStudyDetailPage() {
             </h2>
             <Card className="p-6 bg-muted/30">
               <p className="text-lg leading-relaxed text-muted-foreground whitespace-pre-line">{caseStudy.architecture}</p>
+            </Card>
+          </motion.div>
+        )}
+
+        {/* Failure Modes (Resilient Architecture — how the system handles errors) */}
+        {caseStudy.failureModes && (
+          <motion.div variants={itemVariants} className="mb-10">
+            <h2 className="text-3xl font-bold mb-4 flex items-center">
+              <AlertTriangle className="h-6 w-6 mr-2 text-primary" /> Failure Modes
+            </h2>
+            <Card className="p-6 bg-muted/30 border-primary/20">
+              <p className="text-lg leading-relaxed text-muted-foreground whitespace-pre-line">{caseStudy.failureModes}</p>
             </Card>
           </motion.div>
         )}
@@ -342,7 +404,7 @@ export function CaseStudyDetailPage() {
           </motion.div>
         )}
 
-        {/* Gallery (if images exist) */}
+        {/* Gallery (if images exist) — alt pattern: [Project Name] Architecture Diagram - [Component Name] by Ancel Ajanga */}
         {caseStudy.images.gallery && caseStudy.images.gallery.length > 0 && (
           <motion.div variants={itemVariants} className="mb-6 sm:mb-8 md:mb-10">
             <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-3 sm:mb-4">Project Gallery</h2>
@@ -351,7 +413,7 @@ export function CaseStudyDetailPage() {
                 <OptimizedImage
                   key={index}
                   src={img}
-                  alt={`${caseStudy.title} Gallery ${index + 1}`}
+                  alt={getCaseStudyImageAlt(caseStudy.title, `Gallery Image ${index + 1}`)}
                   className="w-full h-40 sm:h-48 object-cover rounded-lg"
                   placeholder="blur"
                   blurDataURL="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10'%3E%3Crect fill='%23e5e7eb' width='10' height='10'/%3E%3C/svg%3E"

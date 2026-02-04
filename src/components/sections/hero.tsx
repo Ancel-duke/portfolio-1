@@ -2,11 +2,15 @@ import * as React from "react"
 import { motion } from "framer-motion"
 import { Button } from "../../components/ui/button"
 import { cn } from "../../lib/utils"
-import { ArrowRight, Download, Github, Linkedin, Mail } from "lucide-react"
+import { ArrowRight, Download, Github, Linkedin, Mail, Server, Smartphone, Cpu } from "lucide-react"
 
 interface HeroProps {
   className?: string
 }
+
+/** Critical: LCP text as plain HTML (no JS animation) so it paints in first frame. */
+const HERO_SUBLINE = "Fullstack Engineer — Architecting resilient systems from interface to infrastructure."
+const HERO_PARAGRAPH = "I own the full lifecycle of every request, from Flutter user interfaces to M-Pesa STK queries and database transactions. I design and ship scalable systems across fintech, enterprise, and real-time domains—combining high-performance frontends, hardened backends, and self-healing microservices built to scale reliably from day one."
 
 export function Hero({ className }: HeroProps) {
   const containerVariants = {
@@ -54,34 +58,24 @@ export function Hero({ className }: HeroProps) {
   return (
     <section className={cn("py-[clamp(4rem,8vw,8rem)] w-full overflow-x-hidden", className)}>
       <div className="container-custom max-w-full">
+        <div className="text-center max-w-4xl mx-auto px-4 sm:px-0">
+          {/* LCP: Plain HTML so hero text paints immediately without waiting for Framer Motion */}
+          <h1 className="text-[clamp(1.875rem,5vw,4.5rem)] font-bold mb-2 leading-tight">
+            Hi, I'm{" "}
+            <span className="text-gradient">Ancel Ajanga</span>
+          </h1>
+          <p className="text-[clamp(1.125rem,2.5vw,1.5rem)] font-semibold text-foreground mb-[clamp(1rem,3vw,1.5rem)]">
+            {HERO_SUBLINE}
+          </p>
+          <p className="text-[clamp(1rem,2.5vw,1.25rem)] text-muted-foreground mb-[clamp(1.5rem,4vw,2rem)] max-w-4xl mx-auto px-4 sm:px-0 leading-relaxed">
+            {HERO_PARAGRAPH}
+          </p>
         <motion.div
-          className="text-center max-w-4xl mx-auto px-4 sm:px-0"
+          className="contents"
           variants={containerVariants}
           initial="hidden"
           animate="visible"
         >
-
-          <motion.h1
-            className="text-[clamp(1.875rem,5vw,4.5rem)] font-bold mb-2 leading-tight"
-            variants={itemVariants}
-          >
-            Hi, I'm{" "}
-            <span className="text-gradient">Ancel Ajanga</span>
-          </motion.h1>
-
-          <motion.p
-            className="text-[clamp(1.125rem,2.5vw,1.5rem)] font-semibold text-foreground mb-[clamp(1rem,3vw,1.5rem)]"
-            variants={itemVariants}
-          >
-            Fullstack Software Engineer & Systems Architect
-          </motion.p>
-
-          <motion.p
-            className="text-[clamp(1rem,2.5vw,1.25rem)] text-muted-foreground mb-[clamp(1.5rem,4vw,2rem)] max-w-4xl mx-auto px-4 sm:px-0 leading-relaxed"
-            variants={itemVariants}
-          >
-            I build resilient, scalable systems that handle real-world complexity across fintech, enterprise, and real-time domains. From crafting high-performance Flutter interfaces to architecting hybrid database solutions and self-healing microservices, I deliver end-to-end solutions that scale to thousands of users and transactions.
-          </motion.p>
 
           <motion.div
             className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center mb-8 sm:mb-12 px-4 sm:px-0"
@@ -125,6 +119,39 @@ export function Hero({ className }: HeroProps) {
             })}
           </motion.div>
 
+          {/* Value proposition: three pillars */}
+          <motion.div
+            className="mt-10 sm:mt-14 md:mt-18 pt-8 sm:pt-12 border-t border-border"
+            variants={itemVariants}
+          >
+            <h2 className="text-[clamp(1.125rem,2.5vw,1.5rem)] font-bold mb-6 sm:mb-8 text-center">
+              Fullstack Developer — Resilience &amp; Scale at Every Layer
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 md:gap-8 text-center px-4 sm:px-0">
+              <div className="p-5 sm:p-6 rounded-xl bg-muted/50 border border-border">
+                <div className="w-12 h-12 mx-auto mb-3 rounded-full bg-primary/20 flex items-center justify-center text-primary">
+                  <Server className="w-6 h-6" />
+                </div>
+                <h3 className="text-base font-bold mb-2">Hardened Backends</h3>
+                <p className="text-sm text-muted-foreground">NestJS, PostgreSQL, fail-safe logic. Transactional correctness and auditability by default.</p>
+              </div>
+              <div className="p-5 sm:p-6 rounded-xl bg-muted/50 border border-border">
+                <div className="w-12 h-12 mx-auto mb-3 rounded-full bg-primary/20 flex items-center justify-center text-primary">
+                  <Smartphone className="w-6 h-6" />
+                </div>
+                <h3 className="text-base font-bold mb-2">Fluid Frontends</h3>
+                <p className="text-sm text-muted-foreground">Flutter, React, UX and performance. Responsive, accessible, built for real users.</p>
+              </div>
+              <div className="p-5 sm:p-6 rounded-xl bg-muted/50 border border-border">
+                <div className="w-12 h-12 mx-auto mb-3 rounded-full bg-primary/20 flex items-center justify-center text-primary">
+                  <Cpu className="w-6 h-6" />
+                </div>
+                <h3 className="text-base font-bold mb-2">Self-Healing Infra</h3>
+                <p className="text-sm text-muted-foreground">Redis, BullMQ, automated recovery. Graceful degradation and observability when things fail.</p>
+              </div>
+            </div>
+          </motion.div>
+
           <motion.div
             className="mt-8 sm:mt-12 md:mt-16 grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 md:gap-8 text-center px-4 sm:px-0"
             variants={itemVariants}
@@ -143,6 +170,7 @@ export function Hero({ className }: HeroProps) {
             </div>
           </motion.div>
         </motion.div>
+        </div>
       </div>
     </section>
   )

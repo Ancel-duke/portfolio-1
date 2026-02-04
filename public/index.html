@@ -326,7 +326,7 @@
     </script>
   </head>
   <body>
-    <!-- Unregister old service workers so users get fresh content after deploy (Netlify) -->
+    <!-- Unregister old service workers so users get fresh content after deploy (Netlify). Any external scripts added here should use defer. -->
     <script>
       (function() {
         if ('serviceWorker' in navigator) {

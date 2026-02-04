@@ -9,9 +9,9 @@ const Home = () => {
   return (
     <>
       <SEO
-        title="Ancel Ajanga - Fullstack Software Engineer Portfolio"
-        description="Ancel Ajanga is a fullstack software engineer specializing in React, Node.js, Python, and modern web technologies. View portfolio of 8+ applications including finance trackers, e-learning platforms, and mobile apps. Based in Kenya."
-  canonicalUrl="https://ancel.co.ke/"
+        title="Ancel Ajanga - Fullstack Engineer | System Resilience & Scale"
+        description="Ancel Ajanga is a Fullstack Engineer and Software Engineer specializing in system resilience: hardened backends, fluid frontends, and self-healing infrastructure. Scale and resilience from UI to database. Based in Kenya."
+        canonicalUrl="https://ancel.co.ke/"
       />
       
       <main>

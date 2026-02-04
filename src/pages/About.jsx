@@ -6,9 +6,9 @@ const AboutPage = () => {
   return (
     <>
       <SEO
-        title="About - Ancel Ajanga | Fullstack Software Engineer"
-        description="Learn more about Ancel Ajanga, a fullstack software engineer from Kenya specializing in React, Node.js, Python, and mobile app development. View skills, experience, and career goals."
-  canonicalUrl="https://ancel.co.ke/about"
+        title="About - Ancel Ajanga | Fullstack Engineer & Software Engineer — Resilience & Scale"
+        description="Ancel Ajanga: Fullstack Developer and Software Engineer. Full request lifecycle from Flutter UI to M-Pesa and database. System resilience, hardened backends, fluid frontends. Kenya."
+        canonicalUrl="https://ancel.co.ke/about"
       />
 
       <div className="pt-16">

@@ -5,14 +5,6 @@ import { ThemeProvider } from './contexts/ThemeContext'
 import { Header } from './components/layout/header'
 import { Footer } from './components/layout/footer'
 import { Hero } from './components/sections/hero'
-import { CaseStudiesGrid } from './components/sections/case-studies-grid'
-import { LabsExperiments } from './components/sections/labs-experiments'
-import { Timeline } from './components/sections/timeline'
-import { TechStack } from './components/sections/tech-stack'
-import { Fun } from './components/sections/fun'
-import { CTA } from './components/sections/cta'
-import { TodaysHighlights } from './components/sections/todays-highlights'
-import { About } from './components/sections/about'
 import { Button } from './components/ui/button'
 import SEO from './components/seo/SEO'
 import { SkipLink } from './components/ui/skip-link'
@@ -37,12 +29,25 @@ const DeveloperJournal = lazy(() => import('./pages/DeveloperJournal').then(modu
 const AboutSection = lazy(() => import('./components/sections/about').then(m => ({ default: () => <m.About fullPage /> })))
 const ContactFormLazy = lazy(() => import('./components/forms/contact-form').then(m => ({ default: m.ContactForm })))
 
-// Loading fallback component
+// Below-the-fold: lazy so Hero (LCP) is in main bundle and paints first
+const CaseStudiesGrid = lazy(() => import('./components/sections/case-studies-grid').then(m => ({ default: m.CaseStudiesGrid })))
+const LabsExperiments = lazy(() => import('./components/sections/labs-experiments').then(m => ({ default: m.LabsExperiments })))
+const Timeline = lazy(() => import('./components/sections/timeline').then(m => ({ default: m.Timeline })))
+const TechStack = lazy(() => import('./components/sections/tech-stack').then(m => ({ default: m.TechStack })))
+const Fun = lazy(() => import('./components/sections/fun').then(m => ({ default: m.Fun })))
+const CTA = lazy(() => import('./components/sections/cta').then(m => ({ default: m.CTA })))
+const TodaysHighlights = lazy(() => import('./components/sections/todays-highlights').then(m => ({ default: m.TodaysHighlights })))
+const About = lazy(() => import('./components/sections/about').then(m => ({ default: m.About })))
+
+// Loading fallback for route-level Suspense
 const PageLoader = () => (
   <div className="min-h-screen flex items-center justify-center">
     <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
   </div>
 )
+
+// Minimal placeholder for below-fold sections (no spinner — avoids layout shift, lets LCP complete)
+const BelowFoldPlaceholder = () => <div className="min-h-[1px]" aria-hidden="true" />
 
 // Home Page Component
 function HomePage() {
@@ -70,8 +75,8 @@ function HomePage() {
   return (
     <>
       <SEO
-        title="Ancel Ajanga - Fullstack Software Engineer/Developer & App Developer"
-        description="Ancel Ajanga (Duke) — Fullstack Software Engineer/Developer & App Developer. Builder of apps, poet, and creative problem solver."
+        title="Ancel Ajanga - Fullstack Engineer | System Resilience & Scale"
+        description="Ancel Ajanga is a Fullstack Engineer and Software Engineer specializing in system resilience: hardened backends, fluid frontends, and self-healing infrastructure. Scale and resilience from UI to database. Based in Kenya."
         canonicalUrl="https://ancel.co.ke/"
         jsonLd={[
           generatePersonSchema({ knowsAboutThings }),
@@ -84,13 +89,15 @@ function HomePage() {
       <SkipLink />
       <div className="min-h-screen">
         <Hero />
-        <About />
-        <TodaysHighlights />
-        <CaseStudiesGrid limit={3} showViewAll={true} />
-        <LabsExperiments limit={3} showViewAll={true} />
-        <TechStack />
-        <Fun />
-        <CTA />
+        <Suspense fallback={<BelowFoldPlaceholder />}>
+          <About />
+          <TodaysHighlights />
+          <CaseStudiesGrid limit={3} showViewAll={true} />
+          <LabsExperiments limit={3} showViewAll={true} />
+          <TechStack />
+          <Fun />
+          <CTA />
+        </Suspense>
       </div>
     </>
   )

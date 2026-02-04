@@ -3,6 +3,8 @@ import SEO from '../components/seo/SEO';
 import { motion } from 'framer-motion';
 import ProjectCard from '../components/ProjectCard';
 import ProjectModal from '../components/ProjectModal';
+import StructuredData from '../components/seo/StructuredData';
+import { generateProjectSchema, generatePortfolioSchema } from '../components/seo/schemas';
 import projectsData from '../data/projects.json';
 import { getMasterSortedProjects } from '../utils/projectSorter';
 
@@ -47,13 +49,17 @@ const Projects = () => {
     },
   };
 
+  const projectSchemas = useMemo(() => projects.map((p) => generateProjectSchema(p)), [projects]);
+  const itemListSchema = useMemo(() => generatePortfolioSchema(projects), [projects]);
+
   return (
     <>
       <SEO
-        title="Projects - Ancel Ajanga | Fullstack Software Engineer/Developer & App Developer"
-        description="View Ancel Ajanga (Duke)'s portfolio of 8+ software projects including finance trackers, e-learning platforms, mobile apps, and web applications built with React, Node.js, Python, and modern technologies."
-  canonicalUrl="https://ancel.co.ke/projects"
+        title="Projects - Ancel Ajanga | Fullstack Engineer — System Resilience"
+        description="15 software projects by Fullstack Engineer Ancel Ajanga: resilient systems, fintech, e-learning, real-time collaboration, and self-healing infrastructure. System resilience from UI to database."
+        canonicalUrl="https://ancel.co.ke/projects"
       />
+      <StructuredData data={[itemListSchema, ...projectSchemas]} />
 
       <section className="section-padding pt-24 w-full overflow-x-hidden">
         <div className="container-custom max-w-full">
@@ -82,6 +88,9 @@ const Projects = () => {
             whileInView="visible"
             viewport={{ once: true }}
             className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-[clamp(1rem,3vw,2rem)] w-full"
+            itemScope
+            itemType="https://schema.org/ItemList"
+            aria-label="Portfolio of 15 projects by Fullstack Engineer Ancel Ajanga"
           >
             {projects.map((project, index) => (
               <motion.div key={project.id} variants={itemVariants}>

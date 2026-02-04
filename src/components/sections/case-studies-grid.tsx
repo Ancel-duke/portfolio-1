@@ -1,6 +1,7 @@
 import * as React from "react"
 import { motion } from "framer-motion"
 import { Card } from "../../components/ui/card"
+import { OptimizedImage } from "../../components/ui/optimized-image"
 import { cn } from "../../lib/utils"
 import caseStudiesData from "../../data/case-studies.json"
 import { getDailySelection, getMasterSortedProjects } from "../../utils/projectSorter"
@@ -196,18 +197,17 @@ function CaseStudyCard({ caseStudy, index }: { caseStudy: CaseStudy; index: numb
             - object-cover prevents distortion
             - Gradient overlay for depth
           */}
-          <div className="relative overflow-hidden bg-muted">
-            <div className="aspect-[3/2] w-full">
-              <img
-                src={caseStudy.images.hero}
-                alt={caseStudy.title}
-                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
-                loading={index < 2 ? "eager" : "lazy"}
-                decoding="async"
-                fetchPriority={index < 2 ? "high" : undefined}
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              />
-            </div>
+          <div className="relative overflow-hidden bg-muted aspect-[3/2] w-full">
+            <OptimizedImage
+              src={caseStudy.images.hero}
+              alt={caseStudy.title}
+              className="w-full h-full group-hover:scale-110 transition-transform duration-700 ease-out"
+              priority={index < 2}
+              loading={index < 2 ? "eager" : "lazy"}
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              width={600}
+              height={400}
+            />
             {/* Gradient overlay for better text contrast */}
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-300" />
           </div>

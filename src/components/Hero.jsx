@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { FiArrowRight, FiDownload, FiCode, FiSmartphone, FiMonitor } from 'react-icons/fi';
+import { FiArrowRight, FiDownload, FiServer, FiSmartphone, FiCpu } from 'react-icons/fi';
 
 const Hero = () => {
   const containerVariants = {
@@ -38,19 +38,16 @@ const Hero = () => {
           >
             <motion.div variants={itemVariants} className="space-y-4">
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight">
-                Hi, I'm{' '}
-                <span className="text-gradient">Ancel Ajanga</span>
+                Hi, I'm <span className="text-gradient">Ancel Ajanga</span>
+                <span className="block text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-gray-600 dark:text-gray-300 mt-2">Fullstack Engineer — Architecting resilient systems from interface to infrastructure.</span>
               </h1>
-              <h2 className="text-xl sm:text-2xl md:text-3xl text-gray-600 dark:text-gray-300 font-medium">
-                Fullstack Software Engineer
-              </h2>
             </motion.div>
 
             <motion.p
               variants={itemVariants}
               className="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 leading-relaxed max-w-2xl"
             >
-              I craft complete software applications — mobile, web, and desktop — using diverse tech stacks to deliver impactful, high-performance solutions with attention to UX and scalability.
+              I own the full lifecycle of every request, from Flutter user interfaces to M-Pesa STK queries and database transactions. I design and ship scalable systems across fintech, enterprise, and real-time domains—combining high-performance frontends, hardened backends, and self-healing microservices built to scale reliably from day one.
             </motion.p>
 
             <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-3 sm:gap-4">
@@ -74,16 +71,16 @@ const Hero = () => {
 
             <motion.div variants={itemVariants} className="flex flex-wrap items-center gap-4 sm:gap-6 text-xs sm:text-sm text-gray-500 dark:text-gray-400">
               <div className="flex items-center space-x-2">
-                <FiCode className="w-3 h-3 sm:w-4 sm:h-4" />
-                <span>Web Development</span>
+                <FiServer className="w-3 h-3 sm:w-4 sm:h-4" />
+                <span>Hardened Backends</span>
               </div>
               <div className="flex items-center space-x-2">
                 <FiSmartphone className="w-3 h-3 sm:w-4 sm:h-4" />
-                <span>Mobile Apps</span>
+                <span>Fluid Frontends</span>
               </div>
               <div className="flex items-center space-x-2">
-                <FiMonitor className="w-3 h-3 sm:w-4 sm:h-4" />
-                <span>Desktop Apps</span>
+                <FiCpu className="w-3 h-3 sm:w-4 sm:h-4" />
+                <span>Self-Healing Infra</span>
               </div>
             </motion.div>
           </motion.div>
@@ -102,7 +99,7 @@ const Hero = () => {
                   <div className="absolute inset-0 bg-gradient-to-br from-primary-500 to-accent-500 rounded-full blur-xl opacity-30"></div>
                   <img
                     src="/assets/profile_photo.jpg"
-                    alt="Ancel Ajanga - Fullstack Software Engineer"
+                    alt="Ancel Ajanga - Fullstack Engineer, System Resilience"
                     className="relative w-full h-full object-cover rounded-full border-4 border-white dark:border-gray-800 shadow-2xl"
                     loading="eager"
                     decoding="async"
@@ -173,13 +170,48 @@ const Hero = () => {
                     <span className="text-blue-400">const</span>
                     <span className="text-green-400">passion</span>
                     <span className="text-white">=</span>
-                    <span className="text-yellow-400">'Building amazing apps'</span>
+                    <span className="text-yellow-400">'Resilience at scale'</span>
                   </div>
                 </div>
               </div>
             </div>
           </motion.div>
         </div>
+
+        {/* Value proposition: three pillars */}
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          className="mt-16 sm:mt-20 lg:mt-24 pt-12 sm:pt-16 border-t border-gray-200 dark:border-gray-700"
+        >
+          <h2 className="text-xl sm:text-2xl font-bold text-center mb-8 sm:mb-10 text-gray-900 dark:text-gray-100">
+            Fullstack Developer — Resilience &amp; Scale at Every Layer
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+            <div className="p-5 sm:p-6 rounded-xl bg-gray-50 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700 text-center">
+              <div className="w-12 h-12 mx-auto mb-4 rounded-full bg-primary-100 dark:bg-primary-900/50 flex items-center justify-center text-primary-600 dark:text-primary-400">
+                <FiServer className="w-6 h-6" />
+              </div>
+              <h3 className="text-lg font-bold text-gray-900 dark:text-gray-100 mb-2">Hardened Backends</h3>
+              <p className="text-sm text-gray-600 dark:text-gray-300">NestJS, PostgreSQL, fail-safe logic. Transactional correctness and auditability by default.</p>
+            </div>
+            <div className="p-5 sm:p-6 rounded-xl bg-gray-50 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700 text-center">
+              <div className="w-12 h-12 mx-auto mb-4 rounded-full bg-primary-100 dark:bg-primary-900/50 flex items-center justify-center text-primary-600 dark:text-primary-400">
+                <FiSmartphone className="w-6 h-6" />
+              </div>
+              <h3 className="text-lg font-bold text-gray-900 dark:text-gray-100 mb-2">Fluid Frontends</h3>
+              <p className="text-sm text-gray-600 dark:text-gray-300">Flutter, React, UX and performance. Responsive, accessible, and built for real users.</p>
+            </div>
+            <div className="p-5 sm:p-6 rounded-xl bg-gray-50 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700 text-center">
+              <div className="w-12 h-12 mx-auto mb-4 rounded-full bg-primary-100 dark:bg-primary-900/50 flex items-center justify-center text-primary-600 dark:text-primary-400">
+                <FiCpu className="w-6 h-6" />
+              </div>
+              <h3 className="text-lg font-bold text-gray-900 dark:text-gray-100 mb-2">Self-Healing Infra</h3>
+              <p className="text-sm text-gray-600 dark:text-gray-300">Redis, BullMQ, automated recovery. Graceful degradation and observability when things fail.</p>
+            </div>
+          </div>
+        </motion.div>
       </div>
     </section>
   );

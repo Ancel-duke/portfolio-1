@@ -2,10 +2,12 @@ import * as React from "react"
 import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { Link, useLocation, useNavigate } from "react-router-dom"
+import { Helmet } from "react-helmet-async"
 import { Button } from "../../components/ui/button"
 import { ThemeToggle } from "../../components/ui/theme-toggle"
 import { cn } from "../../lib/utils"
 import { Menu, X, Home, User, FileText, Briefcase, Code, Calendar, FlaskConical, Mail, BookOpen, Star } from "lucide-react"
+import { generateSiteNavigationSchema } from "../../components/seo/schemas"
 
 interface HeaderProps {
   className?: string
@@ -103,7 +105,15 @@ export function Header({ className }: HeaderProps) {
     closeMenu()
   }
 
+  const navSchema = React.useMemo(() => generateSiteNavigationSchema(navigation), [])
+
   return (
+    <>
+      <Helmet>
+        <script type="application/ld+json">
+          {JSON.stringify(navSchema)}
+        </script>
+      </Helmet>
     <motion.header 
       className={cn("sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 overflow-x-hidden", className)} 
       role="banner"
@@ -244,6 +254,7 @@ export function Header({ className }: HeaderProps) {
         </AnimatePresence>
       </div>
     </motion.header>
+    </>
   )
 }
 

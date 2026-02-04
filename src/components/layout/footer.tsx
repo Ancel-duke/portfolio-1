@@ -152,7 +152,14 @@ export function Footer({ className }: FooterProps) {
           <div className="text-xs sm:text-sm text-muted-foreground text-center sm:text-left">
             © {currentYear} Ancel Ajanga. All rights reserved.
           </div>
-          <div className="flex items-center">
+          <div className="flex items-center gap-3">
+            <a
+              href="/sitemap-for-ai.json"
+              className="sr-only focus:not-sr-only focus:outline-none text-xs text-muted-foreground"
+              aria-label="AI sitemap — Fullstack Engineer Ancel Ajanga projects and case studies"
+            >
+              sitemap-for-ai.json
+            </a>
             <Button
               variant="ghost"
               size="sm"

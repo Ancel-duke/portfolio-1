@@ -121,9 +121,6 @@ export function About({ className }: AboutProps) {
           <h2 className="text-[clamp(2rem,5vw,3rem)] font-bold mb-[clamp(1rem,2.5vw,1.5rem)]">
             About <span className="text-gradient">Me</span>
           </h2>
-          <p className="text-[clamp(1rem,2vw,1.125rem)] text-muted-foreground max-w-2xl mx-auto">
-            Get to know the person behind the code and the passion that drives my work.
-          </p>
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-10 lg:gap-12 items-start">
@@ -147,7 +144,7 @@ export function About({ className }: AboutProps) {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
                   <div className="absolute bottom-3 sm:bottom-4 left-3 sm:left-4 right-3 sm:right-4 text-white">
                     <h3 className="text-xl sm:text-2xl md:text-3xl font-bold">Ancel Ajanga</h3>
-                    <p className="text-sm sm:text-base md:text-lg text-white/90">Fullstack Software Engineer & Systems Architect</p>
+                    <p className="text-sm sm:text-base md:text-lg text-white/90">Fullstack Engineer — System Resilience &amp; Scale</p>
                   </div>
                 </div>
                 <CardContent className="p-4 sm:p-5 md:p-6">
@@ -186,22 +183,22 @@ export function About({ className }: AboutProps) {
                   <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">About Me</h3>
                   <div className="space-y-3 sm:space-y-4 text-muted-foreground text-sm sm:text-base leading-relaxed">
                     <p>
-                      Hi, I'm Ancel Ajanga (also known as Duke). I am a Fullstack Software Engineer specializing in enterprise-grade system architecture. My passion lies at the intersection of robust backend engineering and seamless user experiences. While I love building polished interfaces, I view software through the lens of resilience and governance—ensuring every application is as stable as it is functional.
+                      Hi, I'm Ancel Ajanga (also known as Duke), a Fullstack Software Engineer focused on building resilient, production-grade systems. I specialize in designing software that balances strong backend architecture with clean, intuitive user experiences. While I enjoy crafting polished interfaces, my primary focus is on reliability, scalability, and long-term maintainability.
                     </p>
                     <p>
-                      Based in Nairobi, Kenya, I design and deploy full-cycle solutions that bridge the gap between high-level theory and gritty, production-ready execution. My work is defined by three core technical pillars:
+                      Based in Nairobi, Kenya, I work across the full software lifecycle—from system design to deployment—turning complex ideas into robust, real-world applications. My approach is grounded in three core areas:
                     </p>
                     <p>
-                      <strong className="text-foreground">Resilient Fullstack Architecture:</strong> I build end-to-end systems like Fits by Aliv, blending responsive Flutter frontends with NestJS backends and complex migration strategies from BaaS to self-hosted PostgreSQL.
+                      <strong className="text-foreground">Resilient Fullstack Systems:</strong> I build end-to-end platforms like Fits by Aliv, combining Flutter frontends with NestJS backends and leading complex migrations from BaaS solutions to self-hosted PostgreSQL infrastructures.
                     </p>
                     <p>
-                      <strong className="text-foreground">Infrastructure & AIOps:</strong> I engineer "self-healing" control planes like Aegis that use Machine Learning to detect anomalies and automate Kubernetes remediation, ensuring 99.9% uptime.
+                      <strong className="text-foreground">Infrastructure &amp; Intelligent Operations:</strong> I design self-healing systems such as Aegis, where machine learning is used to detect anomalies and automate Kubernetes remediation, helping maintain high availability in production environments.
                     </p>
                     <p>
-                      <strong className="text-foreground">Financial & Data Integrity:</strong> In projects like LedgerX, I implement double-entry accounting engines secured by append-only cryptographic hash chains to guarantee 100% auditability.
+                      <strong className="text-foreground">Data &amp; Financial Integrity:</strong> In projects like LedgerX, I implement double-entry accounting engines secured with append-only cryptographic hash chains to ensure strong auditability and data correctness.
                     </p>
                     <p>
-                      Whether I'm optimizing WebSocket-powered real-time systems (SignFlow) or architecting multi-tenant enterprise SaaS (EduManage), I focus on service isolation, containerization, and fault-tolerant patterns. I don't just write code; I architect the engines that drive digital transformation.
+                      From real-time WebSocket-driven platforms (SignFlow) to multi-tenant SaaS architectures (EduManage), I focus on service isolation, containerization, and fault-tolerant design patterns. I don't just build features—I design the systems that keep products stable, secure, and scalable as they grow.
                     </p>
                   </div>
                 </CardContent>

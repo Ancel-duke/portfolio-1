@@ -104,13 +104,22 @@ const About = () => {
                 About <span className="text-gradient">Me</span>
               </h2>
               <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
-                I'm Ancel Ajanga, a fullstack software engineer from Narok County, Kenya, specializing in building complete software applications that solve real-world problems. I develop mobile apps, web platforms, and desktop applications, with expertise in AI integration and SEO optimization. I work with modern technologies like React, Node.js, Python, and MongoDB to create efficient, optimized solutions.
+                Hi, I’m Ancel Ajanga (also known as Duke), a Fullstack Software Engineer focused on building resilient, production-grade systems. I specialize in designing software that balances strong backend architecture with clean, intuitive user experiences. While I enjoy crafting polished interfaces, my primary focus is on reliability, scalability, and long-term maintainability.
               </p>
               <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300 leading-relaxed mt-4">
-                My technical expertise includes frontend development with React, React Native, and Flutter; backend development with Node.js, Python, and Django; database design with MongoDB and SQL; and mobile app development for iOS and Android platforms. I focus on creating user-friendly applications with clean code, beautiful UI design, and optimal performance.
+                Based in Nairobi, Kenya, I work across the full software lifecycle—from system design to deployment—turning complex ideas into robust, real-world applications. My approach is grounded in three core areas:
               </p>
               <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300 leading-relaxed mt-4">
-                I hold a diploma in Software Engineering and am currently pursuing a Computer Science degree at the University of the People, with additional certifications from Moringa School for Fullstack Development. My portfolio includes 8+ completed projects ranging from finance tracking applications to e-learning platforms and educational management systems.
+                <strong className="text-foreground">Resilient Fullstack Systems:</strong> I build end-to-end platforms like Fits by Aliv, combining Flutter frontends with NestJS backends and leading complex migrations from BaaS solutions to self-hosted PostgreSQL infrastructures.
+              </p>
+              <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300 leading-relaxed mt-4">
+                <strong className="text-foreground">Infrastructure &amp; Intelligent Operations:</strong> I design self-healing systems such as Aegis, where machine learning is used to detect anomalies and automate Kubernetes remediation, helping maintain high availability in production environments.
+              </p>
+              <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300 leading-relaxed mt-4">
+                <strong className="text-foreground">Data &amp; Financial Integrity:</strong> In projects like LedgerX, I implement double-entry accounting engines secured with append-only cryptographic hash chains to ensure strong auditability and data correctness.
+              </p>
+              <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300 leading-relaxed mt-4">
+                From real-time WebSocket-driven platforms (SignFlow) to multi-tenant SaaS architectures (EduManage), I focus on service isolation, containerization, and fault-tolerant design patterns. I don’t just build features—I design the systems that keep products stable, secure, and scalable as they grow. I hold a diploma in Software Engineering and am pursuing a Computer Science degree, with certifications from Moringa School; my portfolio includes 15+ projects built with that mindset.
               </p>
             </div>
 

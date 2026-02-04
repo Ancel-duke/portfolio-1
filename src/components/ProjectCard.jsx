@@ -1,27 +1,39 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ExternalLink, Github, Eye } from 'lucide-react';
+import { OptimizedImage } from './ui/optimized-image';
 
 const ProjectCard = ({ project, onOpenModal, priority = false }) => {
-  const { title, description, technologies, liveUrl, repoUrl, image } = project;
+  const { title, displayTitle, description, technologies, liveUrl, repoUrl, image, problemSummary } = project;
+  const techStack = technologies?.length
+    ? technologies.slice(0, 5).map((t) => (typeof t === 'string' ? t : t.name)).join(', ')
+    : 'Fullstack';
+  const projectName = displayTitle ? displayTitle.split(':')[0].trim() : title.split(' -')[0].trim();
+  const problem = problemSummary ? problemSummary.replace(/^([a-z])/, (_, c) => c.toUpperCase()) : 'real-world problems';
+  const dataAiContext = `${projectName} is a ${techStack} solution by Ancel Ajanga solving ${problem}.`;
+  const techStackSummary = technologies?.length
+    ? `Built with ${techStack}${technologies.length > 5 ? ' and more' : ''}.`
+    : 'Software project by Ancel Ajanga.';
 
   return (
     <motion.div
       whileHover={{ y: -5 }}
       className="card p-4 sm:p-6 h-full flex flex-col"
+      aria-description={techStackSummary}
+      data-ai-context={dataAiContext}
     >
-      {/* Project Image */}
+      {/* Project Image — Netlify CDN + skeleton when deployed */}
       <div className="relative mb-6 rounded-lg overflow-hidden bg-gray-100 dark:bg-gray-700 aspect-video">
         {image ? (
-          <img
+          <OptimizedImage
             src={image}
             alt={`${title} - Software application by Ancel Ajanga`}
             className="w-full h-full object-cover"
+            priority={priority}
             loading={priority ? "eager" : "lazy"}
-            decoding="async"
-            fetchPriority={priority ? "high" : "low"}
-            width="800"
-            height="450"
+            width={800}
+            height={450}
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           />
         ) : (
           <div className="w-full h-full flex items-center justify-center text-gray-400">
@@ -33,7 +45,7 @@ const ProjectCard = ({ project, onOpenModal, priority = false }) => {
       {/* Project Content */}
       <div className="flex-1 flex flex-col">
         <h3 className="text-lg sm:text-xl font-semibold mb-2 sm:mb-3 text-gray-900 dark:text-gray-100">
-          {title}
+          {displayTitle || title}
         </h3>
         
         <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300 mb-3 sm:mb-4 flex-1 leading-relaxed">
@@ -67,8 +79,10 @@ const ProjectCard = ({ project, onOpenModal, priority = false }) => {
         {/* Action Buttons */}
         <div className="flex items-center justify-between mt-auto">
           <button
+            type="button"
             onClick={() => onOpenModal(project)}
             className="text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 font-medium text-sm sm:text-base flex items-center space-x-1 transition-colors duration-200 min-h-[44px] px-2"
+            title={`Read technical case study for ${title} by Ancel Ajanga`}
           >
             <Eye className="w-4 h-4 sm:w-5 sm:h-5" />
             <span>View Details</span>

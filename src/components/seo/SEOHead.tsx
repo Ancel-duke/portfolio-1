@@ -6,6 +6,8 @@ interface SEOHeadProps {
   description?: string;
   canonical?: string;
   ogImage?: string;
+  /** Discover-friendly hook for og:title and twitter:title (e.g. "How I Built a Self-Healing E-commerce Engine"). When set, used instead of fullTitle for OG/Twitter. */
+  ogTitle?: string;
   ogType?: string;
   twitterCard?: string;
   keywords?: string[];
@@ -56,6 +58,7 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
   description = defaultSEO.description,
   canonical = defaultSEO.canonical,
   ogImage = defaultSEO.ogImage,
+  ogTitle,
   ogType = defaultSEO.ogType,
   twitterCard = defaultSEO.twitterCard,
   keywords = defaultSEO.keywords,
@@ -69,6 +72,7 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
   const fullTitle = title === defaultSEO.title ? title : `${title} | Ancel Ajanga`;
   const fullCanonical = canonical.startsWith('http') ? canonical : `${defaultSEO.canonical}${canonical}`;
   const fullOgImage = ogImage.startsWith('http') ? ogImage : `${defaultSEO.canonical}${ogImage}`;
+  const displayOgTitle = ogTitle || fullTitle;
   
   const robotsContent = [
     noindex ? 'noindex' : 'index',
@@ -90,10 +94,10 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
       {/* Canonical URL */}
       <link rel="canonical" href={fullCanonical} />
       
-      {/* Open Graph / Facebook */}
+      {/* Open Graph / Facebook — og:image 1200x630 for Discover */}
       <meta property="og:type" content={ogType} />
       <meta property="og:url" content={fullCanonical} />
-      <meta property="og:title" content={fullTitle} />
+      <meta property="og:title" content={displayOgTitle} />
       <meta property="og:description" content={description} />
       <meta property="og:image" content={fullOgImage} />
       <meta property="og:image:width" content="1200" />
@@ -104,7 +108,7 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
       {/* Twitter */}
       <meta property="twitter:card" content={twitterCard} />
       <meta property="twitter:url" content={fullCanonical} />
-      <meta property="twitter:title" content={fullTitle} />
+      <meta property="twitter:title" content={displayOgTitle} />
       <meta property="twitter:description" content={description} />
       <meta property="twitter:image" content={fullOgImage} />
       <meta property="twitter:creator" content="@ancel_ajanga" />

@@ -1,5 +1,22 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, useMemo } from 'react';
 import { cn } from '../../lib/utils';
+
+/** Netlify Image CDN: only when deployed on Netlify (ancel.co.ke or *.netlify.app). Targets 50–150KB with WebP. */
+function getNetlifyImageUrl(originalSrc: string, width: number, quality: number): string | null {
+  if (typeof window === 'undefined') return null;
+  const origin = window.location.origin;
+  const isNetlify = origin.includes('netlify.app') || origin.includes('ancel.co.ke');
+  if (!isNetlify || !originalSrc || originalSrc.startsWith('data:')) return null;
+  const fullUrl = originalSrc.startsWith('http') ? originalSrc : `${origin}${originalSrc.startsWith('/') ? '' : '/'}${originalSrc}`;
+  const params = new URLSearchParams({
+    url: fullUrl,
+    w: String(Math.min(width, 1200)),
+    q: String(Math.min(100, Math.max(1, quality))),
+    fit: 'cover',
+    fm: 'webp',
+  });
+  return `/.netlify/images?${params.toString()}`;
+}
 
 interface OptimizedImageProps {
   src: string;
@@ -8,7 +25,7 @@ interface OptimizedImageProps {
   width?: number;
   height?: number;
   priority?: boolean;
-  placeholder?: 'blur' | 'empty';
+  placeholder?: 'blur' | 'empty' | 'skeleton';
   blurDataURL?: string;
   sizes?: string;
   quality?: number;
@@ -24,7 +41,7 @@ export const OptimizedImage: React.FC<OptimizedImageProps> = ({
   width,
   height,
   priority = false,
-  placeholder = 'empty',
+  placeholder = 'skeleton',
   blurDataURL,
   sizes = '(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw',
   quality = 75,
@@ -37,6 +54,13 @@ export const OptimizedImage: React.FC<OptimizedImageProps> = ({
   const [hasError, setHasError] = useState(false);
   const [isInView, setIsInView] = useState(priority);
   const imgRef = useRef<HTMLImageElement>(null);
+
+  const imageSrc = useMemo(() => {
+    if (!isInView) return '';
+    const w = width || 800;
+    const netlifyUrl = getNetlifyImageUrl(src, w, quality);
+    return netlifyUrl || src;
+  }, [isInView, src, width, quality]);
 
   // Intersection Observer for lazy loading
   useEffect(() => {
@@ -72,15 +96,6 @@ export const OptimizedImage: React.FC<OptimizedImageProps> = ({
     onError?.();
   };
 
-  // Generate responsive image URLs (if using a service like Cloudinary or similar)
-  const generateResponsiveSrc = (originalSrc: string, width: number) => {
-    // For now, return the original src
-    // In production, you might want to use a service like Cloudinary, ImageKit, or similar
-    return originalSrc;
-  };
-
-  const imageSrc = isInView ? generateResponsiveSrc(src, width || 800) : '';
-
   return (
     <div
       ref={imgRef}
@@ -90,17 +105,17 @@ export const OptimizedImage: React.FC<OptimizedImageProps> = ({
       )}
       style={{ width, height }}
     >
-      {/* Placeholder/Blur */}
+      {/* Skeleton / blur-up placeholder — stable layout while image loads */}
       {!isLoaded && !hasError && (
         <div
           className={cn(
             'absolute inset-0 bg-muted animate-pulse',
-            placeholder === 'blur' && blurDataURL && 'bg-cover bg-center',
-            placeholder === 'blur' && blurDataURL && 'blur-sm'
+            (placeholder === 'blur' && blurDataURL) && 'bg-cover bg-center blur-sm'
           )}
           style={{
             backgroundImage: placeholder === 'blur' && blurDataURL ? `url(${blurDataURL})` : undefined,
           }}
+          aria-hidden="true"
         />
       )}
 
