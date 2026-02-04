@@ -1,8 +1,15 @@
 import React, { useState, useRef, useEffect, useMemo } from 'react';
 import { cn } from '../../lib/utils';
 
-/** Netlify Image CDN: only when deployed on Netlify (ancel.co.ke or *.netlify.app). Targets 50–150KB with WebP. */
-function getNetlifyImageUrl(originalSrc: string, width: number, quality: number): string | null {
+const SRCSET_WIDTHS = [400, 800, 1200] as const;
+
+/** Netlify Image CDN: only when deployed on Netlify. Returns optimized URL with optional format (webp/avif). */
+function getNetlifyImageUrl(
+  originalSrc: string,
+  width: number,
+  quality: number,
+  format: 'webp' | 'avif' = 'webp'
+): string | null {
   if (typeof window === 'undefined') return null;
   const origin = window.location.origin;
   const isNetlify = origin.includes('netlify.app') || origin.includes('ancel.co.ke');
@@ -13,15 +20,29 @@ function getNetlifyImageUrl(originalSrc: string, width: number, quality: number)
     w: String(Math.min(width, 1200)),
     q: String(Math.min(100, Math.max(1, quality))),
     fit: 'cover',
-    fm: 'webp',
+    fm: format,
   });
   return `/.netlify/images?${params.toString()}`;
 }
 
-interface OptimizedImageProps {
+/** Build responsive srcSet for Netlify (multiple widths). Returns null when not on Netlify. */
+function getNetlifySrcSet(originalSrc: string, quality: number, format: 'webp' | 'avif'): string | null {
+  if (typeof window === 'undefined') return null;
+  const origin = window.location.origin;
+  const isNetlify = origin.includes('netlify.app') || origin.includes('ancel.co.ke');
+  if (!isNetlify || !originalSrc || originalSrc.startsWith('data:')) return null;
+  return SRCSET_WIDTHS.map((w) => {
+    const url = getNetlifyImageUrl(originalSrc, w, quality, format);
+    return url ? `${url} ${w}w` : '';
+  }).filter(Boolean).join(', ') || null;
+}
+
+interface OptimizedImageProps extends Omit<React.ImgHTMLAttributes<HTMLImageElement>, 'src' | 'alt'> {
   src: string;
   alt: string;
   className?: string;
+  /** Applied to the <img> for object-fit etc. */
+  imgClassName?: string;
   width?: number;
   height?: number;
   priority?: boolean;
@@ -38,7 +59,8 @@ export const OptimizedImage: React.FC<OptimizedImageProps> = ({
   src,
   alt,
   className,
-  width,
+  imgClassName,
+  width = 800,
   height,
   priority = false,
   placeholder = 'skeleton',
@@ -53,36 +75,43 @@ export const OptimizedImage: React.FC<OptimizedImageProps> = ({
   const [isLoaded, setIsLoaded] = useState(false);
   const [hasError, setHasError] = useState(false);
   const [isInView, setIsInView] = useState(priority);
-  const imgRef = useRef<HTMLImageElement>(null);
+  const imgRef = useRef<HTMLDivElement>(null);
 
-  const imageSrc = useMemo(() => {
-    if (!isInView) return '';
+  // Derive height from width if not provided (assume 16:10 or use aspect from first SRCSET)
+  const effectiveHeight = height ?? Math.round((width * 5) / 8);
+
+  const { singleSrc, srcSetWebP, srcSetAvif, useNetlify } = useMemo(() => {
+    if (!isInView) {
+      return { singleSrc: '', srcSetWebP: null, srcSetAvif: null, useNetlify: false };
+    }
     const w = width || 800;
-    const netlifyUrl = getNetlifyImageUrl(src, w, quality);
-    return netlifyUrl || src;
+    const netlifyWebP = getNetlifyImageUrl(src, w, quality, 'webp');
+    const srcSetW = getNetlifySrcSet(src, quality, 'webp');
+    const srcSetA = getNetlifySrcSet(src, quality, 'avif');
+    return {
+      singleSrc: netlifyWebP || src,
+      srcSetWebP: srcSetW,
+      srcSetAvif: srcSetA,
+      useNetlify: !!netlifyWebP,
+    };
   }, [isInView, src, width, quality]);
 
-  // Intersection Observer for lazy loading
+  // Intersection Observer for lazy loading (defer until in view)
   useEffect(() => {
     if (priority || isInView) return;
 
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
+        if (entry?.isIntersecting) {
           setIsInView(true);
           observer.disconnect();
         }
       },
-      {
-        rootMargin: '50px',
-        threshold: 0.1,
-      }
+      { rootMargin: '100px', threshold: 0.01 }
     );
 
-    if (imgRef.current) {
-      observer.observe(imgRef.current);
-    }
-
+    const el = imgRef.current;
+    if (el) observer.observe(el);
     return () => observer.disconnect();
   }, [priority, isInView]);
 
@@ -96,22 +125,32 @@ export const OptimizedImage: React.FC<OptimizedImageProps> = ({
     onError?.();
   };
 
-  // Wrapper has no fixed dimensions — parent (e.g. aspect-video container) controls size so each card stays self-contained and image-to-card association is preserved.
+  const imgCommon = {
+    width,
+    height: effectiveHeight,
+    className: cn(
+      'block w-full h-full object-cover transition-opacity duration-300',
+      imgClassName,
+      isLoaded ? 'opacity-100' : 'opacity-0'
+    ),
+    loading: priority ? ('eager' as const) : loading,
+    decoding: 'async' as const,
+    fetchPriority: priority ? ('high' as const) : undefined,
+    onLoad: handleLoad,
+    onError: handleError,
+    sizes,
+  };
 
   return (
     <div
       ref={imgRef}
-      className={cn(
-        'relative block overflow-hidden w-full h-full min-h-0',
-        className
-      )}
+      className={cn('relative block overflow-hidden w-full h-full min-h-0', className)}
     >
-      {/* Skeleton — absolute so it doesn't affect layout; image area is reserved by parent */}
       {!isLoaded && !hasError && (
         <div
           className={cn(
             'absolute inset-0 bg-muted animate-pulse',
-            (placeholder === 'blur' && blurDataURL) && 'bg-cover bg-center blur-sm'
+            placeholder === 'blur' && blurDataURL && 'bg-cover bg-center blur-sm'
           )}
           style={{
             backgroundImage: placeholder === 'blur' && blurDataURL ? `url(${blurDataURL})` : undefined,
@@ -120,16 +159,10 @@ export const OptimizedImage: React.FC<OptimizedImageProps> = ({
         />
       )}
 
-      {/* Error State */}
       {hasError && (
         <div className="absolute inset-0 bg-muted flex items-center justify-center">
           <div className="text-muted-foreground text-center">
-            <svg
-              className="w-8 h-8 mx-auto mb-2"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
+            <svg className="w-8 h-8 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
@@ -142,33 +175,19 @@ export const OptimizedImage: React.FC<OptimizedImageProps> = ({
         </div>
       )}
 
-      {/* Actual Image — block + object-cover so it fills container and clips to rounded parent */}
-      {isInView && !hasError && (
-        <img
-          src={imageSrc}
-          alt={alt}
-          width={width}
-          height={height}
-          className={cn(
-            'block w-full h-full object-cover transition-opacity duration-300',
-            isLoaded ? 'opacity-100' : 'opacity-0'
-          )}
-          loading={priority ? 'eager' : loading}
-          decoding="async"
-          fetchPriority={priority ? 'high' : undefined}
-          onLoad={handleLoad}
-          onError={handleError}
-          sizes={sizes}
-          {...props}
-        />
-      )}
+      {isInView && !hasError &&
+        (useNetlify && (srcSetAvif || srcSetWebP) ? (
+          <picture className="block w-full h-full">
+            {srcSetAvif && <source type="image/avif" srcSet={srcSetAvif} sizes={sizes} />}
+            {srcSetWebP && <source type="image/webp" srcSet={srcSetWebP} sizes={sizes} />}
+            <img src={singleSrc} alt={alt} {...imgCommon} {...props} />
+          </picture>
+        ) : (
+          <img src={singleSrc} alt={alt} {...imgCommon} {...props} />
+        ))
+      }
     </div>
   );
 };
 
 export default OptimizedImage;
-
-
-
-
-

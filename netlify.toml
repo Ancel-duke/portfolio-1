@@ -101,6 +101,12 @@
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
 
+# Netlify Image CDN — long cache for optimized images
+[[headers]]
+  for = "/.netlify/images*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
 # Favicon and app icons — long cache
 [[headers]]
   for = "/favicon.svg"

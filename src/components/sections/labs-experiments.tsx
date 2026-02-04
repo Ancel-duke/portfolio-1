@@ -10,6 +10,7 @@ import { ExternalLink, Github, Calendar, Clock, ArrowRight, FlaskConical, Music,
 import caseStudiesData from "../../data/case-studies.json"
 import funData from "../../data/fun.json"
 import { Link } from "react-router-dom"
+import { OptimizedImage } from "../../components/ui/optimized-image"
 
 interface CaseStudy {
   id: number
@@ -207,17 +208,16 @@ export function LabsExperiments({ className, limit, showViewAll = true, fullPage
               className="group"
             >
               <Card className="h-full hover:shadow-xl transition-all duration-300 border-0 bg-card/50 backdrop-blur-sm overflow-hidden">
-                <div className="relative overflow-hidden">
-                  <img
+                <div className="relative overflow-hidden h-40 sm:h-48">
+                  <OptimizedImage
                     src={project.images.hero}
                     alt={project.title}
-                    className="w-full h-40 sm:h-48 object-cover group-hover:scale-105 transition-transform duration-500"
-                    loading={index < 2 ? "eager" : "lazy"}
-                    decoding="async"
-                    fetchPriority={index < 2 ? "high" : undefined}
-                    width="800"
-                    height="384"
+                    width={800}
+                    height={384}
+                    priority={false}
+                    loading="lazy"
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    className="w-full h-full group-hover:scale-105 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                   <div className="absolute top-4 left-4">

@@ -108,9 +108,12 @@ export function BlogDetailPage() {
             <OptimizedImage
               src={post.image}
               alt={post.title}
-              className="w-full h-64 object-cover rounded-lg mb-6"
+              width={800}
+              height={450}
               priority
               loading="eager"
+              sizes="(max-width: 768px) 100vw, 800px"
+              className="w-full h-64 rounded-lg mb-6"
             />
           )}
           <CardTitle id="blog-post-title" className="text-4xl md:text-5xl font-bold mb-4 leading-tight">

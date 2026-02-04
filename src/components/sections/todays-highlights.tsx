@@ -7,6 +7,7 @@ import { Button } from '../ui/button'
 import { cn } from '../../lib/utils'
 import { ArrowRight, FileText, BookOpen } from 'lucide-react'
 import { useDailyFeaturedContent } from '../../hooks/useDailyFeaturedContent'
+import { OptimizedImage } from '../ui/optimized-image'
 
 interface TodaysHighlightsProps {
   className?: string
@@ -70,19 +71,18 @@ export function TodaysHighlights({ className }: TodaysHighlightsProps) {
               className="group"
             >
               <Card className="h-full hover:shadow-lg transition-all duration-300 border-0 bg-card/50 backdrop-blur-sm">
-                {/* Image: priority + eager for first 2 (above fold), sizes to avoid oversizing */}
+                {/* Image: priority for first 2 (hero/first project); rest lazy and optimized */}
                 {item.image && (
-                  <div className="relative overflow-hidden rounded-t-lg">
-                    <img
+                  <div className="relative overflow-hidden rounded-t-lg h-48">
+                    <OptimizedImage
                       src={item.image}
                       alt={item.title}
-                      className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
-                      loading={index < 2 ? "eager" : "lazy"}
-                      decoding="async"
-                      fetchPriority={index < 2 ? "high" : undefined}
-                      width="800"
-                      height="384"
+                      width={800}
+                      height={384}
+                      priority={index < 2}
+                      loading={index < 2 ? 'eager' : 'lazy'}
                       sizes="(max-width: 768px) 100vw, 50vw"
+                      className="w-full h-full group-hover:scale-105 transition-transform duration-300"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
                     <div className="absolute top-4 left-4">

@@ -200,9 +200,13 @@ export function CaseStudyDetailPage() {
               <OptimizedImage
                 src={caseStudy.images.hero}
                 alt={getCaseStudyImageAlt(caseStudy.title, 'Hero Preview')}
-                className="w-full h-40 sm:h-48 md:h-40 object-contain rounded-lg bg-muted/30"
+                width={520}
+                height={293}
                 priority
                 loading="eager"
+                sizes="(max-width: 768px) 100vw, 260px"
+                className="w-full h-40 sm:h-48 md:h-40 rounded-lg bg-muted/30"
+                imgClassName="object-contain"
               />
             )}
 

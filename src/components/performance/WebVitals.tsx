@@ -37,67 +37,18 @@ export const WebVitals: React.FC = () => {
   return null;
 };
 
-// Performance optimization hook
+// Performance optimization hook (optional; not used by default to avoid blocking LCP).
+// Preloading multiple images delays first paint; priority/fetchPriority on components is preferred.
 export const usePerformanceOptimization = () => {
   useEffect(() => {
-    // Preload critical resources
-    const preloadCriticalResources = () => {
-      // Preload fonts
-      const fontLink = document.createElement('link');
-      fontLink.rel = 'preload';
-      fontLink.href = 'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap';
-      fontLink.as = 'style';
-      document.head.appendChild(fontLink);
-
-      // Preload critical images
-      const criticalImages = [
-        '/assets/profile_photo.jpg',
-        '/assets/projects/taskforge.jpg',
-        '/assets/projects/elearn.jpg'
-      ];
-
-      criticalImages.forEach(src => {
-        const link = document.createElement('link');
-        link.rel = 'preload';
-        link.href = src;
-        link.as = 'image';
-        document.head.appendChild(link);
-      });
-    };
-
-    // Optimize images
     const optimizeImages = () => {
       const images = document.querySelectorAll('img');
-      images.forEach(img => {
-        // Add loading="lazy" if not already present
-        if (!img.hasAttribute('loading')) {
-          img.setAttribute('loading', 'lazy');
-        }
-        
-        // Add decoding="async"
-        if (!img.hasAttribute('decoding')) {
-          img.setAttribute('decoding', 'async');
-        }
+      images.forEach((img) => {
+        if (!img.hasAttribute('loading')) img.setAttribute('loading', 'lazy');
+        if (!img.hasAttribute('decoding')) img.setAttribute('decoding', 'async');
       });
     };
-
-    // Defer non-critical JavaScript
-    const deferNonCriticalJS = () => {
-      const scripts = document.querySelectorAll('script[data-defer]');
-      scripts.forEach(script => {
-        script.setAttribute('defer', '');
-      });
-    };
-
-    // Run optimizations
-    preloadCriticalResources();
     optimizeImages();
-    deferNonCriticalJS();
-
-    // Cleanup
-    return () => {
-      // Cleanup if needed
-    };
   }, []);
 };
 

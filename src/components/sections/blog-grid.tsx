@@ -5,6 +5,7 @@ import { Button } from "../ui/button"
 import { Badge } from "../ui/badge"
 import { cn, formatDate } from "../../lib/utils"
 import { Calendar, Clock, ArrowRight } from "lucide-react"
+import { OptimizedImage } from "../ui/optimized-image"
 import blogData from "../../data/blog.json"
 
 // Derive the blog post type directly from the JSON data to avoid drift
@@ -66,16 +67,15 @@ export const BlogGrid = React.memo(function BlogGrid({ className, limit, showVie
               className="group"
             >
               <Card className="h-full hover:shadow-lg transition-all duration-300 border-0 bg-card/50 backdrop-blur-sm">
-                <div className="relative overflow-hidden rounded-t-lg">
-                  <img
+                <div className="relative overflow-hidden rounded-t-lg h-40 sm:h-48">
+                  <OptimizedImage
                     src={post.image}
                     alt={post.title}
-                    className="w-full h-40 sm:h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                    width={800}
+                    height={384}
                     loading="lazy"
-                    decoding="async"
-                    width="800"
-                    height="384"
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    className="w-full h-full group-hover:scale-105 transition-transform duration-300"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
                   <div className="absolute bottom-4 left-4 right-4">

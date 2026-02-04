@@ -1,14 +1,17 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X } from 'lucide-react';
+import { OptimizedImage } from './optimized-image';
 
 interface ImageWithLightboxProps {
   src: string;
   alt: string;
   className?: string;
+  width?: number;
+  height?: number;
 }
 
-export function ImageWithLightbox({ src, alt, className = '' }: ImageWithLightboxProps) {
+export function ImageWithLightbox({ src, alt, className = '', width = 800, height = 450 }: ImageWithLightboxProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   const variants = {
@@ -18,15 +21,24 @@ export function ImageWithLightbox({ src, alt, className = '' }: ImageWithLightbo
 
   return (
     <>
-      <img
-        src={src}
-        alt={alt}
+      <div
         className={`cursor-zoom-in ${className}`}
         onClick={() => setIsOpen(true)}
-        loading="lazy"
-        decoding="async"
-        sizes="(max-width: 768px) 100vw, 80vw"
-      />
+        role="button"
+        tabIndex={0}
+        onKeyDown={(e) => e.key === 'Enter' && setIsOpen(true)}
+        aria-label="View full size"
+      >
+        <OptimizedImage
+          src={src}
+          alt={alt}
+          width={width}
+          height={height}
+          loading="lazy"
+          sizes="(max-width: 768px) 100vw, 80vw"
+          className="w-full h-full"
+        />
+      </div>
 
       <AnimatePresence>
         {isOpen && (
@@ -49,6 +61,8 @@ export function ImageWithLightbox({ src, alt, className = '' }: ImageWithLightbo
             <motion.img
               src={src}
               alt={alt}
+              width={width}
+              height={height}
               className="max-h-[90vh] max-w-[90vw] object-contain"
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}

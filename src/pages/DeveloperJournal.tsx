@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import { Card, CardContent } from '../components/ui/card';
+import { OptimizedImage } from '../components/ui/optimized-image';
 import { formatDate } from '../lib/utils';
 
 // Import all blog posts
@@ -110,7 +111,7 @@ export function DeveloperJournal() {
               variants={containerVariants}
               className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[clamp(1rem,3vw,2rem)]"
             >
-              {posts.map((post) => (
+              {posts.map((post, index) => (
                 <motion.article
                   key={post.slug}
                   variants={itemVariants}
@@ -120,10 +121,15 @@ export function DeveloperJournal() {
                     <Card className="h-full hover:shadow-xl transition-all duration-300 border-0 bg-card/50 backdrop-blur-sm overflow-hidden">
                       {/* Image */}
                       <div className="relative aspect-video overflow-hidden">
-                        <img
+                        <OptimizedImage
                           src={post.image}
                           alt={post.title}
-                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                          width={800}
+                          height={450}
+                          priority={index < 2}
+                          loading={index < 2 ? 'eager' : 'lazy'}
+                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                          className="w-full h-full group-hover:scale-105 transition-transform duration-500"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                         <div className="absolute top-4 left-4">

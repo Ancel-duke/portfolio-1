@@ -2,6 +2,7 @@ import React, { useEffect, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, ExternalLink, Github, FileText, Shield, TrendingUp, Rocket, Settings, Code, Lightbulb, CheckCircle, Database, Server, Zap } from 'lucide-react';
 import caseStudiesData from '../data/case-studies.json';
+import { OptimizedImage } from './ui/optimized-image';
 
 const ProjectModal = ({ project, isOpen, onClose }) => {
   // Merge project data with case study data if available
@@ -184,15 +185,15 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
               <div className="grid grid-cols-1 md:grid-cols-[260px,1fr] gap-4 sm:gap-6 items-start">
                 {image && (
                   <div className="relative rounded-lg overflow-hidden bg-gray-100 dark:bg-gray-700 w-full h-40 sm:h-48 md:h-40">
-                    <img
+                    <OptimizedImage
                       src={image}
                       alt={title}
-                      className="w-full h-full object-contain"
+                      width={520}
+                      height={293}
                       loading="lazy"
-                      decoding="async"
-                      width="800"
-                      height="450"
                       sizes="(max-width: 768px) 100vw, 260px"
+                      className="w-full h-full"
+                      imgClassName="object-contain"
                     />
                   </div>
                 )}

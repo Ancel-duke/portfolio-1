@@ -93,9 +93,12 @@ export function BeforeAfterSlider({
         <img
           src={beforeImage}
           alt="Before"
+          width={800}
+          height={384}
           className="w-full h-full object-cover"
           loading="lazy"
           decoding="async"
+          sizes="(max-width: 768px) 100vw, 800px"
         />
         <div className="absolute top-4 left-4 bg-black/70 text-white px-3 py-1 rounded-md text-sm font-medium">
           {beforeLabel}
@@ -110,9 +113,12 @@ export function BeforeAfterSlider({
         <img
           src={afterImage}
           alt="After"
+          width={800}
+          height={384}
           className="w-full h-full object-cover"
           loading="lazy"
           decoding="async"
+          sizes="(max-width: 768px) 100vw, 800px"
         />
         <div className="absolute top-4 right-4 bg-black/70 text-white px-3 py-1 rounded-md text-sm font-medium">
           {afterLabel}

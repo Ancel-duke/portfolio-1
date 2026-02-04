@@ -60,7 +60,9 @@ export function NowPlaying({
           <img
             src={track.cover}
             alt={`${track.album} cover`}
-            className="w-12 h-12 rounded-lg object-cover"
+            width={48}
+            height={48}
+            className="w-12 h-12 rounded-lg object-cover flex-shrink-0"
             loading="lazy"
             decoding="async"
           />

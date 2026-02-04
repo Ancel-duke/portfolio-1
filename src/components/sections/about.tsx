@@ -2,6 +2,7 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { Card, CardContent } from '../ui/card'
 import { Button } from '../ui/button'
+import { OptimizedImage } from '../ui/optimized-image'
 import { Download, MapPin, Calendar, Code, Users, Award, Target, GraduationCap, Rocket, Briefcase } from 'lucide-react'
 import { cn } from '../../lib/utils'
 
@@ -129,17 +130,16 @@ export function About({ className }: AboutProps) {
             {/* Profile Card */}
             <motion.div variants={itemVariants}>
               <Card className="overflow-hidden">
-                <div className="relative">
-                  <img
+                <div className="relative w-full h-80 sm:h-96">
+                  <OptimizedImage
                     src="/assets/profile_photo.jpg"
                     alt="Ancel Ajanga"
-                    loading="eager"
-                    decoding="async"
-                    fetchPriority="high"
-                    width="400"
-                    height="400"
+                    width={400}
+                    height={400}
+                    priority
                     sizes="(max-width: 1024px) 100vw, 50vw"
-                    className="w-full h-80 sm:h-96 object-cover object-top"
+                    className="absolute inset-0 w-full h-full"
+                    style={{ objectPosition: 'top' }}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
                   <div className="absolute bottom-3 sm:bottom-4 left-3 sm:left-4 right-3 sm:right-4 text-white">
