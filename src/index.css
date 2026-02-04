@@ -5,8 +5,8 @@
 @layer base {
   html {
     overflow-x: hidden;
-    /* Reserve space for scrollbar to avoid layout shift; thin scrollbar styled below */
     overflow-y: scroll;
+    max-width: 100vw;
   }
 
   body {
@@ -14,6 +14,7 @@
     max-width: 100%;
     width: 100%;
     min-height: 100vh;
+    overflow-x: clip;
   }
 
   * {

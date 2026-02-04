@@ -53,6 +53,8 @@ interface OptimizedImageProps extends Omit<React.ImgHTMLAttributes<HTMLImageElem
   loading?: 'lazy' | 'eager';
   onLoad?: () => void;
   onError?: () => void;
+  /** When true, skip Netlify Image CDN and use the raw src (avoids CDN issues for critical images like profile photo). */
+  skipNetlifyCDN?: boolean;
 }
 
 export const OptimizedImage: React.FC<OptimizedImageProps> = ({
@@ -70,6 +72,7 @@ export const OptimizedImage: React.FC<OptimizedImageProps> = ({
   loading = 'lazy',
   onLoad,
   onError,
+  skipNetlifyCDN = false,
   ...props
 }) => {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -84,6 +87,9 @@ export const OptimizedImage: React.FC<OptimizedImageProps> = ({
     if (!isInView) {
       return { singleSrc: '', srcSetWebP: null, srcSetAvif: null, useNetlify: false };
     }
+    if (skipNetlifyCDN) {
+      return { singleSrc: src, srcSetWebP: null, srcSetAvif: null, useNetlify: false };
+    }
     const w = width || 800;
     const netlifyWebP = getNetlifyImageUrl(src, w, quality, 'webp');
     const srcSetW = getNetlifySrcSet(src, quality, 'webp');
@@ -94,7 +100,7 @@ export const OptimizedImage: React.FC<OptimizedImageProps> = ({
       srcSetAvif: srcSetA,
       useNetlify: !!netlifyWebP,
     };
-  }, [isInView, src, width, quality]);
+  }, [isInView, src, width, quality, skipNetlifyCDN]);
 
   // Intersection Observer for lazy loading (defer until in view)
   useEffect(() => {

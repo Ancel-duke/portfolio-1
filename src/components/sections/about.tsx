@@ -101,7 +101,7 @@ export function About({ className, fullPage }: AboutProps) {
   ]
 
   return (
-    <section id="about" className={cn('section-padding w-full overflow-x-hidden', className)}>
+    <section id="about" className={cn('section-padding w-full overflow-x-hidden min-w-0 max-w-full', className)}>
       <motion.div
         className="container-custom max-w-full"
         variants={containerVariants}
@@ -120,7 +120,7 @@ export function About({ className, fullPage }: AboutProps) {
           )}
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-10 lg:gap-12 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-10 lg:gap-12 items-start min-w-0">
           {/* Left Column: Profile & Philosophy */}
           <div className="space-y-8">
             {/* Profile Card */}
@@ -133,6 +133,7 @@ export function About({ className, fullPage }: AboutProps) {
                     width={400}
                     height={400}
                     priority
+                    skipNetlifyCDN
                     sizes="(max-width: 1024px) 100vw, 50vw"
                     className="w-full h-full"
                     imgClassName="object-cover object-top"
