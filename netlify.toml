@@ -4,7 +4,7 @@
 
 [build.environment]
   NODE_VERSION = "22"
-  # Reduce main bundle: enable tree-shaking and minification
+  NPM_FLAGS = "--include=dev"
   NODE_OPTIONS = "--max-old-space-size=4096"
 
 # Gzip/Brotli: Netlify compresses text assets automatically. No [build.processing] (deprecated).
