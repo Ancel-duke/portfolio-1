@@ -1538,26 +1538,26 @@
     "id": 15,
     "slug": "nestfi",
     "title": "NestFi — Resilient Financial Coordination Platform",
-    "subtitle": "Correctness-first finance with hybrid storage, M-Pesa callbacks, and failure-aware design",
+    "subtitle": "Correctness-first finance with hybrid storage, M-Pesa B2C, and failure-aware design",
     "role": "Full-Stack Software Engineer",
     "timeline": "Ongoing",
     "year": "2026",
     "status": "In Progress",
-    "description": "NestFi is a stateless financial platform designed to handle real-world constraints such as unreliable networks, asynchronous M-Pesa payments, and partial system failures. It integrates mobile and web clients with a single NestJS backend and a hybrid database architecture, prioritizing correctness, resilience, and production-grade design over feature bloat.",
+    "description": "NestFi is a production-grade finance platform designed for financial correctness under failure. Built by Ancel Ajanga, it ensures predictable behavior across asynchronous payment providers, delayed or duplicated callbacks, unreliable networks, and hybrid storage layers. PostgreSQL enforces ledger integrity, MongoDB handles compliance and audit events, and Redis provides ephemeral caching and distributed locking with fail-closed safety. Real-time notifications via Socket.io and hardened M-Pesa Daraja integrations make the system resilient, auditable, and user-trust oriented.",
     "problem": "Building a finance system isn’t CRUD — it’s correctness under failure. NestFi must remain predictable when payment providers are asynchronous, callbacks are delayed or duplicated, caches fail, logs are temporarily unavailable, and network conditions are unreliable. The core challenge is fault isolation and ledger correctness across multiple storage models and external integrations.",
-    "problemSolutionBridge": "To keep the ledger correct when callbacks are late or duplicated and caches or logs fail, I designed NestFi so PostgreSQL is the single source of truth and every external integration is idempotent and failure-contained.",
-    "solution": "I built NestFi around deliberate architectural principles: service isolation (API, PostgreSQL, MongoDB, Redis, external providers), a stateless backend (JWT auth, restart-safe, horizontally scalable), and hybrid data modeling (PostgreSQL for ledgers and wallets, MongoDB for events/logs/payment callbacks, Redis for caching/rate limits/temporary state). External payment flows (M-Pesa Daraja) are treated as asynchronous and idempotent, with timeouts, retries with backoff, circuit breakers, graceful degradation of non-critical features, and health checks for observability. Callback and notification handling is supported via Cloudflare Workers.",
+    "problemSolutionBridge": "To keep the ledger correct when callbacks are late or duplicated and caches or logs fail, I designed NestFi so PostgreSQL is the single source of truth, every external integration is idempotent and failure-contained, and withdrawals follow a request → approval → execution → callback lifecycle with database-enforced idempotency.",
+    "solution": "Hybrid storage: PostgreSQL (wallets, ledgers), MongoDB (events, audit & compliance logs), Redis (locks, queues, rate limits). Service isolation: stateless NestJS backend (JWT), restart-safe, horizontally scalable. Failure-aware external integration: M-Pesa Daraja flows are idempotent, timeout-aware, and guarded by retries, backoff, and circuit breakers. Real-time UX: mobile deposits and withdrawals update instantly via Socket.io when callbacks are processed. Audit & compliance: structured, immutable event logging for KYC, withdrawals, disputes, and fee/tax handling. System guarantees include financial correctness (ledger-backed double-entry; totals net to zero), withdrawal safety (B2C lifecycle with DISPUTED state for manual reconciliation), resilience (fail-closed distributed locks with renewal), real-time trust loop (explicit states e.g. Settling), compliance & audit (MongoDB), rate limiting (Redis primary, Postgres fallback), and data safety (Postgres = truth, MongoDB = audit, Redis = ephemeral).",
     "keyTerms": [
       { "term": "Idempotent callback processing", "explanation": "In NestFi, M-Pesa callbacks are processed so duplicate or delayed deliveries do not double-credit or double-debit; that supports the goal of ledger correctness when the provider is asynchronous and unreliable." },
-      { "term": "Asynchronous workflows", "explanation": "Payment and notification flows do not block the API; they run with timeouts and retries so the system stays responsive and the ledger stays consistent even when external systems are slow or down." },
-      { "term": "Graceful degradation", "explanation": "When Redis or MongoDB is unavailable, non-critical features (cache, logs) degrade so core wallet and ledger operations in PostgreSQL can continue; that supports the goal of correctness under partial failure." }
+      { "term": "Double-entry accounting", "explanation": "All wallet updates are ledger-backed; every transaction debits and credits system accounts such that totals always net to zero." },
+      { "term": "Fail-closed distributed locks", "explanation": "Autosave batching and other critical jobs use distributed locks with renewal; execution aborts if lock ownership cannot be proven, so the system never proceeds under ambiguity." }
     ],
-    "failureModes": "M-Pesa callback duplicate or delayed: idempotent handling and correlation IDs ensure we apply the effect once. Redis down: we bypass cache and rate limits so auth and core API still work. MongoDB down: we skip event logging so writes to PostgreSQL are not blocked. Backend crash: stateless design and JWT allow restart without session loss; ledger state is only in PostgreSQL. Network timeout to provider: circuit breakers and retries with backoff prevent cascading failure and allow recovery when the provider returns.",
-    "impact": "NestFi demonstrates capstone-level engineering: hybrid databases chosen by data guarantees, explicit failure modes and containment, and real payment infrastructure integration. The platform is designed under the assumption that failures are normal — not exceptional — and that core financial correctness must remain intact even when non-critical components degrade.",
-    "isolation": "Core responsibilities run independently: the backend orchestrates logic and is safe to restart; PostgreSQL remains the financial source of truth with no silent corruption; MongoDB (events/logs) is optional during failure; Redis is a performance layer that can be bypassed; M-Pesa callbacks are processed in an idempotent, delay-tolerant manner. Security and network isolation are enforced via Docker and minimal exposed ports, with TLS at the edge via Cloudflare.",
-    "tradeoffs": "I chose hybrid storage (PostgreSQL, MongoDB, Redis) because it matches real financial constraints: PostgreSQL for ledger correctness, MongoDB for events and logs, Redis for low-latency ephemeral state. I accepted higher operational complexity in exchange for clear failure boundaries and auditability. I prioritized correctness, resilience, and auditability over feature count and intentionally deferred non-critical UI polish and optional modules.",
-    "implementationStatus": "Current status (~75%): Core architecture, hybrid data model, and key integrations are implemented. Remaining work is frontend polish, an optional KYC module, and operational refinements. Documentation is maintained alongside the codebase, and the Dockerized workflow supports deterministic builds.",
-    "potentialExpansion": "Frontend polish and UX refinement across mobile and web. Optional KYC module and expanded compliance workflows. Operational refinements: deeper observability, trace correlation across callbacks, runbooks, and replay tooling for event/callback recovery.",
+    "failureModes": "M-Pesa callback duplicate or delayed: idempotent handling and correlation IDs ensure we apply the effect once. Redis down: we bypass cache and rate limits (Postgres fallback) so auth and core API still work. MongoDB down: we skip event logging so writes to PostgreSQL are not blocked. Backend crash: stateless design and JWT allow restart without session loss; ledger state is only in PostgreSQL. Network timeout to provider: circuit breakers and retries with backoff prevent cascading failure. Withdrawal ambiguity: B2C ResultCode success does not imply user receipt; withdrawals can enter DISPUTED state for manual reconciliation.",
+    "impact": "NestFi demonstrates capstone-level engineering: correctness-first design where financial truth is never inferred; explicit handling of distributed-system failure modes (timeouts, split-brain risk, replayed callbacks); real-time, user-trust-focused payment experience; strong auditability and compliance foundations aligned with Kenyan fintech regulations; architecture optimized for resilience, not feature count. Completion ~87% — core architecture, ledger, M-Pesa B2C, mobile deposits, autosave batching, and audit flows fully implemented.",
+    "isolation": "Core responsibilities run independently: the backend orchestrates logic and is safe to restart; PostgreSQL remains the financial source of truth with no silent corruption; MongoDB (events/audit) is optional during failure; Redis is a performance and locking layer that can be bypassed or fall back to Postgres; M-Pesa callbacks are processed in an idempotent, delay-tolerant manner. Security and network isolation are enforced via Docker and minimal exposed ports, with TLS at the edge via Cloudflare.",
+    "tradeoffs": "I chose hybrid storage (PostgreSQL, MongoDB, Redis) because it matches real financial constraints: PostgreSQL for ledger correctness, MongoDB for events and audit, Redis for low-latency ephemeral state and distributed locking. I accepted higher operational complexity in exchange for clear failure boundaries and auditability. I prioritized correctness, resilience, and auditability over feature count. Current gaps are intentional: Web KYC file upload is placeholder (manual verification); some flows use direct service calls instead of full event bus; integration, load, and contract tests pending; optional UX and operational tooling.",
+    "implementationStatus": "Completion ~87%. Core architecture, ledger, M-Pesa B2C, mobile deposits, autosave batching, and audit flows fully implemented. Remaining work is operational hardening and UX refinement, not foundational correctness. Documentation is maintained alongside the codebase; Dockerized workflow supports deterministic builds.",
+    "potentialExpansion": "Web KYC automation (OCR/verification). Full event bus adoption (publish/subscribe) for remaining flows. Integration, load, and contract tests. Frontend and operational tooling polish. Deeper observability, trace correlation across callbacks, runbooks, and replay tooling for event/callback recovery.",
     "technologies": [
       { "name": "NestJS", "category": "Backend", "icon": "nestjs" },
       { "name": "TypeScript", "category": "Language", "icon": "typescript" },
@@ -1568,36 +1568,43 @@
       { "name": "Cloudflare Workers", "category": "Edge", "icon": "cloudflare" },
       { "name": "M-Pesa Daraja", "category": "Integration", "icon": "api" },
       { "name": "JWT", "category": "Authentication", "icon": "jwt" },
+      { "name": "Socket.io", "category": "Real-time", "icon": "socketio" },
       { "name": "React Native", "category": "Mobile", "icon": "react" },
-      { "name": "Next.js", "category": "Frontend", "icon": "nextjs" }
+      { "name": "Next.js", "category": "Frontend", "icon": "nextjs" },
+      { "name": "RabbitMQ", "category": "Messaging", "icon": "api" }
     ],
     "features": [
-      "Wallets, transactions, and automated savings flows",
+      "Ledger-backed wallets with strict double-entry accounting (KES-only)",
+      "M-Pesa B2C withdrawals with idempotent handling and dispute-aware lifecycle",
+      "Mobile deposits via POST /payments/deposit with real-time Socket.io updates",
+      "Autosave batching with fail-closed + lock renewal safety",
+      "Compliance and audit logging (MongoDB)",
+      "Identity-aware rate limiting (Redis + Postgres fallback)",
+      "Push notifications via registered tokens and background worker",
       "Stateless NestJS backend (horizontally scalable, restart-safe)",
-      "Hybrid storage: PostgreSQL (ledgers), MongoDB (events/logs/callbacks), Redis (ephemeral state)",
-      "M-Pesa Daraja integration with asynchronous callback handling",
       "Resilience patterns: timeouts, retries with backoff, circuit breakers, graceful degradation",
-      "Observability: health checks and failure containment",
       "Security-first baseline: JWT auth, validation, rate limiting, callback IP allowlisting, TLS at the edge"
     ],
     "challenges": [
-      "Designing idempotent, delay-tolerant callback processing for external payment providers",
+      "Designing idempotent, delay-tolerant callback processing for M-Pesa B2C and STK",
       "Preventing cascading failures across cache/log/payment dependencies",
       "Choosing data stores by guarantees (ACID ledgers vs event logs vs ephemeral state)",
-      "Hardening service isolation with Docker networks and minimal exposed ports",
-      "Making builds deterministic and reproducible across environments"
+      "Enforcing withdrawal safety and DISPUTED state when provider response is ambiguous",
+      "Fail-closed distributed locking with renewal for autosave and critical jobs",
+      "Hardening service isolation with Docker networks and minimal exposed ports"
     ],
     "outcomes": [
-      "Correctness-first architecture designed for partial failures and unreliable networks",
-      "Hybrid database model aligned with real financial constraints",
-      "Clear isolation boundaries so non-critical components can fail safely",
-      "Deterministic Dockerized infrastructure suitable for production hardening"
+      "Correctness-first architecture; financial truth is never inferred",
+      "Explicit handling of distributed-system failure modes (timeouts, replayed callbacks)",
+      "Real-time payment experience with Socket.io and explicit state transitions",
+      "Strong auditability and compliance aligned with Kenyan fintech regulations",
+      "Hybrid database model and clear isolation boundaries; completion ~87%"
     ],
     "metrics": [
-      { "label": "Completion", "value": "~75%", "description": "MVP complete with core architecture + integrations; hardening and polish remain" },
+      { "label": "Completion", "value": "~87%", "description": "Core architecture, ledger, M-Pesa B2C, mobile deposits, autosave, audit flows implemented" },
       { "label": "Datastores", "value": "3", "description": "PostgreSQL + MongoDB + Redis hybrid model" },
-      { "label": "Payment Integration", "value": "M-Pesa", "description": "Asynchronous callbacks, idempotent processing" },
-      { "label": "Resilience", "value": "Circuit breakers", "description": "Timeouts + safe retries + graceful degradation" }
+      { "label": "Payment Integration", "value": "M-Pesa Daraja", "description": "STK Push & B2C callbacks, idempotent processing" },
+      { "label": "Resilience", "value": "Circuit breakers + fail-closed locks", "description": "Timeouts, retries, backoff, lock renewal" }
     ],
     "links": {
       "live": "",
