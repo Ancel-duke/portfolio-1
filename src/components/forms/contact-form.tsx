@@ -99,12 +99,10 @@ export function ContactForm({ className, onSuccess }: ContactFormProps) {
         const emailjs = (await import('emailjs-com')).default
         emailjs.init(publicKey)
         await emailjs.send(serviceId, templateId, {
-          from_name: formData.name,
-          from_email: formData.email,
+          name: formData.name,
+          email: formData.email,
           message: formData.message,
-          reply_to: formData.email,
-          to_email: 'ancel.ajanga@yahoo.com',
-        })
+        }, publicKey)
         setSubmitStatus('success')
         setFormData({ name: "", email: "", message: "" })
         onSuccess?.()
