@@ -14,9 +14,10 @@ const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null);
 
-  // Initialize EmailJS
+  // Initialize EmailJS (use env so switching services only needs .env + Netlify update)
   useEffect(() => {
-    emailjs.init("BOBBy8dSFH-c2Eki0"); // Replace with your EmailJS User ID
+    const publicKey = process.env.REACT_APP_EMAILJS_PUBLIC_KEY || process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
+    if (publicKey && typeof window !== 'undefined') emailjs.init(publicKey);
   }, []);
 
   const contactInfo = [
@@ -88,22 +89,19 @@ const Contact = () => {
         reply_to: formData.email, // Add reply_to for better email handling
       };
 
-      // Send email using EmailJS
-      await emailjs.send(
-        'service_pq4id6k', // Your actual Service ID from EmailJS dashboard
-        'template_pao1s2k', // Your Template ID
-        templateParams,
-        'BOBBy8dSFH-c2Eki0' // Your User ID
-      );
+      // Send email using EmailJS (service/template from env: use Yahoo service_pedd4uw)
+      const serviceId = process.env.REACT_APP_EMAILJS_SERVICE_ID || process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
+      const templateId = process.env.REACT_APP_EMAILJS_TEMPLATE_ID || process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
+      if (!serviceId || !templateId) throw new Error('EmailJS service/template not configured');
+      await emailjs.send(serviceId, templateId, templateParams);
       
       setSubmitStatus('success');
       setFormData({ name: '', email: '', message: '', honeypot: '' });
     } catch (error) {
       console.error('Contact form error:', error);
       console.error('Error details:', {
-        serviceId: 'service_pq4id6k',
-        templateId: 'template_pao1s2k',
-        userId: 'BOBBy8dSFH-c2Eki0',
+        serviceId: process.env.REACT_APP_EMAILJS_SERVICE_ID || process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
+        templateId: process.env.REACT_APP_EMAILJS_TEMPLATE_ID || process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
         templateParams: {
           name: formData.name,
           email: formData.email,

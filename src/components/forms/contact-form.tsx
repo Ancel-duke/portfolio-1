@@ -102,12 +102,16 @@ export function ContactForm({ className, onSuccess }: ContactFormProps) {
           name: formData.name,
           email: formData.email,
           message: formData.message,
-        }, publicKey)
+        })
         setSubmitStatus('success')
         setFormData({ name: "", email: "", message: "" })
         onSuccess?.()
-      } catch (error) {
-        console.error('EmailJS error:', error)
+      } catch (error: unknown) {
+        const err = error as { response?: { status?: number; data?: string }; text?: string }
+        const detail = err?.response?.data ?? err?.text ?? String(error)
+        if (process.env.NODE_ENV === 'development') {
+          console.warn('EmailJS error:', detail)
+        }
         setSubmitStatus('error')
       } finally {
         setIsSubmitting(false)

@@ -38,7 +38,6 @@ export default function Document() {
           rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
         />
-        <link rel="preload" href="/assets/profile_photo.jpg" as="image" type="image/jpeg" />
         <meta name="theme-color" content="#0ea5a4" />
         <noscript>
           <link
