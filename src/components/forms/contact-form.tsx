@@ -235,11 +235,23 @@ export function ContactForm({ className, onSuccess }: ContactFormProps) {
             </div>
 
             {submitStatus === 'error' && (
-              <div className="flex items-center space-x-2 text-destructive">
-                <AlertCircle className="h-4 w-4" />
-                <p className="text-sm">
-                  Something went wrong. Please try again or use the email link below.
-                </p>
+              <div className="rounded-lg border border-destructive/30 bg-destructive/5 p-3 space-y-2">
+                <div className="flex items-start gap-2 text-destructive">
+                  <AlertCircle className="h-4 w-4 shrink-0 mt-0.5" />
+                  <div className="text-sm space-y-1">
+                    <p className="font-medium">Couldn’t send via form.</p>
+                    <p>Use the button below to open your email app with your message ready to send.</p>
+                  </div>
+                </div>
+                <Button
+                  type="button"
+                  variant="outline"
+                  size="sm"
+                  onClick={handleMailtoFallback}
+                  className="border-destructive/50 text-destructive hover:bg-destructive/10"
+                >
+                  Open in email (mailto)
+                </Button>
               </div>
             )}
 
