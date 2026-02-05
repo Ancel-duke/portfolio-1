@@ -64,9 +64,7 @@
     <meta name="msapplication-TileColor" content="#0ea5a4" />
     <meta name="theme-color" content="#0ea5a4" />
 
-    <!-- Preload critical LCP assets (Hero/About profile, first project card) - ?v=2 cache bust -->
-    <link rel="preload" href="%PUBLIC_URL%/assets/profile_photo.jpg?v=2" as="image" type="image/jpeg" fetchpriority="high">
-    <link rel="preload" href="%PUBLIC_URL%/assets/projects/taskforge.jpg?v=2" as="image" type="image/jpeg" fetchpriority="high">
+    <!-- LCP images (profile, project) are not preloaded here to avoid "preloaded but not used" on pages like /contact that don't show them. They use fetchpriority="high" + loading="eager" where rendered. -->
 
     <!-- Speculation Rules API: instant navigation (prefetch on hover/viewport, prerender for key routes) -->
     <script type="speculationrules">

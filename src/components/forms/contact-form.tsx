@@ -102,15 +102,17 @@ export function ContactForm({ className, onSuccess }: ContactFormProps) {
           name: formData.name,
           email: formData.email,
           message: formData.message,
+          title: 'Portfolio Contact Form',
         })
         setSubmitStatus('success')
         setFormData({ name: "", email: "", message: "" })
         onSuccess?.()
       } catch (error: unknown) {
-        const err = error as { response?: { status?: number; data?: string }; text?: string }
-        const detail = err?.response?.data ?? err?.text ?? String(error)
+        const err = error as { response?: { status?: number; data?: string }; text?: string; status?: number }
+        const detail = err?.response?.data ?? err?.text ?? (err as Error)?.message ?? String(error)
+        const status = err?.response?.status ?? err?.status
         if (process.env.NODE_ENV === 'development') {
-          console.warn('EmailJS error:', detail)
+          console.warn('EmailJS error:', { status, detail, serviceId: serviceId ? '***' : undefined })
         }
         setSubmitStatus('error')
       } finally {
