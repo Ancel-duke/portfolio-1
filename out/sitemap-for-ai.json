@@ -6,7 +6,7 @@
   "jobTitle": "Fullstack Engineer",
   "niche": "System Resilience",
   "baseUrl": "https://ancel.co.ke",
-  "generated": "2026-02-04T20:23:46.661Z",
+  "generated": "2026-02-09T16:46:03.117Z",
   "entities": {
     "pages": [
       {
@@ -346,17 +346,17 @@
       {
         "url": "https://ancel.co.ke/projects",
         "slug": "nestfi",
-        "name": "NestFi: Solving 2AM Financial Race Conditions",
+        "name": "NestFi — Resilient Financial Coordination Platform",
         "keywords": [
           "NestJS",
           "TypeScript",
           "PostgreSQL",
           "MongoDB",
           "Redis",
+          "Socket.io",
+          "RabbitMQ",
           "Docker",
-          "Cloudflare Workers",
-          "M-Pesa Daraja API",
-          "FinanceApplication",
+          "WebApplication",
           "Ancel Ajanga",
           "Fullstack Engineer"
         ]
@@ -382,17 +382,17 @@
       {
         "url": "https://ancel.co.ke/projects",
         "slug": "aegis",
-        "name": "Aegis: When Kubernetes Fails, the System Heals Itself",
+        "name": "Aegis — Autonomous Infrastructure Guardrail System",
         "keywords": [
-          "NestJS",
-          "FastAPI",
-          "Next.js",
+          "TypeScript",
+          "Node.js",
+          "OpenTelemetry",
+          "OPA (Open Policy Agent)",
           "PostgreSQL",
           "Redis",
-          "Kubernetes",
           "Docker",
           "Prometheus",
-          "UtilitiesApplication",
+          "WebApplication",
           "Ancel Ajanga",
           "Fullstack Engineer"
         ]
@@ -700,8 +700,10 @@
           "Cloudflare Workers",
           "M-Pesa Daraja",
           "JWT",
+          "Socket.io",
           "React Native",
           "Next.js",
+          "RabbitMQ",
           "architecture",
           "resilience",
           "trade-offs",
