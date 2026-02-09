@@ -1,11 +1,10 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useEffect, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, ExternalLink, Github, FileText, Shield, TrendingUp, Rocket, Settings, Code, Lightbulb, CheckCircle, Database, Server, Zap, Lock } from 'lucide-react';
+import { X, ExternalLink, Github, FileText, Shield, TrendingUp, Rocket, Settings, Code, Lightbulb, CheckCircle, Database, Server, Zap } from 'lucide-react';
 import caseStudiesData from '../data/case-studies.json';
 import { OptimizedImage } from './ui/optimized-image';
 
 const ProjectModal = ({ project, isOpen, onClose }) => {
-  const [showNdaInfo, setShowNdaInfo] = useState(false);
   // Merge project data with case study data if available
   // Must call hooks before any early returns
   const enrichedProject = useMemo(() => {
@@ -233,14 +232,9 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
                     {(sourceNote || repoUrl || docsUrl) && (
                       <div className="flex flex-col gap-2 w-full sm:w-auto">
                         {sourceNote ? (
-                          <button
-                            onClick={() => setShowNdaInfo(true)}
-                            className="btn-secondary flex items-center justify-center space-x-2 min-h-[48px] text-sm sm:text-base"
-                            title="View repository access information"
-                          >
-                            <Lock className="w-4 h-4 sm:w-5 sm:h-5" />
-                            <span>{sourceNote}</span>
-                          </button>
+                          <div className="px-4 py-3 bg-slate-100 dark:bg-slate-800/50 border border-slate-300 dark:border-slate-700 rounded-lg text-sm sm:text-base text-gray-900 dark:text-gray-100 font-medium text-center">
+                            {sourceNote}
+                          </div>
                         ) : (
                           repoUrl && (
                             <a
@@ -255,7 +249,7 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
                           )
                         )}
 
-                        {docsUrl && (
+                        {!sourceNote && docsUrl && (
                           <a
                             href={docsUrl}
                             target="_blank"
@@ -497,66 +491,6 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
           </motion.div>
         </motion.div>
       )}
-
-      {/* NDA Information Modal Overlay */}
-      <AnimatePresence>
-        {showNdaInfo && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4"
-            onClick={() => setShowNdaInfo(false)}
-          >
-            <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" />
-            <motion.div
-              initial={{ scale: 0.95, opacity: 0, y: 20 }}
-              animate={{ scale: 1, opacity: 1, y: 0 }}
-              exit={{ scale: 0.95, opacity: 0, y: 20 }}
-              transition={{ duration: 0.2 }}
-              className="relative bg-white dark:bg-gray-900 rounded-lg sm:rounded-2xl shadow-2xl max-w-md w-full p-6 sm:p-8"
-              onClick={(e) => e.stopPropagation()}
-            >
-              {/* Header */}
-              <div className="flex items-start justify-between mb-4">
-                <div className="flex items-center space-x-3">
-                  <Lock className="w-6 h-6 text-blue-600 dark:text-blue-400 flex-shrink-0" />
-                  <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100">
-                    Private Enterprise Repository
-                  </h2>
-                </div>
-                <button
-                  onClick={() => setShowNdaInfo(false)}
-                  className="p-1 text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 transition-colors"
-                  aria-label="Close"
-                >
-                  <X className="w-6 h-6" />
-                </button>
-              </div>
-
-              {/* Body */}
-              <div className="space-y-4 mb-6">
-                <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                  This project's source code is maintained in a private enterprise repository.
-                </p>
-                <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                  Access is available for technical review under a mutual NDA.
-                </p>
-              </div>
-
-              {/* Footer */}
-              <div className="flex justify-end">
-                <button
-                  onClick={() => setShowNdaInfo(false)}
-                  className="px-4 py-2 bg-gray-900 dark:bg-gray-700 text-white rounded-lg hover:bg-gray-800 dark:hover:bg-gray-600 transition-colors"
-                >
-                  Close
-                </button>
-              </div>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
     </AnimatePresence>
   );
 };
