@@ -10,7 +10,7 @@ const ProjectCard = ({ project, onOpenModal, priority = false }) => {
   const hoverScale = getHoverScaleCard(animationsEnabled);
   const hoverTransition = getHoverTransition(animationsEnabled);
 
-  const { title, displayTitle, description, technologies, liveUrl, repoUrl, image, problemSummary } = project;
+  const { title, displayTitle, description, technologies, liveUrl, repoUrl, image, problemSummary, sourceNote } = project;
   const techStack = technologies?.length
     ? technologies.slice(0, 5).map((t) => (typeof t === 'string' ? t : t.name)).join(', ')
     : 'Fullstack';
@@ -104,7 +104,7 @@ const ProjectCard = ({ project, onOpenModal, priority = false }) => {
                 <ExternalLink className="w-4 h-4" />
               </a>
             )}
-            {repoUrl && (
+            {!sourceNote && repoUrl && (
               <a
                 href={repoUrl}
                 target="_blank"

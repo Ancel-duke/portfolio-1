@@ -127,6 +127,7 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
     liveUrl, 
     repoUrl, 
     docsUrl,
+    sourceNote,
     image, 
     outcomes,
     problem,
@@ -220,18 +221,24 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
                       </a>
                     )}
                     
-                    {(repoUrl || docsUrl) && (
+                    {(sourceNote || repoUrl || docsUrl) && (
                       <div className="flex flex-col gap-2 w-full sm:w-auto">
-                        {repoUrl && (
-                          <a
-                            href={repoUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="btn-secondary flex items-center justify-center space-x-2 min-h-[48px] text-sm sm:text-base"
-                          >
-                            <Github className="w-4 h-4 sm:w-5 sm:h-5" />
-                            <span>View Code</span>
-                          </a>
+                        {sourceNote ? (
+                          <div className="text-sm sm:text-base text-gray-700 dark:text-gray-300 rounded-lg p-3 bg-muted/20">
+                            {sourceNote}
+                          </div>
+                        ) : (
+                          repoUrl && (
+                            <a
+                              href={repoUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="btn-secondary flex items-center justify-center space-x-2 min-h-[48px] text-sm sm:text-base"
+                            >
+                              <Github className="w-4 h-4 sm:w-5 sm:h-5" />
+                              <span>View Code</span>
+                            </a>
+                          )
                         )}
 
                         {docsUrl && (

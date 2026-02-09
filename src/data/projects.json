@@ -482,6 +482,7 @@
     "liveUrl": "",
     "repoUrl": "https://github.com/Ancel-duke/NestFi",
     "docsUrl": "https://github.com/Ancel-duke/NestFi/blob/main/docs/ARCHITECTURE.md",
+    "sourceNote": "Private Enterprise Repository aegis and nestfi",
     "image": "/assets/projects/nestfi.jpg",
     "outcomes": "Correctness-first design where financial truth is never inferred. Explicit handling of distributed-system failure modes (timeouts, split-brain risk, replayed callbacks). Real-time, user-trust-focused payment experience. Strong auditability and compliance foundations aligned with Kenyan fintech regulations. Architecture optimized for resilience, not feature count. Completion ~87% — core architecture, ledger, M-Pesa B2C, mobile deposits, autosave batching, and audit flows fully implemented; remaining work is operational hardening and UX refinement."
   },
@@ -548,6 +549,7 @@
     "liveUrl": "",
     "repoUrl": "https://github.com/Ancel-duke/Aegis",
     "docsUrl": "https://github.com/Ancel-duke/Aegis/blob/main/ARCHITECTURE.md",
+    "sourceNote": "Private Enterprise Repository aegis and nestfi",
     "image": "/assets/projects/aegis.jpg",
     "outcomes": "Aegis reflects how I think about production systems: assume failure, design for abuse, automate carefully, and leave a trail of evidence for every decision. Implemented (~95%): backend APIs and security, AI anomaly detection, executor with Kubernetes RBAC, full observability stack, production-ready frontend, Docker and Kubernetes manifests, CI/CD with rollback."
   },
