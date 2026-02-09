@@ -10,7 +10,7 @@ const ProjectCard = ({ project, onOpenModal, priority = false }) => {
   const hoverScale = getHoverScaleCard(animationsEnabled);
   const hoverTransition = getHoverTransition(animationsEnabled);
 
-  const { title, displayTitle, description, technologies, liveUrl, repoUrl, image, problemSummary, sourceNote } = project;
+  const { title, displayTitle, description, technologies, liveUrl, repoUrl, image, problemSummary, sourceNote, repositoryLabel } = project;
   const techStack = technologies?.length
     ? technologies.slice(0, 5).map((t) => (typeof t === 'string' ? t : t.name)).join(', ')
     : 'Fullstack';
@@ -52,9 +52,14 @@ const ProjectCard = ({ project, onOpenModal, priority = false }) => {
 
       {/* Content — flex-1 so footer stays pinned, no overlap */}
       <div className="flex-1 flex flex-col min-h-0">
-        <h3 className="text-xl md:text-2xl font-bold tracking-tight mb-2 text-slate-100">
+        <h3 className="text-xl md:text-2xl font-bold tracking-tight mb-1 text-slate-100">
           {displayTitle || title}
         </h3>
+        {repositoryLabel && (
+          <div className="text-xs text-slate-400 mb-2">
+            {repositoryLabel}
+          </div>
+        )}
         <p className="text-sm md:text-base text-slate-400 flex-1 leading-relaxed line-clamp-3 mb-4">
           {description}
         </p>
