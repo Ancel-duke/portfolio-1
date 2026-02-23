@@ -1,7 +1,7 @@
 import React from 'react'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
-import { motion } from 'framer-motion'
+import { LazyMotion, domAnimation, m } from 'framer-motion'
 import caseStudiesData from '../data/case-studies.json'
 import { Card, CardContent, CardTitle } from '../components/ui/card'
 import { Button } from '../components/ui/button'
@@ -12,8 +12,9 @@ import SEOHead from '../components/seo/SEOHead'
 import { SkipLink } from '../components/ui/skip-link'
 import { Breadcrumb } from '../components/ui/breadcrumb'
 import { TechSummaryTable } from '../components/sections/TechSummaryTable'
-import { generateCaseStudySchema, generateTechArticleSchema } from '../components/seo/schemas'
-import { getCaseStudyMetaDescription, getCaseStudyImageAlt, getCaseStudyOgTitle } from '../utils/metadata'
+import { generateCaseStudySchema, generateTechArticleSchema, generateBreadcrumbSchema } from '../components/seo/schemas'
+import { getCaseStudyMetaDescription, getCaseStudyImageAlt, getCaseStudyOgTitle, getClustersForCaseStudy } from '../utils/metadata'
+import topicClustersData from '../data/topic-clusters.json'
 
 interface Technology {
   name: string
@@ -75,9 +76,9 @@ interface CaseStudy {
   keyTerms?: { term: string; explanation: string }[]
 }
 
-export function CaseStudyDetailPage() {
+export function CaseStudyDetailPage({ initialSlug }: { initialSlug?: string } = {}) {
   const router = useRouter()
-  const slug = typeof router.query.slug === 'string' ? router.query.slug : undefined
+  const slug = (typeof router.query.slug === 'string' ? router.query.slug : undefined) ?? initialSlug
   const caseStudy = (caseStudiesData as CaseStudy[]).find((cs: CaseStudy) => cs.slug === slug)
 
   // Determine if this is a lab/experiment project (frontend project)
@@ -145,7 +146,16 @@ export function CaseStudyDetailPage() {
 
   const metaDescription = getCaseStudyMetaDescription(caseStudy)
   const ogTitle = getCaseStudyOgTitle(caseStudy)
-  const jsonLd = [generateCaseStudySchema(caseStudy), generateTechArticleSchema(caseStudy)]
+  const breadcrumbItems = [
+    { name: 'Home', url: '/' },
+    { name: parentSection, url: parentUrl },
+    { name: caseStudy.title, url: `/case-studies/${caseStudy.slug}` },
+  ]
+  const jsonLd = [
+    generateCaseStudySchema(caseStudy),
+    generateTechArticleSchema(caseStudy),
+    generateBreadcrumbSchema(breadcrumbItems),
+  ]
 
   return (
     <>
@@ -161,8 +171,9 @@ export function CaseStudyDetailPage() {
         jsonLd={jsonLd}
       />
       <SkipLink />
-      <motion.div
-        className="py-8 sm:py-12 md:py-16 container-custom max-w-full w-full overflow-x-hidden"
+      <LazyMotion features={domAnimation}>
+        <m.div
+          className="py-8 sm:py-12 md:py-16 container-custom max-w-full w-full overflow-x-hidden"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
@@ -175,28 +186,41 @@ export function CaseStudyDetailPage() {
           ]}
           className="mb-4 sm:mb-6 md:mb-8"
         />
+        {(() => {
+          const clusters = getClustersForCaseStudy(topicClustersData?.clusters || [], caseStudy.slug)
+          if (clusters.length === 0) return null
+          return (
+            <p className="text-sm text-muted-foreground mb-4">
+              Part of topic: {clusters.map((c) => (
+                <Link key={c.id} href={c.pillarPath} className="text-primary hover:underline ml-1">
+                  {c.name}
+                </Link>
+              )).reduce((acc: React.ReactNode[], el, i) => (i === 0 ? [el] : [...acc, ', ', el]), [])}
+            </p>
+          )
+        })()}
 
-        <motion.div variants={itemVariants} className="mb-4 sm:mb-6 md:mb-8">
+        <m.div variants={itemVariants} className="mb-4 sm:mb-6 md:mb-8">
           <Button variant="outline" size="sm" className="min-h-[44px] text-sm sm:text-base" asChild>
             <Link href={parentUrl}>
               <ArrowLeft className="mr-2 h-4 w-4" /> {backButtonText}
             </Link>
           </Button>
-        </motion.div>
+        </m.div>
 
       <article aria-labelledby="case-study-title">
       <Card className="p-4 sm:p-6 md:p-8 lg:p-10">
         {/* AI-first: Tech summary table at top */}
-        <motion.div variants={itemVariants} className="mb-6 sm:mb-8">
+        <m.div variants={itemVariants} className="mb-6 sm:mb-8">
           <TechSummaryTable
             stack={caseStudy.technologies.map((t: Technology) => t.name)}
             role={caseStudy.role}
             year={caseStudy.year}
             status={caseStudy.status}
           />
-        </motion.div>
+        </m.div>
 
-        <motion.div variants={itemVariants} className="mb-8">
+        <m.div variants={itemVariants} className="mb-8">
           <div className="grid grid-cols-1 md:grid-cols-[260px,1fr] gap-4 sm:gap-6 items-start">
             {caseStudy.images.hero && (
               <OptimizedImage
@@ -204,7 +228,7 @@ export function CaseStudyDetailPage() {
                 alt={getCaseStudyImageAlt(caseStudy.title, 'Hero Preview')}
                 width={520}
                 height={293}
-                priority
+                priority={false}
                 loading="eager"
                 skipNetlifyCDN
                 sizes="(max-width: 768px) 100vw, 260px"
@@ -237,12 +261,15 @@ export function CaseStudyDetailPage() {
                 </Badge>
               </div>
 
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap items-center gap-2">
                 {caseStudy.technologies.map((tech, index) => (
                   <Badge key={index} variant="outline" className="text-xs sm:text-sm">
                     {tech.name}
                   </Badge>
                 ))}
+                <Button variant="ghost" size="sm" className="text-xs sm:text-sm h-8" asChild>
+                  <Link href="/stack">View full tech stack</Link>
+                </Button>
               </div>
 
               <p className="text-sm sm:text-base md:text-lg leading-relaxed text-muted-foreground">
@@ -274,38 +301,38 @@ export function CaseStudyDetailPage() {
               </div>
             </div>
           </div>
-        </motion.div>
+        </m.div>
 
         {/* Problem Section */}
-        <motion.div variants={itemVariants} className="mb-6 sm:mb-8 md:mb-10">
+        <m.div variants={itemVariants} className="mb-6 sm:mb-8 md:mb-10">
           <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-3 sm:mb-4 flex items-center">
             <Lightbulb className="h-5 w-5 sm:h-6 sm:w-6 mr-2 text-primary flex-shrink-0" /> 
             <span>The Problem</span>
           </h2>
           <p className="text-sm sm:text-base md:text-lg leading-relaxed text-muted-foreground">{caseStudy.problem}</p>
-        </motion.div>
+        </m.div>
 
         {/* Bridge: Problem → Solution (AI summary snippet) */}
         {caseStudy.problemSolutionBridge && (
-          <motion.div variants={itemVariants} className="mb-6 sm:mb-8">
+          <m.div variants={itemVariants} className="mb-6 sm:mb-8">
             <p className="text-base sm:text-lg font-medium text-foreground border-l-4 border-primary pl-4 py-2 bg-muted/30 rounded-r">
               {caseStudy.problemSolutionBridge}
             </p>
-          </motion.div>
+          </m.div>
         )}
 
         {/* Solution Section */}
-        <motion.div variants={itemVariants} className="mb-6 sm:mb-8 md:mb-10">
+        <m.div variants={itemVariants} className="mb-6 sm:mb-8 md:mb-10">
           <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-3 sm:mb-4 flex items-center">
             <Code className="h-5 w-5 sm:h-6 sm:w-6 mr-2 text-primary flex-shrink-0" /> 
             <span>The Solution</span>
           </h2>
           <p className="text-sm sm:text-base md:text-lg leading-relaxed text-muted-foreground">{caseStudy.solution}</p>
-        </motion.div>
+        </m.div>
 
         {/* Key Terms (entity linking — 3 complex terms explained for project goal) */}
         {caseStudy.keyTerms && caseStudy.keyTerms.length > 0 && (
-          <motion.div variants={itemVariants} className="mb-6 sm:mb-8 md:mb-10">
+          <m.div variants={itemVariants} className="mb-6 sm:mb-8 md:mb-10">
             <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-3 sm:mb-4 flex items-center">
               <BookOpen className="h-5 w-5 sm:h-6 sm:w-6 mr-2 text-primary flex-shrink-0" /> 
               <span>Key Technical Terms</span>
@@ -318,11 +345,11 @@ export function CaseStudyDetailPage() {
                 </li>
               ))}
             </ul>
-          </motion.div>
+          </m.div>
         )}
 
         {/* Impact Section */}
-        <motion.div variants={itemVariants} className="mb-6 sm:mb-8 md:mb-10">
+        <m.div variants={itemVariants} className="mb-6 sm:mb-8 md:mb-10">
           <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-3 sm:mb-4 flex items-center">
             <CheckCircle className="h-5 w-5 sm:h-6 sm:w-6 mr-2 text-primary flex-shrink-0" /> 
             <span>The Impact</span>
@@ -336,71 +363,86 @@ export function CaseStudyDetailPage() {
               </Card>
             ))}
           </div>
-        </motion.div>
+        </m.div>
+
+        {/* Outcomes Section — measurable results for AI/crawlers */}
+        {caseStudy.outcomes && caseStudy.outcomes.length > 0 && (
+          <m.div variants={itemVariants} className="mb-6 sm:mb-8 md:mb-10">
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-3 sm:mb-4 flex items-center">
+              <TrendingUp className="h-5 w-5 sm:h-6 sm:w-6 mr-2 text-primary flex-shrink-0" />
+              <span>Outcomes</span>
+            </h2>
+            <ul className="list-disc list-inside space-y-2 text-sm sm:text-base text-muted-foreground">
+              {caseStudy.outcomes.map((outcome: string, index: number) => (
+                <li key={index}>{outcome}</li>
+              ))}
+            </ul>
+          </m.div>
+        )}
 
         {/* Architecture Section */}
         {caseStudy.architecture && (
-          <motion.div variants={itemVariants} className="mb-10">
-            <h2 className="text-3xl font-bold mb-4 flex items-center">
-              <Layers className="h-6 w-6 mr-2 text-primary" /> System Architecture
+          <m.div variants={itemVariants} className="mb-10">
+            <h2 className="text-2xl sm:text-3xl font-bold mb-4 flex items-center">
+              <Layers className="h-6 w-6 mr-2 text-primary" /> Architecture
             </h2>
             <Card className="p-6 bg-muted/30">
               <p className="text-lg leading-relaxed text-muted-foreground whitespace-pre-line">{caseStudy.architecture}</p>
             </Card>
-          </motion.div>
+          </m.div>
         )}
 
         {/* Failure Modes (Resilient Architecture — how the system handles errors) */}
         {caseStudy.failureModes && (
-          <motion.div variants={itemVariants} className="mb-10">
+          <m.div variants={itemVariants} className="mb-10">
             <h2 className="text-3xl font-bold mb-4 flex items-center">
               <AlertTriangle className="h-6 w-6 mr-2 text-primary" /> Failure Modes
             </h2>
             <Card className="p-6 bg-muted/30 border-primary/20">
               <p className="text-lg leading-relaxed text-muted-foreground whitespace-pre-line">{caseStudy.failureModes}</p>
             </Card>
-          </motion.div>
+          </m.div>
         )}
 
         {/* Isolation & Resilience Section */}
         {caseStudy.isolation && (
-          <motion.div variants={itemVariants} className="mb-10">
+          <m.div variants={itemVariants} className="mb-10">
             <h2 className="text-3xl font-bold mb-4 flex items-center">
               <Shield className="h-6 w-6 mr-2 text-primary" /> Isolation & Resilience
             </h2>
             <Card className="p-6 bg-muted/30">
               <p className="text-lg leading-relaxed text-muted-foreground whitespace-pre-line">{caseStudy.isolation}</p>
             </Card>
-          </motion.div>
+          </m.div>
         )}
 
         {/* Trade-offs & Design Decisions Section */}
         {caseStudy.tradeoffs && (
-          <motion.div variants={itemVariants} className="mb-10">
+          <m.div variants={itemVariants} className="mb-10">
             <h2 className="text-3xl font-bold mb-4 flex items-center">
               <TrendingUp className="h-6 w-6 mr-2 text-primary" /> Trade-offs & Design Decisions
             </h2>
             <Card className="p-6 bg-muted/30">
               <p className="text-lg leading-relaxed text-muted-foreground whitespace-pre-line">{caseStudy.tradeoffs}</p>
             </Card>
-          </motion.div>
+          </m.div>
         )}
 
         {/* Implementation Status Section */}
         {caseStudy.implementationStatus && (
-          <motion.div variants={itemVariants} className="mb-10">
+          <m.div variants={itemVariants} className="mb-10">
             <h2 className="text-3xl font-bold mb-4 flex items-center">
               <Settings className="h-6 w-6 mr-2 text-primary" /> Implementation Status
             </h2>
             <Card className="p-6 bg-muted/30">
               <p className="text-lg leading-relaxed text-muted-foreground whitespace-pre-line">{caseStudy.implementationStatus}</p>
             </Card>
-          </motion.div>
+          </m.div>
         )}
 
         {/* Potential Expansion Section */}
         {caseStudy.potentialExpansion && (
-          <motion.div variants={itemVariants} className="mb-6 sm:mb-8 md:mb-10">
+          <m.div variants={itemVariants} className="mb-6 sm:mb-8 md:mb-10">
             <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-3 sm:mb-4 flex items-center">
               <Rocket className="h-5 w-5 sm:h-6 sm:w-6 mr-2 text-primary flex-shrink-0" /> 
               <span>Potential Expansion</span>
@@ -408,12 +450,12 @@ export function CaseStudyDetailPage() {
             <Card className="p-4 sm:p-5 md:p-6 bg-muted/30">
               <p className="text-sm sm:text-base md:text-lg leading-relaxed text-muted-foreground whitespace-pre-line">{caseStudy.potentialExpansion}</p>
             </Card>
-          </motion.div>
+          </m.div>
         )}
 
         {/* Gallery (if images exist) — alt pattern: [Project Name] Architecture Diagram - [Component Name] by Ancel Ajanga */}
         {caseStudy.images.gallery && caseStudy.images.gallery.length > 0 && (
-          <motion.div variants={itemVariants} className="mb-6 sm:mb-8 md:mb-10">
+          <m.div variants={itemVariants} className="mb-6 sm:mb-8 md:mb-10">
             <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-3 sm:mb-4">Project Gallery</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
               {caseStudy.images.gallery.map((img, index) => (
@@ -428,12 +470,12 @@ export function CaseStudyDetailPage() {
                 />
               ))}
             </div>
-          </motion.div>
+          </m.div>
         )}
 
         {/* Testimonial */}
         {caseStudy.testimonial && (
-          <motion.div variants={itemVariants} className="mt-6 sm:mt-8 md:mt-10">
+          <m.div variants={itemVariants} className="mt-6 sm:mt-8 md:mt-10">
             <Card className="p-4 sm:p-5 md:p-6 bg-muted/50">
               <blockquote className="text-sm sm:text-base md:text-lg italic mb-3 sm:mb-4">
                 "{caseStudy.testimonial.text}"
@@ -447,7 +489,7 @@ export function CaseStudyDetailPage() {
                 </div>
               </div>
             </Card>
-          </motion.div>
+          </m.div>
         )}
 
         {/* Related case studies (same tech / category) — internal linking for crawlability */}
@@ -464,7 +506,7 @@ export function CaseStudyDetailPage() {
             .slice(0, 3)
           if (related.length === 0) return null
           return (
-            <motion.aside variants={itemVariants} className="mt-8 sm:mt-10" aria-label="Related case studies">
+            <m.aside variants={itemVariants} className="mt-8 sm:mt-10" aria-label="Related case studies">
               <h2 className="text-xl sm:text-2xl font-bold mb-4">Related</h2>
               <ul className="space-y-2">
                 {related.map((cs) => (
@@ -478,12 +520,13 @@ export function CaseStudyDetailPage() {
                   </li>
                 ))}
               </ul>
-            </motion.aside>
+            </m.aside>
           )
         })()}
       </Card>
       </article>
-      </motion.div>
+        </m.div>
+      </LazyMotion>
     </>
   )
 }

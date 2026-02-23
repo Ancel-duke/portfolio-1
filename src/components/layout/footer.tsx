@@ -1,6 +1,6 @@
 import * as React from "react"
 import Link from "next/link"
-import { motion } from "framer-motion"
+import { LazyMotion, domAnimation, m } from "framer-motion"
 import { Button } from "../../components/ui/button"
 import { cn } from "../../lib/utils"
 import { Github, Linkedin, Mail, ArrowUp } from "lucide-react"
@@ -13,6 +13,7 @@ const navigation = [
   { name: 'Home', href: '/' },
   { name: 'Case Studies', href: '/case-studies' },
   { name: 'Blog', href: '/blog' },
+  { name: 'Guides', href: '/guides' },
   { name: 'Timeline', href: '/timeline' },
   { name: 'Stack', href: '/stack' },
   { name: 'Labs & Experiments', href: '/labs-experiments' },
@@ -48,13 +49,14 @@ function FooterComponent({ className }: FooterProps) {
   const currentYear = new Date().getFullYear()
 
   return (
-    <footer className={cn("border-t bg-background w-full overflow-x-hidden", className)}>
-      <div className="container-custom max-w-full">
+    <LazyMotion features={domAnimation}>
+      <footer className={cn("border-t bg-background w-full overflow-x-hidden", className)}>
+        <div className="container-custom max-w-full">
         <div className="py-8 sm:py-10 md:py-12 lg:py-14 xl:py-16">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 lg:gap-10 xl:gap-12 w-full">
             {/* Brand */}
             <div className="space-y-4">
-              <motion.div
+              <m.div
                 className="flex items-center space-x-2"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -63,7 +65,7 @@ function FooterComponent({ className }: FooterProps) {
                   <span className="text-white font-bold text-sm">A</span>
                 </div>
                 <span className="font-bold text-base sm:text-lg xl:text-xl">Ancel Ajanga</span>
-              </motion.div>
+              </m.div>
               <p className="text-sm sm:text-base text-muted-foreground max-w-sm">
                 Full-stack developer passionate about building scalable web applications 
                 and creating amazing user experiences.
@@ -76,12 +78,12 @@ function FooterComponent({ className }: FooterProps) {
               <nav className="space-y-2" aria-label="Footer quick links">
                 {navigation.map((item) => (
                   <Link key={item.name} href={item.href} passHref legacyBehavior>
-                    <motion.a
+                    <m.a
                       className="block text-sm sm:text-base text-muted-foreground hover:text-foreground transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded"
                       whileHover={{ x: 4 }}
                     >
                       {item.name}
-                    </motion.a>
+                    </m.a>
                   </Link>
                 ))}
               </nav>
@@ -92,16 +94,16 @@ function FooterComponent({ className }: FooterProps) {
               <h3 className="font-semibold text-sm sm:text-base">Featured Projects</h3>
               <nav className="space-y-2" aria-label="Featured case studies">
                 <Link href="/case-studies/opsflow" passHref legacyBehavior>
-                  <motion.a className="block text-sm sm:text-base text-muted-foreground hover:text-foreground transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded" whileHover={{ x: 4 }}>OpsFlow</motion.a>
+                  <m.a className="block text-sm sm:text-base text-muted-foreground hover:text-foreground transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded" whileHover={{ x: 4 }}>OpsFlow</m.a>
                 </Link>
                 <Link href="/case-studies/signflow" passHref legacyBehavior>
-                  <motion.a className="block text-sm sm:text-base text-muted-foreground hover:text-foreground transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded" whileHover={{ x: 4 }}>SignFlow</motion.a>
+                  <m.a className="block text-sm sm:text-base text-muted-foreground hover:text-foreground transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded" whileHover={{ x: 4 }}>SignFlow</m.a>
                 </Link>
                 <Link href="/case-studies/ledgerx" passHref legacyBehavior>
-                  <motion.a className="block text-sm sm:text-base text-muted-foreground hover:text-foreground transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded" whileHover={{ x: 4 }}>LedgerX</motion.a>
+                  <m.a className="block text-sm sm:text-base text-muted-foreground hover:text-foreground transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded" whileHover={{ x: 4 }}>LedgerX</m.a>
                 </Link>
                 <Link href="/case-studies/educhain" passHref legacyBehavior>
-                  <motion.a className="block text-sm sm:text-base text-muted-foreground hover:text-foreground transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded" whileHover={{ x: 4 }}>EduChain</motion.a>
+                  <m.a className="block text-sm sm:text-base text-muted-foreground hover:text-foreground transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded" whileHover={{ x: 4 }}>EduChain</m.a>
                 </Link>
               </nav>
             </div>
@@ -113,7 +115,7 @@ function FooterComponent({ className }: FooterProps) {
                 {socialLinks.map((link) => {
                   const IconComponent = link.icon
                   return (
-                    <motion.a
+                    <m.a
                       key={link.name}
                       href={link.href}
                       target="_blank"
@@ -124,7 +126,7 @@ function FooterComponent({ className }: FooterProps) {
                       aria-label={link.description}
                     >
                       <IconComponent className="h-4 w-4 sm:h-5 sm:w-5" aria-hidden="true" />
-                    </motion.a>
+                    </m.a>
                   )
                 })}
               </div>
@@ -157,7 +159,8 @@ function FooterComponent({ className }: FooterProps) {
           </div>
         </div>
       </div>
-    </footer>
+      </footer>
+    </LazyMotion>
   )
 }
 

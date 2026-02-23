@@ -184,8 +184,36 @@ export const generateBlogPostSchema = (post: any) => ({
   "keywords": Array.isArray(post.tags) ? post.tags.join(", ") : "",
   "articleSection": "Technology",
   "wordCount": typeof post.content === "string" ? post.content.split(/\s+/).filter(Boolean).length : 0,
-  "timeRequired": post.readTime
+  "timeRequired": post.readTime,
+  "educationalLevel": post.level ? post.level.charAt(0).toUpperCase() + post.level.slice(1) : undefined,
 });
+
+// Article schema for guides (case_study_breakdown, comparison). Use TechArticle for technology_deep_dive.
+export function generateArticleSchema(guide: {
+  title: string;
+  summary?: string;
+  slug: string;
+  date?: string;
+  body?: string;
+  tech_stack?: string[];
+}) {
+  const baseUrl = 'https://ancel.co.ke';
+  const url = `${baseUrl}/guides/${guide.slug}`;
+  const wordCount = [guide.summary, guide.body].filter(Boolean).join(' ').split(/\s+/).filter(Boolean).length;
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    'headline': guide.title,
+    'description': guide.summary,
+    'author': { '@type': 'Person', 'name': 'Ancel Ajanga', 'jobTitle': 'Fullstack Engineer' },
+    'datePublished': guide.date,
+    'dateModified': guide.date,
+    'url': url,
+    'mainEntityOfPage': { '@type': 'WebPage', '@id': url },
+    'wordCount': wordCount,
+    'keywords': Array.isArray(guide.tech_stack) ? guide.tech_stack.join(', ') : undefined,
+  };
+}
 
 // Case Study Schema (CreativeWork)
 export const generateCaseStudySchema = (caseStudy: any) => ({
@@ -232,17 +260,24 @@ export function generateTechArticleSchema(caseStudy: any) {
     sections.push({ "@type": "Article", name: caseStudy.title, articleSection: "Trade-offs", articleBody: caseStudy.tradeoffs });
   }
   const articleSectionStr = sections.map((s) => s.articleSection).join('; ');
+  const programmingLanguage = (caseStudy.technologies || []).map((t: { name?: string }) => (typeof t === 'string' ? t : t.name)).filter(Boolean);
+  const keywords = (caseStudy.technologies || []).map((t: { name?: string }) => (typeof t === 'string' ? t : t.name)).filter(Boolean).join(', ');
   return {
     "@context": "https://schema.org",
     "@type": "TechArticle",
+    "headline": caseStudy.title,
     "name": caseStudy.title,
     "description": caseStudy.description,
-    "author": { "@type": "Person", "name": "Ancel Ajanga", "jobTitle": "Fullstack Engineer" },
     "datePublished": caseStudy.year,
+    "author": { "@type": "Person", "name": "Ancel Ajanga", "jobTitle": "Fullstack Engineer" },
+    "programmingLanguage": programmingLanguage.length ? programmingLanguage : undefined,
+    "about": { "@type": "Thing", "name": "Software Development", "description": caseStudy.problemSolutionBridge || caseStudy.description },
+    "keywords": keywords || undefined,
     "url": url,
     "image": caseStudy.images?.hero ? `${baseUrl}${caseStudy.images.hero}` : undefined,
     "mainEntityOfPage": { "@type": "WebPage", "@id": url },
     "articleSection": articleSectionStr,
+    "proficiencyLevel": "Expert",
     "hasPart": sections.map((s) => ({
       "@type": "Article",
       "name": s.name,
@@ -262,12 +297,33 @@ export const generateWebsiteSchema = () => ({
   "url": "https://ancel.co.ke",
   "author": {
     "@type": "Person",
-    "name": "Ancel Ajanga"
+    "name": "Ancel Ajanga",
+    "jobTitle": "Fullstack Engineer",
+    "url": "https://ancel.co.ke"
   },
   "potentialAction": {
     "@type": "SearchAction",
   "target": "https://ancel.co.ke/search?q={search_term_string}",
     "query-input": "required name=search_term_string"
+  }
+});
+
+/** Speakable schema for AI voice / assistants: selectors for key content on homepage. */
+export const generateSpeakableWebPageSchema = () => ({
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "https://ancel.co.ke/#main",
+  "name": "Ancel Ajanga — Fullstack Engineer",
+  "description": "Portfolio of Ancel Ajanga, Fullstack Engineer. System resilience from UI to database. Nairobi and Narok, Kenya.",
+  "url": "https://ancel.co.ke/",
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": ["h1", "#main-content p", "[data-speakable]"]
+  },
+  "mainEntity": {
+    "@type": "Person",
+    "name": "Ancel Ajanga",
+    "jobTitle": "Fullstack Engineer"
   }
 });
 
@@ -339,6 +395,42 @@ function getApplicationCategory(title: string, type?: string): string {
   if (t.includes('fits by aliv') || t.includes('e-commerce') || t.includes('marketplace')) return 'ShoppingApplication';
   if (t.includes('event') && t.includes('countdown')) return 'UtilitiesApplication';
   return 'WebApplication';
+}
+
+/** Person + Service with areaServed for local/SEO landing pages (e.g. Next.js Developer Kenya). Valid JSON-LD. */
+export function generatePersonWithAreaServedSchema(opts?: { jobTitle?: string }) {
+  const jobTitle = opts?.jobTitle ?? 'Full-Stack Developer'
+  const person = {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    '@id': 'https://ancel.co.ke/#person',
+    name: 'Ancel Ajanga',
+    jobTitle,
+    url: 'https://ancel.co.ke',
+    sameAs: [
+      'https://github.com/Ancel-duke',
+      'https://www.linkedin.com/in/ajanga-ancel',
+    ],
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'Nairobi',
+      addressRegion: 'Narok',
+      addressCountry: 'KE',
+    },
+  }
+  const service = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: `${jobTitle} — Kenya & East Africa`,
+    description: 'Next.js, React, Node.js, and full-stack development. Nairobi and Kenya. Available for remote collaboration across Africa.',
+    provider: { '@id': 'https://ancel.co.ke/#person' },
+    areaServed: {
+      '@type': 'Country',
+      name: 'Kenya',
+    },
+    url: 'https://ancel.co.ke',
+  }
+  return [person, service]
 }
 
 // Organization Schema for the portfolio

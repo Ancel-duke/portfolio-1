@@ -1,11 +1,11 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { LazyMotion, domAnimation, m } from 'framer-motion';
 import { ExternalLink, Github, Eye } from 'lucide-react';
 import { OptimizedImage } from './ui/optimized-image';
 import { useAnimationsEnabled } from '../contexts/AnimationsContext';
 import { getHoverScaleCard, getHoverTransition } from '../lib/animation-variants';
 
-const ProjectCard = ({ project, onOpenModal, priority = false }) => {
+const ProjectCard = ({ project, onOpenModal, priority = false, caseStudySlug = null }) => {
   const animationsEnabled = useAnimationsEnabled();
   const hoverScale = getHoverScaleCard(animationsEnabled);
   const hoverTransition = getHoverTransition(animationsEnabled);
@@ -22,7 +22,8 @@ const ProjectCard = ({ project, onOpenModal, priority = false }) => {
     : 'Software project by Ancel Ajanga.';
 
   return (
-    <motion.div
+    <LazyMotion features={domAnimation}>
+      <m.div
       whileHover={hoverScale ?? undefined}
       transition={hoverTransition}
       className="flex flex-col h-full min-w-0 rounded-xl bg-slate-900/50 backdrop-blur-sm border border-slate-800 hover:border-blue-500/50 transition-all duration-300 p-4 md:p-6"
@@ -88,15 +89,26 @@ const ProjectCard = ({ project, onOpenModal, priority = false }) => {
 
         {/* Footer — mt-auto keeps it at bottom */}
         <div className="flex items-center justify-between mt-auto pt-2 border-t border-slate-800/80">
-          <button
-            type="button"
-            onClick={() => onOpenModal(project)}
-            className="text-blue-400 hover:text-blue-300 font-medium text-sm flex items-center gap-1.5 min-h-[44px] px-0 transition-colors duration-200"
-            title={`Read technical case study for ${title} by Ancel Ajanga`}
-          >
-            <Eye className="w-4 h-4 flex-shrink-0" />
-            <span>View Details</span>
-          </button>
+          <div className="flex flex-wrap items-center gap-2">
+            <button
+              type="button"
+              onClick={() => onOpenModal(project)}
+              className="text-blue-400 hover:text-blue-300 font-medium text-sm flex items-center gap-1.5 min-h-[44px] px-0 transition-colors duration-200"
+              title={`Read technical case study for ${title} by Ancel Ajanga`}
+            >
+              <Eye className="w-4 h-4 flex-shrink-0" />
+              <span>View Details</span>
+            </button>
+            {caseStudySlug && (
+              <a
+                href={`/case-studies/${caseStudySlug}`}
+                className="text-slate-400 hover:text-blue-400 font-medium text-sm flex items-center gap-1.5 min-h-[44px] px-0 transition-colors duration-200"
+                title={`Read full case study: ${title} by Ancel Ajanga`}
+              >
+                <span>Read case study</span>
+              </a>
+            )}
+          </div>
           <div className="flex items-center gap-1">
             {liveUrl && (
               <a
@@ -123,7 +135,8 @@ const ProjectCard = ({ project, onOpenModal, priority = false }) => {
           </div>
         </div>
       </div>
-    </motion.div>
+    </m.div>
+    </LazyMotion>
   );
 };
 

@@ -1,12 +1,12 @@
 import React, { useRef, useEffect, useState } from 'react';
-import { motion, useInView } from 'framer-motion';
+import { LazyMotion, domAnimation, m, useInView, type UseInViewOptions } from 'framer-motion';
 import { cn } from '../../lib/utils';
 
 interface LazySectionProps {
   children: React.ReactNode;
   className?: string;
   threshold?: number;
-  rootMargin?: string;
+  rootMargin?: UseInViewOptions['margin'];
   fallback?: React.ReactNode;
   animation?: boolean;
   animationVariants?: any;
@@ -46,16 +46,18 @@ export const LazySection: React.FC<LazySectionProps> = ({
 
   if (animation) {
     return (
-      <motion.div
-        ref={ref}
-        className={className}
-        variants={animationVariants}
-        initial="hidden"
-        animate="visible"
-        transition={{ duration: 0.6, ease: "easeOut" }}
-      >
-        {children}
-      </motion.div>
+      <LazyMotion features={domAnimation}>
+        <m.div
+          ref={ref}
+          className={className}
+          variants={animationVariants}
+          initial="hidden"
+          animate="visible"
+          transition={{ duration: 0.6, ease: "easeOut" }}
+        >
+          {children}
+        </m.div>
+      </LazyMotion>
     );
   }
 

@@ -140,3 +140,73 @@ export function getStaticPageMetadata(slug: string, meta: { title: string; descr
     canonical: `${BASE_URL}${path}`,
   };
 }
+
+/** Normalize for slug/title matching. */
+function normalizeForMatch(s: string): string {
+  return (s || '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+}
+
+/**
+ * Returns case study slug for a project when a matching case study exists (for internal linking).
+ * Matches by project.slug === caseStudy.slug or normalized title overlap.
+ */
+export function getCaseStudySlugForProject(
+  caseStudies: Array<{ slug: string; title?: string }>,
+  project: { slug?: string; title?: string; displayTitle?: string }
+): string | null {
+  if (!caseStudies?.length || !project) return null;
+  const pSlug = (project.slug || '').toLowerCase().trim();
+  const pTitle = normalizeForMatch(project.displayTitle || project.title || '');
+  for (const cs of caseStudies) {
+    const csSlug = (cs.slug || '').toLowerCase();
+    if (pSlug && csSlug && pSlug === csSlug) return cs.slug;
+    const csTitle = normalizeForMatch(cs.title || '');
+    if (pTitle && csTitle && (csTitle.startsWith(pTitle) || pTitle.startsWith(csTitle))) return cs.slug;
+  }
+  return null;
+}
+
+/**
+ * Returns related case study slug or project path for a blog post (title/tags mention known projects).
+ */
+export function getRelatedCaseStudySlugForPost(
+  caseStudies: Array<{ slug: string; title?: string }>,
+  post: { title?: string; tags?: string[] }
+): string | null {
+  if (!caseStudies?.length || !post) return null;
+  const text = [(post.title || ''), ...(post.tags || [])].join(' ').toLowerCase();
+  const knownSlugs = ['taskforge', 'nestfi', 'signflow', 'opsflow', 'aegis', 'ledgerx', 'educhain', 'edumanage', 'fits-by-aliv', 'elearning-platform', 'habit-tracker', 'travelogue', 'attendance-system', 'finance-tracker', 'fitness-class-scheduler', 'event-countdown-timer', 'rasoha-academy', 'banking-system'];
+  for (const slug of knownSlugs) {
+    if (text.includes(slug.replace(/-/g, ' ')) || text.includes(slug)) {
+      const found = caseStudies.find((cs) => (cs.slug || '').toLowerCase() === slug);
+      if (found) return found.slug;
+    }
+  }
+  return null;
+}
+
+export interface TopicCluster { id: string; name: string; pillarPath: string }
+
+/**
+ * Returns topic clusters that include this case study slug (for pillar linking).
+ */
+export function getClustersForCaseStudy(
+  clusters: Array<{ id: string; name: string; pillarPath: string; caseStudySlugs?: string[] }>,
+  caseStudySlug: string
+): TopicCluster[] {
+  if (!clusters?.length || !caseStudySlug) return [];
+  const slug = caseStudySlug.toLowerCase().trim();
+  return clusters.filter((c) => c.caseStudySlugs?.some((s) => (s || '').toLowerCase() === slug)).map((c) => ({ id: c.id, name: c.name, pillarPath: c.pillarPath }));
+}
+
+/**
+ * Returns topic clusters that include this article slug (for pillar linking).
+ */
+export function getClustersForArticle(
+  clusters: Array<{ id: string; name: string; pillarPath: string; articleSlugs?: string[] }>,
+  articleSlug: string
+): TopicCluster[] {
+  if (!clusters?.length || !articleSlug) return [];
+  const slug = articleSlug.toLowerCase().trim();
+  return clusters.filter((c) => c.articleSlugs?.some((s) => (s || '').toLowerCase() === slug)).map((c) => ({ id: c.id, name: c.name, pillarPath: c.pillarPath }));
+}

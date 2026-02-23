@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { LazyMotion, domAnimation, m } from 'framer-motion';
 import Link from 'next/link';
 import { Card, CardContent } from '../components/ui/card';
 import { OptimizedImage } from '../components/ui/optimized-image';
@@ -17,7 +17,8 @@ interface Post {
   date: string;
   readTime: string;
   image: string;
-  category: string;
+  category?: string;
+  level?: 'beginner' | 'intermediate' | 'advanced';
   author: {
     name: string;
     avatar: string;
@@ -25,6 +26,12 @@ interface Post {
   };
   slug?: string;
 }
+
+const LEVEL_LABEL: Record<string, string> = {
+  beginner: 'Beginner',
+  intermediate: 'Intermediate',
+  advanced: 'Advanced',
+};
 
 /** Featured journal posts shown first, in this order (by title match). */
 const FEATURED_JOURNAL_ORDER = ['aegis', 'nestfi', 'ledgerx', 'edumanage', 'opsflow'] as const;
@@ -48,6 +55,12 @@ const posts = [...rawPosts].sort((a, b) => {
   if (orderA !== orderB) return orderA - orderB;
   return new Date(b.date).getTime() - new Date(a.date).getTime();
 });
+
+const LEVEL_ORDER = ['beginner', 'intermediate', 'advanced'] as const;
+const postsByLevel = LEVEL_ORDER.reduce<Record<string, Post[]>>((acc, level) => {
+  acc[level] = posts.filter((p) => (p.level || 'intermediate') === level);
+  return acc;
+}, {});
 
 export function DeveloperJournal() {
   const containerVariants = {
@@ -75,30 +88,42 @@ export function DeveloperJournal() {
     <>
       <section className="py-16 md:py-24">
         <div className="container-custom">
-          <motion.div
+          <LazyMotion features={domAnimation}>
+            <m.div
             variants={containerVariants}
             initial="hidden"
             animate="visible"
             className="space-y-16"
           >
             {/* Header */}
-            <motion.div variants={itemVariants} className="text-center mb-16">
+            <m.div variants={itemVariants} className="text-center mb-16">
               <h1 className="text-4xl md:text-5xl font-bold mb-6">
                 Developer <span className="text-gradient">Journal</span>
               </h1>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
                 Deep dives into web development, architecture patterns, and lessons learned 
-                from building production applications.
+                from building production applications. Articles are grouped by level—start with Beginner, move to Intermediate, then Advanced.
               </p>
-            </motion.div>
+              <p className="text-sm text-muted-foreground mt-2">
+                <Link href="/contact" className="text-primary hover:underline font-medium">Get in touch</Link>
+                {' for project discussions or a consultation.'}
+              </p>
+            </m.div>
 
-            {/* Posts Grid */}
-            <motion.div 
-              variants={containerVariants}
-              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[clamp(1rem,3vw,2rem)]"
-            >
-              {posts.map((post, index) => (
-                <motion.article
+            {/* Funnel: by level with progression */}
+            {LEVEL_ORDER.map((level) => {
+              const levelPosts = postsByLevel[level] || [];
+              if (levelPosts.length === 0) return null;
+              const nextLevel = LEVEL_ORDER[LEVEL_ORDER.indexOf(level) + 1];
+              return (
+                <m.div key={level} id={level} variants={containerVariants} className="space-y-8 scroll-mt-24">
+                  <h2 className="text-2xl font-bold capitalize">{LEVEL_LABEL[level] || level}</h2>
+                  <m.div
+                    variants={containerVariants}
+                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[clamp(1rem,3vw,2rem)]"
+                  >
+                    {levelPosts.map((post, index) => (
+                <m.article
                   key={post.slug}
                   variants={itemVariants}
                   className="group"
@@ -112,15 +137,15 @@ export function DeveloperJournal() {
                           alt={post.title}
                           width={800}
                           height={450}
-                          priority={index < 2}
+                          priority={false}
                           loading={index < 2 ? 'eager' : 'lazy'}
                           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                           className="w-full h-full group-hover:scale-105 transition-transform duration-500"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-                        <div className="absolute top-4 left-4">
+                        <div className="absolute top-4 left-4 flex flex-wrap gap-2">
                           <span className="px-3 py-1 bg-primary/90 text-white text-sm rounded-full">
-                            {post.category}
+                            {LEVEL_LABEL[post.level || 'intermediate'] || post.level || 'Article'}
                           </span>
                         </div>
                       </div>
@@ -155,10 +180,19 @@ export function DeveloperJournal() {
                       </CardContent>
                     </Card>
                   </Link>
-                </motion.article>
-              ))}
-            </motion.div>
-          </motion.div>
+                </m.article>
+                    ))}
+                  </m.div>
+                  {nextLevel && (
+                    <p className="text-sm text-muted-foreground">
+                      Next: <Link href={`#${nextLevel}`} className="text-primary hover:underline font-medium">{LEVEL_LABEL[nextLevel]} articles</Link>
+                    </p>
+                  )}
+                </m.div>
+              );
+            })}
+            </m.div>
+          </LazyMotion>
         </div>
       </section>
     </>

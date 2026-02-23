@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { LazyMotion, domAnimation, m } from 'framer-motion';
 import { FiCalendar, FiAward, FiBookOpen, FiHeart, FiMusic, FiCamera, FiCoffee, FiTarget, FiTrendingUp, FiUsers, FiZap } from 'react-icons/fi';
 
 const About = () => {
@@ -88,9 +88,10 @@ const About = () => {
   };
 
   return (
-    <section id="about" className="section-padding">
-      <div className="container-custom">
-        <motion.div
+    <LazyMotion features={domAnimation}>
+      <section id="about" className="section-padding">
+        <div className="container-custom">
+          <m.div
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -98,7 +99,7 @@ const About = () => {
           className="grid lg:grid-cols-2 gap-8 sm:gap-12 items-start"
         >
           {/* Left Column - Bio */}
-          <motion.div variants={itemVariants} className="space-y-8">
+          <m.div variants={itemVariants} className="space-y-8">
             <div>
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6">
                 About <span className="text-gradient">Me</span>
@@ -127,7 +128,7 @@ const About = () => {
             <div>
               <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4">Current Projects</h3>
               <div className="space-y-3 sm:space-y-4">
-                <motion.div variants={itemVariants} className="p-4 bg-gray-50 dark:bg-gray-800 rounded-lg">
+                <m.div variants={itemVariants} className="p-4 bg-gray-50 dark:bg-gray-800 rounded-lg">
                   <div className="flex items-start space-x-3">
                     <div className="flex-shrink-0 w-8 h-8 bg-primary-100 dark:bg-primary-900 rounded-full flex items-center justify-center text-primary-600 dark:text-primary-400">
                       <FiTarget className="w-5 h-5" />
@@ -139,9 +140,9 @@ const About = () => {
                       </p>
                     </div>
                   </div>
-                </motion.div>
+                </m.div>
                 
-                <motion.div variants={itemVariants} className="p-4 bg-gray-50 dark:bg-gray-800 rounded-lg">
+                <m.div variants={itemVariants} className="p-4 bg-gray-50 dark:bg-gray-800 rounded-lg">
                   <div className="flex items-start space-x-3">
                     <div className="flex-shrink-0 w-8 h-8 bg-primary-100 dark:bg-primary-900 rounded-full flex items-center justify-center text-primary-600 dark:text-primary-400">
                       <FiHeart className="w-5 h-5" />
@@ -153,7 +154,7 @@ const About = () => {
                       </p>
                     </div>
                   </div>
-                </motion.div>
+                </m.div>
               </div>
             </div>
 
@@ -162,13 +163,13 @@ const About = () => {
               <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4">Skills & Technologies</h3>
               <div className="flex flex-wrap gap-2 sm:gap-3">
                 {skills.map((skill, index) => (
-                  <motion.span
+                  <m.span
                     key={skill}
                     variants={itemVariants}
                     className="px-3 sm:px-4 py-1.5 sm:py-2 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full text-xs sm:text-sm font-medium hover:bg-primary-100 dark:hover:bg-primary-900 hover:text-primary-700 dark:hover:text-primary-300 transition-colors duration-200"
                   >
                     {skill}
-                  </motion.span>
+                  </m.span>
                 ))}
               </div>
             </div>
@@ -177,7 +178,7 @@ const About = () => {
             <div>
               <h3 className="text-xl font-semibold mb-4">Career Goals</h3>
               <div className="space-y-4">
-                <motion.div variants={itemVariants} className="p-4 bg-gray-50 dark:bg-gray-800 rounded-lg">
+                <m.div variants={itemVariants} className="p-4 bg-gray-50 dark:bg-gray-800 rounded-lg">
                   <div className="flex items-start space-x-3">
                     <div className="flex-shrink-0 w-8 h-8 bg-primary-100 dark:bg-primary-900 rounded-full flex items-center justify-center text-primary-600 dark:text-primary-400">
                       <FiTarget className="w-5 h-5" />
@@ -189,9 +190,9 @@ const About = () => {
                        </p>
                     </div>
                   </div>
-                </motion.div>
+                </m.div>
                 
-                <motion.div variants={itemVariants} className="p-4 bg-gray-50 dark:bg-gray-800 rounded-lg">
+                <m.div variants={itemVariants} className="p-4 bg-gray-50 dark:bg-gray-800 rounded-lg">
                   <div className="flex items-start space-x-3">
                     <div className="flex-shrink-0 w-8 h-8 bg-primary-100 dark:bg-primary-900 rounded-full flex items-center justify-center text-primary-600 dark:text-primary-400">
                       <FiUsers className="w-5 h-5" />
@@ -203,7 +204,7 @@ const About = () => {
                       </p>
                     </div>
                   </div>
-                </motion.div>
+                </m.div>
               </div>
             </div>
 
@@ -211,7 +212,7 @@ const About = () => {
             <div>
               <h3 className="text-xl font-semibold mb-4">My Philosophy</h3>
               <div className="space-y-4">
-                <motion.div variants={itemVariants} className="p-4 bg-gray-50 dark:bg-gray-800 rounded-lg">
+                <m.div variants={itemVariants} className="p-4 bg-gray-50 dark:bg-gray-800 rounded-lg">
                   <div className="flex items-start space-x-3">
                     <div className="flex-shrink-0 w-8 h-8 bg-primary-100 dark:bg-primary-900 rounded-full flex items-center justify-center text-primary-600 dark:text-primary-400">
                       <FiTarget className="w-5 h-5" />
@@ -223,9 +224,9 @@ const About = () => {
                       </p>
                     </div>
                   </div>
-                </motion.div>
+                </m.div>
                 
-                <motion.div variants={itemVariants} className="p-4 bg-gray-50 dark:bg-gray-800 rounded-lg">
+                <m.div variants={itemVariants} className="p-4 bg-gray-50 dark:bg-gray-800 rounded-lg">
                   <div className="flex items-start space-x-3">
                     <div className="flex-shrink-0 w-8 h-8 bg-primary-100 dark:bg-primary-900 rounded-full flex items-center justify-center text-primary-600 dark:text-primary-400">
                       <FiZap className="w-5 h-5" />
@@ -237,9 +238,9 @@ const About = () => {
                       </p>
                     </div>
                   </div>
-                </motion.div>
+                </m.div>
 
-                <motion.div variants={itemVariants} className="p-4 bg-gray-50 dark:bg-gray-800 rounded-lg">
+                <m.div variants={itemVariants} className="p-4 bg-gray-50 dark:bg-gray-800 rounded-lg">
                   <div className="flex items-start space-x-3">
                     <div className="flex-shrink-0 w-8 h-8 bg-primary-100 dark:bg-primary-900 rounded-full flex items-center justify-center text-primary-600 dark:text-primary-400">
                       <FiTrendingUp className="w-5 h-5" />
@@ -251,7 +252,7 @@ const About = () => {
                       </p>
                     </div>
                   </div>
-                </motion.div>
+                </m.div>
               </div>
             </div>
 
@@ -260,7 +261,7 @@ const About = () => {
                <h3 className="text-xl font-semibold mb-4">Hobbies & Interests</h3>
                <div className="grid sm:grid-cols-2 gap-4">
                  {hobbies.map((hobby, index) => (
-                   <motion.div
+                   <m.div
                      key={index}
                      variants={itemVariants}
                      className="p-4 bg-gray-50 dark:bg-gray-800 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-200"
@@ -278,20 +279,20 @@ const About = () => {
                          </p>
                        </div>
                      </div>
-                   </motion.div>
+                   </m.div>
                  ))}
                </div>
              </div>
 
              
-          </motion.div>
+          </m.div>
 
           {/* Right Column - Timeline */}
-          <motion.div variants={itemVariants} className="space-y-6">
+          <m.div variants={itemVariants} className="space-y-6">
             <h3 className="text-xl font-semibold mb-6">Experience & Education</h3>
             <div className="space-y-6">
               {timeline.map((item, index) => (
-                <motion.div
+                <m.div
                   key={index}
                   variants={itemVariants}
                   className="relative"
@@ -317,13 +318,14 @@ const About = () => {
                       </p>
                     </div>
                   </div>
-                </motion.div>
+                </m.div>
               ))}
             </div>
-          </motion.div>
-        </motion.div>
-      </div>
-    </section>
+          </m.div>
+          </m.div>
+        </div>
+      </section>
+    </LazyMotion>
   );
 };
 

@@ -1,0 +1,54 @@
+{
+  "schema_version": "1.0",
+  "description": "Reusable data-driven templates for programmatic SEO. Each generated page must meet minimum quality: 800+ words, internal links, structured data, measurable insights, no thin content.",
+  "template_types": {
+    "technology_deep_dive": {
+      "title_patterns": [
+        "Building X with Next.js",
+        "Scaling X using Y architecture",
+        "Real-Time X with [Tech]: Architecture and Trade-offs"
+      ],
+      "schema_type": "TechArticle",
+      "required_fields": ["title", "slug", "summary", "tech_stack", "problem", "architecture", "measurable_outcome", "related_topics", "body"],
+      "internal_links": ["tech_stack → /stack", "related_topics → /stack#cluster-id or /case-studies/slug", "related_case_studies → /case-studies/[slug]", "contact → /contact"]
+    },
+    "case_study_breakdown": {
+      "title_patterns": [
+        "How I Built X",
+        "Architecture Behind X",
+        "How I Built X: Problem, Solution, and Outcomes"
+      ],
+      "schema_type": "Article",
+      "required_fields": ["title", "slug", "summary", "tech_stack", "problem", "architecture", "measurable_outcome", "related_topics", "body"],
+      "internal_links": ["tech_stack → /stack", "related_topics → /stack#cluster-id", "related_case_studies → /case-studies/[slug]", "contact → /contact"]
+    },
+    "comparison": {
+      "title_patterns": [
+        "Next.js vs Django for SaaS",
+        "React vs Vue for Startups",
+        "X vs Y for [Use Case]"
+      ],
+      "schema_type": "Article",
+      "required_fields": ["title", "slug", "summary", "tech_stack", "problem", "architecture", "measurable_outcome", "related_topics", "body"],
+      "internal_links": ["tech_stack → /stack", "related_topics → /stack#cluster-id", "related_case_studies → /case-studies/[slug]", "contact → /contact"]
+    }
+  },
+  "content_layer_spec": {
+    "source": "src/data/guides.json",
+    "fields": {
+      "title": "string (unique, used for deduplication)",
+      "slug": "string (URL-safe, unique)",
+      "summary": "string (meta description, ≤155 chars ideal)",
+      "tech_stack": "string[]",
+      "problem": "string",
+      "architecture": "string",
+      "measurable_outcome": "string",
+      "related_topics": "string[] (topic cluster ids or names for pillar links)",
+      "related_case_studies": "string[] (case study slugs)",
+      "template_type": "technology_deep_dive | case_study_breakdown | comparison",
+      "body": "string (main content; must yield 800+ words combined with problem/architecture/measurable_outcome)",
+      "date": "string (ISO date)",
+      "readTime": "string (e.g. 8 min read)"
+    }
+  }
+}

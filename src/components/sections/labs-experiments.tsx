@@ -1,5 +1,5 @@
 import * as React from "react"
-import { motion } from "framer-motion"
+import { LazyMotion, domAnimation, m } from "framer-motion"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../../components/ui/card"
 import { Button } from "../../components/ui/button"
 import { Badge } from "../../components/ui/badge"
@@ -173,15 +173,16 @@ export function LabsExperiments({ className, limit, showViewAll = true, fullPage
           </p>
         </div>
 
-        <motion.div
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-[clamp(1rem,3vw,2rem)]"
+        <LazyMotion features={domAnimation}>
+          <m.div
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-[clamp(1rem,3vw,2rem)]"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
         >
           {displayedProjects.map((project: CaseStudy, index: number) => (
-            <motion.article
+            <m.article
               key={project.id}
               variants={itemVariants}
               className="group"
@@ -290,9 +291,9 @@ export function LabsExperiments({ className, limit, showViewAll = true, fullPage
                   </Button>
                 </CardContent>
               </Card>
-            </motion.article>
+            </m.article>
           ))}
-        </motion.div>
+        </m.div>
 
         {showViewAll && limit && displayedProjects.length >= limit && (
           <div className="text-center mt-12">
@@ -318,7 +319,7 @@ export function LabsExperiments({ className, limit, showViewAll = true, fullPage
                 </p>
               </div>
 
-              <motion.div
+              <m.div
                 className="grid grid-cols-1 lg:grid-cols-2 gap-8"
                 variants={containerVariants}
                 initial="hidden"
@@ -327,7 +328,7 @@ export function LabsExperiments({ className, limit, showViewAll = true, fullPage
               >
                 {/* Now Playing */}
                 {nowPlayingEnabled && (
-                  <motion.div variants={itemVariants}>
+                  <m.div variants={itemVariants}>
                     <Card className="h-full">
                       <CardHeader>
                         <CardTitle className="flex items-center space-x-2">
@@ -352,11 +353,11 @@ export function LabsExperiments({ className, limit, showViewAll = true, fullPage
                         />
                       </CardContent>
                     </Card>
-                  </motion.div>
+                  </m.div>
                 )}
 
                 {/* Fun Facts */}
-                <motion.div variants={itemVariants}>
+                <m.div variants={itemVariants}>
                   <Card className="h-full">
                     <CardHeader>
                       <CardTitle className="flex items-center space-x-2">
@@ -386,11 +387,11 @@ export function LabsExperiments({ className, limit, showViewAll = true, fullPage
                       </div>
                     </CardContent>
                   </Card>
-                </motion.div>
-              </motion.div>
+                </m.div>
+              </m.div>
 
               {/* Favorite Tools */}
-              <motion.div
+              <m.div
                 className="mt-12"
                 variants={containerVariants}
                 initial="hidden"
@@ -407,7 +408,7 @@ export function LabsExperiments({ className, limit, showViewAll = true, fullPage
                   <CardContent>
                     <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3 sm:gap-4">
                       {funData.favoriteTools.map((tool: FavoriteTool) => (
-                        <motion.div
+                        <m.div
                           key={tool.name}
                           variants={itemVariants}
                           className="group"
@@ -426,15 +427,15 @@ export function LabsExperiments({ className, limit, showViewAll = true, fullPage
                               <p className="text-xs text-muted-foreground">{tool.description}</p>
                             </CardContent>
                           </Card>
-                        </motion.div>
+                        </m.div>
                       ))}
                     </div>
                   </CardContent>
                 </Card>
-              </motion.div>
+              </m.div>
 
               {/* Labs Toggles */}
-              <motion.div
+              <m.div
                 className="mt-12"
                 variants={containerVariants}
                 initial="hidden"
@@ -468,10 +469,11 @@ export function LabsExperiments({ className, limit, showViewAll = true, fullPage
                     </div>
                   </CardContent>
                 </Card>
-              </motion.div>
+              </m.div>
             </div>
           </>
         )}
+        </LazyMotion>
       </div>
     </section>
   )

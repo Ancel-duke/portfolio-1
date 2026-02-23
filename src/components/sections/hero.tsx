@@ -1,5 +1,5 @@
 import * as React from "react"
-import { motion, useScroll, useTransform } from "framer-motion"
+import { LazyMotion, domAnimation, m, useScroll, useTransform } from "framer-motion"
 import { Button } from "../../components/ui/button"
 import { cn } from "../../lib/utils"
 import { useAnimationsEnabled } from "../../contexts/AnimationsContext"
@@ -37,35 +37,36 @@ function HeroParallax({ className }: HeroProps) {
   const decorY = useTransform(scrollYProgress, [0, 0.5, 1], [0, -30, -70])
 
   return (
-    <section ref={sectionRef} className={cn(sectionClassName, className)}>
-      <div className="container-custom max-w-full relative">
-        {/* Decorative layer: parallax background (no layout impact) */}
-        <motion.div
-          aria-hidden
-          className="pointer-events-none absolute inset-0 flex items-center justify-center overflow-hidden"
-          style={{ y: decorY, willChange: "transform" }}
-        >
-          <div className="w-[min(80vw,600px)] h-[min(60vw,400px)] rounded-full bg-primary/10 blur-3xl" />
-        </motion.div>
+    <LazyMotion features={domAnimation}>
+      <section ref={sectionRef} className={cn(sectionClassName, className)}>
+        <div className="container-custom max-w-full relative">
+          <m.div
+            aria-hidden
+            className="pointer-events-none absolute inset-0 flex items-center justify-center overflow-hidden"
+            style={{ y: decorY, willChange: "transform" }}
+          >
+            <div className="w-[min(80vw,600px)] h-[min(60vw,400px)] rounded-full bg-primary/10 blur-3xl" />
+          </m.div>
 
-        <div className="relative text-center mx-auto max-w-4xl px-4 sm:px-6 md:px-8">
-          <motion.div style={{ y: headingY, willChange: "transform" }}>
-            <h1 className="text-[clamp(1.75rem,4.5vw,4rem)] sm:text-[clamp(2rem,5vw,4.5rem)] font-bold leading-tight mb-3 sm:mb-4">
-              Hi, I'm <span className="text-foreground">Ancel</span>{" "}
-              <span className="text-muted-foreground">Ajanga</span>
-            </h1>
-            <p className="text-[clamp(1rem,2.25vw,1.375rem)] sm:text-[clamp(1.125rem,2.5vw,1.5rem)] font-semibold text-foreground mb-4 sm:mb-6 max-w-3xl mx-auto">
-              {HERO_SUBLINE}
-            </p>
-            <p className="text-[clamp(0.9375rem,2vw,1.125rem)] sm:text-[clamp(1rem,2.25vw,1.25rem)] text-muted-foreground mb-6 sm:mb-8 md:mb-10 max-w-3xl mx-auto leading-relaxed">
-              {HERO_PARAGRAPH}
-            </p>
-          </motion.div>
+          <div className="relative text-center mx-auto max-w-4xl px-4 sm:px-6 md:px-8">
+            <m.div style={{ y: headingY, willChange: "transform" }}>
+              <h1 className="text-[clamp(1.75rem,4.5vw,4rem)] sm:text-[clamp(2rem,5vw,4.5rem)] font-bold leading-tight mb-3 sm:mb-4">
+                Hi, I'm <span className="text-foreground">Ancel</span>{" "}
+                <span className="text-muted-foreground">Ajanga</span>
+              </h1>
+              <p className="text-[clamp(1rem,2.25vw,1.375rem)] sm:text-[clamp(1.125rem,2.5vw,1.5rem)] font-semibold text-foreground mb-4 sm:mb-6 max-w-3xl mx-auto">
+                {HERO_SUBLINE}
+              </p>
+              <p className="text-[clamp(0.9375rem,2vw,1.125rem)] sm:text-[clamp(1rem,2.25vw,1.25rem)] text-muted-foreground mb-6 sm:mb-8 md:mb-10 max-w-3xl mx-auto leading-relaxed">
+                {HERO_PARAGRAPH}
+              </p>
+            </m.div>
 
-          <HeroContent />
+            <HeroContent />
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </LazyMotion>
   )
 }
 
@@ -100,16 +101,17 @@ function HeroContent() {
   const animationsEnabled = useAnimationsEnabled()
   const { containerVariants, itemVariants } = getSectionVariants(animationsEnabled)
   return (
-    <motion.div
-      className="contents"
-      variants={containerVariants}
-      initial="hidden"
-      animate="visible"
-    >
-      <motion.div
-        className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-stretch sm:items-center mb-8 sm:mb-10 md:mb-12 max-w-xl sm:max-w-none mx-auto sm:mx-0"
-        variants={itemVariants}
+    <LazyMotion features={domAnimation}>
+      <m.div
+        className="contents"
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
       >
+        <m.div
+          className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-stretch sm:items-center mb-8 sm:mb-10 md:mb-12 max-w-xl sm:max-w-none mx-auto sm:mx-0"
+          variants={itemVariants}
+        >
         <Button size="lg" className="group w-full sm:w-auto min-h-[48px] sm:min-h-[52px] text-base sm:text-lg px-6 sm:px-8 rounded-lg" asChild>
           <a href="/projects">
             View My Work
@@ -122,13 +124,13 @@ function HeroContent() {
             Download Resume
           </a>
         </Button>
-      </motion.div>
+      </m.div>
 
-      <motion.div className="flex flex-wrap justify-center gap-3 sm:gap-4 md:gap-5" variants={itemVariants}>
-        {socialLinks.map((link) => {
-          const IconComponent = link.icon
-          return (
-            <motion.a
+        <m.div className="flex flex-wrap justify-center gap-3 sm:gap-4 md:gap-5" variants={itemVariants}>
+          {socialLinks.map((link) => {
+            const IconComponent = link.icon
+            return (
+              <m.a
               key={link.name}
               href={link.href}
               target="_blank"
@@ -140,15 +142,15 @@ function HeroContent() {
             >
               <IconComponent className="h-4 w-4 sm:h-5 sm:w-5 text-foreground group-hover:text-primary transition-colors flex-shrink-0" aria-hidden="true" />
               <span className="font-medium text-sm sm:text-base">{link.name}</span>
-            </motion.a>
-          )
-        })}
-      </motion.div>
+            </m.a>
+            )
+          })}
+        </m.div>
 
-      <motion.div
-        className="mt-12 sm:mt-14 md:mt-16 lg:mt-20 pt-8 sm:pt-10 md:pt-12 border-t border-border"
-        variants={itemVariants}
-      >
+        <m.div
+          className="mt-12 sm:mt-14 md:mt-16 lg:mt-20 pt-8 sm:pt-10 md:pt-12 border-t border-border"
+          variants={itemVariants}
+        >
         <h2 className="text-[clamp(1.125rem,2.25vw,1.5rem)] font-bold mb-6 sm:mb-8 text-center text-foreground">
           Fullstack Developer — Resilience &amp; Scale at Every Layer
         </h2>
@@ -175,12 +177,12 @@ function HeroContent() {
             <p className="text-sm text-muted-foreground leading-relaxed">Redis, BullMQ, automated recovery. Graceful degradation and observability when things fail.</p>
           </div>
         </div>
-      </motion.div>
+        </m.div>
 
-      <motion.div
-        className="mt-8 sm:mt-10 md:mt-12 lg:mt-16 grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 text-center"
-        variants={itemVariants}
-      >
+        <m.div
+          className="mt-8 sm:mt-10 md:mt-12 lg:mt-16 grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 text-center"
+          variants={itemVariants}
+        >
         <div className="space-y-1">
           <div className="text-[clamp(1.5rem,3.5vw,2.25rem)] sm:text-[clamp(1.75rem,4vw,2.5rem)] font-bold text-primary">10K+</div>
           <div className="text-xs sm:text-sm text-muted-foreground">Users Supported</div>
@@ -193,8 +195,9 @@ function HeroContent() {
           <div className="text-[clamp(1.5rem,3.5vw,2.25rem)] sm:text-[clamp(1.75rem,4vw,2.5rem)] font-bold text-primary">Multi-Tenant</div>
           <div className="text-xs sm:text-sm text-muted-foreground">Architectures</div>
         </div>
-      </motion.div>
-    </motion.div>
+        </m.div>
+      </m.div>
+    </LazyMotion>
   )
 }
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import { LazyMotion, domAnimation, m } from 'framer-motion';
 import { FiArrowRight, FiDownload, FiServer, FiSmartphone, FiCpu } from 'react-icons/fi';
 
 const Hero = () => {
@@ -26,31 +26,32 @@ const Hero = () => {
   };
 
   return (
-    <section className="min-h-screen flex items-center justify-center pt-16 sm:pt-20 lg:pt-24">
-      <div className="container-custom">
-        <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 items-center">
-          {/* Left Column - Content */}
-          <motion.div
+    <LazyMotion features={domAnimation}>
+      <section className="min-h-screen flex items-center justify-center pt-16 sm:pt-20 lg:pt-24">
+        <div className="container-custom">
+          <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 items-center">
+            {/* Left Column - Content */}
+            <m.div
             variants={containerVariants}
             initial="hidden"
             animate="visible"
             className="space-y-8"
           >
-            <motion.div variants={itemVariants} className="space-y-4">
+            <m.div variants={itemVariants} className="space-y-4">
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight">
                 Hi, I'm <span className="text-gradient">Ancel Ajanga</span>
                 <span className="block text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-gray-600 dark:text-gray-300 mt-2">Fullstack Engineer — Architecting resilient systems from interface to infrastructure.</span>
               </h1>
-            </motion.div>
+            </m.div>
 
-            <motion.p
+            <m.p
               variants={itemVariants}
               className="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 leading-relaxed max-w-2xl"
             >
               I own the full lifecycle of every request, from Flutter user interfaces to M-Pesa STK queries and database transactions. I design and ship scalable systems across fintech, enterprise, and real-time domains—combining high-performance frontends, hardened backends, and self-healing microservices built to scale reliably from day one.
-            </motion.p>
+            </m.p>
 
-            <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+            <m.div variants={itemVariants} className="flex flex-col sm:flex-row gap-3 sm:gap-4">
               <Link
                 to="/projects"
                 className="btn-primary flex items-center justify-center space-x-2 group"
@@ -67,9 +68,9 @@ const Hero = () => {
                 <FiDownload className="w-4 h-4" />
                 <span>Download Resume</span>
               </a>
-            </motion.div>
+            </m.div>
 
-            <motion.div variants={itemVariants} className="flex flex-wrap items-center gap-4 sm:gap-6 text-xs sm:text-sm text-gray-500 dark:text-gray-400">
+            <m.div variants={itemVariants} className="flex flex-wrap items-center gap-4 sm:gap-6 text-xs sm:text-sm text-gray-500 dark:text-gray-400">
               <div className="flex items-center space-x-2">
                 <FiServer className="w-3 h-3 sm:w-4 sm:h-4" />
                 <span>Hardened Backends</span>
@@ -82,11 +83,11 @@ const Hero = () => {
                 <FiCpu className="w-3 h-3 sm:w-4 sm:h-4" />
                 <span>Self-Healing Infra</span>
               </div>
-            </motion.div>
-          </motion.div>
+            </m.div>
+          </m.div>
 
           {/* Right Column - Profile Photo & Visual */}
-          <motion.div
+          <m.div
             variants={itemVariants}
             initial="hidden"
             animate="visible"
@@ -111,7 +112,7 @@ const Hero = () => {
                 </div>
                 
                 {/* Floating elements around photo */}
-                <motion.div
+                <m.div
                   animate={{
                     y: [0, -10, 0],
                   }}
@@ -121,8 +122,8 @@ const Hero = () => {
                     ease: "easeInOut",
                   }}
                   className="absolute -top-2 -right-2 sm:-top-4 sm:-right-4 w-8 h-8 sm:w-12 sm:h-12 md:w-16 md:h-16 bg-primary-500 rounded-full opacity-20"
-                ></motion.div>
-                <motion.div
+                ></m.div>
+                <m.div
                   animate={{
                     y: [0, 10, 0],
                   }}
@@ -132,7 +133,7 @@ const Hero = () => {
                     ease: "easeInOut",
                   }}
                   className="absolute -bottom-2 -left-2 sm:-bottom-4 sm:-left-4 w-6 h-6 sm:w-8 sm:h-8 md:w-12 md:h-12 bg-accent-500 rounded-full opacity-20"
-                ></motion.div>
+                ></m.div>
               </div>
 
               {/* Code-like visual element */}
@@ -175,11 +176,11 @@ const Hero = () => {
                 </div>
               </div>
             </div>
-          </motion.div>
+          </m.div>
         </div>
 
         {/* Value proposition: three pillars */}
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.3 }}
@@ -211,9 +212,10 @@ const Hero = () => {
               <p className="text-sm text-gray-600 dark:text-gray-300">Redis, BullMQ, automated recovery. Graceful degradation and observability when things fail.</p>
             </div>
           </div>
-        </motion.div>
-      </div>
-    </section>
+          </m.div>
+        </div>
+      </section>
+    </LazyMotion>
   );
 };
 

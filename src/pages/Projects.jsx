@@ -1,12 +1,14 @@
 import React, { useState, useMemo } from 'react';
 import SEO from '../components/seo/SEO';
-import { motion } from 'framer-motion';
+import { LazyMotion, domAnimation, m } from 'framer-motion';
 import ProjectCard from '../components/ProjectCard';
 import ProjectModal from '../components/ProjectModal';
 import StructuredData from '../components/seo/StructuredData';
 import { generateProjectSchema, generatePortfolioSchema } from '../components/seo/schemas';
 import projectsData from '../data/projects.json';
+import caseStudiesData from '../data/case-studies.json';
 import { getMasterSortedProjects } from '../utils/projectSorter';
+import { getCaseStudySlugForProject } from '../utils/metadata';
 import { useAnimationsEnabled } from '../contexts/AnimationsContext';
 import { getSectionVariants } from '../lib/animation-variants';
 
@@ -60,26 +62,27 @@ const Projects = () => {
 
       <section className="section-padding pt-24 w-full overflow-x-hidden">
         <div className="max-w-7xl mx-auto px-4">
-          <motion.div
+          <LazyMotion features={domAnimation}>
+            <m.div
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <motion.h1 variants={itemVariants} className="text-[clamp(2rem,5vw,3rem)] font-bold tracking-tight mb-4">
+            <m.h1 variants={itemVariants} className="text-[clamp(2rem,5vw,3rem)] font-bold tracking-tight mb-4">
               My <span className="text-gradient">Projects</span>
-            </motion.h1>
-            <motion.p
+            </m.h1>
+            <m.p
               variants={itemVariants}
               className="text-sm md:text-base text-slate-400 max-w-3xl mx-auto"
             >
               Enterprise-grade systems showcasing resilient architecture, hybrid databases, and scalable solutions. 
               Click on any project to explore detailed architecture, design decisions, and real-world impact.
-            </motion.p>
-          </motion.div>
+            </m.p>
+          </m.div>
 
-          <motion.div
+          <m.div
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
@@ -90,18 +93,19 @@ const Projects = () => {
             aria-label="Portfolio of 15 projects by Fullstack Engineer Ancel Ajanga"
           >
             {projects.map((project, index) => (
-              <motion.div key={project.id} variants={itemVariants} className="min-w-0 flex">
+              <m.div key={project.id} variants={itemVariants} className="min-w-0 flex">
                 <ProjectCard
                   project={project}
                   onOpenModal={handleOpenModal}
-                  priority={index < 3}
+                  priority={false}
+                  caseStudySlug={getCaseStudySlugForProject(caseStudiesData || [], project)}
                 />
-              </motion.div>
+              </m.div>
             ))}
-          </motion.div>
+          </m.div>
 
           {/* Placeholder for future projects */}
-          <motion.div
+          <m.div
             variants={itemVariants}
             initial="hidden"
             whileInView="visible"
@@ -116,7 +120,8 @@ const Projects = () => {
                 I'm constantly working on new projects. Check back soon for more updates!
               </p>
             </div>
-          </motion.div>
+            </m.div>
+          </LazyMotion>
         </div>
       </section>
 

@@ -1,5 +1,5 @@
 import * as React from "react"
-import { motion } from "framer-motion"
+import { LazyMotion, domAnimation, m } from "framer-motion"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../ui/card"
 import { Button } from "../ui/button"
 import { Badge } from "../ui/badge"
@@ -36,15 +36,16 @@ export const BlogGrid = React.memo(function BlogGrid({ className, limit, showVie
           </p>
         </div>
 
-        <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[clamp(1rem,2.5vw,1.5rem)]"
+        <LazyMotion features={domAnimation}>
+          <m.div
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[clamp(1rem,2.5vw,1.5rem)]"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
         >
           {posts.map((post: BlogPost) => (
-            <motion.article
+            <m.article
               key={post.id}
               variants={itemVariants}
               className="group"
@@ -111,9 +112,10 @@ export const BlogGrid = React.memo(function BlogGrid({ className, limit, showVie
                   </Button>
                 </CardContent>
               </Card>
-            </motion.article>
+            </m.article>
           ))}
-        </motion.div>
+          </m.div>
+        </LazyMotion>
 
         {showViewAll && limit && blogData.length > limit && (
           <div className="text-center mt-12">

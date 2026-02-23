@@ -122,3 +122,5 @@ server/node_modules/
 server/.env
 # Ignore Next.js export folder
 out/
+# Local Netlify folder
+.netlify

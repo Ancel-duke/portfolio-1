@@ -4,11 +4,11 @@ import SEO from '@/components/seo/SEO'
 import { SkipLink } from '@/components/ui/skip-link'
 import { Hero } from '@/components/sections/hero'
 import {
-  generatePersonSchema,
   generateWebsiteSchema,
   generatePortfolioSchema,
   generateOrganizationSchema,
   generateSoftwareDeveloperSchema,
+  generateSpeakableWebPageSchema,
   getKnowsAboutAsThings,
   generateSoftwareSourceCodeSchema,
 } from '@/components/seo/schemas'
@@ -45,10 +45,10 @@ const CTA = dynamic(
 const BelowFoldPlaceholder = () => <div className="min-h-[1px]" aria-hidden="true" />
 
 const initialJsonLd = [
-  generatePersonSchema(),
   generateWebsiteSchema(),
   generateOrganizationSchema(),
   generateSoftwareDeveloperSchema(),
+  generateSpeakableWebPageSchema(),
 ]
 
 export default function HomePage() {
@@ -85,11 +85,11 @@ export default function HomePage() {
         )
         .filter(Boolean) as object[])
       setJsonLd([
-        generatePersonSchema({ knowsAboutThings }),
         generateWebsiteSchema(),
         generatePortfolioSchema(projectsData),
         generateOrganizationSchema(),
         generateSoftwareDeveloperSchema(),
+        generateSpeakableWebPageSchema(),
         ...softwareSourceCodeSchemas,
       ])
     })

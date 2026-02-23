@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import SEO from '../components/seo/SEO';
-import { motion } from 'framer-motion';
+import { LazyMotion, domAnimation, m } from 'framer-motion';
 import { FiMail, FiPhone, FiMessageSquare, FiSend, FiCheck, FiX, FiGithub, FiInstagram, FiLinkedin } from 'react-icons/fi';
 import emailjs from 'emailjs-com';
 
@@ -156,28 +156,29 @@ const Contact = () => {
 
       <section className="section-padding pt-24">
         <div className="container-custom">
-          <motion.div
+          <LazyMotion features={domAnimation}>
+            <m.div
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <motion.h1 variants={itemVariants} className="text-4xl sm:text-5xl font-bold mb-6">
+            <m.h1 variants={itemVariants} className="text-4xl sm:text-5xl font-bold mb-6">
               Get In <span className="text-gradient">Touch</span>
-            </motion.h1>
-            <motion.p
+            </m.h1>
+            <m.p
               variants={itemVariants}
               className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto"
             >
               I'm always open to discussing new opportunities, interesting projects, 
               or just having a chat about technology and development.
-            </motion.p>
-          </motion.div>
+            </m.p>
+          </m.div>
 
           <div className="grid lg:grid-cols-2 gap-12">
             {/* Contact Form */}
-            <motion.div variants={itemVariants} className="space-y-6">
+            <m.div variants={itemVariants} className="space-y-6">
               <h2 className="text-2xl font-semibold mb-6">Send a Message</h2>
               
               <form onSubmit={handleSubmit} className="space-y-6">
@@ -273,10 +274,10 @@ const Contact = () => {
                   </div>
                 )}
               </form>
-            </motion.div>
+            </m.div>
 
             {/* Contact Information */}
-            <motion.div variants={itemVariants} className="space-y-8">
+            <m.div variants={itemVariants} className="space-y-8">
               <div>
                 <h2 className="text-2xl font-semibold mb-6">Contact Information</h2>
                 <div className="space-y-4">
@@ -319,8 +320,9 @@ const Contact = () => {
                   ))}
                 </div>
               </div>
-            </motion.div>
+            </m.div>
           </div>
+          </LazyMotion>
         </div>
       </section>
     </>

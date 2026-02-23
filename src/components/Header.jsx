@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { motion, AnimatePresence } from 'framer-motion';
+import { LazyMotion, domAnimation, m, AnimatePresence } from 'framer-motion';
 import { Sun, Moon, Menu, X, Download } from 'lucide-react';
 import { useTheme } from '../hooks/useTheme';
 
@@ -31,7 +31,8 @@ const Header = () => {
   };
 
   return (
-    <header
+    <LazyMotion features={domAnimation}>
+      <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
           ? 'bg-white/90 dark:bg-gray-900/90 backdrop-blur-md shadow-lg'
@@ -99,7 +100,7 @@ const Header = () => {
         {/* Mobile Menu */}
         <AnimatePresence>
           {isMobileMenuOpen && (
-            <motion.div
+            <m.div
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
@@ -141,11 +142,12 @@ const Header = () => {
                   </a>
                 </div>
               </div>
-            </motion.div>
+            </m.div>
           )}
         </AnimatePresence>
       </div>
-    </header>
+      </header>
+    </LazyMotion>
   );
 };
 

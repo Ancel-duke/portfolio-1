@@ -1,5 +1,5 @@
 import * as React from "react"
-import { motion } from "framer-motion"
+import { LazyMotion, domAnimation, m } from "framer-motion"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../../components/ui/card"
 import { Switch } from "../../components/ui/switch"
 import { NowPlaying } from "../../components/ui/now-playing"
@@ -131,8 +131,9 @@ export function Fun({ className }: FunProps) {
           </p>
         </div>
 
-        <motion.div
-          className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8"
+        <LazyMotion features={domAnimation}>
+          <m.div
+            className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -140,7 +141,7 @@ export function Fun({ className }: FunProps) {
         >
           {/* Now Playing (respects Labs toggle) */}
           {nowPlayingEnabled && (
-            <motion.div variants={itemVariants}>
+            <m.div variants={itemVariants}>
               <Card className="h-full">
                 <CardHeader>
                   <CardTitle className="flex items-center space-x-2">
@@ -165,11 +166,11 @@ export function Fun({ className }: FunProps) {
                   />
                 </CardContent>
               </Card>
-            </motion.div>
+            </m.div>
           )}
 
           {/* Fun Facts */}
-          <motion.div variants={itemVariants}>
+          <m.div variants={itemVariants}>
             <Card className="h-full">
               <CardHeader>
                 <CardTitle className="flex items-center space-x-2">
@@ -199,11 +200,11 @@ export function Fun({ className }: FunProps) {
                 </div>
               </CardContent>
             </Card>
-          </motion.div>
-        </motion.div>
+          </m.div>
+        </m.div>
 
         {/* Favorite Tools */}
-        <motion.div
+        <m.div
           className="mt-12"
           variants={containerVariants}
           initial="hidden"
@@ -220,7 +221,7 @@ export function Fun({ className }: FunProps) {
             <CardContent>
               <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3 sm:gap-4">
                 {funData.favoriteTools.map((tool: FavoriteTool) => (
-                  <motion.div
+                  <m.div
                     key={tool.name}
                     variants={itemVariants}
                     className="group"
@@ -239,15 +240,15 @@ export function Fun({ className }: FunProps) {
                         <p className="text-xs text-muted-foreground">{tool.description}</p>
                       </CardContent>
                     </Card>
-                  </motion.div>
+                  </m.div>
                 ))}
               </div>
             </CardContent>
           </Card>
-        </motion.div>
+        </m.div>
 
         {/* Stats */}
-        <motion.div
+        <m.div
           className="mt-12"
           variants={containerVariants}
           initial="hidden"
@@ -264,7 +265,7 @@ export function Fun({ className }: FunProps) {
             <CardContent>
               <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 sm:gap-6">
                 {Object.entries(funData.stats).map(([key, value]) => (
-                  <motion.div
+                  <m.div
                     key={key}
                     variants={itemVariants}
                     className="text-center"
@@ -275,15 +276,15 @@ export function Fun({ className }: FunProps) {
                     <div className="text-sm text-muted-foreground capitalize">
                       {key.replace(/([A-Z])/g, ' $1').trim()}
                     </div>
-                  </motion.div>
+                  </m.div>
                 ))}
               </div>
             </CardContent>
           </Card>
-        </motion.div>
+        </m.div>
 
         {/* Labs Panel */}
-        <motion.div
+        <m.div
           className="mt-12"
           variants={containerVariants}
           initial="hidden"
@@ -317,7 +318,8 @@ export function Fun({ className }: FunProps) {
               </div>
             </CardContent>
           </Card>
-        </motion.div>
+        </m.div>
+        </LazyMotion>
       </div>
     </section>
   )

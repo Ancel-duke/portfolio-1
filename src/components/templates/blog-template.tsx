@@ -1,5 +1,4 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Share2, Facebook, Twitter, Linkedin, Link as LinkIcon } from 'lucide-react';
 import { Breadcrumb } from '@/components/ui/breadcrumb';

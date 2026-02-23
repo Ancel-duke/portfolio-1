@@ -64,9 +64,15 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
     'max-video-preview:-1',
   ].join(', ')
 
+  const isHomepage = canonical === defaultSEO.canonical || canonical === `${defaultSEO.canonical}/`
+  const lcpImage = isHomepage ? '/assets/profile_photo.jpg' : null
+
   return (
     <Head>
       <title>{fullTitle}</title>
+      {lcpImage && (
+        <link rel="preload" href={lcpImage} as="image" />
+      )}
       <meta name="description" content={description} />
       <meta name="keywords" content={keywords.join(', ')} />
       <meta name="author" content={author} />

@@ -1,5 +1,6 @@
 import * as React from "react"
-import { motion } from "framer-motion"
+import Link from "next/link"
+import { LazyMotion, domAnimation, m } from "framer-motion"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../../components/ui/card"
 import { Badge } from "../../components/ui/badge"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../../components/ui/tabs"
@@ -17,10 +18,14 @@ import {
   Shield,
   TestTube,
   Layers,
-  Server
+  Server,
+  BookOpen,
+  FileText
 } from "lucide-react"
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, PieChart, Pie, Cell, Legend } from 'recharts'
 import stackData from "../../data/stack.json"
+import topicClustersData from "../../data/topic-clusters.json"
+import techAuthoritativeData from "../../data/tech-authoritative-sources.json"
 
 interface TechStackProps {
   className?: string;
@@ -97,7 +102,7 @@ const categoryColors = {
   Testing: '#eab308'
 }
 
-export const TechStack = React.memo(function TechStack({ className }: TechStackProps) {
+export const TechStack = React.memo(function TechStack({ className, fullPage }: TechStackProps) {
   const [activeTab, setActiveTab] = React.useState('frequency')
   const animationsEnabled = useAnimationsEnabled()
   const { containerVariants, itemVariants } = getSectionVariants(animationsEnabled)
@@ -170,6 +175,11 @@ export const TechStack = React.memo(function TechStack({ className }: TechStackP
           <p className="text-[clamp(1rem,2vw,1.125rem)] text-muted-foreground max-w-2xl mx-auto">
             Enterprise-grade technologies for building resilient, scalable systems. From hybrid database architectures to microservices, containerization, and real-time communication.
           </p>
+          {fullPage && (
+            <p className="text-sm text-muted-foreground max-w-xl mx-auto mt-3">
+              Looking to hire a <Link href="/nextjs-developer-kenya" className="text-primary hover:underline font-medium">Next.js developer in Kenya</Link> or full-stack developer in Nairobi? See my dedicated page with case studies and outcomes.
+            </p>
+          )}
         </div>
 
         <Tabs value={activeTab} onValueChange={(v) => React.startTransition(() => setActiveTab(v))} className="w-full">
@@ -187,7 +197,8 @@ export const TechStack = React.memo(function TechStack({ className }: TechStackP
           </TabsList>
 
           <TabsContent value="frequency" className="space-y-8">
-            <motion.div
+            <LazyMotion features={domAnimation}>
+              <m.div
               variants={containerVariants}
               initial="hidden"
               whileInView="visible"
@@ -221,11 +232,13 @@ export const TechStack = React.memo(function TechStack({ className }: TechStackP
                   </div>
                 </CardContent>
               </Card>
-            </motion.div>
+              </m.div>
+            </LazyMotion>
           </TabsContent>
 
           <TabsContent value="proficiency" className="space-y-8">
-            <motion.div
+            <LazyMotion features={domAnimation}>
+              <m.div
               variants={containerVariants}
               initial="hidden"
               whileInView="visible"
@@ -259,20 +272,25 @@ export const TechStack = React.memo(function TechStack({ className }: TechStackP
                   </div>
                 </CardContent>
               </Card>
-            </motion.div>
+              </m.div>
+            </LazyMotion>
           </TabsContent>
         </Tabs>
 
+        <LazyMotion features={domAnimation}>
         {/* Technology Grid */}
-        <motion.div
+          <m.div
           className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3 sm:gap-4 md:gap-[clamp(0.75rem,2vw,1rem)] mt-8 sm:mt-12"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
         >
-          {stackData.technologies.map((tech: Technology) => (
-            <motion.div
+          {stackData.technologies.map((tech: Technology) => {
+            const authUrls = techAuthoritativeData?.techToAuthoritative as Record<string, string> | undefined
+            const docUrl = authUrls?.[tech.name] ?? authUrls?.[tech.name.replace(/\s*\d+\.?\d*$/, "").trim()]
+            return (
+            <m.div
               key={tech.name}
               variants={itemVariants}
               className="group"
@@ -284,7 +302,21 @@ export const TechStack = React.memo(function TechStack({ className }: TechStackP
                       {getCategoryIcon(tech.category)}
                     </div>
                   </div>
-                  <h3 className="font-medium text-sm mb-1">{tech.name}</h3>
+                  <h3 className="font-medium text-sm mb-1">
+                    {docUrl ? (
+                      <a
+                        href={docUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-primary hover:underline"
+                        title={`Official documentation: ${tech.name}`}
+                      >
+                        {tech.name}
+                      </a>
+                    ) : (
+                      tech.name
+                    )}
+                  </h3>
                   <div className="flex items-center justify-center space-x-2 text-xs text-muted-foreground">
                     <Badge variant="outline" className="text-xs">
                       {tech.frequency} projects
@@ -295,12 +327,12 @@ export const TechStack = React.memo(function TechStack({ className }: TechStackP
                   </div>
                 </CardContent>
               </Card>
-            </motion.div>
-          ))}
-        </motion.div>
+            </m.div>
+          )})}
+          </m.div>
 
         {/* Category Breakdown */}
-        <motion.div
+          <m.div
           className="mt-12"
           variants={containerVariants}
           initial="hidden"
@@ -345,7 +377,80 @@ export const TechStack = React.memo(function TechStack({ className }: TechStackP
               </div>
             </CardContent>
           </Card>
-        </motion.div>
+          </m.div>
+
+        {/* Topic clusters — pillar page: supporting case studies & articles */}
+        {fullPage && topicClustersData?.clusters?.length > 0 && (
+          <m.div
+            className="mt-12"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+          >
+            <h2 className="text-xl sm:text-2xl font-bold mb-4 flex items-center gap-2">
+              <Layers className="h-6 w-6 text-primary" />
+              Topic clusters
+            </h2>
+            <p className="text-muted-foreground text-sm sm:text-base mb-6 max-w-2xl">
+              Content organized by technical theme. Each cluster links to case studies and articles by Ancel Ajanga.
+            </p>
+            <div className="space-y-8">
+              {topicClustersData.clusters.map((cluster) => (
+                <Card key={cluster.id} id={cluster.id} className="scroll-mt-24">
+                  <CardHeader>
+                    <CardTitle className="text-lg sm:text-xl">{cluster.name}</CardTitle>
+                    <CardDescription>{cluster.description}</CardDescription>
+                  </CardHeader>
+                  <CardContent className="space-y-4">
+                    {cluster.caseStudySlugs?.length > 0 && (
+                      <div>
+                        <h3 className="text-sm font-semibold mb-2 flex items-center gap-1.5">
+                          <BookOpen className="h-4 w-4" /> Case studies
+                        </h3>
+                        <ul className="flex flex-wrap gap-x-2 gap-y-1">
+                          {cluster.caseStudySlugs.map((slug: string, i: number) => (
+                            <li key={slug} className="inline">
+                              <Link
+                                href={`/case-studies/${slug}`}
+                                className="text-sm text-primary hover:underline"
+                              >
+                                {slug.replace(/-/g, ' ')}
+                              </Link>
+                              {i < cluster.caseStudySlugs.length - 1 && <span className="text-muted-foreground ml-1">·</span>}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+                    {cluster.articleSlugs?.length > 0 && (
+                      <div>
+                        <h3 className="text-sm font-semibold mb-2 flex items-center gap-1.5">
+                          <FileText className="h-4 w-4" /> Developer journal
+                        </h3>
+                        <ul className="flex flex-wrap gap-x-2 gap-y-1">
+                          {cluster.articleSlugs.map((slug: string, i: number) => (
+                            <li key={slug} className="inline">
+                              <Link
+                                href={`/developer-journal/${slug}`}
+                                className="text-sm text-primary hover:underline"
+                              >
+                                {slug.replace(/-/g, ' ').slice(0, 40)}{slug.length > 40 ? '…' : ''}
+                              </Link>
+                              {i < cluster.articleSlugs.length - 1 && <span className="text-muted-foreground ml-1">·</span>}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </m.div>
+        )}
+
+        </LazyMotion>
       </div>
     </section>
   )

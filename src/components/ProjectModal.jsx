@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { LazyMotion, domAnimation, m, AnimatePresence } from 'framer-motion';
 import { X, ExternalLink, Github, FileText, Shield, TrendingUp, Rocket, Settings, Code, Lightbulb, CheckCircle, Database, Server, Zap } from 'lucide-react';
 import caseStudiesData from '../data/case-studies.json';
 import { OptimizedImage } from './ui/optimized-image';
@@ -42,6 +42,7 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
       // Merge case study data with project data
       return {
         ...project,
+        caseStudySlug: caseStudy.slug,
         // Use case study data for detailed fields
         problem: caseStudy.problem,
         solution: caseStudy.solution,
@@ -146,9 +147,10 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
   const isFullStack = type === 'fullstack' || problem || architecture;
 
   return (
-    <AnimatePresence>
-      {isOpen && (
-        <motion.div
+    <LazyMotion features={domAnimation}>
+      <AnimatePresence>
+        {isOpen && (
+          <m.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
@@ -159,7 +161,10 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
           <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" />
           
           {/* Modal */}
-          <motion.div
+          <m.div
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="project-modal-title"
             initial={{ scale: 0.95, opacity: 0, y: 20 }}
             animate={{ scale: 1, opacity: 1, y: 0 }}
             exit={{ scale: 0.95, opacity: 0, y: 20 }}
@@ -170,7 +175,7 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
             {/* Header: H3 for AI-Overview / SGE semantic clarity */}
               <div className="sticky top-0 bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700 z-10 flex items-center justify-between p-4 sm:p-6">
               <div className="pr-4">
-                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 dark:text-gray-100 pr-4 line-clamp-2">
+                <h3 id="project-modal-title" className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 dark:text-gray-100 pr-4 line-clamp-2">
                   {title}
                 </h3>
                 {repositoryLabel && (
@@ -180,11 +185,12 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
                 )}
               </div>
               <button
+                type="button"
                 onClick={onClose}
                 className="p-2 text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 transition-colors duration-200 min-w-[44px] min-h-[44px] flex items-center justify-center flex-shrink-0"
                 aria-label="Close modal"
               >
-                <X className="w-5 h-5 sm:w-6 sm:h-6" />
+                <X className="w-5 h-5 sm:w-6 sm:h-6" aria-hidden="true" />
               </button>
             </div>
 
@@ -262,6 +268,21 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
                         )}
                       </div>
                     )}
+                    {enrichedProject?.caseStudySlug && (
+                      <a
+                        href={`/case-studies/${enrichedProject.caseStudySlug}`}
+                        className="btn-secondary flex items-center justify-center space-x-2 min-h-[48px] text-sm sm:text-base"
+                      >
+                        <FileText className="w-4 h-4 sm:w-5 sm:h-5" />
+                        <span>Read full case study</span>
+                      </a>
+                    )}
+                    <a
+                      href="/stack"
+                      className="btn-secondary flex items-center justify-center space-x-2 min-h-[48px] text-sm sm:text-base"
+                    >
+                      <span>View tech stack</span>
+                    </a>
                   </div>
                 </div>
               </div>
@@ -488,10 +509,11 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
                 </section>
               )}
             </div>
-          </motion.div>
-        </motion.div>
-      )}
-    </AnimatePresence>
+          </m.div>
+        </m.div>
+        )}
+      </AnimatePresence>
+    </LazyMotion>
   );
 };
 

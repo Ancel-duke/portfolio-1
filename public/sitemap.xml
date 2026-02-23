@@ -3,301 +3,325 @@
 
   <url>
     <loc>https://ancel.co.ke/</loc>
-    <lastmod>2026-02-09</lastmod>
+    <lastmod>2026-02-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ancel.co.ke/about</loc>
-    <lastmod>2026-02-09</lastmod>
+    <lastmod>2026-02-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ancel.co.ke/projects</loc>
-    <lastmod>2026-02-09</lastmod>
+    <lastmod>2026-02-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ancel.co.ke/case-studies</loc>
-    <lastmod>2026-02-09</lastmod>
+    <lastmod>2026-02-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ancel.co.ke/blog</loc>
-    <lastmod>2026-02-09</lastmod>
+    <lastmod>2026-02-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ancel.co.ke/developer-journal</loc>
-    <lastmod>2026-02-09</lastmod>
+    <lastmod>2026-02-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ancel.co.ke/guides</loc>
+    <lastmod>2026-02-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ancel.co.ke/timeline</loc>
-    <lastmod>2026-02-09</lastmod>
+    <lastmod>2026-02-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ancel.co.ke/stack</loc>
-    <lastmod>2026-02-09</lastmod>
+    <lastmod>2026-02-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ancel.co.ke/fun</loc>
-    <lastmod>2026-02-09</lastmod>
+    <lastmod>2026-02-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ancel.co.ke/labs-experiments</loc>
-    <lastmod>2026-02-09</lastmod>
+    <lastmod>2026-02-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ancel.co.ke/contact</loc>
-    <lastmod>2026-02-09</lastmod>
+    <lastmod>2026-02-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ancel.co.ke/nextjs-developer-kenya</loc>
+    <lastmod>2026-02-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ancel.co.ke/case-studies/taskforge</loc>
-    <lastmod>2026-02-09</lastmod>
+    <lastmod>2026-02-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ancel.co.ke/case-studies/elearning-platform</loc>
-    <lastmod>2026-02-09</lastmod>
+    <lastmod>2026-02-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ancel.co.ke/case-studies/attendance-system</loc>
-    <lastmod>2026-02-09</lastmod>
+    <lastmod>2026-02-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ancel.co.ke/case-studies/personal-finance-tracker</loc>
-    <lastmod>2026-02-09</lastmod>
+    <lastmod>2026-02-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ancel.co.ke/case-studies/fitness-class-scheduler</loc>
-    <lastmod>2026-02-09</lastmod>
+    <lastmod>2026-02-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ancel.co.ke/case-studies/habit-tracker</loc>
-    <lastmod>2026-02-09</lastmod>
+    <lastmod>2026-02-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ancel.co.ke/case-studies/event-countdown-timer</loc>
-    <lastmod>2026-02-09</lastmod>
+    <lastmod>2026-02-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ancel.co.ke/case-studies/travelogue</loc>
-    <lastmod>2026-02-09</lastmod>
+    <lastmod>2026-02-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ancel.co.ke/case-studies/rasoha-academy</loc>
-    <lastmod>2026-02-09</lastmod>
+    <lastmod>2026-02-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ancel.co.ke/case-studies/banking-system</loc>
-    <lastmod>2026-02-09</lastmod>
+    <lastmod>2026-02-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ancel.co.ke/case-studies/educhain</loc>
-    <lastmod>2026-02-09</lastmod>
+    <lastmod>2026-02-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ancel.co.ke/case-studies/ledgerx</loc>
-    <lastmod>2026-02-09</lastmod>
+    <lastmod>2026-02-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ancel.co.ke/case-studies/opsflow</loc>
-    <lastmod>2026-02-09</lastmod>
+    <lastmod>2026-02-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ancel.co.ke/case-studies/signflow</loc>
-    <lastmod>2026-02-09</lastmod>
+    <lastmod>2026-02-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ancel.co.ke/case-studies/nestfi</loc>
-    <lastmod>2026-02-09</lastmod>
+    <lastmod>2026-02-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ancel.co.ke/case-studies/edumanage</loc>
-    <lastmod>2026-02-09</lastmod>
+    <lastmod>2026-02-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ancel.co.ke/case-studies/aegis</loc>
-    <lastmod>2026-02-09</lastmod>
+    <lastmod>2026-02-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ancel.co.ke/case-studies/fits-by-aliv</loc>
-    <lastmod>2026-02-09</lastmod>
+    <lastmod>2026-02-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ancel.co.ke/developer-journal/building-taskforge-with-next-js-and-socket-io-lessons-learned</loc>
-    <lastmod>2026-02-09</lastmod>
+    <lastmod>2026-02-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ancel.co.ke/developer-journal/scaling-an-e-learning-platform-with-django-react</loc>
-    <lastmod>2026-02-09</lastmod>
+    <lastmod>2026-02-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ancel.co.ke/developer-journal/why-i-built-a-finance-tracker-in-vue-3</loc>
-    <lastmod>2026-02-09</lastmod>
+    <lastmod>2026-02-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ancel.co.ke/developer-journal/angular-20-in-production-the-fitness-class-scheduler-journey</loc>
-    <lastmod>2026-02-09</lastmod>
+    <lastmod>2026-02-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ancel.co.ke/developer-journal/from-student-to-freelancer-my-journey-since-2021</loc>
-    <lastmod>2026-02-09</lastmod>
+    <lastmod>2026-02-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ancel.co.ke/developer-journal/how-travelogue-taught-me-the-power-of-maps-in-web-apps</loc>
-    <lastmod>2026-02-09</lastmod>
+    <lastmod>2026-02-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ancel.co.ke/developer-journal/designing-a-console-banking-system-to-showcase-oop-java</loc>
-    <lastmod>2026-02-09</lastmod>
+    <lastmod>2026-02-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ancel.co.ke/developer-journal/building-educhain-a-web3-journey-into-blockchain-certificate-management</loc>
-    <lastmod>2026-02-09</lastmod>
+    <lastmod>2026-02-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ancel.co.ke/developer-journal/ledgerx-secure-multi-tenant-financial-platform</loc>
-    <lastmod>2026-02-09</lastmod>
+    <lastmod>2026-02-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ancel.co.ke/developer-journal/building-opsflow-a-production-ready-incident-management-platform</loc>
-    <lastmod>2026-02-09</lastmod>
+    <lastmod>2026-02-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ancel.co.ke/developer-journal/building-signflow-a-real-time-assistive-technology-platform-for-sign-language-translation</loc>
-    <lastmod>2026-02-09</lastmod>
+    <lastmod>2026-02-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ancel.co.ke/developer-journal/aegis-production-systems-with-restraint-assume-failure-design-for-abuse</loc>
-    <lastmod>2026-02-09</lastmod>
+    <lastmod>2026-02-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ancel.co.ke/developer-journal/nestfi-resilient-financial-coordination-platform-correctness-under-failure</loc>
-    <lastmod>2026-02-09</lastmod>
+    <lastmod>2026-02-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ancel.co.ke/developer-journal/fits-by-aliv-kenya-first-e-commerce-with-payment-safe-workflows</loc>
-    <lastmod>2026-02-09</lastmod>
+    <lastmod>2026-02-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ancel.co.ke/developer-journal/react-vue-angular-comparison-2025</loc>
-    <lastmod>2026-02-09</lastmod>
+    <lastmod>2026-02-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ancel.co.ke/developer-journal/pwa-vs-native-apps-2025</loc>
-    <lastmod>2026-02-09</lastmod>
+    <lastmod>2026-02-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ancel.co.ke/developer-journal/building-travel-platform-guide</loc>
-    <lastmod>2026-02-09</lastmod>
+    <lastmod>2026-02-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ancel.co.ke/developer-journal/solving-state-management</loc>
-    <lastmod>2026-02-09</lastmod>
+    <lastmod>2026-02-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ancel.co.ke/developer-journal/vanilla-to-fullstack-journey</loc>
-    <lastmod>2026-02-09</lastmod>
+    <lastmod>2026-02-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ancel.co.ke/developer-journal/building-for-scale</loc>
-    <lastmod>2026-02-09</lastmod>
+    <lastmod>2026-02-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ancel.co.ke/developer-journal/fits-by-aliv-kenya-ecommerce</loc>
-    <lastmod>2026-02-09</lastmod>
+    <lastmod>2026-02-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ancel.co.ke/guides/building-real-time-collaboration-nextjs-socketio</loc>
+    <lastmod>2026-02-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ancel.co.ke/guides/nextjs-vs-django-for-saas</loc>
+    <lastmod>2026-02-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>

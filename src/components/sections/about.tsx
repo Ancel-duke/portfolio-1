@@ -1,5 +1,6 @@
 import React from 'react'
-import { motion } from 'framer-motion'
+import Link from 'next/link'
+import { LazyMotion, domAnimation, m } from 'framer-motion'
 import { Card, CardContent } from '../ui/card'
 import { Button } from '../ui/button'
 import { OptimizedImage } from '../ui/optimized-image'
@@ -101,14 +102,15 @@ export function About({ className, fullPage }: AboutProps) {
   ]
 
   return (
-    <section id="about" className={cn('section-padding w-full overflow-x-hidden min-w-0 max-w-full', className)}>
-      <motion.div
+    <LazyMotion features={domAnimation}>
+      <section id="about" className={cn('section-padding w-full overflow-x-hidden min-w-0 max-w-full', className)}>
+        <m.div
         className="container-custom max-w-full"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
       >
-        <motion.div variants={itemVariants} className="text-center mb-16 px-4 sm:px-0">
+        <m.div variants={itemVariants} className="text-center mb-16 px-4 sm:px-0">
           {fullPage ? (
             <h1 className="text-[clamp(2rem,5vw,3rem)] font-bold mb-[clamp(1rem,2.5vw,1.5rem)]">
               About <span className="text-gradient">Me</span>
@@ -118,13 +120,13 @@ export function About({ className, fullPage }: AboutProps) {
               About <span className="text-gradient">Me</span>
             </h2>
           )}
-        </motion.div>
+        </m.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-10 lg:gap-12 items-start min-w-0">
           {/* Left Column: Profile & Philosophy */}
           <div className="space-y-8">
             {/* Profile Card */}
-            <motion.div variants={itemVariants}>
+            <m.div variants={itemVariants}>
               <Card className="overflow-hidden">
                 <div className="relative w-full flex-shrink-0 h-80 sm:h-96 overflow-hidden rounded-t-lg">
                   <OptimizedImage
@@ -167,14 +169,14 @@ export function About({ className, fullPage }: AboutProps) {
                   </Button>
                 </CardContent>
               </Card>
-            </motion.div>
+            </m.div>
 
           </div>
 
           {/* Right Column: About Me, Skills & Achievements */}
           <div className="space-y-8">
             {/* About Me */}
-            <motion.div variants={itemVariants}>
+            <m.div variants={itemVariants}>
               <Card>
                 <CardContent className="p-4 sm:p-5 md:p-6">
                   <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">About Me</h3>
@@ -183,7 +185,7 @@ export function About({ className, fullPage }: AboutProps) {
                       Hi, I'm Ancel Ajanga (also known as Duke), a Fullstack Software Engineer focused on building resilient, production-grade systems. I specialize in designing software that balances strong backend architecture with clean, intuitive user experiences. While I enjoy crafting polished interfaces, my primary focus is on reliability, scalability, and long-term maintainability.
                     </p>
                     <p>
-                      Based in Nairobi, Kenya, I work across the full software lifecycle—from system design to deployment—turning complex ideas into robust, real-world applications. My approach is grounded in three core areas:
+                      Based in Nairobi, Kenya, I work across the full software lifecycle—from system design to deployment—turning complex ideas into robust, real-world applications. If you're looking to hire a <Link href="/nextjs-developer-kenya" className="text-primary hover:underline font-medium">Next.js developer in Kenya</Link> or a full-stack developer in Nairobi, I have a dedicated page with case studies and measurable outcomes. My approach is grounded in three core areas:
                     </p>
                     <p>
                       <strong className="text-foreground">Resilient Fullstack Systems:</strong> I build end-to-end platforms like Fits by Aliv, combining Flutter frontends with NestJS backends and leading complex migrations from BaaS solutions to self-hosted PostgreSQL infrastructures.
@@ -200,10 +202,10 @@ export function About({ className, fullPage }: AboutProps) {
                   </div>
                 </CardContent>
               </Card>
-            </motion.div>
+            </m.div>
 
             {/* Skills */}
-            <motion.div variants={itemVariants}>
+            <m.div variants={itemVariants}>
               <Card>
                 <CardContent className="p-4 sm:p-5 md:p-6">
                   <h3 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6">Technical Skills</h3>
@@ -225,10 +227,10 @@ export function About({ className, fullPage }: AboutProps) {
                   </div>
                 </CardContent>
               </Card>
-            </motion.div>
+            </m.div>
 
             {/* Achievements */}
-            <motion.div variants={itemVariants}>
+            <m.div variants={itemVariants}>
               <Card>
                 <CardContent className="p-4 sm:p-5 md:p-6">
                   <h3 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6">Key Achievements</h3>
@@ -245,12 +247,12 @@ export function About({ className, fullPage }: AboutProps) {
                   </div>
                 </CardContent>
               </Card>
-            </motion.div>
+            </m.div>
           </div>
         </div>
 
         {/* Technical Arsenal */}
-        <motion.div variants={itemVariants} className="mt-12">
+        <m.div variants={itemVariants} className="mt-12">
           <Card>
             <CardContent className="p-4 sm:p-6">
               <h3 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 flex items-center">
@@ -270,12 +272,12 @@ export function About({ className, fullPage }: AboutProps) {
               </div>
             </CardContent>
           </Card>
-        </motion.div>
+        </m.div>
 
         {/* Technologies & Career Goals */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-12">
           {/* Technologies */}
-          <motion.div variants={itemVariants}>
+          <m.div variants={itemVariants}>
             <Card>
               <CardContent className="p-6">
                 <h3 className="text-2xl font-bold mb-6 flex items-center">
@@ -300,10 +302,10 @@ export function About({ className, fullPage }: AboutProps) {
                 </div>
               </CardContent>
             </Card>
-          </motion.div>
+          </m.div>
 
           {/* Career Goals */}
-          <motion.div variants={itemVariants}>
+          <m.div variants={itemVariants}>
             <Card>
               <CardContent className="p-6">
                 <h3 className="text-2xl font-bold mb-6 flex items-center">
@@ -324,11 +326,11 @@ export function About({ className, fullPage }: AboutProps) {
                 </div>
               </CardContent>
             </Card>
-          </motion.div>
+          </m.div>
         </div>
 
         {/* Professional Experience & Education */}
-        <motion.div variants={itemVariants} className="mt-12">
+        <m.div variants={itemVariants} className="mt-12">
           <Card>
             <CardContent className="p-6">
               <h3 className="text-2xl font-bold mb-6 flex items-center">
@@ -374,8 +376,9 @@ export function About({ className, fullPage }: AboutProps) {
               </div>
             </CardContent>
           </Card>
-        </motion.div>
-      </motion.div>
-    </section>
+        </m.div>
+      </m.div>
+      </section>
+    </LazyMotion>
   )
 }

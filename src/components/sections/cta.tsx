@@ -1,5 +1,6 @@
 import * as React from "react"
-import { motion } from "framer-motion"
+import Link from "next/link"
+import { LazyMotion, domAnimation, m } from "framer-motion"
 import { Button } from "../../components/ui/button"
 import { Card, CardContent } from "../../components/ui/card"
 import { cn } from "../../lib/utils"
@@ -37,9 +38,10 @@ export function CTA({ className }: CTAProps) {
   ]
 
   return (
-    <section className={cn("py-16 w-full overflow-x-hidden", className)}>
-      <div className="container-custom max-w-full">
-        <motion.div
+    <LazyMotion features={domAnimation}>
+      <section className={cn("py-16 w-full overflow-x-hidden", className)}>
+        <div className="container-custom max-w-full">
+          <m.div
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -48,7 +50,7 @@ export function CTA({ className }: CTAProps) {
           <Card className="relative overflow-hidden border-0 bg-gradient-to-br from-primary/10 via-accent/10 to-primary/10 w-full">
             <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5" />
             <CardContent className="relative p-6 sm:p-8 md:p-12">
-              <motion.div
+              <m.div
                 className="text-center max-w-4xl mx-auto px-4 sm:px-0"
                 variants={itemVariants}
               >
@@ -62,28 +64,33 @@ export function CTA({ className }: CTAProps) {
                   I design systems that scale with your business.
                 </p>
 
-                <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center mb-8 sm:mb-12">
-                  <Button size="lg" className="group w-full sm:w-auto min-h-[48px] text-base sm:text-lg">
-                    <MessageCircle className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
-                    Start a Conversation
-                    <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5 group-hover:translate-x-1 transition-transform" />
+                <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center mb-6">
+                  <Button size="lg" className="group w-full sm:w-auto min-h-[48px] text-base sm:text-lg" asChild>
+                    <Link href="/contact">
+                      <MessageCircle className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
+                      Start a Conversation
+                      <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5 group-hover:translate-x-1 transition-transform" />
+                    </Link>
                   </Button>
                   <Button size="lg" variant="outline" className="w-full sm:w-auto min-h-[48px] text-base sm:text-lg" asChild>
-                    <a href="mailto:ancel@example.com">
+                    <a href="mailto:ancel.ajanga@yahoo.com">
                       <Mail className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
                       Send Email
                     </a>
                   </Button>
                 </div>
+                <p className="text-sm text-muted-foreground mb-8">
+                  Looking to hire a <Link href="/nextjs-developer-kenya" className="text-primary hover:underline font-medium">Next.js developer in Kenya</Link> or full-stack developer in Nairobi? See my dedicated page with case studies and outcomes.
+                </p>
 
-                <motion.div
+                <m.div
                   className="flex flex-wrap justify-center gap-3 sm:gap-4 md:gap-6"
                   variants={itemVariants}
                 >
                   {socialLinks.map((link) => {
                     const IconComponent = link.icon
                     return (
-                      <motion.a
+                      <m.a
                         key={link.name}
                         href={link.href}
                         target="_blank"
@@ -97,16 +104,17 @@ export function CTA({ className }: CTAProps) {
                           <div className="font-medium text-xs sm:text-sm">{link.name}</div>
                           <div className="text-[10px] sm:text-xs text-muted-foreground hidden sm:block">{link.description}</div>
                         </div>
-                      </motion.a>
+                      </m.a>
                     )
                   })}
-                </motion.div>
-              </motion.div>
+                </m.div>
+              </m.div>
             </CardContent>
           </Card>
-        </motion.div>
-      </div>
-    </section>
+          </m.div>
+        </div>
+      </section>
+    </LazyMotion>
   )
 }
 

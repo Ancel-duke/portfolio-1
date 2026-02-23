@@ -8,6 +8,13 @@
     "date": "2025-01-15",
     "readTime": "8 min read",
     "image": "/assets/projects/taskforge.jpg",
+    "level": "intermediate",
+    "whoThisIsFor": "Teams and product leads who need real-time collaboration (editing, boards, sync) without conflicts, and engineers evaluating Next.js + Socket.io for production.",
+    "problem": "Distributed teams face stale data, edit conflicts, and fragmented communication. Off-the-shelf tools often struggle with scalability and real-time consistency.",
+    "businessOutcome": "A single platform that keeps everyone in sync with sub-second latency, supports 100+ concurrent users per project, and reduces coordination overhead.",
+    "metrics": ["Sub-500ms real-time sync", "100+ concurrent users per project", "99.9% uptime with graceful reconnection"],
+    "tradeoffs": "I chose last-write-wins over OT/CRDTs for conflict resolution to ship faster; for higher concurrency we'd add version vectors. MongoDB over PostgreSQL for flexible schema evolution during rapid iteration; we traded full ACID for write throughput. Socket.io over raw WebSockets for built-in reconnection and room management.",
+    "challenges": "WebSocket reconnection under flaky networks required exponential backoff and client state reconciliation. Keeping the real-time channel independent from REST failures so one broken API call didn't block live updates. Scaling to 100+ users per project needed MongoDB indexing and small event payloads.",
     "author": {
       "name": "Ancel Ajanga",
       "avatar": "/assets/profile_photo.jpg",
@@ -23,6 +30,11 @@
     "date": "2024-12-20",
     "readTime": "10 min read",
     "image": "/assets/projects/elearn.jpg",
+    "level": "intermediate",
+    "whoThisIsFor": "Ed-tech teams and institutions scaling online courses, instructors who need robust course management, and engineers choosing Django vs Node for content-heavy backends.",
+    "problem": "Platforms that serve thousands of students often degrade under load, lack clear auth and progress tracking, or lock you into expensive vendors.",
+    "businessOutcome": "A scalable LMS with sub-2s page loads, 10K+ students and 500+ courses, and full control over data and features.",
+    "metrics": ["10,000+ students", "500+ courses", "Sub-2s page load", "1000+ concurrent users stress-tested"],
     "author": {
       "name": "Ancel Ajanga",
       "avatar": "/assets/profile_photo.jpg",
@@ -38,6 +50,7 @@
     "date": "2024-11-10",
     "readTime": "6 min read",
     "image": "/assets/projects/finance-tracker.jpg",
+    "level": "beginner",
     "author": {
       "name": "Ancel Ajanga",
       "avatar": "/assets/profile_photo.jpg",
@@ -53,6 +66,7 @@
     "date": "2024-10-05",
     "readTime": "7 min read",
     "image": "/assets/projects/fitness.jpg",
+    "level": "beginner",
     "author": {
       "name": "Ancel Ajanga",
       "avatar": "/assets/profile_photo.jpg",
@@ -68,6 +82,7 @@
     "date": "2024-09-15",
     "readTime": "12 min read",
     "image": "/assets/projects/attendance.jpg",
+    "level": "beginner",
     "author": {
       "name": "Ancel Ajanga",
       "avatar": "/assets/profile_photo.jpg",
@@ -83,6 +98,7 @@
     "date": "2024-08-20",
     "readTime": "9 min read",
     "image": "/assets/projects/travel.jpg",
+    "level": "intermediate",
     "author": {
       "name": "Ancel Ajanga",
       "avatar": "/assets/profile_photo.jpg",
@@ -99,6 +115,7 @@
     "date": "2025-09-22",
     "readTime": "5 min read",
     "image": "/assets/projects/bank.jpg",
+    "level": "beginner",
     "author": {
       "name": "Ancel Ajanga",
       "avatar": "/assets/profile_photo.jpg",
@@ -114,6 +131,7 @@
     "date": "2026-01-20",
     "readTime": "12 min read",
     "image": "/assets/projects/EduChain.jpg",
+    "level": "advanced",
     "author": {
       "name": "Ancel Ajanga",
       "avatar": "/assets/profile_photo.jpg",
@@ -129,6 +147,7 @@
     "date": "2026-02-01",
     "readTime": "12 min read",
     "image": "/assets/projects/LedgerX.jpg",
+    "level": "advanced",
     "author": {
       "name": "Ancel Ajanga",
       "avatar": "/assets/profile_photo.jpg",
@@ -144,6 +163,7 @@
     "date": "2026-01-21",
     "readTime": "14 min read",
     "image": "/assets/projects/opsflow.jpg",
+    "level": "advanced",
     "author": {
       "name": "Ancel Ajanga",
       "avatar": "/assets/profile_photo.jpg",
@@ -159,6 +179,7 @@
     "date": "2026-01-22",
     "readTime": "16 min read",
     "image": "/assets/projects/signflow1.jpg",
+    "level": "advanced",
     "author": {
       "name": "Ancel Ajanga",
       "avatar": "/assets/profile_photo.jpg",
@@ -174,6 +195,7 @@
     "date": "2026-01-30",
     "readTime": "8 min read",
     "image": "/assets/projects/aegis.jpg",
+    "level": "advanced",
     "author": {
       "name": "Ancel Ajanga",
       "avatar": "/assets/profile_photo.jpg",
@@ -189,6 +211,7 @@
     "date": "2026-02-04",
     "readTime": "12 min read",
     "image": "/assets/projects/nestfi.jpg",
+    "level": "advanced",
     "author": {
       "name": "Ancel Ajanga",
       "avatar": "/assets/profile_photo.jpg",
@@ -204,6 +227,7 @@
     "date": "2026-02-02",
     "readTime": "14 min read",
     "image": "/assets/projects/fitsbyaliv.jpg",
+    "level": "advanced",
     "author": {
       "name": "Ancel Ajanga",
       "avatar": "/assets/profile_photo.jpg",

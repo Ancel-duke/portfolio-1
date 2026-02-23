@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { motion } from 'framer-motion'
+import { LazyMotion, domAnimation, m } from 'framer-motion'
 import Link from 'next/link'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../ui/card'
 import { Badge } from '../ui/badge'
@@ -40,15 +40,16 @@ export function TodaysHighlights({ className }: TodaysHighlightsProps) {
           </p>
         </div>
 
-        <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 md:gap-[clamp(1rem,3vw,1.5rem)]"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: '-100px' }}
-        >
-          {featuredItems.map((item, index) => (
-            <motion.article
+        <LazyMotion features={domAnimation}>
+          <m.div
+            className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 md:gap-[clamp(1rem,3vw,1.5rem)]"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: '-100px' }}
+          >
+            {featuredItems.map((item, index) => (
+              <m.article
               key={`${item.type}-${item.id}`}
               variants={itemVariants}
               className="group"
@@ -62,7 +63,7 @@ export function TodaysHighlights({ className }: TodaysHighlightsProps) {
                       alt={item.title}
                       width={800}
                       height={384}
-                      priority={index < 2}
+                      priority={false}
                       loading={index < 2 ? 'eager' : 'lazy'}
                       skipNetlifyCDN
                       sizes="(max-width: 768px) 100vw, 50vw"
@@ -175,9 +176,10 @@ export function TodaysHighlights({ className }: TodaysHighlightsProps) {
                   </Button>
                 </CardContent>
               </Card>
-            </motion.article>
-          ))}
-        </motion.div>
+            </m.article>
+            ))}
+          </m.div>
+        </LazyMotion>
       </div>
     </section>
   )

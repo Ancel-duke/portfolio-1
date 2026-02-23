@@ -1,24 +1,29 @@
 {
   "name": "ancel-ajanga-portfolio",
   "version": "1.0.0",
+  "overrides": {
+    "minimatch": "10.2.1"
+  },
   "description": "Ancel Ajanga - Fullstack Software Engineer Portfolio",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "npm run generate-seo && next build",
-    "start": "next start",
+    "start": "npx serve@latest out",
     "lint": "next lint",
     "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx}\" \"pages/**/*.{js,jsx,ts,tsx}\"",
     "type-check": "tsc --noEmit",
-    "preview": "npm run build && next start",
+    "preview": "npm run build && npx serve@latest out",
     "deploy": "npm run build && npx netlify deploy --prod --dir=out",
     "generate-seo": "node scripts/generate-sitemap.js && node scripts/generate-robots.js && node scripts/generate-sitemap-for-ai.js",
     "generate-sitemap": "node scripts/generate-sitemap.js",
     "generate-sitemap-for-ai": "node scripts/generate-sitemap-for-ai.js",
     "generate-robots": "node scripts/generate-robots.js",
     "validate-seo": "node scripts/validate-seo.js",
+    "validate-seo-content": "node scripts/validate-seo-content.js",
     "seo-check": "npm run generate-seo && npm run validate-seo",
-    "minify-jsonld": "node scripts/minify-jsonld.js"
+    "minify-jsonld": "node scripts/minify-jsonld.js",
+    "analyze": "next build --webpack"
   },
   "dependencies": {
     "@radix-ui/react-dialog": "^1.0.5",
@@ -32,7 +37,6 @@
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
     "emailjs-com": "^3.2.0",
-    "framer-motion": "^10.16.0",
     "lucide-react": "^0.400.0",
     "next": "^16.1.6",
     "react": "^19.2.4",
@@ -45,6 +49,7 @@
     "web-vitals": "^2.1.4"
   },
   "devDependencies": {
+    "@next/bundle-analyzer": "^16.1.6",
     "@types/node": "^20.11.0",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
@@ -52,10 +57,11 @@
     "autoprefixer": "^10.4.18",
     "eslint": "^9.0.0",
     "eslint-config-next": "^16.1.6",
+    "framer-motion": "^12.34.3",
     "postcss": "^8.4.38",
     "prettier": "^3.2.5",
     "tailwindcss": "^3.4.3",
-    "typescript": "^5.4.5"
+    "typescript": "^5.9.3"
   },
   "keywords": [
     "portfolio",

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { LazyMotion, domAnimation, m, AnimatePresence } from 'framer-motion';
 import { X } from 'lucide-react';
 import { OptimizedImage } from './optimized-image';
 
@@ -26,7 +26,7 @@ export function ImageWithLightbox({ src, alt, className = '', width = 800, heigh
         onClick={() => setIsOpen(true)}
         role="button"
         tabIndex={0}
-        onKeyDown={(e) => e.key === 'Enter' && setIsOpen(true)}
+        onKeyDown={(e) => (e.key === 'Enter' || e.key === ' ') && (e.preventDefault(), setIsOpen(true))}
         aria-label="View full size"
       >
         <OptimizedImage
@@ -40,25 +40,32 @@ export function ImageWithLightbox({ src, alt, className = '', width = 800, heigh
         />
       </div>
 
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
+      <LazyMotion features={domAnimation}>
+        <AnimatePresence>
+          {isOpen && (
+            <m.div
             initial="hidden"
             animate="visible"
             exit="hidden"
             variants={variants}
             className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-sm"
             onClick={() => setIsOpen(false)}
+            role="dialog"
+            aria-modal="true"
+            aria-label="Image lightbox"
           >
-            <motion.button
+            <m.button
+              type="button"
+              aria-label="Close lightbox"
               className="absolute top-4 right-4 p-2 text-white hover:text-primary transition-colors"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
+              onClick={(e) => { e.stopPropagation(); setIsOpen(false); }}
             >
-              <X className="h-6 w-6" />
-            </motion.button>
+              <X className="h-6 w-6" aria-hidden="true" />
+            </m.button>
 
-            <motion.img
+            <m.img
               src={src}
               alt={alt}
               width={width}
@@ -69,9 +76,10 @@ export function ImageWithLightbox({ src, alt, className = '', width = 800, heigh
               exit={{ scale: 0.8, opacity: 0 }}
               transition={{ type: "spring", stiffness: 300, damping: 30 }}
             />
-          </motion.div>
-        )}
-      </AnimatePresence>
+            </m.div>
+          )}
+        </AnimatePresence>
+      </LazyMotion>
     </>
   );
 }

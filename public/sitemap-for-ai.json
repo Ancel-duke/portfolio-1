@@ -1,123 +1,1182 @@
 {
   "@context": "https://ancel.co.ke",
   "name": "Ancel Ajanga Portfolio — AI Sitemap",
-  "description": "Fullstack Engineer Ancel Ajanga. System resilience from UI to database. 15 projects, 15 case studies, and main pages with technical keywords for AI and search.",
+  "description": "Fullstack Engineer Ancel Ajanga. System resilience from UI to database. Projects, case studies, and articles with technical summaries for LLM and search crawlers.",
   "author": "Ancel Ajanga",
   "jobTitle": "Fullstack Engineer",
   "niche": "System Resilience",
   "baseUrl": "https://ancel.co.ke",
-  "generated": "2026-02-09T16:46:03.117Z",
+  "generated": "2026-02-23T21:46:28.826Z",
+  "entries": [
+    {
+      "url": "https://ancel.co.ke/",
+      "title": "Home",
+      "summary": "Portfolio of Ancel Ajanga, Fullstack Engineer. System resilience from UI to database. Nairobi and Narok, Kenya.",
+      "tech_stack": [],
+      "key_outcome": null,
+      "category": "page"
+    },
+    {
+      "url": "https://ancel.co.ke/about",
+      "title": "About",
+      "summary": "About Ancel Ajanga: Fullstack Software Engineer and Architect. Nairobi, Kenya. Resilient systems, security, and AIOps.",
+      "tech_stack": [],
+      "key_outcome": null,
+      "category": "page"
+    },
+    {
+      "url": "https://ancel.co.ke/projects",
+      "title": "Projects",
+      "summary": "Software projects by Ancel Ajanga: NestFi, SignFlow, OpsFlow, Aegis, LedgerX, EduChain, EduManage, TaskForge, and more.",
+      "tech_stack": [],
+      "key_outcome": null,
+      "category": "page"
+    },
+    {
+      "url": "https://ancel.co.ke/case-studies",
+      "title": "Case Studies",
+      "summary": "Technical case studies with architecture, problem, solution, impact, and measurable outcomes. By Ancel Ajanga.",
+      "tech_stack": [],
+      "key_outcome": null,
+      "category": "page"
+    },
+    {
+      "url": "https://ancel.co.ke/developer-journal",
+      "title": "Developer Journal",
+      "summary": "Blog and articles on web development, architecture, and lessons learned. By Fullstack Engineer Ancel Ajanga.",
+      "tech_stack": [],
+      "key_outcome": null,
+      "category": "page"
+    },
+    {
+      "url": "https://ancel.co.ke/guides",
+      "title": "Guides",
+      "summary": "Technical guides: architecture deep dives, stack comparisons, and how-I-built breakdowns. 800+ words each, with measurable outcomes.",
+      "tech_stack": [],
+      "key_outcome": null,
+      "category": "page"
+    },
+    {
+      "url": "https://ancel.co.ke/timeline",
+      "title": "Timeline",
+      "summary": "Career timeline and experience of Ancel Ajanga, Fullstack Engineer.",
+      "tech_stack": [],
+      "key_outcome": null,
+      "category": "page"
+    },
+    {
+      "url": "https://ancel.co.ke/stack",
+      "title": "Stack",
+      "summary": "Technology stack and tools used by Ancel Ajanga: React, Node.js, NestJS, PostgreSQL, MongoDB, and more.",
+      "tech_stack": [],
+      "key_outcome": null,
+      "category": "page"
+    },
+    {
+      "url": "https://ancel.co.ke/labs-experiments",
+      "title": "Labs & Experiments",
+      "summary": "Frontend and side projects: habit tracker, fitness scheduler, event countdown, and experiments.",
+      "tech_stack": [],
+      "key_outcome": null,
+      "category": "page"
+    },
+    {
+      "url": "https://ancel.co.ke/contact",
+      "title": "Contact",
+      "summary": "Contact Ancel Ajanga for collaboration, hiring, or fullstack engineering projects.",
+      "tech_stack": [],
+      "key_outcome": null,
+      "category": "page"
+    },
+    {
+      "url": "https://ancel.co.ke/nextjs-developer-kenya",
+      "title": "Next.js Developer Kenya",
+      "summary": "Hire a Next.js developer in Kenya. Full-Stack Developer Nairobi, React & Node.js Kenya. System design and architect Africa. Case studies, tech stack, measurable outcomes.",
+      "tech_stack": [],
+      "key_outcome": null,
+      "category": "page",
+      "hub_case_studies": [
+        "ledgerx",
+        "nestfi",
+        "aegis",
+        "fits-by-aliv"
+      ],
+      "business_outcomes_summary": "Scalable financial architecture (LedgerX), resilient financial coordination (NestFi), self-healing infrastructure (Aegis), payment-safe e-commerce (Fits by Aliv). Sub-500ms real-time, 10K+ users, fintech-grade auditability."
+    },
+    {
+      "url": "https://ancel.co.ke/projects",
+      "title": "Finance Tracker: Making Every Penny Visible",
+      "summary": "Finance Tracker is a personal finance web application developed by Ancel Ajanga. It helps users track personal income and expenses with visual analytics and interactive pie charts showing expense breakdown by category.",
+      "tech_stack": [
+        "Vue.js 3",
+        "TypeScript",
+        "Vite",
+        "Tailwind CSS",
+        "Chart.js",
+        "Vitest",
+        "Playwright"
+      ],
+      "key_outcome": "Visual analytics and category-based expense breakdown for informed financial decisions.",
+      "category": "project"
+    },
+    {
+      "url": "https://ancel.co.ke/projects",
+      "title": "Fitness Scheduler: Never Double-Book a Class Again",
+      "summary": "Fitness Scheduler is a health and fitness web application developed by Ancel Ajanga. A modern Angular SSR application for planning weekly fitness classes with dark mode, responsive design, and client-side persistence.",
+      "tech_stack": [
+        "Angular 20",
+        "TypeScript",
+        "Angular SSR",
+        "Node.js",
+        "Express",
+        "Tailwind CSS",
+        "Angular Animations",
+        "Signals",
+        "LocalStorage",
+        "Karma",
+        "Jasmine"
+      ],
+      "key_outcome": "Fast, SEO-friendly SSR with persistent schedule management.",
+      "category": "project"
+    },
+    {
+      "url": "https://ancel.co.ke/projects",
+      "title": "Habit Tracker: Turning Daily Wins Into Unbreakable Streaks",
+      "summary": "Habit Tracker is a productivity Progressive Web App developed by Ancel Ajanga. It tracks daily habits and builds momentum through streak counting with comprehensive analytics and visual charts.",
+      "tech_stack": [
+        "React 19",
+        "Tailwind CSS",
+        "React Router DOM",
+        "Chart.js",
+        "react-chartjs-2",
+        "PWA",
+        "Service Worker",
+        "LocalStorage",
+        "Create React App",
+        "PostCSS",
+        "Autoprefixer",
+        "React Testing Library"
+      ],
+      "key_outcome": "PWA with offline support and streak-based motivation.",
+      "category": "project"
+    },
+    {
+      "url": "https://ancel.co.ke/projects",
+      "title": "Event Countdown: Never Miss a Milestone",
+      "summary": "Event Countdown is a utilities web application developed by Ancel Ajanga. A feature-rich countdown timer for creating and managing multiple countdowns for life events with recurring events and smart notifications.",
+      "tech_stack": [
+        "HTML5",
+        "CSS3",
+        "Vanilla JavaScript",
+        "ES6+",
+        "localStorage API",
+        "Web Audio API",
+        "Canvas API",
+        "File API",
+        "Clipboard API",
+        "CSS Grid",
+        "Flexbox",
+        "CSS Custom Properties",
+        "Google Fonts",
+        "Netlify"
+      ],
+      "key_outcome": "Lightweight vanilla JS with browser APIs and recurring events.",
+      "category": "project"
+    },
+    {
+      "url": "https://ancel.co.ke/projects",
+      "title": "Travelogue: Maps and Stories That Pull You In",
+      "summary": "Travelogue is a travel platform developed by Ancel Ajanga. It features interactive world maps, travel stories, destination exploration, and responsive design for travel enthusiasts.",
+      "tech_stack": [
+        "React 18",
+        "Create React App",
+        "Tailwind CSS 3.3.0",
+        "PostCSS",
+        "React Router DOM",
+        "BrowserRouter",
+        "React Context API",
+        "Leaflet.js",
+        "React-Leaflet",
+        "OpenStreetMap",
+        "npm",
+        "ESLint",
+        "Webpack",
+        "Vercel"
+      ],
+      "key_outcome": "Interactive maps and responsive design for travel discovery.",
+      "category": "project"
+    },
+    {
+      "url": "https://ancel.co.ke/projects",
+      "title": "Rasoha Academy: One Site for an Entire School Community",
+      "summary": "Rasoha Academy is an education website developed by Ancel Ajanga. A modern, responsive site for a private school in Narok, Kenya, providing programs, events, and resources for students and parents.",
+      "tech_stack": [
+        "React 19.1.1",
+        "React Router DOM 7.7.1",
+        "React Scripts 5.0.1",
+        "Tailwind CSS 3.4.17",
+        "PostCSS 8.5.6",
+        "Autoprefixer 10.4.21",
+        "React Icons 5.5.0",
+        "AOS 2.3.4",
+        "React CountUp 6.5.3",
+        "React Responsive Carousel 3.2.23",
+        "React Scroll Parallax 3.4.5",
+        "React Helmet 6.1.0",
+        "React i18next 15.6.1",
+        "Web Vitals 2.1.4"
+      ],
+      "key_outcome": "PWA with SEO and high performance for school communications.",
+      "category": "project"
+    },
+    {
+      "url": "https://ancel.co.ke/projects",
+      "title": "Attendance System: 95% Accuracy, 70% Less Admin",
+      "summary": "Attendance System is a full-stack education application developed by Ancel Ajanga. A resilient attendance management system for educational institutions with automated tracking, analytics, and reports.",
+      "tech_stack": [
+        "React.js",
+        "Create React App",
+        "Tailwind CSS",
+        "React Router",
+        "Axios",
+        "React Hot Toast",
+        "Context API",
+        "Netlify",
+        "Node.js",
+        "Express.js",
+        "MongoDB",
+        "Mongoose",
+        "JWT",
+        "bcryptjs"
+      ],
+      "key_outcome": "95% accuracy improvement, 70% reduction in administrative overhead, 500+ users.",
+      "category": "project"
+    },
+    {
+      "url": "https://ancel.co.ke/projects",
+      "title": "E-Learning Platform: Sub-2s Loads for 10K+ Students",
+      "summary": "E-Learning Platform is an education learning management system developed by Ancel Ajanga. A resilient, scalable LMS for thousands of concurrent students and hundreds of courses, with sub-2-second page loads, course management, and real-time progress tracking.",
+      "tech_stack": [
+        "React",
+        "TypeScript",
+        "Axios",
+        "React Router",
+        "Tailwind CSS",
+        "Netlify",
+        "Django",
+        "Django REST Framework",
+        "Django CORS Headers",
+        "Django Simple JWT",
+        "SQLite",
+        "PostgreSQL",
+        "Gunicorn",
+        "WhiteNoise"
+      ],
+      "key_outcome": "10,000+ students, 500+ courses, sub-2s page loads, 99.9% uptime.",
+      "category": "project"
+    },
+    {
+      "url": "https://ancel.co.ke/projects",
+      "title": "TaskForge: Real-Time Collaboration Without the Conflicts",
+      "summary": "TaskForge is a productivity and project management platform developed by Ancel Ajanga. A resilient, real-time collaborative platform for engineering teams with sub-second latency, conflict-free synchronization, and 100+ concurrent users per project.",
+      "tech_stack": [
+        "Next.js 14",
+        "React 18",
+        "TypeScript",
+        "Node.js",
+        "Express.js",
+        "MongoDB",
+        "Mongoose",
+        "Socket.io",
+        "JWT",
+        "Zustand",
+        "Tailwind CSS",
+        "Framer Motion",
+        "React Beautiful DnD",
+        "Recharts"
+      ],
+      "key_outcome": "Sub-500ms latency, 100+ concurrent users per project, 99.9% uptime.",
+      "category": "project"
+    },
+    {
+      "url": "https://ancel.co.ke/projects",
+      "title": "Banking System: OOP That Handles Real Money Logic",
+      "summary": "Banking System is a finance demonstration application developed by Ancel Ajanga. A console-based Java application demonstrating core OOP principles: Encapsulation, Inheritance, Abstraction, and Polymorphism.",
+      "tech_stack": [
+        "Java 17+",
+        "OOP",
+        "Maven (optional)",
+        "Gradle (optional)"
+      ],
+      "key_outcome": "Clean OOP design; offline, lightweight; ideal for demonstrating software design.",
+      "category": "project"
+    },
+    {
+      "url": "https://ancel.co.ke/projects",
+      "title": "EduChain: Tamper-Proof Certificates on the Blockchain",
+      "summary": "EduChain is an education and blockchain application developed by Ancel Ajanga. ERC721 NFTs and IPFS decentralized storage power tamper-proof academic certificates on Ethereum.",
+      "tech_stack": [
+        "React 19",
+        "Tailwind CSS",
+        "RainbowKit",
+        "Wagmi",
+        "ethers.js v6",
+        "React Router",
+        "Node.js",
+        "Express.js",
+        "MongoDB",
+        "Mongoose",
+        "IPFS",
+        "Pinata API",
+        "Solidity 0.8.20",
+        "Hardhat"
+      ],
+      "key_outcome": "Tamper-proof certificates, instant verification, OpenZeppelin audited patterns.",
+      "category": "project"
+    },
+    {
+      "url": "https://ancel.co.ke/projects",
+      "title": "LedgerX: Double-Entry Ledgers That Audit Themselves",
+      "summary": "LedgerX is a finance management application developed by Ancel Ajanga. PostgreSQL financial correctness and multi-tenant isolation power this production-grade platform for invoicing, payments, double-entry accounting, audit, fraud detection, and diagnostics.",
+      "tech_stack": [
+        "Next.js 14",
+        "React 18",
+        "TypeScript",
+        "NestJS",
+        "PostgreSQL",
+        "Prisma",
+        "MongoDB",
+        "Mongoose",
+        "JWT",
+        "Passport.js",
+        "TanStack Query",
+        "Recharts",
+        "Tailwind CSS",
+        "Axios"
+      ],
+      "key_outcome": "Multi-tenant isolation, event-driven core, fraud signals, full auditability.",
+      "category": "project"
+    },
+    {
+      "url": "https://ancel.co.ke/projects",
+      "title": "OpsFlow: When Incidents Hit, the System Already Knows",
+      "summary": "OpsFlow is a business and operations application developed by Ancel Ajanga. AI-driven anomaly detection and failure-aware automation in a production-ready incident platform.",
+      "tech_stack": [
+        "NestJS",
+        "Next.js",
+        "PostgreSQL",
+        "MongoDB",
+        "Prisma",
+        "WebSockets",
+        "JWT",
+        "RBAC",
+        "TypeScript",
+        "Tailwind CSS",
+        "Socket.IO"
+      ],
+      "key_outcome": "50+ API endpoints, real-time incident updates, secure multi-tenant isolation.",
+      "category": "project"
+    },
+    {
+      "url": "https://ancel.co.ke/projects",
+      "title": "SignFlow: Real-Time Sign Language, Zero Latency",
+      "summary": "SignFlow is an accessibility application developed by Ancel Ajanga. A high-fidelity assistive technology platform for real-time sign language translation with WebSocket streaming, 3D avatar simulation, and WCAG-compliant accessibility-first design.",
+      "tech_stack": [
+        "React",
+        "Node.js",
+        "Express",
+        "MongoDB",
+        "WebSockets",
+        "Three.js",
+        "React Three Fiber",
+        "JWT",
+        "Recharts",
+        "Framer Motion",
+        "Mongoose"
+      ],
+      "key_outcome": "Real-time WebSocket streaming, 3D avatar simulation, full WCAG compliance.",
+      "category": "project"
+    },
+    {
+      "url": "https://ancel.co.ke/projects",
+      "title": "NestFi — Resilient Financial Coordination Platform",
+      "summary": "A production-grade financial platform engineered for correctness under failure, asynchronous payments, and unreliable networks.",
+      "tech_stack": [
+        "NestJS",
+        "TypeScript",
+        "PostgreSQL",
+        "MongoDB",
+        "Redis",
+        "Socket.io",
+        "RabbitMQ",
+        "Docker",
+        "Cloudflare Workers",
+        "M-Pesa Daraja"
+      ],
+      "key_outcome": "A production-grade financial platform engineered for correctness under failure, asynchronous payments, and unreliable networks.",
+      "category": "project"
+    },
+    {
+      "url": "https://ancel.co.ke/projects",
+      "title": "EduManage: One Platform, Many Schools, Zero Leaks",
+      "summary": "EduManage is an education application developed by Ancel Ajanga. Multi-tenant isolation and hierarchical RBAC enable multiple institutions on one platform.",
+      "tech_stack": [
+        "NestJS",
+        "Express.js",
+        "MongoDB",
+        "JWT",
+        "RBAC",
+        "Socket.io",
+        "TypeScript",
+        "Docker"
+      ],
+      "key_outcome": "Multi-tenant MVP with tenant-scoped access and failure-aware boundaries.",
+      "category": "project"
+    },
+    {
+      "url": "https://ancel.co.ke/projects",
+      "title": "Aegis — Autonomous Infrastructure Guardrail System",
+      "summary": "An AI-assisted reliability and remediation platform designed to detect anomalies, enforce policy, and prevent unsafe self-healing in production systems.",
+      "tech_stack": [
+        "TypeScript",
+        "Node.js",
+        "OpenTelemetry",
+        "OPA (Open Policy Agent)",
+        "PostgreSQL",
+        "Redis",
+        "Docker",
+        "Prometheus"
+      ],
+      "key_outcome": "An AI-assisted reliability and remediation platform designed to detect anomalies, enforce policy, and prevent unsafe self-healing in production systems.",
+      "category": "project"
+    },
+    {
+      "url": "https://ancel.co.ke/projects",
+      "title": "Fits by Aliv: E-Commerce That Never Oversells",
+      "summary": "Fits by Aliv is a full-stack e-commerce application developed by Ancel Ajanga: a Kenya-first marketplace for thrift and sustainable fashion. Production-grade checkout with M-Pesa STK Push, vouchers, and VAT/WHT; soft inventory reservations and verified payment reconciliation prevent oversell and double-spend.",
+      "tech_stack": [
+        "NestJS",
+        "TypeScript",
+        "PostgreSQL",
+        "Prisma",
+        "Redis",
+        "BullMQ",
+        "Flutter",
+        "Firebase Auth",
+        "M-Pesa Daraja (STK Push & Query)",
+        "Dart"
+      ],
+      "key_outcome": "No oversell, no voucher double-spend, no blind trust in payment callbacks.",
+      "category": "project"
+    },
+    {
+      "url": "https://ancel.co.ke/case-studies/taskforge",
+      "title": "TaskForge - Real-time Collaborative Project Management",
+      "summary": "TaskForge is a resilient, scalable real-time collaborative project management platform designed for engineering teams. The system handles concurrent collaboration across distributed teams, managing project workflows, task coordination, and team communication with sub-second latency and conflict-free synchronization. To address stale data and edit conflicts at scale, I designed a real-time collaborative architecture that keeps all clients in sync and isolates failures so one outage does not take down the whole system.",
+      "tech_stack": [
+        "Next.js 14",
+        "React 18",
+        "TypeScript",
+        "Node.js",
+        "Express.js",
+        "MongoDB",
+        "Socket.io",
+        "Zustand",
+        "Tailwind CSS",
+        "Framer Motion"
+      ],
+      "key_outcome": "Real-time Sync: < 500ms",
+      "business_outcome": "TaskForge supports real-time collaboration with sub-500ms latency and handles 100+ concurrent users per project without performance degradation. The platform demonstrates production-grade reliability with 99.9% uptime, comprehensive error handling, and graceful reconnection strat",
+      "scale_or_metric": "Real-time Sync: < 500ms; Concurrent Users: 100+; Performance Score: 95+",
+      "category": "case-study"
+    },
+    {
+      "url": "https://ancel.co.ke/case-studies/elearning-platform",
+      "title": "E-Learning Platform - Scalable Learning Management System",
+      "summary": "A resilient, scalable learning management system architected to handle thousands of concurrent students and hundreds of courses. The platform enables educational institutions to deliver online education at scale with sub-2-second page loads, comprehensive course management, and real-time progress tracking. To deliver scale and control without vendor lock-in, I built a custom LMS with a clear separation between API and frontend so we could optimize for 10,000+ students and sub-2-second loads while handling failures in one layer without bringing down the rest.",
+      "tech_stack": [
+        "React",
+        "TypeScript",
+        "Django",
+        "Django REST Framework",
+        "PostgreSQL",
+        "JWT",
+        "Tailwind CSS",
+        "Axios"
+      ],
+      "key_outcome": "Students: 10,000+",
+      "business_outcome": "The platform handles 10,000+ students and 500+ courses with consistent sub-2-second page load times. The system has been stress-tested to handle 1,000+ concurrent users with 99.9% uptime. The scalable architecture ensures reliable performance even as the platform grows, with opti",
+      "scale_or_metric": "Students: 10,000+; Courses: 500+; Load Time: < 2s; Uptime: 99.9%",
+      "category": "case-study"
+    },
+    {
+      "url": "https://ancel.co.ke/case-studies/attendance-system",
+      "title": "Attendance System - Educational Analytics & Management",
+      "summary": "A resilient attendance management system architected for educational institutions to automate attendance tracking, provide comprehensive analytics, and generate detailed reports. The system handles 500+ active users across multiple institutions with 95% accuracy improvement and 70% reduction in administrative overhead. To replace manual tracking with automated, multi-institution-ready analytics, I built an attendance system that isolates each institution's data and handles report generation and API failures without bringing down the whole platform.",
+      "tech_stack": [
+        "React.js",
+        "Node.js",
+        "Express.js",
+        "MongoDB",
+        "Mongoose",
+        "JWT",
+        "bcryptjs",
+        "Tailwind CSS",
+        "Chart.js"
+      ],
+      "key_outcome": "Accuracy: 95%",
+      "business_outcome": "The attendance system has improved tracking accuracy by 95% and reduced administrative time by 70%. Schools using the system report better student engagement and more accurate performance analytics. The platform supports 500+ active users across multiple institutions with compreh",
+      "scale_or_metric": "Accuracy: 95%; Time Saved: 70%; Users: 500+; Reports: 15+",
+      "category": "case-study"
+    },
+    {
+      "url": "https://ancel.co.ke/case-studies/personal-finance-tracker",
+      "title": "Personal Finance Tracker",
+      "summary": "A creative frontend experiment exploring modern UI patterns and data visualization techniques. This project demonstrates Vue 3's Composition API, reactive state management, and interactive charting capabilities for personal finance tracking. To turn raw numbers into clear spending insights, I built a client-side Vue 3 app that keeps calculations and UI in sync and degrades gracefully when storage or rendering fails.",
+      "tech_stack": [
+        "Vue.js 3",
+        "TypeScript",
+        "Chart.js",
+        "Tailwind CSS"
+      ],
+      "key_outcome": "Performance: 95+",
+      "business_outcome": "This creative experiment showcases modern frontend development practices, demonstrating Vue 3's capabilities for building interactive, data-driven applications. Users can track spending patterns with visual feedback, exploring how modern UI patterns enhance financial tracking exp",
+      "scale_or_metric": "Performance: 95+",
+      "category": "case-study"
+    },
+    {
+      "url": "https://ancel.co.ke/case-studies/fitness-class-scheduler",
+      "title": "Fitness Class Scheduler",
+      "summary": "A modern Angular SSR application for planning weekly fitness classes with dark mode, responsive design, and client-side persistence. To give instructors one place to plan and view weekly classes without losing work on refresh, I built an Angular SSR app with client-side persistence and clear error handling. Fitness instructors can now easily manage their class schedules with a modern, responsive interface that works on all devices.",
+      "tech_stack": [
+        "Angular 20",
+        "TypeScript",
+        "Angular SSR",
+        "Tailwind CSS"
+      ],
+      "key_outcome": "Load Time: < 1s",
+      "business_outcome": "Fitness instructors can now easily manage their class schedules with a modern, responsive interface that works on all devices.",
+      "scale_or_metric": "Load Time: < 1s; SEO Score: 98/100",
+      "category": "case-study"
+    },
+    {
+      "url": "https://ancel.co.ke/case-studies/habit-tracker",
+      "title": "Habit Tracker & Streak Counter",
+      "summary": "A creative Progressive Web App experiment exploring offline-first design patterns and modern UI interactions. This project demonstrates PWA capabilities, service workers, and engaging visual feedback for habit tracking. To make habit tracking work even when the network is unreliable, I built a PWA that runs and persists data offline so users never lose streak or progress.",
+      "tech_stack": [
+        "React 19",
+        "PWA",
+        "Chart.js",
+        "Tailwind CSS"
+      ],
+      "key_outcome": "PWA Score: 100/100",
+      "business_outcome": "This creative experiment showcases PWA development practices, demonstrating offline-first design, service worker implementation, and modern UI patterns for building engaging productivity applications.",
+      "scale_or_metric": "PWA Score: 100/100; Offline Support: 100%",
+      "category": "case-study"
+    },
+    {
+      "url": "https://ancel.co.ke/case-studies/event-countdown-timer",
+      "title": "Event Countdown Timer",
+      "summary": "A feature-rich countdown timer web application for creating and managing multiple countdowns for various life events with recurring events and smart notifications. To keep countdowns simple and always available, I built a vanilla JS app with local persistence and clear fallbacks when storage or notifications fail. Users can now easily track multiple countdowns with automatic yearly repetition and visual customization.",
+      "tech_stack": [
+        "Vanilla JavaScript",
+        "HTML5",
+        "CSS3",
+        "Canvas API"
+      ],
+      "key_outcome": "Bundle Size: < 50KB",
+      "business_outcome": "Users can now easily track multiple countdowns with automatic yearly repetition and visual customization.",
+      "scale_or_metric": "Bundle Size: < 50KB; Load Time: < 500ms",
+      "category": "case-study"
+    },
+    {
+      "url": "https://ancel.co.ke/case-studies/travelogue",
+      "title": "Travelogue - Travel Storytelling Website",
+      "summary": "A comprehensive travel platform featuring interactive world maps, travel stories, destination exploration, and responsive design for travel enthusiasts. To combine maps and stories in one place, I built a React app with Leaflet so content loads progressively and map or API failures do not break the rest of the experience. Users can now explore destinations through interactive maps and read detailed travel experiences from other travelers.",
+      "tech_stack": [
+        "React 18",
+        "Leaflet.js",
+        "OpenStreetMap",
+        "Tailwind CSS"
+      ],
+      "key_outcome": "Map Load Time: < 2s",
+      "business_outcome": "Users can now explore destinations through interactive maps and read detailed travel experiences from other travelers.",
+      "scale_or_metric": "Map Load Time: < 2s",
+      "category": "case-study"
+    },
+    {
+      "url": "https://ancel.co.ke/case-studies/rasoha-academy",
+      "title": "Rasoha Academy - School Website",
+      "summary": "A modern, responsive website for a private school in Narok, Kenya, providing comprehensive information about programs, events, and resources for students and parents. To give the school one reliable, fast site that works even on slow connections, I built a React PWA with clear structure and offline fallbacks. The school now has a professional online presence that effectively communicates with students, parents, and the community.",
+      "tech_stack": [
+        "React 19.1.1",
+        "Tailwind CSS",
+        "PWA",
+        "React Icons"
+      ],
+      "key_outcome": "Performance: 95+",
+      "business_outcome": "The school now has a professional online presence that effectively communicates with students, parents, and the community.",
+      "scale_or_metric": "Performance: 95+; Accessibility: 98/100",
+      "category": "case-study"
+    },
+    {
+      "url": "https://ancel.co.ke/case-studies/banking-system",
+      "title": "Banking System",
+      "summary": "A simple, console-based Banking System implemented in pure Java to demonstrate core OOP principles (Encapsulation, Inheritance, Abstraction, Polymorphism). Includes customer management, savings/checking accounts, deposits, withdrawals, transfers, and transaction logs. To demonstrate clean OOP and domain modeling, I designed a small banking core where accounts, transactions, and the bank are clearly separated and easy to reason about.",
+      "tech_stack": [
+        "Java 17+",
+        "OOP",
+        "Maven",
+        "Gradle"
+      ],
+      "key_outcome": "Frameworks: 0",
+      "business_outcome": "Clear demonstration of OOP fundamentals, clean architecture, and maintainable code suitable for technical interviews and backend design discussions.",
+      "scale_or_metric": "Frameworks: 0",
+      "category": "case-study"
+    },
+    {
+      "url": "https://ancel.co.ke/case-studies/educhain",
+      "title": "EduChain - Blockchain Certificate Management",
+      "summary": "EduChain is a resilient, decentralized certificate management system architected on Web3 principles, issuing verifiable academic certificates as ERC721 NFTs on the Ethereum blockchain. The platform enables educational institutions to issue tamper-proof, blockchain-verified certificates while providing students with permanent, verifiable proof of achievements through hybrid storage (MongoDB + IPFS + Blockchain). To make credentials tamper-proof and verifiable without a central authority, I designed a hybrid system that keeps issuance fast and cheap while putting permanent proof on-chain.",
+      "tech_stack": [
+        "React 19",
+        "Tailwind CSS",
+        "RainbowKit",
+        "Wagmi",
+        "ethers.js",
+        "Node.js",
+        "Express.js",
+        "MongoDB",
+        "Mongoose",
+        "Solidity",
+        "Hardhat",
+        "IPFS"
+      ],
+      "key_outcome": "Smart Contract: ERC721-compliant",
+      "business_outcome": "EduChain provides a secure, decentralized solution for certificate management with instant verification capabilities. The platform ensures certificates are permanently accessible, tamper-proof, and easily verifiable by anyone with the certificate token ID. The system uses OpenZep",
+      "scale_or_metric": "Smart Contract: ERC721-compliant; API Endpoints: 5 RESTful; Security: Owner-only; Storage: Dual system",
+      "category": "case-study"
+    },
+    {
+      "url": "https://ancel.co.ke/case-studies/ledgerx",
+      "title": "LedgerX — Secure, Multi-Tenant Financial Platform",
+      "summary": "LedgerX is a production-grade, multi-tenant financial platform designed to handle invoicing, payments, accounting (double-entry ledger), audit/compliance, fraud detection, and system diagnostics in a single, cohesive system. To fix weak boundaries and poor auditability, I designed LedgerX so every request is org-scoped, every important action is an event, and payments and diagnostics fail in controlled ways without corrupting the ledger. LedgerX demonstrates senior-level backend architecture, security-first thinking, event-driven system design, fintech-grade data integrity, and operational maturity beyond CRUD.",
+      "tech_stack": [
+        "Next.js 14",
+        "React 18",
+        "TypeScript",
+        "NestJS",
+        "PostgreSQL",
+        "Prisma",
+        "MongoDB",
+        "Mongoose",
+        "JWT",
+        "Passport.js",
+        "TanStack Query",
+        "Recharts",
+        "Tailwind CSS",
+        "Axios"
+      ],
+      "key_outcome": "Multi-Tenancy: Org-scoped",
+      "business_outcome": "LedgerX demonstrates senior-level backend architecture, security-first thinking, event-driven system design, fintech-grade data integrity, and operational maturity beyond CRUD. It is designed to be read, reviewed, and respected by experienced engineers.",
+      "scale_or_metric": "Multi-Tenancy: Org-scoped; Ledger: Double-entry; Payments: Stripe + M-Pesa; Observability: Health + Metrics",
+      "category": "case-study"
+    },
+    {
+      "url": "https://ancel.co.ke/case-studies/opsflow",
+      "title": "OpsFlow - Incident & Operations Management Platform",
+      "summary": "OpsFlow is a production-ready incident and operations management platform architected for engineering teams, combining incident response, workflow management, task coordination, and knowledge sharing into a single secure team-based system. The platform features dual-database architecture (PostgreSQL + MongoDB), real-time WebSocket updates, and team-based multi-tenancy with 50+ API endpoints. To unify incidents, workflows, and knowledge in one place without expensive infra, I built OpsFlow with team-scoped data and real-time updates so failures in one area do not take down the rest.",
+      "tech_stack": [
+        "NestJS",
+        "Next.js 14",
+        "TypeScript",
+        "PostgreSQL",
+        "MongoDB",
+        "Prisma",
+        "WebSockets",
+        "JWT",
+        "RBAC",
+        "Tailwind CSS"
+      ],
+      "key_outcome": "API Endpoints: 50+",
+      "business_outcome": "Production-ready system with 50+ API endpoints and real-time incident updates without paid infrastructure. Secure team-based multi-tenant architecture with complete data isolation, fully documented setup and deployment guides, and responsive UI across mobile, tablet, and desktop.",
+      "scale_or_metric": "API Endpoints: 50+; Databases: 2; Real-time Updates: WebSockets; Access Control: RBAC + Teams",
+      "category": "case-study"
+    },
+    {
+      "url": "https://ancel.co.ke/case-studies/signflow",
+      "title": "SignFlow - Real-Time Assistive Tech Simulation for Sign Language",
+      "summary": "SignFlow is a high-fidelity assistive technology platform architected for real-time sign language translation, exploring the architectural requirements for scaling accessibility platforms. The system features WebSocket-powered streaming, 3D avatar simulation with natural variation, and accessibility-first design with WCAG compliance, demonstrating production-grade architecture for specialized user bases. To move from robotic loops to a responsive, natural-feeling interpreter, I built SignFlow so translation streams in real time and the 3D avatar varies per phrase, with failures in rendering or network isolated from the core experience.",
+      "tech_stack": [
+        "React",
+        "Node.js",
+        "Express",
+        "MongoDB",
+        "WebSockets",
+        "Three.js",
+        "React Three Fiber",
+        "JWT",
+        "Recharts",
+        "Framer Motion"
+      ],
+      "key_outcome": "Real-time Latency: Near-zero",
+      "business_outcome": "Fully implemented assistive technology prototype demonstrating real-time system design using WebSockets, scalable cloud architecture with MongoDB Atlas, intentional UX for specialized user bases, and product-level thinking bridging coding projects and viable market solutions. The",
+      "scale_or_metric": "Real-time Latency: Near-zero; Animation Variations: Multiple; Accessibility: WCAG Compliant; Database: MongoDB Atlas",
+      "category": "case-study"
+    },
+    {
+      "url": "https://ancel.co.ke/case-studies/nestfi",
+      "title": "NestFi — Resilient Financial Coordination Platform",
+      "summary": "NestFi is a production-grade finance platform designed for financial correctness under failure. Built by Ancel Ajanga, it ensures predictable behavior across asynchronous payment providers, delayed or duplicated callbacks, unreliable networks, and hybrid storage layers. PostgreSQL enforces ledger integrity, MongoDB handles compliance and audit events, and Redis provides ephemeral caching and distributed locking with fail-closed safety.",
+      "tech_stack": [
+        "NestJS",
+        "TypeScript",
+        "PostgreSQL",
+        "MongoDB",
+        "Redis",
+        "Docker",
+        "Cloudflare Workers",
+        "M-Pesa Daraja",
+        "JWT",
+        "Socket.io",
+        "React Native",
+        "Next.js",
+        "RabbitMQ"
+      ],
+      "key_outcome": "Completion: ~87%",
+      "business_outcome": "NestFi demonstrates capstone-level engineering: correctness-first design where financial truth is never inferred; explicit handling of distributed-system failure modes (timeouts, split-brain risk, replayed callbacks); real-time, user-trust-focused payment experience; strong audit",
+      "scale_or_metric": "Completion: ~87%; Datastores: 3; Payment Integration: M-Pesa Daraja; Resilience: Circuit breakers + fail-closed locks",
+      "category": "case-study"
+    },
+    {
+      "url": "https://ancel.co.ke/case-studies/edumanage",
+      "title": "EduManage — Multi-Tenant School Management SaaS",
+      "summary": "A comprehensive educational management system designed to streamline administrative tasks, student enrollment, and academic reporting. To replace fragmented tools with one system without mixing school data or permissions, I built EduManage with tenant-scoped access and hierarchical RBAC so failures in one institution or module do not affect others. Delivered a unified school operations platform that reduces administrative overhead, improves record consistency, and enables faster, more reliable reporting.",
+      "tech_stack": [
+        "NestJS",
+        "Express.js",
+        "MongoDB",
+        "JWT",
+        "RBAC",
+        "Socket.io",
+        "TypeScript",
+        "Docker"
+      ],
+      "key_outcome": "Status: ~85%",
+      "business_outcome": "Delivered a unified school operations platform that reduces administrative overhead, improves record consistency, and enables faster, more reliable reporting. The system is structured for maintainability, with clear module boundaries that support incremental expansion over time.",
+      "scale_or_metric": "Status: ~85%; Multi-Tenancy: Tenant-scoped; AuthZ: Hierarchical RBAC; Real-time: Socket.io",
+      "category": "case-study"
+    },
+    {
+      "url": "https://ancel.co.ke/case-studies/aegis",
+      "title": "Aegis — Self-Healing Infrastructure with Policy and AI",
+      "summary": "Aegis monitors infrastructure behavior, detects anomalies using AI, evaluates security policies, and executes tightly controlled remediation actions. It is built with strict isolation boundaries, auditability, and failure-aware automation to avoid unsafe self-healing. To make automation safe and auditable, I separated observation, intelligence, policy, and execution so the AI recommends but never executes—and every action is policy-checked and signed.",
+      "tech_stack": [
+        "NestJS",
+        "FastAPI",
+        "Next.js",
+        "PostgreSQL",
+        "Redis",
+        "Kubernetes",
+        "Docker",
+        "Prometheus",
+        "Grafana",
+        "JWT",
+        "TypeScript",
+        "Python"
+      ],
+      "key_outcome": "Status: ~95%",
+      "business_outcome": "Aegis guarantees: no unaudited actions, no blind AI execution, no privilege escalation, no silent failures. Security highlights include JWT + RBAC, HMAC-signed executor actions, namespace allowlisting, immutable audit logs, and default-deny network policies. The platform is desig",
+      "scale_or_metric": "Status: ~95%; Security: Policy + HMAC; AI Role: Recommend only; Audit: Immutable",
+      "category": "case-study"
+    },
+    {
+      "url": "https://ancel.co.ke/case-studies/fits-by-aliv",
+      "title": "Fits by Aliv — Kenya-First E-Commerce with Payment-Safe Workflows",
+      "summary": "Fits by Aliv is a Kenya-first e-commerce marketplace (thrift/sustainable fashion) with payment-safe workflows, inventory self-healing, and hardened security. Backend is NestJS with PostgreSQL (Prisma); clients are Flutter (mobile, web, desktop). Identity is Firebase Auth; payments are M-Pesa via Safaricom Daraja API.",
+      "tech_stack": [
+        "NestJS",
+        "TypeScript",
+        "PostgreSQL",
+        "Prisma",
+        "Redis",
+        "BullMQ",
+        "Flutter",
+        "Firebase Auth",
+        "M-Pesa Daraja"
+      ],
+      "key_outcome": "Status: ~90–95%",
+      "business_outcome": "The system guarantees: no inventory oversell due to race conditions, no voucher double-spend, no unaudited state changes, no blind trust in payment callbacks, no unbounded automation. Security highlights: Firebase JWT verification + server-side authorization, idempotency keys on",
+      "scale_or_metric": "Status: ~90–95%; Payment: Verify first; Voucher: Pessimistic; Audit: Immutable",
+      "category": "case-study"
+    },
+    {
+      "url": "https://ancel.co.ke/developer-journal/building-taskforge-with-next-js-and-socket-io-lessons-learned",
+      "title": "Building TaskForge with Next.js and Socket.io — Lessons Learned",
+      "summary": "Exploring the challenges and solutions in building a real-time collaborative project management platform. From WebSocket connections to optimistic UI updates and conflict resolution. Building TaskForge was one of my most challenging and rewarding projects.",
+      "tech_stack": [
+        "Next.js",
+        "Socket.io",
+        "Real-time",
+        "Collaboration",
+        "MongoDB"
+      ],
+      "key_outcome": "Exploring the challenges and solutions in building a real-time collaborative project management platform. From WebSocket",
+      "category": "article"
+    },
+    {
+      "url": "https://ancel.co.ke/developer-journal/scaling-an-e-learning-platform-with-django-react",
+      "title": "Scaling an E-Learning Platform with Django + React",
+      "summary": "How I built a scalable e-learning platform that handles thousands of students and courses. Covering authentication, course management, and video delivery optimization. Building a scalable e-learning platform requires careful consideration of architecture, authentication, and content delivery.",
+      "tech_stack": [
+        "Django",
+        "React",
+        "E-Learning",
+        "Scalability",
+        "Authentication"
+      ],
+      "key_outcome": "How I built a scalable e-learning platform that handles thousands of students and courses. Covering authentication, cour",
+      "category": "article"
+    },
+    {
+      "url": "https://ancel.co.ke/developer-journal/why-i-built-a-finance-tracker-in-vue-3",
+      "title": "Why I Built a Finance Tracker in Vue 3",
+      "summary": "Exploring the decision to use Vue 3 for a personal finance application. Comparing Vue's reactivity system with other frameworks and the benefits for financial data visualization. When I decided to build a personal finance tracker, I had to choose between React, Angular, and Vue 3.",
+      "tech_stack": [
+        "Vue.js",
+        "Finance",
+        "Data Visualization",
+        "TypeScript",
+        "Chart.js"
+      ],
+      "key_outcome": "Exploring the decision to use Vue 3 for a personal finance application. Comparing Vue's reactivity system with other fra",
+      "category": "article"
+    },
+    {
+      "url": "https://ancel.co.ke/developer-journal/angular-20-in-production-the-fitness-class-scheduler-journey",
+      "title": "Angular 20 in Production: The Fitness Class Scheduler Journey",
+      "summary": "My experience building a fitness class scheduler with Angular 20's new features. Covering SSR, signals, and the improved developer experience. Angular 20 brought significant improvements to the framework, and I was excited to build a fitness class scheduler to explore these new features in a real-world application.",
+      "tech_stack": [
+        "Angular",
+        "SSR",
+        "Signals",
+        "TypeScript",
+        "Fitness"
+      ],
+      "key_outcome": "My experience building a fitness class scheduler with Angular 20's new features. Covering SSR, signals, and the improved",
+      "category": "article"
+    },
+    {
+      "url": "https://ancel.co.ke/developer-journal/from-student-to-freelancer-my-journey-since-2021",
+      "title": "From Student to Freelancer: My Journey Since 2021",
+      "summary": "Reflecting on my coding journey from learning HTML and CSS in school to becoming a freelance developer. The challenges, learnings, and growth over the past few years. Looking back at my coding journey since 2021, I'm amazed at how much I've learned and grown.",
+      "tech_stack": [
+        "Journey",
+        "Learning",
+        "Freelancing",
+        "Growth",
+        "Reflection"
+      ],
+      "key_outcome": "Reflecting on my coding journey from learning HTML and CSS in school to becoming a freelance developer. The challenges,",
+      "category": "article"
+    },
+    {
+      "url": "https://ancel.co.ke/developer-journal/how-travelogue-taught-me-the-power-of-maps-in-web-apps",
+      "title": "How Travelogue Taught Me the Power of Maps in Web Apps",
+      "summary": "Building an interactive travel website with Leaflet.js and OpenStreetMap. Exploring the potential of maps in web applications and the technical challenges of map integration.",
+      "tech_stack": [
+        "Maps",
+        "Leaflet.js",
+        "Travel",
+        "Interactive",
+        "OpenStreetMap"
+      ],
+      "key_outcome": "Building an interactive travel website with Leaflet.js and OpenStreetMap. Exploring the potential of maps in web applica",
+      "category": "article"
+    },
+    {
+      "url": "https://ancel.co.ke/developer-journal/designing-a-console-banking-system-to-showcase-oop-java",
+      "title": "Designing a Console Banking System to Showcase OOP (Java)",
+      "summary": "A deep dive into a pure Java console application that demonstrates encapsulation, inheritance, abstraction, and polymorphism through realistic banking operations. This project intentionally avoids frameworks and databases to focus on the fundamentals of object‑oriented design.\n\nI.",
+      "tech_stack": [
+        "Java",
+        "OOP",
+        "Design",
+        "Console"
+      ],
+      "key_outcome": "A deep dive into a pure Java console application that demonstrates encapsulation, inheritance, abstraction, and polymorp",
+      "category": "article"
+    },
+    {
+      "url": "https://ancel.co.ke/developer-journal/building-educhain-a-web3-journey-into-blockchain-certificate-management",
+      "title": "Building EduChain: A Web3 Journey into Blockchain Certificate Management",
+      "summary": "Exploring the challenges and solutions in building a full-stack Web3 application that issues verifiable academic certificates as ERC721 NFTs on the Ethereum blockchain. EduChain represents my first deep dive into Web3 development, combining traditional full-stack skills with blockchain technology to solve a real-world problem in education.\n\nI.",
+      "tech_stack": [
+        "Web3",
+        "Blockchain",
+        "Solidity",
+        "NFT",
+        "IPFS",
+        "Ethereum"
+      ],
+      "key_outcome": "Exploring the challenges and solutions in building a full-stack Web3 application that issues verifiable academic certifi",
+      "category": "article"
+    },
+    {
+      "url": "https://ancel.co.ke/developer-journal/ledgerx-secure-multi-tenant-financial-platform",
+      "title": "LedgerX — Secure, Multi-Tenant Financial Platform",
+      "summary": "How I designed a production-grade fintech backend that is auditable, resilient, secure, and operationally observable—without overengineering. LedgerX is a production-grade, multi-tenant financial platform I built to answer: How would I design a modern fintech backend that is auditable, resilient, secure, and operationally observable—without overengineering or hiding behind abstractions?\n\nI.",
+      "tech_stack": [
+        "NestJS",
+        "Next.js",
+        "TypeScript",
+        "PostgreSQL",
+        "MongoDB",
+        "Finance",
+        "Multi-Tenant",
+        "Stripe",
+        "M-Pesa"
+      ],
+      "key_outcome": "How I designed a production-grade fintech backend that is auditable, resilient, secure, and operationally observable—wit",
+      "category": "article"
+    },
+    {
+      "url": "https://ancel.co.ke/developer-journal/building-opsflow-a-production-ready-incident-management-platform",
+      "title": "Building OpsFlow: A Production-Ready Incident Management Platform",
+      "summary": "Exploring the architecture and challenges in building a comprehensive incident and workflow management platform with NestJS, Next.js, and dual-database design. OpsFlow represents my journey into building enterprise-grade incident management systems, combining modern full-stack technologies with real-time features, multi-tenant architecture and operational knowledge management.",
+      "tech_stack": [
+        "NestJS",
+        "Next.js",
+        "TypeScript",
+        "PostgreSQL",
+        "MongoDB",
+        "WebSockets",
+        "Incident Management",
+        "Multi-Tenant"
+      ],
+      "key_outcome": "Exploring the architecture and challenges in building a comprehensive incident and workflow management platform with Nes",
+      "category": "article"
+    },
+    {
+      "url": "https://ancel.co.ke/developer-journal/building-signflow-a-real-time-assistive-technology-platform-for-sign-language-translation",
+      "title": "Building SignFlow: A Real-Time Assistive Technology Platform for Sign Language Translation",
+      "summary": "Exploring the architecture and challenges in building a high-fidelity assistive technology simulation for real-time sign language translation with 3D avatar animation and WebSocket streaming. SignFlow represents my journey into building assistive technology platforms, combining real-time communication, 3D graphics, and accessibility-first design to create an immersive sign language translation experience.\n\nI.",
+      "tech_stack": [
+        "React",
+        "Node.js",
+        "MongoDB",
+        "WebSockets",
+        "Three.js",
+        "Assistive Technology",
+        "Accessibility",
+        "Real-time"
+      ],
+      "key_outcome": "Exploring the architecture and challenges in building a high-fidelity assistive technology simulation for real-time sign",
+      "category": "article"
+    },
+    {
+      "url": "https://ancel.co.ke/developer-journal/aegis-production-systems-with-restraint-assume-failure-design-for-abuse",
+      "title": "Aegis: Production Systems with Restraint — Assume Failure, Design for Abuse",
+      "summary": "Building a self-healing infrastructure platform where AI recommends, policy authorizes, and humans retain control. How Aegis enforces no unaudited actions, no blind AI execution, and a trail of evidence for every decision. Aegis is a self-healing infrastructure platform I built to address a real problem: modern infrastructure fails silently, and automation often introduces more risk than it removes.",
+      "tech_stack": [
+        "Backend",
+        "Security",
+        "AI",
+        "DevOps",
+        "Kubernetes",
+        "Observability",
+        "Policy",
+        "Self-Healing"
+      ],
+      "key_outcome": "Building a self-healing infrastructure platform where AI recommends, policy authorizes, and humans retain control. How A",
+      "category": "article"
+    },
+    {
+      "url": "https://ancel.co.ke/developer-journal/nestfi-resilient-financial-coordination-platform-correctness-under-failure",
+      "title": "NestFi: Resilient Financial Coordination Platform — Correctness Under Failure",
+      "summary": "A production-grade finance platform designed for financial correctness under failure. Ledger-backed double-entry, M-Pesa B2C with idempotent handling, Socket.io real-time UX, and fail-closed distributed locks.",
+      "tech_stack": [
+        "NestJS",
+        "TypeScript",
+        "PostgreSQL",
+        "MongoDB",
+        "Redis",
+        "M-Pesa",
+        "Finance",
+        "Resilience",
+        "Socket.io"
+      ],
+      "key_outcome": "A production-grade finance platform designed for financial correctness under failure. Ledger-backed double-entry, M-Pesa",
+      "category": "article"
+    },
+    {
+      "url": "https://ancel.co.ke/developer-journal/fits-by-aliv-kenya-first-e-commerce-with-payment-safe-workflows",
+      "title": "Fits by Aliv: Kenya-First E-Commerce with Payment-Safe Workflows",
+      "summary": "Building a production-grade e-commerce backend designed around failure, abuse, and latency. Soft reservations, idempotent orders, M-Pesa verification, and bounded self-healing. Fits by Aliv is a Kenya-first e-commerce marketplace (thrift/sustainable fashion) I built to answer: How do you run commerce when payments are asynchronous, networks are unreliable, and inventory errors mean lost revenue and trust?",
+      "tech_stack": [
+        "NestJS",
+        "Flutter",
+        "M-Pesa",
+        "E-Commerce",
+        "PostgreSQL",
+        "BullMQ",
+        "Firebase",
+        "Security"
+      ],
+      "key_outcome": "Building a production-grade e-commerce backend designed around failure, abuse, and latency. Soft reservations, idempoten",
+      "category": "article"
+    },
+    {
+      "url": "https://ancel.co.ke/guides/building-real-time-collaboration-nextjs-socketio",
+      "title": "Building Real-Time Collaboration with Next.js and Socket.io",
+      "summary": "How to build production real-time collaboration with Next.js and Socket.io: architecture, conflict resolution, and sub-500ms latency.",
+      "tech_stack": [
+        "Next.js",
+        "Socket.io",
+        "Node.js",
+        "MongoDB",
+        "TypeScript",
+        "Zustand"
+      ],
+      "key_outcome": "TaskForge achieves real-time sync under 500ms, supports 100+ concurrent users per project, and maintains 99.9% uptime wi",
+      "category": "guide"
+    },
+    {
+      "url": "https://ancel.co.ke/guides/nextjs-vs-django-for-saas",
+      "title": "Next.js vs Django for SaaS: When to Choose Which",
+      "summary": "A practical comparison of Next.js and Django for SaaS: full-stack JavaScript vs Python, real-time vs request-response, and when each shines. In practice: TaskForge (Next.",
+      "tech_stack": [
+        "Next.js",
+        "Django",
+        "React",
+        "Node.js",
+        "PostgreSQL",
+        "MongoDB"
+      ],
+      "key_outcome": "In practice: TaskForge (Next.js) delivers real-time collaboration and sub-500ms sync; the E-Learning Platform (Django + ",
+      "category": "guide"
+    }
+  ],
   "entities": {
     "pages": [
       {
         "url": "https://ancel.co.ke/",
-        "name": "Home",
-        "keywords": [
-          "Fullstack Engineer",
-          "Ancel Ajanga",
-          "system resilience",
-          "portfolio"
-        ]
+        "title": "Home",
+        "summary": "Portfolio of Ancel Ajanga, Fullstack Engineer. System resilience from UI to database. Nairobi and Narok, Kenya.",
+        "tech_stack": [],
+        "key_outcome": null,
+        "category": "page"
       },
       {
         "url": "https://ancel.co.ke/about",
-        "name": "About",
-        "keywords": [
-          "Fullstack Engineer",
-          "Ancel Ajanga",
-          "system resilience",
-          "Nairobi"
-        ]
+        "title": "About",
+        "summary": "About Ancel Ajanga: Fullstack Software Engineer and Architect. Nairobi, Kenya. Resilient systems, security, and AIOps.",
+        "tech_stack": [],
+        "key_outcome": null,
+        "category": "page"
       },
       {
         "url": "https://ancel.co.ke/projects",
-        "name": "Projects",
-        "keywords": [
-          "software projects",
-          "Fullstack Engineer",
-          "15 projects",
-          "resilient systems"
-        ]
+        "title": "Projects",
+        "summary": "Software projects by Ancel Ajanga: NestFi, SignFlow, OpsFlow, Aegis, LedgerX, EduChain, EduManage, TaskForge, and more.",
+        "tech_stack": [],
+        "key_outcome": null,
+        "category": "page"
       },
       {
         "url": "https://ancel.co.ke/case-studies",
-        "name": "Case Studies",
-        "keywords": [
-          "technical case studies",
-          "architecture",
-          "resilience",
-          "trade-offs"
-        ]
+        "title": "Case Studies",
+        "summary": "Technical case studies with architecture, problem, solution, impact, and measurable outcomes. By Ancel Ajanga.",
+        "tech_stack": [],
+        "key_outcome": null,
+        "category": "page"
       },
       {
         "url": "https://ancel.co.ke/developer-journal",
-        "name": "Developer Journal",
-        "keywords": [
-          "blog",
-          "web development",
-          "software engineering"
-        ]
+        "title": "Developer Journal",
+        "summary": "Blog and articles on web development, architecture, and lessons learned. By Fullstack Engineer Ancel Ajanga.",
+        "tech_stack": [],
+        "key_outcome": null,
+        "category": "page"
+      },
+      {
+        "url": "https://ancel.co.ke/guides",
+        "title": "Guides",
+        "summary": "Technical guides: architecture deep dives, stack comparisons, and how-I-built breakdowns. 800+ words each, with measurable outcomes.",
+        "tech_stack": [],
+        "key_outcome": null,
+        "category": "page"
       },
       {
         "url": "https://ancel.co.ke/timeline",
-        "name": "Timeline",
-        "keywords": [
-          "experience",
-          "education",
-          "career"
-        ]
+        "title": "Timeline",
+        "summary": "Career timeline and experience of Ancel Ajanga, Fullstack Engineer.",
+        "tech_stack": [],
+        "key_outcome": null,
+        "category": "page"
       },
       {
         "url": "https://ancel.co.ke/stack",
-        "name": "Stack",
-        "keywords": [
-          "tech stack",
-          "technologies",
-          "Fullstack"
-        ]
+        "title": "Stack",
+        "summary": "Technology stack and tools used by Ancel Ajanga: React, Node.js, NestJS, PostgreSQL, MongoDB, and more.",
+        "tech_stack": [],
+        "key_outcome": null,
+        "category": "page"
       },
       {
         "url": "https://ancel.co.ke/labs-experiments",
-        "name": "Labs & Experiments",
-        "keywords": [
-          "frontend",
-          "experiments",
-          "side projects"
-        ]
+        "title": "Labs & Experiments",
+        "summary": "Frontend and side projects: habit tracker, fitness scheduler, event countdown, and experiments.",
+        "tech_stack": [],
+        "key_outcome": null,
+        "category": "page"
       },
       {
         "url": "https://ancel.co.ke/contact",
-        "name": "Contact",
-        "keywords": [
-          "hire",
-          "collaboration",
-          "Ancel Ajanga"
-        ]
+        "title": "Contact",
+        "summary": "Contact Ancel Ajanga for collaboration, hiring, or fullstack engineering projects.",
+        "tech_stack": [],
+        "key_outcome": null,
+        "category": "page"
+      },
+      {
+        "url": "https://ancel.co.ke/nextjs-developer-kenya",
+        "title": "Next.js Developer Kenya",
+        "summary": "Hire a Next.js developer in Kenya. Full-Stack Developer Nairobi, React & Node.js Kenya. System design and architect Africa. Case studies, tech stack, measurable outcomes.",
+        "tech_stack": [],
+        "key_outcome": null,
+        "category": "page",
+        "hub_case_studies": [
+          "ledgerx",
+          "nestfi",
+          "aegis",
+          "fits-by-aliv"
+        ],
+        "business_outcomes_summary": "Scalable financial architecture (LedgerX), resilient financial coordination (NestFi), self-healing infrastructure (Aegis), payment-safe e-commerce (Fits by Aliv). Sub-500ms real-time, 10K+ users, fintech-grade auditability."
       }
     ],
     "projects": [
       {
         "url": "https://ancel.co.ke/projects",
-        "slug": "finance-tracker",
-        "name": "Finance Tracker: Making Every Penny Visible",
-        "keywords": [
+        "title": "Finance Tracker: Making Every Penny Visible",
+        "summary": "Finance Tracker is a personal finance web application developed by Ancel Ajanga. It helps users track personal income and expenses with visual analytics and interactive pie charts showing expense breakdown by category.",
+        "tech_stack": [
           "Vue.js 3",
           "TypeScript",
           "Vite",
           "Tailwind CSS",
           "Chart.js",
           "Vitest",
-          "Playwright",
-          "FinanceApplication",
-          "Ancel Ajanga",
-          "Fullstack Engineer"
-        ]
+          "Playwright"
+        ],
+        "key_outcome": "Visual analytics and category-based expense breakdown for informed financial decisions.",
+        "category": "project"
       },
       {
         "url": "https://ancel.co.ke/projects",
-        "slug": "fitness-scheduler",
-        "name": "Fitness Scheduler: Never Double-Book a Class Again",
-        "keywords": [
+        "title": "Fitness Scheduler: Never Double-Book a Class Again",
+        "summary": "Fitness Scheduler is a health and fitness web application developed by Ancel Ajanga. A modern Angular SSR application for planning weekly fitness classes with dark mode, responsive design, and client-side persistence.",
+        "tech_stack": [
           "Angular 20",
           "TypeScript",
           "Angular SSR",
@@ -126,16 +1185,18 @@
           "Tailwind CSS",
           "Angular Animations",
           "Signals",
-          "HealthApplication",
-          "Ancel Ajanga",
-          "Fullstack Engineer"
-        ]
+          "LocalStorage",
+          "Karma",
+          "Jasmine"
+        ],
+        "key_outcome": "Fast, SEO-friendly SSR with persistent schedule management.",
+        "category": "project"
       },
       {
         "url": "https://ancel.co.ke/projects",
-        "slug": "habit-tracker",
-        "name": "Habit Tracker: Turning Daily Wins Into Unbreakable Streaks",
-        "keywords": [
+        "title": "Habit Tracker: Turning Daily Wins Into Unbreakable Streaks",
+        "summary": "Habit Tracker is a productivity Progressive Web App developed by Ancel Ajanga. It tracks daily habits and builds momentum through streak counting with comprehensive analytics and visual charts.",
+        "tech_stack": [
           "React 19",
           "Tailwind CSS",
           "React Router DOM",
@@ -144,16 +1205,19 @@
           "PWA",
           "Service Worker",
           "LocalStorage",
-          "ProductivityApplication",
-          "Ancel Ajanga",
-          "Fullstack Engineer"
-        ]
+          "Create React App",
+          "PostCSS",
+          "Autoprefixer",
+          "React Testing Library"
+        ],
+        "key_outcome": "PWA with offline support and streak-based motivation.",
+        "category": "project"
       },
       {
         "url": "https://ancel.co.ke/projects",
-        "slug": "event-countdown",
-        "name": "Event Countdown: Never Miss a Milestone",
-        "keywords": [
+        "title": "Event Countdown: Never Miss a Milestone",
+        "summary": "Event Countdown is a utilities web application developed by Ancel Ajanga. A feature-rich countdown timer for creating and managing multiple countdowns for life events with recurring events and smart notifications.",
+        "tech_stack": [
           "HTML5",
           "CSS3",
           "Vanilla JavaScript",
@@ -162,16 +1226,21 @@
           "Web Audio API",
           "Canvas API",
           "File API",
-          "UtilitiesApplication",
-          "Ancel Ajanga",
-          "Fullstack Engineer"
-        ]
+          "Clipboard API",
+          "CSS Grid",
+          "Flexbox",
+          "CSS Custom Properties",
+          "Google Fonts",
+          "Netlify"
+        ],
+        "key_outcome": "Lightweight vanilla JS with browser APIs and recurring events.",
+        "category": "project"
       },
       {
         "url": "https://ancel.co.ke/projects",
-        "slug": "travelogue",
-        "name": "Travelogue: Maps and Stories That Pull You In",
-        "keywords": [
+        "title": "Travelogue: Maps and Stories That Pull You In",
+        "summary": "Travelogue is a travel platform developed by Ancel Ajanga. It features interactive world maps, travel stories, destination exploration, and responsive design for travel enthusiasts.",
+        "tech_stack": [
           "React 18",
           "Create React App",
           "Tailwind CSS 3.3.0",
@@ -180,16 +1249,21 @@
           "BrowserRouter",
           "React Context API",
           "Leaflet.js",
-          "TravelApplication",
-          "Ancel Ajanga",
-          "Fullstack Engineer"
-        ]
+          "React-Leaflet",
+          "OpenStreetMap",
+          "npm",
+          "ESLint",
+          "Webpack",
+          "Vercel"
+        ],
+        "key_outcome": "Interactive maps and responsive design for travel discovery.",
+        "category": "project"
       },
       {
         "url": "https://ancel.co.ke/projects",
-        "slug": "rasoha-academy",
-        "name": "Rasoha Academy: One Site for an Entire School Community",
-        "keywords": [
+        "title": "Rasoha Academy: One Site for an Entire School Community",
+        "summary": "Rasoha Academy is an education website developed by Ancel Ajanga. A modern, responsive site for a private school in Narok, Kenya, providing programs, events, and resources for students and parents.",
+        "tech_stack": [
           "React 19.1.1",
           "React Router DOM 7.7.1",
           "React Scripts 5.0.1",
@@ -198,16 +1272,21 @@
           "Autoprefixer 10.4.21",
           "React Icons 5.5.0",
           "AOS 2.3.4",
-          "EducationApplication",
-          "Ancel Ajanga",
-          "Fullstack Engineer"
-        ]
+          "React CountUp 6.5.3",
+          "React Responsive Carousel 3.2.23",
+          "React Scroll Parallax 3.4.5",
+          "React Helmet 6.1.0",
+          "React i18next 15.6.1",
+          "Web Vitals 2.1.4"
+        ],
+        "key_outcome": "PWA with SEO and high performance for school communications.",
+        "category": "project"
       },
       {
         "url": "https://ancel.co.ke/projects",
-        "slug": "attendance-system",
-        "name": "Attendance System: 95% Accuracy, 70% Less Admin",
-        "keywords": [
+        "title": "Attendance System: 95% Accuracy, 70% Less Admin",
+        "summary": "Attendance System is a full-stack education application developed by Ancel Ajanga. A resilient attendance management system for educational institutions with automated tracking, analytics, and reports.",
+        "tech_stack": [
           "React.js",
           "Create React App",
           "Tailwind CSS",
@@ -216,16 +1295,21 @@
           "React Hot Toast",
           "Context API",
           "Netlify",
-          "EducationApplication",
-          "Ancel Ajanga",
-          "Fullstack Engineer"
-        ]
+          "Node.js",
+          "Express.js",
+          "MongoDB",
+          "Mongoose",
+          "JWT",
+          "bcryptjs"
+        ],
+        "key_outcome": "95% accuracy improvement, 70% reduction in administrative overhead, 500+ users.",
+        "category": "project"
       },
       {
         "url": "https://ancel.co.ke/projects",
-        "slug": "elearning-platform",
-        "name": "E-Learning Platform: Sub-2s Loads for 10K+ Students",
-        "keywords": [
+        "title": "E-Learning Platform: Sub-2s Loads for 10K+ Students",
+        "summary": "E-Learning Platform is an education learning management system developed by Ancel Ajanga. A resilient, scalable LMS for thousands of concurrent students and hundreds of courses, with sub-2-second page loads, course management, and real-time progress tracking.",
+        "tech_stack": [
           "React",
           "TypeScript",
           "Axios",
@@ -234,16 +1318,21 @@
           "Netlify",
           "Django",
           "Django REST Framework",
-          "EducationApplication",
-          "Ancel Ajanga",
-          "Fullstack Engineer"
-        ]
+          "Django CORS Headers",
+          "Django Simple JWT",
+          "SQLite",
+          "PostgreSQL",
+          "Gunicorn",
+          "WhiteNoise"
+        ],
+        "key_outcome": "10,000+ students, 500+ courses, sub-2s page loads, 99.9% uptime.",
+        "category": "project"
       },
       {
         "url": "https://ancel.co.ke/projects",
-        "slug": "taskforge",
-        "name": "TaskForge: Real-Time Collaboration Without the Conflicts",
-        "keywords": [
+        "title": "TaskForge: Real-Time Collaboration Without the Conflicts",
+        "summary": "TaskForge is a productivity and project management platform developed by Ancel Ajanga. A resilient, real-time collaborative platform for engineering teams with sub-second latency, conflict-free synchronization, and 100+ concurrent users per project.",
+        "tech_stack": [
           "Next.js 14",
           "React 18",
           "TypeScript",
@@ -252,30 +1341,34 @@
           "MongoDB",
           "Mongoose",
           "Socket.io",
-          "ProductivityApplication",
-          "Ancel Ajanga",
-          "Fullstack Engineer"
-        ]
+          "JWT",
+          "Zustand",
+          "Tailwind CSS",
+          "Framer Motion",
+          "React Beautiful DnD",
+          "Recharts"
+        ],
+        "key_outcome": "Sub-500ms latency, 100+ concurrent users per project, 99.9% uptime.",
+        "category": "project"
       },
       {
         "url": "https://ancel.co.ke/projects",
-        "slug": "banking-system",
-        "name": "Banking System: OOP That Handles Real Money Logic",
-        "keywords": [
+        "title": "Banking System: OOP That Handles Real Money Logic",
+        "summary": "Banking System is a finance demonstration application developed by Ancel Ajanga. A console-based Java application demonstrating core OOP principles: Encapsulation, Inheritance, Abstraction, and Polymorphism.",
+        "tech_stack": [
           "Java 17+",
           "OOP",
           "Maven (optional)",
-          "Gradle (optional)",
-          "FinanceApplication",
-          "Ancel Ajanga",
-          "Fullstack Engineer"
-        ]
+          "Gradle (optional)"
+        ],
+        "key_outcome": "Clean OOP design; offline, lightweight; ideal for demonstrating software design.",
+        "category": "project"
       },
       {
         "url": "https://ancel.co.ke/projects",
-        "slug": "educhain",
-        "name": "EduChain: Tamper-Proof Certificates on the Blockchain",
-        "keywords": [
+        "title": "EduChain: Tamper-Proof Certificates on the Blockchain",
+        "summary": "EduChain is an education and blockchain application developed by Ancel Ajanga. ERC721 NFTs and IPFS decentralized storage power tamper-proof academic certificates on Ethereum.",
+        "tech_stack": [
           "React 19",
           "Tailwind CSS",
           "RainbowKit",
@@ -284,343 +1377,21 @@
           "React Router",
           "Node.js",
           "Express.js",
-          "EducationApplication",
-          "Ancel Ajanga",
-          "Fullstack Engineer"
-        ]
-      },
-      {
-        "url": "https://ancel.co.ke/projects",
-        "slug": "ledgerx",
-        "name": "LedgerX: Double-Entry Ledgers That Audit Themselves",
-        "keywords": [
-          "Next.js 14",
-          "React 18",
-          "TypeScript",
-          "NestJS",
-          "PostgreSQL",
-          "Prisma",
           "MongoDB",
           "Mongoose",
-          "FinanceApplication",
-          "Ancel Ajanga",
-          "Fullstack Engineer"
-        ]
-      },
-      {
-        "url": "https://ancel.co.ke/projects",
-        "slug": "opsflow",
-        "name": "OpsFlow: When Incidents Hit, the System Already Knows",
-        "keywords": [
-          "NestJS",
-          "Next.js",
-          "PostgreSQL",
-          "MongoDB",
-          "Prisma",
-          "WebSockets",
-          "JWT",
-          "RBAC",
-          "BusinessApplication",
-          "Ancel Ajanga",
-          "Fullstack Engineer"
-        ]
-      },
-      {
-        "url": "https://ancel.co.ke/projects",
-        "slug": "signflow",
-        "name": "SignFlow: Real-Time Sign Language, Zero Latency",
-        "keywords": [
-          "React",
-          "Node.js",
-          "Express",
-          "MongoDB",
-          "WebSockets",
-          "Three.js",
-          "React Three Fiber",
-          "JWT",
-          "AccessibilityApplication",
-          "Ancel Ajanga",
-          "Fullstack Engineer"
-        ]
-      },
-      {
-        "url": "https://ancel.co.ke/projects",
-        "slug": "nestfi",
-        "name": "NestFi — Resilient Financial Coordination Platform",
-        "keywords": [
-          "NestJS",
-          "TypeScript",
-          "PostgreSQL",
-          "MongoDB",
-          "Redis",
-          "Socket.io",
-          "RabbitMQ",
-          "Docker",
-          "WebApplication",
-          "Ancel Ajanga",
-          "Fullstack Engineer"
-        ]
-      },
-      {
-        "url": "https://ancel.co.ke/projects",
-        "slug": "edumanage",
-        "name": "EduManage: One Platform, Many Schools, Zero Leaks",
-        "keywords": [
-          "NestJS",
-          "Express.js",
-          "MongoDB",
-          "JWT",
-          "RBAC",
-          "Socket.io",
-          "TypeScript",
-          "Docker",
-          "EducationApplication",
-          "Ancel Ajanga",
-          "Fullstack Engineer"
-        ]
-      },
-      {
-        "url": "https://ancel.co.ke/projects",
-        "slug": "aegis",
-        "name": "Aegis — Autonomous Infrastructure Guardrail System",
-        "keywords": [
-          "TypeScript",
-          "Node.js",
-          "OpenTelemetry",
-          "OPA (Open Policy Agent)",
-          "PostgreSQL",
-          "Redis",
-          "Docker",
-          "Prometheus",
-          "WebApplication",
-          "Ancel Ajanga",
-          "Fullstack Engineer"
-        ]
-      },
-      {
-        "url": "https://ancel.co.ke/projects",
-        "slug": "fits-by-aliv",
-        "name": "Fits by Aliv: E-Commerce That Never Oversells",
-        "keywords": [
-          "NestJS",
-          "TypeScript",
-          "PostgreSQL",
-          "Prisma",
-          "Redis",
-          "BullMQ",
-          "Flutter",
-          "Firebase Auth",
-          "ShoppingApplication",
-          "Ancel Ajanga",
-          "Fullstack Engineer"
-        ]
-      }
-    ],
-    "caseStudies": [
-      {
-        "url": "https://ancel.co.ke/case-studies/taskforge",
-        "slug": "taskforge",
-        "name": "TaskForge - Real-time Collaborative Project Management",
-        "keywords": [
-          "Next.js 14",
-          "React 18",
-          "TypeScript",
-          "Node.js",
-          "Express.js",
-          "MongoDB",
-          "Socket.io",
-          "Zustand",
-          "Tailwind CSS",
-          "Framer Motion",
-          "architecture",
-          "resilience",
-          "trade-offs",
-          "Ancel Ajanga",
-          "Fullstack Engineer"
-        ]
-      },
-      {
-        "url": "https://ancel.co.ke/case-studies/elearning-platform",
-        "slug": "elearning-platform",
-        "name": "E-Learning Platform - Scalable Learning Management System",
-        "keywords": [
-          "React",
-          "TypeScript",
-          "Django",
-          "Django REST Framework",
-          "PostgreSQL",
-          "JWT",
-          "Tailwind CSS",
-          "Axios",
-          "architecture",
-          "resilience",
-          "trade-offs",
-          "Ancel Ajanga",
-          "Fullstack Engineer"
-        ]
-      },
-      {
-        "url": "https://ancel.co.ke/case-studies/attendance-system",
-        "slug": "attendance-system",
-        "name": "Attendance System - Educational Analytics & Management",
-        "keywords": [
-          "React.js",
-          "Node.js",
-          "Express.js",
-          "MongoDB",
-          "Mongoose",
-          "JWT",
-          "bcryptjs",
-          "Tailwind CSS",
-          "Chart.js",
-          "architecture",
-          "resilience",
-          "trade-offs",
-          "Ancel Ajanga",
-          "Fullstack Engineer"
-        ]
-      },
-      {
-        "url": "https://ancel.co.ke/case-studies/personal-finance-tracker",
-        "slug": "personal-finance-tracker",
-        "name": "Personal Finance Tracker",
-        "keywords": [
-          "Vue.js 3",
-          "TypeScript",
-          "Chart.js",
-          "Tailwind CSS",
-          "architecture",
-          "resilience",
-          "trade-offs",
-          "Ancel Ajanga",
-          "Fullstack Engineer"
-        ]
-      },
-      {
-        "url": "https://ancel.co.ke/case-studies/fitness-class-scheduler",
-        "slug": "fitness-class-scheduler",
-        "name": "Fitness Class Scheduler",
-        "keywords": [
-          "Angular 20",
-          "TypeScript",
-          "Angular SSR",
-          "Tailwind CSS",
-          "architecture",
-          "resilience",
-          "trade-offs",
-          "Ancel Ajanga",
-          "Fullstack Engineer"
-        ]
-      },
-      {
-        "url": "https://ancel.co.ke/case-studies/habit-tracker",
-        "slug": "habit-tracker",
-        "name": "Habit Tracker & Streak Counter",
-        "keywords": [
-          "React 19",
-          "PWA",
-          "Chart.js",
-          "Tailwind CSS",
-          "architecture",
-          "resilience",
-          "trade-offs",
-          "Ancel Ajanga",
-          "Fullstack Engineer"
-        ]
-      },
-      {
-        "url": "https://ancel.co.ke/case-studies/event-countdown-timer",
-        "slug": "event-countdown-timer",
-        "name": "Event Countdown Timer",
-        "keywords": [
-          "Vanilla JavaScript",
-          "HTML5",
-          "CSS3",
-          "Canvas API",
-          "architecture",
-          "resilience",
-          "trade-offs",
-          "Ancel Ajanga",
-          "Fullstack Engineer"
-        ]
-      },
-      {
-        "url": "https://ancel.co.ke/case-studies/travelogue",
-        "slug": "travelogue",
-        "name": "Travelogue - Travel Storytelling Website",
-        "keywords": [
-          "React 18",
-          "Leaflet.js",
-          "OpenStreetMap",
-          "Tailwind CSS",
-          "architecture",
-          "resilience",
-          "trade-offs",
-          "Ancel Ajanga",
-          "Fullstack Engineer"
-        ]
-      },
-      {
-        "url": "https://ancel.co.ke/case-studies/rasoha-academy",
-        "slug": "rasoha-academy",
-        "name": "Rasoha Academy - School Website",
-        "keywords": [
-          "React 19.1.1",
-          "Tailwind CSS",
-          "PWA",
-          "React Icons",
-          "architecture",
-          "resilience",
-          "trade-offs",
-          "Ancel Ajanga",
-          "Fullstack Engineer"
-        ]
-      },
-      {
-        "url": "https://ancel.co.ke/case-studies/banking-system",
-        "slug": "banking-system",
-        "name": "Banking System",
-        "keywords": [
-          "Java 17+",
-          "OOP",
-          "Maven",
-          "Gradle",
-          "architecture",
-          "resilience",
-          "trade-offs",
-          "Ancel Ajanga",
-          "Fullstack Engineer"
-        ]
-      },
-      {
-        "url": "https://ancel.co.ke/case-studies/educhain",
-        "slug": "educhain",
-        "name": "EduChain - Blockchain Certificate Management",
-        "keywords": [
-          "React 19",
-          "Tailwind CSS",
-          "RainbowKit",
-          "Wagmi",
-          "ethers.js",
-          "Node.js",
-          "Express.js",
-          "MongoDB",
-          "Mongoose",
-          "Solidity",
-          "Hardhat",
           "IPFS",
-          "architecture",
-          "resilience",
-          "trade-offs",
-          "Ancel Ajanga",
-          "Fullstack Engineer"
-        ]
+          "Pinata API",
+          "Solidity 0.8.20",
+          "Hardhat"
+        ],
+        "key_outcome": "Tamper-proof certificates, instant verification, OpenZeppelin audited patterns.",
+        "category": "project"
       },
       {
-        "url": "https://ancel.co.ke/case-studies/ledgerx",
-        "slug": "ledgerx",
-        "name": "LedgerX — Secure, Multi-Tenant Financial Platform",
-        "keywords": [
+        "url": "https://ancel.co.ke/projects",
+        "title": "LedgerX: Double-Entry Ledgers That Audit Themselves",
+        "summary": "LedgerX is a finance management application developed by Ancel Ajanga. PostgreSQL financial correctness and multi-tenant isolation power this production-grade platform for invoicing, payments, double-entry accounting, audit, fraud detection, and diagnostics.",
+        "tech_stack": [
           "Next.js 14",
           "React 18",
           "TypeScript",
@@ -634,41 +1405,36 @@
           "TanStack Query",
           "Recharts",
           "Tailwind CSS",
-          "Axios",
-          "architecture",
-          "resilience",
-          "trade-offs",
-          "Ancel Ajanga",
-          "Fullstack Engineer"
-        ]
+          "Axios"
+        ],
+        "key_outcome": "Multi-tenant isolation, event-driven core, fraud signals, full auditability.",
+        "category": "project"
       },
       {
-        "url": "https://ancel.co.ke/case-studies/opsflow",
-        "slug": "opsflow",
-        "name": "OpsFlow - Incident & Operations Management Platform",
-        "keywords": [
+        "url": "https://ancel.co.ke/projects",
+        "title": "OpsFlow: When Incidents Hit, the System Already Knows",
+        "summary": "OpsFlow is a business and operations application developed by Ancel Ajanga. AI-driven anomaly detection and failure-aware automation in a production-ready incident platform.",
+        "tech_stack": [
           "NestJS",
-          "Next.js 14",
-          "TypeScript",
+          "Next.js",
           "PostgreSQL",
           "MongoDB",
           "Prisma",
           "WebSockets",
           "JWT",
           "RBAC",
+          "TypeScript",
           "Tailwind CSS",
-          "architecture",
-          "resilience",
-          "trade-offs",
-          "Ancel Ajanga",
-          "Fullstack Engineer"
-        ]
+          "Socket.IO"
+        ],
+        "key_outcome": "50+ API endpoints, real-time incident updates, secure multi-tenant isolation.",
+        "category": "project"
       },
       {
-        "url": "https://ancel.co.ke/case-studies/signflow",
-        "slug": "signflow",
-        "name": "SignFlow - Real-Time Assistive Tech Simulation for Sign Language",
-        "keywords": [
+        "url": "https://ancel.co.ke/projects",
+        "title": "SignFlow: Real-Time Sign Language, Zero Latency",
+        "summary": "SignFlow is an accessibility application developed by Ancel Ajanga. A high-fidelity assistive technology platform for real-time sign language translation with WebSocket streaming, 3D avatar simulation, and WCAG-compliant accessibility-first design.",
+        "tech_stack": [
           "React",
           "Node.js",
           "Express",
@@ -679,18 +1445,345 @@
           "JWT",
           "Recharts",
           "Framer Motion",
-          "architecture",
-          "resilience",
-          "trade-offs",
-          "Ancel Ajanga",
-          "Fullstack Engineer"
-        ]
+          "Mongoose"
+        ],
+        "key_outcome": "Real-time WebSocket streaming, 3D avatar simulation, full WCAG compliance.",
+        "category": "project"
+      },
+      {
+        "url": "https://ancel.co.ke/projects",
+        "title": "NestFi — Resilient Financial Coordination Platform",
+        "summary": "A production-grade financial platform engineered for correctness under failure, asynchronous payments, and unreliable networks.",
+        "tech_stack": [
+          "NestJS",
+          "TypeScript",
+          "PostgreSQL",
+          "MongoDB",
+          "Redis",
+          "Socket.io",
+          "RabbitMQ",
+          "Docker",
+          "Cloudflare Workers",
+          "M-Pesa Daraja"
+        ],
+        "key_outcome": "A production-grade financial platform engineered for correctness under failure, asynchronous payments, and unreliable networks.",
+        "category": "project"
+      },
+      {
+        "url": "https://ancel.co.ke/projects",
+        "title": "EduManage: One Platform, Many Schools, Zero Leaks",
+        "summary": "EduManage is an education application developed by Ancel Ajanga. Multi-tenant isolation and hierarchical RBAC enable multiple institutions on one platform.",
+        "tech_stack": [
+          "NestJS",
+          "Express.js",
+          "MongoDB",
+          "JWT",
+          "RBAC",
+          "Socket.io",
+          "TypeScript",
+          "Docker"
+        ],
+        "key_outcome": "Multi-tenant MVP with tenant-scoped access and failure-aware boundaries.",
+        "category": "project"
+      },
+      {
+        "url": "https://ancel.co.ke/projects",
+        "title": "Aegis — Autonomous Infrastructure Guardrail System",
+        "summary": "An AI-assisted reliability and remediation platform designed to detect anomalies, enforce policy, and prevent unsafe self-healing in production systems.",
+        "tech_stack": [
+          "TypeScript",
+          "Node.js",
+          "OpenTelemetry",
+          "OPA (Open Policy Agent)",
+          "PostgreSQL",
+          "Redis",
+          "Docker",
+          "Prometheus"
+        ],
+        "key_outcome": "An AI-assisted reliability and remediation platform designed to detect anomalies, enforce policy, and prevent unsafe self-healing in production systems.",
+        "category": "project"
+      },
+      {
+        "url": "https://ancel.co.ke/projects",
+        "title": "Fits by Aliv: E-Commerce That Never Oversells",
+        "summary": "Fits by Aliv is a full-stack e-commerce application developed by Ancel Ajanga: a Kenya-first marketplace for thrift and sustainable fashion. Production-grade checkout with M-Pesa STK Push, vouchers, and VAT/WHT; soft inventory reservations and verified payment reconciliation prevent oversell and double-spend.",
+        "tech_stack": [
+          "NestJS",
+          "TypeScript",
+          "PostgreSQL",
+          "Prisma",
+          "Redis",
+          "BullMQ",
+          "Flutter",
+          "Firebase Auth",
+          "M-Pesa Daraja (STK Push & Query)",
+          "Dart"
+        ],
+        "key_outcome": "No oversell, no voucher double-spend, no blind trust in payment callbacks.",
+        "category": "project"
+      }
+    ],
+    "caseStudies": [
+      {
+        "url": "https://ancel.co.ke/case-studies/taskforge",
+        "title": "TaskForge - Real-time Collaborative Project Management",
+        "summary": "TaskForge is a resilient, scalable real-time collaborative project management platform designed for engineering teams. The system handles concurrent collaboration across distributed teams, managing project workflows, task coordination, and team communication with sub-second latency and conflict-free synchronization. To address stale data and edit conflicts at scale, I designed a real-time collaborative architecture that keeps all clients in sync and isolates failures so one outage does not take down the whole system.",
+        "tech_stack": [
+          "Next.js 14",
+          "React 18",
+          "TypeScript",
+          "Node.js",
+          "Express.js",
+          "MongoDB",
+          "Socket.io",
+          "Zustand",
+          "Tailwind CSS",
+          "Framer Motion"
+        ],
+        "key_outcome": "Real-time Sync: < 500ms",
+        "business_outcome": "TaskForge supports real-time collaboration with sub-500ms latency and handles 100+ concurrent users per project without performance degradation. The platform demonstrates production-grade reliability with 99.9% uptime, comprehensive error handling, and graceful reconnection strat",
+        "scale_or_metric": "Real-time Sync: < 500ms; Concurrent Users: 100+; Performance Score: 95+",
+        "category": "case-study"
+      },
+      {
+        "url": "https://ancel.co.ke/case-studies/elearning-platform",
+        "title": "E-Learning Platform - Scalable Learning Management System",
+        "summary": "A resilient, scalable learning management system architected to handle thousands of concurrent students and hundreds of courses. The platform enables educational institutions to deliver online education at scale with sub-2-second page loads, comprehensive course management, and real-time progress tracking. To deliver scale and control without vendor lock-in, I built a custom LMS with a clear separation between API and frontend so we could optimize for 10,000+ students and sub-2-second loads while handling failures in one layer without bringing down the rest.",
+        "tech_stack": [
+          "React",
+          "TypeScript",
+          "Django",
+          "Django REST Framework",
+          "PostgreSQL",
+          "JWT",
+          "Tailwind CSS",
+          "Axios"
+        ],
+        "key_outcome": "Students: 10,000+",
+        "business_outcome": "The platform handles 10,000+ students and 500+ courses with consistent sub-2-second page load times. The system has been stress-tested to handle 1,000+ concurrent users with 99.9% uptime. The scalable architecture ensures reliable performance even as the platform grows, with opti",
+        "scale_or_metric": "Students: 10,000+; Courses: 500+; Load Time: < 2s; Uptime: 99.9%",
+        "category": "case-study"
+      },
+      {
+        "url": "https://ancel.co.ke/case-studies/attendance-system",
+        "title": "Attendance System - Educational Analytics & Management",
+        "summary": "A resilient attendance management system architected for educational institutions to automate attendance tracking, provide comprehensive analytics, and generate detailed reports. The system handles 500+ active users across multiple institutions with 95% accuracy improvement and 70% reduction in administrative overhead. To replace manual tracking with automated, multi-institution-ready analytics, I built an attendance system that isolates each institution's data and handles report generation and API failures without bringing down the whole platform.",
+        "tech_stack": [
+          "React.js",
+          "Node.js",
+          "Express.js",
+          "MongoDB",
+          "Mongoose",
+          "JWT",
+          "bcryptjs",
+          "Tailwind CSS",
+          "Chart.js"
+        ],
+        "key_outcome": "Accuracy: 95%",
+        "business_outcome": "The attendance system has improved tracking accuracy by 95% and reduced administrative time by 70%. Schools using the system report better student engagement and more accurate performance analytics. The platform supports 500+ active users across multiple institutions with compreh",
+        "scale_or_metric": "Accuracy: 95%; Time Saved: 70%; Users: 500+; Reports: 15+",
+        "category": "case-study"
+      },
+      {
+        "url": "https://ancel.co.ke/case-studies/personal-finance-tracker",
+        "title": "Personal Finance Tracker",
+        "summary": "A creative frontend experiment exploring modern UI patterns and data visualization techniques. This project demonstrates Vue 3's Composition API, reactive state management, and interactive charting capabilities for personal finance tracking. To turn raw numbers into clear spending insights, I built a client-side Vue 3 app that keeps calculations and UI in sync and degrades gracefully when storage or rendering fails.",
+        "tech_stack": [
+          "Vue.js 3",
+          "TypeScript",
+          "Chart.js",
+          "Tailwind CSS"
+        ],
+        "key_outcome": "Performance: 95+",
+        "business_outcome": "This creative experiment showcases modern frontend development practices, demonstrating Vue 3's capabilities for building interactive, data-driven applications. Users can track spending patterns with visual feedback, exploring how modern UI patterns enhance financial tracking exp",
+        "scale_or_metric": "Performance: 95+",
+        "category": "case-study"
+      },
+      {
+        "url": "https://ancel.co.ke/case-studies/fitness-class-scheduler",
+        "title": "Fitness Class Scheduler",
+        "summary": "A modern Angular SSR application for planning weekly fitness classes with dark mode, responsive design, and client-side persistence. To give instructors one place to plan and view weekly classes without losing work on refresh, I built an Angular SSR app with client-side persistence and clear error handling. Fitness instructors can now easily manage their class schedules with a modern, responsive interface that works on all devices.",
+        "tech_stack": [
+          "Angular 20",
+          "TypeScript",
+          "Angular SSR",
+          "Tailwind CSS"
+        ],
+        "key_outcome": "Load Time: < 1s",
+        "business_outcome": "Fitness instructors can now easily manage their class schedules with a modern, responsive interface that works on all devices.",
+        "scale_or_metric": "Load Time: < 1s; SEO Score: 98/100",
+        "category": "case-study"
+      },
+      {
+        "url": "https://ancel.co.ke/case-studies/habit-tracker",
+        "title": "Habit Tracker & Streak Counter",
+        "summary": "A creative Progressive Web App experiment exploring offline-first design patterns and modern UI interactions. This project demonstrates PWA capabilities, service workers, and engaging visual feedback for habit tracking. To make habit tracking work even when the network is unreliable, I built a PWA that runs and persists data offline so users never lose streak or progress.",
+        "tech_stack": [
+          "React 19",
+          "PWA",
+          "Chart.js",
+          "Tailwind CSS"
+        ],
+        "key_outcome": "PWA Score: 100/100",
+        "business_outcome": "This creative experiment showcases PWA development practices, demonstrating offline-first design, service worker implementation, and modern UI patterns for building engaging productivity applications.",
+        "scale_or_metric": "PWA Score: 100/100; Offline Support: 100%",
+        "category": "case-study"
+      },
+      {
+        "url": "https://ancel.co.ke/case-studies/event-countdown-timer",
+        "title": "Event Countdown Timer",
+        "summary": "A feature-rich countdown timer web application for creating and managing multiple countdowns for various life events with recurring events and smart notifications. To keep countdowns simple and always available, I built a vanilla JS app with local persistence and clear fallbacks when storage or notifications fail. Users can now easily track multiple countdowns with automatic yearly repetition and visual customization.",
+        "tech_stack": [
+          "Vanilla JavaScript",
+          "HTML5",
+          "CSS3",
+          "Canvas API"
+        ],
+        "key_outcome": "Bundle Size: < 50KB",
+        "business_outcome": "Users can now easily track multiple countdowns with automatic yearly repetition and visual customization.",
+        "scale_or_metric": "Bundle Size: < 50KB; Load Time: < 500ms",
+        "category": "case-study"
+      },
+      {
+        "url": "https://ancel.co.ke/case-studies/travelogue",
+        "title": "Travelogue - Travel Storytelling Website",
+        "summary": "A comprehensive travel platform featuring interactive world maps, travel stories, destination exploration, and responsive design for travel enthusiasts. To combine maps and stories in one place, I built a React app with Leaflet so content loads progressively and map or API failures do not break the rest of the experience. Users can now explore destinations through interactive maps and read detailed travel experiences from other travelers.",
+        "tech_stack": [
+          "React 18",
+          "Leaflet.js",
+          "OpenStreetMap",
+          "Tailwind CSS"
+        ],
+        "key_outcome": "Map Load Time: < 2s",
+        "business_outcome": "Users can now explore destinations through interactive maps and read detailed travel experiences from other travelers.",
+        "scale_or_metric": "Map Load Time: < 2s",
+        "category": "case-study"
+      },
+      {
+        "url": "https://ancel.co.ke/case-studies/rasoha-academy",
+        "title": "Rasoha Academy - School Website",
+        "summary": "A modern, responsive website for a private school in Narok, Kenya, providing comprehensive information about programs, events, and resources for students and parents. To give the school one reliable, fast site that works even on slow connections, I built a React PWA with clear structure and offline fallbacks. The school now has a professional online presence that effectively communicates with students, parents, and the community.",
+        "tech_stack": [
+          "React 19.1.1",
+          "Tailwind CSS",
+          "PWA",
+          "React Icons"
+        ],
+        "key_outcome": "Performance: 95+",
+        "business_outcome": "The school now has a professional online presence that effectively communicates with students, parents, and the community.",
+        "scale_or_metric": "Performance: 95+; Accessibility: 98/100",
+        "category": "case-study"
+      },
+      {
+        "url": "https://ancel.co.ke/case-studies/banking-system",
+        "title": "Banking System",
+        "summary": "A simple, console-based Banking System implemented in pure Java to demonstrate core OOP principles (Encapsulation, Inheritance, Abstraction, Polymorphism). Includes customer management, savings/checking accounts, deposits, withdrawals, transfers, and transaction logs. To demonstrate clean OOP and domain modeling, I designed a small banking core where accounts, transactions, and the bank are clearly separated and easy to reason about.",
+        "tech_stack": [
+          "Java 17+",
+          "OOP",
+          "Maven",
+          "Gradle"
+        ],
+        "key_outcome": "Frameworks: 0",
+        "business_outcome": "Clear demonstration of OOP fundamentals, clean architecture, and maintainable code suitable for technical interviews and backend design discussions.",
+        "scale_or_metric": "Frameworks: 0",
+        "category": "case-study"
+      },
+      {
+        "url": "https://ancel.co.ke/case-studies/educhain",
+        "title": "EduChain - Blockchain Certificate Management",
+        "summary": "EduChain is a resilient, decentralized certificate management system architected on Web3 principles, issuing verifiable academic certificates as ERC721 NFTs on the Ethereum blockchain. The platform enables educational institutions to issue tamper-proof, blockchain-verified certificates while providing students with permanent, verifiable proof of achievements through hybrid storage (MongoDB + IPFS + Blockchain). To make credentials tamper-proof and verifiable without a central authority, I designed a hybrid system that keeps issuance fast and cheap while putting permanent proof on-chain.",
+        "tech_stack": [
+          "React 19",
+          "Tailwind CSS",
+          "RainbowKit",
+          "Wagmi",
+          "ethers.js",
+          "Node.js",
+          "Express.js",
+          "MongoDB",
+          "Mongoose",
+          "Solidity",
+          "Hardhat",
+          "IPFS"
+        ],
+        "key_outcome": "Smart Contract: ERC721-compliant",
+        "business_outcome": "EduChain provides a secure, decentralized solution for certificate management with instant verification capabilities. The platform ensures certificates are permanently accessible, tamper-proof, and easily verifiable by anyone with the certificate token ID. The system uses OpenZep",
+        "scale_or_metric": "Smart Contract: ERC721-compliant; API Endpoints: 5 RESTful; Security: Owner-only; Storage: Dual system",
+        "category": "case-study"
+      },
+      {
+        "url": "https://ancel.co.ke/case-studies/ledgerx",
+        "title": "LedgerX — Secure, Multi-Tenant Financial Platform",
+        "summary": "LedgerX is a production-grade, multi-tenant financial platform designed to handle invoicing, payments, accounting (double-entry ledger), audit/compliance, fraud detection, and system diagnostics in a single, cohesive system. To fix weak boundaries and poor auditability, I designed LedgerX so every request is org-scoped, every important action is an event, and payments and diagnostics fail in controlled ways without corrupting the ledger. LedgerX demonstrates senior-level backend architecture, security-first thinking, event-driven system design, fintech-grade data integrity, and operational maturity beyond CRUD.",
+        "tech_stack": [
+          "Next.js 14",
+          "React 18",
+          "TypeScript",
+          "NestJS",
+          "PostgreSQL",
+          "Prisma",
+          "MongoDB",
+          "Mongoose",
+          "JWT",
+          "Passport.js",
+          "TanStack Query",
+          "Recharts",
+          "Tailwind CSS",
+          "Axios"
+        ],
+        "key_outcome": "Multi-Tenancy: Org-scoped",
+        "business_outcome": "LedgerX demonstrates senior-level backend architecture, security-first thinking, event-driven system design, fintech-grade data integrity, and operational maturity beyond CRUD. It is designed to be read, reviewed, and respected by experienced engineers.",
+        "scale_or_metric": "Multi-Tenancy: Org-scoped; Ledger: Double-entry; Payments: Stripe + M-Pesa; Observability: Health + Metrics",
+        "category": "case-study"
+      },
+      {
+        "url": "https://ancel.co.ke/case-studies/opsflow",
+        "title": "OpsFlow - Incident & Operations Management Platform",
+        "summary": "OpsFlow is a production-ready incident and operations management platform architected for engineering teams, combining incident response, workflow management, task coordination, and knowledge sharing into a single secure team-based system. The platform features dual-database architecture (PostgreSQL + MongoDB), real-time WebSocket updates, and team-based multi-tenancy with 50+ API endpoints. To unify incidents, workflows, and knowledge in one place without expensive infra, I built OpsFlow with team-scoped data and real-time updates so failures in one area do not take down the rest.",
+        "tech_stack": [
+          "NestJS",
+          "Next.js 14",
+          "TypeScript",
+          "PostgreSQL",
+          "MongoDB",
+          "Prisma",
+          "WebSockets",
+          "JWT",
+          "RBAC",
+          "Tailwind CSS"
+        ],
+        "key_outcome": "API Endpoints: 50+",
+        "business_outcome": "Production-ready system with 50+ API endpoints and real-time incident updates without paid infrastructure. Secure team-based multi-tenant architecture with complete data isolation, fully documented setup and deployment guides, and responsive UI across mobile, tablet, and desktop.",
+        "scale_or_metric": "API Endpoints: 50+; Databases: 2; Real-time Updates: WebSockets; Access Control: RBAC + Teams",
+        "category": "case-study"
+      },
+      {
+        "url": "https://ancel.co.ke/case-studies/signflow",
+        "title": "SignFlow - Real-Time Assistive Tech Simulation for Sign Language",
+        "summary": "SignFlow is a high-fidelity assistive technology platform architected for real-time sign language translation, exploring the architectural requirements for scaling accessibility platforms. The system features WebSocket-powered streaming, 3D avatar simulation with natural variation, and accessibility-first design with WCAG compliance, demonstrating production-grade architecture for specialized user bases. To move from robotic loops to a responsive, natural-feeling interpreter, I built SignFlow so translation streams in real time and the 3D avatar varies per phrase, with failures in rendering or network isolated from the core experience.",
+        "tech_stack": [
+          "React",
+          "Node.js",
+          "Express",
+          "MongoDB",
+          "WebSockets",
+          "Three.js",
+          "React Three Fiber",
+          "JWT",
+          "Recharts",
+          "Framer Motion"
+        ],
+        "key_outcome": "Real-time Latency: Near-zero",
+        "business_outcome": "Fully implemented assistive technology prototype demonstrating real-time system design using WebSockets, scalable cloud architecture with MongoDB Atlas, intentional UX for specialized user bases, and product-level thinking bridging coding projects and viable market solutions. The",
+        "scale_or_metric": "Real-time Latency: Near-zero; Animation Variations: Multiple; Accessibility: WCAG Compliant; Database: MongoDB Atlas",
+        "category": "case-study"
       },
       {
         "url": "https://ancel.co.ke/case-studies/nestfi",
-        "slug": "nestfi",
-        "name": "NestFi — Resilient Financial Coordination Platform",
-        "keywords": [
+        "title": "NestFi — Resilient Financial Coordination Platform",
+        "summary": "NestFi is a production-grade finance platform designed for financial correctness under failure. Built by Ancel Ajanga, it ensures predictable behavior across asynchronous payment providers, delayed or duplicated callbacks, unreliable networks, and hybrid storage layers. PostgreSQL enforces ledger integrity, MongoDB handles compliance and audit events, and Redis provides ephemeral caching and distributed locking with fail-closed safety.",
+        "tech_stack": [
           "NestJS",
           "TypeScript",
           "PostgreSQL",
@@ -703,19 +1796,18 @@
           "Socket.io",
           "React Native",
           "Next.js",
-          "RabbitMQ",
-          "architecture",
-          "resilience",
-          "trade-offs",
-          "Ancel Ajanga",
-          "Fullstack Engineer"
-        ]
+          "RabbitMQ"
+        ],
+        "key_outcome": "Completion: ~87%",
+        "business_outcome": "NestFi demonstrates capstone-level engineering: correctness-first design where financial truth is never inferred; explicit handling of distributed-system failure modes (timeouts, split-brain risk, replayed callbacks); real-time, user-trust-focused payment experience; strong audit",
+        "scale_or_metric": "Completion: ~87%; Datastores: 3; Payment Integration: M-Pesa Daraja; Resilience: Circuit breakers + fail-closed locks",
+        "category": "case-study"
       },
       {
         "url": "https://ancel.co.ke/case-studies/edumanage",
-        "slug": "edumanage",
-        "name": "EduManage — Multi-Tenant School Management SaaS",
-        "keywords": [
+        "title": "EduManage — Multi-Tenant School Management SaaS",
+        "summary": "A comprehensive educational management system designed to streamline administrative tasks, student enrollment, and academic reporting. To replace fragmented tools with one system without mixing school data or permissions, I built EduManage with tenant-scoped access and hierarchical RBAC so failures in one institution or module do not affect others. Delivered a unified school operations platform that reduces administrative overhead, improves record consistency, and enables faster, more reliable reporting.",
+        "tech_stack": [
           "NestJS",
           "Express.js",
           "MongoDB",
@@ -723,19 +1815,18 @@
           "RBAC",
           "Socket.io",
           "TypeScript",
-          "Docker",
-          "architecture",
-          "resilience",
-          "trade-offs",
-          "Ancel Ajanga",
-          "Fullstack Engineer"
-        ]
+          "Docker"
+        ],
+        "key_outcome": "Status: ~85%",
+        "business_outcome": "Delivered a unified school operations platform that reduces administrative overhead, improves record consistency, and enables faster, more reliable reporting. The system is structured for maintainability, with clear module boundaries that support incremental expansion over time.",
+        "scale_or_metric": "Status: ~85%; Multi-Tenancy: Tenant-scoped; AuthZ: Hierarchical RBAC; Real-time: Socket.io",
+        "category": "case-study"
       },
       {
         "url": "https://ancel.co.ke/case-studies/aegis",
-        "slug": "aegis",
-        "name": "Aegis — Self-Healing Infrastructure with Policy and AI",
-        "keywords": [
+        "title": "Aegis — Self-Healing Infrastructure with Policy and AI",
+        "summary": "Aegis monitors infrastructure behavior, detects anomalies using AI, evaluates security policies, and executes tightly controlled remediation actions. It is built with strict isolation boundaries, auditability, and failure-aware automation to avoid unsafe self-healing. To make automation safe and auditable, I separated observation, intelligence, policy, and execution so the AI recommends but never executes—and every action is policy-checked and signed.",
+        "tech_stack": [
           "NestJS",
           "FastAPI",
           "Next.js",
@@ -747,19 +1838,18 @@
           "Grafana",
           "JWT",
           "TypeScript",
-          "Python",
-          "architecture",
-          "resilience",
-          "trade-offs",
-          "Ancel Ajanga",
-          "Fullstack Engineer"
-        ]
+          "Python"
+        ],
+        "key_outcome": "Status: ~95%",
+        "business_outcome": "Aegis guarantees: no unaudited actions, no blind AI execution, no privilege escalation, no silent failures. Security highlights include JWT + RBAC, HMAC-signed executor actions, namespace allowlisting, immutable audit logs, and default-deny network policies. The platform is desig",
+        "scale_or_metric": "Status: ~95%; Security: Policy + HMAC; AI Role: Recommend only; Audit: Immutable",
+        "category": "case-study"
       },
       {
         "url": "https://ancel.co.ke/case-studies/fits-by-aliv",
-        "slug": "fits-by-aliv",
-        "name": "Fits by Aliv — Kenya-First E-Commerce with Payment-Safe Workflows",
-        "keywords": [
+        "title": "Fits by Aliv — Kenya-First E-Commerce with Payment-Safe Workflows",
+        "summary": "Fits by Aliv is a Kenya-first e-commerce marketplace (thrift/sustainable fashion) with payment-safe workflows, inventory self-healing, and hardened security. Backend is NestJS with PostgreSQL (Prisma); clients are Flutter (mobile, web, desktop). Identity is Firebase Auth; payments are M-Pesa via Safaricom Daraja API.",
+        "tech_stack": [
           "NestJS",
           "TypeScript",
           "PostgreSQL",
@@ -768,17 +1858,268 @@
           "BullMQ",
           "Flutter",
           "Firebase Auth",
-          "M-Pesa Daraja",
-          "architecture",
-          "resilience",
-          "trade-offs",
-          "Ancel Ajanga",
-          "Fullstack Engineer"
-        ]
+          "M-Pesa Daraja"
+        ],
+        "key_outcome": "Status: ~90–95%",
+        "business_outcome": "The system guarantees: no inventory oversell due to race conditions, no voucher double-spend, no unaudited state changes, no blind trust in payment callbacks, no unbounded automation. Security highlights: Firebase JWT verification + server-side authorization, idempotency keys on",
+        "scale_or_metric": "Status: ~90–95%; Payment: Verify first; Voucher: Pessimistic; Audit: Immutable",
+        "category": "case-study"
+      }
+    ],
+    "articles": [
+      {
+        "url": "https://ancel.co.ke/developer-journal/building-taskforge-with-next-js-and-socket-io-lessons-learned",
+        "title": "Building TaskForge with Next.js and Socket.io — Lessons Learned",
+        "summary": "Exploring the challenges and solutions in building a real-time collaborative project management platform. From WebSocket connections to optimistic UI updates and conflict resolution. Building TaskForge was one of my most challenging and rewarding projects.",
+        "tech_stack": [
+          "Next.js",
+          "Socket.io",
+          "Real-time",
+          "Collaboration",
+          "MongoDB"
+        ],
+        "key_outcome": "Exploring the challenges and solutions in building a real-time collaborative project management platform. From WebSocket",
+        "category": "article"
+      },
+      {
+        "url": "https://ancel.co.ke/developer-journal/scaling-an-e-learning-platform-with-django-react",
+        "title": "Scaling an E-Learning Platform with Django + React",
+        "summary": "How I built a scalable e-learning platform that handles thousands of students and courses. Covering authentication, course management, and video delivery optimization. Building a scalable e-learning platform requires careful consideration of architecture, authentication, and content delivery.",
+        "tech_stack": [
+          "Django",
+          "React",
+          "E-Learning",
+          "Scalability",
+          "Authentication"
+        ],
+        "key_outcome": "How I built a scalable e-learning platform that handles thousands of students and courses. Covering authentication, cour",
+        "category": "article"
+      },
+      {
+        "url": "https://ancel.co.ke/developer-journal/why-i-built-a-finance-tracker-in-vue-3",
+        "title": "Why I Built a Finance Tracker in Vue 3",
+        "summary": "Exploring the decision to use Vue 3 for a personal finance application. Comparing Vue's reactivity system with other frameworks and the benefits for financial data visualization. When I decided to build a personal finance tracker, I had to choose between React, Angular, and Vue 3.",
+        "tech_stack": [
+          "Vue.js",
+          "Finance",
+          "Data Visualization",
+          "TypeScript",
+          "Chart.js"
+        ],
+        "key_outcome": "Exploring the decision to use Vue 3 for a personal finance application. Comparing Vue's reactivity system with other fra",
+        "category": "article"
+      },
+      {
+        "url": "https://ancel.co.ke/developer-journal/angular-20-in-production-the-fitness-class-scheduler-journey",
+        "title": "Angular 20 in Production: The Fitness Class Scheduler Journey",
+        "summary": "My experience building a fitness class scheduler with Angular 20's new features. Covering SSR, signals, and the improved developer experience. Angular 20 brought significant improvements to the framework, and I was excited to build a fitness class scheduler to explore these new features in a real-world application.",
+        "tech_stack": [
+          "Angular",
+          "SSR",
+          "Signals",
+          "TypeScript",
+          "Fitness"
+        ],
+        "key_outcome": "My experience building a fitness class scheduler with Angular 20's new features. Covering SSR, signals, and the improved",
+        "category": "article"
+      },
+      {
+        "url": "https://ancel.co.ke/developer-journal/from-student-to-freelancer-my-journey-since-2021",
+        "title": "From Student to Freelancer: My Journey Since 2021",
+        "summary": "Reflecting on my coding journey from learning HTML and CSS in school to becoming a freelance developer. The challenges, learnings, and growth over the past few years. Looking back at my coding journey since 2021, I'm amazed at how much I've learned and grown.",
+        "tech_stack": [
+          "Journey",
+          "Learning",
+          "Freelancing",
+          "Growth",
+          "Reflection"
+        ],
+        "key_outcome": "Reflecting on my coding journey from learning HTML and CSS in school to becoming a freelance developer. The challenges,",
+        "category": "article"
+      },
+      {
+        "url": "https://ancel.co.ke/developer-journal/how-travelogue-taught-me-the-power-of-maps-in-web-apps",
+        "title": "How Travelogue Taught Me the Power of Maps in Web Apps",
+        "summary": "Building an interactive travel website with Leaflet.js and OpenStreetMap. Exploring the potential of maps in web applications and the technical challenges of map integration.",
+        "tech_stack": [
+          "Maps",
+          "Leaflet.js",
+          "Travel",
+          "Interactive",
+          "OpenStreetMap"
+        ],
+        "key_outcome": "Building an interactive travel website with Leaflet.js and OpenStreetMap. Exploring the potential of maps in web applica",
+        "category": "article"
+      },
+      {
+        "url": "https://ancel.co.ke/developer-journal/designing-a-console-banking-system-to-showcase-oop-java",
+        "title": "Designing a Console Banking System to Showcase OOP (Java)",
+        "summary": "A deep dive into a pure Java console application that demonstrates encapsulation, inheritance, abstraction, and polymorphism through realistic banking operations. This project intentionally avoids frameworks and databases to focus on the fundamentals of object‑oriented design.\n\nI.",
+        "tech_stack": [
+          "Java",
+          "OOP",
+          "Design",
+          "Console"
+        ],
+        "key_outcome": "A deep dive into a pure Java console application that demonstrates encapsulation, inheritance, abstraction, and polymorp",
+        "category": "article"
+      },
+      {
+        "url": "https://ancel.co.ke/developer-journal/building-educhain-a-web3-journey-into-blockchain-certificate-management",
+        "title": "Building EduChain: A Web3 Journey into Blockchain Certificate Management",
+        "summary": "Exploring the challenges and solutions in building a full-stack Web3 application that issues verifiable academic certificates as ERC721 NFTs on the Ethereum blockchain. EduChain represents my first deep dive into Web3 development, combining traditional full-stack skills with blockchain technology to solve a real-world problem in education.\n\nI.",
+        "tech_stack": [
+          "Web3",
+          "Blockchain",
+          "Solidity",
+          "NFT",
+          "IPFS",
+          "Ethereum"
+        ],
+        "key_outcome": "Exploring the challenges and solutions in building a full-stack Web3 application that issues verifiable academic certifi",
+        "category": "article"
+      },
+      {
+        "url": "https://ancel.co.ke/developer-journal/ledgerx-secure-multi-tenant-financial-platform",
+        "title": "LedgerX — Secure, Multi-Tenant Financial Platform",
+        "summary": "How I designed a production-grade fintech backend that is auditable, resilient, secure, and operationally observable—without overengineering. LedgerX is a production-grade, multi-tenant financial platform I built to answer: How would I design a modern fintech backend that is auditable, resilient, secure, and operationally observable—without overengineering or hiding behind abstractions?\n\nI.",
+        "tech_stack": [
+          "NestJS",
+          "Next.js",
+          "TypeScript",
+          "PostgreSQL",
+          "MongoDB",
+          "Finance",
+          "Multi-Tenant",
+          "Stripe",
+          "M-Pesa"
+        ],
+        "key_outcome": "How I designed a production-grade fintech backend that is auditable, resilient, secure, and operationally observable—wit",
+        "category": "article"
+      },
+      {
+        "url": "https://ancel.co.ke/developer-journal/building-opsflow-a-production-ready-incident-management-platform",
+        "title": "Building OpsFlow: A Production-Ready Incident Management Platform",
+        "summary": "Exploring the architecture and challenges in building a comprehensive incident and workflow management platform with NestJS, Next.js, and dual-database design. OpsFlow represents my journey into building enterprise-grade incident management systems, combining modern full-stack technologies with real-time features, multi-tenant architecture and operational knowledge management.",
+        "tech_stack": [
+          "NestJS",
+          "Next.js",
+          "TypeScript",
+          "PostgreSQL",
+          "MongoDB",
+          "WebSockets",
+          "Incident Management",
+          "Multi-Tenant"
+        ],
+        "key_outcome": "Exploring the architecture and challenges in building a comprehensive incident and workflow management platform with Nes",
+        "category": "article"
+      },
+      {
+        "url": "https://ancel.co.ke/developer-journal/building-signflow-a-real-time-assistive-technology-platform-for-sign-language-translation",
+        "title": "Building SignFlow: A Real-Time Assistive Technology Platform for Sign Language Translation",
+        "summary": "Exploring the architecture and challenges in building a high-fidelity assistive technology simulation for real-time sign language translation with 3D avatar animation and WebSocket streaming. SignFlow represents my journey into building assistive technology platforms, combining real-time communication, 3D graphics, and accessibility-first design to create an immersive sign language translation experience.\n\nI.",
+        "tech_stack": [
+          "React",
+          "Node.js",
+          "MongoDB",
+          "WebSockets",
+          "Three.js",
+          "Assistive Technology",
+          "Accessibility",
+          "Real-time"
+        ],
+        "key_outcome": "Exploring the architecture and challenges in building a high-fidelity assistive technology simulation for real-time sign",
+        "category": "article"
+      },
+      {
+        "url": "https://ancel.co.ke/developer-journal/aegis-production-systems-with-restraint-assume-failure-design-for-abuse",
+        "title": "Aegis: Production Systems with Restraint — Assume Failure, Design for Abuse",
+        "summary": "Building a self-healing infrastructure platform where AI recommends, policy authorizes, and humans retain control. How Aegis enforces no unaudited actions, no blind AI execution, and a trail of evidence for every decision. Aegis is a self-healing infrastructure platform I built to address a real problem: modern infrastructure fails silently, and automation often introduces more risk than it removes.",
+        "tech_stack": [
+          "Backend",
+          "Security",
+          "AI",
+          "DevOps",
+          "Kubernetes",
+          "Observability",
+          "Policy",
+          "Self-Healing"
+        ],
+        "key_outcome": "Building a self-healing infrastructure platform where AI recommends, policy authorizes, and humans retain control. How A",
+        "category": "article"
+      },
+      {
+        "url": "https://ancel.co.ke/developer-journal/nestfi-resilient-financial-coordination-platform-correctness-under-failure",
+        "title": "NestFi: Resilient Financial Coordination Platform — Correctness Under Failure",
+        "summary": "A production-grade finance platform designed for financial correctness under failure. Ledger-backed double-entry, M-Pesa B2C with idempotent handling, Socket.io real-time UX, and fail-closed distributed locks.",
+        "tech_stack": [
+          "NestJS",
+          "TypeScript",
+          "PostgreSQL",
+          "MongoDB",
+          "Redis",
+          "M-Pesa",
+          "Finance",
+          "Resilience",
+          "Socket.io"
+        ],
+        "key_outcome": "A production-grade finance platform designed for financial correctness under failure. Ledger-backed double-entry, M-Pesa",
+        "category": "article"
+      },
+      {
+        "url": "https://ancel.co.ke/developer-journal/fits-by-aliv-kenya-first-e-commerce-with-payment-safe-workflows",
+        "title": "Fits by Aliv: Kenya-First E-Commerce with Payment-Safe Workflows",
+        "summary": "Building a production-grade e-commerce backend designed around failure, abuse, and latency. Soft reservations, idempotent orders, M-Pesa verification, and bounded self-healing. Fits by Aliv is a Kenya-first e-commerce marketplace (thrift/sustainable fashion) I built to answer: How do you run commerce when payments are asynchronous, networks are unreliable, and inventory errors mean lost revenue and trust?",
+        "tech_stack": [
+          "NestJS",
+          "Flutter",
+          "M-Pesa",
+          "E-Commerce",
+          "PostgreSQL",
+          "BullMQ",
+          "Firebase",
+          "Security"
+        ],
+        "key_outcome": "Building a production-grade e-commerce backend designed around failure, abuse, and latency. Soft reservations, idempoten",
+        "category": "article"
+      }
+    ],
+    "guides": [
+      {
+        "url": "https://ancel.co.ke/guides/building-real-time-collaboration-nextjs-socketio",
+        "title": "Building Real-Time Collaboration with Next.js and Socket.io",
+        "summary": "How to build production real-time collaboration with Next.js and Socket.io: architecture, conflict resolution, and sub-500ms latency.",
+        "tech_stack": [
+          "Next.js",
+          "Socket.io",
+          "Node.js",
+          "MongoDB",
+          "TypeScript",
+          "Zustand"
+        ],
+        "key_outcome": "TaskForge achieves real-time sync under 500ms, supports 100+ concurrent users per project, and maintains 99.9% uptime wi",
+        "category": "guide"
+      },
+      {
+        "url": "https://ancel.co.ke/guides/nextjs-vs-django-for-saas",
+        "title": "Next.js vs Django for SaaS: When to Choose Which",
+        "summary": "A practical comparison of Next.js and Django for SaaS: full-stack JavaScript vs Python, real-time vs request-response, and when each shines. In practice: TaskForge (Next.",
+        "tech_stack": [
+          "Next.js",
+          "Django",
+          "React",
+          "Node.js",
+          "PostgreSQL",
+          "MongoDB"
+        ],
+        "key_outcome": "In practice: TaskForge (Next.js) delivers real-time collaboration and sub-500ms sync; the E-Learning Platform (Django + ",
+        "category": "guide"
       }
     ]
   },
   "totalProjects": 18,
   "totalCaseStudies": 18,
-  "totalPages": 9
+  "totalArticles": 14,
+  "totalGuides": 2,
+  "totalPages": 11
 }

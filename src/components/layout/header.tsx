@@ -1,13 +1,13 @@
 import * as React from "react"
 import { useState, useEffect, useCallback } from "react"
-import { motion, AnimatePresence } from "framer-motion"
+import { LazyMotion, domAnimation, m, AnimatePresence } from "framer-motion"
 import Link from "next/link"
 import { useRouter } from "next/router"
 import { Helmet } from "react-helmet-async"
 import { Button } from "../../components/ui/button"
 import { ThemeToggle } from "../../components/ui/theme-toggle"
 import { cn } from "../../lib/utils"
-import { Menu, X, Home, User, FileText, Briefcase, Code, Calendar, FlaskConical, Mail, BookOpen, Star } from "lucide-react"
+import { Menu, X, Home, User, FileText, Briefcase, Code, Calendar, FlaskConical, Mail, BookOpen, BookMarked, Star } from "lucide-react"
 import { generateSiteNavigationSchema } from "../../components/seo/schemas"
 import { useScrollDirection } from "../../hooks/useScrollDirection"
 import { useAnimationsEnabled } from "../../contexts/AnimationsContext"
@@ -25,6 +25,7 @@ const primaryNav = [
   { name: "Today's Highlights", href: '/#highlights', icon: Star },
   { name: 'Case Studies', href: '/case-studies', icon: FileText },
   { name: 'Developer Journal', href: '/developer-journal', icon: BookOpen },
+  { name: 'Guides', href: '/guides', icon: BookMarked },
   { name: 'Timeline', href: '/timeline', icon: Calendar },
   { name: 'Stack', href: '/stack', icon: Code },
   { name: 'Labs & Experiments', href: '/labs-experiments', icon: FlaskConical },
@@ -191,8 +192,9 @@ function HeaderComponent({ className }: HeaderProps) {
           {JSON.stringify(navSchema)}
         </script>
       </Helmet>
-      <header
-        role="banner"
+      <LazyMotion features={domAnimation}>
+        <header
+          role="banner"
         className={cn(
           "fixed top-0 left-0 right-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 overflow-x-hidden scrollbar-hide",
           "transition-transform duration-300 ease-out",
@@ -218,7 +220,7 @@ function HeaderComponent({ className }: HeaderProps) {
             </div>
 
             {/* Center: Primary nav (desktop only), cohesive group */}
-            <motion.nav
+            <m.nav
               className="hidden lg:flex items-center justify-center gap-0.5 sm:gap-1 min-w-0 flex-1 overflow-x-hidden scrollbar-hide"
               role="navigation"
               aria-label="Main navigation"
@@ -227,7 +229,7 @@ function HeaderComponent({ className }: HeaderProps) {
               animate="visible"
             >
               {primaryNav.map((item) => (
-                <motion.div key={item.name} variants={navItemVariants} whileHover={getHoverScale(animationsEnabled)} transition={getHoverTransition(animationsEnabled)}>
+                <m.div key={item.name} variants={navItemVariants} whileHover={getHoverScale(animationsEnabled)} transition={getHoverTransition(animationsEnabled)}>
                   <NavLink
                     item={item}
                     pathname={pathname}
@@ -235,14 +237,14 @@ function HeaderComponent({ className }: HeaderProps) {
                     onHashLink={handleHashLink}
                     variant="desktop"
                   />
-                </motion.div>
+                </m.div>
               ))}
-            </motion.nav>
+            </m.nav>
 
             {/* Right: Contact + Screen (theme) on desktop; Theme + Hamburger on mobile */}
             <div className="flex items-center gap-0.5 sm:gap-1 shrink-0">
               <div className="hidden lg:flex items-center">
-                <motion.div variants={navItemVariants} whileHover={getHoverScale(animationsEnabled)} transition={getHoverTransition(animationsEnabled)}>
+                <m.div variants={navItemVariants} whileHover={getHoverScale(animationsEnabled)} transition={getHoverTransition(animationsEnabled)}>
                   <NavLink
                     item={contactNav}
                     pathname={pathname}
@@ -250,7 +252,7 @@ function HeaderComponent({ className }: HeaderProps) {
                     onHashLink={handleHashLink}
                     variant="desktop"
                   />
-                </motion.div>
+                </m.div>
               </div>
               <ThemeToggle />
               <Button
@@ -275,7 +277,7 @@ function HeaderComponent({ className }: HeaderProps) {
           {/* Mobile: vertical menu */}
           <AnimatePresence>
             {isOpen && (
-              <motion.div
+              <m.div
                 initial={{ opacity: 0, height: 0 }}
                 animate={{ opacity: 1, height: "auto" }}
                 exit={{ opacity: 0, height: 0 }}
@@ -303,11 +305,12 @@ function HeaderComponent({ className }: HeaderProps) {
                     />
                   ))}
                 </nav>
-              </motion.div>
+              </m.div>
             )}
           </AnimatePresence>
         </div>
-      </header>
+        </header>
+      </LazyMotion>
     </>
   )
 }

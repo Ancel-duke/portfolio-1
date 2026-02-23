@@ -1,6 +1,6 @@
 import * as React from "react"
 import Link from "next/link"
-import { motion } from "framer-motion"
+import { LazyMotion, domAnimation, m, type Variants } from "framer-motion"
 import { useAnimationsEnabled } from "../../contexts/AnimationsContext"
 import { getSectionVariants } from "../../lib/animation-variants"
 import { Card } from "../../components/ui/card"
@@ -101,6 +101,9 @@ export const CaseStudiesGrid = React.memo(function CaseStudiesGrid({
                 ? "Enterprise-grade systems showcasing resilient architecture, hybrid databases, and scalable solutions." 
                 : "Deep dives into my most challenging and rewarding projects, showcasing the process, challenges, and outcomes."}
             </p>
+            <p className="text-sm text-muted-foreground max-w-2xl mx-auto mt-3">
+              Looking to hire a <Link href="/nextjs-developer-kenya" className="text-primary hover:underline font-medium">Next.js developer in Kenya</Link> or full-stack developer in Nairobi? See my dedicated service page with outcomes and contact details.
+            </p>
           </div>
 
           {/* 
@@ -110,17 +113,19 @@ export const CaseStudiesGrid = React.memo(function CaseStudiesGrid({
             - Consistent 32px gap (gap-8)
             - Equal height cards (items-stretch implied by h-full on cards)
           */}
-          <motion.div
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-          >
-            {selectedCaseStudies.map((caseStudy: CaseStudy, index: number) => (
-              <CaseStudyCard key={caseStudy.id} caseStudy={caseStudy} index={index} itemVariants={itemVariants} />
-            ))}
-          </motion.div>
+          <LazyMotion features={domAnimation}>
+            <m.div
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+              variants={containerVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-100px" }}
+            >
+              {selectedCaseStudies.map((caseStudy: CaseStudy, index: number) => (
+                <CaseStudyCard key={caseStudy.id} caseStudy={caseStudy} index={index} itemVariants={itemVariants} />
+              ))}
+            </m.div>
+          </LazyMotion>
 
           {/* CTA: Professional spacing (mt-16 = 64px) */}
           {showViewAll && limit && selectedCaseStudies.length > 0 && (
@@ -140,17 +145,19 @@ export const CaseStudiesGrid = React.memo(function CaseStudiesGrid({
       ) : (
         // EMBEDDED MODE (/case-studies page)
         // Parent provides container, this renders grid only
-        <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-        >
-          {selectedCaseStudies.map((caseStudy: CaseStudy, index: number) => (
-            <CaseStudyCard key={caseStudy.id} caseStudy={caseStudy} index={index} itemVariants={itemVariants} />
-          ))}
-        </motion.div>
+        <LazyMotion features={domAnimation}>
+          <m.div
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+          >
+            {selectedCaseStudies.map((caseStudy: CaseStudy, index: number) => (
+              <CaseStudyCard key={caseStudy.id} caseStudy={caseStudy} index={index} itemVariants={itemVariants} />
+            ))}
+          </m.div>
+        </LazyMotion>
       )}
     </section>
   )
@@ -163,9 +170,9 @@ export const CaseStudiesGrid = React.memo(function CaseStudiesGrid({
   - Equal heights via h-full
   - Consistent internal spacing
 */
-function CaseStudyCard({ caseStudy, index, itemVariants }: { caseStudy: CaseStudy; index: number; itemVariants: { hidden: object; visible: object } }) {
+function CaseStudyCard({ caseStudy, index, itemVariants }: { caseStudy: CaseStudy; index: number; itemVariants: Variants }) {
   return (
-    <motion.article variants={itemVariants} className="h-full">
+    <m.article variants={itemVariants} className="h-full">
       <Link 
         href={`/case-studies/${caseStudy.slug}`}
         className="block h-full group"
@@ -189,7 +196,7 @@ function CaseStudyCard({ caseStudy, index, itemVariants }: { caseStudy: CaseStud
               src={caseStudy.images.hero}
               alt={caseStudy.title}
               className="w-full h-full group-hover:scale-110 transition-transform duration-700 ease-out"
-              priority={index < 2}
+              priority={false}
               loading={index < 2 ? "eager" : "lazy"}
               skipNetlifyCDN
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -232,6 +239,6 @@ function CaseStudyCard({ caseStudy, index, itemVariants }: { caseStudy: CaseStud
           </div>
         </Card>
       </Link>
-    </motion.article>
+    </m.article>
   )
 }

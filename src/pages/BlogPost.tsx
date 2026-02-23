@@ -1,7 +1,7 @@
 import React from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
+import { LazyMotion, domAnimation, m } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
 import { ArrowLeft } from 'lucide-react';
 import { Button } from '../components/ui/button';
@@ -75,13 +75,14 @@ export function BlogPost() {
 
       <article className="py-16">
         <div className="container-custom">
-          <motion.div
+          <LazyMotion features={domAnimation}>
+            <m.div
             variants={containerVariants}
             initial="hidden"
             animate="visible"
           >
             {/* Breadcrumb & Back Button */}
-            <motion.div variants={itemVariants} className="mb-8">
+            <m.div variants={itemVariants} className="mb-8">
               <Breadcrumb 
                 items={[
                   { name: 'Home', url: '/' },
@@ -95,10 +96,10 @@ export function BlogPost() {
                   <ArrowLeft className="mr-2 h-4 w-4" /> Back to Developer Journal
                 </Link>
               </Button>
-            </motion.div>
+            </m.div>
 
             {/* Hero Section */}
-            <motion.div variants={itemVariants} className="mb-12">
+            <m.div variants={itemVariants} className="mb-12">
               <div className="relative aspect-video rounded-lg overflow-hidden mb-8">
                 <img
                   src={post.image}
@@ -125,10 +126,10 @@ export function BlogPost() {
                   {post.excerpt}
                 </p>
               </div>
-            </motion.div>
+            </m.div>
 
             {/* Content */}
-            <motion.div variants={itemVariants}>
+            <m.div variants={itemVariants}>
               <Card className="max-w-4xl mx-auto p-8 md:p-12">
                 <div className="prose prose-lg dark:prose-invert max-w-none">
                   <div dangerouslySetInnerHTML={{ __html: post.content }} />
@@ -148,8 +149,9 @@ export function BlogPost() {
                   </div>
                 </div>
               </Card>
-            </motion.div>
-          </motion.div>
+            </m.div>
+            </m.div>
+          </LazyMotion>
         </div>
       </article>
     </>

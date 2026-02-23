@@ -1,5 +1,5 @@
 import * as React from "react"
-import { motion } from "framer-motion"
+import { LazyMotion, domAnimation, m } from "framer-motion"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../../components/ui/card"
 import { Button } from "../../components/ui/button"
 import { Badge } from "../../components/ui/badge"
@@ -77,8 +77,9 @@ export function Timeline({ className }: TimelineProps) {
           </p>
         </div>
 
-        <motion.div
-          className="relative"
+        <LazyMotion features={domAnimation}>
+          <m.div
+            className="relative"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -93,7 +94,7 @@ export function Timeline({ className }: TimelineProps) {
               const isEven = index % 2 === 0
 
               return (
-                <motion.div
+                <m.div
                   key={item.year}
                   className={cn(
                     "relative flex items-center",
@@ -188,11 +189,12 @@ export function Timeline({ className }: TimelineProps) {
 
                   {/* Spacer for mobile */}
                   <div className="w-full lg:w-2/12" />
-                </motion.div>
+                </m.div>
               )
             })}
           </div>
-        </motion.div>
+          </m.div>
+        </LazyMotion>
       </div>
     </section>
   )

@@ -16,11 +16,13 @@ const staticPages = [
   { path: "/case-studies", changefreq: "weekly", priority: "0.8" },
   { path: "/blog", changefreq: "weekly", priority: "0.8" },
   { path: "/developer-journal", changefreq: "weekly", priority: "0.8" },
+  { path: "/guides", changefreq: "weekly", priority: "0.8" },
   { path: "/timeline", changefreq: "weekly", priority: "0.8" },
   { path: "/stack", changefreq: "weekly", priority: "0.8" },
   { path: "/fun", changefreq: "weekly", priority: "0.8" },
   { path: "/labs-experiments", changefreq: "weekly", priority: "0.8" },
   { path: "/contact", changefreq: "weekly", priority: "0.8" },
+  { path: "/nextjs-developer-kenya", changefreq: "weekly", priority: "0.8" },
 ];
 
 function loadJson(filePath) {
@@ -87,10 +89,22 @@ if (blogPostsData && Array.isArray(blogPostsData.posts)) {
   });
 }
 
+// Dynamic: guides from guides.json (programmatic SEO)
+let guidePaths = [];
+const guidesData = loadJson("guides.json");
+if (Array.isArray(guidesData)) {
+  guidePaths = guidesData.map((g) => ({
+    path: `/guides/${g.slug}`,
+    changefreq: "weekly",
+    priority: "0.8",
+  }));
+}
+
 const allUrls = [
   ...staticPages,
   ...caseStudyPaths,
   ...blogPaths,
+  ...guidePaths,
 ];
 
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
@@ -114,4 +128,4 @@ if (!fs.existsSync(publicDir)) {
 
 fs.writeFileSync(path.join(publicDir, "sitemap.xml"), sitemap);
 console.log("✅ sitemap.xml generated");
-console.log(`   Static: ${staticPages.length}, Case studies: ${caseStudyPaths.length}, Blog: ${blogPaths.length}, Total: ${allUrls.length}`);
+console.log(`   Static: ${staticPages.length}, Case studies: ${caseStudyPaths.length}, Blog: ${blogPaths.length}, Guides: ${guidePaths.length}, Total: ${allUrls.length}`);

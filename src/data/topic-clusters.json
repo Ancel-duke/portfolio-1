@@ -1,0 +1,44 @@
+{
+  "clusters": [
+    {
+      "id": "next-js-architecture",
+      "name": "Next.js Architecture",
+      "pillarPath": "/stack#next-js-architecture",
+      "description": "Production Next.js apps: SSR, API routes, and full-stack patterns.",
+      "caseStudySlugs": ["taskforge", "ledgerx", "opsflow", "nestfi", "aegis", "fits-by-aliv"],
+      "articleSlugs": ["building-taskforge-with-next-js-and-socket-io-lessons-learned", "nestfi-resilient-financial-coordination-platform-correctness-under-failure", "fits-by-aliv-kenya-first-e-commerce-with-payment-safe-workflows", "aegis-production-systems-with-restraint-assume-failure-design-for-abuse"]
+    },
+    {
+      "id": "nodejs-backend",
+      "name": "Node.js & Backend Systems",
+      "pillarPath": "/stack#nodejs-backend",
+      "description": "Node.js, NestJS, Express, and resilient backend design.",
+      "caseStudySlugs": ["taskforge", "elearning-platform", "attendance-system", "opsflow", "signflow", "nestfi", "edumanage", "fits-by-aliv"],
+      "articleSlugs": ["building-taskforge-with-next-js-and-socket-io-lessons-learned", "scaling-an-e-learning-platform-with-django-react", "building-opsflow-a-production-ready-incident-management-platform"]
+    },
+    {
+      "id": "flutter-mobile",
+      "name": "Flutter & Mobile",
+      "pillarPath": "/stack#flutter-mobile",
+      "description": "Cross-platform mobile and Flutter development.",
+      "caseStudySlugs": ["fits-by-aliv", "nestfi"],
+      "articleSlugs": []
+    },
+    {
+      "id": "zero-trust-infrastructure",
+      "name": "Zero-Trust Infrastructure",
+      "pillarPath": "/stack#zero-trust-infrastructure",
+      "description": "Security-first design, policy, and audit trails.",
+      "caseStudySlugs": ["aegis", "ledgerx", "nestfi", "fits-by-aliv"],
+      "articleSlugs": ["aegis-production-systems-with-restraint-assume-failure-design-for-abuse", "ledgerx-secure-multi-tenant-financial-platform", "nestfi-resilient-financial-coordination-platform-correctness-under-failure"]
+    },
+    {
+      "id": "full-stack-systems-design",
+      "name": "Full-Stack Systems Design",
+      "pillarPath": "/stack#full-stack-systems-design",
+      "description": "End-to-end architecture from UI to database.",
+      "caseStudySlugs": ["taskforge", "elearning-platform", "ledgerx", "opsflow", "signflow", "nestfi", "edumanage", "aegis", "fits-by-aliv"],
+      "articleSlugs": ["building-opsflow-a-production-ready-incident-management-platform", "building-signflow-a-real-time-assistive-technology-platform", "nestfi-resilient-financial-coordination-platform-correctness-under-failure"]
+    }
+  ]
+}
