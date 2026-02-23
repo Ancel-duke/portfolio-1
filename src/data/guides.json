@@ -3,12 +3,27 @@
     "title": "Building Real-Time Collaboration with Next.js and Socket.io",
     "slug": "building-real-time-collaboration-nextjs-socketio",
     "summary": "How to build production real-time collaboration with Next.js and Socket.io: architecture, conflict resolution, and sub-500ms latency. Lessons from TaskForge.",
-    "tech_stack": ["Next.js", "Socket.io", "Node.js", "MongoDB", "TypeScript", "Zustand"],
+    "tech_stack": [
+      "Next.js",
+      "Socket.io",
+      "Node.js",
+      "MongoDB",
+      "TypeScript",
+      "Zustand"
+    ],
     "problem": "Engineering teams need real-time collaboration that traditional project management tools don't provide. Stale data, edit conflicts, and fragmented communication hurt distributed teams. Many solutions struggle with scalability and consistency under concurrent users.",
     "architecture": "A clear separation between the Next.js frontend and a Node.js/Express API, with Socket.io for real-time events. MongoDB as the primary store with indexes tuned for real-time queries. Pub-sub via Socket.io rooms so all clients in a project receive updates. Client state with Zustand and optimistic updates so the UI feels instant; the server validates and broadcasts the resolved state. Connection pooling and short transactions reduce lock contention; reconnection uses exponential backoff.",
     "measurable_outcome": "TaskForge achieves real-time sync under 500ms, supports 100+ concurrent users per project, and maintains 99.9% uptime with graceful reconnection and error boundaries so one failure doesn't take down the app.",
-    "related_topics": ["next-js-architecture", "nodejs-backend", "full-stack-systems-design"],
-    "related_case_studies": ["taskforge", "signflow", "opsflow"],
+    "related_topics": [
+      "next-js-architecture",
+      "nodejs-backend",
+      "full-stack-systems-design"
+    ],
+    "related_case_studies": [
+      "taskforge",
+      "signflow",
+      "opsflow"
+    ],
     "template_type": "technology_deep_dive",
     "date": "2025-01-15",
     "readTime": "10 min read",
@@ -18,15 +33,128 @@
     "title": "Next.js vs Django for SaaS: When to Choose Which",
     "slug": "nextjs-vs-django-for-saas",
     "summary": "A practical comparison of Next.js and Django for SaaS: full-stack JavaScript vs Python, real-time vs request-response, and when each shines.",
-    "tech_stack": ["Next.js", "Django", "React", "Node.js", "PostgreSQL", "MongoDB"],
+    "tech_stack": [
+      "Next.js",
+      "Django",
+      "React",
+      "Node.js",
+      "PostgreSQL",
+      "MongoDB"
+    ],
     "problem": "Choosing the right stack for a new SaaS product affects time to market, hiring, and long-term scalability. Next.js (JavaScript/TypeScript) and Django (Python) both power serious products but suit different needs.",
     "architecture": "Next.js is a React framework with API routes and optional SSR/SSG; you stay in one language (JavaScript/TypeScript) from UI to server. Django is a batteries-included Python framework with ORM, admin, and REST tooling; you typically pair it with a separate frontend (e.g. React) or use Django templates. Next.js fits real-time and single-codebase deployments; Django fits data-heavy backends, rapid admin tooling, and teams that prefer Python.",
     "measurable_outcome": "In practice: TaskForge (Next.js) delivers real-time collaboration and sub-500ms sync; the E-Learning Platform (Django + React) serves 10K+ students and 500+ courses with sub-2s page loads. Both stacks can hit high performance with the right architecture.",
-    "related_topics": ["next-js-architecture", "nodejs-backend", "full-stack-systems-design"],
-    "related_case_studies": ["taskforge", "elearning-platform", "ledgerx"],
+    "related_topics": [
+      "next-js-architecture",
+      "nodejs-backend",
+      "full-stack-systems-design"
+    ],
+    "related_case_studies": [
+      "taskforge",
+      "elearning-platform",
+      "ledgerx"
+    ],
     "template_type": "comparison",
     "date": "2025-01-10",
     "readTime": "9 min read",
     "body": "This comparison is based on building and shipping production systems with both stacks: TaskForge and others with Next.js/Node, and a scalable E-Learning Platform with Django REST Framework and React.\n\n**Next.js for SaaS**\n\nNext.js gives you a single codebase in JavaScript or TypeScript: React for the UI, API routes or a separate Node server for the backend, and first-class static export or server-side rendering. That simplifies deployment and lets the same team own frontend and API. Real-time features (e.g. Socket.io) integrate naturally because you're already in Node. For TaskForge we needed WebSockets, optimistic updates, and fast iteration; Next.js plus a Node/Socket.io backend was a good fit. The ecosystem is huge (npm), and hiring for full-stack JS is straightforward.\n\n**Django for SaaS**\n\nDjango gives you a powerful ORM, migrations, admin UI, and auth out of the box. For data-heavy products (courses, users, permissions, reporting) you can move fast: define models, get an admin panel, then expose REST or GraphQL with Django REST Framework or Strawberry. The E-Learning Platform used Django for course hierarchy, enrollment, progress tracking, and JWT auth; we used select_related/prefetch_related and Redis caching to keep page loads under 2 seconds for 10K+ students. Python is strong for data pipelines and ML if you need that later.\n\n**When to choose Next.js**\n\nPick Next.js when you want one language end-to-end, need real-time or highly interactive UIs, and plan to deploy on Vercel/Netlify or any Node host. It's a strong fit for dashboards, collaboration tools, and product-led SaaS where the frontend is the product.\n\n**When to choose Django**\n\nPick Django when you need a rich backend fast (admin, auth, reporting), have complex domain logic or data models, or the team prefers Python. It's a strong fit for marketplaces, learning platforms, and internal tools where the backend does most of the work and the frontend can be a separate React app.\n\n**Hybrid and coexistence**\n\nYou can use Django as an API and Next.js as the frontend (or the other way around with Next.js API routes calling Django). Many teams run Django for the core API and a separate Next.js or React app for the customer-facing UI. The E-Learning Platform is exactly that: Django REST + React; we didn't need SSR or real-time there, so splitting frontend and backend was fine.\n\n**Bottom line**\n\nNext.js excels at full-stack JS/TS and real-time; Django excels at backend speed and data modeling. Your choice should depend on team skills, need for real-time, and whether you want a single codebase or a dedicated API. For deep dives on real projects built with each, see the TaskForge case study (Next.js) and the E-Learning Platform case study (Django). The tech stack page links all technologies and topic clusters.\n\n**Performance and deployment**\n\nBoth stacks can achieve strong Core Web Vitals with the right setup. Next.js benefits from static export or edge rendering when you don't need server-side logic on every request; Django benefits from Gunicorn or uWSGI behind Nginx and CDN for static assets. We measured sub-2s loads for the Django e-learning platform and sub-500ms real-time updates for the Next.js app; in both cases database indexing and caching were as important as framework choice.\n\n**Recommendation**\n\nIf your product is collaboration-first or dashboard-first and your team is comfortable with JavaScript end-to-end, start with Next.js. If your product is data-heavy and you want an admin UI and robust ORM from day one, start with Django and add a React or Next.js frontend when needed. You can always combine both later: for example a Django API powering a Next.js marketing site and app. LedgerX is another example of a production system built with Next.js for the frontend and API; the case studies index links all projects so you can compare architectures and outcomes side by side. When in doubt, prototype the core flow in both stacks; a weekend spike often makes the trade-offs clearer than theory alone. Both stacks are production-proven at scale; choose the one that fits your team and product best."
+  },
+  {
+    "title": "Self-Healing Infrastructure with Policy and AI: How Aegis Stays Safe",
+    "slug": "self-healing-infrastructure-policy-ai-aegis",
+    "summary": "How to build self-healing infrastructure where AI recommends, policy authorizes, and humans retain control. No unaudited actions, no blind AI execution. Lessons from Aegis.",
+    "tech_stack": [
+      "NestJS",
+      "FastAPI",
+      "Next.js",
+      "PostgreSQL",
+      "Redis",
+      "Kubernetes",
+      "Docker",
+      "Prometheus",
+      "Grafana"
+    ],
+    "problem": "Modern infrastructure fails silently; teams react after damage is done. Monitoring tools detect issues but don't act; automation tools act but aren't safe. Security and operations are disconnected, and AI systems make decisions without accountability.",
+    "architecture": "Four controlled layers: Observation (metrics, logs, traces, events), Intelligence (AI-driven anomaly detection and recommendations), Policy (explicit, auditable rules for what is allowed), and Execution (isolated, HMAC-signed, least-privilege Kubernetes actions). The AI never executes directly; policy authorizes; humans retain control. Backend (NestJS), AI engine (FastAPI), executor service, and Next.js frontend are isolated and independently deployable.",
+    "measurable_outcome": "Aegis guarantees no unaudited actions, no blind AI execution, no privilege escalation, no silent failures. ~95% implemented: backend, AI anomaly detection, executor with Kubernetes RBAC, full observability stack, production-ready frontend. Every action is policy-evaluated and signed.",
+    "related_topics": [
+      "zero-trust-infrastructure",
+      "full-stack-systems-design"
+    ],
+    "related_case_studies": [
+      "aegis",
+      "ledgerx",
+      "nestfi"
+    ],
+    "template_type": "technology_deep_dive",
+    "date": "2026-01-30",
+    "readTime": "11 min read",
+    "body": "Aegis is a self-healing infrastructure platform I built to answer a single question: how do you automate remediation without making things worse? The answer is to separate observation, intelligence, policy, and execution so that the AI recommends but never executes, and every action is policy-checked and signed.\n\n**Why four layers**\n\nMonitoring tools detect issues but don't act; runbooks and scripts act but aren't safe. The moment you let automation change production, you need a clear chain: what was observed, what was recommended, what policy allowed, and what was actually done. In Aegis, the Observation layer collects metrics, logs, and events. The Intelligence layer (AI engine) analyzes them, detects anomalies, assigns severity, and recommends actions—but it cannot execute. The Policy layer holds explicit, auditable rules: which namespaces, which actions (e.g. pod restart, rollback), which identities. The Execution layer runs only when policy and identity and HMAC signature all pass. If the executor is down or policy says no, nothing happens. Fail closed.\n\n**Security and trust**\n\nAegis is designed so an ethical hacker can reason about what cannot happen. No unaudited actions: every remediation is logged before and after. No blind AI execution: the AI has no path to the executor. No privilege escalation: the executor runs with minimal Kubernetes RBAC. No silent failures: we don't retry indefinitely or mutate state without a trail. JWT and RBAC protect the API; HMAC-signed requests protect the executor; namespace allowlisting and default-deny network policies constrain the blast radius. The AI informs; policy authorizes; humans retain control.\n\n**What self-healing means here**\n\nSelf-healing in Aegis is bounded: restart unhealthy pods, scale deployments safely, roll back bad releases, temporarily isolate services. We do not support arbitrary command execution, destructive actions, or unbounded automation loops. When the AI engine is down, we stop recommending new actions but existing policy and executor still work. When the executor is down, no remediation runs until it recovers. When the policy service is down, the executor refuses to run actions—fail closed again. This keeps the system predictable and auditable.\n\n**Tech stack and observability**\n\nThe backend is NestJS (auth, policies, audit, APIs); the AI engine is FastAPI (Python) for anomaly detection; the executor is a separate service that talks to the Kubernetes API with minimal RBAC. The frontend is Next.js for the control plane and observability UI. We use PostgreSQL and Redis, Prometheus, Grafana, Loki, and Tempo so that every decision has context. Docker and Kubernetes run the whole stack; CI/CD includes security scanning and rollback. Cloudflare sits at the edge for WAF and webhook protection.\n\n**Implementation and failure modes**\n\nIn practice we run the AI engine on a schedule or event trigger; it writes recommendations to the backend, which stores them and optionally notifies operators. The executor only runs when explicitly invoked with a signed payload that passes policy checks. If the audit log write fails, we do not execute the action, so we never have unaudited changes. Kubernetes API timeouts and retries are bounded so we don't hang or retry forever. We also avoid unbounded automation loops: each remediation is a single, logged action rather than a chain of automatic follow-ups. Operators can review the observability stack (Prometheus, Grafana, Loki, Tempo) to see what was detected, what was recommended, and what was executed. Rollback and namespace allowlisting ensure that mistakes in policy do not affect production outside the allowed scope. This keeps the system debuggable and safe under partial outages.\n\n**When to adopt this pattern**\n\nThis pattern fits when you need automation but cannot afford blind or unaudited actions—fintech, healthcare-adjacent systems, or any environment where \"the AI restarted it\" is not an acceptable root cause. Start with a small policy allowlist and a single remediation type (e.g. pod restart); add more only after you have audit and rollback. For the full architecture and failure modes, see the Aegis case study. For other production systems built with the same mindset (assume failure, design for abuse), see LedgerX and NestFi."
+  },
+  {
+    "title": "Resilient Financial Coordination: Correctness Under Failure with NestFi",
+    "slug": "resilient-financial-coordination-correctness-under-failure-nestfi",
+    "summary": "How to build a finance platform that stays correct when payment providers are async, callbacks are delayed or duplicated, and caches fail. Ledger-backed double-entry, idempotent M-Pesa, fail-closed locks. Lessons from NestFi.",
+    "tech_stack": [
+      "NestJS",
+      "TypeScript",
+      "PostgreSQL",
+      "MongoDB",
+      "Redis",
+      "M-Pesa Daraja",
+      "Socket.io",
+      "Next.js",
+      "React Native"
+    ],
+    "problem": "Building a finance system isn't CRUD—it's correctness under failure. The system must remain predictable when payment providers are asynchronous, callbacks are delayed or duplicated, caches fail, and networks are unreliable. The core challenge is fault isolation and ledger correctness across multiple storage models and external integrations.",
+    "architecture": "Hybrid storage: PostgreSQL for wallets and ledgers (single source of truth), MongoDB for events and audit logs, Redis for locks, queues, and rate limits. Stateless NestJS backend with JWT; M-Pesa Daraja flows are idempotent, timeout-aware, and guarded by retries, backoff, and circuit breakers. Real-time UX via Socket.io when callbacks are processed. Withdrawals follow request → approval → execution → callback with database-enforced idempotency; DISPUTED state for manual reconciliation when provider response is ambiguous.",
+    "measurable_outcome": "NestFi delivers correctness-first design: financial truth is never inferred; explicit handling of timeouts, replayed callbacks, and split-brain risk; real-time payment experience; strong auditability aligned with Kenyan fintech. Completion ~87% with core ledger, M-Pesa B2C, mobile deposits, autosave batching, and audit flows implemented. Fail-closed distributed locks and idempotent callback processing throughout.",
+    "related_topics": [
+      "nodejs-backend",
+      "zero-trust-infrastructure",
+      "full-stack-systems-design"
+    ],
+    "related_case_studies": [
+      "nestfi",
+      "ledgerx",
+      "fits-by-aliv"
+    ],
+    "template_type": "technology_deep_dive",
+    "date": "2026-02-04",
+    "readTime": "12 min read",
+    "body": "NestFi is a production-grade finance platform built around one principle: financial truth is never inferred. When payment providers are asynchronous, callbacks are delayed or replayed, and caches or logs fail, the ledger must still be correct and auditable. This guide distills how we achieved that with hybrid storage, idempotent M-Pesa integration, and fail-closed distributed locking.\n\n**Why hybrid storage**\n\nWe use PostgreSQL for wallets and ledgers because we need ACID and a single source of truth. Every wallet update is ledger-backed; every transaction debits and credits so totals always net to zero. We use MongoDB for events and audit logs because we want append-only, queryable history without weighing down the transactional store. We use Redis for ephemeral state: rate limits, distributed locks, and queues. When Redis is down, we fall back to Postgres for rate limiting and skip non-critical caching so auth and core API still work. When MongoDB is down, we skip event logging so PostgreSQL writes are not blocked. The key is that only PostgreSQL holds financial truth; the rest are optimizations or audit.\n\n**Idempotent callback processing**\n\nM-Pesa B2C and STK callbacks can arrive late, twice, or out of order. We process them idempotently using correlation IDs and idempotency keys so duplicate or delayed deliveries do not double-credit or double-debit. Withdrawals follow a strict lifecycle: request → approval → execution → callback. We never trust the callback alone; we correlate with our request and only then update ledger and wallet. If the provider response is ambiguous, we can put the withdrawal into DISPUTED state for manual reconciliation. This keeps user trust and auditability intact.\n\n**Fail-closed distributed locks**\n\nAutosave batching and other critical jobs use distributed locks with renewal. If we cannot prove lock ownership (e.g. Redis flake or timeout), we abort the operation. We never proceed under ambiguity. This prevents double application of a batch or concurrent modification of the same wallet. Lock renewal is time-bounded so a crashed process eventually releases the lock.\n\n**Real-time and resilience**\n\nMobile deposits and withdrawals update the UI in real time via Socket.io when callbacks are processed, so users see explicit state transitions (e.g. Settling) instead of stale or confusing states. Circuit breakers and retries with backoff protect against cascading failure when the payment provider is slow or down. The backend is stateless and restart-safe; JWT allows horizontal scaling without session storage. Documentation and architecture are maintained in the repo; Docker supports deterministic builds and deployment.\n\n**Deployment and operations**\n\nWe run the NestJS backend in Docker with health checks; PostgreSQL and Redis are deployed with persistence and backups. MongoDB is used for audit and compliance logs so we can query by user, date, or event type without impacting the ledger. Callback endpoints are allowlisted by IP and validated so we reject spoofed or replayed requests. We document every failure mode and recovery step in the repo so operators know what to expect when a dependency fails. The ledger and wallet APIs are designed so that even under Redis or MongoDB outage, core balance and transaction correctness remain intact because PostgreSQL is the single source of truth. Autosave and batch jobs always check lock ownership before running so we never double-apply or corrupt state.\n\n**When to choose this architecture**\n\nThis pattern fits when you need ledger correctness, auditability, and resilience across async payments and multiple datastores. It is more complex than a single DB and sync API, but for fintech or any system where double-spend or incorrect balances are unacceptable, the boundaries are worth it. For the full failure modes, trade-offs, and implementation status see the NestFi case study. For related production systems see LedgerX (multi-tenant fintech) and Fits by Aliv (payment-safe e-commerce)."
+  },
+  {
+    "title": "Payment-Safe E-Commerce: Kenya-First M-Pesa and Inventory Self-Healing (Fits by Aliv)",
+    "slug": "payment-safe-ecommerce-kenya-mpesa-fits-by-aliv",
+    "summary": "How to run e-commerce when payments are asynchronous and networks are unreliable. Soft reservations, idempotent orders, M-Pesa verification before state changes, and bounded self-healing. Lessons from Fits by Aliv.",
+    "tech_stack": [
+      "NestJS",
+      "TypeScript",
+      "PostgreSQL",
+      "Prisma",
+      "Redis",
+      "BullMQ",
+      "Flutter",
+      "Firebase Auth",
+      "M-Pesa Daraja"
+    ],
+    "problem": "E-commerce in emerging markets fails differently: payments are asynchronous, networks are unreliable, and inventory errors mean lost revenue and trust. Many platforms over-trust callbacks, allow double-spend, or leak business logic to the client. Inventory overselling, voucher abuse, and replay attacks are common. Kenya adds M-Pesa STK Push (async, non-authoritative), strict VAT/WHT, and resource-constrained mobile devices.",
+    "architecture": "Request layer: Flutter clients, Firebase JWT, X-Idempotency-Key on all mutations. Transactional core: orders, vouchers, reservations, and tax in a single Prisma transaction; voucher redemption uses conditional UPDATE so 0 rows updated means rollback. Async layer: BullMQ for reservation-expiry, payment-verification, and dead-letter. Verification: we never update order or payment state from a callback alone—we call Daraja STK Query first. Healing: jobs classify failures and take bounded recovery actions; all logged. Audit and security events for every sensitive action.",
+    "measurable_outcome": "No inventory oversell, no voucher double-spend, no unaudited state changes, no blind trust in payment callbacks. ~90–95% complete: backend, DB, payments, self-healing, security. Payment-safe: STK Query before any order/payment update. Production mindset: assume failure, verify asynchronously, automate carefully.",
+    "related_topics": [
+      "nodejs-backend",
+      "full-stack-systems-design",
+      "zero-trust-infrastructure"
+    ],
+    "related_case_studies": [
+      "fits-by-aliv",
+      "nestfi",
+      "ledgerx"
+    ],
+    "template_type": "technology_deep_dive",
+    "date": "2026-02-02",
+    "readTime": "11 min read",
+    "body": "Fits by Aliv is a Kenya-first e-commerce marketplace (thrift/sustainable fashion) built around failure, abuse, and latency as first-class concerns. Payments are asynchronous, callbacks are unreliable, and inventory mistakes cost revenue and trust. This guide explains how we achieved payment-safe workflows and inventory self-healing without over-trusting M-Pesa or the client.\n\n**Never trust the callback**\n\nM-Pesa STK Push is asynchronous and non-authoritative: the callback can arrive late, twice, or not at all. We never update order or payment state from a callback alone. We call Daraja STK Query to confirm the transaction status, then update. Duplicate callbacks are idempotent so we apply the effect once. This prevents double-credit, double-fulfillment, and inconsistent user state. The same principle applies to any async payment provider in emerging markets.\n\n**Soft inventory reservations**\n\nWe do not hard-deduct inventory at checkout. We create a soft reservation with a TTL. If payment does not complete in time, a BullMQ job releases the reservation so stock is not stuck and others can buy. If payment completes after verification, we confirm the order and then deduct. This avoids oversell under race conditions and fits async payment flows. All of this happens in the backend; the client never mutates inventory.\n\n**Idempotent orders and voucher safety**\n\nEvery order-creating mutation accepts an idempotency key (e.g. X-Idempotency-Key). Duplicate requests (double-tap, retry) create only one order. Voucher redemption runs inside the same Prisma transaction as the order: we use a conditional UPDATE so that only one redemption is possible per voucher; if the UPDATE affects 0 rows we roll back the whole transaction. That prevents voucher double-spend without complex locking.\n\n**Bounded self-healing**\n\nBackground jobs handle reservation expiry, payment verification retries, and dead-letter. Jobs are bounded: we don't retry forever or mutate data blindly. Dead-lettered items are quarantined for human review. We classify failures (transient, latency, abandonment) and take reversible actions where possible. All decisions and actions are written to healing_decisions and healing_actions so we have an audit trail. Automation is careful, not unbounded.\n\n**Security and audit**\n\nFirebase is used only for identity (JWT issuance); authorization, rate limiting, replay prevention, and auditability are enforced server-side. We use idempotency keys, nonce and timestamp for replay prevention, IP allowlisting and optional HMAC for webhooks, and immutable audit and security event logs. The system is designed so an ethical hacker can reason about what cannot happen.\n\n**Kenya-specific and operations**\n\nWe handle VAT and WHT in the order flow so compliance is built in from the start. Admin can export streaming CSV for reporting and reconciliation. Flutter clients work on mobile, web, and desktop from one codebase, which helps when users switch devices or have limited bandwidth. We run the backend behind a reverse proxy with TLS; webhook endpoints are allowlisted and optionally HMAC-verified so only Daraja can push callbacks. Order and payment state stay in PostgreSQL with Prisma transactions, so we never commit half-applied callbacks or partial voucher redemptions. The healing layer can retry verification or release reservations in a bounded way, and every action is logged for audit. We recommend running integration tests against a Daraja sandbox before going live so callback and query flows are validated end-to-end. Idempotency and verification-first design reduce support load and chargebacks when networks or providers misbehave. All of this keeps the system production-ready for Kenyan e-commerce and similar markets.\n\n**When to adopt this pattern**\n\nThis pattern fits e-commerce (or any order/payment flow) in environments where payments are async and networks are unreliable. Kenya, East Africa, and many emerging markets share these constraints. For the full architecture, failure modes, and trade-offs see the Fits by Aliv case study. For related correctness-under-failure systems see NestFi (finance) and LedgerX (multi-tenant fintech)."
   }
 ]

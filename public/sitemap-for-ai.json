@@ -6,7 +6,7 @@
   "jobTitle": "Fullstack Engineer",
   "niche": "System Resilience",
   "baseUrl": "https://ancel.co.ke",
-  "generated": "2026-02-23T21:46:28.826Z",
+  "generated": "2026-02-23T22:53:12.233Z",
   "entries": [
     {
       "url": "https://ancel.co.ke/",
@@ -1054,6 +1054,60 @@
         "MongoDB"
       ],
       "key_outcome": "In practice: TaskForge (Next.js) delivers real-time collaboration and sub-500ms sync; the E-Learning Platform (Django + ",
+      "category": "guide"
+    },
+    {
+      "url": "https://ancel.co.ke/guides/self-healing-infrastructure-policy-ai-aegis",
+      "title": "Self-Healing Infrastructure with Policy and AI: How Aegis Stays Safe",
+      "summary": "How to build self-healing infrastructure where AI recommends, policy authorizes, and humans retain control. No unaudited actions, no blind AI execution. Lessons from Aegis.",
+      "tech_stack": [
+        "NestJS",
+        "FastAPI",
+        "Next.js",
+        "PostgreSQL",
+        "Redis",
+        "Kubernetes",
+        "Docker",
+        "Prometheus",
+        "Grafana"
+      ],
+      "key_outcome": "Aegis guarantees no unaudited actions, no blind AI execution, no privilege escalation, no silent failures. ~95% implemen",
+      "category": "guide"
+    },
+    {
+      "url": "https://ancel.co.ke/guides/resilient-financial-coordination-correctness-under-failure-nestfi",
+      "title": "Resilient Financial Coordination: Correctness Under Failure with NestFi",
+      "summary": "How to build a finance platform that stays correct when payment providers are async, callbacks are delayed or duplicated, and caches fail. Ledger-backed double-entry, idempotent M-Pesa, fail-closed locks. Lessons from NestFi.",
+      "tech_stack": [
+        "NestJS",
+        "TypeScript",
+        "PostgreSQL",
+        "MongoDB",
+        "Redis",
+        "M-Pesa Daraja",
+        "Socket.io",
+        "Next.js",
+        "React Native"
+      ],
+      "key_outcome": "NestFi delivers correctness-first design: financial truth is never inferred; explicit handling of timeouts, replayed cal",
+      "category": "guide"
+    },
+    {
+      "url": "https://ancel.co.ke/guides/payment-safe-ecommerce-kenya-mpesa-fits-by-aliv",
+      "title": "Payment-Safe E-Commerce: Kenya-First M-Pesa and Inventory Self-Healing (Fits by Aliv)",
+      "summary": "How to run e-commerce when payments are asynchronous and networks are unreliable. Soft reservations, idempotent orders, M-Pesa verification before state changes, and bounded self-healing. Lessons from Fits by Aliv.",
+      "tech_stack": [
+        "NestJS",
+        "TypeScript",
+        "PostgreSQL",
+        "Prisma",
+        "Redis",
+        "BullMQ",
+        "Flutter",
+        "Firebase Auth",
+        "M-Pesa Daraja"
+      ],
+      "key_outcome": "No inventory oversell, no voucher double-spend, no unaudited state changes, no blind trust in payment callbacks. ~90–95%",
       "category": "guide"
     }
   ],
@@ -2114,12 +2168,66 @@
         ],
         "key_outcome": "In practice: TaskForge (Next.js) delivers real-time collaboration and sub-500ms sync; the E-Learning Platform (Django + ",
         "category": "guide"
+      },
+      {
+        "url": "https://ancel.co.ke/guides/self-healing-infrastructure-policy-ai-aegis",
+        "title": "Self-Healing Infrastructure with Policy and AI: How Aegis Stays Safe",
+        "summary": "How to build self-healing infrastructure where AI recommends, policy authorizes, and humans retain control. No unaudited actions, no blind AI execution. Lessons from Aegis.",
+        "tech_stack": [
+          "NestJS",
+          "FastAPI",
+          "Next.js",
+          "PostgreSQL",
+          "Redis",
+          "Kubernetes",
+          "Docker",
+          "Prometheus",
+          "Grafana"
+        ],
+        "key_outcome": "Aegis guarantees no unaudited actions, no blind AI execution, no privilege escalation, no silent failures. ~95% implemen",
+        "category": "guide"
+      },
+      {
+        "url": "https://ancel.co.ke/guides/resilient-financial-coordination-correctness-under-failure-nestfi",
+        "title": "Resilient Financial Coordination: Correctness Under Failure with NestFi",
+        "summary": "How to build a finance platform that stays correct when payment providers are async, callbacks are delayed or duplicated, and caches fail. Ledger-backed double-entry, idempotent M-Pesa, fail-closed locks. Lessons from NestFi.",
+        "tech_stack": [
+          "NestJS",
+          "TypeScript",
+          "PostgreSQL",
+          "MongoDB",
+          "Redis",
+          "M-Pesa Daraja",
+          "Socket.io",
+          "Next.js",
+          "React Native"
+        ],
+        "key_outcome": "NestFi delivers correctness-first design: financial truth is never inferred; explicit handling of timeouts, replayed cal",
+        "category": "guide"
+      },
+      {
+        "url": "https://ancel.co.ke/guides/payment-safe-ecommerce-kenya-mpesa-fits-by-aliv",
+        "title": "Payment-Safe E-Commerce: Kenya-First M-Pesa and Inventory Self-Healing (Fits by Aliv)",
+        "summary": "How to run e-commerce when payments are asynchronous and networks are unreliable. Soft reservations, idempotent orders, M-Pesa verification before state changes, and bounded self-healing. Lessons from Fits by Aliv.",
+        "tech_stack": [
+          "NestJS",
+          "TypeScript",
+          "PostgreSQL",
+          "Prisma",
+          "Redis",
+          "BullMQ",
+          "Flutter",
+          "Firebase Auth",
+          "M-Pesa Daraja"
+        ],
+        "key_outcome": "No inventory oversell, no voucher double-spend, no unaudited state changes, no blind trust in payment callbacks. ~90–95%",
+        "category": "guide"
       }
     ]
   },
   "totalProjects": 18,
   "totalCaseStudies": 18,
   "totalArticles": 14,
-  "totalGuides": 2,
+  "totalGuides": 5,
   "totalPages": 11
 }
