@@ -28,7 +28,7 @@
       "id": "zero-trust-infrastructure",
       "name": "Zero-Trust Infrastructure",
       "pillarPath": "/stack#zero-trust-infrastructure",
-      "description": "Security-first design, policy, and audit trails.",
+      "description": "Security-first design, policy, audit trails, and Zero-Knowledge self-healing (e.g. Aegis: AI recommends only, pull-based execution, Shadow Mode, OIDC-ready).",
       "caseStudySlugs": ["aegis", "ledgerx", "nestfi", "fits-by-aliv"],
       "articleSlugs": ["aegis-production-systems-with-restraint-assume-failure-design-for-abuse", "ledgerx-secure-multi-tenant-financial-platform", "nestfi-resilient-financial-coordination-platform-correctness-under-failure"]
     },

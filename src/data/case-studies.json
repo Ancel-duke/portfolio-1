@@ -13,9 +13,18 @@
     "problemSolutionBridge": "To address stale data and edit conflicts at scale, I designed a real-time collaborative architecture that keeps all clients in sync and isolates failures so one outage does not take down the whole system.",
     "solution": "I architected TaskForge as a resilient, real-time collaborative platform capable of scaling to hundreds of concurrent users per project. The system leverages WebSocket connections for instant synchronization, optimistic UI updates for responsive interactions, and conflict resolution strategies to maintain data consistency. The platform provides comprehensive project management features including Kanban boards, analytics, and document management while ensuring fault tolerance and graceful degradation.",
     "keyTerms": [
-      { "term": "Optimistic UI updates", "explanation": "In TaskForge, the UI updates immediately on user action before the server confirms, so collaboration feels instant; if the server rejects the change, we roll back and show the resolved state so the project goal of real-time feel is preserved without blocking the user." },
-      { "term": "Pub-sub pattern", "explanation": "TaskForge uses Socket.io to broadcast task and board changes to all connected clients in a room; this keeps every team member’s view in sync with sub-500ms latency and supports the goal of a single source of truth across distributed teams." },
-      { "term": "Conflict resolution", "explanation": "When two users edit the same task, TaskForge applies last-write-wins with version checks and optional merge; this balances simplicity and correctness so the system stays consistent without complex OT/CRDTs for our target scale." }
+      {
+        "term": "Optimistic UI updates",
+        "explanation": "In TaskForge, the UI updates immediately on user action before the server confirms, so collaboration feels instant; if the server rejects the change, we roll back and show the resolved state so the project goal of real-time feel is preserved without blocking the user."
+      },
+      {
+        "term": "Pub-sub pattern",
+        "explanation": "TaskForge uses Socket.io to broadcast task and board changes to all connected clients in a room; this keeps every team member’s view in sync with sub-500ms latency and supports the goal of a single source of truth across distributed teams."
+      },
+      {
+        "term": "Conflict resolution",
+        "explanation": "When two users edit the same task, TaskForge applies last-write-wins with version checks and optional merge; this balances simplicity and correctness so the system stays consistent without complex OT/CRDTs for our target scale."
+      }
     ],
     "failureModes": "Network drops: WebSocket reconnection with exponential backoff so users regain sync without manual refresh. API errors: isolated from the real-time channel so failed REST calls do not block live updates. Database deadlocks: connection pooling and short transactions reduce lock contention; read replicas planned for write scaling. Frontend crashes: React error boundaries scoped per project so one broken board does not take down the whole app.",
     "impact": "TaskForge supports real-time collaboration with sub-500ms latency and handles 100+ concurrent users per project without performance degradation. The platform demonstrates production-grade reliability with 99.9% uptime, comprehensive error handling, and graceful reconnection strategies. Teams can collaborate seamlessly with instant updates, conflict-free editing, and comprehensive project visibility across distributed environments.",
@@ -146,9 +155,18 @@
     "problemSolutionBridge": "To deliver scale and control without vendor lock-in, I built a custom LMS with a clear separation between API and frontend so we could optimize for 10,000+ students and sub-2-second loads while handling failures in one layer without bringing down the rest.",
     "solution": "I architected a custom e-learning platform using Django REST Framework for robust backend services and React with TypeScript for a performant frontend. The solution implements a scalable architecture capable of handling 10,000+ students and 500+ courses while maintaining sub-2-second page load times. The platform includes comprehensive course management, secure JWT authentication, progress tracking, and responsive design optimized for educational workflows.",
     "keyTerms": [
-      { "term": "select_related / prefetch_related", "explanation": "In this LMS, Django ORM uses these to fetch courses, lessons, and enrollments in fewer queries; that directly supports the project goal of sub-2-second page loads at scale by cutting N+1 round-trips." },
-      { "term": "JWT refresh token rotation", "explanation": "Tokens are rotated on refresh so a stolen refresh token has a short window; this keeps authentication stateless for horizontal scaling while improving security for student and instructor accounts." },
-      { "term": "Stateless API", "explanation": "The Django backend does not store session state; every request carries identity and context so we can add more app servers behind a load balancer without sticky sessions, supporting the goal of handling 1,000+ concurrent users." }
+      {
+        "term": "select_related / prefetch_related",
+        "explanation": "In this LMS, Django ORM uses these to fetch courses, lessons, and enrollments in fewer queries; that directly supports the project goal of sub-2-second page loads at scale by cutting N+1 round-trips."
+      },
+      {
+        "term": "JWT refresh token rotation",
+        "explanation": "Tokens are rotated on refresh so a stolen refresh token has a short window; this keeps authentication stateless for horizontal scaling while improving security for student and instructor accounts."
+      },
+      {
+        "term": "Stateless API",
+        "explanation": "The Django backend does not store session state; every request carries identity and context so we can add more app servers behind a load balancer without sticky sessions, supporting the goal of handling 1,000+ concurrent users."
+      }
     ],
     "failureModes": "Database overload: connection pooling and query optimization (select_related/prefetch_related) limit load; read replicas planned for scaling. File upload failures: handled asynchronously so a large lesson upload does not block the API; retries and user feedback on failure. Auth token expiry: refresh rotation and clear client-side handling so users are re-authenticated without losing context. Frontend errors: error boundaries prevent one broken course page from taking down the whole app.",
     "impact": "The platform handles 10,000+ students and 500+ courses with consistent sub-2-second page load times. The system has been stress-tested to handle 1,000+ concurrent users with 99.9% uptime. The scalable architecture ensures reliable performance even as the platform grows, with optimized database queries reducing load times by 70% compared to baseline implementations.",
@@ -274,9 +292,18 @@
     "problemSolutionBridge": "To replace manual tracking with automated, multi-institution-ready analytics, I built an attendance system that isolates each institution's data and handles report generation and API failures without bringing down the whole platform.",
     "solution": "I architected a modern attendance management system that automates attendance tracking, provides comprehensive analytics, and integrates seamlessly with educational workflows. The system includes secure JWT-based authentication, role-based access control, real-time reporting with Chart.js visualizations, and mobile-responsive design. Built with React, Node.js, Express, and MongoDB for horizontal scalability and fault tolerance.",
     "keyTerms": [
-      { "term": "Organization-scoped data isolation", "explanation": "Every query and report is filtered by institution/organization so one school never sees another's data; this supports the project goal of multi-institution deployment on a single platform while keeping compliance and privacy simple." },
-      { "term": "MongoDB aggregation pipelines", "explanation": "Analytics and reports are computed on-demand with aggregations so we avoid pre-computed caches going stale; for this project that means admins always see up-to-date attendance and trends without a separate ETL layer." },
-      { "term": "Atomic updates (transactions)", "explanation": "Marking attendance or bulk updates run inside MongoDB transactions so partial failures do not leave records half-updated; that directly supports the goal of 95% accuracy and trustworthy reporting." }
+      {
+        "term": "Organization-scoped data isolation",
+        "explanation": "Every query and report is filtered by institution/organization so one school never sees another's data; this supports the project goal of multi-institution deployment on a single platform while keeping compliance and privacy simple."
+      },
+      {
+        "term": "MongoDB aggregation pipelines",
+        "explanation": "Analytics and reports are computed on-demand with aggregations so we avoid pre-computed caches going stale; for this project that means admins always see up-to-date attendance and trends without a separate ETL layer."
+      },
+      {
+        "term": "Atomic updates (transactions)",
+        "explanation": "Marking attendance or bulk updates run inside MongoDB transactions so partial failures do not leave records half-updated; that directly supports the goal of 95% accuracy and trustworthy reporting."
+      }
     ],
     "failureModes": "API or DB failure: centralized error middleware returns clear status codes and messages so the frontend can show retry or offline cues without crashing. Report generation timeout: long-running reports are isolated so they do not block other requests; connection pooling prevents exhaustion. Invalid or duplicate marks: validation and idempotent-friendly flows reduce double-counting; transactions ensure all-or-nothing updates. Frontend errors: error boundaries keep one broken report view from taking down the dashboard.",
     "impact": "The attendance system has improved tracking accuracy by 95% and reduced administrative time by 70%. Schools using the system report better student engagement and more accurate performance analytics. The platform supports 500+ active users across multiple institutions with comprehensive reporting capabilities, handling 15+ report types with sub-second generation times.",
@@ -407,9 +434,18 @@
     "problemSolutionBridge": "To turn raw numbers into clear spending insights, I built a client-side Vue 3 app that keeps calculations and UI in sync and degrades gracefully when storage or rendering fails.",
     "solution": "I built a Vue 3 application with Chart.js for data visualization, using the Composition API for logic reuse and Vue's reactivity system for real-time financial calculations. The project demonstrates modern UI patterns, smooth animations, and responsive design principles.",
     "keyTerms": [
-      { "term": "Composition API", "explanation": "In this tracker, reusable logic (totals, category sums) lives in composables so the same calculations drive both the list and the charts; that supports the goal of a single source of truth and a maintainable codebase." },
-      { "term": "Reactive state", "explanation": "Income and expenses are reactive so adding or editing a transaction immediately updates totals and pie charts without manual refresh; that keeps the experience instant and aligned with the project's focus on clarity." },
-      { "term": "Client-side persistence", "explanation": "Data is stored in localStorage so the app works offline and across sessions; for this project that avoids a backend while making loss of data (e.g. cleared storage) a known failure mode we handle with clear UX." }
+      {
+        "term": "Composition API",
+        "explanation": "In this tracker, reusable logic (totals, category sums) lives in composables so the same calculations drive both the list and the charts; that supports the goal of a single source of truth and a maintainable codebase."
+      },
+      {
+        "term": "Reactive state",
+        "explanation": "Income and expenses are reactive so adding or editing a transaction immediately updates totals and pie charts without manual refresh; that keeps the experience instant and aligned with the project's focus on clarity."
+      },
+      {
+        "term": "Client-side persistence",
+        "explanation": "Data is stored in localStorage so the app works offline and across sessions; for this project that avoids a backend while making loss of data (e.g. cleared storage) a known failure mode we handle with clear UX."
+      }
     ],
     "failureModes": "LocalStorage full or unavailable: the app checks for quota and write errors and shows a clear message so users know data may not persist. Chart render failure: Chart.js is wrapped so a broken config or missing data does not crash the page; we fall back to a simple table or message. Invalid or missing input: form validation and reactive defaults prevent NaN or empty totals; the UI stays consistent.",
     "impact": "This creative experiment showcases modern frontend development practices, demonstrating Vue 3's capabilities for building interactive, data-driven applications. Users can track spending patterns with visual feedback, exploring how modern UI patterns enhance financial tracking experiences.",
@@ -489,9 +525,18 @@
     "problemSolutionBridge": "To give instructors one place to plan and view weekly classes without losing work on refresh, I built an Angular SSR app with client-side persistence and clear error handling.",
     "solution": "I built an Angular 20 application with server-side rendering, featuring drag-and-drop scheduling, dark mode, and local storage persistence.",
     "keyTerms": [
-      { "term": "Server-side rendering (SSR)", "explanation": "In this scheduler, the first paint is rendered on the server so the schedule is visible and SEO-friendly before JavaScript runs; that supports the goal of fast, reliable loading for instructors." },
-      { "term": "Local storage persistence", "explanation": "Class data is saved in the browser so instructors do not lose work on refresh or close; for this project that avoids a backend while making storage quota a known failure mode we handle with clear messaging." },
-      { "term": "Drag-and-drop scheduling", "explanation": "Classes can be reordered or rescheduled via drag-and-drop so the UI matches how instructors think about the week; that supports the goal of an intuitive, low-friction planning experience." }
+      {
+        "term": "Server-side rendering (SSR)",
+        "explanation": "In this scheduler, the first paint is rendered on the server so the schedule is visible and SEO-friendly before JavaScript runs; that supports the goal of fast, reliable loading for instructors."
+      },
+      {
+        "term": "Local storage persistence",
+        "explanation": "Class data is saved in the browser so instructors do not lose work on refresh or close; for this project that avoids a backend while making storage quota a known failure mode we handle with clear messaging."
+      },
+      {
+        "term": "Drag-and-drop scheduling",
+        "explanation": "Classes can be reordered or rescheduled via drag-and-drop so the UI matches how instructors think about the week; that supports the goal of an intuitive, low-friction planning experience."
+      }
     ],
     "failureModes": "LocalStorage full or disabled: the app checks and shows a message so instructors know data may not persist. SSR or hydration error: Angular recovers so the client can still interact; we avoid blank screen. Network or API failure: not applicable (client-only); any future sync failure would be isolated and retried.",
     "impact": "Fitness instructors can now easily manage their class schedules with a modern, responsive interface that works on all devices.",
@@ -576,9 +621,18 @@
     "problemSolutionBridge": "To make habit tracking work even when the network is unreliable, I built a PWA that runs and persists data offline so users never lose streak or progress.",
     "solution": "I built a React PWA with habit tracking, streak counting, and visual analytics, using a service worker for offline support, LocalStorage for persistence, and modern UI patterns for engaging feedback.",
     "keyTerms": [
-      { "term": "Service worker", "explanation": "In this habit tracker, the service worker caches assets and enables offline use so the app loads and works without network; that supports the goal of reliability for daily check-ins." },
-      { "term": "Offline-first persistence", "explanation": "Habits and streaks are stored locally and synced when online so users never lose data on spotty connections; for this project that makes the app resilient to network failure." },
-      { "term": "Streak calculation", "explanation": "Streaks are computed from stored check-in history so progress is consistent and motivating; that supports the goal of visual momentum and accountability." }
+      {
+        "term": "Service worker",
+        "explanation": "In this habit tracker, the service worker caches assets and enables offline use so the app loads and works without network; that supports the goal of reliability for daily check-ins."
+      },
+      {
+        "term": "Offline-first persistence",
+        "explanation": "Habits and streaks are stored locally and synced when online so users never lose data on spotty connections; for this project that makes the app resilient to network failure."
+      },
+      {
+        "term": "Streak calculation",
+        "explanation": "Streaks are computed from stored check-in history so progress is consistent and motivating; that supports the goal of visual momentum and accountability."
+      }
     ],
     "failureModes": "LocalStorage full: we surface a clear message and avoid silent data loss. Service worker update failure: the app still works with cached assets; next load can pick up the new worker. Corrupt or missing data: we validate on load and fall back to empty state so the app does not crash.",
     "impact": "This creative experiment showcases PWA development practices, demonstrating offline-first design, service worker implementation, and modern UI patterns for building engaging productivity applications.",
@@ -663,9 +717,18 @@
     "problemSolutionBridge": "To keep countdowns simple and always available, I built a vanilla JS app with local persistence and clear fallbacks when storage or notifications fail.",
     "solution": "I built a vanilla JavaScript application with multiple countdown views, recurring events, and smart notifications.",
     "keyTerms": [
-      { "term": "Recurring events", "explanation": "Countdowns can repeat yearly (or at other intervals) so users set once and keep getting reminded; that supports the goal of low-friction tracking for life events." },
-      { "term": "Local storage persistence", "explanation": "Events are saved in the browser so they survive refresh and return visits; for this project that avoids a backend while handling quota errors with clear UX." },
-      { "term": "Smart notifications", "explanation": "The app uses browser APIs to notify when a countdown reaches zero so users do not miss the moment; that supports the goal of timely, reliable reminders." }
+      {
+        "term": "Recurring events",
+        "explanation": "Countdowns can repeat yearly (or at other intervals) so users set once and keep getting reminded; that supports the goal of low-friction tracking for life events."
+      },
+      {
+        "term": "Local storage persistence",
+        "explanation": "Events are saved in the browser so they survive refresh and return visits; for this project that avoids a backend while handling quota errors with clear UX."
+      },
+      {
+        "term": "Smart notifications",
+        "explanation": "The app uses browser APIs to notify when a countdown reaches zero so users do not miss the moment; that supports the goal of timely, reliable reminders."
+      }
     ],
     "failureModes": "LocalStorage full or blocked: we detect and inform the user so they know events may not persist. Notification permission denied: countdowns still work; we do not block the app. Timer drift or tab in background: we recalculate on focus so displayed time stays accurate.",
     "impact": "Users can now easily track multiple countdowns with automatic yearly repetition and visual customization.",
@@ -750,9 +813,18 @@
     "problemSolutionBridge": "To combine maps and stories in one place, I built a React app with Leaflet so content loads progressively and map or API failures do not break the rest of the experience.",
     "solution": "I built a React application with Leaflet.js integration, featuring interactive world maps, travel stories, and destination exploration.",
     "keyTerms": [
-      { "term": "Leaflet.js / OpenStreetMap", "explanation": "In this travel platform, maps are rendered with Leaflet and OSM so destinations are explorable without a paid map API; that supports the goal of an interactive, shareable travel experience." },
-      { "term": "Masonry layout", "explanation": "Stories and photos use a masonry grid so varying content heights look natural; that supports the goal of a blog-like, visual discovery experience." },
-      { "term": "Theme persistence", "explanation": "Dark/light theme is stored in LocalStorage so user preference survives refresh; for this project that keeps the reading experience consistent across visits." }
+      {
+        "term": "Leaflet.js / OpenStreetMap",
+        "explanation": "In this travel platform, maps are rendered with Leaflet and OSM so destinations are explorable without a paid map API; that supports the goal of an interactive, shareable travel experience."
+      },
+      {
+        "term": "Masonry layout",
+        "explanation": "Stories and photos use a masonry grid so varying content heights look natural; that supports the goal of a blog-like, visual discovery experience."
+      },
+      {
+        "term": "Theme persistence",
+        "explanation": "Dark/light theme is stored in LocalStorage so user preference survives refresh; for this project that keeps the reading experience consistent across visits."
+      }
     ],
     "failureModes": "Map tile or API failure: the map degrades to a placeholder or message so the rest of the page (stories, nav) still works. Image load failure: we use fallbacks or alt content so the layout does not break. LocalStorage full: theme may reset on next visit; we do not block rendering.",
     "impact": "Users can now explore destinations through interactive maps and read detailed travel experiences from other travelers.",
@@ -832,9 +904,18 @@
     "problemSolutionBridge": "To give the school one reliable, fast site that works even on slow connections, I built a React PWA with clear structure and offline fallbacks.",
     "solution": "I built a comprehensive React website with PWA capabilities, featuring school information, events, photo galleries, and contact details.",
     "keyTerms": [
-      { "term": "PWA (Progressive Web App)", "explanation": "Rasoha Academy's site can be installed and used offline so parents and students in low-connectivity areas can still access key info; that supports the goal of reliable access for the community." },
-      { "term": "SEO optimization", "explanation": "Meta tags, structure, and performance are tuned so the school appears in local and program-related search; that supports the goal of discoverability for prospective families." },
-      { "term": "Responsive and accessible design", "explanation": "Layout and components work across devices and respect accessibility so all visitors can use the site; that supports the goal of an inclusive school presence." }
+      {
+        "term": "PWA (Progressive Web App)",
+        "explanation": "Rasoha Academy's site can be installed and used offline so parents and students in low-connectivity areas can still access key info; that supports the goal of reliable access for the community."
+      },
+      {
+        "term": "SEO optimization",
+        "explanation": "Meta tags, structure, and performance are tuned so the school appears in local and program-related search; that supports the goal of discoverability for prospective families."
+      },
+      {
+        "term": "Responsive and accessible design",
+        "explanation": "Layout and components work across devices and respect accessibility so all visitors can use the site; that supports the goal of an inclusive school presence."
+      }
     ],
     "failureModes": "Offline or slow network: the service worker serves cached pages so key info remains available. Image or asset failure: we use fallbacks and alt text so the page does not break. Form or contact failure: we show clear errors and retry options so the school does not lose leads.",
     "impact": "The school now has a professional online presence that effectively communicates with students, parents, and the community.",
@@ -904,8 +985,7 @@
         "/assets/projects/rasoha.jpg"
       ]
     }
-  }
-  ,
+  },
   {
     "id": 10,
     "slug": "banking-system",
@@ -920,17 +1000,42 @@
     "problemSolutionBridge": "To demonstrate clean OOP and domain modeling, I designed a small banking core where accounts, transactions, and the bank are clearly separated and easy to reason about.",
     "solution": "I designed an extensible domain model with an abstract Account base class and concrete Savings/Checking accounts, a Bank aggregate to manage customers/accounts, and transaction records capturing all operations.",
     "keyTerms": [
-      { "term": "Encapsulation and polymorphism", "explanation": "Account types hide internal state and expose a consistent interface so the Bank can treat savings and checking uniformly; that supports the goal of clear, maintainable OOP." },
-      { "term": "Domain model / aggregate", "explanation": "The Bank aggregate owns customers and accounts and enforces invariants (e.g. no negative balance) so the project demonstrates how to keep business rules in one place." },
-      { "term": "Transaction records", "explanation": "Every deposit, withdrawal, and transfer is recorded so we have an audit trail and can reason about correctness; that supports the goal of a credible, educational banking example." }
+      {
+        "term": "Encapsulation and polymorphism",
+        "explanation": "Account types hide internal state and expose a consistent interface so the Bank can treat savings and checking uniformly; that supports the goal of clear, maintainable OOP."
+      },
+      {
+        "term": "Domain model / aggregate",
+        "explanation": "The Bank aggregate owns customers and accounts and enforces invariants (e.g. no negative balance) so the project demonstrates how to keep business rules in one place."
+      },
+      {
+        "term": "Transaction records",
+        "explanation": "Every deposit, withdrawal, and transfer is recorded so we have an audit trail and can reason about correctness; that supports the goal of a credible, educational banking example."
+      }
     ],
     "failureModes": "Invalid input (e.g. negative amount): the domain model rejects or validates so we never apply invalid operations. No external I/O: the app is console-only and in-memory so there are no network or storage failures; failure handling is demonstrated through validation and clear error messages.",
     "impact": "Clear demonstration of OOP fundamentals, clean architecture, and maintainable code suitable for technical interviews and backend design discussions.",
     "technologies": [
-      { "name": "Java 17+", "category": "Language", "icon": "java" },
-      { "name": "OOP", "category": "Concept", "icon": "oop" },
-      { "name": "Maven", "category": "Build", "icon": "maven" },
-      { "name": "Gradle", "category": "Build", "icon": "gradle" }
+      {
+        "name": "Java 17+",
+        "category": "Language",
+        "icon": "java"
+      },
+      {
+        "name": "OOP",
+        "category": "Concept",
+        "icon": "oop"
+      },
+      {
+        "name": "Maven",
+        "category": "Build",
+        "icon": "maven"
+      },
+      {
+        "name": "Gradle",
+        "category": "Build",
+        "icon": "gradle"
+      }
     ],
     "features": [
       "Create customers and open savings/checking accounts",
@@ -950,7 +1055,11 @@
       "Lightweight console interface requiring no external services"
     ],
     "metrics": [
-      { "label": "Frameworks", "value": "0", "description": "Pure Java only" }
+      {
+        "label": "Frameworks",
+        "value": "0",
+        "description": "Pure Java only"
+      }
     ],
     "links": {
       "live": "",
@@ -960,7 +1069,9 @@
       "hero": "/assets/projects/bank.jpg",
       "before": "/assets/projects/bank.jpg",
       "after": "/assets/projects/bank.jpg",
-      "gallery": ["/assets/projects/bank.jpg"]
+      "gallery": [
+        "/assets/projects/bank.jpg"
+      ]
     }
   },
   {
@@ -977,9 +1088,18 @@
     "problemSolutionBridge": "To make credentials tamper-proof and verifiable without a central authority, I designed a hybrid system that keeps issuance fast and cheap while putting permanent proof on-chain.",
     "solution": "I architected EduChain as a blockchain-based certificate management system leveraging ERC721 NFT standards to create immutable, verifiable certificates. Each certificate is permanently stored on the Ethereum blockchain with metadata on IPFS, ensuring tamper-proof verification and permanent accessibility. The platform includes owner-only minting with OpenZeppelin audited patterns, non-transferable NFTs to prevent trading, and comprehensive verification features with dual storage architecture for optimal performance.",
     "keyTerms": [
-      { "term": "ERC721 NFT minting", "explanation": "In EduChain each certificate is a unique token on Ethereum; minting is owner-only and non-transferable so the credential is tied to the issuer and cannot be sold, supporting the goal of verifiable academic proof." },
-      { "term": "IPFS decentralized storage", "explanation": "Certificate metadata (name, date, institution) is stored on IPFS so it is content-addressed and durable without a central server; for this project that keeps verification data available even if our backend is down." },
-      { "term": "ReentrancyGuard", "explanation": "The smart contract uses OpenZeppelin's ReentrancyGuard so a single mint or transfer cannot be re-entered mid-execution; that protects the project goal of correct, one-to-one certificate issuance." }
+      {
+        "term": "ERC721 NFT minting",
+        "explanation": "In EduChain each certificate is a unique token on Ethereum; minting is owner-only and non-transferable so the credential is tied to the issuer and cannot be sold, supporting the goal of verifiable academic proof."
+      },
+      {
+        "term": "IPFS decentralized storage",
+        "explanation": "Certificate metadata (name, date, institution) is stored on IPFS so it is content-addressed and durable without a central server; for this project that keeps verification data available even if our backend is down."
+      },
+      {
+        "term": "ReentrancyGuard",
+        "explanation": "The smart contract uses OpenZeppelin's ReentrancyGuard so a single mint or transfer cannot be re-entered mid-execution; that protects the project goal of correct, one-to-one certificate issuance."
+      }
     ],
     "failureModes": "Wallet disconnect or reject: the frontend handles connection loss and user rejection without crashing; issuance state is recoverable. IPFS pin failure: backend retries and returns clear errors so issuers know if metadata did not pin. RPC or gas spike: read-only verification still works; minting can be retried. Smart contract revert: errors are surfaced so the UI can show retry or support; MongoDB is not updated until on-chain success so we avoid inconsistent state.",
     "impact": "EduChain provides a secure, decentralized solution for certificate management with instant verification capabilities. The platform ensures certificates are permanently accessible, tamper-proof, and easily verifiable by anyone with the certificate token ID. The system uses OpenZeppelin audited patterns for security, includes dual storage (MongoDB for queries, IPFS for metadata, Blockchain for verification), and demonstrates production-grade Web3 architecture with comprehensive error handling.",
@@ -1126,9 +1246,18 @@
     "problemSolutionBridge": "To fix weak boundaries and poor auditability, I designed LedgerX so every request is org-scoped, every important action is an event, and payments and diagnostics fail in controlled ways without corrupting the ledger.",
     "solution": "I built LedgerX around six non-negotiables: strong multi-tenant isolation (every request and query organization-scoped), auditability by default (important actions are events and recorded), financial correctness (true double-entry ledger with append-only hash chain), resilience under failure (circuit breakers, graceful degradation), operational visibility (health, metrics, diagnostics, feature flags, controlled remediation), and security that earns respect (JWT + token versioning, rate limiting, role-restricted audit/diagnostics).",
     "keyTerms": [
-      { "term": "Idempotency (payment intents)", "explanation": "In LedgerX each payment intent is idempotent so duplicate webhooks or retries do not double-charge; that directly supports the goal of financial correctness and safe reconciliation with Stripe and M-Pesa." },
-      { "term": "Double-entry ledger with hash chain", "explanation": "Every financial movement is a balanced ledger entry in an append-only hash chain so we can detect tampering and reconcile; that supports auditability and compliance for the platform." },
-      { "term": "Circuit breakers", "explanation": "Stripe and M-Pesa adapters sit behind circuit breakers so when a provider is down or slow we fail fast and degrade gracefully instead of blocking or corrupting ledger state." }
+      {
+        "term": "Idempotency (payment intents)",
+        "explanation": "In LedgerX each payment intent is idempotent so duplicate webhooks or retries do not double-charge; that directly supports the goal of financial correctness and safe reconciliation with Stripe and M-Pesa."
+      },
+      {
+        "term": "Double-entry ledger with hash chain",
+        "explanation": "Every financial movement is a balanced ledger entry in an append-only hash chain so we can detect tampering and reconcile; that supports auditability and compliance for the platform."
+      },
+      {
+        "term": "Circuit breakers",
+        "explanation": "Stripe and M-Pesa adapters sit behind circuit breakers so when a provider is down or slow we fail fast and degrade gracefully instead of blocking or corrupting ledger state."
+      }
     ],
     "failureModes": "Payment provider down: circuit breakers open so we do not block requests; we return clear errors and can retry or queue when the provider recovers. Webhook duplicate or replay: idempotent handling ensures we do not double-post to the ledger or double-fulfil an intent. Database or process crash: PostgreSQL transactions and append-only ledger keep data consistent; we can recover and replay from events where needed. Unauthorized access: JWT, token versioning, and role-restricted audit/diagnostics limit blast radius and are audited.",
     "impact": "LedgerX demonstrates senior-level backend architecture, security-first thinking, event-driven system design, fintech-grade data integrity, and operational maturity beyond CRUD. It is designed to be read, reviewed, and respected by experienced engineers.",
@@ -1236,10 +1365,26 @@
       "Deployed on Render (backend) and Netlify (frontend); live and GitHub retained"
     ],
     "metrics": [
-      { "label": "Multi-Tenancy", "value": "Org-scoped", "description": "Every request and query organization-scoped" },
-      { "label": "Ledger", "value": "Double-entry", "description": "Append-only hash chain for integrity" },
-      { "label": "Payments", "value": "Stripe + M-Pesa", "description": "Adapters behind circuit breakers" },
-      { "label": "Observability", "value": "Health + Metrics", "description": "Diagnostics, feature flags, remediation" }
+      {
+        "label": "Multi-Tenancy",
+        "value": "Org-scoped",
+        "description": "Every request and query organization-scoped"
+      },
+      {
+        "label": "Ledger",
+        "value": "Double-entry",
+        "description": "Append-only hash chain for integrity"
+      },
+      {
+        "label": "Payments",
+        "value": "Stripe + M-Pesa",
+        "description": "Adapters behind circuit breakers"
+      },
+      {
+        "label": "Observability",
+        "value": "Health + Metrics",
+        "description": "Diagnostics, feature flags, remediation"
+      }
     ],
     "links": {
       "live": "https://ledgerxx.netlify.app/auth/login",
@@ -1270,9 +1415,18 @@
     "problemSolutionBridge": "To unify incidents, workflows, and knowledge in one place without expensive infra, I built OpsFlow with team-scoped data and real-time updates so failures in one area do not take down the rest.",
     "solution": "I architected OpsFlow as a unified operations platform enabling teams to manage the full incident lifecycle with SLA tracking, coordinate response workflows and tasks in real-time, maintain a searchable team-scoped knowledge base, enforce role-based and team-based access control, and monitor operational health through a centralized dashboard. The system uses dual-database architecture (PostgreSQL for transactions, MongoDB for event logs) and WebSocket-powered real-time updates without requiring paid infrastructure.",
     "keyTerms": [
-      { "term": "Dual-database architecture", "explanation": "OpsFlow uses PostgreSQL for ACID incident and workflow data and MongoDB for high-volume event logs; that supports the project goal of both reliable state and cheap, flexible event history without a single bottleneck." },
-      { "term": "On-demand SLA calculation", "explanation": "SLA and breach detection run during API requests instead of background jobs so we could ship without a queue or workers; for this project that traded some efficiency for simpler, free-tier-friendly infra." },
-      { "term": "Team-scoped multi-tenancy", "explanation": "Every query is filtered by team so one team never sees another's incidents or docs; that supports secure, multi-tenant operations management on a single deployment." }
+      {
+        "term": "Dual-database architecture",
+        "explanation": "OpsFlow uses PostgreSQL for ACID incident and workflow data and MongoDB for high-volume event logs; that supports the project goal of both reliable state and cheap, flexible event history without a single bottleneck."
+      },
+      {
+        "term": "On-demand SLA calculation",
+        "explanation": "SLA and breach detection run during API requests instead of background jobs so we could ship without a queue or workers; for this project that traded some efficiency for simpler, free-tier-friendly infra."
+      },
+      {
+        "term": "Team-scoped multi-tenancy",
+        "explanation": "Every query is filtered by team so one team never sees another's incidents or docs; that supports secure, multi-tenant operations management on a single deployment."
+      }
     ],
     "failureModes": "PostgreSQL or MongoDB down: the app fails clearly for affected operations; WebSocket and API are isolated so a DB blip does not take down the whole process. WebSocket disconnect: clients reconnect and refetch so they do not miss updates. Long-running report or export: request timeouts and async patterns prevent one heavy operation from blocking others. Unauthorized access: RBAC and team-scoped queries enforce isolation; audit trails record who did what.",
     "impact": "Production-ready system with 50+ API endpoints and real-time incident updates without paid infrastructure. Secure team-based multi-tenant architecture with complete data isolation, fully documented setup and deployment guides, and responsive UI across mobile, tablet, and desktop. Demonstrates enterprise-grade backend and system design skills with real-world SaaS architecture, security awareness, and proven ability to build production-ready systems under infrastructure constraints.",
@@ -1407,9 +1561,18 @@
     "problemSolutionBridge": "To move from robotic loops to a responsive, natural-feeling interpreter, I built SignFlow so translation streams in real time and the 3D avatar varies per phrase, with failures in rendering or network isolated from the core experience.",
     "solution": "I architected SignFlow as a sophisticated assistive technology platform with dynamic logic for per-word and phrase-based animation sequences, live streaming via WebSocket-powered translation for near-zero latency, responsive interface with high-fidelity 3D avatar that reacts to user input, and accessibility-first design with UI built specifically for inclusive user experiences. By applying subtle variations to repeated inputs, SignFlow creates the illusion of a living interpreter rather than a looped animation, demonstrating production-grade architecture for specialized user bases.",
     "keyTerms": [
-      { "term": "Animation pools (seed-based variation)", "explanation": "SignFlow stores multiple animation variants per word or phrase and picks one by seed so repeated words do not look identical; that supports the project goal of natural, human-like signing instead of a single loop." },
-      { "term": "WebSocket streaming", "explanation": "Text is sent over a WebSocket and sign sequences stream back so latency stays low; for this assistive product that keeps the experience responsive and real-time without polling." },
-      { "term": "3D rendering isolation", "explanation": "Three.js/React Three Fiber runs in a layer separate from translation and API so a render glitch or heavy frame does not block the translation pipeline or crash the app." }
+      {
+        "term": "Animation pools (seed-based variation)",
+        "explanation": "SignFlow stores multiple animation variants per word or phrase and picks one by seed so repeated words do not look identical; that supports the project goal of natural, human-like signing instead of a single loop."
+      },
+      {
+        "term": "WebSocket streaming",
+        "explanation": "Text is sent over a WebSocket and sign sequences stream back so latency stays low; for this assistive product that keeps the experience responsive and real-time without polling."
+      },
+      {
+        "term": "3D rendering isolation",
+        "explanation": "Three.js/React Three Fiber runs in a layer separate from translation and API so a render glitch or heavy frame does not block the translation pipeline or crash the app."
+      }
     ],
     "failureModes": "WebSocket disconnect: client reconnects and can resend input so the user is not stuck. 3D render or GPU failure: error boundaries contain the avatar component so the rest of the UI (text, controls) still works and we can show a fallback or retry. Translation service or DB slow: we show loading and timeouts so the user knows the system is working; we do not block the main thread. Missing animation for a word: we fall back to spelling or a default so the experience degrades gracefully instead of breaking.",
     "impact": "Fully implemented assistive technology prototype demonstrating real-time system design using WebSockets, scalable cloud architecture with MongoDB Atlas, intentional UX for specialized user bases, and product-level thinking bridging coding projects and viable market solutions. The platform features high-fidelity 3D avatar simulation, natural variation in animations, comprehensive analytics dashboard, and full WCAG accessibility compliance, showcasing enterprise-grade architecture for accessibility platforms.",
@@ -1538,40 +1701,101 @@
     "id": 15,
     "slug": "nestfi",
     "title": "NestFi — Resilient Financial Coordination Platform",
-    "subtitle": "Correctness-first finance with hybrid storage, M-Pesa B2C, and failure-aware design",
+    "subtitle": "Correctness-first finance with hybrid storage, M-Pesa B2C, and failure-aware design. Developed by Ancel Ajanga.",
     "role": "Full-Stack Software Engineer",
     "timeline": "Ongoing",
     "year": "2026",
     "status": "In Progress",
-    "description": "NestFi is a production-grade finance platform designed for financial correctness under failure. Built by Ancel Ajanga, it ensures predictable behavior across asynchronous payment providers, delayed or duplicated callbacks, unreliable networks, and hybrid storage layers. PostgreSQL enforces ledger integrity, MongoDB handles compliance and audit events, and Redis provides ephemeral caching and distributed locking with fail-closed safety. Real-time notifications via Socket.io and hardened M-Pesa Daraja integrations make the system resilient, auditable, and user-trust oriented.",
-    "problem": "Building a finance system isn’t CRUD — it’s correctness under failure. NestFi must remain predictable when payment providers are asynchronous, callbacks are delayed or duplicated, caches fail, logs are temporarily unavailable, and network conditions are unreliable. The core challenge is fault isolation and ledger correctness across multiple storage models and external integrations.",
+    "description": "NestFi is a financial application developed by Ancel Ajanga—a production-grade financial coordination platform designed for correctness under failure. It ensures predictable behavior across asynchronous payment providers, delayed or duplicated callbacks, unreliable networks, and hybrid storage layers. PostgreSQL enforces ledger integrity, MongoDB handles compliance and audit events, and Redis provides ephemeral caching and distributed locking with fail-closed safety. Real-time notifications via Socket.io and hardened M-Pesa Daraja integrations make the system resilient, auditable, and user-trust oriented.",
+    "problem": "Problem Statement — Building a finance system isn’t CRUD — it’s correctness under failure. NestFi, the financial app developed by Ancel Ajanga, must remain predictable when payment providers are asynchronous, callbacks are delayed or duplicated, caches fail, logs are temporarily unavailable, and network conditions are unreliable. The core challenge is fault isolation and ledger correctness across multiple storage models and external integrations.",
     "problemSolutionBridge": "To keep the ledger correct when callbacks are late or duplicated and caches or logs fail, I designed NestFi so PostgreSQL is the single source of truth, every external integration is idempotent and failure-contained, and withdrawals follow a request → approval → execution → callback lifecycle with database-enforced idempotency.",
-    "solution": "Hybrid storage: PostgreSQL (wallets, ledgers), MongoDB (events, audit & compliance logs), Redis (locks, queues, rate limits). Service isolation: stateless NestJS backend (JWT), restart-safe, horizontally scalable. Failure-aware external integration: M-Pesa Daraja flows are idempotent, timeout-aware, and guarded by retries, backoff, and circuit breakers. Real-time UX: mobile deposits and withdrawals update instantly via Socket.io when callbacks are processed. Audit & compliance: structured, immutable event logging for KYC, withdrawals, disputes, and fee/tax handling. System guarantees include financial correctness (ledger-backed double-entry; totals net to zero), withdrawal safety (B2C lifecycle with DISPUTED state for manual reconciliation), resilience (fail-closed distributed locks with renewal), real-time trust loop (explicit states e.g. Settling), compliance & audit (MongoDB), rate limiting (Redis primary, Postgres fallback), and data safety (Postgres = truth, MongoDB = audit, Redis = ephemeral).",
+    "solution": "Solution — NestFi is a financial app developed by Ancel Ajanga with hybrid storage: PostgreSQL (wallets, ledgers), MongoDB (events, audit & compliance logs), Redis (locks, queues, rate limits). Service isolation: stateless NestJS backend (JWT), restart-safe, horizontally scalable. Failure-aware external integration: M-Pesa Daraja flows are idempotent, timeout-aware, and guarded by retries, backoff, and circuit breakers. Real-time UX: mobile deposits and withdrawals update instantly via Socket.io when callbacks are processed. Audit & compliance: structured, immutable event logging for KYC, withdrawals, disputes, and fee/tax handling. System guarantees include financial correctness (ledger-backed double-entry; totals net to zero), withdrawal safety (B2C lifecycle with DISPUTED state for manual reconciliation), resilience (fail-closed distributed locks with renewal), real-time trust loop (explicit states e.g. Settling), compliance & audit (MongoDB), rate limiting (Redis primary, Postgres fallback), and data safety (Postgres = truth, MongoDB = audit, Redis = ephemeral).",
     "keyTerms": [
-      { "term": "Idempotent callback processing", "explanation": "In NestFi, M-Pesa callbacks are processed so duplicate or delayed deliveries do not double-credit or double-debit; that supports the goal of ledger correctness when the provider is asynchronous and unreliable." },
-      { "term": "Double-entry accounting", "explanation": "All wallet updates are ledger-backed; every transaction debits and credits system accounts such that totals always net to zero." },
-      { "term": "Fail-closed distributed locks", "explanation": "Autosave batching and other critical jobs use distributed locks with renewal; execution aborts if lock ownership cannot be proven, so the system never proceeds under ambiguity." }
+      {
+        "term": "Idempotent callback processing",
+        "explanation": "In NestFi, M-Pesa callbacks are processed so duplicate or delayed deliveries do not double-credit or double-debit; that supports the goal of ledger correctness when the provider is asynchronous and unreliable."
+      },
+      {
+        "term": "Double-entry accounting",
+        "explanation": "All wallet updates are ledger-backed; every transaction debits and credits system accounts such that totals always net to zero."
+      },
+      {
+        "term": "Fail-closed distributed locks",
+        "explanation": "Autosave batching and other critical jobs use distributed locks with renewal; execution aborts if lock ownership cannot be proven, so the system never proceeds under ambiguity."
+      }
     ],
     "failureModes": "M-Pesa callback duplicate or delayed: idempotent handling and correlation IDs ensure we apply the effect once. Redis down: we bypass cache and rate limits (Postgres fallback) so auth and core API still work. MongoDB down: we skip event logging so writes to PostgreSQL are not blocked. Backend crash: stateless design and JWT allow restart without session loss; ledger state is only in PostgreSQL. Network timeout to provider: circuit breakers and retries with backoff prevent cascading failure. Withdrawal ambiguity: B2C ResultCode success does not imply user receipt; withdrawals can enter DISPUTED state for manual reconciliation.",
-    "impact": "NestFi demonstrates capstone-level engineering: correctness-first design where financial truth is never inferred; explicit handling of distributed-system failure modes (timeouts, split-brain risk, replayed callbacks); real-time, user-trust-focused payment experience; strong auditability and compliance foundations aligned with Kenyan fintech regulations; architecture optimized for resilience, not feature count. Completion ~87% — core architecture, ledger, M-Pesa B2C, mobile deposits, autosave batching, and audit flows fully implemented.",
+    "impact": "NestFi, the financial application developed by Ancel Ajanga, demonstrates capstone-level engineering: correctness-first design where financial truth is never inferred; explicit handling of distributed-system failure modes (timeouts, split-brain risk, replayed callbacks); real-time, user-trust-focused payment experience; strong auditability and compliance foundations aligned with Kenyan fintech regulations; architecture optimized for resilience, not feature count. Completion ~87% — core architecture, ledger, M-Pesa B2C, mobile deposits, autosave batching, and audit flows fully implemented.",
     "isolation": "Core responsibilities run independently: the backend orchestrates logic and is safe to restart; PostgreSQL remains the financial source of truth with no silent corruption; MongoDB (events/audit) is optional during failure; Redis is a performance and locking layer that can be bypassed or fall back to Postgres; M-Pesa callbacks are processed in an idempotent, delay-tolerant manner. Security and network isolation are enforced via Docker and minimal exposed ports, with TLS at the edge via Cloudflare.",
     "tradeoffs": "I chose hybrid storage (PostgreSQL, MongoDB, Redis) because it matches real financial constraints: PostgreSQL for ledger correctness, MongoDB for events and audit, Redis for low-latency ephemeral state and distributed locking. I accepted higher operational complexity in exchange for clear failure boundaries and auditability. I prioritized correctness, resilience, and auditability over feature count. Current gaps are intentional: Web KYC file upload is placeholder (manual verification); some flows use direct service calls instead of full event bus; integration, load, and contract tests pending; optional UX and operational tooling.",
     "implementationStatus": "Completion ~87%. Core architecture, ledger, M-Pesa B2C, mobile deposits, autosave batching, and audit flows fully implemented. Remaining work is operational hardening and UX refinement, not foundational correctness. Documentation is maintained alongside the codebase; Dockerized workflow supports deterministic builds.",
     "potentialExpansion": "Web KYC automation (OCR/verification). Full event bus adoption (publish/subscribe) for remaining flows. Integration, load, and contract tests. Frontend and operational tooling polish. Deeper observability, trace correlation across callbacks, runbooks, and replay tooling for event/callback recovery.",
     "technologies": [
-      { "name": "NestJS", "category": "Backend", "icon": "nestjs" },
-      { "name": "TypeScript", "category": "Language", "icon": "typescript" },
-      { "name": "PostgreSQL", "category": "Database", "icon": "postgresql" },
-      { "name": "MongoDB", "category": "Database", "icon": "mongodb" },
-      { "name": "Redis", "category": "Cache", "icon": "redis" },
-      { "name": "Docker", "category": "DevOps", "icon": "docker" },
-      { "name": "Cloudflare Workers", "category": "Edge", "icon": "cloudflare" },
-      { "name": "M-Pesa Daraja", "category": "Integration", "icon": "api" },
-      { "name": "JWT", "category": "Authentication", "icon": "jwt" },
-      { "name": "Socket.io", "category": "Real-time", "icon": "socketio" },
-      { "name": "React Native", "category": "Mobile", "icon": "react" },
-      { "name": "Next.js", "category": "Frontend", "icon": "nextjs" },
-      { "name": "RabbitMQ", "category": "Messaging", "icon": "api" }
+      {
+        "name": "NestJS",
+        "category": "Backend",
+        "icon": "nestjs"
+      },
+      {
+        "name": "TypeScript",
+        "category": "Language",
+        "icon": "typescript"
+      },
+      {
+        "name": "PostgreSQL",
+        "category": "Database",
+        "icon": "postgresql"
+      },
+      {
+        "name": "MongoDB",
+        "category": "Database",
+        "icon": "mongodb"
+      },
+      {
+        "name": "Redis",
+        "category": "Cache",
+        "icon": "redis"
+      },
+      {
+        "name": "Docker",
+        "category": "DevOps",
+        "icon": "docker"
+      },
+      {
+        "name": "Cloudflare Workers",
+        "category": "Edge",
+        "icon": "cloudflare"
+      },
+      {
+        "name": "M-Pesa Daraja",
+        "category": "Integration",
+        "icon": "api"
+      },
+      {
+        "name": "JWT",
+        "category": "Authentication",
+        "icon": "jwt"
+      },
+      {
+        "name": "Socket.io",
+        "category": "Real-time",
+        "icon": "socketio"
+      },
+      {
+        "name": "React Native",
+        "category": "Mobile",
+        "icon": "react"
+      },
+      {
+        "name": "Next.js",
+        "category": "Frontend",
+        "icon": "nextjs"
+      },
+      {
+        "name": "RabbitMQ",
+        "category": "Messaging",
+        "icon": "api"
+      }
     ],
     "features": [
       "Ledger-backed wallets with strict double-entry accounting (KES-only)",
@@ -1601,10 +1825,26 @@
       "Hybrid database model and clear isolation boundaries; completion ~87%"
     ],
     "metrics": [
-      { "label": "Completion", "value": "~87%", "description": "Core architecture, ledger, M-Pesa B2C, mobile deposits, autosave, audit flows implemented" },
-      { "label": "Datastores", "value": "3", "description": "PostgreSQL + MongoDB + Redis hybrid model" },
-      { "label": "Payment Integration", "value": "M-Pesa Daraja", "description": "STK Push & B2C callbacks, idempotent processing" },
-      { "label": "Resilience", "value": "Circuit breakers + fail-closed locks", "description": "Timeouts, retries, backoff, lock renewal" }
+      {
+        "label": "Completion",
+        "value": "~87%",
+        "description": "Core architecture, ledger, M-Pesa B2C, mobile deposits, autosave, audit flows implemented"
+      },
+      {
+        "label": "Datastores",
+        "value": "3",
+        "description": "PostgreSQL + MongoDB + Redis hybrid model"
+      },
+      {
+        "label": "Payment Integration",
+        "value": "M-Pesa Daraja",
+        "description": "STK Push & B2C callbacks, idempotent processing"
+      },
+      {
+        "label": "Resilience",
+        "value": "Circuit breakers + fail-closed locks",
+        "description": "Timeouts, retries, backoff, lock renewal"
+      }
     ],
     "links": {
       "live": "",
@@ -1634,9 +1874,18 @@
     "problemSolutionBridge": "To replace fragmented tools with one system without mixing school data or permissions, I built EduManage with tenant-scoped access and hierarchical RBAC so failures in one institution or module do not affect others.",
     "solution": "I built EduManage to centralize core school operations into a single system with clear role boundaries. The platform focuses on predictable workflows for student enrollment, administrative management, and academic reporting, with structured access control and a backend designed to handle growth and operational complexity.",
     "keyTerms": [
-      { "term": "Tenant-scoped data access", "explanation": "Every EduManage request is filtered by institution so one school never sees another's data; that supports the project goal of multi-tenant SaaS on a single deployment with strict isolation." },
-      { "term": "Hierarchical RBAC", "explanation": "Roles and permissions form a hierarchy so complex school structures (admin, teacher, secretary) map to predictable access without per-user exceptions; that supports scalable, auditable authorization." },
-      { "term": "Real-time events (Socket.io)", "explanation": "Notifications and updates are delivered over scoped channels so only the right tenant receives them; that supports live workflows without cross-tenant leakage or polling." }
+      {
+        "term": "Tenant-scoped data access",
+        "explanation": "Every EduManage request is filtered by institution so one school never sees another's data; that supports the project goal of multi-tenant SaaS on a single deployment with strict isolation."
+      },
+      {
+        "term": "Hierarchical RBAC",
+        "explanation": "Roles and permissions form a hierarchy so complex school structures (admin, teacher, secretary) map to predictable access without per-user exceptions; that supports scalable, auditable authorization."
+      },
+      {
+        "term": "Real-time events (Socket.io)",
+        "explanation": "Notifications and updates are delivered over scoped channels so only the right tenant receives them; that supports live workflows without cross-tenant leakage or polling."
+      }
     ],
     "failureModes": "MongoDB or backend down: the app returns clear errors so clients can show retry or offline messaging. Socket.io disconnect: clients reconnect and re-subscribe so they do not miss tenant-scoped updates. Invalid or expired JWT: auth middleware rejects the request and the frontend can redirect to login. Cross-tenant request (bug or abuse): every query is tenant-scoped so data from another institution is never returned. Heavy report or export: we avoid blocking other requests so one school's job does not slow the whole system.",
     "impact": "Delivered a unified school operations platform that reduces administrative overhead, improves record consistency, and enables faster, more reliable reporting. The system is structured for maintainability, with clear module boundaries that support incremental expansion over time.",
@@ -1645,14 +1894,46 @@
     "implementationStatus": "Status: MVP Complete (~85%). Core multi-tenancy, RBAC, and real-time events are implemented. Deferred: advanced rate limiting, deeper automated test coverage, and advanced caching layers.",
     "potentialExpansion": "Add advanced caching for hot reads, rate limiting and abuse protection, deeper automated testing (unit + integration), audit trails for sensitive operations, and expanded real-time notification pipelines.",
     "technologies": [
-      { "name": "NestJS", "category": "Backend", "icon": "nestjs" },
-      { "name": "Express.js", "category": "Backend", "icon": "express" },
-      { "name": "MongoDB", "category": "Database", "icon": "mongodb" },
-      { "name": "JWT", "category": "Authentication", "icon": "jwt" },
-      { "name": "RBAC", "category": "Security", "icon": "security" },
-      { "name": "Socket.io", "category": "Real-time", "icon": "socketio" },
-      { "name": "TypeScript", "category": "Language", "icon": "typescript" },
-      { "name": "Docker", "category": "DevOps", "icon": "docker" }
+      {
+        "name": "NestJS",
+        "category": "Backend",
+        "icon": "nestjs"
+      },
+      {
+        "name": "Express.js",
+        "category": "Backend",
+        "icon": "express"
+      },
+      {
+        "name": "MongoDB",
+        "category": "Database",
+        "icon": "mongodb"
+      },
+      {
+        "name": "JWT",
+        "category": "Authentication",
+        "icon": "jwt"
+      },
+      {
+        "name": "RBAC",
+        "category": "Security",
+        "icon": "security"
+      },
+      {
+        "name": "Socket.io",
+        "category": "Real-time",
+        "icon": "socketio"
+      },
+      {
+        "name": "TypeScript",
+        "category": "Language",
+        "icon": "typescript"
+      },
+      {
+        "name": "Docker",
+        "category": "DevOps",
+        "icon": "docker"
+      }
     ],
     "features": [
       "Multi-tenant backend with tenant-scoped data access",
@@ -1675,10 +1956,26 @@
       "Architecture documented and maintained in GitHub docs"
     ],
     "metrics": [
-      { "label": "Status", "value": "~85%", "description": "MVP complete; hardening and optimizations deferred" },
-      { "label": "Multi-Tenancy", "value": "Tenant-scoped", "description": "Institution isolation enforced at data layer" },
-      { "label": "AuthZ", "value": "Hierarchical RBAC", "description": "Role and permission boundaries designed to scale" },
-      { "label": "Real-time", "value": "Socket.io", "description": "Notifications and operational updates" }
+      {
+        "label": "Status",
+        "value": "~85%",
+        "description": "MVP complete; hardening and optimizations deferred"
+      },
+      {
+        "label": "Multi-Tenancy",
+        "value": "Tenant-scoped",
+        "description": "Institution isolation enforced at data layer"
+      },
+      {
+        "label": "AuthZ",
+        "value": "Hierarchical RBAC",
+        "description": "Role and permission boundaries designed to scale"
+      },
+      {
+        "label": "Real-time",
+        "value": "Socket.io",
+        "description": "Notifications and operational updates"
+      }
     ],
     "links": {
       "live": "",
@@ -1697,68 +1994,173 @@
   {
     "id": 17,
     "slug": "aegis",
-    "title": "Aegis — Self-Healing Infrastructure with Policy and AI",
-    "subtitle": "Intelligent monitoring, policy-driven decisions, and safe Kubernetes automation",
+    "title": "Aegis — Self-Healing Infrastructure with Zero-Trust Architecture and Multi-Cluster Orchestration",
+    "subtitle": "Pull-based executor agents, JWS/HMAC signature validation, Shadow Mode, and ML-driven anomaly detection. Built by Ancel Ajanga.",
     "role": "Full-Stack Software Engineer",
     "timeline": "Ongoing",
     "year": "2026",
     "status": "Live",
-    "description": "Aegis monitors infrastructure behavior, detects anomalies using AI, evaluates security policies, and executes tightly controlled remediation actions. It is built with strict isolation boundaries, auditability, and failure-aware automation to avoid unsafe self-healing.",
-    "problem": "Modern infrastructure fails silently. Teams only react after damage is done, and automation often introduces more risk than it removes. Monitoring tools detect issues but don't act; automation tools act but aren't safe; security and operations are disconnected; AI systems make decisions without accountability.",
-    "problemSolutionBridge": "To make automation safe and auditable, I separated observation, intelligence, policy, and execution so the AI recommends but never executes—and every action is policy-checked and signed.",
-    "solution": "I built Aegis around four controlled layers: Observation (metrics, logs, traces, events), Intelligence (AI-driven anomaly detection), Policy (explicit, auditable rules for what is allowed), and Execution (isolated, signed, least-privilege actions). Automation is only allowed when policy, identity, and safety constraints all pass.",
+    "description": "Aegis is a self-healing infrastructure platform developed by Ancel Ajanga. It combines Zero-Trust architecture, multi-cluster orchestration, and ML-driven anomaly detection with pull-based executor agents and JWS/HMAC signature validation. The system uses Open Policy Agent (OPA) for policy enforcement, FinOps guardrails for cost control, Shadow Mode for trust-building, and distributed tracing (OpenTelemetry) with Loki for blinded observability. The AI recommends; policy authorizes; only signed intent reaches the executor.",
+    "problem": "Problem Statement — Modern infrastructure fails silently, and automation often introduces more risk than it removes. Monitoring tools detect issues but don't act; automation tools act but aren't safe. Push-based execution couples the control plane to executor endpoints, scales poorly across clusters, and leaves no room for signed intent or fail-closed validation. Security and operations are disconnected; AI systems make decisions without accountability. Teams need self-healing infrastructure that supports multi-cluster orchestration, anomaly detection, and confidence-gated execution without blind automation or unaudited actions.",
+    "problemSolutionBridge": "To achieve safe, auditable self-healing, I moved from push to pull: the backend never pushes to executors. Executor agents per cluster pull tasks and verify JWS/HMAC signature validation before acting. Shadow Mode and confidence-gated execution build trust; OPA and FinOps guardrails enforce Zero-Trust architecture. Distributed tracing (OpenTelemetry) and Loki with HKDF-based blinding give observability without exposing secrets.",
+    "solution": "Solution — Aegis implements a Zero-Trust architecture with a clear shift from push to pull. The backend enqueues executor_tasks with signed intent (HMAC-SHA256 over taskId|clusterId|requested_by|created_at); it never pushes. One executor agent per cluster registers, heartbeats every 10s, and pulls via GET /api/v1/executor/tasks?cluster_id=X. JWS/HMAC signature validation and a 5s replay window ensure only authorized, fresh tasks run. Safety: Shadow Mode logs remediation to action_audit_logs without real execution; confidence-gated execution (min_confidence_autoremediate) gates AUTONOMOUS mode; MANUAL mode creates pending actions and alerts for human approval. Intelligence: ML-driven root cause analysis via a dependency graph (BFS upstream) and proactive forecasting (Prophet) with preemptive recommendations when metrics will cross thresholds. Security: OPA default-deny policy, FinOps guardrails (max_replicas, max_monthly_budget), and blinded observability—Loki for log aggregation with HKDF-derived labels so sensitive data is hashed and not stored in plain text. Distributed tracing (OpenTelemetry) propagates traceparent; traceId is stored on audit and outbox events for correlation. Tech stack: NestJS (backend and executor), Python with FastAPI and scikit-learn (AI engine), Next.js 15 (frontend), OPA (Open Policy Agent), Redis, Loki, PostgreSQL.",
     "keyTerms": [
-      { "term": "AI-driven anomaly detection", "explanation": "In Aegis the AI engine analyzes metrics and logs to flag anomalies and recommend actions; it never executes directly, so the project goal of safe, auditable automation is preserved—humans and policy stay in control." },
-      { "term": "Failure-aware automation", "explanation": "Remediation (e.g. pod restart, rollback) runs only after policy evaluation and HMAC-signed intent; if the executor or policy service is down, no action is taken so we avoid unsafe or blind self-healing." },
-      { "term": "Policy-as-code (explicit allowlisting)", "explanation": "What the executor can do is defined in policy (namespaces, actions); the AI cannot override it, so every automated action is traceable and bounded to what the operator allowed." }
+      {
+        "term": "Signed Intent",
+        "explanation": "Every executor task is signed with HMAC-SHA256 (JWS/HMAC signature validation) over taskId|clusterId|requested_by|created_at. The agent verifies the signature and rejects tasks older than 5s. No action runs without validated signed intent."
+      },
+      {
+        "term": "Blinded Observability",
+        "explanation": "Logs are shipped to Loki; sensitive fields can be hashed with HKDF so observability retains correlation (e.g. traceId, tenant_id) without exposing secrets. Distributed tracing (OpenTelemetry) provides request flows; Loki stores log lines with structured labels."
+      },
+      {
+        "term": "Shadow Mode",
+        "explanation": "Execution mode that writes to action_audit_logs with status shadow_simulated and no real Kubernetes action. Used to validate the pipeline and build operator trust before enabling AUTONOMOUS or MANUAL remediation."
+      },
+      {
+        "term": "Multi-cluster orchestration (pull-based)",
+        "explanation": "One executor agent per cluster pulls tasks via GET /api/v1/executor/tasks?cluster_id=X. The backend never pushes. Enables scale and cross-cluster failover without the control plane knowing executor endpoints."
+      }
     ],
-    "failureModes": "AI engine down: we stop recommending new actions but existing policy and executor still work; no blind execution. Executor down: no remediation runs until it recovers; observation and policy are unchanged. Policy service down: executor refuses to run actions so we fail closed. Kubernetes API unreachable: executor returns clear errors and does not retry indefinitely. Audit log failure: we do not execute the action so we never have unaudited changes. HMAC or signature invalid: executor rejects the request so only authorized callers can trigger actions.",
-    "impact": "Aegis guarantees: no unaudited actions, no blind AI execution, no privilege escalation, no silent failures. Security highlights include JWT + RBAC, HMAC-signed executor actions, namespace allowlisting, immutable audit logs, and default-deny network policies. The platform is designed so an ethical hacker can reason about what cannot happen.",
-    "architecture": "Core services: Backend (NestJS) — Auth, policies, audit, APIs; AI Engine (FastAPI) — Anomaly detection and recommendations; Executor Service — Secure Kubernetes actions; Frontend (Next.js) — Observability and control plane UI. Infrastructure: Docker and Kubernetes, PostgreSQL and Redis, Prometheus, Grafana, Loki, Tempo, CI/CD with security scanning, Cloudflare (WAF, webhook protection). Every service is isolated, auditable, and deployable independently.",
-    "isolation": "The AI detects anomalies, assigns severity, and recommends actions—but cannot execute actions directly, override policies, or bypass audit logging. AI informs decisions; policy authorizes actions; humans retain control. Self-healing means restarting unhealthy pods, scaling deployments safely, rolling back bad releases, and temporarily isolating services. Explicitly not supported: arbitrary command execution, destructive actions, unbounded automation loops.",
-    "tradeoffs": "Implemented (~95%): Backend APIs and security, AI anomaly detection, executor with Kubernetes RBAC, full observability stack, production-ready frontend, Docker and Kubernetes manifests, CI/CD with rollback. Not yet implemented: mTLS between services, WebSocket backend, full E2E test suite, AI model persistence, external security audit. Known gaps are documented, intentional, and scoped.",
-    "implementationStatus": "Implemented (~95%): Backend APIs and security, AI anomaly detection, executor with Kubernetes RBAC, full observability stack, production-ready frontend, Docker and Kubernetes manifests, CI/CD with rollback. Not yet: mTLS, WebSocket backend, full E2E test suite, AI model persistence, external security audit.",
-    "potentialExpansion": "Architecture avoids unsafe automation, prioritizes auditability, separates decision from execution, and scales from single cluster to multi-cluster. Matches real production failure modes. Aegis reflects how I think about production systems: assume failure, design for abuse, automate carefully, and leave a trail of evidence for every decision.",
+    "failureModes": "AI engine down: we stop recommending new actions; no blind execution. Executor down: no remediation until agents recover; tasks remain in queue. Policy/OPA down or timeout: executor path refuses; fail closed. Redis down: nonce replay check fails closed for agent requests. Task signature invalid or task older than 5s: agent rejects (JWS/HMAC signature validation and replay protection). Audit log failure: we do not execute. HMAC invalid: executor rejects.",
+    "impact": "Aegis delivers self-healing infrastructure under Zero-Trust architecture: no unaudited actions, no blind AI execution, multi-cluster orchestration via pull-based agents, and JWS/HMAC signature validation on every task. Shadow Mode and confidence-gated execution build operator trust. ML-driven root cause analysis and proactive forecasting improve remediation targeting. FinOps guardrails and OPA default-deny support safe, cost-aware automation. Distributed tracing (OpenTelemetry) and Loki with blinded observability provide correlation and auditability without exposing secrets.",
+    "architecture": "Backend (NestJS): auth (JWT or OIDC), OPA integration, executor task enqueue (no push), signed intent per task, clusters/deployments CRUD, dependency graph (BFS root-cause for ML-driven root cause analysis), outbox/DLQ, Watchdog. AI Engine (Python/FastAPI, scikit-learn): anomaly detection (Isolation Forest), failure detection (Random Forest), proactive forecasting (Prophet). Executor (NestJS): agent per cluster, register/heartbeat/pull, JWS/HMAC signature validation, 5s replay window, real K8s actions. Frontend (Next.js 15): dashboard, policies (execution mode: Autonomous/Manual/Shadow), alerts, dependency graph. Data: PostgreSQL (backend + executor audit), Redis (rate limit, cache, nonce), Loki (logs; blinded observability with HKDF where applied), Prometheus/Tempo. Distributed tracing: OpenTelemetry with W3C traceparent; traceId on audit and outbox.",
+    "isolation": "Zero-Trust architecture: AI has no path to executor; backend never pushes. Executor agents pull and verify signed intent (JWS/HMAC). OPA default-deny; unauthenticated or missing role mapped to guest. Tenant isolation via tenant_id. Shadow Mode: no real execution, only audit log. Blinded observability: Loki + HKDF so logs are queryable without plain-text secrets.",
+    "tradeoffs": "Implemented: pull-based multi-cluster orchestration, signed intent (JWS/HMAC), Shadow/Manual/Autonomous execution modes, OPA with FinOps guardrails, dependency graph and ML-driven root cause, proactive forecasting, Loki and OpenTelemetry. Optional: mTLS, OIDC. Blinded observability (HKDF) applied where sensitive data is logged; full deployment is config-dependent.",
+    "implementationStatus": "Implemented: Backend (auth, OPA, executor agent API, remediate/approve, Shadow Mode, dependency graph, outbox/DLQ, Watchdog), AI Engine (predict, retrain, forecasting with scikit-learn), Executor (agent register/heartbeat/pull, JWS/HMAC signature validation, 5s replay), Frontend (Next.js 15, execution mode UI, dependency graph). See PROJECT_STATUS and ARCHITECTURE.md.",
+    "potentialExpansion": "Architecture supports multi-cluster orchestration, Zero-Trust execution, and trust-building via Shadow Mode. Optional mTLS and OIDC; FinOps and OPA in place. Control-plane Watchdog and outbox DLQ support operational resilience.",
     "technologies": [
-      { "name": "NestJS", "category": "Backend", "icon": "nestjs" },
-      { "name": "FastAPI", "category": "Backend", "icon": "python" },
-      { "name": "Next.js", "category": "Frontend", "icon": "nextjs" },
-      { "name": "PostgreSQL", "category": "Database", "icon": "postgresql" },
-      { "name": "Redis", "category": "Cache", "icon": "redis" },
-      { "name": "Kubernetes", "category": "DevOps", "icon": "kubernetes" },
-      { "name": "Docker", "category": "DevOps", "icon": "docker" },
-      { "name": "Prometheus", "category": "Observability", "icon": "prometheus" },
-      { "name": "Grafana", "category": "Observability", "icon": "grafana" },
-      { "name": "JWT", "category": "Authentication", "icon": "jwt" },
-      { "name": "TypeScript", "category": "Language", "icon": "typescript" },
-      { "name": "Python", "category": "Language", "icon": "python" }
+      {
+        "name": "NestJS",
+        "category": "Backend",
+        "icon": "nestjs"
+      },
+      {
+        "name": "Python (FastAPI)",
+        "category": "Backend",
+        "icon": "python"
+      },
+      {
+        "name": "scikit-learn",
+        "category": "ML",
+        "icon": "api"
+      },
+      {
+        "name": "Next.js 15",
+        "category": "Frontend",
+        "icon": "nextjs"
+      },
+      {
+        "name": "OPA (Open Policy Agent)",
+        "category": "Security",
+        "icon": "api"
+      },
+      {
+        "name": "Redis",
+        "category": "Cache",
+        "icon": "redis"
+      },
+      {
+        "name": "Loki",
+        "category": "Observability",
+        "icon": "api"
+      },
+      {
+        "name": "PostgreSQL",
+        "category": "Database",
+        "icon": "postgresql"
+      },
+      {
+        "name": "Kubernetes",
+        "category": "DevOps",
+        "icon": "kubernetes"
+      },
+      {
+        "name": "Docker",
+        "category": "DevOps",
+        "icon": "docker"
+      },
+      {
+        "name": "OpenTelemetry",
+        "category": "Observability",
+        "icon": "api"
+      },
+      {
+        "name": "Prometheus",
+        "category": "Observability",
+        "icon": "prometheus"
+      },
+      {
+        "name": "Grafana",
+        "category": "Observability",
+        "icon": "grafana"
+      },
+      {
+        "name": "JWT",
+        "category": "Authentication",
+        "icon": "jwt"
+      },
+      {
+        "name": "OIDC",
+        "category": "Authentication",
+        "icon": "api"
+      },
+      {
+        "name": "TypeScript",
+        "category": "Language",
+        "icon": "typescript"
+      },
+      {
+        "name": "Python",
+        "category": "Language",
+        "icon": "python"
+      }
     ],
     "features": [
-      "Policy-driven access control and self-healing decisions",
-      "ML-based anomaly and failure detection (AI engine)",
-      "Safe Kubernetes operations (restart, scale, rollback)",
-      "HMAC-signed executor actions and namespace allowlisting",
-      "Immutable audit logs and default-deny network policies",
-      "Full observability stack (Prometheus, Grafana, Loki, Tempo)",
-      "Production-ready Next.js dashboard and control plane UI"
+      "Self-healing infrastructure with Zero-Trust architecture; AI recommends only, agents pull",
+      "Multi-cluster orchestration: pull-based executor agents (GET /tasks?cluster_id=X)",
+      "JWS/HMAC signature validation and 5s replay protection on every task (signed intent)",
+      "Shadow Mode: log-only execution for trust-building before AUTONOMOUS/MANUAL",
+      "Confidence-gated execution: min_confidence_autoremediate for AUTONOMOUS",
+      "ML-driven root cause analysis via dependency graph (BFS upstream)",
+      "Proactive forecasting (Prophet) with preemptive recommendations",
+      "OPA default-deny policy and FinOps guardrails (max_replicas, budget)",
+      "Blinded observability: Loki + HKDF for logs without plain-text secrets",
+      "Distributed tracing (OpenTelemetry) with traceId on audit and outbox"
     ],
     "challenges": [
-      "Keeping AI recommendations strictly advisory—no direct execution",
-      "Enforcing policy evaluation and audit for every action",
-      "Isolating executor with minimal Kubernetes RBAC",
-      "Designing for failure and partial outages without unsafe automation"
+      "Keeping AI strictly inference-only with no path to executor",
+      "Shifting from push to pull for multi-cluster orchestration and security isolation",
+      "JWS/HMAC signature validation and replay protection across agents",
+      "Shadow Mode and confidence gates for operator trust; OPA fail-closed semantics"
     ],
     "outcomes": [
-      "No unaudited actions; no blind AI execution; no privilege escalation",
-      "Self-healing within policy: pod restart, scale, rollback only when allowed",
-      "Documented architecture and honest status (implemented vs not yet)",
-      "Production mindset: assume failure, design for abuse, automate carefully"
+      "Zero-Trust self-healing: no unaudited actions; signed intent on every task",
+      "Multi-cluster orchestration via pull-based executor agents",
+      "Shadow Mode and confidence-gated execution build operator trust",
+      "Anomaly detection, ML root cause, and proactive forecasting with FinOps guardrails"
     ],
     "metrics": [
-      { "label": "Status", "value": "~95%", "description": "Backend, AI engine, executor, frontend, observability complete" },
-      { "label": "Security", "value": "Policy + HMAC", "description": "Every action policy-evaluated and signed" },
-      { "label": "AI Role", "value": "Recommend only", "description": "AI informs; policy authorizes; humans control" },
-      { "label": "Audit", "value": "Immutable", "description": "Trail of evidence for every decision" }
+      {
+        "label": "Execution model",
+        "value": "Pull-based",
+        "description": "Agents pull tasks by cluster_id; JWS/HMAC signature validation"
+      },
+      {
+        "label": "Security",
+        "value": "Zero-Trust + OPA",
+        "description": "Signed intent; FinOps guardrails; default-deny"
+      },
+      {
+        "label": "Trust-building",
+        "value": "Shadow Mode",
+        "description": "Log-only execution before going live"
+      },
+      {
+        "label": "Observability",
+        "value": "OpenTelemetry + Loki",
+        "description": "Distributed tracing; blinded observability"
+      }
     ],
     "links": {
       "live": "",
@@ -1788,9 +2190,18 @@
     "problemSolutionBridge": "To avoid oversell and double-spend when payments are async and callbacks unreliable, I designed Fits by Aliv so we never trust a callback until we verify with STK Query, and inventory is only reserved softly until payment is confirmed.",
     "solution": "I built Fits by Aliv as a production-grade e-commerce backend around failure, abuse, and latency as first-class concerns. The system uses soft inventory reservations, idempotent order creation, verified payment reconciliation (Daraja STK Query before state changes), and AI-assisted self-healing background jobs. Payments are never trusted at face value; inventory is never hard-deducted before confirmation; automation is bounded, auditable, and reversible. All business logic lives in a single NestJS backend with PostgreSQL transactions. Clients never touch the database. Firebase is used strictly for identity; authorization, rate-limiting, replay prevention, and auditability are enforced server-side.",
     "keyTerms": [
-      { "term": "Idempotent order creation", "explanation": "In Fits by Aliv every order mutation accepts an idempotency key so duplicate requests (e.g. double-tap or retry) create only one order; that supports the goal of no double-charge and no duplicate reservations." },
-      { "term": "Verified payment reconciliation", "explanation": "We never update order or payment state from a callback alone; we call Daraja STK Query to confirm status first, so the project goal of no blind trust in M-Pesa callbacks is met." },
-      { "term": "Soft inventory reservations", "explanation": "Stock is reserved for a TTL instead of hard-deducted at checkout; if payment does not complete, the reservation expires and inventory is released, preventing oversell and supporting async payment flows." }
+      {
+        "term": "Idempotent order creation",
+        "explanation": "In Fits by Aliv every order mutation accepts an idempotency key so duplicate requests (e.g. double-tap or retry) create only one order; that supports the goal of no double-charge and no duplicate reservations."
+      },
+      {
+        "term": "Verified payment reconciliation",
+        "explanation": "We never update order or payment state from a callback alone; we call Daraja STK Query to confirm status first, so the project goal of no blind trust in M-Pesa callbacks is met."
+      },
+      {
+        "term": "Soft inventory reservations",
+        "explanation": "Stock is reserved for a TTL instead of hard-deducted at checkout; if payment does not complete, the reservation expires and inventory is released, preventing oversell and supporting async payment flows."
+      }
     ],
     "failureModes": "M-Pesa callback before verification: we do not update state until STK Query confirms; duplicate callbacks are idempotent. Reservation expiry: BullMQ jobs release expired reservations so stock is not stuck. Voucher double-spend: conditional UPDATE inside the order transaction ensures one voucher use per redemption. Database or backend crash: Prisma transactions keep order, voucher, and inventory consistent; we do not commit partial state. Replay or abuse: idempotency keys, nonce, and rate limiting limit impact. Self-healing job failure: jobs are bounded and dead-lettered so we do not retry forever or mutate data blindly.",
     "impact": "The system guarantees: no inventory oversell due to race conditions, no voucher double-spend, no unaudited state changes, no blind trust in payment callbacks, no unbounded automation. Security highlights: Firebase JWT verification + server-side authorization, idempotency keys on all critical mutations, replay-prevention via nonce + timestamp, IP allowlisting and optional HMAC for webhooks, immutable audit and security event logs. The system is designed so an ethical hacker can reason about what cannot happen.",
@@ -1800,15 +2211,51 @@
     "implementationStatus": "~90–95% Complete: Backend APIs & database schema, inventory reservation & expiry, payment verification & reconciliation, AI-assisted self-healing jobs, admin analytics & exports, security hardening & audit trails. Remaining work is operational, not architectural. Not yet (intentional): multi-region deployment, external penetration test, automated tax filing integrations, full E2E mobile test suite.",
     "potentialExpansion": "Additional payment providers (schema-compatible), multi-seller inventory, regional tax rules, event-driven analytics, fraud scoring models feeding the healing layer. The core system already assumes failure, retries, abuse, and human oversight.",
     "technologies": [
-      { "name": "NestJS", "category": "Backend", "icon": "nestjs" },
-      { "name": "TypeScript", "category": "Language", "icon": "typescript" },
-      { "name": "PostgreSQL", "category": "Database", "icon": "postgresql" },
-      { "name": "Prisma", "category": "ORM", "icon": "prisma" },
-      { "name": "Redis", "category": "Cache", "icon": "redis" },
-      { "name": "BullMQ", "category": "Queue", "icon": "redis" },
-      { "name": "Flutter", "category": "Mobile", "icon": "flutter" },
-      { "name": "Firebase Auth", "category": "Authentication", "icon": "firebase" },
-      { "name": "M-Pesa Daraja", "category": "Integration", "icon": "api" }
+      {
+        "name": "NestJS",
+        "category": "Backend",
+        "icon": "nestjs"
+      },
+      {
+        "name": "TypeScript",
+        "category": "Language",
+        "icon": "typescript"
+      },
+      {
+        "name": "PostgreSQL",
+        "category": "Database",
+        "icon": "postgresql"
+      },
+      {
+        "name": "Prisma",
+        "category": "ORM",
+        "icon": "prisma"
+      },
+      {
+        "name": "Redis",
+        "category": "Cache",
+        "icon": "redis"
+      },
+      {
+        "name": "BullMQ",
+        "category": "Queue",
+        "icon": "redis"
+      },
+      {
+        "name": "Flutter",
+        "category": "Mobile",
+        "icon": "flutter"
+      },
+      {
+        "name": "Firebase Auth",
+        "category": "Authentication",
+        "icon": "firebase"
+      },
+      {
+        "name": "M-Pesa Daraja",
+        "category": "Integration",
+        "icon": "api"
+      }
     ],
     "features": [
       "Soft inventory reservations with TTL; no hard deduction before payment",
@@ -1833,10 +2280,26 @@
       "Production mindset: assume failure, verify asynchronously, automate carefully"
     ],
     "metrics": [
-      { "label": "Status", "value": "~90–95%", "description": "Backend, DB, payments, healing, security complete" },
-      { "label": "Payment", "value": "Verify first", "description": "STK Query before trusting callback" },
-      { "label": "Voucher", "value": "Pessimistic", "description": "Conditional UPDATE in transaction" },
-      { "label": "Audit", "value": "Immutable", "description": "Trail for every sensitive action" }
+      {
+        "label": "Status",
+        "value": "~90–95%",
+        "description": "Backend, DB, payments, healing, security complete"
+      },
+      {
+        "label": "Payment",
+        "value": "Verify first",
+        "description": "STK Query before trusting callback"
+      },
+      {
+        "label": "Voucher",
+        "value": "Pessimistic",
+        "description": "Conditional UPDATE in transaction"
+      },
+      {
+        "label": "Audit",
+        "value": "Immutable",
+        "description": "Trail for every sensitive action"
+      }
     ],
     "links": {
       "live": "",
@@ -1853,4 +2316,3 @@
     }
   }
 ]
-

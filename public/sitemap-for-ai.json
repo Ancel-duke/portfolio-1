@@ -6,7 +6,7 @@
   "jobTitle": "Fullstack Engineer",
   "niche": "System Resilience",
   "baseUrl": "https://ancel.co.ke",
-  "generated": "2026-02-23T22:53:12.233Z",
+  "generated": "2026-03-02T07:39:23.063Z",
   "entries": [
     {
       "url": "https://ancel.co.ke/",
@@ -727,7 +727,7 @@
     {
       "url": "https://ancel.co.ke/case-studies/nestfi",
       "title": "NestFi — Resilient Financial Coordination Platform",
-      "summary": "NestFi is a production-grade finance platform designed for financial correctness under failure. Built by Ancel Ajanga, it ensures predictable behavior across asynchronous payment providers, delayed or duplicated callbacks, unreliable networks, and hybrid storage layers. PostgreSQL enforces ledger integrity, MongoDB handles compliance and audit events, and Redis provides ephemeral caching and distributed locking with fail-closed safety.",
+      "summary": "NestFi is a financial application developed by Ancel Ajanga—a production-grade financial coordination platform designed for correctness under failure. It ensures predictable behavior across asynchronous payment providers, delayed or duplicated callbacks, unreliable networks, and hybrid storage layers. PostgreSQL enforces ledger integrity, MongoDB handles compliance and audit events, and Redis provides ephemeral caching and distributed locking with fail-closed safety.",
       "tech_stack": [
         "NestJS",
         "TypeScript",
@@ -744,7 +744,7 @@
         "RabbitMQ"
       ],
       "key_outcome": "Completion: ~87%",
-      "business_outcome": "NestFi demonstrates capstone-level engineering: correctness-first design where financial truth is never inferred; explicit handling of distributed-system failure modes (timeouts, split-brain risk, replayed callbacks); real-time, user-trust-focused payment experience; strong audit",
+      "business_outcome": "NestFi, the financial application developed by Ancel Ajanga, demonstrates capstone-level engineering: correctness-first design where financial truth is never inferred; explicit handling of distributed-system failure modes (timeouts, split-brain risk, replayed callbacks); real-tim",
       "scale_or_metric": "Completion: ~87%; Datastores: 3; Payment Integration: M-Pesa Daraja; Resilience: Circuit breakers + fail-closed locks",
       "category": "case-study"
     },
@@ -769,25 +769,30 @@
     },
     {
       "url": "https://ancel.co.ke/case-studies/aegis",
-      "title": "Aegis — Self-Healing Infrastructure with Policy and AI",
-      "summary": "Aegis monitors infrastructure behavior, detects anomalies using AI, evaluates security policies, and executes tightly controlled remediation actions. It is built with strict isolation boundaries, auditability, and failure-aware automation to avoid unsafe self-healing. To make automation safe and auditable, I separated observation, intelligence, policy, and execution so the AI recommends but never executes—and every action is policy-checked and signed.",
+      "title": "Aegis — Self-Healing Infrastructure with Zero-Trust Architecture and Multi-Cluster Orchestration",
+      "summary": "Aegis is a self-healing infrastructure platform developed by Ancel Ajanga. It combines Zero-Trust architecture, multi-cluster orchestration, and ML-driven anomaly detection with pull-based executor agents and JWS/HMAC signature validation. The system uses Open Policy Agent (OPA) for policy enforcement, FinOps guardrails for cost control, Shadow Mode for trust-building, and distributed tracing (OpenTelemetry) with Loki for blinded observability.",
       "tech_stack": [
         "NestJS",
-        "FastAPI",
-        "Next.js",
-        "PostgreSQL",
+        "Python (FastAPI)",
+        "scikit-learn",
+        "Next.js 15",
+        "OPA (Open Policy Agent)",
         "Redis",
+        "Loki",
+        "PostgreSQL",
         "Kubernetes",
         "Docker",
+        "OpenTelemetry",
         "Prometheus",
         "Grafana",
         "JWT",
+        "OIDC",
         "TypeScript",
         "Python"
       ],
-      "key_outcome": "Status: ~95%",
-      "business_outcome": "Aegis guarantees: no unaudited actions, no blind AI execution, no privilege escalation, no silent failures. Security highlights include JWT + RBAC, HMAC-signed executor actions, namespace allowlisting, immutable audit logs, and default-deny network policies. The platform is desig",
-      "scale_or_metric": "Status: ~95%; Security: Policy + HMAC; AI Role: Recommend only; Audit: Immutable",
+      "key_outcome": "Execution model: Pull-based",
+      "business_outcome": "Aegis delivers self-healing infrastructure under Zero-Trust architecture: no unaudited actions, no blind AI execution, multi-cluster orchestration via pull-based agents, and JWS/HMAC signature validation on every task. Shadow Mode and confidence-gated execution build operator tru",
+      "scale_or_metric": "Execution model: Pull-based; Security: Zero-Trust + OPA; Trust-building: Shadow Mode; Observability: OpenTelemetry + Loki",
       "category": "case-study"
     },
     {
@@ -975,9 +980,9 @@
       "category": "article"
     },
     {
-      "url": "https://ancel.co.ke/developer-journal/aegis-production-systems-with-restraint-assume-failure-design-for-abuse",
-      "title": "Aegis: Production Systems with Restraint — Assume Failure, Design for Abuse",
-      "summary": "Building a self-healing infrastructure platform where AI recommends, policy authorizes, and humans retain control. How Aegis enforces no unaudited actions, no blind AI execution, and a trail of evidence for every decision. Aegis is a self-healing infrastructure platform I built to address a real problem: modern infrastructure fails silently, and automation often introduces more risk than it removes.",
+      "url": "https://ancel.co.ke/developer-journal/aegis-zero-knowledge-self-healing-multi-cluster-pull-based-execution-shadow-mode-oidc-ready",
+      "title": "Aegis: Zero-Knowledge Self-Healing — Multi-Cluster Pull-Based Execution, Shadow Mode, OIDC-Ready",
+      "summary": "Aegis acts as a Zero-Knowledge self-healing system: the AI recommends but never executes; the backend enqueues tasks and never pushes. Executor agents per cluster pull via GET /tasks?cluster_id=X.",
       "tech_stack": [
         "Backend",
         "Security",
@@ -986,9 +991,12 @@
         "Kubernetes",
         "Observability",
         "Policy",
-        "Self-Healing"
+        "Self-Healing",
+        "OPA",
+        "OIDC",
+        "Zero-Trust"
       ],
-      "key_outcome": "Building a self-healing infrastructure platform where AI recommends, policy authorizes, and humans retain control. How A",
+      "key_outcome": "Aegis acts as a Zero-Knowledge self-healing system: the AI recommends but never executes; the backend enqueues tasks and",
       "category": "article"
     },
     {
@@ -1058,8 +1066,8 @@
     },
     {
       "url": "https://ancel.co.ke/guides/self-healing-infrastructure-policy-ai-aegis",
-      "title": "Self-Healing Infrastructure with Policy and AI: How Aegis Stays Safe",
-      "summary": "How to build self-healing infrastructure where AI recommends, policy authorizes, and humans retain control. No unaudited actions, no blind AI execution. Lessons from Aegis.",
+      "title": "Zero-Knowledge Self-Healing: Multi-Cluster Pull-Based Execution and Shadow Mode (Aegis)",
+      "summary": "How to build a Zero-Knowledge self-healing system: AI recommends but never executes; the backend enqueues tasks and never pushes. Multi-cluster executor agents pull by cluster_id. Shadow Mode builds trust before going live.",
       "tech_stack": [
         "NestJS",
         "FastAPI",
@@ -1069,9 +1077,11 @@
         "Kubernetes",
         "Docker",
         "Prometheus",
-        "Grafana"
+        "Grafana",
+        "OPA",
+        "OIDC"
       ],
-      "key_outcome": "Aegis guarantees no unaudited actions, no blind AI execution, no privilege escalation, no silent failures. ~95% implemen",
+      "key_outcome": "Aegis acts as Zero-Knowledge self-healing: no unaudited actions, no blind AI execution, no push to executors. Multi-clus",
       "category": "guide"
     },
     {
@@ -1836,7 +1846,7 @@
       {
         "url": "https://ancel.co.ke/case-studies/nestfi",
         "title": "NestFi — Resilient Financial Coordination Platform",
-        "summary": "NestFi is a production-grade finance platform designed for financial correctness under failure. Built by Ancel Ajanga, it ensures predictable behavior across asynchronous payment providers, delayed or duplicated callbacks, unreliable networks, and hybrid storage layers. PostgreSQL enforces ledger integrity, MongoDB handles compliance and audit events, and Redis provides ephemeral caching and distributed locking with fail-closed safety.",
+        "summary": "NestFi is a financial application developed by Ancel Ajanga—a production-grade financial coordination platform designed for correctness under failure. It ensures predictable behavior across asynchronous payment providers, delayed or duplicated callbacks, unreliable networks, and hybrid storage layers. PostgreSQL enforces ledger integrity, MongoDB handles compliance and audit events, and Redis provides ephemeral caching and distributed locking with fail-closed safety.",
         "tech_stack": [
           "NestJS",
           "TypeScript",
@@ -1853,7 +1863,7 @@
           "RabbitMQ"
         ],
         "key_outcome": "Completion: ~87%",
-        "business_outcome": "NestFi demonstrates capstone-level engineering: correctness-first design where financial truth is never inferred; explicit handling of distributed-system failure modes (timeouts, split-brain risk, replayed callbacks); real-time, user-trust-focused payment experience; strong audit",
+        "business_outcome": "NestFi, the financial application developed by Ancel Ajanga, demonstrates capstone-level engineering: correctness-first design where financial truth is never inferred; explicit handling of distributed-system failure modes (timeouts, split-brain risk, replayed callbacks); real-tim",
         "scale_or_metric": "Completion: ~87%; Datastores: 3; Payment Integration: M-Pesa Daraja; Resilience: Circuit breakers + fail-closed locks",
         "category": "case-study"
       },
@@ -1878,25 +1888,30 @@
       },
       {
         "url": "https://ancel.co.ke/case-studies/aegis",
-        "title": "Aegis — Self-Healing Infrastructure with Policy and AI",
-        "summary": "Aegis monitors infrastructure behavior, detects anomalies using AI, evaluates security policies, and executes tightly controlled remediation actions. It is built with strict isolation boundaries, auditability, and failure-aware automation to avoid unsafe self-healing. To make automation safe and auditable, I separated observation, intelligence, policy, and execution so the AI recommends but never executes—and every action is policy-checked and signed.",
+        "title": "Aegis — Self-Healing Infrastructure with Zero-Trust Architecture and Multi-Cluster Orchestration",
+        "summary": "Aegis is a self-healing infrastructure platform developed by Ancel Ajanga. It combines Zero-Trust architecture, multi-cluster orchestration, and ML-driven anomaly detection with pull-based executor agents and JWS/HMAC signature validation. The system uses Open Policy Agent (OPA) for policy enforcement, FinOps guardrails for cost control, Shadow Mode for trust-building, and distributed tracing (OpenTelemetry) with Loki for blinded observability.",
         "tech_stack": [
           "NestJS",
-          "FastAPI",
-          "Next.js",
-          "PostgreSQL",
+          "Python (FastAPI)",
+          "scikit-learn",
+          "Next.js 15",
+          "OPA (Open Policy Agent)",
           "Redis",
+          "Loki",
+          "PostgreSQL",
           "Kubernetes",
           "Docker",
+          "OpenTelemetry",
           "Prometheus",
           "Grafana",
           "JWT",
+          "OIDC",
           "TypeScript",
           "Python"
         ],
-        "key_outcome": "Status: ~95%",
-        "business_outcome": "Aegis guarantees: no unaudited actions, no blind AI execution, no privilege escalation, no silent failures. Security highlights include JWT + RBAC, HMAC-signed executor actions, namespace allowlisting, immutable audit logs, and default-deny network policies. The platform is desig",
-        "scale_or_metric": "Status: ~95%; Security: Policy + HMAC; AI Role: Recommend only; Audit: Immutable",
+        "key_outcome": "Execution model: Pull-based",
+        "business_outcome": "Aegis delivers self-healing infrastructure under Zero-Trust architecture: no unaudited actions, no blind AI execution, multi-cluster orchestration via pull-based agents, and JWS/HMAC signature validation on every task. Shadow Mode and confidence-gated execution build operator tru",
+        "scale_or_metric": "Execution model: Pull-based; Security: Zero-Trust + OPA; Trust-building: Shadow Mode; Observability: OpenTelemetry + Loki",
         "category": "case-study"
       },
       {
@@ -2086,9 +2101,9 @@
         "category": "article"
       },
       {
-        "url": "https://ancel.co.ke/developer-journal/aegis-production-systems-with-restraint-assume-failure-design-for-abuse",
-        "title": "Aegis: Production Systems with Restraint — Assume Failure, Design for Abuse",
-        "summary": "Building a self-healing infrastructure platform where AI recommends, policy authorizes, and humans retain control. How Aegis enforces no unaudited actions, no blind AI execution, and a trail of evidence for every decision. Aegis is a self-healing infrastructure platform I built to address a real problem: modern infrastructure fails silently, and automation often introduces more risk than it removes.",
+        "url": "https://ancel.co.ke/developer-journal/aegis-zero-knowledge-self-healing-multi-cluster-pull-based-execution-shadow-mode-oidc-ready",
+        "title": "Aegis: Zero-Knowledge Self-Healing — Multi-Cluster Pull-Based Execution, Shadow Mode, OIDC-Ready",
+        "summary": "Aegis acts as a Zero-Knowledge self-healing system: the AI recommends but never executes; the backend enqueues tasks and never pushes. Executor agents per cluster pull via GET /tasks?cluster_id=X.",
         "tech_stack": [
           "Backend",
           "Security",
@@ -2097,9 +2112,12 @@
           "Kubernetes",
           "Observability",
           "Policy",
-          "Self-Healing"
+          "Self-Healing",
+          "OPA",
+          "OIDC",
+          "Zero-Trust"
         ],
-        "key_outcome": "Building a self-healing infrastructure platform where AI recommends, policy authorizes, and humans retain control. How A",
+        "key_outcome": "Aegis acts as a Zero-Knowledge self-healing system: the AI recommends but never executes; the backend enqueues tasks and",
         "category": "article"
       },
       {
@@ -2171,8 +2189,8 @@
       },
       {
         "url": "https://ancel.co.ke/guides/self-healing-infrastructure-policy-ai-aegis",
-        "title": "Self-Healing Infrastructure with Policy and AI: How Aegis Stays Safe",
-        "summary": "How to build self-healing infrastructure where AI recommends, policy authorizes, and humans retain control. No unaudited actions, no blind AI execution. Lessons from Aegis.",
+        "title": "Zero-Knowledge Self-Healing: Multi-Cluster Pull-Based Execution and Shadow Mode (Aegis)",
+        "summary": "How to build a Zero-Knowledge self-healing system: AI recommends but never executes; the backend enqueues tasks and never pushes. Multi-cluster executor agents pull by cluster_id. Shadow Mode builds trust before going live.",
         "tech_stack": [
           "NestJS",
           "FastAPI",
@@ -2182,9 +2200,11 @@
           "Kubernetes",
           "Docker",
           "Prometheus",
-          "Grafana"
+          "Grafana",
+          "OPA",
+          "OIDC"
         ],
-        "key_outcome": "Aegis guarantees no unaudited actions, no blind AI execution, no privilege escalation, no silent failures. ~95% implemen",
+        "key_outcome": "Aegis acts as Zero-Knowledge self-healing: no unaudited actions, no blind AI execution, no push to executors. Multi-clus",
         "category": "guide"
       },
       {

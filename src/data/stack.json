@@ -559,6 +559,24 @@
       "projects": ["Aegis"]
     },
     {
+      "name": "Open Policy Agent (OPA)",
+      "category": "Security",
+      "icon": "api",
+      "frequency": 1,
+      "proficiency": 7,
+      "description": "Default-deny policy engine for authz, FinOps guardrails, and tenant isolation",
+      "projects": ["Aegis"]
+    },
+    {
+      "name": "OIDC",
+      "category": "Authentication",
+      "icon": "api",
+      "frequency": 1,
+      "proficiency": 7,
+      "description": "Authorization Code + PKCE; group and tenant claim mapping for enterprise SSO",
+      "projects": ["Aegis"]
+    },
+    {
       "name": "Stripe",
       "category": "Integration",
       "icon": "stripe",
