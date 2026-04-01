@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { cn } from '@/shared/utils';
 
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://ancel.co.ke';
-const FALLBACK_IMAGE_SRC = '/images/fallback/fallback.webp';
+const FALLBACK_IMAGE_SRC = '/images/fallback/fallback.png';
 
 /** Loader that returns absolute URL (no Netlify CDN). Used for skipNetlifyCDN. */
 function rawLoader({ src }: { src: string }) {

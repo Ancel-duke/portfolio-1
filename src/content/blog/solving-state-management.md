@@ -2,7 +2,7 @@
 
 *Real-world strategies and patterns for managing state in modern web applications*
 
-![State Management Banner](/assets/blog/state-management-guide.jpg)
+![State Management Banner](/assets/blog/state-management-guide.png)
 
 ## TL;DR (State of the State)
 - 🎯 Managed state across 8 different production apps

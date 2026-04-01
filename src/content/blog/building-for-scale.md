@@ -2,7 +2,7 @@
 
 *Real-world insights on architecting scalable applications from four production projects*
 
-![Scalable Architecture Banner](/assets/blog/scaling-architecture.jpg)
+![Scalable Architecture Banner](/assets/blog/scaling-architecture.png)
 
 ## TL;DR (The Architect's Summary)
 - 🏗️ Built 4 scalable full-stack applications

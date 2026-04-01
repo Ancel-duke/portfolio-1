@@ -2,7 +2,7 @@
 
 *A deep dive into creating an engaging travel platform with React, Leaflet.js, and modern UX principles*
 
-![Travel Platform Banner](/assets/blog/travel-platform-guide.jpg)
+![Travel Platform Banner](/assets/blog/travel-platform-guide.png)
 
 ## TL;DR (For the Jet-lagged Reader)
 - 🌍 Built [Travelogue](https://travelslogue.netlify.app) - an interactive travel platform

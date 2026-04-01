@@ -2,7 +2,7 @@
 
 *How turning two web applications into PWAs dramatically increased user engagement and retention*
 
-![PWA vs Native Apps Banner](/assets/blog/pwa-native-comparison.jpg)
+![PWA vs Native Apps Banner](/assets/blog/pwa-native-comparison.png)
 
 ## TL;DR (Skip to the Good Part)
 - 📱 Converted [Habit Tracker](https://habitss-tracker.netlify.app) and [Rasoha Academy](https://rasoha.netlify.app) to PWAs

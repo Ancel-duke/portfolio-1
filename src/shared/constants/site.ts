@@ -6,7 +6,7 @@ export const SITE = {
   email: 'ancel.ajanga@yahoo.com',
   github: 'https://github.com/Ancel-duke',
   linkedin: 'https://www.linkedin.com/in/ajanga-ancel',
-  profileImage: '/images/about/profile-photo.webp',
+  profileImage: '/images/about/profile-photo.png',
 } as const;
 
 export const WHATSAPP_URL = `https://wa.me/${SITE.whatsapp.replace('+', '')}`;

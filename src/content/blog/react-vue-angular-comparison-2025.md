@@ -2,7 +2,7 @@
 
 *A real-world comparison of modern frontend frameworks through three production applications*
 
-![Framework Comparison Banner](/assets/blog/framework-comparison-2025.jpg)
+![Framework Comparison Banner](/assets/blog/framework-comparison-2025.png)
 
 ## TL;DR (The Impatient Developer's Version)
 - 🏆 **Built 3 similar apps:** Finance Tracker (Vue), Fitness Scheduler (Angular), Habit Tracker (React)

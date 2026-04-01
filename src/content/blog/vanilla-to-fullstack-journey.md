@@ -2,7 +2,7 @@
 
 *A candid look at evolving from frontend basics to complex full-stack applications*
 
-![Developer Journey Banner](/assets/blog/developer-journey.jpg)
+![Developer Journey Banner](/assets/blog/developer-journey.png)
 
 ## TL;DR (The Elevator Pitch)
 - 🎯 Started with vanilla JS countdown timer

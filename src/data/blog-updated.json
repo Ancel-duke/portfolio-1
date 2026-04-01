@@ -13,10 +13,10 @@
     ],
     "date": "2024-09-15",
     "readTime": "12 min read",
-    "image": "/images/case-studies/journey.webp",
+    "image": "/images/case-studies/journey.png",
     "author": {
       "name": "Ancel Ajanga",
-      "avatar": "/images/about/profile-photo.webp",
+      "avatar": "/images/about/profile-photo.png",
       "bio": "Full-stack developer passionate about building scalable web applications"
     }
   },
@@ -34,10 +34,10 @@
     ],
     "date": "2024-11-10",
     "readTime": "6 min read",
-    "image": "/images/projects/finance-tracker.webp",
+    "image": "/images/projects/finance-tracker.png",
     "author": {
       "name": "Ancel Ajanga",
-      "avatar": "/images/about/profile-photo.webp",
+      "avatar": "/images/about/profile-photo.png",
       "bio": "Full-stack developer passionate about building scalable web applications"
     }
   }

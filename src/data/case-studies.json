@@ -133,14 +133,14 @@
       "github": "https://github.com/Ancel-duke"
     },
     "images": {
-      "hero": "/images/projects/taskforge.webp",
-      "before": "/images/projects/taskforge.webp",
-      "after": "/images/projects/taskforge.webp",
+      "hero": "/images/projects/taskforge.png",
+      "before": "/images/projects/taskforge.png",
+      "after": "/images/projects/taskforge.png",
       "gallery": [
-        "/images/projects/taskforge.webp"
+        "/images/projects/taskforge.png"
       ]
     },
-    "image": "/images/projects/taskforge.webp",
+    "image": "/images/projects/taskforge.png",
     "excerpt": "TaskForge is a resilient, scalable real-time collaborative project management platform designed for engineering teams. The system handles concurrent collaboration across distributed teams, managing project workflows, task coordination, and team communication with sub-second latency and conflict-free synchronization."
   },
   {
@@ -272,14 +272,14 @@
       "github": "https://github.com/Ancel-duke"
     },
     "images": {
-      "hero": "/images/projects/elearn.webp",
-      "before": "/images/projects/elearn.webp",
-      "after": "/images/projects/elearn.webp",
+      "hero": "/images/projects/elearn.png",
+      "before": "/images/projects/elearn.png",
+      "after": "/images/projects/elearn.png",
       "gallery": [
-        "/images/projects/elearn.webp"
+        "/images/projects/elearn.png"
       ]
     },
-    "image": "/images/projects/elearn.webp",
+    "image": "/images/projects/elearn.png",
     "excerpt": "A resilient, scalable learning management system architected to handle thousands of concurrent students and hundreds of courses. The platform enables educational institutions to deliver online education at scale with sub-2-second page loads, comprehensive course management, and real-time progress tracking."
   },
   {
@@ -416,14 +416,14 @@
       "github": "https://github.com/Ancel-duke"
     },
     "images": {
-      "hero": "/images/projects/attendance.webp",
-      "before": "/images/projects/attendance.webp",
-      "after": "/images/projects/attendance.webp",
+      "hero": "/images/projects/attendance.png",
+      "before": "/images/projects/attendance.png",
+      "after": "/images/projects/attendance.png",
       "gallery": [
-        "/images/projects/attendance.webp"
+        "/images/projects/attendance.png"
       ]
     },
-    "image": "/images/projects/attendance.webp",
+    "image": "/images/projects/attendance.png",
     "excerpt": "A resilient attendance management system architected for educational institutions to automate attendance tracking, provide comprehensive analytics, and generate detailed reports. The system handles 500+ active users across multiple institutions with 95% accuracy improvement and 70% reduction in administrative overhead."
   },
   {
@@ -509,14 +509,14 @@
       "github": "https://github.com/Ancel-duke"
     },
     "images": {
-      "hero": "/images/projects/finance-tracker.webp",
-      "before": "/images/projects/finance-tracker.webp",
-      "after": "/images/projects/finance-tracker.webp",
+      "hero": "/images/projects/finance-tracker.png",
+      "before": "/images/projects/finance-tracker.png",
+      "after": "/images/projects/finance-tracker.png",
       "gallery": [
-        "/images/projects/finance-tracker.webp"
+        "/images/projects/finance-tracker.png"
       ]
     },
-    "image": "/images/projects/finance-tracker.webp",
+    "image": "/images/projects/finance-tracker.png",
     "excerpt": "A creative frontend experiment exploring modern UI patterns and data visualization techniques. This project demonstrates Vue 3's Composition API, reactive state management, and interactive charting capabilities for personal finance tracking."
   },
   {
@@ -607,14 +607,14 @@
       "github": "https://github.com/Ancel-duke"
     },
     "images": {
-      "hero": "/images/projects/fitness.webp",
-      "before": "/images/projects/fitness.webp",
-      "after": "/images/projects/fitness.webp",
+      "hero": "/images/projects/fitness.png",
+      "before": "/images/projects/fitness.png",
+      "after": "/images/projects/fitness.png",
       "gallery": [
-        "/images/projects/fitness.webp"
+        "/images/projects/fitness.png"
       ]
     },
-    "image": "/images/projects/fitness.webp",
+    "image": "/images/projects/fitness.png",
     "excerpt": "A modern Angular SSR application for planning weekly fitness classes with dark mode, responsive design, and client-side persistence."
   },
   {
@@ -705,14 +705,14 @@
       "github": "https://github.com/Ancel-duke"
     },
     "images": {
-      "hero": "/images/projects/habit-tracker.webp",
-      "before": "/images/projects/habit-tracker.webp",
-      "after": "/images/projects/habit-tracker.webp",
+      "hero": "/images/projects/habit-tracker.png",
+      "before": "/images/projects/habit-tracker.png",
+      "after": "/images/projects/habit-tracker.png",
       "gallery": [
-        "/images/projects/habit-tracker.webp"
+        "/images/projects/habit-tracker.png"
       ]
     },
-    "image": "/images/projects/habit-tracker.webp",
+    "image": "/images/projects/habit-tracker.png",
     "excerpt": "A creative Progressive Web App experiment exploring offline-first design patterns and modern UI interactions. This project demonstrates PWA capabilities, service workers, and engaging visual feedback for habit tracking."
   },
   {
@@ -803,14 +803,14 @@
       "github": "https://github.com/Ancel-duke"
     },
     "images": {
-      "hero": "/images/projects/events.webp",
-      "before": "/images/projects/events.webp",
-      "after": "/images/projects/events.webp",
+      "hero": "/images/projects/events.png",
+      "before": "/images/projects/events.png",
+      "after": "/images/projects/events.png",
       "gallery": [
-        "/images/projects/events.webp"
+        "/images/projects/events.png"
       ]
     },
-    "image": "/images/projects/events.webp",
+    "image": "/images/projects/events.png",
     "excerpt": "A feature-rich countdown timer web application for creating and managing multiple countdowns for various life events with recurring events and smart notifications."
   },
   {
@@ -896,14 +896,14 @@
       "github": "https://github.com/Ancel-duke"
     },
     "images": {
-      "hero": "/images/projects/travel.webp",
-      "before": "/images/projects/travel.webp",
-      "after": "/images/projects/travel.webp",
+      "hero": "/images/projects/travel.png",
+      "before": "/images/projects/travel.png",
+      "after": "/images/projects/travel.png",
       "gallery": [
-        "/images/projects/travel.webp"
+        "/images/projects/travel.png"
       ]
     },
-    "image": "/images/projects/travel.webp",
+    "image": "/images/projects/travel.png",
     "excerpt": "A comprehensive travel platform featuring interactive world maps, travel stories, destination exploration, and responsive design for travel enthusiasts."
   },
   {
@@ -994,14 +994,14 @@
       "github": "https://github.com/Ancel-duke"
     },
     "images": {
-      "hero": "/images/projects/rasoha.webp",
-      "before": "/images/projects/rasoha.webp",
-      "after": "/images/projects/rasoha.webp",
+      "hero": "/images/projects/rasoha.png",
+      "before": "/images/projects/rasoha.png",
+      "after": "/images/projects/rasoha.png",
       "gallery": [
-        "/images/projects/rasoha.webp"
+        "/images/projects/rasoha.png"
       ]
     },
-    "image": "/images/projects/rasoha.webp",
+    "image": "/images/projects/rasoha.png",
     "excerpt": "A modern, responsive website for a private school in Narok, Kenya, providing comprehensive information about programs, events, and resources for students and parents."
   },
   {
@@ -1084,14 +1084,14 @@
       "github": "https://github.com/Ancel-duke/banking"
     },
     "images": {
-      "hero": "/images/projects/bank.webp",
-      "before": "/images/projects/bank.webp",
-      "after": "/images/projects/bank.webp",
+      "hero": "/images/projects/bank.png",
+      "before": "/images/projects/bank.png",
+      "after": "/images/projects/bank.png",
       "gallery": [
-        "/images/projects/bank.webp"
+        "/images/projects/bank.png"
       ]
     },
-    "image": "/images/projects/bank.webp",
+    "image": "/images/projects/bank.png",
     "excerpt": "A simple, console-based Banking System implemented in pure Java to demonstrate core OOP principles (Encapsulation, Inheritance, Abstraction, Polymorphism). Includes customer management, savings/checking accounts, deposits, withdrawals, transfers, and transaction logs."
   },
   {
@@ -1244,14 +1244,14 @@
       "github": "https://github.com/Ancel-duke/EduChain"
     },
     "images": {
-      "hero": "/images/projects/EduChain.webp",
-      "before": "/images/projects/EduChain.webp",
-      "after": "/images/projects/EduChain.webp",
+      "hero": "/images/projects/EduChain.png",
+      "before": "/images/projects/EduChain.png",
+      "after": "/images/projects/EduChain.png",
       "gallery": [
-        "/images/projects/EduChain.webp"
+        "/images/projects/EduChain.png"
       ]
     },
-    "image": "/images/projects/EduChain.webp",
+    "image": "/images/projects/EduChain.png",
     "excerpt": "EduChain is a resilient, decentralized certificate management system architected on Web3 principles, issuing verifiable academic certificates as ERC721 NFTs on the Ethereum blockchain. The platform enables educational institutions to issue tamper-proof, blockchain-verified certificates while providing students with permanent, verifiable proof of achievements through hybrid storage (MongoDB + IPFS + Blockchain)."
   },
   {
@@ -1414,15 +1414,15 @@
       "docs": "https://github.com/Ancel-duke/LedgerX/blob/main/ARCHITECTURE.md"
     },
     "images": {
-      "hero": "/images/projects/LedgerX.webp",
-      "before": "/images/projects/LedgerX.webp",
-      "after": "/images/projects/LedgerX2.webp",
+      "hero": "/images/projects/LedgerX.png",
+      "before": "/images/projects/LedgerX.png",
+      "after": "/images/projects/LedgerX2.png",
       "gallery": [
-        "/images/projects/LedgerX.webp",
-        "/images/projects/LedgerX2.webp"
+        "/images/projects/LedgerX.png",
+        "/images/projects/LedgerX2.png"
       ]
     },
-    "image": "/images/projects/LedgerX.webp",
+    "image": "/images/projects/LedgerX.png",
     "excerpt": "LedgerX is a production-grade, multi-tenant financial platform designed to handle invoicing, payments, accounting (double-entry ledger), audit/compliance, fraud detection, and system diagnostics in a single, cohesive system."
   },
   {
@@ -1563,14 +1563,14 @@
       "github": "https://github.com/Ancel-duke/OpsFlow"
     },
     "images": {
-      "hero": "/images/projects/opsflow.webp",
-      "before": "/images/projects/opsflow.webp",
-      "after": "/images/projects/opsflow.webp",
+      "hero": "/images/projects/opsflow.png",
+      "before": "/images/projects/opsflow.png",
+      "after": "/images/projects/opsflow.png",
       "gallery": [
-        "/images/projects/opsflow.webp"
+        "/images/projects/opsflow.png"
       ]
     },
-    "image": "/images/projects/opsflow.webp",
+    "image": "/images/projects/opsflow.png",
     "excerpt": "OpsFlow is a production-ready incident and operations management platform architected for engineering teams, combining incident response, workflow management, task coordination, and knowledge sharing into a single secure team-based system. The platform features dual-database architecture (PostgreSQL + MongoDB), real-time WebSocket updates, and team-based multi-tenancy with 50+ API endpoints."
   },
   {
@@ -1712,17 +1712,17 @@
       "github": "https://github.com/Ancel-duke/SignFlow"
     },
     "images": {
-      "hero": "/images/projects/signflow1.webp",
-      "before": "/images/projects/signflow1.webp",
-      "after": "/images/projects/signflow2.webp",
+      "hero": "/images/projects/signflow1.png",
+      "before": "/images/projects/signflow1.png",
+      "after": "/images/projects/signflow2.png",
       "gallery": [
-        "/images/projects/signflow1.webp",
-        "/images/projects/signflow2.webp",
-        "/images/projects/flow.webp",
-        "/images/projects/flow2.webp"
+        "/images/projects/signflow1.png",
+        "/images/projects/signflow2.png",
+        "/images/projects/flow.png",
+        "/images/projects/flow2.png"
       ]
     },
-    "image": "/images/projects/signflow1.webp",
+    "image": "/images/projects/signflow1.png",
     "excerpt": "SignFlow is a high-fidelity assistive technology platform architected for real-time sign language translation, exploring the architectural requirements for scaling accessibility platforms. The system features WebSocket-powered streaming, 3D avatar simulation with natural variation, and accessibility-first design with WCAG compliance, demonstrating production-grade architecture for specialized user bases."
   },
   {
@@ -1880,14 +1880,14 @@
       "docs": "https://github.com/Ancel-duke/NestFi/blob/main/docs/ARCHITECTURE.md"
     },
     "images": {
-      "hero": "/images/projects/nestfi.webp",
-      "before": "/images/projects/nestfi.webp",
-      "after": "/images/projects/nestfi.webp",
+      "hero": "/images/projects/nestfi.png",
+      "before": "/images/projects/nestfi.png",
+      "after": "/images/projects/nestfi.png",
       "gallery": [
-        "/images/projects/nestfi.webp"
+        "/images/projects/nestfi.png"
       ]
     },
-    "image": "/images/projects/nestfi.webp",
+    "image": "/images/projects/nestfi.png",
     "excerpt": "NestFi is a financial application developed by Ancel Ajanga—a production-grade financial coordination platform designed for correctness under failure. It ensures predictable behavior across asynchronous payment providers, delayed or duplicated callbacks, unreliable networks, and hybrid storage layers. PostgreSQL enforces ledger integrity, MongoDB handles compliance and audit events, and Redis provides ephemeral caching and distributed locking with fail-closed safety. Real-time notifications via Socket.io and hardened M-Pesa Daraja integrations make the system resilient, auditable, and user-trust oriented."
   },
   {
@@ -2013,14 +2013,14 @@
       "docs": "https://github.com/Ancel-duke/edumanage/blob/main/docs/ARCHITECTURE.md"
     },
     "images": {
-      "hero": "/images/projects/edumanage.webp",
-      "before": "/images/projects/edumanage.webp",
-      "after": "/images/projects/edumanage.webp",
+      "hero": "/images/projects/edumanage.png",
+      "before": "/images/projects/edumanage.png",
+      "after": "/images/projects/edumanage.png",
       "gallery": [
-        "/images/projects/edumanage.webp"
+        "/images/projects/edumanage.png"
       ]
     },
-    "image": "/images/projects/edumanage.webp",
+    "image": "/images/projects/edumanage.png",
     "excerpt": "A comprehensive educational management system designed to streamline administrative tasks, student enrollment, and academic reporting."
   },
   {
@@ -2200,14 +2200,14 @@
       "docs": "https://github.com/Ancel-duke/Aegis/blob/main/ARCHITECTURE.md"
     },
     "images": {
-      "hero": "/images/projects/aegis.webp",
-      "before": "/images/projects/aegis.webp",
-      "after": "/images/projects/aegis.webp",
+      "hero": "/images/projects/aegis.png",
+      "before": "/images/projects/aegis.png",
+      "after": "/images/projects/aegis.png",
       "gallery": [
-        "/images/projects/aegis.webp"
+        "/images/projects/aegis.png"
       ]
     },
-    "image": "/images/projects/aegis.webp",
+    "image": "/images/projects/aegis.png",
     "excerpt": "Aegis is a self-healing infrastructure platform developed by Ancel Ajanga. It combines Zero-Trust architecture, multi-cluster orchestration, and ML-driven anomaly detection with pull-based executor agents and JWS/HMAC signature validation. The system uses Open Policy Agent (OPA) for policy enforcement, FinOps guardrails for cost control, Shadow Mode for trust-building, and distributed tracing (OpenTelemetry) with Loki for blinded observability. The AI recommends; policy authorizes; only signed intent reaches the executor."
   },
   {
@@ -2341,14 +2341,132 @@
       "docs": "https://github.com/Ancel-duke/Aliv/blob/master/ARCHITECTURE.md"
     },
     "images": {
-      "hero": "/images/projects/fitsbyaliv.webp",
-      "before": "/images/projects/fitsbyaliv.webp",
-      "after": "/images/projects/fitsbyaliv.webp",
+      "hero": "/images/projects/fitsbyaliv.png",
+      "before": "/images/projects/fitsbyaliv.png",
+      "after": "/images/projects/fitsbyaliv.png",
       "gallery": [
-        "/images/projects/fitsbyaliv.webp"
+        "/images/projects/fitsbyaliv.png"
       ]
     },
-    "image": "/images/projects/fitsbyaliv.webp",
+    "image": "/images/projects/fitsbyaliv.png",
     "excerpt": "Fits by Aliv is a Kenya-first e-commerce marketplace (thrift/sustainable fashion) with payment-safe workflows, inventory self-healing, and hardened security. Backend is NestJS with PostgreSQL (Prisma); clients are Flutter (mobile, web, desktop). Identity is Firebase Auth; payments are M-Pesa via Safaricom Daraja API."
+  },
+  {
+    "id": 19,
+    "slug": "inkly",
+    "title": "Inkly — Secure, Real-Time Messaging Architecture",
+    "subtitle": "Sacred bonds and high-availability messaging",
+    "role": "Full-Stack Software Engineer",
+    "timeline": "Ongoing",
+    "year": "2026",
+    "status": "Live",
+    "description": "Inkly is a production-grade secure messaging platform I built to answer: How do you guarantee privacy, scale WebSockets horizontally, and maintain real-time sync when networks fail?",
+    "problem": "Real-time systems easily degrade under heavy traffic, and true security implementation typically leads to poor user experiences. Collaboration via shared notebooks adds Conflict-free Replicated Data Types (CRDT) complexity.",
+    "problemSolutionBridge": "To solve these synchronization challenges, I built a hybrid architecture treating downtime and abuse as first-class concerns.",
+    "solution": "Architected the backend with Node.js, Express, and ws for WebSockets, leveraging Redis for pub/sub to scale horizontally. The Flutter client enforces robust cryptography (HKDF, X25519, AES-256-GCM) to secure communication.",
+    "keyTerms": [
+      {
+        "term": "Sacred Bond Encryption",
+        "explanation": "Client derives a bond key using HKDF, X25519, and AES-256-GCM so that the server only stores wrapped secrets, ensuring complete privacy."
+      },
+      {
+        "term": "CRDT Notebooks",
+        "explanation": "Notebooks leverage Conflict-free Replicated Data Types for seamless merging of collaborative edits between clients."
+      },
+      {
+        "term": "Hybrid Realtime Recovery",
+        "explanation": "Uses WebSocket-first detection and exponential backoff instead of continuous polling to recover seamlessly from network degradations."
+      }
+    ],
+    "failureModes": "Redis unavailability: HTTP API remains up with degraded status; WebSocket connection rejects non-essential state changes until Redis restores. Database failures: Critical circuit breakers using opossum return 503 while non-critical operations degrade gracefully.",
+    "impact": "Supports massive realtime message throughput with fully isolated, encrypted partner vaults and reliable offline event queues.",
+    "architecture": "Backend entry points are split between Express HTTP APIs and a separate WebSocket Server. Data lives across PostgreSQL (relational accounts, logging), MongoDB (messages, CRDT notebooks), and Redis (rate-limits, pub/sub). The client is fully reactive with Flutter using drift SQLite for offline resilience.",
+    "isolation": "Opossum-based circuit breakers ensure critical paths (messaging, auth) are isolated from non-critical loads (analytics, feed). WebSocket engines employ strict rate limits and auth validation.",
+    "tradeoffs": "Chosen to separate message payloads into MongoDB for scale while keeping user and relationship state in PostgreSQL to preserve strict relational integrity. WebSocket architecture leverages Redis pub/sub instead of direct TCP routing for easier horizonal scalability.",
+    "implementationStatus": "Implementation-only completed.",
+    "potentialExpansion": "Further enhancements include expanding cold storage streaming archives, scaling the event pub/sub across multi-region deployments, and expanding Flutter capabilities for desktop native compilation.",
+    "technologies": [
+      {
+        "name": "Node.js",
+        "category": "Backend",
+        "icon": "nodejs"
+      },
+      {
+        "name": "Express",
+        "category": "Backend",
+        "icon": "express"
+      },
+      {
+        "name": "PostgreSQL",
+        "category": "Database",
+        "icon": "postgresql"
+      },
+      {
+        "name": "MongoDB",
+        "category": "Database",
+        "icon": "mongodb"
+      },
+      {
+        "name": "Redis",
+        "category": "Cache",
+        "icon": "redis"
+      },
+      {
+        "name": "Flutter",
+        "category": "Frontend",
+        "icon": "flutter"
+      },
+      {
+        "name": "Dart",
+        "category": "Language",
+        "icon": "dart"
+      }
+    ],
+    "features": [
+      "Real-time messaging with WebSocket-powered delivery",
+      "Offline events queue syncing automatically on reconnect",
+      "Collaborative notebooks driven by CRDT engines",
+      "Sacred bond key derivation and encryption at rest",
+      "Robust circuit breakers isolating critical vs non-critical services",
+      "Admin dashboard with detailed metrics and audit logging",
+      "Email webhooks supporting DLQ for resilience"
+    ],
+    "challenges": [
+      "Implementing consistent CRDT merges for notebooks and syncing them through WebSockets",
+      "Handling WebSocket rate limits per-user via Redis effectively across clustered instance",
+      "Designing cold storage migrations that don't overwhelm production databases"
+    ],
+    "outcomes": [
+      "Real-time messaging capabilities with degraded availability modes",
+      "Resilient system that gracefully survives Redis, MongoDB, or Postgres slowdowns",
+      "Secure key lifecycle management via secure storage and ephemeral memory"
+    ],
+    "metrics": [
+      {
+        "label": "DB Breaker",
+        "value": "15s",
+        "description": "Critical path timeout threshold"
+      },
+      {
+        "label": "Cold Storage",
+        "value": "Streamed",
+        "description": "Gzip buffered migration"
+      }
+    ],
+    "links": {
+      "live": "",
+      "github": "",
+      "docs": ""
+    },
+    "images": {
+      "hero": "/images/projects/Inkly.png",
+      "before": "/images/projects/Inkly.png",
+      "after": "/images/projects/Inkly.png",
+      "gallery": [
+        "/images/projects/Inkly.png"
+      ]
+    },
+    "image": "/images/projects/Inkly.png",
+    "excerpt": "Inkly is a production-grade secure messaging platform I built to answer: How do you guarantee privacy, scale WebSockets horizontally, and maintain real-time sync when networks fail? Backend is Node.js with MongoDB and Redis; clients are Flutter."
   }
 ]

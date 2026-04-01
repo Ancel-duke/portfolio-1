@@ -5,7 +5,7 @@
       "title": "Coding Vibes",
       "artist": "Lofi Hip Hop",
       "album": "Focus Sessions",
-      "cover": "/images/about/coding-vibes.webp",
+      "cover": "/images/about/coding-vibes.png",
       "duration": 180,
       "currentTime": 45,
       "isPlaying": true
@@ -15,7 +15,7 @@
       "title": "Late Night Sessions",
       "artist": "Chill Beats",
       "album": "Developer's Choice",
-      "cover": "/images/about/late-night.webp",
+      "cover": "/images/about/late-night.png",
       "duration": 240,
       "currentTime": 0,
       "isPlaying": false
@@ -25,7 +25,7 @@
       "title": "Productivity Flow",
       "artist": "Ambient Sounds",
       "album": "Deep Work",
-      "cover": "/images/about/productivity.webp",
+      "cover": "/images/about/productivity.png",
       "duration": 300,
       "currentTime": 0,
       "isPlaying": false

@@ -6,7 +6,7 @@
   "jobTitle": "Fullstack Engineer",
   "niche": "System Resilience",
   "baseUrl": "https://ancel.co.ke",
-  "generated": "2026-04-01T19:27:36.382Z",
+  "generated": "2026-04-01T20:32:05.725Z",
   "entries": [
     {
       "url": "https://ancel.co.ke/",
@@ -470,6 +470,26 @@
       "category": "project"
     },
     {
+      "url": "https://ancel.co.ke/projects",
+      "title": "Inkly: Secure, Real-Time Messaging Architecture — Sacred Bonds and High-Availability",
+      "summary": "Inkly is a production-grade secure messaging platform I built to answer: How do you guarantee privacy, scale WebSockets horizontally, and maintain real-time sync when networks fail?",
+      "tech_stack": [
+        "Node.js",
+        "TypeScript",
+        "Express",
+        "PostgreSQL",
+        "MongoDB",
+        "Redis",
+        "Flutter/Dart",
+        "Riverpod",
+        "ws",
+        "cryptography/AES-256-GCM",
+        "JWT auth"
+      ],
+      "key_outcome": "Real-time messaging, offline queue, notebooks (CRDT), polaroids, sacred bond encryption, cold storage, WebSocket scaling.",
+      "category": "project"
+    },
+    {
       "url": "https://ancel.co.ke/case-studies/taskforge",
       "title": "TaskForge - Real-time Collaborative Project Management",
       "summary": "TaskForge is a resilient, scalable real-time collaborative project management platform designed for engineering teams. The system handles concurrent collaboration across distributed teams, managing project workflows, task coordination, and team communication with sub-second latency and conflict-free synchronization. To address stale data and edit conflicts at scale, I designed a real-time collaborative architecture that keeps all clients in sync and isolates failures so one outage does not take down the whole system.",
@@ -816,6 +836,24 @@
       "category": "case-study"
     },
     {
+      "url": "https://ancel.co.ke/case-studies/inkly",
+      "title": "Inkly — Secure, Real-Time Messaging Architecture",
+      "summary": "Inkly is a production-grade secure messaging platform I built to answer: How do you guarantee privacy, scale WebSockets horizontally, and maintain real-time sync when networks fail? To solve these synchronization challenges, I built a hybrid architecture treating downtime and abuse as first-class concerns. Supports massive realtime message throughput with fully isolated, encrypted partner vaults and reliable offline event queues.",
+      "tech_stack": [
+        "Node.js",
+        "Express",
+        "PostgreSQL",
+        "MongoDB",
+        "Redis",
+        "Flutter",
+        "Dart"
+      ],
+      "key_outcome": "DB Breaker: 15s",
+      "business_outcome": "Supports massive realtime message throughput with fully isolated, encrypted partner vaults and reliable offline event queues.",
+      "scale_or_metric": "DB Breaker: 15s; Cold Storage: Streamed",
+      "category": "case-study"
+    },
+    {
       "url": "https://ancel.co.ke/developer-journal/building-taskforge-with-next-js-and-socket-io-lessons-learned",
       "title": "Building TaskForge with Next.js and Socket.io — Lessons Learned",
       "summary": "Exploring the challenges and solutions in building a real-time collaborative project management platform. From WebSocket connections to optimistic UI updates and conflict resolution. Building TaskForge was one of my most challenging and rewarding projects.",
@@ -1032,6 +1070,22 @@
         "Security"
       ],
       "key_outcome": "Building a production-grade e-commerce backend designed around failure, abuse, and latency. Soft reservations, idempoten",
+      "category": "article"
+    },
+    {
+      "url": "https://ancel.co.ke/developer-journal/inkly-architecting-a-secure-real-time-messaging-platform",
+      "title": "Inkly: Architecting a Secure Real-Time Messaging Platform",
+      "summary": "Building a production-grade secure messaging backend designed around privacy, latency, and failure. Sacred bonds, CRDT notebooks, offline queues, and Redis scaling. Inkly is a real-time messaging platform I built to answer: How do you guarantee privacy, scale WebSockets horizontally, and maintain real-time sync when networks fail?",
+      "tech_stack": [
+        "Node.js",
+        "Flutter",
+        "WebSockets",
+        "Security",
+        "PostgreSQL",
+        "MongoDB",
+        "Cryptography"
+      ],
+      "key_outcome": "Building a production-grade secure messaging backend designed around privacy, latency, and failure. Sacred bonds, CRDT n",
       "category": "article"
     },
     {
@@ -1585,6 +1639,26 @@
         ],
         "key_outcome": "No oversell, no voucher double-spend, no blind trust in payment callbacks.",
         "category": "project"
+      },
+      {
+        "url": "https://ancel.co.ke/projects",
+        "title": "Inkly: Secure, Real-Time Messaging Architecture — Sacred Bonds and High-Availability",
+        "summary": "Inkly is a production-grade secure messaging platform I built to answer: How do you guarantee privacy, scale WebSockets horizontally, and maintain real-time sync when networks fail?",
+        "tech_stack": [
+          "Node.js",
+          "TypeScript",
+          "Express",
+          "PostgreSQL",
+          "MongoDB",
+          "Redis",
+          "Flutter/Dart",
+          "Riverpod",
+          "ws",
+          "cryptography/AES-256-GCM",
+          "JWT auth"
+        ],
+        "key_outcome": "Real-time messaging, offline queue, notebooks (CRDT), polaroids, sacred bond encryption, cold storage, WebSocket scaling.",
+        "category": "project"
       }
     ],
     "caseStudies": [
@@ -1933,6 +2007,24 @@
         "business_outcome": "The system guarantees: no inventory oversell due to race conditions, no voucher double-spend, no unaudited state changes, no blind trust in payment callbacks, no unbounded automation. Security highlights: Firebase JWT verification + server-side authorization, idempotency keys on",
         "scale_or_metric": "Status: ~90–95%; Payment: Verify first; Voucher: Pessimistic; Audit: Immutable",
         "category": "case-study"
+      },
+      {
+        "url": "https://ancel.co.ke/case-studies/inkly",
+        "title": "Inkly — Secure, Real-Time Messaging Architecture",
+        "summary": "Inkly is a production-grade secure messaging platform I built to answer: How do you guarantee privacy, scale WebSockets horizontally, and maintain real-time sync when networks fail? To solve these synchronization challenges, I built a hybrid architecture treating downtime and abuse as first-class concerns. Supports massive realtime message throughput with fully isolated, encrypted partner vaults and reliable offline event queues.",
+        "tech_stack": [
+          "Node.js",
+          "Express",
+          "PostgreSQL",
+          "MongoDB",
+          "Redis",
+          "Flutter",
+          "Dart"
+        ],
+        "key_outcome": "DB Breaker: 15s",
+        "business_outcome": "Supports massive realtime message throughput with fully isolated, encrypted partner vaults and reliable offline event queues.",
+        "scale_or_metric": "DB Breaker: 15s; Cold Storage: Streamed",
+        "category": "case-study"
       }
     ],
     "articles": [
@@ -2154,6 +2246,22 @@
         ],
         "key_outcome": "Building a production-grade e-commerce backend designed around failure, abuse, and latency. Soft reservations, idempoten",
         "category": "article"
+      },
+      {
+        "url": "https://ancel.co.ke/developer-journal/inkly-architecting-a-secure-real-time-messaging-platform",
+        "title": "Inkly: Architecting a Secure Real-Time Messaging Platform",
+        "summary": "Building a production-grade secure messaging backend designed around privacy, latency, and failure. Sacred bonds, CRDT notebooks, offline queues, and Redis scaling. Inkly is a real-time messaging platform I built to answer: How do you guarantee privacy, scale WebSockets horizontally, and maintain real-time sync when networks fail?",
+        "tech_stack": [
+          "Node.js",
+          "Flutter",
+          "WebSockets",
+          "Security",
+          "PostgreSQL",
+          "MongoDB",
+          "Cryptography"
+        ],
+        "key_outcome": "Building a production-grade secure messaging backend designed around privacy, latency, and failure. Sacred bonds, CRDT n",
+        "category": "article"
       }
     ],
     "guides": [
@@ -2245,9 +2353,9 @@
       }
     ]
   },
-  "totalProjects": 18,
-  "totalCaseStudies": 18,
-  "totalArticles": 14,
+  "totalProjects": 19,
+  "totalCaseStudies": 19,
+  "totalArticles": 15,
   "totalGuides": 5,
   "totalPages": 11
 }

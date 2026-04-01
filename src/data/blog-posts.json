@@ -9,7 +9,7 @@
       "readTime": "15 min read",
       "author": "Ancel Ajanga",
       "category": "Framework Comparison",
-      "image": "/images/projects/taskforge.webp",
+      "image": "/images/projects/taskforge.png",
       "tags": [
         "React",
         "Vue",
@@ -26,7 +26,7 @@
       "readTime": "12 min read",
       "author": "Ancel Ajanga",
       "category": "Progressive Web Apps",
-      "image": "/images/projects/attendance.webp",
+      "image": "/images/projects/attendance.png",
       "tags": [
         "PWA",
         "Web Development",
@@ -42,7 +42,7 @@
       "readTime": "10 min read",
       "author": "Ancel Ajanga",
       "category": "Case Study",
-      "image": "/images/projects/travel.webp",
+      "image": "/images/projects/travel.png",
       "tags": [
         "React",
         "Maps",
@@ -58,7 +58,7 @@
       "readTime": "13 min read",
       "author": "Ancel Ajanga",
       "category": "State Management",
-      "image": "/images/projects/bank.webp",
+      "image": "/images/projects/bank.png",
       "tags": [
         "Redux",
         "State Management",
@@ -74,7 +74,7 @@
       "readTime": "12 min read",
       "author": "Ancel Ajanga",
       "category": "Career Growth",
-      "image": "/images/projects/ecommerce-1.webp",
+      "image": "/images/projects/ecommerce-1.png",
       "tags": [
         "Career",
         "Full Stack",
@@ -90,7 +90,7 @@
       "readTime": "14 min read",
       "author": "Ancel Ajanga",
       "category": "Architecture",
-      "image": "/images/projects/elearn.webp",
+      "image": "/images/projects/elearn.png",
       "tags": [
         "Architecture",
         "Scaling",
@@ -106,7 +106,7 @@
       "readTime": "14 min read",
       "author": "Ancel Ajanga",
       "category": "Case Study",
-      "image": "/images/projects/fitsbyaliv.webp",
+      "image": "/images/projects/fitsbyaliv.png",
       "tags": [
         "NestJS",
         "Flutter",
@@ -116,6 +116,26 @@
         "BullMQ",
         "Firebase",
         "Security"
+      ]
+    },
+    {
+      "slug": "inkly-messaging-architecture",
+      "title": "Inkly: Architecting a Secure Real-Time Messaging Platform",
+      "excerpt": "Building a production-grade secure messaging backend designed around privacy, latency, and failure. Sacred bonds, CRDT notebooks, offline queues, and Redis scaling.",
+      "content": "Full article content in blog.json (id 15).",
+      "date": "2026-04-01",
+      "readTime": "12 min read",
+      "author": "Ancel Ajanga",
+      "category": "Architecture",
+      "image": "/images/projects/Inkly.png",
+      "tags": [
+        "Node.js",
+        "Flutter",
+        "WebSockets",
+        "Security",
+        "PostgreSQL",
+        "MongoDB",
+        "Cryptography"
       ]
     }
   ]

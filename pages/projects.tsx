@@ -13,10 +13,11 @@ export default function ProjectsPage() {
   return (
     <>
       <SEO
-        title="Projects — NestFi, SignFlow, OpsFlow, Aegis, LedgerX, EduChain, EduManage, TaskForge | Ancel Ajanga"
-        description="Software projects by Ancel Ajanga: Fullstack Software Engineer Narok & Nairobi, Kenya. NestFi, SignFlow, OpsFlow, Aegis, LedgerX, EduChain, EduManage, TaskForge, Fits by Aliv. Security, AIOps, full-stack developer East Africa."
+        title="Projects — Inkly, NestFi, SignFlow, OpsFlow, Aegis, LedgerX, EduChain, EduManage, TaskForge | Ancel Ajanga"
+        description="Software projects by Ancel Ajanga: Fullstack Software Engineer Narok & Nairobi, Kenya. Inkly, NestFi, SignFlow, OpsFlow, Aegis, LedgerX, EduChain, EduManage, TaskForge, Fits by Aliv. Security, AIOps, full-stack developer East Africa."
         canonicalUrl="https://ancel.co.ke/projects"
         keywords={[
+          'Inkly',
           'NestFi',
           'SignFlow',
           'OpsFlow',

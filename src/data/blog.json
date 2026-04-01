@@ -13,7 +13,7 @@
     ],
     "date": "2025-01-15",
     "readTime": "8 min read",
-    "image": "/images/projects/taskforge.webp",
+    "image": "/images/projects/taskforge.png",
     "level": "intermediate",
     "whoThisIsFor": "Teams and product leads who need real-time collaboration (editing, boards, sync) without conflicts, and engineers evaluating Next.js + Socket.io for production.",
     "problem": "Distributed teams face stale data, edit conflicts, and fragmented communication. Off-the-shelf tools often struggle with scalability and real-time consistency.",
@@ -27,7 +27,7 @@
     "challenges": "WebSocket reconnection under flaky networks required exponential backoff and client state reconciliation. Keeping the real-time channel independent from REST failures so one broken API call didn't block live updates. Scaling to 100+ users per project needed MongoDB indexing and small event payloads.",
     "author": {
       "name": "Ancel Ajanga",
-      "avatar": "/images/about/profile-photo.webp",
+      "avatar": "/images/about/profile-photo.png",
       "bio": "Full-stack developer passionate about building scalable web applications"
     }
   },
@@ -45,7 +45,7 @@
     ],
     "date": "2024-12-20",
     "readTime": "10 min read",
-    "image": "/images/projects/elearn.webp",
+    "image": "/images/projects/elearn.png",
     "level": "intermediate",
     "whoThisIsFor": "Ed-tech teams and institutions scaling online courses, instructors who need robust course management, and engineers choosing Django vs Node for content-heavy backends.",
     "problem": "Platforms that serve thousands of students often degrade under load, lack clear auth and progress tracking, or lock you into expensive vendors.",
@@ -58,7 +58,7 @@
     ],
     "author": {
       "name": "Ancel Ajanga",
-      "avatar": "/images/about/profile-photo.webp",
+      "avatar": "/images/about/profile-photo.png",
       "bio": "Full-stack developer passionate about building scalable web applications"
     }
   },
@@ -76,11 +76,11 @@
     ],
     "date": "2024-11-10",
     "readTime": "6 min read",
-    "image": "/images/projects/finance-tracker.webp",
+    "image": "/images/projects/finance-tracker.png",
     "level": "beginner",
     "author": {
       "name": "Ancel Ajanga",
-      "avatar": "/images/about/profile-photo.webp",
+      "avatar": "/images/about/profile-photo.png",
       "bio": "Full-stack developer passionate about building scalable web applications"
     }
   },
@@ -98,11 +98,11 @@
     ],
     "date": "2024-10-05",
     "readTime": "7 min read",
-    "image": "/images/projects/fitness.webp",
+    "image": "/images/projects/fitness.png",
     "level": "beginner",
     "author": {
       "name": "Ancel Ajanga",
-      "avatar": "/images/about/profile-photo.webp",
+      "avatar": "/images/about/profile-photo.png",
       "bio": "Full-stack developer passionate about building scalable web applications"
     }
   },
@@ -120,11 +120,11 @@
     ],
     "date": "2024-09-15",
     "readTime": "12 min read",
-    "image": "/images/projects/attendance.webp",
+    "image": "/images/projects/attendance.png",
     "level": "beginner",
     "author": {
       "name": "Ancel Ajanga",
-      "avatar": "/images/about/profile-photo.webp",
+      "avatar": "/images/about/profile-photo.png",
       "bio": "Full-stack developer passionate about building scalable web applications"
     }
   },
@@ -142,11 +142,11 @@
     ],
     "date": "2024-08-20",
     "readTime": "9 min read",
-    "image": "/images/projects/travel.webp",
+    "image": "/images/projects/travel.png",
     "level": "intermediate",
     "author": {
       "name": "Ancel Ajanga",
-      "avatar": "/images/about/profile-photo.webp",
+      "avatar": "/images/about/profile-photo.png",
       "bio": "Full-stack developer passionate about building scalable web applications"
     }
   },
@@ -163,11 +163,11 @@
     ],
     "date": "2025-09-22",
     "readTime": "5 min read",
-    "image": "/images/projects/bank.webp",
+    "image": "/images/projects/bank.png",
     "level": "beginner",
     "author": {
       "name": "Ancel Ajanga",
-      "avatar": "/images/about/profile-photo.webp",
+      "avatar": "/images/about/profile-photo.png",
       "bio": "Fullstack Software Engineer/Developer & App Developer"
     }
   },
@@ -186,11 +186,11 @@
     ],
     "date": "2026-01-20",
     "readTime": "12 min read",
-    "image": "/images/projects/EduChain.webp",
+    "image": "/images/projects/EduChain.png",
     "level": "advanced",
     "author": {
       "name": "Ancel Ajanga",
-      "avatar": "/images/about/profile-photo.webp",
+      "avatar": "/images/about/profile-photo.png",
       "bio": "Fullstack Software Engineer/Developer & App Developer"
     }
   },
@@ -212,11 +212,11 @@
     ],
     "date": "2026-02-01",
     "readTime": "12 min read",
-    "image": "/images/projects/LedgerX.webp",
+    "image": "/images/projects/LedgerX.png",
     "level": "advanced",
     "author": {
       "name": "Ancel Ajanga",
-      "avatar": "/images/about/profile-photo.webp",
+      "avatar": "/images/about/profile-photo.png",
       "bio": "Fullstack Software Engineer/Developer & App Developer"
     }
   },
@@ -237,11 +237,11 @@
     ],
     "date": "2026-01-21",
     "readTime": "14 min read",
-    "image": "/images/projects/opsflow.webp",
+    "image": "/images/projects/opsflow.png",
     "level": "advanced",
     "author": {
       "name": "Ancel Ajanga",
-      "avatar": "/images/about/profile-photo.webp",
+      "avatar": "/images/about/profile-photo.png",
       "bio": "Fullstack Software Engineer/Developer & App Developer"
     }
   },
@@ -262,11 +262,11 @@
     ],
     "date": "2026-01-22",
     "readTime": "16 min read",
-    "image": "/images/projects/signflow1.webp",
+    "image": "/images/projects/signflow1.png",
     "level": "advanced",
     "author": {
       "name": "Ancel Ajanga",
-      "avatar": "/images/about/profile-photo.webp",
+      "avatar": "/images/about/profile-photo.png",
       "bio": "Fullstack Software Engineer/Developer & App Developer"
     }
   },
@@ -290,11 +290,11 @@
     ],
     "date": "2026-01-30",
     "readTime": "10 min read",
-    "image": "/images/projects/aegis.webp",
+    "image": "/images/projects/aegis.png",
     "level": "advanced",
     "author": {
       "name": "Ancel Ajanga",
-      "avatar": "/images/about/profile-photo.webp",
+      "avatar": "/images/about/profile-photo.png",
       "bio": "Fullstack Software Engineer/Developer & App Developer"
     }
   },
@@ -316,11 +316,11 @@
     ],
     "date": "2026-02-04",
     "readTime": "12 min read",
-    "image": "/images/projects/nestfi.webp",
+    "image": "/images/projects/nestfi.png",
     "level": "advanced",
     "author": {
       "name": "Ancel Ajanga",
-      "avatar": "/images/about/profile-photo.webp",
+      "avatar": "/images/about/profile-photo.png",
       "bio": "Fullstack Software Engineer/Developer & App Developer"
     }
   },
@@ -341,11 +341,35 @@
     ],
     "date": "2026-02-02",
     "readTime": "14 min read",
-    "image": "/images/projects/fitsbyaliv.webp",
+    "image": "/images/projects/fitsbyaliv.png",
     "level": "advanced",
     "author": {
       "name": "Ancel Ajanga",
-      "avatar": "/images/about/profile-photo.webp",
+      "avatar": "/images/about/profile-photo.png",
+      "bio": "Fullstack Software Engineer/Developer & App Developer"
+    }
+  },
+  {
+    "id": 15,
+    "title": "Inkly: Architecting a Secure Real-Time Messaging Platform",
+    "excerpt": "Building a production-grade secure messaging backend designed around privacy, latency, and failure. Sacred bonds, CRDT notebooks, offline queues, and Redis scaling.",
+    "content": "Inkly is a real-time messaging platform I built to answer: How do you guarantee privacy, scale WebSockets horizontally, and maintain real-time sync when networks fail?\n\nI. The Problem\nReal-time systems easily degrade under heavy traffic. Security implementation typically leads to poor user experiences. Collaboration (like shared notebooks) adds high conflict-resolution complexity.\n\nII. The Solution\nTo solve the complex messaging and synchronization challenges, I built a hybrid architecture with MongoDB for document storage, PostgreSQL for relational data, and Redis for distributed rate limits and horizonal WebSocket scaling. Architected the backend with Node.js, Express, and ws for WebSockets, leveraging Redis for pub/sub to scale horizontally. The client was built in Flutter using Riverpod, integrating robust cryptography (HKDF, X25519, AES-256-GCM) to secure bonds.\n\nIII. Key Principles\n- Sacred Bond Encryption: Client derives a bond key using HKDF, X25519 so that the server only stores wrapped secrets, ensuring complete privacy.\n- CRDT Notebooks: Notebooks leverage Conflict-free Replicated Data Types for seamless merging of collaborative edits between clients.\n- Hybrid Realtime Recovery: Uses WebSocket-first detection and exponential backoff instead of continuous polling to recover seamlessly.\n\nIV. Failure Modes & Circuit Breaking\nOpossum-based circuit breakers ensure critical paths are isolated from non-critical loads. Redis unavailability drops the WebSocket tier to degraded mode, protecting core POST API endpoints until it recovers.\n\nV. Results\nThe result is a highly durable and secure messaging system with extremely strong cryptography, built around an easy-to-scale horizontally distributed WebSocket backend across Node and Redis.",
+    "tags": [
+      "Node.js",
+      "Flutter",
+      "WebSockets",
+      "Security",
+      "PostgreSQL",
+      "MongoDB",
+      "Cryptography"
+    ],
+    "date": "2026-04-01",
+    "readTime": "12 min read",
+    "image": "/images/projects/Inkly.png",
+    "level": "advanced",
+    "author": {
+      "name": "Ancel Ajanga",
+      "avatar": "/images/about/profile-photo.png",
       "bio": "Fullstack Software Engineer/Developer & App Developer"
     }
   }
