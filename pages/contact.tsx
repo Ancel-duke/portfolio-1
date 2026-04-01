@@ -1,8 +1,8 @@
 import dynamic from 'next/dynamic'
-import SEO from '@/components/seo/SEO'
+import SEO from '@/domains/seo'
 
 const ContactForm = dynamic(
-  () => import('@/components/forms/contact-form').then((m) => m.ContactForm),
+  () => import('@/domains/contact').then((m) => m.ContactForm),
   { ssr: false }
 )
 

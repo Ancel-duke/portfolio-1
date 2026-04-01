@@ -12,31 +12,12 @@
   color: var(--text-primary);
 }
 
-/* Roman numeral section titles (I., II., III., etc.) */
-.blog-content p:matches(/^[IVX]+\./),
-.blog-content p:matches(/^[IVX]+\s/) {
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin-top: 2.5rem;
-  margin-bottom: 1.25rem;
-  color: var(--text-primary);
-}
-
-/* Numeric sub-titles (1., 2., 3., etc.) */
-.blog-content p:matches(/^\d+\./),
-.blog-content p:matches(/^\d+\s/) {
-  font-size: 1.25rem;
-  font-weight: 600;
-  margin-top: 2rem;
-  margin-bottom: 1rem;
-  color: var(--text-primary);
-}
-
-/* Regular text content */
-.blog-content p:not(:matches(/^[IVX]+\./)):not(:matches(/^\d+\./)):not(:matches(/^[IVX]+\s/)):not(:matches(/^\d+\s/)) {
+/* Article body paragraphs */
+.blog-content p {
   font-size: 1.125rem;
   line-height: 1.75;
   margin-bottom: 1rem;
+  color: var(--text-primary);
 }
 
 /* Lists */

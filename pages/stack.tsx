@@ -1,8 +1,8 @@
 import dynamic from 'next/dynamic'
-import SEO from '@/components/seo/SEO'
+import SEO from '@/domains/seo'
 
 const TechStack = dynamic(
-  () => import('@/components/sections/tech-stack').then((m) => m.TechStack),
+  () => import('@/domains/tech-stack').then((m) => m.TechStack),
   { ssr: false }
 )
 

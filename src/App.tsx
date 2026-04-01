@@ -3,12 +3,12 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { HelmetProvider } from 'react-helmet-async'
 import { ThemeProvider } from './contexts/ThemeContext'
 import { AnimationsProvider } from './contexts/AnimationsContext'
-import { Header } from './components/layout/header'
-import { Footer } from './components/layout/footer'
-import { Hero } from './components/sections/hero'
-import { Button } from './components/ui/button'
-import SEO from './components/seo/SEO'
-import { SkipLink } from './components/ui/skip-link'
+import { Header } from '@/domains/layout'
+import { Footer } from '@/domains/layout'
+import { Hero } from '@/domains/hero'
+import { Button } from '@/shared/components/ui/button'
+import SEO from '@/domains/seo'
+import { SkipLink } from '@/shared/components/ui/skip-link'
 import { 
   generatePersonSchema, 
   generateWebsiteSchema, 
@@ -16,26 +16,26 @@ import {
   generateOrganizationSchema,
   getKnowsAboutAsThings,
   generateSoftwareSourceCodeSchema
-} from './components/seo/schemas'
-import WebVitals from './components/performance/WebVitals'
+} from '@/domains/seo/schemas'
+import WebVitals from '@/domains/performance'
 
 // Lazy load pages for code splitting (only load chunk when route is visited)
-const BlogDetailPage = lazy(() => import('./pages/BlogDetailPage').then(module => ({ default: module.BlogDetailPage })))
-const CaseStudyDetailPage = lazy(() => import('./pages/CaseStudyDetailPage').then(module => ({ default: module.CaseStudyDetailPage })))
-const Projects = lazy(() => import('./pages/Projects'))
-const DeveloperJournal = lazy(() => import('./pages/DeveloperJournal').then(module => ({ default: module.DeveloperJournal })))
-const AboutSection = lazy(() => import('./components/sections/about').then(m => ({ default: () => <m.About fullPage /> })))
-const ContactFormLazy = lazy(() => import('./components/forms/contact-form').then(m => ({ default: m.ContactForm })))
+const BlogDetailPage = lazy(() => import('@/integration/blog-detail-with-seo'))
+const CaseStudyDetailPage = lazy(() => import('@/integration/case-study-detail-with-seo'))
+const Projects = lazy(() => import('@/integration/projects-with-seo'))
+const DeveloperJournal = lazy(() => import('@/domains/blog').then(module => ({ default: module.DeveloperJournal })))
+const AboutSection = lazy(() => import('@/domains/about').then(m => ({ default: () => <m.About fullPage /> })))
+const ContactFormLazy = lazy(() => import('@/domains/contact').then(m => ({ default: m.ContactForm })))
 
 // Below-the-fold: lazy so Hero (LCP) is in main bundle and paints first
-const CaseStudiesGrid = lazy(() => import('./components/sections/case-studies-grid').then(m => ({ default: m.CaseStudiesGrid })))
-const LabsExperiments = lazy(() => import('./components/sections/labs-experiments').then(m => ({ default: m.LabsExperiments })))
-const Timeline = lazy(() => import('./components/sections/timeline').then(m => ({ default: m.Timeline })))
-const TechStack = lazy(() => import('./components/sections/tech-stack').then(m => ({ default: m.TechStack })))
-const Fun = lazy(() => import('./components/sections/fun').then(m => ({ default: m.Fun })))
-const CTA = lazy(() => import('./components/sections/cta').then(m => ({ default: m.CTA })))
-const TodaysHighlights = lazy(() => import('./components/sections/todays-highlights').then(m => ({ default: m.TodaysHighlights })))
-const About = lazy(() => import('./components/sections/about').then(m => ({ default: m.About })))
+const CaseStudiesGrid = lazy(() => import('@/domains/case-studies').then(m => ({ default: m.CaseStudiesGrid })))
+const LabsExperiments = lazy(() => import('@/domains/labs').then(m => ({ default: m.LabsExperiments })))
+const Timeline = lazy(() => import('@/domains/timeline').then(m => ({ default: m.Timeline })))
+const TechStack = lazy(() => import('@/domains/tech-stack').then(m => ({ default: m.TechStack })))
+const Fun = lazy(() => import('@/domains/fun').then(m => ({ default: m.Fun })))
+const CTA = lazy(() => import('@/domains/contact').then(m => ({ default: m.CTA })))
+const TodaysHighlights = lazy(() => import('@/domains/todays-highlights').then(m => ({ default: m.TodaysHighlights })))
+const About = lazy(() => import('@/domains/about').then(m => ({ default: m.About })))
 
 // Loading fallback for route-level Suspense
 const PageLoader = () => (

@@ -6,10 +6,10 @@ const RUNTIME_CACHE = 'ancel-portfolio-runtime-v1';
 const PRECACHE_ASSETS = [
   '/',
   '/index.html',
-  '/assets/profile_photo.jpg',
-  '/assets/projects/LedgerX.jpg',
-  '/assets/projects/EduChain.jpg',
-  '/assets/projects/taskforge.jpg',
+  '/images/about/profile-photo.webp',
+  '/images/projects/ledgerx.webp',
+  '/images/projects/educhain.webp',
+  '/images/projects/taskforge.webp',
   '/manifest.json'
 ];
 
@@ -73,7 +73,7 @@ self.addEventListener('fetch', (event) => {
 
             // Cache images and static assets
             if (event.request.destination === 'image' || 
-                event.request.url.includes('/assets/') ||
+                event.request.url.includes('/images/') ||
                 event.request.url.includes('/static/')) {
               caches.open(RUNTIME_CACHE)
                 .then((cache) => {
@@ -95,3 +95,4 @@ self.addEventListener('fetch', (event) => {
       })
   );
 });
+

@@ -1,4 +1,5 @@
 import { Html, Head, Main, NextScript } from 'next/document'
+import { SITE } from '@/shared/constants/site'
 
 const themeInitScript = `
 (function() {
@@ -28,15 +29,15 @@ export default function Document() {
             __html: JSON.stringify({
               '@context': 'https://schema.org',
               '@type': 'Person',
-              name: 'Ancel Ajanga',
+              name: SITE.name,
               alternateName: ['Ajanga Ancel', 'Duke'],
               jobTitle: 'Fullstack Engineer',
               description: 'Ancel Ajanga is a Fullstack Engineer and Software Architect based in Nairobi and Narok, Kenya. Building production software since 2024. Specializes in system resilience, security, and AIOps: hardened backends, fluid frontends, and self-healing infrastructure. Delivers measurable outcomes including real-time systems with sub-500ms latency, platforms for 10K+ users, and fintech-grade auditability. Production systems: NestFi, SignFlow, OpsFlow, Aegis, LedgerX, EduChain, EduManage, TaskForge.',
-              url: 'https://ancel.co.ke',
-              image: 'https://ancel.co.ke/assets/profile_photo.jpg',
+              url: SITE.url,
+              image: `${SITE.url}${SITE.profileImage}`,
               mainEntityOfPage: {
                 '@type': 'WebPage',
-                '@id': 'https://ancel.co.ke/',
+                '@id': `${SITE.url}/`,
               },
               alumniOf: [
                 { '@type': 'EducationalOrganization', name: 'Moringa School' },
@@ -65,7 +66,7 @@ export default function Document() {
               sameAs: [
                 'https://github.com/Ancel-duke',
                 'https://www.linkedin.com/in/ajanga-ancel',
-                'https://ancel.co.ke',
+                SITE.url,
               ],
             }),
           }}

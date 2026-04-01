@@ -1,5 +1,5 @@
 import React from 'react';
-import SEO from '../components/seo/SEO';
+import SEO from '@/domains/seo';
 import About from '../components/About';
 
 const AboutPage = () => {

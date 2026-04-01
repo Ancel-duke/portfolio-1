@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useEffect, useState } from 'react'
-import { getSystemTheme, loadFromLocalStorage, saveToLocalStorage } from '../lib/utils'
+import { getSystemTheme, loadFromLocalStorage, saveToLocalStorage } from '@/shared/utils'
 
 type Theme = 'light' | 'dark' | 'system'
 

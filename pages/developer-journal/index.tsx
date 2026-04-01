@@ -1,5 +1,5 @@
-import SEO from '@/components/seo/SEO'
-import { DeveloperJournal } from '@/pages/DeveloperJournal'
+import SEO from '@/domains/seo'
+import { DeveloperJournal } from '@/domains/blog'
 
 export default function DeveloperJournalPage() {
   return (

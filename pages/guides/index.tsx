@@ -1,9 +1,9 @@
-import SEO from '@/components/seo/SEO'
+import SEO from '@/domains/seo'
 import Link from 'next/link'
 import guidesData from '@/data/guides.json'
-import { Card, CardContent, CardTitle } from '@/components/ui/card'
-import { Button } from '@/components/ui/button'
-import { Badge } from '@/components/ui/badge'
+import { Card, CardContent, CardTitle } from '@/shared/components/ui/card'
+import { Button } from '@/shared/components/ui/button'
+import { Badge } from '@/shared/components/ui/badge'
 import { ArrowRight, BookOpen } from 'lucide-react'
 
 const guides = guidesData as Array<{

@@ -86,7 +86,7 @@ Disallow: /node_modules/
 Allow: /sitemap.xml
 Allow: /robots.txt
 Allow: /favicon.ico
-Allow: /assets/
+Allow: /images/
 
 # Sitemap location (Brave Search, Google, Bing, DuckDuckGo and all crawlers)
 Sitemap: https://ancel.co.ke/sitemap.xml

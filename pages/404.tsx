@@ -1,6 +1,6 @@
 import Link from 'next/link'
-import { Button } from '@/components/ui/button'
-import SEO from '@/components/seo/SEO'
+import { Button } from '@/shared/components/ui/button'
+import SEO from '@/domains/seo'
 
 export default function NotFound() {
   return (

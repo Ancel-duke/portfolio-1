@@ -1,10 +1,10 @@
 import dynamic from 'next/dynamic'
-import SEO from '@/components/seo/SEO'
+import SEO from '@/domains/seo'
 import caseStudiesData from '@/data/case-studies.json'
-import { generateCaseStudySchema } from '@/components/seo/schemas'
+import { generateCaseStudySchema } from '@/domains/seo/schemas'
 
 const CaseStudiesGrid = dynamic(
-  () => import('@/components/sections/case-studies-grid').then((m) => m.CaseStudiesGrid),
+  () => import('@/domains/case-studies').then((m) => m.CaseStudiesGrid),
   { ssr: false }
 )
 

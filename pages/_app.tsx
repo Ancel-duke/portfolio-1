@@ -5,11 +5,11 @@ import { HelmetProvider } from 'react-helmet-async'
 import { ThemeProvider } from '@/contexts/ThemeContext'
 import { AnimationsProvider } from '@/contexts/AnimationsContext'
 import { BackgroundAudioProvider } from '@/contexts/BackgroundAudioContext'
-import { CustomCursorGate } from '@/components/ui/custom-cursor-gate'
-import { Header } from '@/components/layout/header'
-import { Footer } from '@/components/layout/footer'
-import WebVitals from '@/components/performance/WebVitals'
+import { CustomCursorGate } from '@/shared/components/ui/custom-cursor-gate'
+import { Header, Footer } from '@/domains/layout'
+import WebVitals from '@/domains/performance'
 import '@/index.css'
+import '@/styles/blog-content.css'
 
 const inter = Inter({
   subsets: ['latin'],

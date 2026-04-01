@@ -1,5 +1,5 @@
 import React from 'react';
-import SEO from '../components/seo/SEO';
+import SEO from '@/domains/seo';
 import Hero from '../components/Hero';
 import About from '../components/About';
 import Projects from './Projects';

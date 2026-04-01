@@ -95,10 +95,10 @@ const validateSEO = () => {
 
   // Check for SEO components
   const seoComponents = [
-    'src/components/seo/SEOHead.tsx',
-    'src/components/seo/schemas.ts',
-    'src/components/ui/breadcrumb.tsx',
-    'src/components/ui/skip-link.tsx'
+    'src/domains/seo/components/SEOHead.tsx',
+    'src/domains/seo/components/schemas.ts',
+    'src/components/shared/ui/breadcrumb.tsx',
+    'src/components/shared/ui/skip-link.tsx'
   ];
 
   seoComponents.forEach(component => {
@@ -112,9 +112,9 @@ const validateSEO = () => {
 
   // Check for performance components
   const performanceComponents = [
-    'src/components/performance/WebVitals.tsx',
-    'src/components/ui/optimized-image.tsx',
-    'src/components/ui/lazy-section.tsx'
+    'src/domains/performance/components/WebVitals.tsx',
+    'src/components/shared/ui/optimized-image.tsx',
+    'src/components/shared/ui/lazy-section.tsx'
   ];
 
   performanceComponents.forEach(component => {
@@ -131,10 +131,10 @@ const validateSEO = () => {
   if (fs.existsSync(appPath)) {
     const appContent = fs.readFileSync(appPath, 'utf8');
     
-    if (appContent.includes('SEOHead')) {
-      successes.push('✅ App.tsx uses SEOHead component');
+    if (appContent.includes('SEO') || appContent.includes('SEOHead')) {
+      successes.push('✅ App.tsx uses SEO component');
     } else {
-      errors.push('❌ App.tsx missing SEOHead implementation');
+      errors.push('❌ App.tsx missing SEO implementation');
     }
 
     if (appContent.includes('SkipLink')) {
@@ -157,7 +157,7 @@ const validateSEO = () => {
   }
 
   // Check for JSON-LD schemas
-  const schemasPath = path.join(__dirname, '../src/components/seo/schemas.ts');
+  const schemasPath = path.join(__dirname, '../src/domains/seo/components/schemas.ts');
   if (fs.existsSync(schemasPath)) {
     const schemasContent = fs.readFileSync(schemasPath, 'utf8');
     

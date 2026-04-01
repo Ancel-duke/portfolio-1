@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import SEO from '../components/seo/SEO';
+import SEO from '@/domains/seo';
 import { LazyMotion, domAnimation, m } from 'framer-motion';
 import { FiMail, FiPhone, FiMessageSquare, FiSend, FiCheck, FiX, FiGithub, FiInstagram, FiLinkedin } from 'react-icons/fi';
 import emailjs from 'emailjs-com';

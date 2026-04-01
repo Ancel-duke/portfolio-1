@@ -1,9 +1,9 @@
 import dynamic from 'next/dynamic'
-import SEO from '@/components/seo/SEO'
-import { generateOrganizationSchema } from '@/components/seo/schemas'
+import SEO from '@/domains/seo'
+import { generateOrganizationSchema } from '@/domains/seo/schemas'
 
 const AboutSection = dynamic(
-  () => import('@/components/sections/about').then((m) => () => <m.About fullPage />),
+  () => import('@/domains/about').then((m) => () => <m.About fullPage />),
   { ssr: false }
 )
 

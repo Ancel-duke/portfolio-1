@@ -1,5 +1,5 @@
 import * as React from "react"
-import { useBackgroundAudio } from "../hooks/useBackgroundAudio"
+import { useBackgroundAudio } from '@/shared/hooks/useBackgroundAudio'
 
 interface BackgroundAudioContextValue {
   isPlaying: boolean

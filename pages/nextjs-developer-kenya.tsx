@@ -1,11 +1,12 @@
-import SEO from '@/components/seo/SEO'
+import SEO from '@/domains/seo'
 import Link from 'next/link'
-import { generatePersonWithAreaServedSchema, generateBreadcrumbSchema } from '@/components/seo/schemas'
-import { SkipLink } from '@/components/ui/skip-link'
-import { Card, CardContent } from '@/components/ui/card'
-import { Button } from '@/components/ui/button'
-import { Badge } from '@/components/ui/badge'
+import { generatePersonWithAreaServedSchema, generateBreadcrumbSchema } from '@/domains/seo/schemas'
+import { SkipLink } from '@/shared/components/ui/skip-link'
+import { Card, CardContent } from '@/shared/components/ui/card'
+import { Button } from '@/shared/components/ui/button'
+import { Badge } from '@/shared/components/ui/badge'
 import { ArrowRight, Mail, FileText, Code, MapPin, MessageCircle, CheckCircle, Zap } from 'lucide-react'
+import { SITE, WHATSAPP_URL } from '@/shared/constants/site'
 
 const breadcrumbItems = [
   { name: 'Home', url: '/' },
@@ -22,7 +23,7 @@ export default function NextJsDeveloperKenyaPage() {
       <SEO
         title="Next.js Developer Kenya | Full-Stack Developer Nairobi — Ancel Ajanga"
         description="Hire a Next.js developer in Kenya. Ancel Ajanga: Full-Stack Developer Nairobi, React & Node.js Kenya. System design and architecture for startups across Africa. Real-time apps, fintech, and scalable SaaS. Contact for projects."
-        canonicalUrl="https://ancel.co.ke/nextjs-developer-kenya"
+        canonicalUrl={`${SITE.url}/nextjs-developer-kenya`}
         keywords={[
           'Next.js Developer Kenya',
           'Full-Stack Developer Nairobi',
@@ -195,14 +196,20 @@ export default function NextJsDeveloperKenyaPage() {
                     </Link>
                   </Button>
                   <Button size="lg" variant="outline" className="min-h-[48px]" asChild>
-                    <a href="mailto:ancel.ajanga@yahoo.com">
+                    <a href={`mailto:${SITE.email}`}>
                       <Mail className="mr-2 h-4 w-4" />
                       Email directly
                     </a>
                   </Button>
+                  <Button size="lg" variant="outline" className="min-h-[48px]" asChild>
+                    <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
+                      <MessageCircle className="mr-2 h-4 w-4" />
+                      Chat on WhatsApp
+                    </a>
+                  </Button>
                 </div>
                 <p className="text-sm text-muted-foreground mt-4">
-                  Phone / WhatsApp: +254 793 558 755. I typically respond within 24 hours.
+                  Phone / WhatsApp: {SITE.phone}. I typically respond within 24 hours.
                 </p>
               </CardContent>
             </Card>

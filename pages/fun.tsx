@@ -1,8 +1,8 @@
 import dynamic from 'next/dynamic'
-import SEO from '@/components/seo/SEO'
+import SEO from '@/domains/seo'
 
 const Fun = dynamic(
-  () => import('@/components/sections/fun').then((m) => m.Fun),
+  () => import('@/domains/fun').then((m) => m.Fun),
   { ssr: false }
 )
 

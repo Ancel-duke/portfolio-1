@@ -1,5 +1,5 @@
 import * as React from "react"
-import { useLocalStorageToggle } from "../hooks/useLocalStorageToggle"
+import { useLocalStorageToggle } from '@/shared/hooks/useLocalStorageToggle'
 import { LAB_DEFAULTS, LAB_STORAGE_KEYS } from "../data/lab-toggles"
 
 interface AnimationsContextValue {

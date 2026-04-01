@@ -1,8 +1,8 @@
 import dynamic from 'next/dynamic'
-import SEO from '@/components/seo/SEO'
+import SEO from '@/domains/seo'
 
 const LabsExperiments = dynamic(
-  () => import('@/components/sections/labs-experiments').then((m) => m.LabsExperiments),
+  () => import('@/domains/labs').then((m) => m.LabsExperiments),
   { ssr: false }
 )
 

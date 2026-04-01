@@ -1,8 +1,8 @@
 import React, { Suspense, useState, useEffect } from 'react'
 import dynamic from 'next/dynamic'
-import SEO from '@/components/seo/SEO'
-import { SkipLink } from '@/components/ui/skip-link'
-import { Hero } from '@/components/sections/hero'
+import SEO from '@/domains/seo'
+import { SkipLink } from '@/shared/components/ui/skip-link'
+import { Hero } from '@/domains/hero'
 import {
   generateWebsiteSchema,
   generatePortfolioSchema,
@@ -11,34 +11,34 @@ import {
   generateSpeakableWebPageSchema,
   getKnowsAboutAsThings,
   generateSoftwareSourceCodeSchema,
-} from '@/components/seo/schemas'
+} from '@/domains/seo/schemas'
 
 const About = dynamic(
-  () => import('@/components/sections/about').then((m) => m.About),
+  () => import('@/domains/about').then((m) => m.About),
   { ssr: false }
 )
 const TodaysHighlights = dynamic(
-  () => import('@/components/sections/todays-highlights').then((m) => m.TodaysHighlights),
+  () => import('@/domains/todays-highlights').then((m) => m.TodaysHighlights),
   { ssr: false }
 )
 const CaseStudiesGrid = dynamic(
-  () => import('@/components/sections/case-studies-grid').then((m) => m.CaseStudiesGrid),
+  () => import('@/domains/case-studies').then((m) => m.CaseStudiesGrid),
   { ssr: false }
 )
 const LabsExperiments = dynamic(
-  () => import('@/components/sections/labs-experiments').then((m) => m.LabsExperiments),
+  () => import('@/domains/labs').then((m) => m.LabsExperiments),
   { ssr: false }
 )
 const TechStack = dynamic(
-  () => import('@/components/sections/tech-stack').then((m) => m.TechStack),
+  () => import('@/domains/tech-stack').then((m) => m.TechStack),
   { ssr: false }
 )
 const Fun = dynamic(
-  () => import('@/components/sections/fun').then((m) => m.Fun),
+  () => import('@/domains/fun').then((m) => m.Fun),
   { ssr: false }
 )
 const CTA = dynamic(
-  () => import('@/components/sections/cta').then((m) => m.CTA),
+  () => import('@/domains/contact').then((m) => m.CTA),
   { ssr: false }
 )
 

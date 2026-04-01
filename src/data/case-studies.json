@@ -133,13 +133,15 @@
       "github": "https://github.com/Ancel-duke"
     },
     "images": {
-      "hero": "/assets/projects/taskforge.jpg",
-      "before": "/assets/projects/taskforge.jpg",
-      "after": "/assets/projects/taskforge.jpg",
+      "hero": "/images/projects/taskforge.webp",
+      "before": "/images/projects/taskforge.webp",
+      "after": "/images/projects/taskforge.webp",
       "gallery": [
-        "/assets/projects/taskforge.jpg"
+        "/images/projects/taskforge.webp"
       ]
-    }
+    },
+    "image": "/images/projects/taskforge.webp",
+    "excerpt": "TaskForge is a resilient, scalable real-time collaborative project management platform designed for engineering teams. The system handles concurrent collaboration across distributed teams, managing project workflows, task coordination, and team communication with sub-second latency and conflict-free synchronization."
   },
   {
     "id": 2,
@@ -270,13 +272,15 @@
       "github": "https://github.com/Ancel-duke"
     },
     "images": {
-      "hero": "/assets/projects/elearn.jpg",
-      "before": "/assets/projects/elearn.jpg",
-      "after": "/assets/projects/elearn.jpg",
+      "hero": "/images/projects/elearn.webp",
+      "before": "/images/projects/elearn.webp",
+      "after": "/images/projects/elearn.webp",
       "gallery": [
-        "/assets/projects/elearn.jpg"
+        "/images/projects/elearn.webp"
       ]
-    }
+    },
+    "image": "/images/projects/elearn.webp",
+    "excerpt": "A resilient, scalable learning management system architected to handle thousands of concurrent students and hundreds of courses. The platform enables educational institutions to deliver online education at scale with sub-2-second page loads, comprehensive course management, and real-time progress tracking."
   },
   {
     "id": 3,
@@ -412,13 +416,15 @@
       "github": "https://github.com/Ancel-duke"
     },
     "images": {
-      "hero": "/assets/projects/attendance.jpg",
-      "before": "/assets/projects/attendance.jpg",
-      "after": "/assets/projects/attendance.jpg",
+      "hero": "/images/projects/attendance.webp",
+      "before": "/images/projects/attendance.webp",
+      "after": "/images/projects/attendance.webp",
       "gallery": [
-        "/assets/projects/attendance.jpg"
+        "/images/projects/attendance.webp"
       ]
-    }
+    },
+    "image": "/images/projects/attendance.webp",
+    "excerpt": "A resilient attendance management system architected for educational institutions to automate attendance tracking, provide comprehensive analytics, and generate detailed reports. The system handles 500+ active users across multiple institutions with 95% accuracy improvement and 70% reduction in administrative overhead."
   },
   {
     "id": 4,
@@ -503,13 +509,15 @@
       "github": "https://github.com/Ancel-duke"
     },
     "images": {
-      "hero": "/assets/projects/finance-tracker.jpg",
-      "before": "/assets/projects/finance-tracker.jpg",
-      "after": "/assets/projects/finance-tracker.jpg",
+      "hero": "/images/projects/finance-tracker.webp",
+      "before": "/images/projects/finance-tracker.webp",
+      "after": "/images/projects/finance-tracker.webp",
       "gallery": [
-        "/assets/projects/finance-tracker.jpg"
+        "/images/projects/finance-tracker.webp"
       ]
-    }
+    },
+    "image": "/images/projects/finance-tracker.webp",
+    "excerpt": "A creative frontend experiment exploring modern UI patterns and data visualization techniques. This project demonstrates Vue 3's Composition API, reactive state management, and interactive charting capabilities for personal finance tracking."
   },
   {
     "id": 5,
@@ -599,13 +607,15 @@
       "github": "https://github.com/Ancel-duke"
     },
     "images": {
-      "hero": "/assets/projects/fitness.jpg",
-      "before": "/assets/projects/fitness.jpg",
-      "after": "/assets/projects/fitness.jpg",
+      "hero": "/images/projects/fitness.webp",
+      "before": "/images/projects/fitness.webp",
+      "after": "/images/projects/fitness.webp",
       "gallery": [
-        "/assets/projects/fitness.jpg"
+        "/images/projects/fitness.webp"
       ]
-    }
+    },
+    "image": "/images/projects/fitness.webp",
+    "excerpt": "A modern Angular SSR application for planning weekly fitness classes with dark mode, responsive design, and client-side persistence."
   },
   {
     "id": 6,
@@ -695,13 +705,15 @@
       "github": "https://github.com/Ancel-duke"
     },
     "images": {
-      "hero": "/assets/projects/habit-tracker.jpg",
-      "before": "/assets/projects/habit-tracker.jpg",
-      "after": "/assets/projects/habit-tracker.jpg",
+      "hero": "/images/projects/habit-tracker.webp",
+      "before": "/images/projects/habit-tracker.webp",
+      "after": "/images/projects/habit-tracker.webp",
       "gallery": [
-        "/assets/projects/habit-tracker.jpg"
+        "/images/projects/habit-tracker.webp"
       ]
-    }
+    },
+    "image": "/images/projects/habit-tracker.webp",
+    "excerpt": "A creative Progressive Web App experiment exploring offline-first design patterns and modern UI interactions. This project demonstrates PWA capabilities, service workers, and engaging visual feedback for habit tracking."
   },
   {
     "id": 7,
@@ -791,13 +803,15 @@
       "github": "https://github.com/Ancel-duke"
     },
     "images": {
-      "hero": "/assets/projects/events.jpg",
-      "before": "/assets/projects/events.jpg",
-      "after": "/assets/projects/events.jpg",
+      "hero": "/images/projects/events.webp",
+      "before": "/images/projects/events.webp",
+      "after": "/images/projects/events.webp",
       "gallery": [
-        "/assets/projects/events.jpg"
+        "/images/projects/events.webp"
       ]
-    }
+    },
+    "image": "/images/projects/events.webp",
+    "excerpt": "A feature-rich countdown timer web application for creating and managing multiple countdowns for various life events with recurring events and smart notifications."
   },
   {
     "id": 8,
@@ -882,13 +896,15 @@
       "github": "https://github.com/Ancel-duke"
     },
     "images": {
-      "hero": "/assets/projects/travel.jpg",
-      "before": "/assets/projects/travel.jpg",
-      "after": "/assets/projects/travel.jpg",
+      "hero": "/images/projects/travel.webp",
+      "before": "/images/projects/travel.webp",
+      "after": "/images/projects/travel.webp",
       "gallery": [
-        "/assets/projects/travel.jpg"
+        "/images/projects/travel.webp"
       ]
-    }
+    },
+    "image": "/images/projects/travel.webp",
+    "excerpt": "A comprehensive travel platform featuring interactive world maps, travel stories, destination exploration, and responsive design for travel enthusiasts."
   },
   {
     "id": 9,
@@ -978,13 +994,15 @@
       "github": "https://github.com/Ancel-duke"
     },
     "images": {
-      "hero": "/assets/projects/rasoha.jpg",
-      "before": "/assets/projects/rasoha.jpg",
-      "after": "/assets/projects/rasoha.jpg",
+      "hero": "/images/projects/rasoha.webp",
+      "before": "/images/projects/rasoha.webp",
+      "after": "/images/projects/rasoha.webp",
       "gallery": [
-        "/assets/projects/rasoha.jpg"
+        "/images/projects/rasoha.webp"
       ]
-    }
+    },
+    "image": "/images/projects/rasoha.webp",
+    "excerpt": "A modern, responsive website for a private school in Narok, Kenya, providing comprehensive information about programs, events, and resources for students and parents."
   },
   {
     "id": 10,
@@ -1066,13 +1084,15 @@
       "github": "https://github.com/Ancel-duke/banking"
     },
     "images": {
-      "hero": "/assets/projects/bank.jpg",
-      "before": "/assets/projects/bank.jpg",
-      "after": "/assets/projects/bank.jpg",
+      "hero": "/images/projects/bank.webp",
+      "before": "/images/projects/bank.webp",
+      "after": "/images/projects/bank.webp",
       "gallery": [
-        "/assets/projects/bank.jpg"
+        "/images/projects/bank.webp"
       ]
-    }
+    },
+    "image": "/images/projects/bank.webp",
+    "excerpt": "A simple, console-based Banking System implemented in pure Java to demonstrate core OOP principles (Encapsulation, Inheritance, Abstraction, Polymorphism). Includes customer management, savings/checking accounts, deposits, withdrawals, transfers, and transaction logs."
   },
   {
     "id": 12,
@@ -1224,13 +1244,15 @@
       "github": "https://github.com/Ancel-duke/EduChain"
     },
     "images": {
-      "hero": "/assets/projects/EduChain.jpg",
-      "before": "/assets/projects/EduChain.jpg",
-      "after": "/assets/projects/EduChain.jpg",
+      "hero": "/images/projects/EduChain.webp",
+      "before": "/images/projects/EduChain.webp",
+      "after": "/images/projects/EduChain.webp",
       "gallery": [
-        "/assets/projects/EduChain.jpg"
+        "/images/projects/EduChain.webp"
       ]
-    }
+    },
+    "image": "/images/projects/EduChain.webp",
+    "excerpt": "EduChain is a resilient, decentralized certificate management system architected on Web3 principles, issuing verifiable academic certificates as ERC721 NFTs on the Ethereum blockchain. The platform enables educational institutions to issue tamper-proof, blockchain-verified certificates while providing students with permanent, verifiable proof of achievements through hybrid storage (MongoDB + IPFS + Blockchain)."
   },
   {
     "id": 11,
@@ -1392,14 +1414,16 @@
       "docs": "https://github.com/Ancel-duke/LedgerX/blob/main/ARCHITECTURE.md"
     },
     "images": {
-      "hero": "/assets/projects/LedgerX.jpg",
-      "before": "/assets/projects/LedgerX.jpg",
-      "after": "/assets/projects/LedgerX2.jpg",
+      "hero": "/images/projects/LedgerX.webp",
+      "before": "/images/projects/LedgerX.webp",
+      "after": "/images/projects/LedgerX2.webp",
       "gallery": [
-        "/assets/projects/LedgerX.jpg",
-        "/assets/projects/LedgerX2.jpg"
+        "/images/projects/LedgerX.webp",
+        "/images/projects/LedgerX2.webp"
       ]
-    }
+    },
+    "image": "/images/projects/LedgerX.webp",
+    "excerpt": "LedgerX is a production-grade, multi-tenant financial platform designed to handle invoicing, payments, accounting (double-entry ledger), audit/compliance, fraud detection, and system diagnostics in a single, cohesive system."
   },
   {
     "id": 13,
@@ -1539,13 +1563,15 @@
       "github": "https://github.com/Ancel-duke/OpsFlow"
     },
     "images": {
-      "hero": "/assets/projects/opsflow.jpg",
-      "before": "/assets/projects/opsflow.jpg",
-      "after": "/assets/projects/opsflow.jpg",
+      "hero": "/images/projects/opsflow.webp",
+      "before": "/images/projects/opsflow.webp",
+      "after": "/images/projects/opsflow.webp",
       "gallery": [
-        "/assets/projects/opsflow.jpg"
+        "/images/projects/opsflow.webp"
       ]
-    }
+    },
+    "image": "/images/projects/opsflow.webp",
+    "excerpt": "OpsFlow is a production-ready incident and operations management platform architected for engineering teams, combining incident response, workflow management, task coordination, and knowledge sharing into a single secure team-based system. The platform features dual-database architecture (PostgreSQL + MongoDB), real-time WebSocket updates, and team-based multi-tenancy with 50+ API endpoints."
   },
   {
     "id": 14,
@@ -1686,16 +1712,18 @@
       "github": "https://github.com/Ancel-duke/SignFlow"
     },
     "images": {
-      "hero": "/assets/projects/signflow1.jpg",
-      "before": "/assets/projects/signflow1.jpg",
-      "after": "/assets/projects/signflow2.jpg",
+      "hero": "/images/projects/signflow1.webp",
+      "before": "/images/projects/signflow1.webp",
+      "after": "/images/projects/signflow2.webp",
       "gallery": [
-        "/assets/projects/signflow1.jpg",
-        "/assets/projects/signflow2.jpg",
-        "/assets/projects/flow.jpg",
-        "/assets/projects/flow2.jpg"
+        "/images/projects/signflow1.webp",
+        "/images/projects/signflow2.webp",
+        "/images/projects/flow.webp",
+        "/images/projects/flow2.webp"
       ]
-    }
+    },
+    "image": "/images/projects/signflow1.webp",
+    "excerpt": "SignFlow is a high-fidelity assistive technology platform architected for real-time sign language translation, exploring the architectural requirements for scaling accessibility platforms. The system features WebSocket-powered streaming, 3D avatar simulation with natural variation, and accessibility-first design with WCAG compliance, demonstrating production-grade architecture for specialized user bases."
   },
   {
     "id": 15,
@@ -1852,13 +1880,15 @@
       "docs": "https://github.com/Ancel-duke/NestFi/blob/main/docs/ARCHITECTURE.md"
     },
     "images": {
-      "hero": "/assets/projects/nestfi.jpg",
-      "before": "/assets/projects/nestfi.jpg",
-      "after": "/assets/projects/nestfi.jpg",
+      "hero": "/images/projects/nestfi.webp",
+      "before": "/images/projects/nestfi.webp",
+      "after": "/images/projects/nestfi.webp",
       "gallery": [
-        "/assets/projects/nestfi.jpg"
+        "/images/projects/nestfi.webp"
       ]
-    }
+    },
+    "image": "/images/projects/nestfi.webp",
+    "excerpt": "NestFi is a financial application developed by Ancel Ajanga—a production-grade financial coordination platform designed for correctness under failure. It ensures predictable behavior across asynchronous payment providers, delayed or duplicated callbacks, unreliable networks, and hybrid storage layers. PostgreSQL enforces ledger integrity, MongoDB handles compliance and audit events, and Redis provides ephemeral caching and distributed locking with fail-closed safety. Real-time notifications via Socket.io and hardened M-Pesa Daraja integrations make the system resilient, auditable, and user-trust oriented."
   },
   {
     "id": 16,
@@ -1983,13 +2013,15 @@
       "docs": "https://github.com/Ancel-duke/edumanage/blob/main/docs/ARCHITECTURE.md"
     },
     "images": {
-      "hero": "/assets/projects/edumanage.jpg",
-      "before": "/assets/projects/edumanage.jpg",
-      "after": "/assets/projects/edumanage.jpg",
+      "hero": "/images/projects/edumanage.webp",
+      "before": "/images/projects/edumanage.webp",
+      "after": "/images/projects/edumanage.webp",
       "gallery": [
-        "/assets/projects/edumanage.jpg"
+        "/images/projects/edumanage.webp"
       ]
-    }
+    },
+    "image": "/images/projects/edumanage.webp",
+    "excerpt": "A comprehensive educational management system designed to streamline administrative tasks, student enrollment, and academic reporting."
   },
   {
     "id": 17,
@@ -2168,13 +2200,15 @@
       "docs": "https://github.com/Ancel-duke/Aegis/blob/main/ARCHITECTURE.md"
     },
     "images": {
-      "hero": "/assets/projects/aegis.jpg",
-      "before": "/assets/projects/aegis.jpg",
-      "after": "/assets/projects/aegis.jpg",
+      "hero": "/images/projects/aegis.webp",
+      "before": "/images/projects/aegis.webp",
+      "after": "/images/projects/aegis.webp",
       "gallery": [
-        "/assets/projects/aegis.jpg"
+        "/images/projects/aegis.webp"
       ]
-    }
+    },
+    "image": "/images/projects/aegis.webp",
+    "excerpt": "Aegis is a self-healing infrastructure platform developed by Ancel Ajanga. It combines Zero-Trust architecture, multi-cluster orchestration, and ML-driven anomaly detection with pull-based executor agents and JWS/HMAC signature validation. The system uses Open Policy Agent (OPA) for policy enforcement, FinOps guardrails for cost control, Shadow Mode for trust-building, and distributed tracing (OpenTelemetry) with Loki for blinded observability. The AI recommends; policy authorizes; only signed intent reaches the executor."
   },
   {
     "id": 18,
@@ -2307,12 +2341,14 @@
       "docs": "https://github.com/Ancel-duke/Aliv/blob/master/ARCHITECTURE.md"
     },
     "images": {
-      "hero": "/assets/projects/fitsbyaliv.jpg",
-      "before": "/assets/projects/fitsbyaliv.jpg",
-      "after": "/assets/projects/fitsbyaliv.jpg",
+      "hero": "/images/projects/fitsbyaliv.webp",
+      "before": "/images/projects/fitsbyaliv.webp",
+      "after": "/images/projects/fitsbyaliv.webp",
       "gallery": [
-        "/assets/projects/fitsbyaliv.jpg"
+        "/images/projects/fitsbyaliv.webp"
       ]
-    }
+    },
+    "image": "/images/projects/fitsbyaliv.webp",
+    "excerpt": "Fits by Aliv is a Kenya-first e-commerce marketplace (thrift/sustainable fashion) with payment-safe workflows, inventory self-healing, and hardened security. Backend is NestJS with PostgreSQL (Prisma); clients are Flutter (mobile, web, desktop). Identity is Firebase Auth; payments are M-Pesa via Safaricom Daraja API."
   }
 ]

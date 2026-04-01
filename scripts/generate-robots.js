@@ -92,7 +92,7 @@ Disallow: /node_modules/
 Allow: /sitemap.xml
 Allow: /robots.txt
 Allow: /favicon.ico
-Allow: /assets/
+Allow: /images/
 
 # Sitemap location (Brave Search, Google, Bing, DuckDuckGo and all crawlers)
 Sitemap: ${baseUrl}/sitemap.xml
@@ -118,4 +118,5 @@ console.log('🤖 AI crawlers: GPTBot, ChatGPT-User, CCBot, Claude-Web, Perplexi
 console.log('🔍 Allowed search engines: All major search engines (Google, Bing, Yahoo, DuckDuckGo, Baidu, Yandex, Sogou, and more)');
 console.log('🌐 Universal access: User-agent: * allows all crawlers by default');
 console.log('🚫 Disallowed: admin, private, build directories');
+
 

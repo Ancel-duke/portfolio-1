@@ -1,8 +1,8 @@
 import dynamic from 'next/dynamic'
-import SEO from '@/components/seo/SEO'
+import SEO from '@/domains/seo'
 
 const Timeline = dynamic(
-  () => import('@/components/sections/timeline').then((m) => m.Timeline),
+  () => import('@/domains/timeline').then((m) => m.Timeline),
   { ssr: false }
 )
 

@@ -9,8 +9,23 @@
         "Real-Time X with [Tech]: Architecture and Trade-offs"
       ],
       "schema_type": "TechArticle",
-      "required_fields": ["title", "slug", "summary", "tech_stack", "problem", "architecture", "measurable_outcome", "related_topics", "body"],
-      "internal_links": ["tech_stack → /stack", "related_topics → /stack#cluster-id or /case-studies/slug", "related_case_studies → /case-studies/[slug]", "contact → /contact"]
+      "required_fields": [
+        "title",
+        "slug",
+        "summary",
+        "tech_stack",
+        "problem",
+        "architecture",
+        "measurable_outcome",
+        "related_topics",
+        "body"
+      ],
+      "internal_links": [
+        "tech_stack → /stack",
+        "related_topics → /stack#cluster-id or /case-studies/slug",
+        "related_case_studies → /case-studies/[slug]",
+        "contact → /contact"
+      ]
     },
     "case_study_breakdown": {
       "title_patterns": [
@@ -19,8 +34,23 @@
         "How I Built X: Problem, Solution, and Outcomes"
       ],
       "schema_type": "Article",
-      "required_fields": ["title", "slug", "summary", "tech_stack", "problem", "architecture", "measurable_outcome", "related_topics", "body"],
-      "internal_links": ["tech_stack → /stack", "related_topics → /stack#cluster-id", "related_case_studies → /case-studies/[slug]", "contact → /contact"]
+      "required_fields": [
+        "title",
+        "slug",
+        "summary",
+        "tech_stack",
+        "problem",
+        "architecture",
+        "measurable_outcome",
+        "related_topics",
+        "body"
+      ],
+      "internal_links": [
+        "tech_stack → /stack",
+        "related_topics → /stack#cluster-id",
+        "related_case_studies → /case-studies/[slug]",
+        "contact → /contact"
+      ]
     },
     "comparison": {
       "title_patterns": [
@@ -29,8 +59,23 @@
         "X vs Y for [Use Case]"
       ],
       "schema_type": "Article",
-      "required_fields": ["title", "slug", "summary", "tech_stack", "problem", "architecture", "measurable_outcome", "related_topics", "body"],
-      "internal_links": ["tech_stack → /stack", "related_topics → /stack#cluster-id", "related_case_studies → /case-studies/[slug]", "contact → /contact"]
+      "required_fields": [
+        "title",
+        "slug",
+        "summary",
+        "tech_stack",
+        "problem",
+        "architecture",
+        "measurable_outcome",
+        "related_topics",
+        "body"
+      ],
+      "internal_links": [
+        "tech_stack → /stack",
+        "related_topics → /stack#cluster-id",
+        "related_case_studies → /case-studies/[slug]",
+        "contact → /contact"
+      ]
     }
   },
   "content_layer_spec": {
