@@ -6,7 +6,7 @@
   "jobTitle": "Fullstack Engineer",
   "niche": "System Resilience",
   "baseUrl": "https://ancel.co.ke",
-  "generated": "2026-04-01T20:32:05.725Z",
+  "generated": "2026-04-02T16:20:04.025Z",
   "entries": [
     {
       "url": "https://ancel.co.ke/",
@@ -1172,6 +1172,24 @@
         "M-Pesa Daraja"
       ],
       "key_outcome": "No inventory oversell, no voucher double-spend, no unaudited state changes, no blind trust in payment callbacks. ~90–95%",
+      "category": "guide"
+    },
+    {
+      "url": "https://ancel.co.ke/guides/secure-real-time-messaging-architecture-inkly",
+      "title": "Building a Secure, Horizontally Scalable Real-Time Messaging Platform with Inkly",
+      "summary": "How to guarantee privacy, scale WebSockets horizontally, and maintain real-time sync when networks fail using Sacred Bond Encryption, CRDT notebooks, and Redis pub/sub. Lessons from Inkly. Inkly achieves secure and private messaging with Conflict-free Replicated Data Types (CRDTs) for seamless merging of collaborative notebook edits.",
+      "tech_stack": [
+        "Node.js",
+        "Express",
+        "MongoDB",
+        "PostgreSQL",
+        "Redis",
+        "WebSockets",
+        "Flutter",
+        "Riverpod",
+        "TypeScript"
+      ],
+      "key_outcome": "Inkly achieves secure and private messaging with Conflict-free Replicated Data Types (CRDTs) for seamless merging of col",
       "category": "guide"
     }
   ],
@@ -2350,12 +2368,30 @@
         ],
         "key_outcome": "No inventory oversell, no voucher double-spend, no unaudited state changes, no blind trust in payment callbacks. ~90–95%",
         "category": "guide"
+      },
+      {
+        "url": "https://ancel.co.ke/guides/secure-real-time-messaging-architecture-inkly",
+        "title": "Building a Secure, Horizontally Scalable Real-Time Messaging Platform with Inkly",
+        "summary": "How to guarantee privacy, scale WebSockets horizontally, and maintain real-time sync when networks fail using Sacred Bond Encryption, CRDT notebooks, and Redis pub/sub. Lessons from Inkly. Inkly achieves secure and private messaging with Conflict-free Replicated Data Types (CRDTs) for seamless merging of collaborative notebook edits.",
+        "tech_stack": [
+          "Node.js",
+          "Express",
+          "MongoDB",
+          "PostgreSQL",
+          "Redis",
+          "WebSockets",
+          "Flutter",
+          "Riverpod",
+          "TypeScript"
+        ],
+        "key_outcome": "Inkly achieves secure and private messaging with Conflict-free Replicated Data Types (CRDTs) for seamless merging of col",
+        "category": "guide"
       }
     ]
   },
   "totalProjects": 19,
   "totalCaseStudies": 19,
   "totalArticles": 15,
-  "totalGuides": 5,
+  "totalGuides": 6,
   "totalPages": 11
 }

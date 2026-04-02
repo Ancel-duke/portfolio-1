@@ -90,7 +90,7 @@
     ],
     "liveUrl": "https://fitnessss-tracker.netlify.app",
     "repoUrl": "https://github.com/Ancel-duke",
-    "image": "/images/projects/fitness-scheduler.webp",
+    "image": "/images/projects/fitness.webp",
     "outcomes": "Fast, SEO-friendly SSR Angular application with a clean UX, responsive design, and persistent schedule management.",
     "excerpt": "Fitness Scheduler is a health and fitness web application developed by Ancel Ajanga. A modern Angular SSR application for planning weekly fitness classes with dark mode, responsive design, and client-side persistence.",
     "seo": {
@@ -110,7 +110,7 @@
       ],
       "ogTitle": "Fitness Scheduler — Built by Ancel | Weekly Class Planning",
       "ogDescription": "Fitness Scheduler is a HealthApplication built by Ancel featuring server-side rendering for fast loading and seo, add, edit, and remove fitness classes, table a",
-      "ogImage": "/images/projects/fitness-scheduler.webp",
+      "ogImage": "/images/projects/fitness.webp",
       "twitterCard": "summary_large_image",
       "canonicalUrl": "/projects/fitness-scheduler"
     }
@@ -351,7 +351,7 @@
     ],
     "liveUrl": "https://rasoha.netlify.app",
     "repoUrl": "https://github.com/Ancel-duke",
-    "image": "/images/projects/rasoha-academy.webp",
+    "image": "/images/projects/rasoha.webp",
     "outcomes": "Fast, accessible, and SEO-optimized school website with high performance scores, excellent user experience across all devices, and comprehensive PWA features demonstrating modern web development best practices.",
     "excerpt": "Rasoha Academy is an education website developed by Ancel Ajanga. A modern, responsive site for a private school in Narok, Kenya, providing programs, events, and resources for students and parents.",
     "seo": {
@@ -371,7 +371,7 @@
       ],
       "ogTitle": "Rasoha Academy — Built by Ancel | School Website",
       "ogDescription": "Rasoha Academy is a EducationApplication built by Ancel featuring academic programs and school info, events and announcements, photo gallery. Designed with Reac",
-      "ogImage": "/images/projects/rasoha-academy.webp",
+      "ogImage": "/images/projects/rasoha.webp",
       "twitterCard": "summary_large_image",
       "canonicalUrl": "/projects/rasoha-academy"
     }
@@ -423,7 +423,7 @@
     ],
     "liveUrl": "https://attendance-syst.netlify.app",
     "repoUrl": "https://github.com/Ancel-duke",
-    "image": "/images/projects/attendance-system.webp",
+    "image": "/images/projects/attendance.webp",
     "outcomes": "95% improvement in attendance tracking accuracy with automated systems, 70% reduction in administrative time through streamlined workflows. Comprehensive analytics and reporting capabilities with 15+ report types. Vision includes scaling to 10,000+ users through MongoDB sharding, Redis caching, and microservices extraction for analytics and notifications.",
     "excerpt": "Attendance System is a full-stack education application developed by Ancel Ajanga. A resilient attendance management system for educational institutions with automated tracking, analytics, and reports. Handles 500+ users with 95% accuracy improvement and 70% reduction in administrative overhead.",
     "seo": {
@@ -443,7 +443,7 @@
       ],
       "ogTitle": "Attendance System — Built by Ancel | Full Stack Application",
       "ogDescription": "Attendance System is a EducationApplication built by Ancel featuring automated attendance tracking, comprehensive analytics and reporting, multi-institution dep",
-      "ogImage": "/images/projects/attendance-system.webp",
+      "ogImage": "/images/projects/attendance.webp",
       "twitterCard": "summary_large_image",
       "canonicalUrl": "/projects/attendance-system"
     }
@@ -488,7 +488,7 @@
     ],
     "liveUrl": "https://e-learningdash.netlify.app",
     "repoUrl": "https://github.com/Ancel-duke",
-    "image": "/images/projects/elearning-platform.webp",
+    "image": "/images/projects/e-learning.webp",
     "outcomes": "Platform handles 10,000+ students and 500+ courses with consistent sub-2-second page load times. Stress-tested to handle 1,000+ concurrent users with 99.9% uptime. Optimized database queries reduce load times by 70% compared to baseline implementations. Vision includes scaling to 100,000+ students through Redis caching, CDN integration, and microservices extraction.",
     "excerpt": "E-Learning Platform is an education learning management system developed by Ancel Ajanga. A resilient, scalable LMS for thousands of concurrent students and hundreds of courses, with sub-2-second page loads, course management, and real-time progress tracking.",
     "seo": {
@@ -508,7 +508,7 @@
       ],
       "ogTitle": "E — Built by Ancel | Learning Platform - Full Stack Application",
       "ogDescription": "E is a EducationApplication built by Ancel featuring course management, real-time progress tracking, django rest framework backend. Designed with React, TypeScr",
-      "ogImage": "/images/projects/elearning-platform.webp",
+      "ogImage": "/images/projects/e-learning.webp",
       "twitterCard": "summary_large_image",
       "canonicalUrl": "/projects/elearning-platform"
     }
@@ -609,7 +609,7 @@
     ],
     "liveUrl": "",
     "repoUrl": "https://github.com/Ancel-duke/banking",
-    "image": "/images/projects/banking-system.webp",
+    "image": "/images/projects/ledgerx.webp",
     "outcomes": "Clean OOP design showcasing encapsulation, inheritance, abstraction, and polymorphism; fully offline and lightweight; ideal for demonstrating problem-solving and software design skills.",
     "excerpt": "Banking System is a finance demonstration application developed by Ancel Ajanga. A console-based Java application demonstrating core OOP principles: Encapsulation, Inheritance, Abstraction, and Polymorphism.",
     "seo": {
@@ -629,7 +629,7 @@
       ],
       "ogTitle": "Banking System — Built by Ancel | Java Console OOP Application",
       "ogDescription": "Banking System is a FinanceApplication built by Ancel featuring customer creation, savings and checking accounts, deposit, withdraw, transfer. Designed with Jav",
-      "ogImage": "/images/projects/banking-system.webp",
+      "ogImage": "/images/projects/ledgerx.webp",
       "twitterCard": "summary_large_image",
       "canonicalUrl": "/projects/banking-system"
     }

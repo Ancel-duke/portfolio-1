@@ -2,12 +2,22 @@ import React from 'react';
 import Image from 'next/image';
 import { cn } from '@/shared/utils';
 
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://ancel.co.ke';
+// Remove the fixed BASE_URL fallback during local testing. 
+// If NEXT_PUBLIC_SITE_URL is set, use it. Otherwise, fallback to the live site only in strictly production environments deployed online.
+const IS_DEV = process.env.NODE_ENV !== 'production';
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || (IS_DEV ? '' : 'https://ancel.co.ke');
 const FALLBACK_IMAGE_SRC = '/images/fallback/fallback.png';
 
 /** Loader that returns absolute URL (no Netlify CDN). Used for skipNetlifyCDN. */
 function rawLoader({ src }: { src: string }) {
-  return src.startsWith('http') ? src : `${BASE_URL}${src.startsWith('/') ? '' : '/'}${src}`;
+  if (src.startsWith('http')) return src;
+  
+  // If we're rendering on the client on localhost, always use relative to avoid hitting live prod
+  if (typeof window !== 'undefined' && window.location.hostname === 'localhost') {
+    return src;
+  }
+  
+  return BASE_URL ? `${BASE_URL}${src.startsWith('/') ? '' : '/'}${src}` : src;
 }
 
 export interface OptimizedImageProps {

@@ -293,14 +293,14 @@
       "github": "https://github.com/Ancel-duke"
     },
     "images": {
-      "hero": "/images/case-studies/elearning-platform.webp",
-      "before": "/images/case-studies/elearning-platform.webp",
-      "after": "/images/case-studies/elearning-platform.webp",
+      "hero": "/images/case-studies/e-learning.webp",
+      "before": "/images/case-studies/e-learning.webp",
+      "after": "/images/case-studies/e-learning.webp",
       "gallery": [
-        "/images/case-studies/elearning-platform.webp"
+        "/images/case-studies/e-learning.webp"
       ]
     },
-    "image": "/images/case-studies/elearning-platform.webp",
+    "image": "/images/case-studies/e-learning.webp",
     "excerpt": "A resilient, scalable learning management system architected to handle thousands of concurrent students and hundreds of courses. The platform enables educational institutions to deliver online education at scale with sub-2-second page loads, comprehensive course management, and real-time progress tracking.",
     "seo": {
       "title": "E — Built by Ancel | Learning Platform - Scalable Learning Management System",
@@ -319,7 +319,7 @@
       ],
       "ogTitle": "E — Built by Ancel | Learning Platform - Scalable Learning Management System",
       "ogDescription": "E is a platform built by Ancel featuring secure user authentication with jwt tokens, comprehensive course creation and management tools for instructors, lesson ",
-      "ogImage": "/images/case-studies/elearning-platform.webp",
+      "ogImage": "/images/case-studies/e-learning.webp",
       "twitterCard": "summary_large_image",
       "canonicalUrl": "/case-studies/elearning-platform"
     }
@@ -458,14 +458,14 @@
       "github": "https://github.com/Ancel-duke"
     },
     "images": {
-      "hero": "/images/case-studies/attendance-system.webp",
-      "before": "/images/case-studies/attendance-system.webp",
-      "after": "/images/case-studies/attendance-system.webp",
+      "hero": "/images/case-studies/attendance.webp",
+      "before": "/images/case-studies/attendance.webp",
+      "after": "/images/case-studies/attendance.webp",
       "gallery": [
-        "/images/case-studies/attendance-system.webp"
+        "/images/case-studies/attendance.webp"
       ]
     },
-    "image": "/images/case-studies/attendance-system.webp",
+    "image": "/images/case-studies/attendance.webp",
     "excerpt": "A resilient attendance management system architected for educational institutions to automate attendance tracking, provide comprehensive analytics, and generate detailed reports. The system handles 500+ active users across multiple institutions with 95% accuracy improvement and 70% reduction in administrative overhead.",
     "seo": {
       "title": "Attendance System — Built by Ancel | Educational Analytics & Management",
@@ -484,7 +484,7 @@
       ],
       "ogTitle": "Attendance System — Built by Ancel | Educational Analytics & Management",
       "ogDescription": "Attendance System is a platform built by Ancel featuring secure user authentication using jwt tokens, comprehensive student management (add, edit, delete, view ",
-      "ogImage": "/images/case-studies/attendance-system.webp",
+      "ogImage": "/images/case-studies/attendance.webp",
       "twitterCard": "summary_large_image",
       "canonicalUrl": "/case-studies/attendance-system"
     }
@@ -572,14 +572,14 @@
       "github": "https://github.com/Ancel-duke"
     },
     "images": {
-      "hero": "/images/case-studies/personal-finance-tracker.webp",
-      "before": "/images/case-studies/personal-finance-tracker.webp",
-      "after": "/images/case-studies/personal-finance-tracker.webp",
+      "hero": "/images/case-studies/finance-tracker.webp",
+      "before": "/images/case-studies/finance-tracker.webp",
+      "after": "/images/case-studies/finance-tracker.webp",
       "gallery": [
-        "/images/case-studies/personal-finance-tracker.webp"
+        "/images/case-studies/finance-tracker.webp"
       ]
     },
-    "image": "/images/case-studies/personal-finance-tracker.webp",
+    "image": "/images/case-studies/finance-tracker.webp",
     "excerpt": "A creative frontend experiment exploring modern UI patterns and data visualization techniques. This project demonstrates Vue 3's Composition API, reactive state management, and interactive charting capabilities for personal finance tracking.",
     "seo": {
       "title": "Personal Finance Tracker — Built by Ancel | A modern web application for tracking personal income and expenses with visual analytics",
@@ -598,7 +598,7 @@
       ],
       "ogTitle": "Personal Finance Tracker — Built by Ancel | A modern web application for tracking personal income and expenses with visual analytics",
       "ogDescription": "Personal Finance Tracker is a platform built by Ancel featuring income and expense tracking, interactive pie charts for expense breakdown, category management. ",
-      "ogImage": "/images/case-studies/personal-finance-tracker.webp",
+      "ogImage": "/images/case-studies/finance-tracker.webp",
       "twitterCard": "summary_large_image",
       "canonicalUrl": "/case-studies/personal-finance-tracker"
     }
@@ -691,14 +691,14 @@
       "github": "https://github.com/Ancel-duke"
     },
     "images": {
-      "hero": "/images/case-studies/fitness-class-scheduler.webp",
-      "before": "/images/case-studies/fitness-class-scheduler.webp",
-      "after": "/images/case-studies/fitness-class-scheduler.webp",
+      "hero": "/images/case-studies/fitness.webp",
+      "before": "/images/case-studies/fitness.webp",
+      "after": "/images/case-studies/fitness.webp",
       "gallery": [
-        "/images/case-studies/fitness-class-scheduler.webp"
+        "/images/case-studies/fitness.webp"
       ]
     },
-    "image": "/images/case-studies/fitness-class-scheduler.webp",
+    "image": "/images/case-studies/fitness.webp",
     "excerpt": "A modern Angular SSR application for planning weekly fitness classes with dark mode, responsive design, and client-side persistence.",
     "seo": {
       "title": "Fitness Class Scheduler — Built by Ancel | A modern Angular SSR application for planning weekly fitness classes",
@@ -717,7 +717,7 @@
       ],
       "ogTitle": "Fitness Class Scheduler — Built by Ancel | A modern Angular SSR application for planning weekly fitness classes",
       "ogDescription": "Fitness Class Scheduler is a platform built by Ancel featuring weekly class scheduling, drag-and-drop interface, dark mode toggle. Designed with Angular 20, Typ",
-      "ogImage": "/images/case-studies/fitness-class-scheduler.webp",
+      "ogImage": "/images/case-studies/fitness.webp",
       "twitterCard": "summary_large_image",
       "canonicalUrl": "/case-studies/fitness-class-scheduler"
     }
@@ -929,14 +929,14 @@
       "github": "https://github.com/Ancel-duke"
     },
     "images": {
-      "hero": "/images/case-studies/event-countdown-timer.webp",
-      "before": "/images/case-studies/event-countdown-timer.webp",
-      "after": "/images/case-studies/event-countdown-timer.webp",
+      "hero": "/images/case-studies/event-countdown.webp",
+      "before": "/images/case-studies/event-countdown.webp",
+      "after": "/images/case-studies/event-countdown.webp",
       "gallery": [
-        "/images/case-studies/event-countdown-timer.webp"
+        "/images/case-studies/event-countdown.webp"
       ]
     },
-    "image": "/images/case-studies/event-countdown-timer.webp",
+    "image": "/images/case-studies/event-countdown.webp",
     "excerpt": "A feature-rich countdown timer web application for creating and managing multiple countdowns for various life events with recurring events and smart notifications.",
     "seo": {
       "title": "Event Countdown Timer — Built by Ancel | A feature-rich countdown timer for various life events",
@@ -955,7 +955,7 @@
       ],
       "ogTitle": "Event Countdown Timer — Built by Ancel | A feature-rich countdown timer for various life events",
       "ogDescription": "Event Countdown Timer is a platform built by Ancel featuring multiple countdown views, recurring events, visual customization. Designed with Vanilla JavaScript,",
-      "ogImage": "/images/case-studies/event-countdown-timer.webp",
+      "ogImage": "/images/case-studies/event-countdown.webp",
       "twitterCard": "summary_large_image",
       "canonicalUrl": "/case-studies/event-countdown-timer"
     }
@@ -1162,14 +1162,14 @@
       "github": "https://github.com/Ancel-duke"
     },
     "images": {
-      "hero": "/images/case-studies/rasoha-academy.webp",
-      "before": "/images/case-studies/rasoha-academy.webp",
-      "after": "/images/case-studies/rasoha-academy.webp",
+      "hero": "/images/case-studies/rasoha.webp",
+      "before": "/images/case-studies/rasoha.webp",
+      "after": "/images/case-studies/rasoha.webp",
       "gallery": [
-        "/images/case-studies/rasoha-academy.webp"
+        "/images/case-studies/rasoha.webp"
       ]
     },
-    "image": "/images/case-studies/rasoha-academy.webp",
+    "image": "/images/case-studies/rasoha.webp",
     "excerpt": "A modern, responsive website for a private school in Narok, Kenya, providing comprehensive information about programs, events, and resources for students and parents.",
     "seo": {
       "title": "Rasoha Academy — Built by Ancel | School Website",
@@ -1188,7 +1188,7 @@
       ],
       "ogTitle": "Rasoha Academy — Built by Ancel | School Website",
       "ogDescription": "Rasoha Academy is a platform built by Ancel featuring school information pages, events calendar, photo galleries. Designed with React 19.1.1, Tailwind CSS, PWA,",
-      "ogImage": "/images/case-studies/rasoha-academy.webp",
+      "ogImage": "/images/case-studies/rasoha.webp",
       "twitterCard": "summary_large_image",
       "canonicalUrl": "/case-studies/rasoha-academy"
     }
@@ -1273,14 +1273,14 @@
       "github": "https://github.com/Ancel-duke/banking"
     },
     "images": {
-      "hero": "/images/case-studies/banking-system.webp",
-      "before": "/images/case-studies/banking-system.webp",
-      "after": "/images/case-studies/banking-system.webp",
+      "hero": "/images/case-studies/ledgerx.webp",
+      "before": "/images/case-studies/ledgerx.webp",
+      "after": "/images/case-studies/ledgerx.webp",
       "gallery": [
-        "/images/case-studies/banking-system.webp"
+        "/images/case-studies/ledgerx.webp"
       ]
     },
-    "image": "/images/case-studies/banking-system.webp",
+    "image": "/images/case-studies/ledgerx.webp",
     "excerpt": "A simple, console-based Banking System implemented in pure Java to demonstrate core OOP principles (Encapsulation, Inheritance, Abstraction, Polymorphism). Includes customer management, savings/checking accounts, deposits, withdrawals, transfers, and transaction logs.",
     "seo": {
       "title": "Banking System — Built by Ancel | Console-based banking system demonstrating OOP principles in Java",
@@ -1299,7 +1299,7 @@
       ],
       "ogTitle": "Banking System — Built by Ancel | Console-based banking system demonstrating OOP principles in Java",
       "ogDescription": "Banking System is a platform built by Ancel featuring create customers and open savings/checking accounts, deposit, withdraw, transfer between accounts, view ba",
-      "ogImage": "/images/case-studies/banking-system.webp",
+      "ogImage": "/images/case-studies/ledgerx.webp",
       "twitterCard": "summary_large_image",
       "canonicalUrl": "/case-studies/banking-system"
     }
