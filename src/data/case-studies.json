@@ -133,15 +133,36 @@
       "github": "https://github.com/Ancel-duke"
     },
     "images": {
-      "hero": "/images/projects/taskforge.png",
-      "before": "/images/projects/taskforge.png",
-      "after": "/images/projects/taskforge.png",
+      "hero": "/images/case-studies/taskforge.webp",
+      "before": "/images/case-studies/taskforge.webp",
+      "after": "/images/case-studies/taskforge.webp",
       "gallery": [
-        "/images/projects/taskforge.png"
+        "/images/case-studies/taskforge.webp"
       ]
     },
-    "image": "/images/projects/taskforge.png",
-    "excerpt": "TaskForge is a resilient, scalable real-time collaborative project management platform designed for engineering teams. The system handles concurrent collaboration across distributed teams, managing project workflows, task coordination, and team communication with sub-second latency and conflict-free synchronization."
+    "image": "/images/case-studies/taskforge.webp",
+    "excerpt": "TaskForge is a resilient, scalable real-time collaborative project management platform designed for engineering teams. The system handles concurrent collaboration across distributed teams, managing project workflows, task coordination, and team communication with sub-second latency and conflict-free synchronization.",
+    "seo": {
+      "title": "TaskForge — Built by Ancel | Real-time Collaborative Project Management",
+      "description": "TaskForge is a platform built by Ancel featuring kanban board management with drag-and-drop functionality, real-time team collaboration with live updates via we",
+      "keywords": [
+        "TaskForge",
+        "TaskForge app",
+        "TaskForge platform",
+        "Ancel",
+        "Ancel portfolio",
+        "software engineer Ancel",
+        "Ancel Ajanga",
+        "Next.js 14",
+        "React 18",
+        "TypeScript"
+      ],
+      "ogTitle": "TaskForge — Built by Ancel | Real-time Collaborative Project Management",
+      "ogDescription": "TaskForge is a platform built by Ancel featuring kanban board management with drag-and-drop functionality, real-time team collaboration with live updates via we",
+      "ogImage": "/images/case-studies/taskforge.webp",
+      "twitterCard": "summary_large_image",
+      "canonicalUrl": "/case-studies/taskforge"
+    }
   },
   {
     "id": 2,
@@ -272,15 +293,36 @@
       "github": "https://github.com/Ancel-duke"
     },
     "images": {
-      "hero": "/images/projects/elearn.png",
-      "before": "/images/projects/elearn.png",
-      "after": "/images/projects/elearn.png",
+      "hero": "/images/case-studies/elearning-platform.webp",
+      "before": "/images/case-studies/elearning-platform.webp",
+      "after": "/images/case-studies/elearning-platform.webp",
       "gallery": [
-        "/images/projects/elearn.png"
+        "/images/case-studies/elearning-platform.webp"
       ]
     },
-    "image": "/images/projects/elearn.png",
-    "excerpt": "A resilient, scalable learning management system architected to handle thousands of concurrent students and hundreds of courses. The platform enables educational institutions to deliver online education at scale with sub-2-second page loads, comprehensive course management, and real-time progress tracking."
+    "image": "/images/case-studies/elearning-platform.webp",
+    "excerpt": "A resilient, scalable learning management system architected to handle thousands of concurrent students and hundreds of courses. The platform enables educational institutions to deliver online education at scale with sub-2-second page loads, comprehensive course management, and real-time progress tracking.",
+    "seo": {
+      "title": "E — Built by Ancel | Learning Platform - Scalable Learning Management System",
+      "description": "E is a platform built by Ancel featuring secure user authentication with jwt tokens, comprehensive course creation and management tools for instructors, lesson ",
+      "keywords": [
+        "E",
+        "E app",
+        "E platform",
+        "Ancel",
+        "Ancel portfolio",
+        "software engineer Ancel",
+        "Ancel Ajanga",
+        "React",
+        "TypeScript",
+        "Django"
+      ],
+      "ogTitle": "E — Built by Ancel | Learning Platform - Scalable Learning Management System",
+      "ogDescription": "E is a platform built by Ancel featuring secure user authentication with jwt tokens, comprehensive course creation and management tools for instructors, lesson ",
+      "ogImage": "/images/case-studies/elearning-platform.webp",
+      "twitterCard": "summary_large_image",
+      "canonicalUrl": "/case-studies/elearning-platform"
+    }
   },
   {
     "id": 3,
@@ -416,15 +458,36 @@
       "github": "https://github.com/Ancel-duke"
     },
     "images": {
-      "hero": "/images/projects/attendance.png",
-      "before": "/images/projects/attendance.png",
-      "after": "/images/projects/attendance.png",
+      "hero": "/images/case-studies/attendance-system.webp",
+      "before": "/images/case-studies/attendance-system.webp",
+      "after": "/images/case-studies/attendance-system.webp",
       "gallery": [
-        "/images/projects/attendance.png"
+        "/images/case-studies/attendance-system.webp"
       ]
     },
-    "image": "/images/projects/attendance.png",
-    "excerpt": "A resilient attendance management system architected for educational institutions to automate attendance tracking, provide comprehensive analytics, and generate detailed reports. The system handles 500+ active users across multiple institutions with 95% accuracy improvement and 70% reduction in administrative overhead."
+    "image": "/images/case-studies/attendance-system.webp",
+    "excerpt": "A resilient attendance management system architected for educational institutions to automate attendance tracking, provide comprehensive analytics, and generate detailed reports. The system handles 500+ active users across multiple institutions with 95% accuracy improvement and 70% reduction in administrative overhead.",
+    "seo": {
+      "title": "Attendance System — Built by Ancel | Educational Analytics & Management",
+      "description": "Attendance System is a platform built by Ancel featuring secure user authentication using jwt tokens, comprehensive student management (add, edit, delete, view ",
+      "keywords": [
+        "Attendance System",
+        "Attendance System app",
+        "Attendance System platform",
+        "Ancel",
+        "Ancel portfolio",
+        "software engineer Ancel",
+        "Ancel Ajanga",
+        "React.js",
+        "Node.js",
+        "Express.js"
+      ],
+      "ogTitle": "Attendance System — Built by Ancel | Educational Analytics & Management",
+      "ogDescription": "Attendance System is a platform built by Ancel featuring secure user authentication using jwt tokens, comprehensive student management (add, edit, delete, view ",
+      "ogImage": "/images/case-studies/attendance-system.webp",
+      "twitterCard": "summary_large_image",
+      "canonicalUrl": "/case-studies/attendance-system"
+    }
   },
   {
     "id": 4,
@@ -509,15 +572,36 @@
       "github": "https://github.com/Ancel-duke"
     },
     "images": {
-      "hero": "/images/projects/finance-tracker.png",
-      "before": "/images/projects/finance-tracker.png",
-      "after": "/images/projects/finance-tracker.png",
+      "hero": "/images/case-studies/personal-finance-tracker.webp",
+      "before": "/images/case-studies/personal-finance-tracker.webp",
+      "after": "/images/case-studies/personal-finance-tracker.webp",
       "gallery": [
-        "/images/projects/finance-tracker.png"
+        "/images/case-studies/personal-finance-tracker.webp"
       ]
     },
-    "image": "/images/projects/finance-tracker.png",
-    "excerpt": "A creative frontend experiment exploring modern UI patterns and data visualization techniques. This project demonstrates Vue 3's Composition API, reactive state management, and interactive charting capabilities for personal finance tracking."
+    "image": "/images/case-studies/personal-finance-tracker.webp",
+    "excerpt": "A creative frontend experiment exploring modern UI patterns and data visualization techniques. This project demonstrates Vue 3's Composition API, reactive state management, and interactive charting capabilities for personal finance tracking.",
+    "seo": {
+      "title": "Personal Finance Tracker — Built by Ancel | A modern web application for tracking personal income and expenses with visual analytics",
+      "description": "Personal Finance Tracker is a platform built by Ancel featuring income and expense tracking, interactive pie charts for expense breakdown, category management. ",
+      "keywords": [
+        "Personal Finance Tracker",
+        "Personal Finance Tracker app",
+        "Personal Finance Tracker platform",
+        "Ancel",
+        "Ancel portfolio",
+        "software engineer Ancel",
+        "Ancel Ajanga",
+        "Vue.js 3",
+        "TypeScript",
+        "Chart.js"
+      ],
+      "ogTitle": "Personal Finance Tracker — Built by Ancel | A modern web application for tracking personal income and expenses with visual analytics",
+      "ogDescription": "Personal Finance Tracker is a platform built by Ancel featuring income and expense tracking, interactive pie charts for expense breakdown, category management. ",
+      "ogImage": "/images/case-studies/personal-finance-tracker.webp",
+      "twitterCard": "summary_large_image",
+      "canonicalUrl": "/case-studies/personal-finance-tracker"
+    }
   },
   {
     "id": 5,
@@ -607,15 +691,36 @@
       "github": "https://github.com/Ancel-duke"
     },
     "images": {
-      "hero": "/images/projects/fitness.png",
-      "before": "/images/projects/fitness.png",
-      "after": "/images/projects/fitness.png",
+      "hero": "/images/case-studies/fitness-class-scheduler.webp",
+      "before": "/images/case-studies/fitness-class-scheduler.webp",
+      "after": "/images/case-studies/fitness-class-scheduler.webp",
       "gallery": [
-        "/images/projects/fitness.png"
+        "/images/case-studies/fitness-class-scheduler.webp"
       ]
     },
-    "image": "/images/projects/fitness.png",
-    "excerpt": "A modern Angular SSR application for planning weekly fitness classes with dark mode, responsive design, and client-side persistence."
+    "image": "/images/case-studies/fitness-class-scheduler.webp",
+    "excerpt": "A modern Angular SSR application for planning weekly fitness classes with dark mode, responsive design, and client-side persistence.",
+    "seo": {
+      "title": "Fitness Class Scheduler — Built by Ancel | A modern Angular SSR application for planning weekly fitness classes",
+      "description": "Fitness Class Scheduler is a platform built by Ancel featuring weekly class scheduling, drag-and-drop interface, dark mode toggle. Designed with Angular 20, Typ",
+      "keywords": [
+        "Fitness Class Scheduler",
+        "Fitness Class Scheduler app",
+        "Fitness Class Scheduler platform",
+        "Ancel",
+        "Ancel portfolio",
+        "software engineer Ancel",
+        "Ancel Ajanga",
+        "Angular 20",
+        "TypeScript",
+        "Angular SSR"
+      ],
+      "ogTitle": "Fitness Class Scheduler — Built by Ancel | A modern Angular SSR application for planning weekly fitness classes",
+      "ogDescription": "Fitness Class Scheduler is a platform built by Ancel featuring weekly class scheduling, drag-and-drop interface, dark mode toggle. Designed with Angular 20, Typ",
+      "ogImage": "/images/case-studies/fitness-class-scheduler.webp",
+      "twitterCard": "summary_large_image",
+      "canonicalUrl": "/case-studies/fitness-class-scheduler"
+    }
   },
   {
     "id": 6,
@@ -705,15 +810,36 @@
       "github": "https://github.com/Ancel-duke"
     },
     "images": {
-      "hero": "/images/projects/habit-tracker.png",
-      "before": "/images/projects/habit-tracker.png",
-      "after": "/images/projects/habit-tracker.png",
+      "hero": "/images/case-studies/habit-tracker.webp",
+      "before": "/images/case-studies/habit-tracker.webp",
+      "after": "/images/case-studies/habit-tracker.webp",
       "gallery": [
-        "/images/projects/habit-tracker.png"
+        "/images/case-studies/habit-tracker.webp"
       ]
     },
-    "image": "/images/projects/habit-tracker.png",
-    "excerpt": "A creative Progressive Web App experiment exploring offline-first design patterns and modern UI interactions. This project demonstrates PWA capabilities, service workers, and engaging visual feedback for habit tracking."
+    "image": "/images/case-studies/habit-tracker.webp",
+    "excerpt": "A creative Progressive Web App experiment exploring offline-first design patterns and modern UI interactions. This project demonstrates PWA capabilities, service workers, and engaging visual feedback for habit tracking.",
+    "seo": {
+      "title": "Habit Tracker & Streak Counter — Built by Ancel | A Progressive Web App for tracking daily habits and building momentum",
+      "description": "Habit Tracker & Streak Counter is a platform built by Ancel featuring habit creation and management, automatic streak calculation, comprehensive analytics. Desi",
+      "keywords": [
+        "Habit Tracker & Streak Counter",
+        "Habit Tracker & Streak Counter app",
+        "Habit Tracker & Streak Counter platform",
+        "Ancel",
+        "Ancel portfolio",
+        "software engineer Ancel",
+        "Ancel Ajanga",
+        "React 19",
+        "PWA",
+        "Chart.js"
+      ],
+      "ogTitle": "Habit Tracker & Streak Counter — Built by Ancel | A Progressive Web App for tracking daily habits and building momentum",
+      "ogDescription": "Habit Tracker & Streak Counter is a platform built by Ancel featuring habit creation and management, automatic streak calculation, comprehensive analytics. Desi",
+      "ogImage": "/images/case-studies/habit-tracker.webp",
+      "twitterCard": "summary_large_image",
+      "canonicalUrl": "/case-studies/habit-tracker"
+    }
   },
   {
     "id": 7,
@@ -803,15 +929,36 @@
       "github": "https://github.com/Ancel-duke"
     },
     "images": {
-      "hero": "/images/projects/events.png",
-      "before": "/images/projects/events.png",
-      "after": "/images/projects/events.png",
+      "hero": "/images/case-studies/event-countdown-timer.webp",
+      "before": "/images/case-studies/event-countdown-timer.webp",
+      "after": "/images/case-studies/event-countdown-timer.webp",
       "gallery": [
-        "/images/projects/events.png"
+        "/images/case-studies/event-countdown-timer.webp"
       ]
     },
-    "image": "/images/projects/events.png",
-    "excerpt": "A feature-rich countdown timer web application for creating and managing multiple countdowns for various life events with recurring events and smart notifications."
+    "image": "/images/case-studies/event-countdown-timer.webp",
+    "excerpt": "A feature-rich countdown timer web application for creating and managing multiple countdowns for various life events with recurring events and smart notifications.",
+    "seo": {
+      "title": "Event Countdown Timer — Built by Ancel | A feature-rich countdown timer for various life events",
+      "description": "Event Countdown Timer is a platform built by Ancel featuring multiple countdown views, recurring events, visual customization. Designed with Vanilla JavaScript,",
+      "keywords": [
+        "Event Countdown Timer",
+        "Event Countdown Timer app",
+        "Event Countdown Timer platform",
+        "Ancel",
+        "Ancel portfolio",
+        "software engineer Ancel",
+        "Ancel Ajanga",
+        "Vanilla JavaScript",
+        "HTML5",
+        "CSS3"
+      ],
+      "ogTitle": "Event Countdown Timer — Built by Ancel | A feature-rich countdown timer for various life events",
+      "ogDescription": "Event Countdown Timer is a platform built by Ancel featuring multiple countdown views, recurring events, visual customization. Designed with Vanilla JavaScript,",
+      "ogImage": "/images/case-studies/event-countdown-timer.webp",
+      "twitterCard": "summary_large_image",
+      "canonicalUrl": "/case-studies/event-countdown-timer"
+    }
   },
   {
     "id": 8,
@@ -896,15 +1043,36 @@
       "github": "https://github.com/Ancel-duke"
     },
     "images": {
-      "hero": "/images/projects/travel.png",
-      "before": "/images/projects/travel.png",
-      "after": "/images/projects/travel.png",
+      "hero": "/images/case-studies/travelogue.webp",
+      "before": "/images/case-studies/travelogue.webp",
+      "after": "/images/case-studies/travelogue.webp",
       "gallery": [
-        "/images/projects/travel.png"
+        "/images/case-studies/travelogue.webp"
       ]
     },
-    "image": "/images/projects/travel.png",
-    "excerpt": "A comprehensive travel platform featuring interactive world maps, travel stories, destination exploration, and responsive design for travel enthusiasts."
+    "image": "/images/case-studies/travelogue.webp",
+    "excerpt": "A comprehensive travel platform featuring interactive world maps, travel stories, destination exploration, and responsive design for travel enthusiasts.",
+    "seo": {
+      "title": "Travelogue — Built by Ancel | Travel Storytelling Website",
+      "description": "Travelogue is a platform built by Ancel featuring interactive world map, travel story sharing, destination exploration. Designed with React 18, Leaflet.js, Open",
+      "keywords": [
+        "Travelogue",
+        "Travelogue app",
+        "Travelogue platform",
+        "Ancel",
+        "Ancel portfolio",
+        "software engineer Ancel",
+        "Ancel Ajanga",
+        "React 18",
+        "Leaflet.js",
+        "OpenStreetMap"
+      ],
+      "ogTitle": "Travelogue — Built by Ancel | Travel Storytelling Website",
+      "ogDescription": "Travelogue is a platform built by Ancel featuring interactive world map, travel story sharing, destination exploration. Designed with React 18, Leaflet.js, Open",
+      "ogImage": "/images/case-studies/travelogue.webp",
+      "twitterCard": "summary_large_image",
+      "canonicalUrl": "/case-studies/travelogue"
+    }
   },
   {
     "id": 9,
@@ -994,15 +1162,36 @@
       "github": "https://github.com/Ancel-duke"
     },
     "images": {
-      "hero": "/images/projects/rasoha.png",
-      "before": "/images/projects/rasoha.png",
-      "after": "/images/projects/rasoha.png",
+      "hero": "/images/case-studies/rasoha-academy.webp",
+      "before": "/images/case-studies/rasoha-academy.webp",
+      "after": "/images/case-studies/rasoha-academy.webp",
       "gallery": [
-        "/images/projects/rasoha.png"
+        "/images/case-studies/rasoha-academy.webp"
       ]
     },
-    "image": "/images/projects/rasoha.png",
-    "excerpt": "A modern, responsive website for a private school in Narok, Kenya, providing comprehensive information about programs, events, and resources for students and parents."
+    "image": "/images/case-studies/rasoha-academy.webp",
+    "excerpt": "A modern, responsive website for a private school in Narok, Kenya, providing comprehensive information about programs, events, and resources for students and parents.",
+    "seo": {
+      "title": "Rasoha Academy — Built by Ancel | School Website",
+      "description": "Rasoha Academy is a platform built by Ancel featuring school information pages, events calendar, photo galleries. Designed with React 19.1.1, Tailwind CSS, PWA,",
+      "keywords": [
+        "Rasoha Academy",
+        "Rasoha Academy app",
+        "Rasoha Academy platform",
+        "Ancel",
+        "Ancel portfolio",
+        "software engineer Ancel",
+        "Ancel Ajanga",
+        "React 19.1.1",
+        "Tailwind CSS",
+        "PWA"
+      ],
+      "ogTitle": "Rasoha Academy — Built by Ancel | School Website",
+      "ogDescription": "Rasoha Academy is a platform built by Ancel featuring school information pages, events calendar, photo galleries. Designed with React 19.1.1, Tailwind CSS, PWA,",
+      "ogImage": "/images/case-studies/rasoha-academy.webp",
+      "twitterCard": "summary_large_image",
+      "canonicalUrl": "/case-studies/rasoha-academy"
+    }
   },
   {
     "id": 10,
@@ -1084,15 +1273,36 @@
       "github": "https://github.com/Ancel-duke/banking"
     },
     "images": {
-      "hero": "/images/projects/bank.png",
-      "before": "/images/projects/bank.png",
-      "after": "/images/projects/bank.png",
+      "hero": "/images/case-studies/banking-system.webp",
+      "before": "/images/case-studies/banking-system.webp",
+      "after": "/images/case-studies/banking-system.webp",
       "gallery": [
-        "/images/projects/bank.png"
+        "/images/case-studies/banking-system.webp"
       ]
     },
-    "image": "/images/projects/bank.png",
-    "excerpt": "A simple, console-based Banking System implemented in pure Java to demonstrate core OOP principles (Encapsulation, Inheritance, Abstraction, Polymorphism). Includes customer management, savings/checking accounts, deposits, withdrawals, transfers, and transaction logs."
+    "image": "/images/case-studies/banking-system.webp",
+    "excerpt": "A simple, console-based Banking System implemented in pure Java to demonstrate core OOP principles (Encapsulation, Inheritance, Abstraction, Polymorphism). Includes customer management, savings/checking accounts, deposits, withdrawals, transfers, and transaction logs.",
+    "seo": {
+      "title": "Banking System — Built by Ancel | Console-based banking system demonstrating OOP principles in Java",
+      "description": "Banking System is a platform built by Ancel featuring create customers and open savings/checking accounts, deposit, withdraw, transfer between accounts, view ba",
+      "keywords": [
+        "Banking System",
+        "Banking System app",
+        "Banking System platform",
+        "Ancel",
+        "Ancel portfolio",
+        "software engineer Ancel",
+        "Ancel Ajanga",
+        "Java 17+",
+        "OOP",
+        "Maven"
+      ],
+      "ogTitle": "Banking System — Built by Ancel | Console-based banking system demonstrating OOP principles in Java",
+      "ogDescription": "Banking System is a platform built by Ancel featuring create customers and open savings/checking accounts, deposit, withdraw, transfer between accounts, view ba",
+      "ogImage": "/images/case-studies/banking-system.webp",
+      "twitterCard": "summary_large_image",
+      "canonicalUrl": "/case-studies/banking-system"
+    }
   },
   {
     "id": 12,
@@ -1244,15 +1454,36 @@
       "github": "https://github.com/Ancel-duke/EduChain"
     },
     "images": {
-      "hero": "/images/projects/EduChain.png",
-      "before": "/images/projects/EduChain.png",
-      "after": "/images/projects/EduChain.png",
+      "hero": "/images/case-studies/educhain.webp",
+      "before": "/images/case-studies/educhain.webp",
+      "after": "/images/case-studies/educhain.webp",
       "gallery": [
-        "/images/projects/EduChain.png"
+        "/images/case-studies/educhain.webp"
       ]
     },
-    "image": "/images/projects/EduChain.png",
-    "excerpt": "EduChain is a resilient, decentralized certificate management system architected on Web3 principles, issuing verifiable academic certificates as ERC721 NFTs on the Ethereum blockchain. The platform enables educational institutions to issue tamper-proof, blockchain-verified certificates while providing students with permanent, verifiable proof of achievements through hybrid storage (MongoDB + IPFS + Blockchain)."
+    "image": "/images/case-studies/educhain.webp",
+    "excerpt": "EduChain is a resilient, decentralized certificate management system architected on Web3 principles, issuing verifiable academic certificates as ERC721 NFTs on the Ethereum blockchain. The platform enables educational institutions to issue tamper-proof, blockchain-verified certificates while providing students with permanent, verifiable proof of achievements through hybrid storage (MongoDB + IPFS + Blockchain).",
+    "seo": {
+      "title": "EduChain — Built by Ancel | Blockchain Certificate Management",
+      "description": "EduChain is a platform built by Ancel featuring secure certificate minting with owner-only access control, ipfs integration for decentralized metadata storage, ",
+      "keywords": [
+        "EduChain",
+        "EduChain app",
+        "EduChain platform",
+        "Ancel",
+        "Ancel portfolio",
+        "software engineer Ancel",
+        "Ancel Ajanga",
+        "React 19",
+        "Tailwind CSS",
+        "RainbowKit"
+      ],
+      "ogTitle": "EduChain — Built by Ancel | Blockchain Certificate Management",
+      "ogDescription": "EduChain is a platform built by Ancel featuring secure certificate minting with owner-only access control, ipfs integration for decentralized metadata storage, ",
+      "ogImage": "/images/case-studies/educhain.webp",
+      "twitterCard": "summary_large_image",
+      "canonicalUrl": "/case-studies/educhain"
+    }
   },
   {
     "id": 11,
@@ -1414,16 +1645,37 @@
       "docs": "https://github.com/Ancel-duke/LedgerX/blob/main/ARCHITECTURE.md"
     },
     "images": {
-      "hero": "/images/projects/LedgerX.png",
-      "before": "/images/projects/LedgerX.png",
-      "after": "/images/projects/LedgerX2.png",
+      "hero": "/images/case-studies/ledgerx.webp",
+      "before": "/images/case-studies/ledgerx.webp",
+      "after": "/images/case-studies/ledgerx.webp",
       "gallery": [
-        "/images/projects/LedgerX.png",
-        "/images/projects/LedgerX2.png"
+        "/images/case-studies/ledgerx.webp",
+        "/images/case-studies/ledgerx.webp"
       ]
     },
-    "image": "/images/projects/LedgerX.png",
-    "excerpt": "LedgerX is a production-grade, multi-tenant financial platform designed to handle invoicing, payments, accounting (double-entry ledger), audit/compliance, fraud detection, and system diagnostics in a single, cohesive system."
+    "image": "/images/case-studies/ledgerx.webp",
+    "excerpt": "LedgerX is a production-grade, multi-tenant financial platform designed to handle invoicing, payments, accounting (double-entry ledger), audit/compliance, fraud detection, and system diagnostics in a single, cohesive system.",
+    "seo": {
+      "title": "LedgerX — Built by Ancel | Secure, Multi-Tenant Financial Platform",
+      "description": "LedgerX is a platform built by Ancel featuring strong multi-tenant isolation with organization-scoped queries and role-based access (admin, manager, member), ev",
+      "keywords": [
+        "LedgerX",
+        "LedgerX app",
+        "LedgerX platform",
+        "Ancel",
+        "Ancel portfolio",
+        "software engineer Ancel",
+        "Ancel Ajanga",
+        "Next.js 14",
+        "React 18",
+        "TypeScript"
+      ],
+      "ogTitle": "LedgerX — Built by Ancel | Secure, Multi-Tenant Financial Platform",
+      "ogDescription": "LedgerX is a platform built by Ancel featuring strong multi-tenant isolation with organization-scoped queries and role-based access (admin, manager, member), ev",
+      "ogImage": "/images/case-studies/ledgerx.webp",
+      "twitterCard": "summary_large_image",
+      "canonicalUrl": "/case-studies/ledgerx"
+    }
   },
   {
     "id": 13,
@@ -1563,15 +1815,36 @@
       "github": "https://github.com/Ancel-duke/OpsFlow"
     },
     "images": {
-      "hero": "/images/projects/opsflow.png",
-      "before": "/images/projects/opsflow.png",
-      "after": "/images/projects/opsflow.png",
+      "hero": "/images/case-studies/opsflow.webp",
+      "before": "/images/case-studies/opsflow.webp",
+      "after": "/images/case-studies/opsflow.webp",
       "gallery": [
-        "/images/projects/opsflow.png"
+        "/images/case-studies/opsflow.webp"
       ]
     },
-    "image": "/images/projects/opsflow.png",
-    "excerpt": "OpsFlow is a production-ready incident and operations management platform architected for engineering teams, combining incident response, workflow management, task coordination, and knowledge sharing into a single secure team-based system. The platform features dual-database architecture (PostgreSQL + MongoDB), real-time WebSocket updates, and team-based multi-tenancy with 50+ API endpoints."
+    "image": "/images/case-studies/opsflow.webp",
+    "excerpt": "OpsFlow is a production-ready incident and operations management platform architected for engineering teams, combining incident response, workflow management, task coordination, and knowledge sharing into a single secure team-based system. The platform features dual-database architecture (PostgreSQL + MongoDB), real-time WebSocket updates, and team-based multi-tenancy with 50+ API endpoints.",
+    "seo": {
+      "title": "OpsFlow — Built by Ancel | Incident & Operations Management Platform",
+      "description": "OpsFlow is a platform built by Ancel featuring incident management with enforced lifecycle states and sla breach detection, real-time updates using websockets f",
+      "keywords": [
+        "OpsFlow",
+        "OpsFlow app",
+        "OpsFlow platform",
+        "Ancel",
+        "Ancel portfolio",
+        "software engineer Ancel",
+        "Ancel Ajanga",
+        "NestJS",
+        "Next.js 14",
+        "TypeScript"
+      ],
+      "ogTitle": "OpsFlow — Built by Ancel | Incident & Operations Management Platform",
+      "ogDescription": "OpsFlow is a platform built by Ancel featuring incident management with enforced lifecycle states and sla breach detection, real-time updates using websockets f",
+      "ogImage": "/images/case-studies/opsflow.webp",
+      "twitterCard": "summary_large_image",
+      "canonicalUrl": "/case-studies/opsflow"
+    }
   },
   {
     "id": 14,
@@ -1712,18 +1985,39 @@
       "github": "https://github.com/Ancel-duke/SignFlow"
     },
     "images": {
-      "hero": "/images/projects/signflow1.png",
-      "before": "/images/projects/signflow1.png",
-      "after": "/images/projects/signflow2.png",
+      "hero": "/images/case-studies/signflow.webp",
+      "before": "/images/case-studies/signflow.webp",
+      "after": "/images/case-studies/signflow.webp",
       "gallery": [
-        "/images/projects/signflow1.png",
-        "/images/projects/signflow2.png",
-        "/images/projects/flow.png",
-        "/images/projects/flow2.png"
+        "/images/case-studies/signflow.webp",
+        "/images/case-studies/signflow.webp",
+        "/images/case-studies/signflow.webp",
+        "/images/case-studies/signflow.webp"
       ]
     },
-    "image": "/images/projects/signflow1.png",
-    "excerpt": "SignFlow is a high-fidelity assistive technology platform architected for real-time sign language translation, exploring the architectural requirements for scaling accessibility platforms. The system features WebSocket-powered streaming, 3D avatar simulation with natural variation, and accessibility-first design with WCAG compliance, demonstrating production-grade architecture for specialized user bases."
+    "image": "/images/case-studies/signflow.webp",
+    "excerpt": "SignFlow is a high-fidelity assistive technology platform architected for real-time sign language translation, exploring the architectural requirements for scaling accessibility platforms. The system features WebSocket-powered streaming, 3D avatar simulation with natural variation, and accessibility-first design with WCAG compliance, demonstrating production-grade architecture for specialized user bases.",
+    "seo": {
+      "title": "SignFlow — Built by Ancel | Real-Time Assistive Tech Simulation for Sign Language",
+      "description": "SignFlow is a platform built by Ancel featuring real-time translation engine with streaming input via websockets, believable avatar simulation with phrase mappi",
+      "keywords": [
+        "SignFlow",
+        "SignFlow app",
+        "SignFlow platform",
+        "Ancel",
+        "Ancel portfolio",
+        "software engineer Ancel",
+        "Ancel Ajanga",
+        "React",
+        "Node.js",
+        "Express"
+      ],
+      "ogTitle": "SignFlow — Built by Ancel | Real-Time Assistive Tech Simulation for Sign Language",
+      "ogDescription": "SignFlow is a platform built by Ancel featuring real-time translation engine with streaming input via websockets, believable avatar simulation with phrase mappi",
+      "ogImage": "/images/case-studies/signflow.webp",
+      "twitterCard": "summary_large_image",
+      "canonicalUrl": "/case-studies/signflow"
+    }
   },
   {
     "id": 15,
@@ -1880,15 +2174,36 @@
       "docs": "https://github.com/Ancel-duke/NestFi/blob/main/docs/ARCHITECTURE.md"
     },
     "images": {
-      "hero": "/images/projects/nestfi.png",
-      "before": "/images/projects/nestfi.png",
-      "after": "/images/projects/nestfi.png",
+      "hero": "/images/case-studies/nestfi.webp",
+      "before": "/images/case-studies/nestfi.webp",
+      "after": "/images/case-studies/nestfi.webp",
       "gallery": [
-        "/images/projects/nestfi.png"
+        "/images/case-studies/nestfi.webp"
       ]
     },
-    "image": "/images/projects/nestfi.png",
-    "excerpt": "NestFi is a financial application developed by Ancel Ajanga—a production-grade financial coordination platform designed for correctness under failure. It ensures predictable behavior across asynchronous payment providers, delayed or duplicated callbacks, unreliable networks, and hybrid storage layers. PostgreSQL enforces ledger integrity, MongoDB handles compliance and audit events, and Redis provides ephemeral caching and distributed locking with fail-closed safety. Real-time notifications via Socket.io and hardened M-Pesa Daraja integrations make the system resilient, auditable, and user-trust oriented."
+    "image": "/images/case-studies/nestfi.webp",
+    "excerpt": "NestFi is a financial application developed by Ancel Ajanga—a production-grade financial coordination platform designed for correctness under failure. It ensures predictable behavior across asynchronous payment providers, delayed or duplicated callbacks, unreliable networks, and hybrid storage layers. PostgreSQL enforces ledger integrity, MongoDB handles compliance and audit events, and Redis provides ephemeral caching and distributed locking with fail-closed safety. Real-time notifications via Socket.io and hardened M-Pesa Daraja integrations make the system resilient, auditable, and user-trust oriented.",
+    "seo": {
+      "title": "NestFi — Built by Ancel | Resilient Financial Coordination Platform",
+      "description": "NestFi is a platform built by Ancel featuring ledger-backed wallets with strict double-entry accounting (kes-only), m-pesa b2c withdrawals with idempotent handl",
+      "keywords": [
+        "NestFi",
+        "NestFi app",
+        "NestFi platform",
+        "Ancel",
+        "Ancel portfolio",
+        "software engineer Ancel",
+        "Ancel Ajanga",
+        "NestJS",
+        "TypeScript",
+        "PostgreSQL"
+      ],
+      "ogTitle": "NestFi — Built by Ancel | Resilient Financial Coordination Platform",
+      "ogDescription": "NestFi is a platform built by Ancel featuring ledger-backed wallets with strict double-entry accounting (kes-only), m-pesa b2c withdrawals with idempotent handl",
+      "ogImage": "/images/case-studies/nestfi.webp",
+      "twitterCard": "summary_large_image",
+      "canonicalUrl": "/case-studies/nestfi"
+    }
   },
   {
     "id": 16,
@@ -2013,15 +2328,36 @@
       "docs": "https://github.com/Ancel-duke/edumanage/blob/main/docs/ARCHITECTURE.md"
     },
     "images": {
-      "hero": "/images/projects/edumanage.png",
-      "before": "/images/projects/edumanage.png",
-      "after": "/images/projects/edumanage.png",
+      "hero": "/images/case-studies/edumanage.webp",
+      "before": "/images/case-studies/edumanage.webp",
+      "after": "/images/case-studies/edumanage.webp",
       "gallery": [
-        "/images/projects/edumanage.png"
+        "/images/case-studies/edumanage.webp"
       ]
     },
-    "image": "/images/projects/edumanage.png",
-    "excerpt": "A comprehensive educational management system designed to streamline administrative tasks, student enrollment, and academic reporting."
+    "image": "/images/case-studies/edumanage.webp",
+    "excerpt": "A comprehensive educational management system designed to streamline administrative tasks, student enrollment, and academic reporting.",
+    "seo": {
+      "title": "EduManage — Built by Ancel | Multi-Tenant School Management SaaS",
+      "description": "EduManage is a platform built by Ancel featuring multi-tenant backend with tenant-scoped data access, jwt-based stateless authentication, hierarchical rbac for ",
+      "keywords": [
+        "EduManage",
+        "EduManage app",
+        "EduManage platform",
+        "Ancel",
+        "Ancel portfolio",
+        "software engineer Ancel",
+        "Ancel Ajanga",
+        "NestJS",
+        "Express.js",
+        "MongoDB"
+      ],
+      "ogTitle": "EduManage — Built by Ancel | Multi-Tenant School Management SaaS",
+      "ogDescription": "EduManage is a platform built by Ancel featuring multi-tenant backend with tenant-scoped data access, jwt-based stateless authentication, hierarchical rbac for ",
+      "ogImage": "/images/case-studies/edumanage.webp",
+      "twitterCard": "summary_large_image",
+      "canonicalUrl": "/case-studies/edumanage"
+    }
   },
   {
     "id": 17,
@@ -2200,15 +2536,36 @@
       "docs": "https://github.com/Ancel-duke/Aegis/blob/main/ARCHITECTURE.md"
     },
     "images": {
-      "hero": "/images/projects/aegis.png",
-      "before": "/images/projects/aegis.png",
-      "after": "/images/projects/aegis.png",
+      "hero": "/images/case-studies/aegis.webp",
+      "before": "/images/case-studies/aegis.webp",
+      "after": "/images/case-studies/aegis.webp",
       "gallery": [
-        "/images/projects/aegis.png"
+        "/images/case-studies/aegis.webp"
       ]
     },
-    "image": "/images/projects/aegis.png",
-    "excerpt": "Aegis is a self-healing infrastructure platform developed by Ancel Ajanga. It combines Zero-Trust architecture, multi-cluster orchestration, and ML-driven anomaly detection with pull-based executor agents and JWS/HMAC signature validation. The system uses Open Policy Agent (OPA) for policy enforcement, FinOps guardrails for cost control, Shadow Mode for trust-building, and distributed tracing (OpenTelemetry) with Loki for blinded observability. The AI recommends; policy authorizes; only signed intent reaches the executor."
+    "image": "/images/case-studies/aegis.webp",
+    "excerpt": "Aegis is a self-healing infrastructure platform developed by Ancel Ajanga. It combines Zero-Trust architecture, multi-cluster orchestration, and ML-driven anomaly detection with pull-based executor agents and JWS/HMAC signature validation. The system uses Open Policy Agent (OPA) for policy enforcement, FinOps guardrails for cost control, Shadow Mode for trust-building, and distributed tracing (OpenTelemetry) with Loki for blinded observability. The AI recommends; policy authorizes; only signed intent reaches the executor.",
+    "seo": {
+      "title": "Aegis — Built by Ancel | Self-Healing Infrastructure with Zero-Trust Architecture and Multi-Cluster Orchestration",
+      "description": "Aegis is a platform built by Ancel featuring self-healing infrastructure with zero-trust architecture; ai recommends only, agents pull, multi-cluster orchestrat",
+      "keywords": [
+        "Aegis",
+        "Aegis app",
+        "Aegis platform",
+        "Ancel",
+        "Ancel portfolio",
+        "software engineer Ancel",
+        "Ancel Ajanga",
+        "NestJS",
+        "Python (FastAPI)",
+        "scikit-learn"
+      ],
+      "ogTitle": "Aegis — Built by Ancel | Self-Healing Infrastructure with Zero-Trust Architecture and Multi-Cluster Orchestration",
+      "ogDescription": "Aegis is a platform built by Ancel featuring self-healing infrastructure with zero-trust architecture; ai recommends only, agents pull, multi-cluster orchestrat",
+      "ogImage": "/images/case-studies/aegis.webp",
+      "twitterCard": "summary_large_image",
+      "canonicalUrl": "/case-studies/aegis"
+    }
   },
   {
     "id": 18,
@@ -2341,15 +2698,36 @@
       "docs": "https://github.com/Ancel-duke/Aliv/blob/master/ARCHITECTURE.md"
     },
     "images": {
-      "hero": "/images/projects/fitsbyaliv.png",
-      "before": "/images/projects/fitsbyaliv.png",
-      "after": "/images/projects/fitsbyaliv.png",
+      "hero": "/images/case-studies/fits.webp",
+      "before": "/images/case-studies/fits.webp",
+      "after": "/images/case-studies/fits.webp",
       "gallery": [
-        "/images/projects/fitsbyaliv.png"
+        "/images/case-studies/fits.webp"
       ]
     },
-    "image": "/images/projects/fitsbyaliv.png",
-    "excerpt": "Fits by Aliv is a Kenya-first e-commerce marketplace (thrift/sustainable fashion) with payment-safe workflows, inventory self-healing, and hardened security. Backend is NestJS with PostgreSQL (Prisma); clients are Flutter (mobile, web, desktop). Identity is Firebase Auth; payments are M-Pesa via Safaricom Daraja API."
+    "image": "/images/case-studies/fits.webp",
+    "excerpt": "Fits by Aliv is a Kenya-first e-commerce marketplace (thrift/sustainable fashion) with payment-safe workflows, inventory self-healing, and hardened security. Backend is NestJS with PostgreSQL (Prisma); clients are Flutter (mobile, web, desktop). Identity is Firebase Auth; payments are M-Pesa via Safaricom Daraja API.",
+    "seo": {
+      "title": "Fits by Aliv — Built by Ancel | Kenya-First E-Commerce with Payment-Safe Workflows",
+      "description": "Fits by Aliv is a platform built by Ancel featuring soft inventory reservations with ttl; no hard deduction before payment, idempotent order creation with x-ide",
+      "keywords": [
+        "Fits by Aliv",
+        "Fits by Aliv app",
+        "Fits by Aliv platform",
+        "Ancel",
+        "Ancel portfolio",
+        "software engineer Ancel",
+        "Ancel Ajanga",
+        "NestJS",
+        "TypeScript",
+        "PostgreSQL"
+      ],
+      "ogTitle": "Fits by Aliv — Built by Ancel | Kenya-First E-Commerce with Payment-Safe Workflows",
+      "ogDescription": "Fits by Aliv is a platform built by Ancel featuring soft inventory reservations with ttl; no hard deduction before payment, idempotent order creation with x-ide",
+      "ogImage": "/images/case-studies/fits.webp",
+      "twitterCard": "summary_large_image",
+      "canonicalUrl": "/case-studies/fits-by-aliv"
+    }
   },
   {
     "id": 19,
@@ -2459,14 +2837,35 @@
       "docs": ""
     },
     "images": {
-      "hero": "/images/projects/Inkly.png",
-      "before": "/images/projects/Inkly.png",
-      "after": "/images/projects/Inkly.png",
+      "hero": "/images/case-studies/inkly.webp",
+      "before": "/images/case-studies/inkly.webp",
+      "after": "/images/case-studies/inkly.webp",
       "gallery": [
-        "/images/projects/Inkly.png"
+        "/images/case-studies/inkly.webp"
       ]
     },
-    "image": "/images/projects/Inkly.png",
-    "excerpt": "Inkly is a production-grade secure messaging platform I built to answer: How do you guarantee privacy, scale WebSockets horizontally, and maintain real-time sync when networks fail? Backend is Node.js with MongoDB and Redis; clients are Flutter."
+    "image": "/images/case-studies/inkly.webp",
+    "excerpt": "Inkly is a production-grade secure messaging platform I built to answer: How do you guarantee privacy, scale WebSockets horizontally, and maintain real-time sync when networks fail? Backend is Node.js with MongoDB and Redis; clients are Flutter.",
+    "seo": {
+      "title": "Inkly — Built by Ancel | Secure, Real-Time Messaging Architecture",
+      "description": "Inkly is a platform built by Ancel featuring real-time messaging with websocket-powered delivery, offline events queue syncing automatically on reconnect, colla",
+      "keywords": [
+        "Inkly",
+        "Inkly app",
+        "Inkly platform",
+        "Ancel",
+        "Ancel portfolio",
+        "software engineer Ancel",
+        "Ancel Ajanga",
+        "Node.js",
+        "Express",
+        "PostgreSQL"
+      ],
+      "ogTitle": "Inkly — Built by Ancel | Secure, Real-Time Messaging Architecture",
+      "ogDescription": "Inkly is a platform built by Ancel featuring real-time messaging with websocket-powered delivery, offline events queue syncing automatically on reconnect, colla",
+      "ogImage": "/images/case-studies/inkly.webp",
+      "twitterCard": "summary_large_image",
+      "canonicalUrl": "/case-studies/inkly"
+    }
   }
 ]

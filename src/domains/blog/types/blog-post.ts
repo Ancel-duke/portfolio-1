@@ -15,4 +15,14 @@ export interface BlogPost {
   tradeoffs?: string
   challenges?: string
   author?: { name: string; avatar: string; bio: string }
+  seo?: {
+    title: string
+    description: string
+    keywords: string[]
+    ogTitle: string
+    ogDescription: string
+    ogImage: string
+    twitterCard: string
+    canonicalUrl: string
+  }
 }

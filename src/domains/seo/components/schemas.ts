@@ -118,8 +118,8 @@ export const generateProjectSchema = (project: any) => {
   return {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    "name": project.displayTitle || project.title,
-    "description": project.longDescription || project.description,
+    "name": project.seo?.title || project.displayTitle || project.title,
+    "description": project.seo?.description || project.longDescription || project.description,
     "applicationCategory": project.applicationCategory || getApplicationCategory(project.title, project.type),
     "operatingSystem": "Web Browser",
     "url": project.liveUrl ? project.liveUrl : `${base}/projects`,
@@ -141,7 +141,7 @@ export const generateProjectSchema = (project: any) => {
     "image": project.image ? (project.image.startsWith('http') ? project.image : base + (project.image.startsWith('/') ? project.image : '/' + project.image)) : undefined,
     "screenshot": project.image ? (project.image.startsWith('http') ? project.image : base + (project.image.startsWith('/') ? project.image : '/' + project.image)) : undefined,
     "codeRepository": project.repoUrl || project.links?.github || undefined,
-    "keywords": [project.displayTitle || project.title, "Ancel Ajanga", "Fullstack Engineer", ...techList].join(", ")
+    "keywords": project.seo?.keywords ? project.seo.keywords.join(", ") : [project.displayTitle || project.title, "Ancel Ajanga", "Fullstack Engineer", ...techList].join(", ")
   };
 };
 
@@ -359,8 +359,8 @@ export const generatePortfolioSchema = (projects: any[] = []) => ({
   "itemListElement": projects.map((project, index) => ({
     "@type": "SoftwareApplication",
     "position": index + 1,
-    "name": project.title,
-    "description": project.description,
+    "name": project.seo?.title || project.title,
+    "description": project.seo?.description || project.description,
     "applicationCategory": project.applicationCategory || getApplicationCategory(project.title, project.type),
     "operatingSystem": "Web Browser",
     "url": project.liveUrl || undefined,

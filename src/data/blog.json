@@ -13,7 +13,7 @@
     ],
     "date": "2025-01-15",
     "readTime": "8 min read",
-    "image": "/images/projects/taskforge.png",
+    "image": "/images/dev-journal/building-taskforge-with-next-js-and-socket-io-lessons-learned.webp",
     "level": "intermediate",
     "whoThisIsFor": "Teams and product leads who need real-time collaboration (editing, boards, sync) without conflicts, and engineers evaluating Next.js + Socket.io for production.",
     "problem": "Distributed teams face stale data, edit conflicts, and fragmented communication. Off-the-shelf tools often struggle with scalability and real-time consistency.",
@@ -29,6 +29,28 @@
       "name": "Ancel Ajanga",
       "avatar": "/images/about/profile-photo.png",
       "bio": "Full-stack developer passionate about building scalable web applications"
+    },
+    "slug": "building-taskforge-with-next-js-and-socket-io-lessons-learned",
+    "seo": {
+      "title": "Building TaskForge with Next.js and Socket.io — Built by Ancel | Lessons Learned",
+      "description": "Building TaskForge with Next.js and Socket.io is a platform built by Ancel featuring real-time, robust capabilities, and excellent performance. Designed with Ne",
+      "keywords": [
+        "Building TaskForge with Next.js and Socket.io",
+        "Building TaskForge with Next.js and Socket.io app",
+        "Building TaskForge with Next.js and Socket.io platform",
+        "Ancel",
+        "Ancel portfolio",
+        "software engineer Ancel",
+        "Ancel Ajanga",
+        "Next.js",
+        "Socket.io",
+        "Real-time"
+      ],
+      "ogTitle": "Building TaskForge with Next.js and Socket.io — Built by Ancel | Lessons Learned",
+      "ogDescription": "Building TaskForge with Next.js and Socket.io is a platform built by Ancel featuring real-time, robust capabilities, and excellent performance. Designed with Ne",
+      "ogImage": "/images/dev-journal/building-taskforge-with-next-js-and-socket-io-lessons-learned.webp",
+      "twitterCard": "summary_large_image",
+      "canonicalUrl": "/developer-journal/building-taskforge-with-next-js-and-socket-io-lessons-learned"
     }
   },
   {
@@ -45,7 +67,7 @@
     ],
     "date": "2024-12-20",
     "readTime": "10 min read",
-    "image": "/images/projects/elearn.png",
+    "image": "/images/dev-journal/scaling-an-e-learning-platform-with-django-react.webp",
     "level": "intermediate",
     "whoThisIsFor": "Ed-tech teams and institutions scaling online courses, instructors who need robust course management, and engineers choosing Django vs Node for content-heavy backends.",
     "problem": "Platforms that serve thousands of students often degrade under load, lack clear auth and progress tracking, or lock you into expensive vendors.",
@@ -60,6 +82,28 @@
       "name": "Ancel Ajanga",
       "avatar": "/images/about/profile-photo.png",
       "bio": "Full-stack developer passionate about building scalable web applications"
+    },
+    "slug": "scaling-an-e-learning-platform-with-django-react",
+    "seo": {
+      "title": "Scaling an E — Built by Ancel | Learning Platform with Django + React",
+      "description": "Scaling an E is a platform built by Ancel featuring real-time, robust capabilities, and excellent performance. Designed with Django, React, E-Learning, Scalabil",
+      "keywords": [
+        "Scaling an E",
+        "Scaling an E app",
+        "Scaling an E platform",
+        "Ancel",
+        "Ancel portfolio",
+        "software engineer Ancel",
+        "Ancel Ajanga",
+        "Django",
+        "React",
+        "E-Learning"
+      ],
+      "ogTitle": "Scaling an E — Built by Ancel | Learning Platform with Django + React",
+      "ogDescription": "Scaling an E is a platform built by Ancel featuring real-time, robust capabilities, and excellent performance. Designed with Django, React, E-Learning, Scalabil",
+      "ogImage": "/images/dev-journal/scaling-an-e-learning-platform-with-django-react.webp",
+      "twitterCard": "summary_large_image",
+      "canonicalUrl": "/developer-journal/scaling-an-e-learning-platform-with-django-react"
     }
   },
   {
@@ -76,12 +120,34 @@
     ],
     "date": "2024-11-10",
     "readTime": "6 min read",
-    "image": "/images/projects/finance-tracker.png",
+    "image": "/images/dev-journal/why-i-built-a-finance-tracker-in-vue-3.webp",
     "level": "beginner",
     "author": {
       "name": "Ancel Ajanga",
       "avatar": "/images/about/profile-photo.png",
       "bio": "Full-stack developer passionate about building scalable web applications"
+    },
+    "slug": "why-i-built-a-finance-tracker-in-vue-3",
+    "seo": {
+      "title": "Why I Built a Finance Tracker in Vue 3 — Built by Ancel | Software Application",
+      "description": "Why I Built a Finance Tracker in Vue 3 is a platform built by Ancel featuring real-time, robust capabilities, and excellent performance. Designed with Vue.js, F",
+      "keywords": [
+        "Why I Built a Finance Tracker in Vue 3",
+        "Why I Built a Finance Tracker in Vue 3 app",
+        "Why I Built a Finance Tracker in Vue 3 platform",
+        "Ancel",
+        "Ancel portfolio",
+        "software engineer Ancel",
+        "Ancel Ajanga",
+        "Vue.js",
+        "Finance",
+        "Data Visualization"
+      ],
+      "ogTitle": "Why I Built a Finance Tracker in Vue 3 — Built by Ancel | Software Application",
+      "ogDescription": "Why I Built a Finance Tracker in Vue 3 is a platform built by Ancel featuring real-time, robust capabilities, and excellent performance. Designed with Vue.js, F",
+      "ogImage": "/images/dev-journal/why-i-built-a-finance-tracker-in-vue-3.webp",
+      "twitterCard": "summary_large_image",
+      "canonicalUrl": "/developer-journal/why-i-built-a-finance-tracker-in-vue-3"
     }
   },
   {
@@ -98,12 +164,34 @@
     ],
     "date": "2024-10-05",
     "readTime": "7 min read",
-    "image": "/images/projects/fitness.png",
+    "image": "/images/dev-journal/angular-20-in-production-the-fitness-class-scheduler-journey.webp",
     "level": "beginner",
     "author": {
       "name": "Ancel Ajanga",
       "avatar": "/images/about/profile-photo.png",
       "bio": "Full-stack developer passionate about building scalable web applications"
+    },
+    "slug": "angular-20-in-production-the-fitness-class-scheduler-journey",
+    "seo": {
+      "title": "Angular 20 in Production: The Fitness Class Scheduler Journey — Built by Ancel | Software Application",
+      "description": "Angular 20 in Production: The Fitness Class Scheduler Journey is a platform built by Ancel featuring real-time, robust capabilities, and excellent performance. ",
+      "keywords": [
+        "Angular 20 in Production: The Fitness Class Scheduler Journey",
+        "Angular 20 in Production: The Fitness Class Scheduler Journey app",
+        "Angular 20 in Production: The Fitness Class Scheduler Journey platform",
+        "Ancel",
+        "Ancel portfolio",
+        "software engineer Ancel",
+        "Ancel Ajanga",
+        "Angular",
+        "SSR",
+        "Signals"
+      ],
+      "ogTitle": "Angular 20 in Production: The Fitness Class Scheduler Journey — Built by Ancel | Software Application",
+      "ogDescription": "Angular 20 in Production: The Fitness Class Scheduler Journey is a platform built by Ancel featuring real-time, robust capabilities, and excellent performance. ",
+      "ogImage": "/images/dev-journal/angular-20-in-production-the-fitness-class-scheduler-journey.webp",
+      "twitterCard": "summary_large_image",
+      "canonicalUrl": "/developer-journal/angular-20-in-production-the-fitness-class-scheduler-journey"
     }
   },
   {
@@ -120,12 +208,34 @@
     ],
     "date": "2024-09-15",
     "readTime": "12 min read",
-    "image": "/images/projects/attendance.png",
+    "image": "/images/dev-journal/from-student-to-freelancer-my-journey-since-2021.webp",
     "level": "beginner",
     "author": {
       "name": "Ancel Ajanga",
       "avatar": "/images/about/profile-photo.png",
       "bio": "Full-stack developer passionate about building scalable web applications"
+    },
+    "slug": "from-student-to-freelancer-my-journey-since-2021",
+    "seo": {
+      "title": "From Student to Freelancer: My Journey Since 2021 — Built by Ancel | Software Application",
+      "description": "From Student to Freelancer: My Journey Since 2021 is a platform built by Ancel featuring real-time, robust capabilities, and excellent performance. Designed wit",
+      "keywords": [
+        "From Student to Freelancer: My Journey Since 2021",
+        "From Student to Freelancer: My Journey Since 2021 app",
+        "From Student to Freelancer: My Journey Since 2021 platform",
+        "Ancel",
+        "Ancel portfolio",
+        "software engineer Ancel",
+        "Ancel Ajanga",
+        "Journey",
+        "Learning",
+        "Freelancing"
+      ],
+      "ogTitle": "From Student to Freelancer: My Journey Since 2021 — Built by Ancel | Software Application",
+      "ogDescription": "From Student to Freelancer: My Journey Since 2021 is a platform built by Ancel featuring real-time, robust capabilities, and excellent performance. Designed wit",
+      "ogImage": "/images/dev-journal/from-student-to-freelancer-my-journey-since-2021.webp",
+      "twitterCard": "summary_large_image",
+      "canonicalUrl": "/developer-journal/from-student-to-freelancer-my-journey-since-2021"
     }
   },
   {
@@ -142,12 +252,34 @@
     ],
     "date": "2024-08-20",
     "readTime": "9 min read",
-    "image": "/images/projects/travel.png",
+    "image": "/images/dev-journal/how-travelogue-taught-me-the-power-of-maps-in-web-apps.webp",
     "level": "intermediate",
     "author": {
       "name": "Ancel Ajanga",
       "avatar": "/images/about/profile-photo.png",
       "bio": "Full-stack developer passionate about building scalable web applications"
+    },
+    "slug": "how-travelogue-taught-me-the-power-of-maps-in-web-apps",
+    "seo": {
+      "title": "How Travelogue Taught Me the Power of Maps in Web Apps — Built by Ancel | Software Application",
+      "description": "How Travelogue Taught Me the Power of Maps in Web Apps is a platform built by Ancel featuring real-time, robust capabilities, and excellent performance. Designe",
+      "keywords": [
+        "How Travelogue Taught Me the Power of Maps in Web Apps",
+        "How Travelogue Taught Me the Power of Maps in Web Apps app",
+        "How Travelogue Taught Me the Power of Maps in Web Apps platform",
+        "Ancel",
+        "Ancel portfolio",
+        "software engineer Ancel",
+        "Ancel Ajanga",
+        "Maps",
+        "Leaflet.js",
+        "Travel"
+      ],
+      "ogTitle": "How Travelogue Taught Me the Power of Maps in Web Apps — Built by Ancel | Software Application",
+      "ogDescription": "How Travelogue Taught Me the Power of Maps in Web Apps is a platform built by Ancel featuring real-time, robust capabilities, and excellent performance. Designe",
+      "ogImage": "/images/dev-journal/how-travelogue-taught-me-the-power-of-maps-in-web-apps.webp",
+      "twitterCard": "summary_large_image",
+      "canonicalUrl": "/developer-journal/how-travelogue-taught-me-the-power-of-maps-in-web-apps"
     }
   },
   {
@@ -163,12 +295,34 @@
     ],
     "date": "2025-09-22",
     "readTime": "5 min read",
-    "image": "/images/projects/bank.png",
+    "image": "/images/dev-journal/designing-a-console-banking-system-to-showcase-oop-java.webp",
     "level": "beginner",
     "author": {
       "name": "Ancel Ajanga",
       "avatar": "/images/about/profile-photo.png",
       "bio": "Fullstack Software Engineer/Developer & App Developer"
+    },
+    "slug": "designing-a-console-banking-system-to-showcase-oop-java",
+    "seo": {
+      "title": "Designing a Console Banking System to Showcase OOP (Java) — Built by Ancel | Software Application",
+      "description": "Designing a Console Banking System to Showcase OOP (Java) is a platform built by Ancel featuring real-time, robust capabilities, and excellent performance. Desi",
+      "keywords": [
+        "Designing a Console Banking System to Showcase OOP (Java)",
+        "Designing a Console Banking System to Showcase OOP (Java) app",
+        "Designing a Console Banking System to Showcase OOP (Java) platform",
+        "Ancel",
+        "Ancel portfolio",
+        "software engineer Ancel",
+        "Ancel Ajanga",
+        "Java",
+        "OOP",
+        "Design"
+      ],
+      "ogTitle": "Designing a Console Banking System to Showcase OOP (Java) — Built by Ancel | Software Application",
+      "ogDescription": "Designing a Console Banking System to Showcase OOP (Java) is a platform built by Ancel featuring real-time, robust capabilities, and excellent performance. Desi",
+      "ogImage": "/images/dev-journal/designing-a-console-banking-system-to-showcase-oop-java.webp",
+      "twitterCard": "summary_large_image",
+      "canonicalUrl": "/developer-journal/designing-a-console-banking-system-to-showcase-oop-java"
     }
   },
   {
@@ -186,12 +340,34 @@
     ],
     "date": "2026-01-20",
     "readTime": "12 min read",
-    "image": "/images/projects/EduChain.png",
+    "image": "/images/dev-journal/building-educhain-a-web3-journey-into-blockchain-certificate-management.webp",
     "level": "advanced",
     "author": {
       "name": "Ancel Ajanga",
       "avatar": "/images/about/profile-photo.png",
       "bio": "Fullstack Software Engineer/Developer & App Developer"
+    },
+    "slug": "building-educhain-a-web3-journey-into-blockchain-certificate-management",
+    "seo": {
+      "title": "Building EduChain: A Web3 Journey into Blockchain Certificate Management — Built by Ancel | Software Application",
+      "description": "Building EduChain: A Web3 Journey into Blockchain Certificate Management is a platform built by Ancel featuring real-time, robust capabilities, and excellent pe",
+      "keywords": [
+        "Building EduChain: A Web3 Journey into Blockchain Certificate Management",
+        "Building EduChain: A Web3 Journey into Blockchain Certificate Management app",
+        "Building EduChain: A Web3 Journey into Blockchain Certificate Management platform",
+        "Ancel",
+        "Ancel portfolio",
+        "software engineer Ancel",
+        "Ancel Ajanga",
+        "Web3",
+        "Blockchain",
+        "Solidity"
+      ],
+      "ogTitle": "Building EduChain: A Web3 Journey into Blockchain Certificate Management — Built by Ancel | Software Application",
+      "ogDescription": "Building EduChain: A Web3 Journey into Blockchain Certificate Management is a platform built by Ancel featuring real-time, robust capabilities, and excellent pe",
+      "ogImage": "/images/dev-journal/building-educhain-a-web3-journey-into-blockchain-certificate-management.webp",
+      "twitterCard": "summary_large_image",
+      "canonicalUrl": "/developer-journal/building-educhain-a-web3-journey-into-blockchain-certificate-management"
     }
   },
   {
@@ -212,12 +388,34 @@
     ],
     "date": "2026-02-01",
     "readTime": "12 min read",
-    "image": "/images/projects/LedgerX.png",
+    "image": "/images/dev-journal/ledgerx-secure-multi-tenant-financial-platform.webp",
     "level": "advanced",
     "author": {
       "name": "Ancel Ajanga",
       "avatar": "/images/about/profile-photo.png",
       "bio": "Fullstack Software Engineer/Developer & App Developer"
+    },
+    "slug": "ledgerx-secure-multi-tenant-financial-platform",
+    "seo": {
+      "title": "LedgerX — Built by Ancel | Secure, Multi-Tenant Financial Platform",
+      "description": "LedgerX is a platform built by Ancel featuring real-time, robust capabilities, and excellent performance. Designed with NestJS, Next.js, TypeScript, PostgreSQL.",
+      "keywords": [
+        "LedgerX",
+        "LedgerX app",
+        "LedgerX platform",
+        "Ancel",
+        "Ancel portfolio",
+        "software engineer Ancel",
+        "Ancel Ajanga",
+        "NestJS",
+        "Next.js",
+        "TypeScript"
+      ],
+      "ogTitle": "LedgerX — Built by Ancel | Secure, Multi-Tenant Financial Platform",
+      "ogDescription": "LedgerX is a platform built by Ancel featuring real-time, robust capabilities, and excellent performance. Designed with NestJS, Next.js, TypeScript, PostgreSQL.",
+      "ogImage": "/images/dev-journal/ledgerx-secure-multi-tenant-financial-platform.webp",
+      "twitterCard": "summary_large_image",
+      "canonicalUrl": "/developer-journal/ledgerx-secure-multi-tenant-financial-platform"
     }
   },
   {
@@ -237,12 +435,34 @@
     ],
     "date": "2026-01-21",
     "readTime": "14 min read",
-    "image": "/images/projects/opsflow.png",
+    "image": "/images/dev-journal/building-opsflow-a-production-ready-incident-management-platform.webp",
     "level": "advanced",
     "author": {
       "name": "Ancel Ajanga",
       "avatar": "/images/about/profile-photo.png",
       "bio": "Fullstack Software Engineer/Developer & App Developer"
+    },
+    "slug": "building-opsflow-a-production-ready-incident-management-platform",
+    "seo": {
+      "title": "Building OpsFlow: A Production — Built by Ancel | Ready Incident Management Platform",
+      "description": "Building OpsFlow: A Production is a platform built by Ancel featuring real-time, robust capabilities, and excellent performance. Designed with NestJS, Next.js, ",
+      "keywords": [
+        "Building OpsFlow: A Production",
+        "Building OpsFlow: A Production app",
+        "Building OpsFlow: A Production platform",
+        "Ancel",
+        "Ancel portfolio",
+        "software engineer Ancel",
+        "Ancel Ajanga",
+        "NestJS",
+        "Next.js",
+        "TypeScript"
+      ],
+      "ogTitle": "Building OpsFlow: A Production — Built by Ancel | Ready Incident Management Platform",
+      "ogDescription": "Building OpsFlow: A Production is a platform built by Ancel featuring real-time, robust capabilities, and excellent performance. Designed with NestJS, Next.js, ",
+      "ogImage": "/images/dev-journal/building-opsflow-a-production-ready-incident-management-platform.webp",
+      "twitterCard": "summary_large_image",
+      "canonicalUrl": "/developer-journal/building-opsflow-a-production-ready-incident-management-platform"
     }
   },
   {
@@ -262,12 +482,34 @@
     ],
     "date": "2026-01-22",
     "readTime": "16 min read",
-    "image": "/images/projects/signflow1.png",
+    "image": "/images/dev-journal/building-signflow-a-real-time-assistive-technology-platform-for-sign-language-translation.webp",
     "level": "advanced",
     "author": {
       "name": "Ancel Ajanga",
       "avatar": "/images/about/profile-photo.png",
       "bio": "Fullstack Software Engineer/Developer & App Developer"
+    },
+    "slug": "building-signflow-a-real-time-assistive-technology-platform-for-sign-language-translation",
+    "seo": {
+      "title": "Building SignFlow: A Real — Built by Ancel | Time Assistive Technology Platform for Sign Language Translation",
+      "description": "Building SignFlow: A Real is a platform built by Ancel featuring real-time, robust capabilities, and excellent performance. Designed with React, Node.js, MongoD",
+      "keywords": [
+        "Building SignFlow: A Real",
+        "Building SignFlow: A Real app",
+        "Building SignFlow: A Real platform",
+        "Ancel",
+        "Ancel portfolio",
+        "software engineer Ancel",
+        "Ancel Ajanga",
+        "React",
+        "Node.js",
+        "MongoDB"
+      ],
+      "ogTitle": "Building SignFlow: A Real — Built by Ancel | Time Assistive Technology Platform for Sign Language Translation",
+      "ogDescription": "Building SignFlow: A Real is a platform built by Ancel featuring real-time, robust capabilities, and excellent performance. Designed with React, Node.js, MongoD",
+      "ogImage": "/images/dev-journal/building-signflow-a-real-time-assistive-technology-platform-for-sign-language-translation.webp",
+      "twitterCard": "summary_large_image",
+      "canonicalUrl": "/developer-journal/building-signflow-a-real-time-assistive-technology-platform-for-sign-language-translation"
     }
   },
   {
@@ -290,12 +532,34 @@
     ],
     "date": "2026-01-30",
     "readTime": "10 min read",
-    "image": "/images/projects/aegis.png",
+    "image": "/images/dev-journal/aegis-zero-knowledge-self-healing-multi-cluster-pull-based-execution-shadow-mode-oidc-ready.webp",
     "level": "advanced",
     "author": {
       "name": "Ancel Ajanga",
       "avatar": "/images/about/profile-photo.png",
       "bio": "Fullstack Software Engineer/Developer & App Developer"
+    },
+    "slug": "aegis-zero-knowledge-self-healing-multi-cluster-pull-based-execution-shadow-mode-oidc-ready",
+    "seo": {
+      "title": "Aegis: Zero — Built by Ancel | Knowledge Self-Healing — Multi-Cluster Pull-Based Execution, Shadow Mode, OIDC-Ready",
+      "description": "Aegis: Zero is a platform built by Ancel featuring real-time, robust capabilities, and excellent performance. Designed with Backend, Security, AI, DevOps.",
+      "keywords": [
+        "Aegis: Zero",
+        "Aegis: Zero app",
+        "Aegis: Zero platform",
+        "Ancel",
+        "Ancel portfolio",
+        "software engineer Ancel",
+        "Ancel Ajanga",
+        "Backend",
+        "Security",
+        "AI"
+      ],
+      "ogTitle": "Aegis: Zero — Built by Ancel | Knowledge Self-Healing — Multi-Cluster Pull-Based Execution, Shadow Mode, OIDC-Ready",
+      "ogDescription": "Aegis: Zero is a platform built by Ancel featuring real-time, robust capabilities, and excellent performance. Designed with Backend, Security, AI, DevOps.",
+      "ogImage": "/images/dev-journal/aegis-zero-knowledge-self-healing-multi-cluster-pull-based-execution-shadow-mode-oidc-ready.webp",
+      "twitterCard": "summary_large_image",
+      "canonicalUrl": "/developer-journal/aegis-zero-knowledge-self-healing-multi-cluster-pull-based-execution-shadow-mode-oidc-ready"
     }
   },
   {
@@ -316,12 +580,34 @@
     ],
     "date": "2026-02-04",
     "readTime": "12 min read",
-    "image": "/images/projects/nestfi.png",
+    "image": "/images/dev-journal/nestfi-resilient-financial-coordination-platform-correctness-under-failure.webp",
     "level": "advanced",
     "author": {
       "name": "Ancel Ajanga",
       "avatar": "/images/about/profile-photo.png",
       "bio": "Fullstack Software Engineer/Developer & App Developer"
+    },
+    "slug": "nestfi-resilient-financial-coordination-platform-correctness-under-failure",
+    "seo": {
+      "title": "NestFi: Resilient Financial Coordination Platform — Built by Ancel | Correctness Under Failure",
+      "description": "NestFi: Resilient Financial Coordination Platform is a platform built by Ancel featuring real-time, robust capabilities, and excellent performance. Designed wit",
+      "keywords": [
+        "NestFi: Resilient Financial Coordination Platform",
+        "NestFi: Resilient Financial Coordination Platform app",
+        "NestFi: Resilient Financial Coordination Platform platform",
+        "Ancel",
+        "Ancel portfolio",
+        "software engineer Ancel",
+        "Ancel Ajanga",
+        "NestJS",
+        "TypeScript",
+        "PostgreSQL"
+      ],
+      "ogTitle": "NestFi: Resilient Financial Coordination Platform — Built by Ancel | Correctness Under Failure",
+      "ogDescription": "NestFi: Resilient Financial Coordination Platform is a platform built by Ancel featuring real-time, robust capabilities, and excellent performance. Designed wit",
+      "ogImage": "/images/dev-journal/nestfi-resilient-financial-coordination-platform-correctness-under-failure.webp",
+      "twitterCard": "summary_large_image",
+      "canonicalUrl": "/developer-journal/nestfi-resilient-financial-coordination-platform-correctness-under-failure"
     }
   },
   {
@@ -341,12 +627,34 @@
     ],
     "date": "2026-02-02",
     "readTime": "14 min read",
-    "image": "/images/projects/fitsbyaliv.png",
+    "image": "/images/dev-journal/fits-by-aliv-kenya-first-e-commerce-with-payment-safe-workflows.webp",
     "level": "advanced",
     "author": {
       "name": "Ancel Ajanga",
       "avatar": "/images/about/profile-photo.png",
       "bio": "Fullstack Software Engineer/Developer & App Developer"
+    },
+    "slug": "fits-by-aliv-kenya-first-e-commerce-with-payment-safe-workflows",
+    "seo": {
+      "title": "Fits by Aliv: Kenya — Built by Ancel | First E-Commerce with Payment-Safe Workflows",
+      "description": "Fits by Aliv: Kenya is a platform built by Ancel featuring real-time, robust capabilities, and excellent performance. Designed with NestJS, Flutter, M-Pesa, E-C",
+      "keywords": [
+        "Fits by Aliv: Kenya",
+        "Fits by Aliv: Kenya app",
+        "Fits by Aliv: Kenya platform",
+        "Ancel",
+        "Ancel portfolio",
+        "software engineer Ancel",
+        "Ancel Ajanga",
+        "NestJS",
+        "Flutter",
+        "M-Pesa"
+      ],
+      "ogTitle": "Fits by Aliv: Kenya — Built by Ancel | First E-Commerce with Payment-Safe Workflows",
+      "ogDescription": "Fits by Aliv: Kenya is a platform built by Ancel featuring real-time, robust capabilities, and excellent performance. Designed with NestJS, Flutter, M-Pesa, E-C",
+      "ogImage": "/images/dev-journal/fits-by-aliv-kenya-first-e-commerce-with-payment-safe-workflows.webp",
+      "twitterCard": "summary_large_image",
+      "canonicalUrl": "/developer-journal/fits-by-aliv-kenya-first-e-commerce-with-payment-safe-workflows"
     }
   },
   {
@@ -365,12 +673,34 @@
     ],
     "date": "2026-04-01",
     "readTime": "12 min read",
-    "image": "/images/projects/Inkly.png",
+    "image": "/images/dev-journal/inkly-architecting-a-secure-real-time-messaging-platform.webp",
     "level": "advanced",
     "author": {
       "name": "Ancel Ajanga",
       "avatar": "/images/about/profile-photo.png",
       "bio": "Fullstack Software Engineer/Developer & App Developer"
+    },
+    "slug": "inkly-architecting-a-secure-real-time-messaging-platform",
+    "seo": {
+      "title": "Inkly: Architecting a Secure Real — Built by Ancel | Time Messaging Platform",
+      "description": "Inkly: Architecting a Secure Real is a platform built by Ancel featuring real-time, robust capabilities, and excellent performance. Designed with Node.js, Flutt",
+      "keywords": [
+        "Inkly: Architecting a Secure Real",
+        "Inkly: Architecting a Secure Real app",
+        "Inkly: Architecting a Secure Real platform",
+        "Ancel",
+        "Ancel portfolio",
+        "software engineer Ancel",
+        "Ancel Ajanga",
+        "Node.js",
+        "Flutter",
+        "WebSockets"
+      ],
+      "ogTitle": "Inkly: Architecting a Secure Real — Built by Ancel | Time Messaging Platform",
+      "ogDescription": "Inkly: Architecting a Secure Real is a platform built by Ancel featuring real-time, robust capabilities, and excellent performance. Designed with Node.js, Flutt",
+      "ogImage": "/images/dev-journal/inkly-architecting-a-secure-real-time-messaging-platform.webp",
+      "twitterCard": "summary_large_image",
+      "canonicalUrl": "/developer-journal/inkly-architecting-a-secure-real-time-messaging-platform"
     }
   }
 ]

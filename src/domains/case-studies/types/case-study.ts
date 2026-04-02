@@ -53,4 +53,14 @@ export interface CaseStudy {
   problemSolutionBridge?: string
   failureModes?: string
   keyTerms?: { term: string; explanation: string }[]
+  seo?: {
+    title: string
+    description: string
+    keywords: string[]
+    ogTitle: string
+    ogDescription: string
+    ogImage: string
+    twitterCard: string
+    canonicalUrl: string
+  }
 }

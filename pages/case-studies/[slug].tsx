@@ -52,13 +52,14 @@ export default function CaseStudyDetailRoute({ slug, caseStudy }: { slug: string
   return (
     <>
       <SEOHead
-        title={caseStudy.title}
-        description={metaDescription}
-        canonical={`/case-studies/${caseStudy.slug}`}
-        ogImage={caseStudy.images.hero}
-        ogTitle={ogTitle}
+        title={caseStudy.seo?.title || caseStudy.title}
+        description={caseStudy.seo?.description || metaDescription}
+        canonical={caseStudy.seo?.canonicalUrl || `/case-studies/${caseStudy.slug}`}
+        ogImage={caseStudy.seo?.ogImage || caseStudy.images.hero}
+        ogTitle={caseStudy.seo?.ogTitle || ogTitle}
+        twitterCard={caseStudy.seo?.twitterCard || 'summary_large_image'}
         ogType="article"
-        keywords={caseStudy.technologies.map((tech) => tech.name)}
+        keywords={caseStudy.seo?.keywords || caseStudy.technologies.map((tech) => tech.name)}
         publishedTime={caseStudy.year}
         jsonLd={jsonLd}
       />

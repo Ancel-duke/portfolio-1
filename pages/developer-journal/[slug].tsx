@@ -35,12 +35,14 @@ export default function BlogDetailRoute({ slug, post }: { slug: string; post: Bl
   return (
     <>
       <SEOHead
-        title={post.title}
-        description={post.excerpt}
-        canonical={canonicalPath}
-        ogImage={post.image}
+        title={post.seo?.title || post.title}
+        description={post.seo?.description || post.excerpt}
+        canonical={post.seo?.canonicalUrl || canonicalPath}
+        ogImage={post.seo?.ogImage || post.image}
+        ogTitle={post.seo?.ogTitle || post.title}
+        twitterCard={post.seo?.twitterCard as any || 'summary_large_image'}
         ogType="article"
-        keywords={['Ancel Ajanga', 'Developer Journal', ...(post.tags || [])]}
+        keywords={post.seo?.keywords || ['Ancel Ajanga', 'Developer Journal', ...(post.tags || [])]}
         publishedTime={post.date}
         modifiedTime={post.date}
         jsonLd={jsonLd}
