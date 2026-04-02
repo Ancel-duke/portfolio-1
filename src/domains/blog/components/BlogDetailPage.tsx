@@ -53,6 +53,25 @@ function BlogContentWithCTAs({ content }: { content: string }) {
             </React.Fragment>
           )
         }
+        if (block.startsWith('## ')) {
+          return <h2 key={index} className="text-2xl font-bold mt-8 mb-4 text-foreground">{block.replace('## ', '')}</h2>
+        }
+
+        const linkMatch = block.match(/\[([^\]]+)\]\(([^)]+)\)/);
+        if (linkMatch) {
+          const textBefore = block.slice(0, linkMatch.index);
+          const linkText = linkMatch[1];
+          const linkUrl = linkMatch[2];
+          const textAfter = block.slice(linkMatch.index! + linkMatch[0].length);
+          return (
+             <p key={index} className="mb-4 text-lg leading-relaxed text-muted-foreground">
+               {textBefore}
+               <Link href={linkUrl} className="text-primary hover:underline font-semibold">{linkText}</Link>
+               {textAfter}
+             </p>
+          )
+        }
+
         return (
           <p key={index} className="mb-4 text-lg leading-relaxed text-muted-foreground">
             {block}
@@ -159,11 +178,11 @@ export function BlogDetailView({ post: postProp, initialSlug }: BlogDetailViewPr
                   <OptimizedImage
                     src={post.image}
                     alt={post.title}
-                    width={800}
-                    height={450}
+                    width={1200}
+                    height={630}
                     priority={false}
                     loading="eager"
-                    sizes="(max-width: 768px) 100vw, 800px"
+                    sizes="(max-width: 768px) 100vw, 1200px"
                     className="w-full h-64 rounded-lg mb-6"
                   />
                 )}

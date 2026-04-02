@@ -7,7 +7,7 @@
     "type": "frontend",
     "applicationCategory": "FinanceApplication",
     "description": "Finance Tracker is a personal finance web application developed by Ancel Ajanga. It helps users track personal income and expenses with visual analytics and interactive pie charts showing expense breakdown by category.",
-    "longDescription": "Personal Finance Tracker is a comprehensive financial management application designed for individuals who want to monitor their spending habits and financial health. The app allows users to input income and expenses, categorize transactions, and view detailed analytics through interactive pie charts and graphs.",
+    "longDescription": "Personal Finance Tracker is a comprehensive financial management application designed for individuals who want to monitor their spending habits and financial health. The app allows users to input income and expenses, categorize transactions, and view detailed analytics through interactive pie charts and graphs. Emphasizes frontend architecture, responsive design, smooth animations, and performance optimization for a premium user experience.",
     "impactMetric": "Visual analytics and category-based expense breakdown for informed financial decisions.",
     "problemSummary": "lack of visibility into personal spending and income.",
     "featureList": [
@@ -46,7 +46,13 @@
         "Ancel Ajanga",
         "Vue.js 3",
         "TypeScript",
-        "Vite"
+        "Vite",
+        "Frontend Architecture",
+        "UI Engineering",
+        "Interactive Systems",
+        "Performance Optimization",
+        "React",
+        "Design Systems"
       ],
       "ogTitle": "Finance Tracker — Built by Ancel | Personal Income & Expense Management",
       "ogDescription": "Finance Tracker is a FinanceApplication built by Ancel featuring real-time expense tracking, income management, visual analytics with chart.js. Designed with Vu",
@@ -63,7 +69,7 @@
     "type": "frontend",
     "applicationCategory": "HealthApplication",
     "description": "Fitness Scheduler is a health and fitness web application developed by Ancel Ajanga. A modern Angular SSR application for planning weekly fitness classes with dark mode, responsive design, and client-side persistence.",
-    "longDescription": "Fitness Class Scheduler is a web application designed for fitness instructors and gym owners to manage and schedule weekly fitness classes with server-side rendering, dark mode, and client-side persistence.",
+    "longDescription": "Fitness Class Scheduler is a web application designed for fitness instructors and gym owners to manage and schedule weekly fitness classes with server-side rendering, dark mode, and client-side persistence. Emphasizes frontend architecture, responsive design, smooth animations, and performance optimization for a premium user experience.",
     "impactMetric": "Fast, SEO-friendly SSR with persistent schedule management.",
     "problemSummary": "managing weekly fitness classes and avoiding scheduling conflicts.",
     "featureList": [
@@ -106,7 +112,13 @@
         "Ancel Ajanga",
         "Angular 20",
         "TypeScript",
-        "Angular SSR"
+        "Angular SSR",
+        "Frontend Architecture",
+        "UI Engineering",
+        "Interactive Systems",
+        "Performance Optimization",
+        "React",
+        "Design Systems"
       ],
       "ogTitle": "Fitness Scheduler — Built by Ancel | Weekly Class Planning",
       "ogDescription": "Fitness Scheduler is a HealthApplication built by Ancel featuring server-side rendering for fast loading and seo, add, edit, and remove fitness classes, table a",
@@ -123,7 +135,7 @@
     "type": "frontend",
     "applicationCategory": "ProductivityApplication",
     "description": "Habit Tracker is a productivity Progressive Web App developed by Ancel Ajanga. It tracks daily habits and builds momentum through streak counting with comprehensive analytics and visual charts.",
-    "longDescription": "Habit Tracker & Streak Counter helps users build and maintain positive daily habits with automatic streak calculation, Chart.js analytics, PWA offline support, and glass morphism design.",
+    "longDescription": "Habit Tracker & Streak Counter helps users build and maintain positive daily habits with automatic streak calculation, Chart.js analytics, PWA offline support, and glass morphism design. Emphasizes frontend architecture, responsive design, smooth animations, and performance optimization for a premium user experience.",
     "impactMetric": "PWA with offline support and streak-based motivation.",
     "problemSummary": "building consistent daily habits and tracking momentum.",
     "featureList": [
@@ -168,7 +180,13 @@
         "Ancel Ajanga",
         "React 19",
         "Tailwind CSS",
-        "React Router DOM"
+        "React Router DOM",
+        "Frontend Architecture",
+        "UI Engineering",
+        "Interactive Systems",
+        "Performance Optimization",
+        "React",
+        "Design Systems"
       ],
       "ogTitle": "Habit Tracker — Built by Ancel | Streak Counter & Productivity",
       "ogDescription": "Habit Tracker is a ProductivityApplication built by Ancel featuring habit creation and management, automatic streak calculation, analytics with chart.js visuali",
@@ -185,7 +203,7 @@
     "type": "frontend",
     "applicationCategory": "UtilitiesApplication",
     "description": "Event Countdown is a utilities web application developed by Ancel Ajanga. A feature-rich countdown timer for creating and managing multiple countdowns for life events with recurring events and smart notifications.",
-    "longDescription": "Event Countdown Timer helps users track and celebrate important life events with recurring countdowns, smart notifications, confetti and audio alerts, and URL sharing.",
+    "longDescription": "Event Countdown Timer helps users track and celebrate important life events with recurring countdowns, smart notifications, confetti and audio alerts, and URL sharing. Emphasizes frontend architecture, responsive design, smooth animations, and performance optimization for a premium user experience.",
     "impactMetric": "Lightweight vanilla JS with browser APIs and recurring events.",
     "problemSummary": "tracking and celebrating life events with reliable reminders.",
     "featureList": [
@@ -231,7 +249,13 @@
         "Ancel Ajanga",
         "HTML5",
         "CSS3",
-        "Vanilla JavaScript"
+        "Vanilla JavaScript",
+        "Frontend Architecture",
+        "UI Engineering",
+        "Interactive Systems",
+        "Performance Optimization",
+        "React",
+        "Design Systems"
       ],
       "ogTitle": "Event Countdown — Built by Ancel | Life Events Timer",
       "ogDescription": "Event Countdown is a UtilitiesApplication built by Ancel featuring multiple countdown views (list and individual), recurring events (daily/weekly/monthly/yearly",
@@ -248,7 +272,7 @@
     "type": "frontend",
     "applicationCategory": "TravelApplication",
     "description": "Travelogue is a travel platform developed by Ancel Ajanga. It features interactive world maps, travel stories, destination exploration, and responsive design for travel enthusiasts.",
-    "longDescription": "Travelogue is a travel platform with interactive Leaflet/OpenStreetMap maps, masonry photo grids, blog-style stories, and dark/light theme for destination discovery.",
+    "longDescription": "Travelogue is a travel platform with interactive Leaflet/OpenStreetMap maps, masonry photo grids, blog-style stories, and dark/light theme for destination discovery. Emphasizes frontend architecture, responsive design, smooth animations, and performance optimization for a premium user experience.",
     "impactMetric": "Interactive maps and responsive design for travel discovery.",
     "problemSummary": "exploring destinations and reading travel stories in one place.",
     "featureList": [
@@ -296,7 +320,13 @@
         "Ancel Ajanga",
         "React 18",
         "Create React App",
-        "Tailwind CSS 3.3.0"
+        "Tailwind CSS 3.3.0",
+        "Frontend Architecture",
+        "UI Engineering",
+        "Interactive Systems",
+        "Performance Optimization",
+        "React",
+        "Design Systems"
       ],
       "ogTitle": "Travelogue — Built by Ancel | Travel Storytelling Website",
       "ogDescription": "Travelogue is a TravelApplication built by Ancel featuring interactive world map with leaflet.js and openstreetmap, masonry photo grid with lightbox, blog-style",
@@ -313,7 +343,7 @@
     "type": "frontend",
     "applicationCategory": "EducationApplication",
     "description": "Rasoha Academy is an education website developed by Ancel Ajanga. A modern, responsive site for a private school in Narok, Kenya, providing programs, events, and resources for students and parents.",
-    "longDescription": "Rasoha Academy is the official site for a private school in Narok, Kenya: programs, events, photo gallery, contact, downloads, FAQ, PWA offline access, and SEO optimization.",
+    "longDescription": "Rasoha Academy is the official site for a private school in Narok, Kenya: programs, events, photo gallery, contact, downloads, FAQ, PWA offline access, and SEO optimization. Emphasizes frontend architecture, responsive design, smooth animations, and performance optimization for a premium user experience.",
     "impactMetric": "PWA with SEO and high performance for school communications.",
     "problemSummary": "centralizing school info and events for students and parents.",
     "featureList": [
@@ -367,7 +397,13 @@
         "Ancel Ajanga",
         "React 19.1.1",
         "React Router DOM 7.7.1",
-        "React Scripts 5.0.1"
+        "React Scripts 5.0.1",
+        "Frontend Architecture",
+        "UI Engineering",
+        "Interactive Systems",
+        "Performance Optimization",
+        "React",
+        "Design Systems"
       ],
       "ogTitle": "Rasoha Academy — Built by Ancel | School Website",
       "ogDescription": "Rasoha Academy is a EducationApplication built by Ancel featuring academic programs and school info, events and announcements, photo gallery. Designed with Reac",
@@ -839,7 +875,7 @@
     "type": "fullstack",
     "applicationCategory": "AccessibilityApplication",
     "description": "SignFlow is an accessibility application developed by Ancel Ajanga. A high-fidelity assistive technology platform for real-time sign language translation with WebSocket streaming, 3D avatar simulation, and WCAG-compliant accessibility-first design.",
-    "longDescription": "High-fidelity assistive platform: real-time sign language translation, WebSocket streaming, 3D avatar (Three.js/React Three Fiber), WCAG compliance, React/Node/MongoDB.",
+    "longDescription": "High-fidelity assistive platform: real-time sign language translation, WebSocket streaming, 3D avatar (Three.js/React Three Fiber), WCAG compliance, React/Node/MongoDB. Emphasizes frontend architecture, responsive design, smooth animations, and performance optimization for a premium user experience.",
     "impactMetric": "Real-time WebSocket streaming, 3D avatar simulation, full WCAG compliance.",
     "problemSummary": "real-time sign language translation and accessibility at scale.",
     "featureList": [
@@ -883,7 +919,12 @@
         "Ancel Ajanga",
         "React",
         "Node.js",
-        "Express"
+        "Express",
+        "Frontend Architecture",
+        "UI Engineering",
+        "Interactive Systems",
+        "Performance Optimization",
+        "Design Systems"
       ],
       "ogTitle": "SignFlow — Built by Ancel | Real-Time Sign Language Translation Platform",
       "ogDescription": "SignFlow is a AccessibilityApplication built by Ancel featuring real-time sign language translation, websocket-powered streaming, 3d avatar simulation (three.js",
@@ -1106,7 +1147,7 @@
     "type": "fullstack",
     "applicationCategory": "ShoppingApplication",
     "description": "Fits by Aliv is a full-stack e-commerce application developed by Ancel Ajanga: a Kenya-first marketplace for thrift and sustainable fashion. Production-grade checkout with M-Pesa STK Push, vouchers, and VAT/WHT; soft inventory reservations and verified payment reconciliation prevent oversell and double-spend.",
-    "longDescription": "Kenya-first e-commerce: NestJS, PostgreSQL (Prisma), Redis, BullMQ, Flutter, M-Pesa STK Push, vouchers, VAT/WHT, soft inventory reservations, verified reconciliation, AI-assisted self-healing jobs.",
+    "longDescription": "Kenya-first e-commerce: NestJS, PostgreSQL (Prisma), Redis, BullMQ, Flutter, M-Pesa STK Push, vouchers, VAT/WHT, soft inventory reservations, verified reconciliation, AI-assisted self-healing jobs. Emphasizes frontend architecture, responsive design, smooth animations, and performance optimization for a premium user experience.",
     "impactMetric": "No oversell, no voucher double-spend, no blind trust in payment callbacks.",
     "problemSummary": "production-grade checkout and inventory integrity for Kenya marketplaces.",
     "featureList": [
@@ -1152,7 +1193,13 @@
         "Ancel Ajanga",
         "NestJS",
         "TypeScript",
-        "PostgreSQL"
+        "PostgreSQL",
+        "Frontend Architecture",
+        "UI Engineering",
+        "Interactive Systems",
+        "Performance Optimization",
+        "React",
+        "Design Systems"
       ],
       "ogTitle": "Fits by Aliv — Built by Ancel | Kenya-First E-Commerce Marketplace",
       "ogDescription": "Fits by Aliv is a ShoppingApplication built by Ancel featuring product catalog, cart, and checkout, m-pesa stk push with verified reconciliation, vouchers and r",
@@ -1169,7 +1216,7 @@
     "type": "fullstack",
     "applicationCategory": "CommunicationApplication",
     "description": "Inkly is a production-grade secure messaging platform I built to answer: How do you guarantee privacy, scale WebSockets horizontally, and maintain real-time sync when networks fail?",
-    "longDescription": "Inkly is a secure real-time messaging application I built to answer: How do you guarantee privacy, scale WebSockets horizontally, and maintain real-time sync when networks fail? It features sacred bond encryption, CRDT notebooks, and offline queues.",
+    "longDescription": "Inkly is a secure real-time messaging application I built to answer: How do you guarantee privacy, scale WebSockets horizontally, and maintain real-time sync when networks fail? It features sacred bond encryption, CRDT notebooks, and offline queues. Emphasizes frontend architecture, responsive design, smooth animations, and performance optimization for a premium user experience.",
     "impactMetric": "Real-time messaging, offline queue, notebooks (CRDT), polaroids, sacred bond encryption, cold storage, WebSocket scaling.",
     "problemSummary": "Secure real-time messaging with encrypted communication.",
     "featureList": [
@@ -1219,7 +1266,13 @@
         "Ancel Ajanga",
         "Node.js",
         "TypeScript",
-        "Express"
+        "Express",
+        "Frontend Architecture",
+        "UI Engineering",
+        "Interactive Systems",
+        "Performance Optimization",
+        "React",
+        "Design Systems"
       ],
       "ogTitle": "Inkly — Built by Ancel | Secure, Real-Time Messaging Architecture",
       "ogDescription": "Inkly is a CommunicationApplication built by Ancel featuring real-time messaging, offline queue, notebooks (crdt). Designed with Node.js, TypeScript, Express, P",

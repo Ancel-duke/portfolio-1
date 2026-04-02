@@ -5,25 +5,8 @@ const domain = "https://ancel.co.ke";
 const publicDir = path.join(__dirname, "../public");
 const dataDir = path.join(__dirname, "../src/data");
 
-// BraveBot and other crawlers use <lastmod> to detect changes (ISO 8601 date)
+// ISO 8601 date
 const lastmod = new Date().toISOString().split("T")[0];
-
-// Static routes (always included)
-const staticPages = [
-  { path: "/", changefreq: "weekly", priority: "0.8" },
-  { path: "/about", changefreq: "weekly", priority: "0.8" },
-  { path: "/projects", changefreq: "weekly", priority: "0.8" },
-  { path: "/case-studies", changefreq: "weekly", priority: "0.8" },
-  { path: "/blog", changefreq: "weekly", priority: "0.8" },
-  { path: "/developer-journal", changefreq: "weekly", priority: "0.8" },
-  { path: "/guides", changefreq: "weekly", priority: "0.8" },
-  { path: "/timeline", changefreq: "weekly", priority: "0.8" },
-  { path: "/stack", changefreq: "weekly", priority: "0.8" },
-  { path: "/fun", changefreq: "weekly", priority: "0.8" },
-  { path: "/labs-experiments", changefreq: "weekly", priority: "0.8" },
-  { path: "/contact", changefreq: "weekly", priority: "0.8" },
-  { path: "/nextjs-developer-kenya", changefreq: "weekly", priority: "0.8" },
-];
 
 function loadJson(filePath) {
   try {
@@ -37,36 +20,70 @@ function loadJson(filePath) {
   return null;
 }
 
-// Dynamic: case-studies from case-studies.json
-let caseStudyPaths = [];
-const caseStudiesData = loadJson("case-studies.json");
-if (Array.isArray(caseStudiesData)) {
-  caseStudyPaths = caseStudiesData.map((cs) => ({
-    path: `/case-studies/${cs.slug}`,
-    changefreq: "weekly",
-    priority: "0.8",
-  }));
-} else if (caseStudiesData && Array.isArray(caseStudiesData.caseStudies)) {
-  caseStudyPaths = caseStudiesData.caseStudies.map((cs) => ({
-    path: `/case-studies/${cs.slug}`,
-    changefreq: "weekly",
-    priority: "0.8",
-  }));
+// Static routes
+const staticPages = [
+  { path: "/", changefreq: "weekly", priority: "1.0" },
+  { path: "/projects", changefreq: "weekly", priority: "0.9" },
+  { path: "/case-studies", changefreq: "weekly", priority: "0.9" },
+  { path: "/blog", changefreq: "weekly", priority: "0.8" },
+  { path: "/developer-journal", changefreq: "weekly", priority: "0.8" },
+  { path: "/about", changefreq: "weekly", priority: "0.8" },
+  { path: "/guides", changefreq: "weekly", priority: "0.8" },
+  { path: "/timeline", changefreq: "weekly", priority: "0.8" },
+  { path: "/stack", changefreq: "weekly", priority: "0.8" },
+  { path: "/fun", changefreq: "weekly", priority: "0.8" },
+  { path: "/labs-experiments", changefreq: "weekly", priority: "0.8" },
+  { path: "/contact", changefreq: "weekly", priority: "0.8" },
+  { path: "/nextjs-developer-kenya", changefreq: "weekly", priority: "0.8" },
+];
+
+let urls = [...staticPages];
+
+// Dynamic: projects from projects.json
+const projectsData = loadJson("projects.json");
+if (Array.isArray(projectsData)) {
+  projectsData.forEach((project) => {
+    if (project.slug) {
+      urls.push({
+        path: `/projects/${project.slug}`,
+        changefreq: "weekly",
+        priority: "0.9",
+      });
+    }
+  });
 }
 
-// Dynamic: blog posts — App uses /developer-journal/:slug (slug from title)
+// Dynamic: case-studies from case-studies.json
+const caseStudiesData = loadJson("case-studies.json");
+function addCaseStudies(dataList) {
+  dataList.forEach((cs) => {
+    if (cs.slug) {
+      urls.push({
+        path: `/case-studies/${cs.slug}`,
+        changefreq: "weekly",
+        priority: "0.9",
+      });
+    }
+  });
+}
+if (Array.isArray(caseStudiesData)) {
+  addCaseStudies(caseStudiesData);
+} else if (caseStudiesData && Array.isArray(caseStudiesData.caseStudies)) {
+  addCaseStudies(caseStudiesData.caseStudies);
+}
+
+// Dynamic: blog posts from blog.json
 function slugFromTitle(title) {
   if (!title) return "";
   return title.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
 }
 
-let blogPaths = [];
 const blogData = loadJson("blog.json");
 if (Array.isArray(blogData)) {
   blogData.forEach((post) => {
-    const slug = slugFromTitle(post.title);
+    const slug = post.slug || slugFromTitle(post.title);
     if (slug) {
-      blogPaths.push({
+      urls.push({
         path: `/developer-journal/${slug}`,
         changefreq: "weekly",
         priority: "0.8",
@@ -75,51 +92,32 @@ if (Array.isArray(blogData)) {
   });
 }
 
-// If blog-posts.json exists with slugs, add any missing developer-journal URLs
-const blogPostsData = loadJson("blog-posts.json");
-if (blogPostsData && Array.isArray(blogPostsData.posts)) {
-  blogPostsData.posts.forEach((post) => {
-    const slug = post.slug || slugFromTitle(post.title);
-    if (slug) {
-      const path = `/developer-journal/${slug}`;
-      if (!blogPaths.some((p) => p.path === path)) {
-        blogPaths.push({ path, changefreq: "weekly", priority: "0.8" });
-      }
+// Dynamic: guides from guides.json
+const guidesData = loadJson("guides.json");
+if (Array.isArray(guidesData)) {
+  guidesData.forEach((g) => {
+    if (g.slug) {
+      urls.push({
+        path: `/guides/${g.slug}`,
+        changefreq: "weekly",
+        priority: "0.8",
+      });
     }
   });
 }
 
-// Dynamic: guides from guides.json (programmatic SEO)
-let guidePaths = [];
-const guidesData = loadJson("guides.json");
-if (Array.isArray(guidesData)) {
-  guidePaths = guidesData.map((g) => ({
-    path: `/guides/${g.slug}`,
-    changefreq: "weekly",
-    priority: "0.8",
-  }));
-}
-
-const allUrls = [
-  ...staticPages,
-  ...caseStudyPaths,
-  ...blogPaths,
-  ...guidePaths,
-];
-
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${allUrls
+${urls
   .map(
-    (item) => `
-  <url>
+    (item) => `  <url>
     <loc>${domain}${item.path}</loc>
     <lastmod>${lastmod}</lastmod>
     <changefreq>${item.changefreq}</changefreq>
     <priority>${item.priority}</priority>
   </url>`
   )
-  .join("")}
+  .join("\n")}
 </urlset>`;
 
 if (!fs.existsSync(publicDir)) {
@@ -127,5 +125,4 @@ if (!fs.existsSync(publicDir)) {
 }
 
 fs.writeFileSync(path.join(publicDir, "sitemap.xml"), sitemap);
-console.log("✅ sitemap.xml generated");
-console.log(`   Static: ${staticPages.length}, Case studies: ${caseStudyPaths.length}, Blog: ${blogPaths.length}, Guides: ${guidePaths.length}, Total: ${allUrls.length}`);
+console.log("✅ sitemap.xml generated with exact SGE specifications");

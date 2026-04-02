@@ -12,9 +12,9 @@ export default function AboutPage() {
     <>
       <SEO
         title="About Ancel Ajanga — Full-Stack Software Engineer Narok & Nairobi, Kenya"
-        description="About Ancel Ajanga: Fullstack Software Engineer and Architect based in Narok and Nairobi, Kenya. Full-stack developer East Africa. Security, AIOps, system resilience. Skills: React, NestJS, Flutter, PostgreSQL. Emerging talent."
+        description="Fullstack engineer specializing in scalable backend systems and high-performance frontend experiences"
         canonicalUrl="https://ancel.co.ke/about"
-        keywords={['Narok software engineer', 'Nairobi software architect', 'Full-stack developer Kenya', 'About Ancel Ajanga', 'Software Engineer East Africa']}
+        keywords={['Narok software engineer', 'Nairobi software architect', 'Fullstack Engineer', 'Frontend Architecture', 'UI Engineering', 'Interactive Systems', 'Performance Optimization', 'Full-stack developer Kenya', 'About Ancel Ajanga', 'Software Engineer East Africa']}
         jsonLd={generateOrganizationSchema()}
       />
       <AboutSection />

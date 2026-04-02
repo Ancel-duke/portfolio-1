@@ -23,7 +23,7 @@ export default function GuidesIndexPage() {
         title="Guides — Architecture, Next.js, SaaS Stack | Ancel Ajanga"
         description="Technical guides by Ancel Ajanga: building with Next.js, real-time systems, and stack comparisons. Fullstack Engineer Narok & Nairobi, Kenya."
         canonicalUrl="https://ancel.co.ke/guides"
-        keywords={['Guides', 'Next.js', 'Django', 'SaaS', 'Architecture', 'Ancel Ajanga', 'Fullstack Engineer Kenya']}
+        keywords={['Guides', 'Next.js', 'Django', 'SaaS', 'Architecture', 'Ancel Ajanga', 'Fullstack Engineer Kenya', 'Fullstack Engineer', 'Frontend Architecture', 'UI Engineering', 'Interactive Systems', 'Performance Optimization']}
       />
       <div className="py-8 sm:py-12 md:py-16 container-custom max-w-4xl">
         <h1 className="text-3xl font-bold mb-2">Guides</h1>

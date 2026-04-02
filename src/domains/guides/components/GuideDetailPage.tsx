@@ -29,19 +29,40 @@ function GuideBody({ text }: { text: string }) {
   const paragraphs = text.split(/\n\n+/).filter(Boolean)
   return (
     <div className="space-y-4">
-      {paragraphs.map((para, i) => (
-        <p key={i} className="text-muted-foreground leading-relaxed">
-          {para.split(/(\*\*[^*]+\*\*)/g).map((part, j) =>
-            part.startsWith('**') && part.endsWith('**') ? (
-              <strong key={j} className="text-foreground font-medium">
-                {part.slice(2, -2)}
-              </strong>
-            ) : (
-              <span key={j}>{part}</span>
-            )
-          )}
-        </p>
-      ))}
+      {paragraphs.map((para, i) => {
+        if (para.startsWith('## ')) {
+          return <h2 key={i} className="text-2xl font-bold mt-8 mb-4 text-foreground">{para.replace('## ', '')}</h2>
+        }
+
+        const linkMatch = para.match(/\[([^\]]+)\]\(([^)]+)\)/);
+        if (linkMatch) {
+          const textBefore = para.slice(0, linkMatch.index);
+          const linkText = linkMatch[1];
+          const linkUrl = linkMatch[2];
+          const textAfter = para.slice(linkMatch.index! + linkMatch[0].length);
+          return (
+             <p key={i} className="text-muted-foreground leading-relaxed">
+               {textBefore}
+               <Link href={linkUrl} className="text-primary hover:underline font-semibold">{linkText}</Link>
+               {textAfter}
+             </p>
+          )
+        }
+
+        return (
+          <p key={i} className="text-muted-foreground leading-relaxed">
+            {para.split(/(\*\*[^*]+\*\*)/g).map((part, j) =>
+              part.startsWith('**') && part.endsWith('**') ? (
+                <strong key={j} className="text-foreground font-medium">
+                  {part.slice(2, -2)}
+                </strong>
+              ) : (
+                <span key={j}>{part}</span>
+              )
+            )}
+          </p>
+        )
+      })}
     </div>
   )
 }

@@ -162,6 +162,11 @@ export function CaseStudyDetailView({ caseStudy: caseStudyProp, initialSlug }: C
                 </p>
               </div>
 
+              {/* Author section: E-E-A-T signals */}
+              <div className="flex items-center text-sm md:text-base text-muted-foreground font-medium border-l-2 border-primary pl-3 py-1 my-2">
+                Written by Ancel — Software Engineer
+              </div>
+
               <div className="flex flex-wrap gap-2 sm:gap-3">
                 <Badge variant="secondary" className="flex items-center text-xs sm:text-sm">
                   <User className="h-3 w-3 sm:h-4 sm:w-4 mr-1" />

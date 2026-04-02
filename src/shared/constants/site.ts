@@ -1,5 +1,5 @@
 export const SITE = {
-  name: 'Ancel Ajanga',
+  name: 'Ancel',
   url: 'https://ancel.co.ke',
   phone: '+25479355755',
   whatsapp: '+25479355755',

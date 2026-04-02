@@ -183,7 +183,7 @@ export function About({ className, fullPage }: AboutProps) {
                   <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">About Me</h3>
                   <div className="space-y-3 sm:space-y-4 text-muted-foreground text-sm sm:text-base leading-relaxed">
                     <p>
-                      Hi, I'm Ancel Ajanga (also known as Duke), a Fullstack Software Engineer focused on building resilient, production-grade systems. I specialize in designing software that balances strong backend architecture with clean, intuitive user experiences. While I enjoy crafting polished interfaces, my primary focus is on reliability, scalability, and long-term maintainability.
+                      Hi, I'm Ancel Ajanga (also known as Duke), a Fullstack Software Engineer specializing in scalable backend systems and high-performance frontend experiences. I build production-grade systems end-to-end — from meticulously crafted UIs to resilient distributed backends — with a relentless focus on performance, reliability, and long-term maintainability.
                     </p>
                     <p>
                       Based in Nairobi, Kenya, I work across the full software lifecycle—from system design to deployment—turning complex ideas into robust, real-world applications. If you're looking to hire a <Link href="/nextjs-developer-kenya" className="text-primary hover:underline font-medium">Next.js developer in Kenya</Link> or a full-stack developer in Nairobi, I have a dedicated page with case studies and measurable outcomes. My approach is grounded in three core areas:

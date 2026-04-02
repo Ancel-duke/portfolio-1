@@ -29,45 +29,30 @@ export default function Document() {
             __html: JSON.stringify({
               '@context': 'https://schema.org',
               '@type': 'Person',
-              name: SITE.name,
-              alternateName: ['Ajanga Ancel', 'Duke'],
-              jobTitle: 'Fullstack Engineer',
-              description: 'Ancel Ajanga is a Fullstack Engineer and Software Architect based in Nairobi and Narok, Kenya. Building production software since 2024. Specializes in system resilience, security, and AIOps: hardened backends, fluid frontends, and self-healing infrastructure. Delivers measurable outcomes including real-time systems with sub-500ms latency, platforms for 10K+ users, and fintech-grade auditability. Production systems: NestFi, SignFlow, OpsFlow, Aegis, LedgerX, EduChain, EduManage, TaskForge.',
-              url: SITE.url,
-              image: `${SITE.url}${SITE.profileImage}`,
-              mainEntityOfPage: {
-                '@type': 'WebPage',
-                '@id': `${SITE.url}/`,
-              },
-              alumniOf: [
-                { '@type': 'EducationalOrganization', name: 'Moringa School' },
-                { '@type': 'EducationalOrganization', name: 'Institute of Software Technologies' },
-              ],
-              knowsAbout: [
-                'System Resilience',
-                'Next.js',
-                'React',
-                'Node.js',
-                'NestJS',
-                'TypeScript',
-                'Flutter',
-                'PostgreSQL',
-                'MongoDB',
-                'Redis',
-                'Full-Stack Systems Design',
-                'Zero-Trust Infrastructure',
-                'AI Automation Systems',
-                'AI-Augmented Software Engineering',
-                'Real-time Distributed Systems',
-                'Polyglot Persistence (PostgreSQL, MongoDB, Redis)',
-                'Cross-Platform Development (Flutter, React)',
-                'Type-Safe Backend Architecture (Node.js, NestJS, TypeScript)',
-              ],
+              name: 'Ancel',
+              url: 'https://ancel.co.ke',
+              image: 'https://ancel.co.ke/images/about/profile.webp',
               sameAs: [
-                'https://github.com/Ancel-duke',
-                'https://www.linkedin.com/in/ajanga-ancel',
-                SITE.url,
+                SITE.linkedin,
+                SITE.github,
+                SITE.url
               ],
+              jobTitle: 'Software Engineer',
+              knowsAbout: [
+                'Distributed Systems',
+                'Microservices',
+                'Real-time Systems',
+                'AI Systems',
+                'Web Development',
+                'Frontend Development',
+                'UI/UX Engineering',
+                'React Systems',
+                'Design Systems'
+              ],
+              worksFor: {
+                '@type': 'Organization',
+                name: 'Ancel'
+              }
             }),
           }}
         />

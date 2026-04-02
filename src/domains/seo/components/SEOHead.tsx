@@ -29,6 +29,7 @@ const defaultSEO = {
   keywords: [
     'Narok software engineer', 'Nairobi software architect', 'Full-stack developer Kenya',
     'Full-stack developer East Africa', 'Ancel Ajanga', 'Security and AIOps',
+    'Fullstack Engineer', 'Frontend Architecture', 'UI Engineering', 'Interactive Systems', 'Performance Optimization',
     'NestFi', 'SignFlow', 'OpsFlow', 'Aegis', 'LedgerX', 'EduChain', 'EduManage', 'TaskForge',
     'React Developer', 'Node.js Developer', 'NestJS', 'Flutter', 'TypeScript', 'PostgreSQL',
     'System Resilience', 'Web Developer Kenya', 'emerging talent',

@@ -71,12 +71,22 @@ function FooterComponent({ className }: FooterProps) {
                 <div className="w-8 h-8 sm:w-9 sm:h-9 lg:w-8 lg:h-8 xl:w-9 xl:h-9 bg-gradient-to-br from-primary to-accent rounded-lg flex items-center justify-center shrink-0">
                   <span className="text-white font-bold text-sm">A</span>
                 </div>
-                <span className="font-bold text-base sm:text-lg xl:text-xl">{SITE.name}</span>
+                <span className="font-bold text-base sm:text-lg xl:text-xl">Built by {SITE.name}</span>
               </m.div>
-              <p className="text-sm sm:text-base text-muted-foreground max-w-sm">
-                Full-stack developer passionate about building scalable web applications 
-                and creating amazing user experiences.
-              </p>
+              <div className="text-sm sm:text-base text-muted-foreground max-w-sm space-y-2">
+                <div>
+                  <p className="font-medium text-foreground">{SITE.name}</p>
+                  <p>Software Engineer</p>
+                  <p>Nairobi, Kenya</p>
+                </div>
+                <p className="pt-2">
+                  Explore my <Link href="/projects" className="font-medium hover:text-primary transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded underline">Projects</Link>
+                  {' → '}
+                  <Link href="/case-studies" className="font-medium hover:text-primary transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded underline">Case Studies</Link>
+                  {' → '}
+                  <Link href="/developer-journal" className="font-medium hover:text-primary transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded underline">Dev Journal</Link>.
+                </p>
+              </div>
             </div>
 
             {/* Quick Links */}
