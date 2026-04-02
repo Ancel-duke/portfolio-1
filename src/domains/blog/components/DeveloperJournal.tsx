@@ -130,17 +130,20 @@ export function DeveloperJournal() {
                 >
                   <Link href={`/developer-journal/${post.slug}`}>
                     <Card className="h-full hover:shadow-xl transition-all duration-300 border-0 bg-card/50 backdrop-blur-sm overflow-hidden">
-                      {/* Image */}
-                      <div className="relative aspect-video overflow-hidden">
+                      {/* Image — 16:9, object-contain top for app screenshots */}
+                      <div className="relative aspect-video overflow-hidden bg-[#0a0a0a]">
                         <OptimizedImage
                           src={post.image}
                           alt={post.title}
-                          width={800}
-                          height={450}
+                          width={1600}
+                          height={900}
+                          quality={90}
                           priority={index === 0}
                           loading={index < 2 ? 'eager' : 'lazy'}
                           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                          className="w-full h-full group-hover:scale-105 transition-transform duration-500"
+                          className="w-full h-full"
+                          objectFit="contain"
+                          objectPosition="top"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                         <div className="absolute top-4 left-4 flex flex-wrap gap-2">

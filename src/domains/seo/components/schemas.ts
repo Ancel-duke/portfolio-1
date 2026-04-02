@@ -32,15 +32,21 @@ export const generatePersonSchema = (opts?: {
   return {
     "@context": "https://schema.org",
     "@type": "Person",
-    "name": "Ancel",
-    "url": "https://ancel.co.ke",
-    "image": "https://ancel.co.ke/images/about/profile.webp",
+    "@id": `${SITE.url}/#ancel-ajanga`,
+    "name": SITE.fullName,
+    "alternateName": ["Ancel", "Duke"],
+    "url": SITE.url,
+    "image": `${SITE.url}${SITE.profileImage}`,
     "sameAs": [
-      SITE.linkedin,
       SITE.github,
-      SITE.url
+      SITE.linkedin,
+      SITE.twitter,
+      SITE.url,
     ],
-    "jobTitle": "Software Engineer",
+    "jobTitle": "Fullstack Software Engineer",
+    "description": "Fullstack Software Engineer from Nairobi, Kenya. Creator of Inkly, NestFi, LedgerX, Aegis, SignFlow, OpsFlow, EduManage.",
+    "address": { "@type": "PostalAddress", "addressLocality": "Nairobi", "addressCountry": "Kenya" },
+    "email": SITE.email,
     "knowsAbout": [
       "Distributed Systems",
       "Microservices",
@@ -48,13 +54,25 @@ export const generatePersonSchema = (opts?: {
       "AI Systems",
       "Web Development",
       "Frontend Development",
-      "UI/UX Engineering",
+      "Frontend Architecture",
+      "UI Engineering",
       "React Systems",
-      "Design Systems"
+      "Design Systems",
+      "Performance Optimization",
+      "TypeScript",
+      "Node.js",
+      "NestJS",
+      "PostgreSQL",
+      "MongoDB",
+      "Redis",
+      "Flutter",
+      "Fintech Systems",
+      "M-Pesa Integration",
+      "Zero-Trust Security",
     ],
     "worksFor": {
       "@type": "Organization",
-      "name": "Ancel"
+      "name": "Ancel Ajanga"
     }
   };
 };
@@ -66,10 +84,11 @@ export function generateSoftwareDeveloperSchema() {
     "@type": "ProfilePage",
     "mainEntity": {
       "@type": "Person",
-      "name": SITE.name,
-      "alternateName": ["Ajanga Ancel", "Duke"],
+      "@id": `${SITE.url}/#ancel-ajanga`,
+      "name": SITE.fullName,
+      "alternateName": ["Ancel", "Duke"],
       "jobTitle": "Fullstack Software Engineer",
-      "description": "Fullstack engineer specializing in scalable backend systems and high-performance frontend experiences. Based in Narok and Nairobi, Kenya. Projects: Inkly, NestFi, SignFlow, OpsFlow, Aegis, LedgerX, EduChain, EduManage, TaskForge.",
+      "description": "Fullstack Software Engineer specializing in scalable backend systems and high-performance frontend experiences. Based in Nairobi, Kenya. Projects: Inkly, NestFi, SignFlow, OpsFlow, Aegis, LedgerX, EduChain, EduManage, TaskForge.",
       "url": SITE.url,
       "image": `${SITE.url}${SITE.profileImage}`,
       "email": SITE.email,
@@ -77,7 +96,7 @@ export function generateSoftwareDeveloperSchema() {
       "address": { "@type": "PostalAddress", "addressLocality": "Nairobi", "addressCountry": "Kenya" },
       "knowsAbout": ["Full-stack development", "Frontend Architecture", "UI Engineering", "React Systems", "Design Systems", "Performance Optimization", "Interactive Systems", "Security", "AIOps", "System resilience", "NestFi", "SignFlow", "OpsFlow", "Aegis", "LedgerX", "EduChain", "EduManage", "TaskForge", "React", "Node.js", "TypeScript", "NestJS", "Flutter", "PostgreSQL", "MongoDB"],
       "hasCredential": [],
-      "sameAs": [SITE.github, SITE.linkedin, SITE.url]
+      "sameAs": [SITE.github, SITE.linkedin, SITE.twitter, SITE.url]
     }
   };
 }
@@ -93,11 +112,15 @@ export const generateProjectSchema = (project: any) => {
     "operatingSystem": "Web",
     "creator": {
       "@type": "Person",
-      "name": "Ancel"
+      "@id": `${SITE.url}/#ancel-ajanga`,
+      "name": SITE.fullName,
+      "url": SITE.url,
+      "sameAs": [SITE.github, SITE.linkedin, SITE.twitter],
     },
     "url": project.liveUrl ? project.liveUrl : `${base}/projects`,
     "description": project.seo?.description || project.longDescription || project.description,
-    "image": project.image ? (project.image.startsWith('http') ? project.image : base + (project.image.startsWith('/') ? project.image : '/' + project.image)) : undefined
+    "image": project.image ? (project.image.startsWith('http') ? project.image : base + (project.image.startsWith('/') ? project.image : '/' + project.image)) : undefined,
+    "codeRepository": project.repoUrl || project.links?.github,
   };
 };
 
@@ -130,13 +153,15 @@ export const generateBlogPostSchema = (post: any) => ({
   "image": post.image ? (post.image.startsWith("http") ? post.image : `https://ancel.co.ke${post.image.startsWith("/") ? "" : "/"}${post.image}`) : undefined,
   "author": {
     "@type": "Person",
-    "name": post.author?.name || "Ancel Ajanga",
-    "image": post.author?.avatar ? `https://ancel.co.ke${post.author.avatar}` : undefined,
-    "description": post.author?.bio
+    "@id": `${SITE.url}/#ancel-ajanga`,
+    "name": post.author?.name || SITE.fullName,
+    "url": SITE.url,
+    "image": post.author?.avatar ? `https://ancel.co.ke${post.author.avatar}` : `${SITE.url}${SITE.profileImage}`,
+    "sameAs": [SITE.github, SITE.linkedin, SITE.twitter],
   },
   "publisher": {
     "@type": "Person",
-    "name": SITE.name,
+    "name": SITE.fullName,
     "image": `${SITE.url}${SITE.profileImage}`
   },
   "datePublished": post.date,
@@ -170,7 +195,14 @@ export function generateArticleSchema(guide: {
     '@type': 'Article',
     'headline': guide.title,
     'description': guide.summary,
-    'author': { '@type': 'Person', 'name': 'Ancel Ajanga', 'jobTitle': 'Fullstack Engineer' },
+    'author': {
+      '@type': 'Person',
+      '@id': `${SITE.url}/#ancel-ajanga`,
+      'name': SITE.fullName,
+      'jobTitle': 'Fullstack Software Engineer',
+      'url': SITE.url,
+      'sameAs': [SITE.github, SITE.linkedin, SITE.twitter],
+    },
     'datePublished': guide.date,
     'dateModified': guide.date,
     'url': url,
@@ -188,7 +220,10 @@ export const generateCaseStudySchema = (caseStudy: any) => ({
   "description": caseStudy.description,
   "author": {
     "@type": "Person",
-    "name": SITE.name
+    "@id": `${SITE.url}/#ancel-ajanga`,
+    "name": SITE.fullName,
+    "url": SITE.url,
+    "sameAs": [SITE.github, SITE.linkedin, SITE.twitter],
   },
   "datePublished": caseStudy.year,
   "url": `https://ancel.co.ke/case-studies/${caseStudy.slug}`,
@@ -234,7 +269,14 @@ export function generateTechArticleSchema(caseStudy: any) {
     "name": caseStudy.title,
     "description": caseStudy.description,
     "datePublished": caseStudy.year,
-    "author": { "@type": "Person", "name": SITE.name, "jobTitle": "Fullstack Engineer" },
+    "author": {
+      "@type": "Person",
+      "@id": `${SITE.url}/#ancel-ajanga`,
+      "name": SITE.fullName,
+      "jobTitle": "Fullstack Software Engineer",
+      "url": SITE.url,
+      "sameAs": [SITE.github, SITE.linkedin, SITE.twitter],
+    },
     "programmingLanguage": programmingLanguage.length ? programmingLanguage : undefined,
     "about": { "@type": "Thing", "name": "Software Development", "description": caseStudy.problemSolutionBridge || caseStudy.description },
     "keywords": keywords || undefined,
@@ -352,13 +394,16 @@ export function generatePersonWithAreaServedSchema(opts?: { jobTitle?: string })
   const person = {
     '@context': 'https://schema.org',
     '@type': 'Person',
-    '@id': `${SITE.url}/#person`,
-    name: SITE.name,
+    '@id': `${SITE.url}/#ancel-ajanga`,
+    name: SITE.fullName,
+    alternateName: ['Ancel', 'Duke'],
     jobTitle,
     url: SITE.url,
+    image: `${SITE.url}${SITE.profileImage}`,
     sameAs: [
       SITE.github,
       SITE.linkedin,
+      SITE.twitter,
       SITE.url,
     ],
     address: {
@@ -381,7 +426,7 @@ export function generatePersonWithAreaServedSchema(opts?: { jobTitle?: string })
     '@type': 'Service',
     name: `${jobTitle} — Kenya & East Africa`,
     description: 'Next.js, React, Node.js, and full-stack development. Nairobi and Kenya. Available for remote collaboration across Africa.',
-    provider: { '@id': `${SITE.url}/#person` },
+    provider: { '@id': `${SITE.url}/#ancel-ajanga` },
     areaServed: {
       '@type': 'Country',
       name: 'Kenya',
@@ -395,14 +440,15 @@ export function generatePersonWithAreaServedSchema(opts?: { jobTitle?: string })
 export const generateOrganizationSchema = () => ({
   "@context": "https://schema.org",
   "@type": "Organization",
-  "name": "Ancel Ajanga - Freelance Developer",
-  "alternateName": "Ajanga Ancel - Freelance Developer",
-  "description": "Fullstack Software Engineer/Developer & App Developer services specializing in React, Node.js, Python, and modern web technologies",
+  "name": "Ancel Ajanga — Freelance Developer",
+  "alternateName": "Ajanga Ancel — Freelance Developer",
+  "description": "Fullstack Software Engineer specializing in React, Next.js, Node.js, NestJS, and modern web technologies",
   "url": SITE.url,
   "logo": `${SITE.url}${SITE.profileImage}`,
   "founder": {
     "@type": "Person",
-    "name": SITE.name
+    "@id": `${SITE.url}/#ancel-ajanga`,
+    "name": SITE.fullName,
   },
   "address": {
     "@type": "PostalAddress",
@@ -417,12 +463,13 @@ export const generateOrganizationSchema = () => ({
   "sameAs": [
     SITE.github,
     SITE.linkedin,
+    SITE.twitter,
     SITE.url
   ],
   "knowsAbout": [
-    "React", "Node.js", "Python", "JavaScript", "TypeScript", 
-    "MongoDB", "Express", "Django", "Full Stack Development", 
-    "Mobile App Development", "Web Development", "UI/UX Design"
+    "React", "Next.js", "Node.js", "NestJS", "JavaScript", "TypeScript",
+    "MongoDB", "PostgreSQL", "Redis", "Full Stack Development",
+    "Mobile App Development", "Web Development", "UI Engineering"
   ]
 });
 

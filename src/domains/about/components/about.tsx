@@ -6,7 +6,7 @@ import { Button } from '@/shared/components/ui/button'
 import { OptimizedImage } from '@/shared/components/ui/optimized-image'
 import { useAnimationsEnabled } from '@/contexts/AnimationsContext'
 import { getSectionVariants } from '@/shared/utils/animation-variants'
-import { Download, MapPin, Calendar, Code, Users, Award, Target, GraduationCap, Rocket, Briefcase } from 'lucide-react'
+import { Download, MapPin, Calendar, Code, Users, Award, Target, GraduationCap, Rocket, Briefcase, Github, Linkedin, Globe } from 'lucide-react'
 import { cn } from '@/shared/utils'
 import { SITE } from '@/shared/constants/site'
 
@@ -129,17 +129,21 @@ export function About({ className, fullPage }: AboutProps) {
             {/* Profile Card */}
             <m.div variants={itemVariants}>
               <Card className="overflow-hidden">
-                <div className="relative w-full flex-shrink-0 h-80 sm:h-96 overflow-hidden rounded-t-lg">
+                {/* Hero image: responsive height — 50vw on mobile, 480px fixed on desktop */}
+                <div className="relative w-full flex-shrink-0 overflow-hidden rounded-t-lg"
+                     style={{ height: 'clamp(280px, 45vw, 480px)' }}>
                   <OptimizedImage
                     src={SITE.profileImage}
                     alt="Ancel Ajanga"
-                    width={400}
-                    height={400}
+                    width={800}
+                    height={960}
+                    quality={90}
                     priority
                     skipNetlifyCDN
                     sizes="(max-width: 1024px) 100vw, 50vw"
                     className="w-full h-full"
-                    imgClassName="object-cover object-top"
+                    objectFit="cover"
+                    objectPosition="top center"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent pointer-events-none" />
                   <div className="absolute bottom-3 sm:bottom-4 left-3 sm:left-4 right-3 sm:right-4 text-white pointer-events-none">
@@ -168,6 +172,38 @@ export function About({ className, fullPage }: AboutProps) {
                       <Download className="mr-2 h-4 w-4" /> Download Resume
                     </a>
                   </Button>
+
+                  {/* External profile links — entity graph anchors */}
+                  <div className="flex gap-3 mt-3">
+                    <a
+                      href={SITE.github}
+                      target="_blank"
+                      rel="noopener noreferrer me"
+                      aria-label="Ancel Ajanga on GitHub"
+                      className="flex-1 flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg border border-border text-sm font-medium hover:bg-muted transition-colors"
+                    >
+                      <Github className="h-4 w-4" />
+                      GitHub
+                    </a>
+                    <a
+                      href={SITE.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer me"
+                      aria-label="Ancel Ajanga on LinkedIn"
+                      className="flex-1 flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg border border-border text-sm font-medium hover:bg-muted transition-colors"
+                    >
+                      <Linkedin className="h-4 w-4" />
+                      LinkedIn
+                    </a>
+                    <a
+                      href="/ai-index"
+                      aria-label="AI / machine-readable index"
+                      className="flex items-center justify-center gap-2 px-3 py-2.5 rounded-lg border border-border text-sm font-medium hover:bg-muted transition-colors"
+                      title="Machine-readable entity index"
+                    >
+                      <Globe className="h-4 w-4" />
+                    </a>
+                  </div>
                 </CardContent>
               </Card>
             </m.div>

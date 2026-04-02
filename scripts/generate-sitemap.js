@@ -35,6 +35,7 @@ const staticPages = [
   { path: "/labs-experiments", changefreq: "weekly", priority: "0.8" },
   { path: "/contact", changefreq: "weekly", priority: "0.8" },
   { path: "/nextjs-developer-kenya", changefreq: "weekly", priority: "0.8" },
+  { path: "/ai-index", changefreq: "weekly", priority: "0.9" },  // AI crawler hub
 ];
 
 let urls = [...staticPages];

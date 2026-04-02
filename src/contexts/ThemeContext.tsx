@@ -52,13 +52,18 @@ export function ThemeProvider({ children }: ThemeProviderProps) {
 
   useEffect(() => {
     const saved = loadFromLocalStorage('theme', 'system') as Theme
-    setThemeState(saved)
+    const root = window.document.documentElement
+    let resolved: 'light' | 'dark'
     if (saved === 'system') {
-      const system = getSystemTheme()
-      setResolvedTheme(system)
+      resolved = getSystemTheme()
     } else {
-      setResolvedTheme(saved)
+      resolved = saved as 'light' | 'dark'
     }
+    setThemeState(saved)
+    setResolvedTheme(resolved)
+    // Sync class in case the inline script and React state diverge
+    root.classList.remove('light', 'dark')
+    root.classList.add(resolved)
   }, [])
 
   useEffect(() => {

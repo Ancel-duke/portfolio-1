@@ -11,9 +11,9 @@
       "Collaboration",
       "MongoDB"
     ],
-    "date": "2025-01-15",
+    "date": "2024-10-03",
     "readTime": "8 min read",
-    "image": "/images/dev-journal/building-taskforge-with-next-js-and-socket-io-lessons-learned.webp",
+    "image": "/images/dev-journal/taskforge.webp",
     "level": "intermediate",
     "whoThisIsFor": "Teams and product leads who need real-time collaboration (editing, boards, sync) without conflicts, and engineers evaluating Next.js + Socket.io for production.",
     "problem": "Distributed teams face stale data, edit conflicts, and fragmented communication. Off-the-shelf tools often struggle with scalability and real-time consistency.",
@@ -65,9 +65,9 @@
       "Scalability",
       "Authentication"
     ],
-    "date": "2024-12-20",
+    "date": "2024-11-07",
     "readTime": "10 min read",
-    "image": "/images/dev-journal/scaling-an-e-learning-platform-with-django-react.webp",
+    "image": "/images/dev-journal/e-learning.webp",
     "level": "intermediate",
     "whoThisIsFor": "Ed-tech teams and institutions scaling online courses, instructors who need robust course management, and engineers choosing Django vs Node for content-heavy backends.",
     "problem": "Platforms that serve thousands of students often degrade under load, lack clear auth and progress tracking, or lock you into expensive vendors.",
@@ -118,9 +118,9 @@
       "TypeScript",
       "Chart.js"
     ],
-    "date": "2024-11-10",
+    "date": "2024-03-05",
     "readTime": "6 min read",
-    "image": "/images/dev-journal/why-i-built-a-finance-tracker-in-vue-3.webp",
+    "image": "/images/dev-journal/finance-tracker.webp",
     "level": "beginner",
     "author": {
       "name": "Ancel Ajanga",
@@ -162,9 +162,9 @@
       "TypeScript",
       "Fitness"
     ],
-    "date": "2024-10-05",
+    "date": "2024-05-12",
     "readTime": "7 min read",
-    "image": "/images/dev-journal/angular-20-in-production-the-fitness-class-scheduler-journey.webp",
+    "image": "/images/dev-journal/fitness.webp",
     "level": "beginner",
     "author": {
       "name": "Ancel Ajanga",
@@ -206,9 +206,9 @@
       "Growth",
       "Reflection"
     ],
-    "date": "2024-09-15",
+    "date": "2024-07-19",
     "readTime": "12 min read",
-    "image": "/images/dev-journal/from-student-to-freelancer-my-journey-since-2021.webp",
+    "image": "/images/dev-journal/rasoha.webp",
     "level": "beginner",
     "author": {
       "name": "Ancel Ajanga",
@@ -250,9 +250,9 @@
       "Interactive",
       "OpenStreetMap"
     ],
-    "date": "2024-08-20",
+    "date": "2024-12-12",
     "readTime": "9 min read",
-    "image": "/images/dev-journal/how-travelogue-taught-me-the-power-of-maps-in-web-apps.webp",
+    "image": "/images/dev-journal/travelogue.webp",
     "level": "intermediate",
     "author": {
       "name": "Ancel Ajanga",
@@ -293,9 +293,9 @@
       "Design",
       "Console"
     ],
-    "date": "2025-09-22",
+    "date": "2024-09-25",
     "readTime": "5 min read",
-    "image": "/images/dev-journal/designing-a-console-banking-system-to-showcase-oop-java.webp",
+    "image": "/images/dev-journal/ledgerx.webp",
     "level": "beginner",
     "author": {
       "name": "Ancel Ajanga",
@@ -338,9 +338,9 @@
       "IPFS",
       "Ethereum"
     ],
-    "date": "2026-01-20",
+    "date": "2025-03-15",
     "readTime": "12 min read",
-    "image": "/images/dev-journal/building-educhain-a-web3-journey-into-blockchain-certificate-management.webp",
+    "image": "/images/dev-journal/educhain.webp",
     "level": "advanced",
     "author": {
       "name": "Ancel Ajanga",
@@ -386,9 +386,9 @@
       "Stripe",
       "M-Pesa"
     ],
-    "date": "2026-02-01",
+    "date": "2025-05-08",
     "readTime": "12 min read",
-    "image": "/images/dev-journal/ledgerx-secure-multi-tenant-financial-platform.webp",
+    "image": "/images/dev-journal/ledgerx.webp",
     "level": "advanced",
     "author": {
       "name": "Ancel Ajanga",
@@ -433,9 +433,9 @@
       "Incident Management",
       "Multi-Tenant"
     ],
-    "date": "2026-01-21",
+    "date": "2025-07-02",
     "readTime": "14 min read",
-    "image": "/images/dev-journal/building-opsflow-a-production-ready-incident-management-platform.webp",
+    "image": "/images/dev-journal/opsflow.webp",
     "level": "advanced",
     "author": {
       "name": "Ancel Ajanga",
@@ -480,9 +480,9 @@
       "Accessibility",
       "Real-time"
     ],
-    "date": "2026-01-22",
+    "date": "2025-08-26",
     "readTime": "16 min read",
-    "image": "/images/dev-journal/building-signflow-a-real-time-assistive-technology-platform-for-sign-language-translation.webp",
+    "image": "/images/dev-journal/signflow.webp",
     "level": "advanced",
     "author": {
       "name": "Ancel Ajanga",
@@ -530,9 +530,9 @@
       "OIDC",
       "Zero-Trust"
     ],
-    "date": "2026-01-30",
+    "date": "2025-10-19",
     "readTime": "10 min read",
-    "image": "/images/dev-journal/aegis-zero-knowledge-self-healing-multi-cluster-pull-based-execution-shadow-mode-oidc-ready.webp",
+    "image": "/images/dev-journal/aegis.webp",
     "level": "advanced",
     "author": {
       "name": "Ancel Ajanga",
@@ -578,9 +578,9 @@
       "Resilience",
       "Socket.io"
     ],
-    "date": "2026-02-04",
+    "date": "2025-12-13",
     "readTime": "12 min read",
-    "image": "/images/dev-journal/nestfi-resilient-financial-coordination-platform-correctness-under-failure.webp",
+    "image": "/images/dev-journal/nestfi.webp",
     "level": "advanced",
     "author": {
       "name": "Ancel Ajanga",
@@ -625,9 +625,9 @@
       "Firebase",
       "Security"
     ],
-    "date": "2026-02-02",
+    "date": "2026-02-06",
     "readTime": "14 min read",
-    "image": "/images/dev-journal/fits-by-aliv-kenya-first-e-commerce-with-payment-safe-workflows.webp",
+    "image": "/images/dev-journal/fits.webp",
     "level": "advanced",
     "author": {
       "name": "Ancel Ajanga",
@@ -671,9 +671,9 @@
       "MongoDB",
       "Cryptography"
     ],
-    "date": "2026-04-01",
+    "date": "2026-04-02",
     "readTime": "12 min read",
-    "image": "/images/dev-journal/inkly-architecting-a-secure-real-time-messaging-platform.webp",
+    "image": "/images/dev-journal/inkly.webp",
     "level": "advanced",
     "author": {
       "name": "Ancel Ajanga",
@@ -708,7 +708,7 @@
     "slug": "building-frontend-that-feels-instant",
     "title": "I Built a Frontend That Feels Instant — Here's How",
     "excerpt": "Speed is not just about server response time. The gap between a fast app and an instant-feeling app lives entirely in the UI layer.",
-    "date": "2025-01-20",
+    "date": "2025-01-16",
     "readTime": "9 min read",
     "tags": [
       "Frontend",
@@ -735,14 +735,15 @@
       "ogImage": "/images/dev-journal/building-frontend-that-feels-instant.webp",
       "twitterCard": "summary_large_image",
       "canonicalUrl": "/developer-journal/building-frontend-that-feels-instant"
-    }
+    },
+    "level": "intermediate"
   },
   {
     "id": 17,
     "slug": "why-most-uis-feel-slow-and-how-i-fixed-mine",
     "title": "Why Most UIs Feel Slow (And How I Fixed Mine)",
     "excerpt": "The real culprit behind laggy interfaces is almost never the network. It's the rendering pipeline — and most developers never look there.",
-    "date": "2025-02-03",
+    "date": "2025-02-20",
     "readTime": "10 min read",
     "tags": [
       "Frontend",
@@ -769,14 +770,15 @@
       "ogImage": "/images/dev-journal/why-most-uis-feel-slow-and-how-i-fixed-mine.webp",
       "twitterCard": "summary_large_image",
       "canonicalUrl": "/developer-journal/why-most-uis-feel-slow-and-how-i-fixed-mine"
-    }
+    },
+    "level": "intermediate"
   },
   {
     "id": 18,
     "slug": "designing-interfaces-that-actually-scale",
     "title": "Designing Interfaces That Actually Scale",
     "excerpt": "Most UI code breaks the moment a second developer touches it. Here is the architecture that makes interfaces maintainable at any team size.",
-    "date": "2025-02-18",
+    "date": "2025-03-28",
     "readTime": "11 min read",
     "tags": [
       "Design Systems",
@@ -803,6 +805,7 @@
       "ogImage": "/images/dev-journal/designing-interfaces-that-actually-scale.webp",
       "twitterCard": "summary_large_image",
       "canonicalUrl": "/developer-journal/designing-interfaces-that-actually-scale"
-    }
+    },
+    "level": "intermediate"
   }
 ]

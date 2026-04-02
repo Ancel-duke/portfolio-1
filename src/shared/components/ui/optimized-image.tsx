@@ -37,6 +37,10 @@ export interface OptimizedImageProps {
   onError?: () => void;
   /** When true, skip Netlify Image CDN and use the raw src (e.g. profile photo). */
   skipNetlifyCDN?: boolean;
+  /** CSS object-fit value. Defaults to 'cover'. Use 'contain' for UI screenshots. */
+  objectFit?: 'cover' | 'contain' | 'fill' | 'none' | 'scale-down';
+  /** CSS object-position value. Defaults to 'center'. Use 'top' for app screenshots. */
+  objectPosition?: string;
 }
 
 export const OptimizedImage: React.FC<OptimizedImageProps> = ({
@@ -55,6 +59,8 @@ export const OptimizedImage: React.FC<OptimizedImageProps> = ({
   onLoad,
   onError,
   skipNetlifyCDN = false,
+  objectFit = 'cover',
+  objectPosition = 'center',
 }) => {
   const [currentSrc, setCurrentSrc] = React.useState(src);
 
@@ -83,7 +89,8 @@ export const OptimizedImage: React.FC<OptimizedImageProps> = ({
         priority={!!priority}
         loading={priority ? undefined : loading}
         loader={skipNetlifyCDN ? rawLoader : undefined}
-        className={cn('block w-full h-full object-cover', imgClassName)}
+        className={cn('block w-full h-full', imgClassName)}
+        style={{ objectFit, objectPosition }}
         onLoad={onLoad}
         onError={handleImageError}
         placeholder={_placeholder === 'blur' && _blurDataURL ? 'blur' : undefined}

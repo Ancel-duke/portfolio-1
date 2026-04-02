@@ -30,17 +30,20 @@ const ProjectCard = ({ project, onOpenModal, priority = false, caseStudySlug = n
       aria-description={techStackSummary}
       data-ai-context={dataAiContext}
     >
-      {/* One image per card: fixed aspect, clipped, no overflow — parent controls size */}
-      <div className="flex-shrink-0 w-full aspect-video overflow-hidden rounded-xl border border-slate-800 mb-4 md:mb-5">
+      {/* 16:9 image container — object-contain preserves full UI screenshot */}
+      <div className="flex-shrink-0 w-full aspect-video overflow-hidden rounded-xl border border-slate-800 mb-4 md:mb-5 bg-[#0a0a0a]">
         {image ? (
           <OptimizedImage
             src={image}
             alt={`${title} - Software application by Ancel Ajanga`}
-            className="w-full h-full object-cover"
+            className="w-full h-full"
+            objectFit="contain"
+            objectPosition="top"
             priority={priority}
             loading={priority ? "eager" : "lazy"}
-            width={800}
-            height={450}
+            width={1600}
+            height={900}
+            quality={90}
             skipNetlifyCDN
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           />

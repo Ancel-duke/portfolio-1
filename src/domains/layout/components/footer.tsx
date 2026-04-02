@@ -19,6 +19,7 @@ const navigation = [
   { name: 'Stack', href: '/stack' },
   { name: 'Labs & Experiments', href: '/labs-experiments' },
   { name: 'Contact', href: '/contact' },
+  { name: 'AI Index', href: '/ai-index' },
 ]
 
 const socialLinks = [

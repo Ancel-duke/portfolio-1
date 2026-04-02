@@ -185,26 +185,24 @@ function CaseStudyCard({ caseStudy, index, itemVariants }: { caseStudy: CaseStud
         */}
         <Card className="h-full flex flex-col overflow-hidden border-2 border-border/50 bg-card/80 backdrop-blur-sm hover:border-primary/50 hover:shadow-2xl hover:shadow-primary/10 transition-all duration-300 hover:-translate-y-2">
           
-          {/* 
-            IMAGE CONTAINER:
-            - aspect-[3/2] for professional ratio (600x400)
-            - object-cover prevents distortion
-            - Gradient overlay for depth
-          */}
-          <div className="relative overflow-hidden bg-muted aspect-[3/2] w-full">
+          {/* IMAGE CONTAINER: 16:9 ratio, object-contain to show full screenshot */}
+          <div className="relative overflow-hidden bg-[#0a0a0a] aspect-video w-full">
             <OptimizedImage
               src={caseStudy.images.hero}
               alt={caseStudy.title}
-              className="w-full h-full group-hover:scale-110 transition-transform duration-700 ease-out"
+              className="w-full h-full group-hover:scale-105 transition-transform duration-700 ease-out"
+              objectFit="contain"
+              objectPosition="top"
               priority={index === 0}
               loading={index < 2 ? "eager" : "lazy"}
               skipNetlifyCDN
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              width={600}
-              height={400}
+              width={1600}
+              height={900}
+              quality={90}
             />
             {/* Gradient overlay for better text contrast */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-300" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-60 group-hover:opacity-70 transition-opacity duration-300" />
           </div>
 
           {/* 

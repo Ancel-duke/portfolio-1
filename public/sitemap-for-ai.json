@@ -6,7 +6,7 @@
   "jobTitle": "Fullstack Engineer",
   "niche": "System Resilience",
   "baseUrl": "https://ancel.co.ke",
-  "generated": "2026-04-02T16:42:18.381Z",
+  "generated": "2026-04-02T18:26:39.472Z",
   "entries": [
     {
       "url": "https://ancel.co.ke/",
@@ -854,9 +854,9 @@
       "category": "case-study"
     },
     {
-      "url": "https://ancel.co.ke/developer-journal/building-taskforge-with-next-js-and-socket-io-lessons-learned",
-      "title": "Building TaskForge with Next.js and Socket.io — Lessons Learned",
-      "summary": "Exploring the challenges and solutions in building a real-time collaborative project management platform. From WebSocket connections to optimistic UI updates and conflict resolution. Building TaskForge was one of my most challenging and rewarding projects.",
+      "url": "https://ancel.co.ke/developer-journal/most-developers-don-t-understand-failure-and-it-shows",
+      "title": "Most Developers Don’t Understand Failure — And It Shows",
+      "summary": "Exploring the challenges and solutions in building a real-time collaborative project management platform. From WebSocket connections to optimistic UI updates and conflict resolution. ## Hook\nMost software is built on a house of cards.",
       "tech_stack": [
         "Next.js",
         "Socket.io",
@@ -868,9 +868,9 @@
       "category": "article"
     },
     {
-      "url": "https://ancel.co.ke/developer-journal/scaling-an-e-learning-platform-with-django-react",
-      "title": "Scaling an E-Learning Platform with Django + React",
-      "summary": "How I built a scalable e-learning platform that handles thousands of students and courses. Covering authentication, course management, and video delivery optimization. Building a scalable e-learning platform requires careful consideration of architecture, authentication, and content delivery.",
+      "url": "https://ancel.co.ke/developer-journal/from-idea-to-production-what-building-real-systems-actually-teaches-you",
+      "title": "From Idea to Production: What Building Real Systems Actually Teaches You",
+      "summary": "How I built a scalable e-learning platform that handles thousands of students and courses. Covering authentication, course management, and video delivery optimization. ## Hook\nMost software is built on a house of cards.",
       "tech_stack": [
         "Django",
         "React",
@@ -882,9 +882,9 @@
       "category": "article"
     },
     {
-      "url": "https://ancel.co.ke/developer-journal/why-i-built-a-finance-tracker-in-vue-3",
-      "title": "Why I Built a Finance Tracker in Vue 3",
-      "summary": "Exploring the decision to use Vue 3 for a personal finance application. Comparing Vue's reactivity system with other frameworks and the benefits for financial data visualization. When I decided to build a personal finance tracker, I had to choose between React, Angular, and Vue 3.",
+      "url": "https://ancel.co.ke/developer-journal/this-open-source-tool-changed-everything-about-my-deployment-strategy",
+      "title": "This Open-Source Tool Changed Everything About My Deployment Strategy",
+      "summary": "Exploring the decision to use Vue 3 for a personal finance application. Comparing Vue's reactivity system with other frameworks and the benefits for financial data visualization. ## Hook\nMost software is built on a house of cards.",
       "tech_stack": [
         "Vue.js",
         "Finance",
@@ -896,9 +896,9 @@
       "category": "article"
     },
     {
-      "url": "https://ancel.co.ke/developer-journal/angular-20-in-production-the-fitness-class-scheduler-journey",
-      "title": "Angular 20 in Production: The Fitness Class Scheduler Journey",
-      "summary": "My experience building a fitness class scheduler with Angular 20's new features. Covering SSR, signals, and the improved developer experience. Angular 20 brought significant improvements to the framework, and I was excited to build a fitness class scheduler to explore these new features in a real-world application.",
+      "url": "https://ancel.co.ke/developer-journal/the-3-hardest-things-about-building-distributed-systems",
+      "title": "The 3 Hardest Things About Building Distributed Systems",
+      "summary": "My experience building a fitness class scheduler with Angular 20's new features. Covering SSR, signals, and the improved developer experience. ## Hook\nMost software is built on a house of cards.",
       "tech_stack": [
         "Angular",
         "SSR",
@@ -910,9 +910,9 @@
       "category": "article"
     },
     {
-      "url": "https://ancel.co.ke/developer-journal/from-student-to-freelancer-my-journey-since-2021",
-      "title": "From Student to Freelancer: My Journey Since 2021",
-      "summary": "Reflecting on my coding journey from learning HTML and CSS in school to becoming a freelance developer. The challenges, learnings, and growth over the past few years. Looking back at my coding journey since 2021, I'm amazed at how much I've learned and grown.",
+      "url": "https://ancel.co.ke/developer-journal/how-i-cut-cloud-costs-by-rethinking-serverless",
+      "title": "How I Cut Cloud Costs by Rethinking Serverless",
+      "summary": "Reflecting on my coding journey from learning HTML and CSS in school to becoming a freelance developer. The challenges, learnings, and growth over the past few years. ## Hook\nMost software is built on a house of cards.",
       "tech_stack": [
         "Journey",
         "Learning",
@@ -924,8 +924,8 @@
       "category": "article"
     },
     {
-      "url": "https://ancel.co.ke/developer-journal/how-travelogue-taught-me-the-power-of-maps-in-web-apps",
-      "title": "How Travelogue Taught Me the Power of Maps in Web Apps",
+      "url": "https://ancel.co.ke/developer-journal/why-over-engineering-is-the-enemy-of-shipping",
+      "title": "Why Over-Engineering Is the Enemy of Shipping",
       "summary": "Building an interactive travel website with Leaflet.js and OpenStreetMap. Exploring the potential of maps in web applications and the technical challenges of map integration.",
       "tech_stack": [
         "Maps",
@@ -938,9 +938,9 @@
       "category": "article"
     },
     {
-      "url": "https://ancel.co.ke/developer-journal/designing-a-console-banking-system-to-showcase-oop-java",
-      "title": "Designing a Console Banking System to Showcase OOP (Java)",
-      "summary": "A deep dive into a pure Java console application that demonstrates encapsulation, inheritance, abstraction, and polymorphism through realistic banking operations. This project intentionally avoids frameworks and databases to focus on the fundamentals of object‑oriented design.\n\nI.",
+      "url": "https://ancel.co.ke/developer-journal/most-developers-don-t-understand-failure-and-it-shows",
+      "title": "Most Developers Don’t Understand Failure — And It Shows",
+      "summary": "A deep dive into a pure Java console application that demonstrates encapsulation, inheritance, abstraction, and polymorphism through realistic banking operations. ## Hook\nMost software is built on a house of cards. Here is how I learned that the hard way.",
       "tech_stack": [
         "Java",
         "OOP",
@@ -951,9 +951,9 @@
       "category": "article"
     },
     {
-      "url": "https://ancel.co.ke/developer-journal/building-educhain-a-web3-journey-into-blockchain-certificate-management",
-      "title": "Building EduChain: A Web3 Journey into Blockchain Certificate Management",
-      "summary": "Exploring the challenges and solutions in building a full-stack Web3 application that issues verifiable academic certificates as ERC721 NFTs on the Ethereum blockchain. EduChain represents my first deep dive into Web3 development, combining traditional full-stack skills with blockchain technology to solve a real-world problem in education.\n\nI.",
+      "url": "https://ancel.co.ke/developer-journal/from-idea-to-production-what-building-real-systems-actually-teaches-you",
+      "title": "From Idea to Production: What Building Real Systems Actually Teaches You",
+      "summary": "Exploring the challenges and solutions in building a full-stack Web3 application that issues verifiable academic certificates as ERC721 NFTs on the Ethereum blockchain. ## Hook\nMost software is built on a house of cards. Here is how I learned that the hard way.",
       "tech_stack": [
         "Web3",
         "Blockchain",
@@ -966,9 +966,9 @@
       "category": "article"
     },
     {
-      "url": "https://ancel.co.ke/developer-journal/ledgerx-secure-multi-tenant-financial-platform",
-      "title": "LedgerX — Secure, Multi-Tenant Financial Platform",
-      "summary": "How I designed a production-grade fintech backend that is auditable, resilient, secure, and operationally observable—without overengineering. LedgerX is a production-grade, multi-tenant financial platform I built to answer: How would I design a modern fintech backend that is auditable, resilient, secure, and operationally observable—without overengineering or hiding behind abstractions?\n\nI.",
+      "url": "https://ancel.co.ke/developer-journal/this-open-source-tool-changed-everything-about-my-deployment-strategy",
+      "title": "This Open-Source Tool Changed Everything About My Deployment Strategy",
+      "summary": "How I designed a production-grade fintech backend that is auditable, resilient, secure, and operationally observable—without overengineering. ## Hook\nMost software is built on a house of cards. Here is how I learned that the hard way.",
       "tech_stack": [
         "NestJS",
         "Next.js",
@@ -984,9 +984,9 @@
       "category": "article"
     },
     {
-      "url": "https://ancel.co.ke/developer-journal/building-opsflow-a-production-ready-incident-management-platform",
-      "title": "Building OpsFlow: A Production-Ready Incident Management Platform",
-      "summary": "Exploring the architecture and challenges in building a comprehensive incident and workflow management platform with NestJS, Next.js, and dual-database design. OpsFlow represents my journey into building enterprise-grade incident management systems, combining modern full-stack technologies with real-time features, multi-tenant architecture and operational knowledge management.",
+      "url": "https://ancel.co.ke/developer-journal/the-3-hardest-things-about-building-distributed-systems",
+      "title": "The 3 Hardest Things About Building Distributed Systems",
+      "summary": "Exploring the architecture and challenges in building a comprehensive incident and workflow management platform with NestJS, Next.js, and dual-database design. ## Hook\nMost software is built on a house of cards.",
       "tech_stack": [
         "NestJS",
         "Next.js",
@@ -1001,9 +1001,9 @@
       "category": "article"
     },
     {
-      "url": "https://ancel.co.ke/developer-journal/building-signflow-a-real-time-assistive-technology-platform-for-sign-language-translation",
-      "title": "Building SignFlow: A Real-Time Assistive Technology Platform for Sign Language Translation",
-      "summary": "Exploring the architecture and challenges in building a high-fidelity assistive technology simulation for real-time sign language translation with 3D avatar animation and WebSocket streaming. SignFlow represents my journey into building assistive technology platforms, combining real-time communication, 3D graphics, and accessibility-first design to create an immersive sign language translation experience.\n\nI.",
+      "url": "https://ancel.co.ke/developer-journal/how-i-cut-cloud-costs-by-rethinking-serverless",
+      "title": "How I Cut Cloud Costs by Rethinking Serverless",
+      "summary": "Exploring the architecture and challenges in building a high-fidelity assistive technology simulation for real-time sign language translation with 3D avatar animation and WebSocket streaming. ## Hook\nMost software is built on a house of cards. Here is how I learned that the hard way.",
       "tech_stack": [
         "React",
         "Node.js",
@@ -1018,8 +1018,8 @@
       "category": "article"
     },
     {
-      "url": "https://ancel.co.ke/developer-journal/aegis-zero-knowledge-self-healing-multi-cluster-pull-based-execution-shadow-mode-oidc-ready",
-      "title": "Aegis: Zero-Knowledge Self-Healing — Multi-Cluster Pull-Based Execution, Shadow Mode, OIDC-Ready",
+      "url": "https://ancel.co.ke/developer-journal/why-over-engineering-is-the-enemy-of-shipping",
+      "title": "Why Over-Engineering Is the Enemy of Shipping",
       "summary": "Aegis acts as a Zero-Knowledge self-healing system: the AI recommends but never executes; the backend enqueues tasks and never pushes. Executor agents per cluster pull via GET /tasks?cluster_id=X.",
       "tech_stack": [
         "Backend",
@@ -1038,8 +1038,8 @@
       "category": "article"
     },
     {
-      "url": "https://ancel.co.ke/developer-journal/nestfi-resilient-financial-coordination-platform-correctness-under-failure",
-      "title": "NestFi: Resilient Financial Coordination Platform — Correctness Under Failure",
+      "url": "https://ancel.co.ke/developer-journal/most-developers-don-t-understand-failure-and-it-shows",
+      "title": "Most Developers Don’t Understand Failure — And It Shows",
       "summary": "A production-grade finance platform designed for financial correctness under failure. Ledger-backed double-entry, M-Pesa B2C with idempotent handling, Socket.io real-time UX, and fail-closed distributed locks.",
       "tech_stack": [
         "NestJS",
@@ -1056,9 +1056,9 @@
       "category": "article"
     },
     {
-      "url": "https://ancel.co.ke/developer-journal/fits-by-aliv-kenya-first-e-commerce-with-payment-safe-workflows",
-      "title": "Fits by Aliv: Kenya-First E-Commerce with Payment-Safe Workflows",
-      "summary": "Building a production-grade e-commerce backend designed around failure, abuse, and latency. Soft reservations, idempotent orders, M-Pesa verification, and bounded self-healing. Fits by Aliv is a Kenya-first e-commerce marketplace (thrift/sustainable fashion) I built to answer: How do you run commerce when payments are asynchronous, networks are unreliable, and inventory errors mean lost revenue and trust?",
+      "url": "https://ancel.co.ke/developer-journal/from-idea-to-production-what-building-real-systems-actually-teaches-you",
+      "title": "From Idea to Production: What Building Real Systems Actually Teaches You",
+      "summary": "Building a production-grade e-commerce backend designed around failure, abuse, and latency. Soft reservations, idempotent orders, M-Pesa verification, and bounded self-healing. ## Hook\nMost software is built on a house of cards.",
       "tech_stack": [
         "NestJS",
         "Flutter",
@@ -1073,9 +1073,9 @@
       "category": "article"
     },
     {
-      "url": "https://ancel.co.ke/developer-journal/inkly-architecting-a-secure-real-time-messaging-platform",
-      "title": "Inkly: Architecting a Secure Real-Time Messaging Platform",
-      "summary": "Building a production-grade secure messaging backend designed around privacy, latency, and failure. Sacred bonds, CRDT notebooks, offline queues, and Redis scaling. Inkly is a real-time messaging platform I built to answer: How do you guarantee privacy, scale WebSockets horizontally, and maintain real-time sync when networks fail?",
+      "url": "https://ancel.co.ke/developer-journal/this-open-source-tool-changed-everything-about-my-deployment-strategy",
+      "title": "This Open-Source Tool Changed Everything About My Deployment Strategy",
+      "summary": "Building a production-grade secure messaging backend designed around privacy, latency, and failure. Sacred bonds, CRDT notebooks, offline queues, and Redis scaling. ## Hook\nMost software is built on a house of cards.",
       "tech_stack": [
         "Node.js",
         "Flutter",
@@ -1089,8 +1089,47 @@
       "category": "article"
     },
     {
+      "url": "https://ancel.co.ke/developer-journal/i-built-a-frontend-that-feels-instant-here-s-how",
+      "title": "I Built a Frontend That Feels Instant — Here's How",
+      "summary": "Speed is not just about server response time. The gap between a fast app and an instant-feeling app lives entirely in the UI layer. ## Hook\nSpeed is not just about server response time.",
+      "tech_stack": [
+        "Frontend",
+        "Performance",
+        "React",
+        "UX"
+      ],
+      "key_outcome": "Speed is not just about server response time. The gap between a fast app and an instant-feeling app lives entirely in th",
+      "category": "article"
+    },
+    {
+      "url": "https://ancel.co.ke/developer-journal/why-most-uis-feel-slow-and-how-i-fixed-mine",
+      "title": "Why Most UIs Feel Slow (And How I Fixed Mine)",
+      "summary": "The real culprit behind laggy interfaces is almost never the network. It's the rendering pipeline — and most developers never look there. ## Hook\nThe real culprit behind laggy, unresponsive interfaces is almost never the network.",
+      "tech_stack": [
+        "Frontend",
+        "Performance",
+        "UX Engineering",
+        "Design Systems"
+      ],
+      "key_outcome": "The real culprit behind laggy interfaces is almost never the network. It's the rendering pipeline — and most developers",
+      "category": "article"
+    },
+    {
+      "url": "https://ancel.co.ke/developer-journal/designing-interfaces-that-actually-scale",
+      "title": "Designing Interfaces That Actually Scale",
+      "summary": "Most UI code breaks the moment a second developer touches it. Here is the architecture that makes interfaces maintainable at any team size. ## Hook\nMost UI code breaks the moment a second developer touches it.",
+      "tech_stack": [
+        "Design Systems",
+        "Frontend Architecture",
+        "UI Engineering",
+        "React"
+      ],
+      "key_outcome": "Most UI code breaks the moment a second developer touches it. Here is the architecture that makes interfaces maintainabl",
+      "category": "article"
+    },
+    {
       "url": "https://ancel.co.ke/guides/building-real-time-collaboration-nextjs-socketio",
-      "title": "Building Real-Time Collaboration with Next.js and Socket.io",
+      "title": "The Hidden Complexity Behind ‘Simple’ Apps Like WhatsApp",
       "summary": "How to build production real-time collaboration with Next.js and Socket.io: architecture, conflict resolution, and sub-500ms latency.",
       "tech_stack": [
         "Next.js",
@@ -1105,7 +1144,7 @@
     },
     {
       "url": "https://ancel.co.ke/guides/nextjs-vs-django-for-saas",
-      "title": "Next.js vs Django for SaaS: When to Choose Which",
+      "title": "This One Backend Mistake Breaks Most Startups",
       "summary": "A practical comparison of Next.js and Django for SaaS: full-stack JavaScript vs Python, real-time vs request-response, and when each shines. In practice: TaskForge (Next.",
       "tech_stack": [
         "Next.js",
@@ -1120,7 +1159,7 @@
     },
     {
       "url": "https://ancel.co.ke/guides/self-healing-infrastructure-policy-ai-aegis",
-      "title": "Zero-Knowledge Self-Healing: Multi-Cluster Pull-Based Execution and Shadow Mode (Aegis)",
+      "title": "I Designed a System That Fixes Itself — Here’s How It Works",
       "summary": "How to build a Zero-Knowledge self-healing system: AI recommends but never executes; the backend enqueues tasks and never pushes. Multi-cluster executor agents pull by cluster_id. Shadow Mode builds trust before going live.",
       "tech_stack": [
         "NestJS",
@@ -1140,7 +1179,7 @@
     },
     {
       "url": "https://ancel.co.ke/guides/resilient-financial-coordination-correctness-under-failure-nestfi",
-      "title": "Resilient Financial Coordination: Correctness Under Failure with NestFi",
+      "title": "Scaling Isn’t the Hard Part — Staying Correct Is",
       "summary": "How to build a finance platform that stays correct when payment providers are async, callbacks are delayed or duplicated, and caches fail. Ledger-backed double-entry, idempotent M-Pesa, fail-closed locks. Lessons from NestFi.",
       "tech_stack": [
         "NestJS",
@@ -1158,7 +1197,7 @@
     },
     {
       "url": "https://ancel.co.ke/guides/payment-safe-ecommerce-kenya-mpesa-fits-by-aliv",
-      "title": "Payment-Safe E-Commerce: Kenya-First M-Pesa and Inventory Self-Healing (Fits by Aliv)",
+      "title": "The 3 Hardest Things About Building Distributed Systems",
       "summary": "How to run e-commerce when payments are asynchronous and networks are unreliable. Soft reservations, idempotent orders, M-Pesa verification before state changes, and bounded self-healing. Lessons from Fits by Aliv.",
       "tech_stack": [
         "NestJS",
@@ -1176,7 +1215,7 @@
     },
     {
       "url": "https://ancel.co.ke/guides/secure-real-time-messaging-architecture-inkly",
-      "title": "Building a Secure, Horizontally Scalable Real-Time Messaging Platform with Inkly",
+      "title": "I Built My Own Messaging App — And It Was Way Harder Than I Expected",
       "summary": "How to guarantee privacy, scale WebSockets horizontally, and maintain real-time sync when networks fail using Sacred Bond Encryption, CRDT notebooks, and Redis pub/sub. Lessons from Inkly. Inkly achieves secure and private messaging with Conflict-free Replicated Data Types (CRDTs) for seamless merging of collaborative notebook edits.",
       "tech_stack": [
         "Node.js",
@@ -2047,9 +2086,9 @@
     ],
     "articles": [
       {
-        "url": "https://ancel.co.ke/developer-journal/building-taskforge-with-next-js-and-socket-io-lessons-learned",
-        "title": "Building TaskForge with Next.js and Socket.io — Lessons Learned",
-        "summary": "Exploring the challenges and solutions in building a real-time collaborative project management platform. From WebSocket connections to optimistic UI updates and conflict resolution. Building TaskForge was one of my most challenging and rewarding projects.",
+        "url": "https://ancel.co.ke/developer-journal/most-developers-don-t-understand-failure-and-it-shows",
+        "title": "Most Developers Don’t Understand Failure — And It Shows",
+        "summary": "Exploring the challenges and solutions in building a real-time collaborative project management platform. From WebSocket connections to optimistic UI updates and conflict resolution. ## Hook\nMost software is built on a house of cards.",
         "tech_stack": [
           "Next.js",
           "Socket.io",
@@ -2061,9 +2100,9 @@
         "category": "article"
       },
       {
-        "url": "https://ancel.co.ke/developer-journal/scaling-an-e-learning-platform-with-django-react",
-        "title": "Scaling an E-Learning Platform with Django + React",
-        "summary": "How I built a scalable e-learning platform that handles thousands of students and courses. Covering authentication, course management, and video delivery optimization. Building a scalable e-learning platform requires careful consideration of architecture, authentication, and content delivery.",
+        "url": "https://ancel.co.ke/developer-journal/from-idea-to-production-what-building-real-systems-actually-teaches-you",
+        "title": "From Idea to Production: What Building Real Systems Actually Teaches You",
+        "summary": "How I built a scalable e-learning platform that handles thousands of students and courses. Covering authentication, course management, and video delivery optimization. ## Hook\nMost software is built on a house of cards.",
         "tech_stack": [
           "Django",
           "React",
@@ -2075,9 +2114,9 @@
         "category": "article"
       },
       {
-        "url": "https://ancel.co.ke/developer-journal/why-i-built-a-finance-tracker-in-vue-3",
-        "title": "Why I Built a Finance Tracker in Vue 3",
-        "summary": "Exploring the decision to use Vue 3 for a personal finance application. Comparing Vue's reactivity system with other frameworks and the benefits for financial data visualization. When I decided to build a personal finance tracker, I had to choose between React, Angular, and Vue 3.",
+        "url": "https://ancel.co.ke/developer-journal/this-open-source-tool-changed-everything-about-my-deployment-strategy",
+        "title": "This Open-Source Tool Changed Everything About My Deployment Strategy",
+        "summary": "Exploring the decision to use Vue 3 for a personal finance application. Comparing Vue's reactivity system with other frameworks and the benefits for financial data visualization. ## Hook\nMost software is built on a house of cards.",
         "tech_stack": [
           "Vue.js",
           "Finance",
@@ -2089,9 +2128,9 @@
         "category": "article"
       },
       {
-        "url": "https://ancel.co.ke/developer-journal/angular-20-in-production-the-fitness-class-scheduler-journey",
-        "title": "Angular 20 in Production: The Fitness Class Scheduler Journey",
-        "summary": "My experience building a fitness class scheduler with Angular 20's new features. Covering SSR, signals, and the improved developer experience. Angular 20 brought significant improvements to the framework, and I was excited to build a fitness class scheduler to explore these new features in a real-world application.",
+        "url": "https://ancel.co.ke/developer-journal/the-3-hardest-things-about-building-distributed-systems",
+        "title": "The 3 Hardest Things About Building Distributed Systems",
+        "summary": "My experience building a fitness class scheduler with Angular 20's new features. Covering SSR, signals, and the improved developer experience. ## Hook\nMost software is built on a house of cards.",
         "tech_stack": [
           "Angular",
           "SSR",
@@ -2103,9 +2142,9 @@
         "category": "article"
       },
       {
-        "url": "https://ancel.co.ke/developer-journal/from-student-to-freelancer-my-journey-since-2021",
-        "title": "From Student to Freelancer: My Journey Since 2021",
-        "summary": "Reflecting on my coding journey from learning HTML and CSS in school to becoming a freelance developer. The challenges, learnings, and growth over the past few years. Looking back at my coding journey since 2021, I'm amazed at how much I've learned and grown.",
+        "url": "https://ancel.co.ke/developer-journal/how-i-cut-cloud-costs-by-rethinking-serverless",
+        "title": "How I Cut Cloud Costs by Rethinking Serverless",
+        "summary": "Reflecting on my coding journey from learning HTML and CSS in school to becoming a freelance developer. The challenges, learnings, and growth over the past few years. ## Hook\nMost software is built on a house of cards.",
         "tech_stack": [
           "Journey",
           "Learning",
@@ -2117,8 +2156,8 @@
         "category": "article"
       },
       {
-        "url": "https://ancel.co.ke/developer-journal/how-travelogue-taught-me-the-power-of-maps-in-web-apps",
-        "title": "How Travelogue Taught Me the Power of Maps in Web Apps",
+        "url": "https://ancel.co.ke/developer-journal/why-over-engineering-is-the-enemy-of-shipping",
+        "title": "Why Over-Engineering Is the Enemy of Shipping",
         "summary": "Building an interactive travel website with Leaflet.js and OpenStreetMap. Exploring the potential of maps in web applications and the technical challenges of map integration.",
         "tech_stack": [
           "Maps",
@@ -2131,9 +2170,9 @@
         "category": "article"
       },
       {
-        "url": "https://ancel.co.ke/developer-journal/designing-a-console-banking-system-to-showcase-oop-java",
-        "title": "Designing a Console Banking System to Showcase OOP (Java)",
-        "summary": "A deep dive into a pure Java console application that demonstrates encapsulation, inheritance, abstraction, and polymorphism through realistic banking operations. This project intentionally avoids frameworks and databases to focus on the fundamentals of object‑oriented design.\n\nI.",
+        "url": "https://ancel.co.ke/developer-journal/most-developers-don-t-understand-failure-and-it-shows",
+        "title": "Most Developers Don’t Understand Failure — And It Shows",
+        "summary": "A deep dive into a pure Java console application that demonstrates encapsulation, inheritance, abstraction, and polymorphism through realistic banking operations. ## Hook\nMost software is built on a house of cards. Here is how I learned that the hard way.",
         "tech_stack": [
           "Java",
           "OOP",
@@ -2144,9 +2183,9 @@
         "category": "article"
       },
       {
-        "url": "https://ancel.co.ke/developer-journal/building-educhain-a-web3-journey-into-blockchain-certificate-management",
-        "title": "Building EduChain: A Web3 Journey into Blockchain Certificate Management",
-        "summary": "Exploring the challenges and solutions in building a full-stack Web3 application that issues verifiable academic certificates as ERC721 NFTs on the Ethereum blockchain. EduChain represents my first deep dive into Web3 development, combining traditional full-stack skills with blockchain technology to solve a real-world problem in education.\n\nI.",
+        "url": "https://ancel.co.ke/developer-journal/from-idea-to-production-what-building-real-systems-actually-teaches-you",
+        "title": "From Idea to Production: What Building Real Systems Actually Teaches You",
+        "summary": "Exploring the challenges and solutions in building a full-stack Web3 application that issues verifiable academic certificates as ERC721 NFTs on the Ethereum blockchain. ## Hook\nMost software is built on a house of cards. Here is how I learned that the hard way.",
         "tech_stack": [
           "Web3",
           "Blockchain",
@@ -2159,9 +2198,9 @@
         "category": "article"
       },
       {
-        "url": "https://ancel.co.ke/developer-journal/ledgerx-secure-multi-tenant-financial-platform",
-        "title": "LedgerX — Secure, Multi-Tenant Financial Platform",
-        "summary": "How I designed a production-grade fintech backend that is auditable, resilient, secure, and operationally observable—without overengineering. LedgerX is a production-grade, multi-tenant financial platform I built to answer: How would I design a modern fintech backend that is auditable, resilient, secure, and operationally observable—without overengineering or hiding behind abstractions?\n\nI.",
+        "url": "https://ancel.co.ke/developer-journal/this-open-source-tool-changed-everything-about-my-deployment-strategy",
+        "title": "This Open-Source Tool Changed Everything About My Deployment Strategy",
+        "summary": "How I designed a production-grade fintech backend that is auditable, resilient, secure, and operationally observable—without overengineering. ## Hook\nMost software is built on a house of cards. Here is how I learned that the hard way.",
         "tech_stack": [
           "NestJS",
           "Next.js",
@@ -2177,9 +2216,9 @@
         "category": "article"
       },
       {
-        "url": "https://ancel.co.ke/developer-journal/building-opsflow-a-production-ready-incident-management-platform",
-        "title": "Building OpsFlow: A Production-Ready Incident Management Platform",
-        "summary": "Exploring the architecture and challenges in building a comprehensive incident and workflow management platform with NestJS, Next.js, and dual-database design. OpsFlow represents my journey into building enterprise-grade incident management systems, combining modern full-stack technologies with real-time features, multi-tenant architecture and operational knowledge management.",
+        "url": "https://ancel.co.ke/developer-journal/the-3-hardest-things-about-building-distributed-systems",
+        "title": "The 3 Hardest Things About Building Distributed Systems",
+        "summary": "Exploring the architecture and challenges in building a comprehensive incident and workflow management platform with NestJS, Next.js, and dual-database design. ## Hook\nMost software is built on a house of cards.",
         "tech_stack": [
           "NestJS",
           "Next.js",
@@ -2194,9 +2233,9 @@
         "category": "article"
       },
       {
-        "url": "https://ancel.co.ke/developer-journal/building-signflow-a-real-time-assistive-technology-platform-for-sign-language-translation",
-        "title": "Building SignFlow: A Real-Time Assistive Technology Platform for Sign Language Translation",
-        "summary": "Exploring the architecture and challenges in building a high-fidelity assistive technology simulation for real-time sign language translation with 3D avatar animation and WebSocket streaming. SignFlow represents my journey into building assistive technology platforms, combining real-time communication, 3D graphics, and accessibility-first design to create an immersive sign language translation experience.\n\nI.",
+        "url": "https://ancel.co.ke/developer-journal/how-i-cut-cloud-costs-by-rethinking-serverless",
+        "title": "How I Cut Cloud Costs by Rethinking Serverless",
+        "summary": "Exploring the architecture and challenges in building a high-fidelity assistive technology simulation for real-time sign language translation with 3D avatar animation and WebSocket streaming. ## Hook\nMost software is built on a house of cards. Here is how I learned that the hard way.",
         "tech_stack": [
           "React",
           "Node.js",
@@ -2211,8 +2250,8 @@
         "category": "article"
       },
       {
-        "url": "https://ancel.co.ke/developer-journal/aegis-zero-knowledge-self-healing-multi-cluster-pull-based-execution-shadow-mode-oidc-ready",
-        "title": "Aegis: Zero-Knowledge Self-Healing — Multi-Cluster Pull-Based Execution, Shadow Mode, OIDC-Ready",
+        "url": "https://ancel.co.ke/developer-journal/why-over-engineering-is-the-enemy-of-shipping",
+        "title": "Why Over-Engineering Is the Enemy of Shipping",
         "summary": "Aegis acts as a Zero-Knowledge self-healing system: the AI recommends but never executes; the backend enqueues tasks and never pushes. Executor agents per cluster pull via GET /tasks?cluster_id=X.",
         "tech_stack": [
           "Backend",
@@ -2231,8 +2270,8 @@
         "category": "article"
       },
       {
-        "url": "https://ancel.co.ke/developer-journal/nestfi-resilient-financial-coordination-platform-correctness-under-failure",
-        "title": "NestFi: Resilient Financial Coordination Platform — Correctness Under Failure",
+        "url": "https://ancel.co.ke/developer-journal/most-developers-don-t-understand-failure-and-it-shows",
+        "title": "Most Developers Don’t Understand Failure — And It Shows",
         "summary": "A production-grade finance platform designed for financial correctness under failure. Ledger-backed double-entry, M-Pesa B2C with idempotent handling, Socket.io real-time UX, and fail-closed distributed locks.",
         "tech_stack": [
           "NestJS",
@@ -2249,9 +2288,9 @@
         "category": "article"
       },
       {
-        "url": "https://ancel.co.ke/developer-journal/fits-by-aliv-kenya-first-e-commerce-with-payment-safe-workflows",
-        "title": "Fits by Aliv: Kenya-First E-Commerce with Payment-Safe Workflows",
-        "summary": "Building a production-grade e-commerce backend designed around failure, abuse, and latency. Soft reservations, idempotent orders, M-Pesa verification, and bounded self-healing. Fits by Aliv is a Kenya-first e-commerce marketplace (thrift/sustainable fashion) I built to answer: How do you run commerce when payments are asynchronous, networks are unreliable, and inventory errors mean lost revenue and trust?",
+        "url": "https://ancel.co.ke/developer-journal/from-idea-to-production-what-building-real-systems-actually-teaches-you",
+        "title": "From Idea to Production: What Building Real Systems Actually Teaches You",
+        "summary": "Building a production-grade e-commerce backend designed around failure, abuse, and latency. Soft reservations, idempotent orders, M-Pesa verification, and bounded self-healing. ## Hook\nMost software is built on a house of cards.",
         "tech_stack": [
           "NestJS",
           "Flutter",
@@ -2266,9 +2305,9 @@
         "category": "article"
       },
       {
-        "url": "https://ancel.co.ke/developer-journal/inkly-architecting-a-secure-real-time-messaging-platform",
-        "title": "Inkly: Architecting a Secure Real-Time Messaging Platform",
-        "summary": "Building a production-grade secure messaging backend designed around privacy, latency, and failure. Sacred bonds, CRDT notebooks, offline queues, and Redis scaling. Inkly is a real-time messaging platform I built to answer: How do you guarantee privacy, scale WebSockets horizontally, and maintain real-time sync when networks fail?",
+        "url": "https://ancel.co.ke/developer-journal/this-open-source-tool-changed-everything-about-my-deployment-strategy",
+        "title": "This Open-Source Tool Changed Everything About My Deployment Strategy",
+        "summary": "Building a production-grade secure messaging backend designed around privacy, latency, and failure. Sacred bonds, CRDT notebooks, offline queues, and Redis scaling. ## Hook\nMost software is built on a house of cards.",
         "tech_stack": [
           "Node.js",
           "Flutter",
@@ -2280,12 +2319,51 @@
         ],
         "key_outcome": "Building a production-grade secure messaging backend designed around privacy, latency, and failure. Sacred bonds, CRDT n",
         "category": "article"
+      },
+      {
+        "url": "https://ancel.co.ke/developer-journal/i-built-a-frontend-that-feels-instant-here-s-how",
+        "title": "I Built a Frontend That Feels Instant — Here's How",
+        "summary": "Speed is not just about server response time. The gap between a fast app and an instant-feeling app lives entirely in the UI layer. ## Hook\nSpeed is not just about server response time.",
+        "tech_stack": [
+          "Frontend",
+          "Performance",
+          "React",
+          "UX"
+        ],
+        "key_outcome": "Speed is not just about server response time. The gap between a fast app and an instant-feeling app lives entirely in th",
+        "category": "article"
+      },
+      {
+        "url": "https://ancel.co.ke/developer-journal/why-most-uis-feel-slow-and-how-i-fixed-mine",
+        "title": "Why Most UIs Feel Slow (And How I Fixed Mine)",
+        "summary": "The real culprit behind laggy interfaces is almost never the network. It's the rendering pipeline — and most developers never look there. ## Hook\nThe real culprit behind laggy, unresponsive interfaces is almost never the network.",
+        "tech_stack": [
+          "Frontend",
+          "Performance",
+          "UX Engineering",
+          "Design Systems"
+        ],
+        "key_outcome": "The real culprit behind laggy interfaces is almost never the network. It's the rendering pipeline — and most developers",
+        "category": "article"
+      },
+      {
+        "url": "https://ancel.co.ke/developer-journal/designing-interfaces-that-actually-scale",
+        "title": "Designing Interfaces That Actually Scale",
+        "summary": "Most UI code breaks the moment a second developer touches it. Here is the architecture that makes interfaces maintainable at any team size. ## Hook\nMost UI code breaks the moment a second developer touches it.",
+        "tech_stack": [
+          "Design Systems",
+          "Frontend Architecture",
+          "UI Engineering",
+          "React"
+        ],
+        "key_outcome": "Most UI code breaks the moment a second developer touches it. Here is the architecture that makes interfaces maintainabl",
+        "category": "article"
       }
     ],
     "guides": [
       {
         "url": "https://ancel.co.ke/guides/building-real-time-collaboration-nextjs-socketio",
-        "title": "Building Real-Time Collaboration with Next.js and Socket.io",
+        "title": "The Hidden Complexity Behind ‘Simple’ Apps Like WhatsApp",
         "summary": "How to build production real-time collaboration with Next.js and Socket.io: architecture, conflict resolution, and sub-500ms latency.",
         "tech_stack": [
           "Next.js",
@@ -2300,7 +2378,7 @@
       },
       {
         "url": "https://ancel.co.ke/guides/nextjs-vs-django-for-saas",
-        "title": "Next.js vs Django for SaaS: When to Choose Which",
+        "title": "This One Backend Mistake Breaks Most Startups",
         "summary": "A practical comparison of Next.js and Django for SaaS: full-stack JavaScript vs Python, real-time vs request-response, and when each shines. In practice: TaskForge (Next.",
         "tech_stack": [
           "Next.js",
@@ -2315,7 +2393,7 @@
       },
       {
         "url": "https://ancel.co.ke/guides/self-healing-infrastructure-policy-ai-aegis",
-        "title": "Zero-Knowledge Self-Healing: Multi-Cluster Pull-Based Execution and Shadow Mode (Aegis)",
+        "title": "I Designed a System That Fixes Itself — Here’s How It Works",
         "summary": "How to build a Zero-Knowledge self-healing system: AI recommends but never executes; the backend enqueues tasks and never pushes. Multi-cluster executor agents pull by cluster_id. Shadow Mode builds trust before going live.",
         "tech_stack": [
           "NestJS",
@@ -2335,7 +2413,7 @@
       },
       {
         "url": "https://ancel.co.ke/guides/resilient-financial-coordination-correctness-under-failure-nestfi",
-        "title": "Resilient Financial Coordination: Correctness Under Failure with NestFi",
+        "title": "Scaling Isn’t the Hard Part — Staying Correct Is",
         "summary": "How to build a finance platform that stays correct when payment providers are async, callbacks are delayed or duplicated, and caches fail. Ledger-backed double-entry, idempotent M-Pesa, fail-closed locks. Lessons from NestFi.",
         "tech_stack": [
           "NestJS",
@@ -2353,7 +2431,7 @@
       },
       {
         "url": "https://ancel.co.ke/guides/payment-safe-ecommerce-kenya-mpesa-fits-by-aliv",
-        "title": "Payment-Safe E-Commerce: Kenya-First M-Pesa and Inventory Self-Healing (Fits by Aliv)",
+        "title": "The 3 Hardest Things About Building Distributed Systems",
         "summary": "How to run e-commerce when payments are asynchronous and networks are unreliable. Soft reservations, idempotent orders, M-Pesa verification before state changes, and bounded self-healing. Lessons from Fits by Aliv.",
         "tech_stack": [
           "NestJS",
@@ -2371,7 +2449,7 @@
       },
       {
         "url": "https://ancel.co.ke/guides/secure-real-time-messaging-architecture-inkly",
-        "title": "Building a Secure, Horizontally Scalable Real-Time Messaging Platform with Inkly",
+        "title": "I Built My Own Messaging App — And It Was Way Harder Than I Expected",
         "summary": "How to guarantee privacy, scale WebSockets horizontally, and maintain real-time sync when networks fail using Sacred Bond Encryption, CRDT notebooks, and Redis pub/sub. Lessons from Inkly. Inkly achieves secure and private messaging with Conflict-free Replicated Data Types (CRDTs) for seamless merging of collaborative notebook edits.",
         "tech_stack": [
           "Node.js",
@@ -2391,7 +2469,7 @@
   },
   "totalProjects": 19,
   "totalCaseStudies": 19,
-  "totalArticles": 15,
+  "totalArticles": 18,
   "totalGuides": 6,
   "totalPages": 11
 }
