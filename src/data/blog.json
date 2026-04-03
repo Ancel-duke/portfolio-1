@@ -659,8 +659,8 @@
   },
   {
     "id": 15,
-    "title": "This Open-Source Tool Changed Everything About My Deployment Strategy",
-    "excerpt": "Building a production-grade secure messaging backend designed around privacy, latency, and failure. Sacred bonds, CRDT notebooks, offline queues, and Redis scaling.",
+    "title": "Architecting a Secure, High-Availability Messaging Platform",
+    "excerpt": "Engineering a production-grade secure messaging platform with Zero-Knowledge 'Sacred Bonds', distributed WebSocket adapters, and resilient 3-tier storage. Lessons from Inkly.",
     "content": "## Hook\nMost software is built on a house of cards. Here is how I learned that the hard way.\n\n## Problem\nWhen you leave the safe zone of tutorial applications, concurrency and memory constraints hit hard.\n\n## Struggle\nI battled bizarre edge cases for weeks. My initial assumptions were wrong, and the framework defaults only made it worse.\n\n## Solution\nBy abandoning the 'best practices' and adopting a pragmatic, data-driven architecture, I finally broke through the bottleneck.\n\n## Insight\nBuilding real systems teaches you that elegant code is secondary to robust architecture.\n\nExplore [Projects](/projects)",
     "tags": [
       "Node.js",
@@ -669,10 +669,12 @@
       "Security",
       "PostgreSQL",
       "MongoDB",
-      "Cryptography"
+      "Cryptography",
+      "Distributed Systems",
+      "Resilience"
     ],
     "date": "2026-04-02",
-    "readTime": "12 min read",
+    "readTime": "14 min read",
     "image": "/images/dev-journal/inkly.webp",
     "level": "advanced",
     "author": {
@@ -682,22 +684,22 @@
     },
     "slug": "inkly-architecting-a-secure-real-time-messaging-platform",
     "seo": {
-      "title": "This Open-Source Tool Changed Everything About My Deployment Strategy",
-      "description": "Inkly: Architecting a Secure Real is a platform built by Ancel featuring real-time, robust capabilities, and excellent performance. Designed with Node.js, Flutt",
+      "title": "Architecting a Secure, High-Availability Messaging Platform | Inkly",
+      "description": "Discover the system design behind Inkly: Zero-Knowledge encryption, horizontal WebSocket scaling, and resilient 3-tier storage for secure real-time messaging.",
       "keywords": [
-        "Inkly: Architecting a Secure Real",
-        "Inkly: Architecting a Secure Real app",
-        "Inkly: Architecting a Secure Real platform",
-        "Ancel",
-        "Ancel portfolio",
-        "software engineer Ancel",
+        "Inkly",
+        "Secure Messaging",
+        "System Architecture",
+        "Zero-Knowledge",
+        "WebSocket Scaling",
+        "Distributed Systems",
         "Ancel Ajanga",
         "Node.js",
         "Flutter",
-        "WebSockets"
+        "Cryptography"
       ],
-      "ogTitle": "This Open-Source Tool Changed Everything About My Deployment Strategy",
-      "ogDescription": "Inkly: Architecting a Secure Real is a platform built by Ancel featuring real-time, robust capabilities, and excellent performance. Designed with Node.js, Flutt",
+      "ogTitle": "Architecting a Secure, High-Availability Messaging Platform",
+      "ogDescription": "Discover the system design behind Inkly: Zero-Knowledge encryption, horizontal WebSocket scaling, and resilient 3-tier storage for secure real-time messaging.",
       "ogImage": "/images/dev-journal/inkly-architecting-a-secure-real-time-messaging-platform.webp",
       "twitterCard": "summary_large_image",
       "canonicalUrl": "/developer-journal/inkly-architecting-a-secure-real-time-messaging-platform"
