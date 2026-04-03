@@ -13,6 +13,14 @@ interface ThemeContextType {
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined)
 
+/** Temporarily add .theme-switching to <html> to enable global CSS transitions, then remove it. */
+function triggerThemeTransition() {
+  const root = document.documentElement
+  root.classList.add('theme-switching')
+  const timer = window.setTimeout(() => root.classList.remove('theme-switching'), 400)
+  return timer
+}
+
 export function useTheme() {
   const context = useContext(ThemeContext)
   if (context === undefined) {
@@ -31,6 +39,7 @@ export function ThemeProvider({ children }: ThemeProviderProps) {
   const [resolvedTheme, setResolvedTheme] = useState<'light' | 'dark'>('light')
 
   const setTheme = (next: Theme) => {
+    triggerThemeTransition()
     setThemeState(next)
     const root = window.document.documentElement
     root.classList.remove('light', 'dark')

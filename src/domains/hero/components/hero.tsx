@@ -1,4 +1,5 @@
 import * as React from "react"
+import Link from 'next/link'
 import { LazyMotion, domAnimation, m, useScroll, useTransform } from "framer-motion"
 import { Button } from '@/shared/components/ui/button'
 import { cn } from '@/shared/utils'
@@ -12,9 +13,8 @@ interface HeroProps {
   className?: string
 }
 
-/** Critical: LCP text as plain HTML (no JS animation) so it paints in first frame. */
-const HERO_SUBLINE = "Fullstack Engineer — Architecting resilient systems from interface to infrastructure."
-const HERO_PARAGRAPH = "I own the full lifecycle of every request, from Flutter user interfaces to M-Pesa STK queries and database transactions. I design and ship scalable systems across fintech, enterprise, and real-time domains—combining high-performance frontends, hardened backends, and self-healing microservices built to scale reliably from day one."
+const HERO_SUBLINE = "Engineering infrastructure that survives failure. Optimizing pipelines for scale, security, and absolute transaction integrity."
+const HERO_PARAGRAPH = "From executing zero-knowledge frontends to orchestrating asynchronous Kafka microservices, I design and ship production systems built to handle millions of requests natively. I don't just write features—I build the bedrock that allows companies to scale safely."
 
 const socialLinks = [
   { name: "GitHub", href: SITE.github, icon: Github, description: "View my code and projects" },
@@ -23,7 +23,7 @@ const socialLinks = [
   { name: "WhatsApp", href: WHATSAPP_URL, icon: MessageCircle, description: "Chat on WhatsApp" },
 ]
 
-const sectionClassName = "w-full overflow-x-hidden py-12 sm:py-16 md:py-20 lg:py-24 xl:py-28 2xl:py-32"
+const sectionClassName = "w-full overflow-x-hidden pt-8 pb-12 sm:pt-10 sm:pb-16 md:pt-12 md:pb-20 lg:pt-16 lg:pb-24 xl:pt-20 xl:pb-28"
 
 /**
  * Parallax hero: useScroll + useTransform for heading (slower Y) and decorative layer (faster Y).
@@ -52,16 +52,34 @@ function HeroParallax({ className }: HeroProps) {
 
           <div className="relative text-center mx-auto max-w-4xl px-4 sm:px-6 md:px-8">
             <m.div style={{ y: headingY, willChange: "transform" }}>
-              <h1 className="text-[clamp(1.75rem,4.5vw,4rem)] sm:text-[clamp(2rem,5vw,4.5rem)] font-bold leading-tight mb-3 sm:mb-4">
-                Hi, I'm <span className="text-foreground">Ancel</span>{" "}
-                <span className="text-muted-foreground">Ajanga</span>
+              <p className="text-primary font-bold uppercase tracking-wider text-xs sm:text-sm mb-3 sm:mb-4">
+                Hi, I'm Ancel Ajanga
+              </p>
+              <h1 className="text-[clamp(2rem,4vw,2.5rem)] sm:text-[clamp(2.5rem,4vw,3rem)] font-extrabold leading-[1.25] mb-5 mx-auto max-w-5xl">
+                Systems Engineer &amp; Fullstack Developer building fault-tolerant, scalable, and real-time applications.
               </h1>
-              <p className="text-[clamp(1rem,2.25vw,1.375rem)] sm:text-[clamp(1.125rem,2.5vw,1.5rem)] font-semibold text-foreground mb-4 sm:mb-6 max-w-3xl mx-auto">
+              <p className="text-[clamp(1.125rem,2.25vw,1.375rem)] sm:text-[clamp(1.25rem,2.5vw,1.5rem)] font-semibold text-foreground mb-4 sm:mb-5 max-w-3xl mx-auto">
                 {HERO_SUBLINE}
               </p>
-              <p className="text-[clamp(0.9375rem,2vw,1.125rem)] sm:text-[clamp(1rem,2.25vw,1.25rem)] text-muted-foreground mb-6 sm:mb-8 md:mb-10 max-w-3xl mx-auto leading-relaxed">
+              <p className="text-[clamp(0.9375rem,2vw,1.125rem)] sm:text-[clamp(1rem,2.25vw,1.25rem)] text-muted-foreground mb-8 sm:mb-10 max-w-2xl mx-auto leading-relaxed">
                 {HERO_PARAGRAPH}
               </p>
+
+              {/* Guided Navigation Mini-Menu */}
+              <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 mb-10 text-sm font-medium">
+                <Link href="/about/ancel-ajanga" className="flex items-center text-muted-foreground hover:text-primary transition-colors">
+                  <span className="w-2 h-2 rounded-full bg-blue-500 mr-2" />
+                  Engineering Philosophy
+                </Link>
+                <Link href="#featured-work" className="flex items-center text-muted-foreground hover:text-primary transition-colors">
+                  <span className="w-2 h-2 rounded-full bg-emerald-500 mr-2" />
+                  Flagship Systems
+                </Link>
+                <Link href="#expertise" className="flex items-center text-muted-foreground hover:text-primary transition-colors">
+                  <span className="w-2 h-2 rounded-full bg-purple-500 mr-2" />
+                  Architecture Hub
+                </Link>
+              </div>
             </m.div>
 
             <HeroContent />
@@ -81,16 +99,34 @@ function HeroStatic({ className }: HeroProps) {
     <section className={cn(sectionClassName, className)}>
       <div className="container-custom max-w-full relative">
         <div className="relative text-center mx-auto max-w-4xl px-4 sm:px-6 md:px-8">
-          <h1 className="text-[clamp(1.75rem,4.5vw,4rem)] sm:text-[clamp(2rem,5vw,4.5rem)] font-bold leading-tight mb-3 sm:mb-4">
-            Hi, I'm <span className="text-foreground">Ancel</span>{" "}
-            <span className="text-muted-foreground">Ajanga</span>
+          <p className="text-primary font-bold uppercase tracking-wider text-xs sm:text-sm mb-3 sm:mb-4">
+            Hi, I'm Ancel Ajanga
+          </p>
+          <h1 className="text-[clamp(2rem,4vw,2.5rem)] sm:text-[clamp(2.5rem,4vw,3rem)] font-extrabold leading-[1.25] mb-5 mx-auto max-w-5xl">
+            Systems Engineer &amp; Fullstack Developer building fault-tolerant, scalable, and real-time applications.
           </h1>
-          <p className="text-[clamp(1rem,2.25vw,1.375rem)] sm:text-[clamp(1.125rem,2.5vw,1.5rem)] font-semibold text-foreground mb-4 sm:mb-6 max-w-3xl mx-auto">
+          <p className="text-[clamp(1.125rem,2.25vw,1.375rem)] sm:text-[clamp(1.25rem,2.5vw,1.5rem)] font-semibold text-foreground mb-4 sm:mb-5 max-w-3xl mx-auto">
             {HERO_SUBLINE}
           </p>
-          <p className="text-[clamp(0.9375rem,2vw,1.125rem)] sm:text-[clamp(1rem,2.25vw,1.25rem)] text-muted-foreground mb-6 sm:mb-8 md:mb-10 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-[clamp(0.9375rem,2vw,1.125rem)] sm:text-[clamp(1rem,2.25vw,1.25rem)] text-muted-foreground mb-8 sm:mb-10 max-w-2xl mx-auto leading-relaxed">
             {HERO_PARAGRAPH}
           </p>
+
+          {/* Guided Navigation Mini-Menu */}
+          <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 mb-10 text-sm font-medium">
+            <Link href="/about/ancel-ajanga" className="flex items-center text-muted-foreground hover:text-primary transition-colors">
+              <span className="w-2 h-2 rounded-full bg-blue-500 mr-2" />
+              Engineering Philosophy
+            </Link>
+            <Link href="#featured-work" className="flex items-center text-muted-foreground hover:text-primary transition-colors">
+              <span className="w-2 h-2 rounded-full bg-emerald-500 mr-2" />
+              Flagship Systems
+            </Link>
+            <Link href="#expertise" className="flex items-center text-muted-foreground hover:text-primary transition-colors">
+              <span className="w-2 h-2 rounded-full bg-purple-500 mr-2" />
+              Architecture Hub
+            </Link>
+          </div>
 
           <HeroContent />
         </div>
@@ -116,7 +152,7 @@ function HeroContent() {
         >
         <Button size="lg" className="group w-full sm:w-auto min-h-[48px] sm:min-h-[52px] text-base sm:text-lg px-6 sm:px-8 rounded-lg" asChild>
           <a href="/projects">
-            View My Work
+            Explore Architecture
             <ArrowRight className="ml-2 h-5 w-5 flex-shrink-0 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
           </a>
         </Button>
@@ -164,12 +200,17 @@ function HeroContent() {
             <h3 className="text-base sm:text-lg font-bold mb-2">Hardened Backends</h3>
             <p className="text-sm text-muted-foreground leading-relaxed">NestJS, PostgreSQL, fail-safe logic. Transactional correctness and auditability by default.</p>
           </div>
-          <div className="p-5 sm:p-6 lg:p-6 rounded-xl bg-muted/40 dark:bg-muted/30 border border-border text-left sm:text-center">
+          <div className="p-5 sm:p-6 lg:p-6 rounded-xl bg-muted/40 dark:bg-muted/30 border border-border text-left sm:text-center flex flex-col h-full">
             <div className="w-12 h-12 mx-auto mb-3 rounded-full bg-primary/20 flex items-center justify-center text-primary shrink-0">
               <Smartphone className="w-6 h-6" aria-hidden="true" />
             </div>
             <h3 className="text-base sm:text-lg font-bold mb-2">Fluid Frontends</h3>
-            <p className="text-sm text-muted-foreground leading-relaxed">Flutter, React, UX and performance. Responsive, accessible, built for real users.</p>
+            <p className="text-sm text-muted-foreground leading-relaxed flex-1">Flutter, React, UX and performance. Responsive, accessible, built for real users.</p>
+            <div className="mt-3">
+              <Link href="#frontend-engineering" className="text-primary text-xs sm:text-sm font-semibold hover:underline inline-flex items-center">
+                See Frontend Authority <ArrowRight className="ml-1 h-3 w-3" />
+              </Link>
+            </div>
           </div>
           <div className="p-5 sm:p-6 lg:p-6 rounded-xl bg-muted/40 dark:bg-muted/30 border border-border text-left sm:text-center">
             <div className="w-12 h-12 mx-auto mb-3 rounded-full bg-primary/20 flex items-center justify-center text-primary shrink-0">

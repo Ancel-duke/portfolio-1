@@ -41,6 +41,18 @@ const CTA = dynamic(
   () => import('@/domains/contact').then((m) => m.CTA),
   { ssr: false }
 )
+const ProofSection = dynamic(
+  () => import('@/domains/hero').then((m) => m.ProofSection),
+  { ssr: false }
+)
+const RecruiterSection = dynamic(
+  () => import('@/domains/about').then((m) => m.RecruiterSection),
+  { ssr: false }
+)
+const InlineCTA = dynamic(
+  () => import('@/domains/contact').then((m) => m.InlineCTA),
+  { ssr: false }
+)
 
 const BelowFoldPlaceholder = () => <div className="min-h-[1px]" aria-hidden="true" />
 
@@ -107,11 +119,15 @@ export default function HomePage() {
       <SkipLink />
       <div className="min-h-screen">
         <Hero />
+        <ProofSection />
         <Suspense fallback={<BelowFoldPlaceholder />}>
           <About />
+          <RecruiterSection />
           <TodaysHighlights />
+          <InlineCTA title="Looking to scale your distributed platforms?" subtitle="Available for direct engineering consulting and Staff-level roles." buttonText="View Project Portfolio" />
           <CaseStudiesGrid limit={3} showViewAll={true} />
           <LabsExperiments limit={3} showViewAll={true} />
+          <InlineCTA title="Looking to stabilize a monolithic backend?" subtitle="Let's build infrastructure that scales reliably from day one." buttonText="Let's Talk Architecture" />
           <TechStack />
           <Fun />
           <CTA />

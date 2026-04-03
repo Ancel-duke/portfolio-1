@@ -41,6 +41,11 @@ interface CaseStudy {
     after: string
     gallery: string[]
   }
+  frontendAuthority?: {
+    uiDecisions: string
+    performance: string
+    responsiveness: string
+  }
 }
 
 interface LabsExperimentsProps {
@@ -158,18 +163,17 @@ export function LabsExperiments({ className, limit, showViewAll = true, fullPage
   }
 
   return (
-    <section className={cn("py-16 bg-muted/30 w-full overflow-x-hidden", className)}>
+    <section id="frontend-engineering" className={cn("py-16 bg-muted/30 w-full overflow-x-hidden", className)}>
       <div className="container-custom max-w-full">
         <div className="text-center mb-12 px-4 sm:px-0">
           <h2 className="text-[clamp(1.875rem,4vw,2.5rem)] font-bold mb-[clamp(1rem,2.5vw,1.5rem)] flex items-center justify-center gap-3">
-            <FlaskConical className="h-8 w-8 text-primary" />
+            <Code2 className="h-8 w-8 text-primary" />
             <span>
-              Labs & <span className="text-gradient">Experiments</span>
+              Frontend Engineering & <span className="text-gradient">Experiments</span>
             </span>
           </h2>
           <p className="text-[clamp(1rem,2vw,1.125rem)] text-muted-foreground max-w-2xl mx-auto">
-            I explore modern UI patterns and creative interactions to complement my system design work. 
-            These experiments showcase frontend innovation, user experience design, and creative problem-solving.
+            This section demonstrates advanced frontend engineering, UI systems, and interaction design. These applications showcase my ability to execute demanding layouts, achieve high frame rates, and engineer robust interactive architectures.
           </p>
         </div>
 
@@ -234,6 +238,25 @@ export function LabsExperiments({ className, limit, showViewAll = true, fullPage
                 </CardHeader>
 
                 <CardContent className="pt-0">
+                  {project.frontendAuthority && (
+                    <div className="mb-4 bg-muted/30 rounded-lg p-3 text-sm border border-border/50">
+                      <div className="mb-3 border-b border-border/50 pb-2">
+                        <span className="font-semibold text-primary block mb-1">UI Architecture</span>
+                        <p className="text-muted-foreground">{project.frontendAuthority.uiDecisions}</p>
+                      </div>
+                      <div className="grid grid-cols-2 gap-3 mt-2">
+                        <div>
+                          <span className="font-semibold text-xs uppercase tracking-wider block mb-1">Performance</span>
+                          <p className="text-xs text-muted-foreground leading-relaxed">{project.frontendAuthority.performance}</p>
+                        </div>
+                        <div>
+                          <span className="font-semibold text-xs uppercase tracking-wider block mb-1">Responsive Grid</span>
+                          <p className="text-xs text-muted-foreground leading-relaxed">{project.frontendAuthority.responsiveness}</p>
+                        </div>
+                      </div>
+                    </div>
+                  )}
+
                   <div className="mb-4">
                     <h4 className="text-sm font-medium mb-2">Technologies Used</h4>
                     <div className="flex flex-wrap gap-2">

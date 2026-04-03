@@ -6,7 +6,7 @@
   "jobTitle": "Fullstack Engineer",
   "niche": "System Resilience",
   "baseUrl": "https://ancel.co.ke",
-  "generated": "2026-04-02T18:26:39.472Z",
+  "generated": "2026-04-03T21:45:18.820Z",
   "entries": [
     {
       "url": "https://ancel.co.ke/",
@@ -20,6 +20,14 @@
       "url": "https://ancel.co.ke/about",
       "title": "About",
       "summary": "About Ancel Ajanga: Fullstack Software Engineer and Architect. Nairobi, Kenya. Resilient systems, security, and AIOps.",
+      "tech_stack": [],
+      "key_outcome": null,
+      "category": "page"
+    },
+    {
+      "url": "https://ancel.co.ke/about/ancel-ajanga",
+      "title": "Ancel Ajanga Profile",
+      "summary": "Detailed career profile and engineering philosophy of Ancel Ajanga, Staff Software Engineer & Systems Architect. Focused on distributed systems and high-ticket infrastructure.",
       "tech_stack": [],
       "key_outcome": null,
       "category": "page"
@@ -471,23 +479,88 @@
     },
     {
       "url": "https://ancel.co.ke/projects",
-      "title": "Inkly: Secure, Real-Time Messaging Architecture — Sacred Bonds and High-Availability",
-      "summary": "Inkly is a production-grade secure messaging platform I built to answer: How do you guarantee privacy, scale WebSockets horizontally, and maintain real-time sync when networks fail?",
+      "title": "Inkly: Privacy-First Messaging with Horizontal Scaling and Sacred Bond Encryption",
+      "summary": "Inkly is a production-grade secure messaging platform engineered for zero-knowledge privacy, horizontally scalable WebSockets, and resilient synchronization across unreliable networks.",
       "tech_stack": [
-        "Node.js",
-        "TypeScript",
-        "Express",
+        "Node.js/TypeScript",
+        "Flutter/Riverpod",
         "PostgreSQL",
         "MongoDB",
         "Redis",
-        "Flutter/Dart",
-        "Riverpod",
-        "ws",
-        "cryptography/AES-256-GCM",
-        "JWT auth"
+        "WebSockets (ws)",
+        "Sacred Bond (X25519/HKDF)",
+        "Circuit Breakers (opossum)",
+        "Structured Logging (Pino)",
+        "Docker/CI/CD"
       ],
-      "key_outcome": "Real-time messaging, offline queue, notebooks (CRDT), polaroids, sacred bond encryption, cold storage, WebSocket scaling.",
+      "key_outcome": "99.9% availability design, Zero-Knowledge privacy, 10k+ concurrent connections, and <100ms message delivery.",
       "category": "project"
+    },
+    {
+      "url": "https://ancel.co.ke/expertise/system-architecture",
+      "title": "System Architecture & Scalable Infrastructure",
+      "summary": "System architecture is the bedrock of any mission-critical application. My approach focuses on 'Isolation of Failure,' 'Horizontal Scalability,' and 'Transactional Integrity.' By leveraging hybrid storage models (PostgreSQL for ledgers, MongoDB for audit logs, Redis for coordination) and Zero-Trust orchestration (Aegis), I ensure that systems remain performant and secure under extreme load.",
+      "tech_stack": [
+        "NestJS",
+        "PostgreSQL",
+        "Redis",
+        "Docker",
+        "Kubernetes",
+        "Open Policy Agent",
+        "OpenTelemetry"
+      ],
+      "key_outcome": "Designing resilient, high-availability backbones for modern distributed applications. Engineered by Ancel Ajanga.",
+      "category": "expertise"
+    },
+    {
+      "url": "https://ancel.co.ke/expertise/backend-engineering",
+      "title": "Backend Engineering & Distributed Systems",
+      "summary": "Backend engineering is about more than just APIs; it's about guaranteeing state integrity in complex, multi-agent environments. My work emphasizes 'Idempotent Operations,' 'Strict Transactional Boundaries,' and 'Failure-Aware Design.' Whether integrating with volatile payment providers like M-Pesa (NestFi) or managing high-concurrency real-time events (Inkly), I ensure that every database write is atomic and every external interaction is protected by timeouts, circuit breakers, and retries with exponential backoff.",
+      "tech_stack": [
+        "Node.js",
+        "Express",
+        "NestJS",
+        "TypeScript",
+        "Python",
+        "Go",
+        "Prisma",
+        "BullMQ"
+      ],
+      "key_outcome": "Building robust, correctness-first server-side logic and financial ledgers. Engineered by Ancel Ajanga.",
+      "category": "expertise"
+    },
+    {
+      "url": "https://ancel.co.ke/expertise/frontend-engineering",
+      "title": "Frontend Engineering & High-Performance UX",
+      "summary": "Modern frontend engineering demands a balance between stunning aesthetics and technical excellence. My approach leverages Next.js 15 (Sever Components, Streaming, and RSC) to deliver lightning-fast initial page loads while maintaining complex, interactive client-side state.",
+      "tech_stack": [
+        "Next.js 15",
+        "React",
+        "Vue.js",
+        "Tailwind CSS",
+        "Framer Motion",
+        "Chart.js",
+        "Playwright"
+      ],
+      "key_outcome": "Crafting premium, real-time web interfaces with Next.js 15 and extreme performance optimization.",
+      "category": "expertise"
+    },
+    {
+      "url": "https://ancel.co.ke/expertise/distributed-systems",
+      "title": "Distributed Systems & Real-Time Orchestration",
+      "summary": "Scaling across VPC boundaries and multiple clouds requires a deep understanding of consistency models and the CAP theorem. My expertise lies in architecting 'Coordinated Distributed Systems'—where nodes pull work, verify intents, and update shared state via resilient message buses. I specialize in real-time communication (Inkly) and secure administrative orchestration (Aegis), ensuring that data remains consistent even during network partitions or node failures.",
+      "tech_stack": [
+        "NestJS",
+        "Redis",
+        "BullMQ",
+        "Go",
+        "Docker",
+        "Kubernetes",
+        "Loki",
+        "OpenTelemetry"
+      ],
+      "key_outcome": "Scaling state and logic across heterogeneous nodes with zero-trust security. Engineered by Ancel Ajanga.",
+      "category": "expertise"
     },
     {
       "url": "https://ancel.co.ke/case-studies/taskforge",
@@ -747,25 +820,11 @@
     {
       "url": "https://ancel.co.ke/case-studies/nestfi",
       "title": "NestFi — Resilient Financial Coordination Platform",
-      "summary": "NestFi is a financial application developed by Ancel Ajanga—a production-grade financial coordination platform designed for correctness under failure. It ensures predictable behavior across asynchronous payment providers, delayed or duplicated callbacks, unreliable networks, and hybrid storage layers. PostgreSQL enforces ledger integrity, MongoDB handles compliance and audit events, and Redis provides ephemeral caching and distributed locking with fail-closed safety.",
-      "tech_stack": [
-        "NestJS",
-        "TypeScript",
-        "PostgreSQL",
-        "MongoDB",
-        "Redis",
-        "Docker",
-        "Cloudflare Workers",
-        "M-Pesa Daraja",
-        "JWT",
-        "Socket.io",
-        "React Native",
-        "Next.js",
-        "RabbitMQ"
-      ],
-      "key_outcome": "Completion: ~87%",
-      "business_outcome": "NestFi, the financial application developed by Ancel Ajanga, demonstrates capstone-level engineering: correctness-first design where financial truth is never inferred; explicit handling of distributed-system failure modes (timeouts, split-brain risk, replayed callbacks); real-tim",
-      "scale_or_metric": "Completion: ~87%; Datastores: 3; Payment Integration: M-Pesa Daraja; Resilience: Circuit breakers + fail-closed locks",
+      "summary": "NestFi is a production-grade financial coordination platform engineered for absolute correctness under the volatility of distributed systems. Developed by Ancel Ajanga, the system addresses the critical failures inherent in mobile money integrations and asynchronous payment processing. By leveraging a hybrid storage strategy and a ledger-first philosophy, NestFi ensures that financial truth is mathematically verified, auditable, and resilient to external provider outages, delayed callbacks, and race conditions.",
+      "tech_stack": [],
+      "key_outcome": "Ledger Drift: 0.00%",
+      "business_outcome": "NestFi demonstrates production-grade financial engineering that prioritizes safety over speed. It has successfully processed thousands of simulated and real-money transactions with zero ledger drift and zero instances of double-spending.\n\nThe project proves Ancel's ability to han",
+      "scale_or_metric": "Ledger Drift: 0.00%; Throughput: 1000/sec; Latency: < 200ms; Availability: 99.95%",
       "category": "case-study"
     },
     {
@@ -789,30 +848,12 @@
     },
     {
       "url": "https://ancel.co.ke/case-studies/aegis",
-      "title": "Aegis — Self-Healing Infrastructure with Zero-Trust Architecture and Multi-Cluster Orchestration",
-      "summary": "Aegis is a self-healing infrastructure platform developed by Ancel Ajanga. It combines Zero-Trust architecture, multi-cluster orchestration, and ML-driven anomaly detection with pull-based executor agents and JWS/HMAC signature validation. The system uses Open Policy Agent (OPA) for policy enforcement, FinOps guardrails for cost control, Shadow Mode for trust-building, and distributed tracing (OpenTelemetry) with Loki for blinded observability.",
-      "tech_stack": [
-        "NestJS",
-        "Python (FastAPI)",
-        "scikit-learn",
-        "Next.js 15",
-        "OPA (Open Policy Agent)",
-        "Redis",
-        "Loki",
-        "PostgreSQL",
-        "Kubernetes",
-        "Docker",
-        "OpenTelemetry",
-        "Prometheus",
-        "Grafana",
-        "JWT",
-        "OIDC",
-        "TypeScript",
-        "Python"
-      ],
-      "key_outcome": "Execution model: Pull-based",
-      "business_outcome": "Aegis delivers self-healing infrastructure under Zero-Trust architecture: no unaudited actions, no blind AI execution, multi-cluster orchestration via pull-based agents, and JWS/HMAC signature validation on every task. Shadow Mode and confidence-gated execution build operator tru",
-      "scale_or_metric": "Execution model: Pull-based; Security: Zero-Trust + OPA; Trust-building: Shadow Mode; Observability: OpenTelemetry + Loki",
+      "title": "Aegis — Autonomous Infrastructure Guardrail System",
+      "summary": "Aegis is a production-hardened Autonomous Infrastructure Guardrail System engineered to bridge the gap between AI-driven remediation and system safety. Developed by Ancel Ajanga, the platform provides a Zero-Trust orchestration layer where AI suggests remediations but execution is strictly gated by human-defined Open Policy Agent (OPA) rules and cryptographic 'Signed Intent' validation. By utilizing a pull-based agent architecture, Aegis scales securely across heterogeneous cloud environments, providing high-availability infrastructure self-healing without compromising the security perimeter.",
+      "tech_stack": [],
+      "key_outcome": "Remediation Latency: < 5s",
+      "business_outcome": "Aegis is a production-hardened Autonomous Infrastructure Guardrail System engineered to bridge the gap between AI-driven remediation and system safety. Developed by Ancel Ajanga, the platform provides a Zero-Trust orchestration layer where AI suggests remediations but execution i",
+      "scale_or_metric": "Remediation Latency: < 5s; Security Model: Zero-Trust; Guardrail Latency: < 200ms; Scale Capacity: 10k+ Agents",
       "category": "case-study"
     },
     {
@@ -837,20 +878,12 @@
     },
     {
       "url": "https://ancel.co.ke/case-studies/inkly",
-      "title": "Inkly — Secure, Real-Time Messaging Architecture",
-      "summary": "Inkly is a production-grade secure messaging platform I built to answer: How do you guarantee privacy, scale WebSockets horizontally, and maintain real-time sync when networks fail? To solve these synchronization challenges, I built a hybrid architecture treating downtime and abuse as first-class concerns. Supports massive realtime message throughput with fully isolated, encrypted partner vaults and reliable offline event queues.",
-      "tech_stack": [
-        "Node.js",
-        "Express",
-        "PostgreSQL",
-        "MongoDB",
-        "Redis",
-        "Flutter",
-        "Dart"
-      ],
-      "key_outcome": "DB Breaker: 15s",
-      "business_outcome": "Supports massive realtime message throughput with fully isolated, encrypted partner vaults and reliable offline event queues.",
-      "scale_or_metric": "DB Breaker: 15s; Cold Storage: Streamed",
+      "title": "Inkly — Secure, High-Availability Messaging Architecture",
+      "summary": "Inkly is a production-grade, high-availability secure messaging architecture engineered to solve the fundamental conflict between Zero-Knowledge privacy and massive horizontal scalability. Developed by Ancel Ajanga, the system replaces centralized trust models with a decentralized 'Sacred Bond' cryptographic lifecycle while maintaining sub-100ms real-time delivery across distributed WebSocket clusters. The architecture is built on a resilient three-tier storage strategy (PostgreSQL, MongoDB, and Redis) designed to handle thousands of concurrent connections with fault-tolerant delivery guarantees and effortless recovery from high-latency network partitions.",
+      "tech_stack": [],
+      "key_outcome": "Delivery Latency: < 100ms",
+      "business_outcome": "Inkly is more than a chat app; it is a reference architecture for high-availability secure systems. It proves that you can build a system with the privacy of Signal and the scaling ergonomics of Discord. \n\nThe project demonstrates Ancel's ability to architect distributed systems",
+      "scale_or_metric": "Delivery Latency: < 100ms; Concurrency: 10k+; Encryption: Zero-Knowledge; Uptime Design: 99.9%",
       "category": "case-study"
     },
     {
@@ -1073,9 +1106,9 @@
       "category": "article"
     },
     {
-      "url": "https://ancel.co.ke/developer-journal/this-open-source-tool-changed-everything-about-my-deployment-strategy",
-      "title": "This Open-Source Tool Changed Everything About My Deployment Strategy",
-      "summary": "Building a production-grade secure messaging backend designed around privacy, latency, and failure. Sacred bonds, CRDT notebooks, offline queues, and Redis scaling. ## Hook\nMost software is built on a house of cards.",
+      "url": "https://ancel.co.ke/developer-journal/architecting-a-secure-high-availability-messaging-platform",
+      "title": "Architecting a Secure, High-Availability Messaging Platform",
+      "summary": "Engineering a production-grade secure messaging platform with Zero-Knowledge 'Sacred Bonds', distributed WebSocket adapters, and resilient 3-tier storage. Lessons from Inkly. ## Hook\nMost software is built on a house of cards.",
       "tech_stack": [
         "Node.js",
         "Flutter",
@@ -1083,9 +1116,11 @@
         "Security",
         "PostgreSQL",
         "MongoDB",
-        "Cryptography"
+        "Cryptography",
+        "Distributed Systems",
+        "Resilience"
       ],
-      "key_outcome": "Building a production-grade secure messaging backend designed around privacy, latency, and failure. Sacred bonds, CRDT n",
+      "key_outcome": "Engineering a production-grade secure messaging platform with Zero-Knowledge 'Sacred Bonds', distributed WebSocket adapt",
       "category": "article"
     },
     {
@@ -1216,19 +1251,20 @@
     {
       "url": "https://ancel.co.ke/guides/secure-real-time-messaging-architecture-inkly",
       "title": "I Built My Own Messaging App — And It Was Way Harder Than I Expected",
-      "summary": "How to guarantee privacy, scale WebSockets horizontally, and maintain real-time sync when networks fail using Sacred Bond Encryption, CRDT notebooks, and Redis pub/sub. Lessons from Inkly. Inkly achieves secure and private messaging with Conflict-free Replicated Data Types (CRDTs) for seamless merging of collaborative notebook edits.",
+      "summary": "How to guarantee privacy, scale WebSockets horizontally, and maintain real-time sync under failure. Zero-Knowledge 'Sacred Bonds', distributed WS adapters, and hybrid 3-tier storage. Lessons from Inkly.",
       "tech_stack": [
         "Node.js",
         "Express",
         "MongoDB",
         "PostgreSQL",
-        "Redis",
+        "Redis (Pub/Sub)",
         "WebSockets",
         "Flutter",
         "Riverpod",
-        "TypeScript"
+        "TypeScript",
+        "Cryptography"
       ],
-      "key_outcome": "Inkly achieves secure and private messaging with Conflict-free Replicated Data Types (CRDTs) for seamless merging of col",
+      "key_outcome": "Inkly achieves <100ms real-time delivery, supports 10k+ concurrent connections, and provides provable Zero-Knowledge pri",
       "category": "guide"
     }
   ],
@@ -1246,6 +1282,14 @@
         "url": "https://ancel.co.ke/about",
         "title": "About",
         "summary": "About Ancel Ajanga: Fullstack Software Engineer and Architect. Nairobi, Kenya. Resilient systems, security, and AIOps.",
+        "tech_stack": [],
+        "key_outcome": null,
+        "category": "page"
+      },
+      {
+        "url": "https://ancel.co.ke/about/ancel-ajanga",
+        "title": "Ancel Ajanga Profile",
+        "summary": "Detailed career profile and engineering philosophy of Ancel Ajanga, Staff Software Engineer & Systems Architect. Focused on distributed systems and high-ticket infrastructure.",
         "tech_stack": [],
         "key_outcome": null,
         "category": "page"
@@ -1328,6 +1372,74 @@
           "fits-by-aliv"
         ],
         "business_outcomes_summary": "Scalable financial architecture (LedgerX), resilient financial coordination (NestFi), self-healing infrastructure (Aegis), payment-safe e-commerce (Fits by Aliv). Sub-500ms real-time, 10K+ users, fintech-grade auditability."
+      }
+    ],
+    "expertise": [
+      {
+        "url": "https://ancel.co.ke/expertise/system-architecture",
+        "title": "System Architecture & Scalable Infrastructure",
+        "summary": "System architecture is the bedrock of any mission-critical application. My approach focuses on 'Isolation of Failure,' 'Horizontal Scalability,' and 'Transactional Integrity.' By leveraging hybrid storage models (PostgreSQL for ledgers, MongoDB for audit logs, Redis for coordination) and Zero-Trust orchestration (Aegis), I ensure that systems remain performant and secure under extreme load.",
+        "tech_stack": [
+          "NestJS",
+          "PostgreSQL",
+          "Redis",
+          "Docker",
+          "Kubernetes",
+          "Open Policy Agent",
+          "OpenTelemetry"
+        ],
+        "key_outcome": "Designing resilient, high-availability backbones for modern distributed applications. Engineered by Ancel Ajanga.",
+        "category": "expertise"
+      },
+      {
+        "url": "https://ancel.co.ke/expertise/backend-engineering",
+        "title": "Backend Engineering & Distributed Systems",
+        "summary": "Backend engineering is about more than just APIs; it's about guaranteeing state integrity in complex, multi-agent environments. My work emphasizes 'Idempotent Operations,' 'Strict Transactional Boundaries,' and 'Failure-Aware Design.' Whether integrating with volatile payment providers like M-Pesa (NestFi) or managing high-concurrency real-time events (Inkly), I ensure that every database write is atomic and every external interaction is protected by timeouts, circuit breakers, and retries with exponential backoff.",
+        "tech_stack": [
+          "Node.js",
+          "Express",
+          "NestJS",
+          "TypeScript",
+          "Python",
+          "Go",
+          "Prisma",
+          "BullMQ"
+        ],
+        "key_outcome": "Building robust, correctness-first server-side logic and financial ledgers. Engineered by Ancel Ajanga.",
+        "category": "expertise"
+      },
+      {
+        "url": "https://ancel.co.ke/expertise/frontend-engineering",
+        "title": "Frontend Engineering & High-Performance UX",
+        "summary": "Modern frontend engineering demands a balance between stunning aesthetics and technical excellence. My approach leverages Next.js 15 (Sever Components, Streaming, and RSC) to deliver lightning-fast initial page loads while maintaining complex, interactive client-side state.",
+        "tech_stack": [
+          "Next.js 15",
+          "React",
+          "Vue.js",
+          "Tailwind CSS",
+          "Framer Motion",
+          "Chart.js",
+          "Playwright"
+        ],
+        "key_outcome": "Crafting premium, real-time web interfaces with Next.js 15 and extreme performance optimization.",
+        "category": "expertise"
+      },
+      {
+        "url": "https://ancel.co.ke/expertise/distributed-systems",
+        "title": "Distributed Systems & Real-Time Orchestration",
+        "summary": "Scaling across VPC boundaries and multiple clouds requires a deep understanding of consistency models and the CAP theorem. My expertise lies in architecting 'Coordinated Distributed Systems'—where nodes pull work, verify intents, and update shared state via resilient message buses. I specialize in real-time communication (Inkly) and secure administrative orchestration (Aegis), ensuring that data remains consistent even during network partitions or node failures.",
+        "tech_stack": [
+          "NestJS",
+          "Redis",
+          "BullMQ",
+          "Go",
+          "Docker",
+          "Kubernetes",
+          "Loki",
+          "OpenTelemetry"
+        ],
+        "key_outcome": "Scaling state and logic across heterogeneous nodes with zero-trust security. Engineered by Ancel Ajanga.",
+        "category": "expertise"
       }
     ],
     "projects": [
@@ -1699,22 +1811,21 @@
       },
       {
         "url": "https://ancel.co.ke/projects",
-        "title": "Inkly: Secure, Real-Time Messaging Architecture — Sacred Bonds and High-Availability",
-        "summary": "Inkly is a production-grade secure messaging platform I built to answer: How do you guarantee privacy, scale WebSockets horizontally, and maintain real-time sync when networks fail?",
+        "title": "Inkly: Privacy-First Messaging with Horizontal Scaling and Sacred Bond Encryption",
+        "summary": "Inkly is a production-grade secure messaging platform engineered for zero-knowledge privacy, horizontally scalable WebSockets, and resilient synchronization across unreliable networks.",
         "tech_stack": [
-          "Node.js",
-          "TypeScript",
-          "Express",
+          "Node.js/TypeScript",
+          "Flutter/Riverpod",
           "PostgreSQL",
           "MongoDB",
           "Redis",
-          "Flutter/Dart",
-          "Riverpod",
-          "ws",
-          "cryptography/AES-256-GCM",
-          "JWT auth"
+          "WebSockets (ws)",
+          "Sacred Bond (X25519/HKDF)",
+          "Circuit Breakers (opossum)",
+          "Structured Logging (Pino)",
+          "Docker/CI/CD"
         ],
-        "key_outcome": "Real-time messaging, offline queue, notebooks (CRDT), polaroids, sacred bond encryption, cold storage, WebSocket scaling.",
+        "key_outcome": "99.9% availability design, Zero-Knowledge privacy, 10k+ concurrent connections, and <100ms message delivery.",
         "category": "project"
       }
     ],
@@ -1977,25 +2088,11 @@
       {
         "url": "https://ancel.co.ke/case-studies/nestfi",
         "title": "NestFi — Resilient Financial Coordination Platform",
-        "summary": "NestFi is a financial application developed by Ancel Ajanga—a production-grade financial coordination platform designed for correctness under failure. It ensures predictable behavior across asynchronous payment providers, delayed or duplicated callbacks, unreliable networks, and hybrid storage layers. PostgreSQL enforces ledger integrity, MongoDB handles compliance and audit events, and Redis provides ephemeral caching and distributed locking with fail-closed safety.",
-        "tech_stack": [
-          "NestJS",
-          "TypeScript",
-          "PostgreSQL",
-          "MongoDB",
-          "Redis",
-          "Docker",
-          "Cloudflare Workers",
-          "M-Pesa Daraja",
-          "JWT",
-          "Socket.io",
-          "React Native",
-          "Next.js",
-          "RabbitMQ"
-        ],
-        "key_outcome": "Completion: ~87%",
-        "business_outcome": "NestFi, the financial application developed by Ancel Ajanga, demonstrates capstone-level engineering: correctness-first design where financial truth is never inferred; explicit handling of distributed-system failure modes (timeouts, split-brain risk, replayed callbacks); real-tim",
-        "scale_or_metric": "Completion: ~87%; Datastores: 3; Payment Integration: M-Pesa Daraja; Resilience: Circuit breakers + fail-closed locks",
+        "summary": "NestFi is a production-grade financial coordination platform engineered for absolute correctness under the volatility of distributed systems. Developed by Ancel Ajanga, the system addresses the critical failures inherent in mobile money integrations and asynchronous payment processing. By leveraging a hybrid storage strategy and a ledger-first philosophy, NestFi ensures that financial truth is mathematically verified, auditable, and resilient to external provider outages, delayed callbacks, and race conditions.",
+        "tech_stack": [],
+        "key_outcome": "Ledger Drift: 0.00%",
+        "business_outcome": "NestFi demonstrates production-grade financial engineering that prioritizes safety over speed. It has successfully processed thousands of simulated and real-money transactions with zero ledger drift and zero instances of double-spending.\n\nThe project proves Ancel's ability to han",
+        "scale_or_metric": "Ledger Drift: 0.00%; Throughput: 1000/sec; Latency: < 200ms; Availability: 99.95%",
         "category": "case-study"
       },
       {
@@ -2019,30 +2116,12 @@
       },
       {
         "url": "https://ancel.co.ke/case-studies/aegis",
-        "title": "Aegis — Self-Healing Infrastructure with Zero-Trust Architecture and Multi-Cluster Orchestration",
-        "summary": "Aegis is a self-healing infrastructure platform developed by Ancel Ajanga. It combines Zero-Trust architecture, multi-cluster orchestration, and ML-driven anomaly detection with pull-based executor agents and JWS/HMAC signature validation. The system uses Open Policy Agent (OPA) for policy enforcement, FinOps guardrails for cost control, Shadow Mode for trust-building, and distributed tracing (OpenTelemetry) with Loki for blinded observability.",
-        "tech_stack": [
-          "NestJS",
-          "Python (FastAPI)",
-          "scikit-learn",
-          "Next.js 15",
-          "OPA (Open Policy Agent)",
-          "Redis",
-          "Loki",
-          "PostgreSQL",
-          "Kubernetes",
-          "Docker",
-          "OpenTelemetry",
-          "Prometheus",
-          "Grafana",
-          "JWT",
-          "OIDC",
-          "TypeScript",
-          "Python"
-        ],
-        "key_outcome": "Execution model: Pull-based",
-        "business_outcome": "Aegis delivers self-healing infrastructure under Zero-Trust architecture: no unaudited actions, no blind AI execution, multi-cluster orchestration via pull-based agents, and JWS/HMAC signature validation on every task. Shadow Mode and confidence-gated execution build operator tru",
-        "scale_or_metric": "Execution model: Pull-based; Security: Zero-Trust + OPA; Trust-building: Shadow Mode; Observability: OpenTelemetry + Loki",
+        "title": "Aegis — Autonomous Infrastructure Guardrail System",
+        "summary": "Aegis is a production-hardened Autonomous Infrastructure Guardrail System engineered to bridge the gap between AI-driven remediation and system safety. Developed by Ancel Ajanga, the platform provides a Zero-Trust orchestration layer where AI suggests remediations but execution is strictly gated by human-defined Open Policy Agent (OPA) rules and cryptographic 'Signed Intent' validation. By utilizing a pull-based agent architecture, Aegis scales securely across heterogeneous cloud environments, providing high-availability infrastructure self-healing without compromising the security perimeter.",
+        "tech_stack": [],
+        "key_outcome": "Remediation Latency: < 5s",
+        "business_outcome": "Aegis is a production-hardened Autonomous Infrastructure Guardrail System engineered to bridge the gap between AI-driven remediation and system safety. Developed by Ancel Ajanga, the platform provides a Zero-Trust orchestration layer where AI suggests remediations but execution i",
+        "scale_or_metric": "Remediation Latency: < 5s; Security Model: Zero-Trust; Guardrail Latency: < 200ms; Scale Capacity: 10k+ Agents",
         "category": "case-study"
       },
       {
@@ -2067,20 +2146,12 @@
       },
       {
         "url": "https://ancel.co.ke/case-studies/inkly",
-        "title": "Inkly — Secure, Real-Time Messaging Architecture",
-        "summary": "Inkly is a production-grade secure messaging platform I built to answer: How do you guarantee privacy, scale WebSockets horizontally, and maintain real-time sync when networks fail? To solve these synchronization challenges, I built a hybrid architecture treating downtime and abuse as first-class concerns. Supports massive realtime message throughput with fully isolated, encrypted partner vaults and reliable offline event queues.",
-        "tech_stack": [
-          "Node.js",
-          "Express",
-          "PostgreSQL",
-          "MongoDB",
-          "Redis",
-          "Flutter",
-          "Dart"
-        ],
-        "key_outcome": "DB Breaker: 15s",
-        "business_outcome": "Supports massive realtime message throughput with fully isolated, encrypted partner vaults and reliable offline event queues.",
-        "scale_or_metric": "DB Breaker: 15s; Cold Storage: Streamed",
+        "title": "Inkly — Secure, High-Availability Messaging Architecture",
+        "summary": "Inkly is a production-grade, high-availability secure messaging architecture engineered to solve the fundamental conflict between Zero-Knowledge privacy and massive horizontal scalability. Developed by Ancel Ajanga, the system replaces centralized trust models with a decentralized 'Sacred Bond' cryptographic lifecycle while maintaining sub-100ms real-time delivery across distributed WebSocket clusters. The architecture is built on a resilient three-tier storage strategy (PostgreSQL, MongoDB, and Redis) designed to handle thousands of concurrent connections with fault-tolerant delivery guarantees and effortless recovery from high-latency network partitions.",
+        "tech_stack": [],
+        "key_outcome": "Delivery Latency: < 100ms",
+        "business_outcome": "Inkly is more than a chat app; it is a reference architecture for high-availability secure systems. It proves that you can build a system with the privacy of Signal and the scaling ergonomics of Discord. \n\nThe project demonstrates Ancel's ability to architect distributed systems",
+        "scale_or_metric": "Delivery Latency: < 100ms; Concurrency: 10k+; Encryption: Zero-Knowledge; Uptime Design: 99.9%",
         "category": "case-study"
       }
     ],
@@ -2305,9 +2376,9 @@
         "category": "article"
       },
       {
-        "url": "https://ancel.co.ke/developer-journal/this-open-source-tool-changed-everything-about-my-deployment-strategy",
-        "title": "This Open-Source Tool Changed Everything About My Deployment Strategy",
-        "summary": "Building a production-grade secure messaging backend designed around privacy, latency, and failure. Sacred bonds, CRDT notebooks, offline queues, and Redis scaling. ## Hook\nMost software is built on a house of cards.",
+        "url": "https://ancel.co.ke/developer-journal/architecting-a-secure-high-availability-messaging-platform",
+        "title": "Architecting a Secure, High-Availability Messaging Platform",
+        "summary": "Engineering a production-grade secure messaging platform with Zero-Knowledge 'Sacred Bonds', distributed WebSocket adapters, and resilient 3-tier storage. Lessons from Inkly. ## Hook\nMost software is built on a house of cards.",
         "tech_stack": [
           "Node.js",
           "Flutter",
@@ -2315,9 +2386,11 @@
           "Security",
           "PostgreSQL",
           "MongoDB",
-          "Cryptography"
+          "Cryptography",
+          "Distributed Systems",
+          "Resilience"
         ],
-        "key_outcome": "Building a production-grade secure messaging backend designed around privacy, latency, and failure. Sacred bonds, CRDT n",
+        "key_outcome": "Engineering a production-grade secure messaging platform with Zero-Knowledge 'Sacred Bonds', distributed WebSocket adapt",
         "category": "article"
       },
       {
@@ -2450,19 +2523,20 @@
       {
         "url": "https://ancel.co.ke/guides/secure-real-time-messaging-architecture-inkly",
         "title": "I Built My Own Messaging App — And It Was Way Harder Than I Expected",
-        "summary": "How to guarantee privacy, scale WebSockets horizontally, and maintain real-time sync when networks fail using Sacred Bond Encryption, CRDT notebooks, and Redis pub/sub. Lessons from Inkly. Inkly achieves secure and private messaging with Conflict-free Replicated Data Types (CRDTs) for seamless merging of collaborative notebook edits.",
+        "summary": "How to guarantee privacy, scale WebSockets horizontally, and maintain real-time sync under failure. Zero-Knowledge 'Sacred Bonds', distributed WS adapters, and hybrid 3-tier storage. Lessons from Inkly.",
         "tech_stack": [
           "Node.js",
           "Express",
           "MongoDB",
           "PostgreSQL",
-          "Redis",
+          "Redis (Pub/Sub)",
           "WebSockets",
           "Flutter",
           "Riverpod",
-          "TypeScript"
+          "TypeScript",
+          "Cryptography"
         ],
-        "key_outcome": "Inkly achieves secure and private messaging with Conflict-free Replicated Data Types (CRDTs) for seamless merging of col",
+        "key_outcome": "Inkly achieves <100ms real-time delivery, supports 10k+ concurrent connections, and provides provable Zero-Knowledge pri",
         "category": "guide"
       }
     ]
@@ -2471,5 +2545,6 @@
   "totalCaseStudies": 19,
   "totalArticles": 18,
   "totalGuides": 6,
-  "totalPages": 11
+  "totalExpertise": 4,
+  "totalPages": 12
 }

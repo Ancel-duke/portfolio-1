@@ -59,7 +59,8 @@
       "ogImage": "/images/projects/finance-tracker.webp",
       "twitterCard": "summary_large_image",
       "canonicalUrl": "/projects/finance-tracker"
-    }
+    },
+    "tier": 3
   },
   {
     "id": 2,
@@ -125,7 +126,8 @@
       "ogImage": "/images/projects/fitness.webp",
       "twitterCard": "summary_large_image",
       "canonicalUrl": "/projects/fitness-scheduler"
-    }
+    },
+    "tier": 3
   },
   {
     "id": 3,
@@ -193,7 +195,8 @@
       "ogImage": "/images/projects/habit-tracker.webp",
       "twitterCard": "summary_large_image",
       "canonicalUrl": "/projects/habit-tracker"
-    }
+    },
+    "tier": 3
   },
   {
     "id": 4,
@@ -262,7 +265,8 @@
       "ogImage": "/images/projects/event-countdown.webp",
       "twitterCard": "summary_large_image",
       "canonicalUrl": "/projects/event-countdown"
-    }
+    },
+    "tier": 3
   },
   {
     "id": 5,
@@ -333,7 +337,8 @@
       "ogImage": "/images/projects/travelogue.webp",
       "twitterCard": "summary_large_image",
       "canonicalUrl": "/projects/travelogue"
-    }
+    },
+    "tier": 3
   },
   {
     "id": 6,
@@ -410,7 +415,8 @@
       "ogImage": "/images/projects/rasoha.webp",
       "twitterCard": "summary_large_image",
       "canonicalUrl": "/projects/rasoha-academy"
-    }
+    },
+    "tier": 3
   },
   {
     "id": 7,
@@ -482,7 +488,8 @@
       "ogImage": "/images/projects/attendance.webp",
       "twitterCard": "summary_large_image",
       "canonicalUrl": "/projects/attendance-system"
-    }
+    },
+    "tier": 3
   },
   {
     "id": 8,
@@ -547,7 +554,8 @@
       "ogImage": "/images/projects/e-learning.webp",
       "twitterCard": "summary_large_image",
       "canonicalUrl": "/projects/elearning-platform"
-    }
+    },
+    "tier": 3
   },
   {
     "id": 9,
@@ -616,7 +624,8 @@
       "ogImage": "/images/projects/taskforge.webp",
       "twitterCard": "summary_large_image",
       "canonicalUrl": "/projects/taskforge"
-    }
+    },
+    "tier": 3
   },
   {
     "id": 10,
@@ -668,7 +677,8 @@
       "ogImage": "/images/projects/ledgerx.webp",
       "twitterCard": "summary_large_image",
       "canonicalUrl": "/projects/banking-system"
-    }
+    },
+    "tier": 2
   },
   {
     "id": 11,
@@ -735,7 +745,8 @@
       "ogImage": "/images/projects/educhain.webp",
       "twitterCard": "summary_large_image",
       "canonicalUrl": "/projects/educhain"
-    }
+    },
+    "tier": 2
   },
   {
     "id": 15,
@@ -804,7 +815,8 @@
       "ogImage": "/images/projects/ledgerx.webp",
       "twitterCard": "summary_large_image",
       "canonicalUrl": "/projects/ledgerx"
-    }
+    },
+    "tier": 1
   },
   {
     "id": 12,
@@ -865,7 +877,8 @@
       "ogImage": "/images/projects/opsflow.webp",
       "twitterCard": "summary_large_image",
       "canonicalUrl": "/projects/opsflow"
-    }
+    },
+    "tier": 2
   },
   {
     "id": 13,
@@ -931,7 +944,8 @@
       "ogImage": "/images/projects/signflow.webp",
       "twitterCard": "summary_large_image",
       "canonicalUrl": "/projects/signflow"
-    }
+    },
+    "tier": 2
   },
   {
     "id": 16,
@@ -1008,7 +1022,8 @@
       "ogImage": "/images/projects/nestfi.webp",
       "twitterCard": "summary_large_image",
       "canonicalUrl": "/projects/nestfi"
-    }
+    },
+    "tier": 2
   },
   {
     "id": 14,
@@ -1068,7 +1083,8 @@
       "ogImage": "/images/projects/edumanage.webp",
       "twitterCard": "summary_large_image",
       "canonicalUrl": "/projects/edumanage"
-    }
+    },
+    "tier": 2
   },
   {
     "id": 17,
@@ -1137,7 +1153,8 @@
       "ogImage": "/images/projects/aegis.webp",
       "twitterCard": "summary_large_image",
       "canonicalUrl": "/projects/aegis"
-    }
+    },
+    "tier": 1
   },
   {
     "id": 18,
@@ -1206,7 +1223,8 @@
       "ogImage": "/images/projects/fits.webp",
       "twitterCard": "summary_large_image",
       "canonicalUrl": "/projects/fits-by-aliv"
-    }
+    },
+    "tier": 2
   },
   {
     "id": 19,
@@ -1276,6 +1294,7 @@
       "ogImage": "/images/projects/inkly.webp",
       "twitterCard": "summary_large_image",
       "canonicalUrl": "/projects/inkly"
-    }
+    },
+    "tier": 1
   }
 ]

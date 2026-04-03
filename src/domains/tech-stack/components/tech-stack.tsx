@@ -166,7 +166,7 @@ export const TechStack = React.memo(function TechStack({ className, fullPage }: 
   }
 
   return (
-    <section className={cn("py-16 w-full overflow-x-hidden", className)}>
+    <section id="expertise" className={cn("py-16 w-full overflow-x-hidden", className)}>
       <div className="container-custom max-w-full">
         <div className="text-center mb-12 px-4 sm:px-0">
           <h2 className="text-[clamp(1.875rem,4vw,2.5rem)] font-bold mb-[clamp(1rem,2.5vw,1.5rem)]">

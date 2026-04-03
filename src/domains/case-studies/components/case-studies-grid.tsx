@@ -67,8 +67,11 @@ export const CaseStudiesGrid = React.memo(function CaseStudiesGrid({
     if (!limit) {
       return getMasterSortedProjects(enterpriseCaseStudies) as CaseStudy[]
     }
-    return getDailySelection(enterpriseCaseStudies, limit) as CaseStudy[]
-  }, [limit, enterpriseCaseStudies])
+    const flagshipSlugs = ['inkly', 'aegis', 'nestfi']
+    return flagshipSlugs
+      .map(slug => caseStudiesWithType.find(cs => cs.slug === slug))
+      .filter(Boolean) as CaseStudy[]
+  }, [limit, enterpriseCaseStudies, caseStudiesWithType])
 
   const animationsEnabled = useAnimationsEnabled()
   const { containerVariants, itemVariants } = React.useMemo(
@@ -83,7 +86,7 @@ export const CaseStudiesGrid = React.memo(function CaseStudiesGrid({
       - Clear visual hierarchy
       - Production-ready grid system
     */
-    <section className={cn(
+    <section id="featured-work" className={cn(
       showHeader ? "py-16 md:py-20" : "", 
       "w-full",
       className
@@ -94,7 +97,7 @@ export const CaseStudiesGrid = React.memo(function CaseStudiesGrid({
           {/* Hero: Professional spacing */}
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
-              {limit ? "Featured" : "All"} <span className="text-gradient">Case Studies</span>
+              {limit ? "Flagship" : "All"} <span className="text-gradient">Systems</span>
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
               {limit 
@@ -131,10 +134,10 @@ export const CaseStudiesGrid = React.memo(function CaseStudiesGrid({
           {showViewAll && limit && selectedCaseStudies.length > 0 && (
             <div className="text-center mt-16">
               <Link 
-                href="/case-studies"
+                href="/projects"
                 className="inline-flex items-center justify-center gap-2 h-12 px-8 rounded-lg border-2 border-primary/20 bg-background hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all duration-300 text-base font-semibold"
               >
-                View All Case Studies
+                View All Systems
                 <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
                 </svg>

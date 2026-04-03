@@ -1,6 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
 
-const DESKTOP_BREAKPOINT = 1024 // lg in Tailwind
 const SCROLL_THRESHOLD = 10
 const SCROLL_DELTA_MIN = 1
 
@@ -17,14 +16,6 @@ export function useScrollDirection(): boolean {
   useEffect(() => {
     const update = () => {
       const scrollY = window.scrollY ?? document.documentElement.scrollTop
-      const isDesktop = typeof window !== 'undefined' && window.innerWidth >= DESKTOP_BREAKPOINT
-
-      if (!isDesktop) {
-        setVisible(true)
-        lastScrollY.current = scrollY
-        ticking.current = false
-        return
-      }
 
       const delta = scrollY - lastScrollY.current
 

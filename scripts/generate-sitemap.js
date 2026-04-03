@@ -28,6 +28,7 @@ const staticPages = [
   { path: "/blog", changefreq: "weekly", priority: "0.8" },
   { path: "/developer-journal", changefreq: "weekly", priority: "0.8" },
   { path: "/about", changefreq: "weekly", priority: "0.8" },
+  { path: "/about/ancel-ajanga", changefreq: "weekly", priority: "0.9" },
   { path: "/guides", changefreq: "weekly", priority: "0.8" },
   { path: "/timeline", changefreq: "weekly", priority: "0.8" },
   { path: "/stack", changefreq: "weekly", priority: "0.8" },
@@ -39,6 +40,18 @@ const staticPages = [
 ];
 
 let urls = [...staticPages];
+
+// Dynamic: expertise from expertise.json
+const expertiseData = loadJson("expertise.json");
+if (expertiseData) {
+  Object.keys(expertiseData).forEach((slug) => {
+    urls.push({
+      path: `/expertise/${slug}`,
+      changefreq: "monthly",
+      priority: "0.9",
+    });
+  });
+}
 
 // Dynamic: projects from projects.json
 const projectsData = loadJson("projects.json");

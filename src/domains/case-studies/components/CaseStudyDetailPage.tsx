@@ -9,7 +9,7 @@ import { Card, CardContent, CardTitle } from '@/shared/components/ui/card'
 import { Button } from '@/shared/components/ui/button'
 import { Badge } from '@/shared/components/ui/badge'
 import { OptimizedImage } from '@/shared/components/ui/optimized-image'
-import { ArrowLeft, ExternalLink, Github, FileText, Calendar, User, Zap, Lightbulb, CheckCircle, Code, Layers, Shield, TrendingUp, Rocket, Settings, AlertTriangle, BookOpen } from 'lucide-react'
+import { ArrowLeft, ExternalLink, Github, FileText, Calendar, User, Zap, Lightbulb, CheckCircle, Code, Layers, Shield, TrendingUp, Rocket, Settings, AlertTriangle, BookOpen, Smartphone } from 'lucide-react'
 import { SkipLink } from '@/shared/components/ui/skip-link'
 import { Breadcrumb } from '@/shared/components/ui/breadcrumb'
 import { TechSummaryTable } from './TechSummaryTable'
@@ -128,7 +128,7 @@ export function CaseStudyDetailView({ caseStudy: caseStudyProp, initialSlug }: C
         {/* AI-first: Tech summary table at top */}
         <m.div variants={itemVariants} className="mb-6 sm:mb-8">
           <TechSummaryTable
-            stack={caseStudy.technologies.map((t: Technology) => t.name)}
+            stack={(caseStudy.technologies || []).map((t: any) => typeof t === 'string' ? t : t.name)}
             role={caseStudy.role}
             year={caseStudy.year}
             status={caseStudy.status}
@@ -182,9 +182,9 @@ export function CaseStudyDetailView({ caseStudy: caseStudyProp, initialSlug }: C
               </div>
 
               <div className="flex flex-wrap items-center gap-2">
-                {caseStudy.technologies.map((tech, index) => (
+                {(caseStudy.technologies || []).map((tech: any, index) => (
                   <Badge key={index} variant="outline" className="text-xs sm:text-sm">
-                    {tech.name}
+                    {typeof tech === 'string' ? tech : tech.name}
                   </Badge>
                 ))}
                 <Button variant="ghost" size="sm" className="text-xs sm:text-sm h-8" asChild>
@@ -300,75 +300,124 @@ export function CaseStudyDetailView({ caseStudy: caseStudyProp, initialSlug }: C
           </m.div>
         )}
 
-        {/* Architecture Section */}
+        {/* 3. System Architecture */}
         {caseStudy.architecture && (
           <m.div variants={itemVariants} className="mb-10">
-            <h2 className="text-2xl sm:text-3xl font-bold mb-4 flex items-center">
-              <Layers className="h-6 w-6 mr-2 text-primary" /> Architecture
+            <h2 className="text-2xl sm:text-3xl font-bold mb-4 flex items-center tracking-tight">
+              <Layers className="h-6 w-6 mr-3 text-primary shrink-0" /> Architecture Deep-Dive
             </h2>
-            <Card className="p-6 bg-muted/30">
-              <p className="text-lg leading-relaxed text-muted-foreground whitespace-pre-line">{caseStudy.architecture}</p>
+            <Card className="p-6 bg-muted/30 border-primary/5">
+              <p className="text-sm sm:text-lg leading-relaxed text-muted-foreground whitespace-pre-line font-medium">{caseStudy.architecture}</p>
             </Card>
           </m.div>
         )}
 
-        {/* Failure Modes (Resilient Architecture — how the system handles errors) */}
-        {caseStudy.failureModes && (
-          <m.div variants={itemVariants} className="mb-10">
-            <h2 className="text-3xl font-bold mb-4 flex items-center">
-              <AlertTriangle className="h-6 w-6 mr-2 text-primary" /> Failure Modes
-            </h2>
-            <Card className="p-6 bg-muted/30 border-primary/20">
-              <p className="text-lg leading-relaxed text-muted-foreground whitespace-pre-line">{caseStudy.failureModes}</p>
-            </Card>
-          </m.div>
-        )}
-
-        {/* Isolation & Resilience Section */}
-        {caseStudy.isolation && (
-          <m.div variants={itemVariants} className="mb-10">
-            <h2 className="text-3xl font-bold mb-4 flex items-center">
-              <Shield className="h-6 w-6 mr-2 text-primary" /> Isolation & Resilience
-            </h2>
-            <Card className="p-6 bg-muted/30">
-              <p className="text-lg leading-relaxed text-muted-foreground whitespace-pre-line">{caseStudy.isolation}</p>
-            </Card>
-          </m.div>
-        )}
-
-        {/* Trade-offs & Design Decisions Section */}
+        {/* 4. Key Engineering Decisions (Trade-offs) */}
         {caseStudy.tradeoffs && (
           <m.div variants={itemVariants} className="mb-10">
-            <h2 className="text-3xl font-bold mb-4 flex items-center">
-              <TrendingUp className="h-6 w-6 mr-2 text-primary" /> Trade-offs & Design Decisions
+            <h2 className="text-2xl sm:text-3xl font-bold mb-4 flex items-center tracking-tight">
+              <Settings className="h-6 w-6 mr-3 text-primary shrink-0" /> Key Engineering Decisions
             </h2>
-            <Card className="p-6 bg-muted/30">
-              <p className="text-lg leading-relaxed text-muted-foreground whitespace-pre-line">{caseStudy.tradeoffs}</p>
+            <Card className="p-6 bg-muted/30 border-primary/5">
+              <p className="text-sm sm:text-lg leading-relaxed text-muted-foreground whitespace-pre-line">{caseStudy.tradeoffs}</p>
             </Card>
           </m.div>
         )}
 
-        {/* Implementation Status Section */}
-        {caseStudy.implementationStatus && (
+        {/* 5. Performance & Scalability */}
+        {caseStudy.scalability && (
           <m.div variants={itemVariants} className="mb-10">
-            <h2 className="text-3xl font-bold mb-4 flex items-center">
-              <Settings className="h-6 w-6 mr-2 text-primary" /> Implementation Status
+            <h2 className="text-2xl sm:text-3xl font-bold mb-4 flex items-center tracking-tight">
+              <TrendingUp className="h-6 w-6 mr-3 text-primary shrink-0" /> Performance & Scalability
             </h2>
-            <Card className="p-6 bg-muted/30">
-              <p className="text-lg leading-relaxed text-muted-foreground whitespace-pre-line">{caseStudy.implementationStatus}</p>
+            <Card className="p-6 bg-muted/30 border-primary/5">
+              <p className="text-sm sm:text-lg leading-relaxed text-muted-foreground whitespace-pre-line">{caseStudy.scalability}</p>
             </Card>
           </m.div>
         )}
 
-        {/* Potential Expansion Section */}
-        {caseStudy.potentialExpansion && (
-          <m.div variants={itemVariants} className="mb-6 sm:mb-8 md:mb-10">
-            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-3 sm:mb-4 flex items-center">
-              <Rocket className="h-5 w-5 sm:h-6 sm:w-6 mr-2 text-primary flex-shrink-0" /> 
-              <span>Potential Expansion</span>
+        {/* 6. Failure Handling */}
+        {caseStudy.failureModes && (
+          <m.div variants={itemVariants} className="mb-10">
+            <h2 className="text-2xl sm:text-3xl font-bold mb-4 flex items-center tracking-tight text-destructive/90">
+              <AlertTriangle className="h-6 w-6 mr-3 text-destructive/80 shrink-0" /> Failure Modes & Resilience
             </h2>
-            <Card className="p-4 sm:p-5 md:p-6 bg-muted/30">
-              <p className="text-sm sm:text-base md:text-lg leading-relaxed text-muted-foreground whitespace-pre-line">{caseStudy.potentialExpansion}</p>
+            <Card className="p-6 bg-muted/30 border-destructive/10">
+              <p className="text-sm sm:text-lg leading-relaxed text-muted-foreground whitespace-pre-line">{caseStudy.failureModes}</p>
+            </Card>
+          </m.div>
+        )}
+
+        {/* 7. Security Considerations */}
+        {caseStudy.security && (
+          <m.div variants={itemVariants} className="mb-10">
+            <h2 className="text-2xl sm:text-3xl font-bold mb-4 flex items-center tracking-tight">
+              <Shield className="h-6 w-6 mr-3 text-primary shrink-0" /> Security & Trust Boundaries
+            </h2>
+            <Card className="p-6 bg-muted/30 border-primary/5">
+              <p className="text-sm sm:text-lg leading-relaxed text-muted-foreground whitespace-pre-line">{caseStudy.security}</p>
+            </Card>
+          </m.div>
+        )}
+
+        {/* 8. Frontend Engineering */}
+        {caseStudy.frontendEngineering && (
+          <m.div variants={itemVariants} className="mb-10">
+            <h2 className="text-2xl sm:text-3xl font-bold mb-4 flex items-center tracking-tight">
+              <Smartphone className="h-6 w-6 mr-3 text-primary shrink-0" /> Frontend Engineering & UX
+            </h2>
+            <Card className="p-6 bg-muted/30 border-primary/5">
+              <p className="text-sm sm:text-lg leading-relaxed text-muted-foreground whitespace-pre-line">{caseStudy.frontendEngineering}</p>
+            </Card>
+          </m.div>
+        )}
+
+        {/* 9. Outcome & Potential */}
+        <m.div variants={itemVariants} className="mb-6 sm:mb-8 md:mb-10">
+          <h2 className="text-2xl sm:text-3xl font-bold mb-4 flex items-center tracking-tight">
+            <Rocket className="h-6 w-6 mr-3 text-primary shrink-0" /> Outcome & Future Potential
+          </h2>
+          <Card className="p-6 bg-muted/30 border-primary/5 mb-6">
+            <p className="text-sm sm:text-lg leading-relaxed text-muted-foreground whitespace-pre-line mb-6">
+              {caseStudy.impact}
+            </p>
+            {caseStudy.potentialExpansion && (
+              <div className="pt-6 border-t border-border/50">
+                <h3 className="text-lg font-bold mb-3 flex items-center">
+                  <TrendingUp className="h-5 w-5 mr-2 text-primary" /> Roadmap & Expansion
+                </h3>
+                <p className="text-sm sm:text-base text-muted-foreground whitespace-pre-line leading-relaxed">
+                  {caseStudy.potentialExpansion}
+                </p>
+              </div>
+            )}
+          </Card>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
+            {caseStudy.metrics.map((metric, index) => (
+              <Card key={index} className="p-4 bg-muted/20 border-primary/10">
+                <CardTitle className="text-xl sm:text-2xl font-bold text-primary mb-1">{metric.value}</CardTitle>
+                <CardContent className="p-0 text-xs sm:text-sm text-muted-foreground font-medium uppercase tracking-wider">{metric.label}</CardContent>
+                <p className="mt-2 text-xs text-muted-foreground/80 leading-snug">{metric.description}</p>
+              </Card>
+            ))}
+          </div>
+        </m.div>
+
+        {/* 10. Key Takeaways */}
+        {caseStudy.keyTakeaways && caseStudy.keyTakeaways.length > 0 && (
+          <m.div variants={itemVariants} className="mb-10">
+            <h2 className="text-2xl sm:text-3xl font-bold mb-4 flex items-center tracking-tight">
+              <Zap className="h-6 w-6 mr-3 text-primary shrink-0" /> Key Engineering Takeaways
+            </h2>
+            <Card className="p-6 bg-primary/5 border-primary/20">
+              <ul className="space-y-4">
+                {caseStudy.keyTakeaways.map((takeaway, i) => (
+                  <li key={i} className="flex items-start gap-3">
+                    <CheckCircle className="h-5 w-5 text-primary mt-1 shrink-0" />
+                    <p className="text-sm sm:text-lg text-foreground font-medium leading-relaxed">{takeaway}</p>
+                  </li>
+                ))}
+              </ul>
             </Card>
           </m.div>
         )}
@@ -414,12 +463,12 @@ export function CaseStudyDetailView({ caseStudy: caseStudyProp, initialSlug }: C
 
         {/* Related case studies (same tech / category) — internal linking for crawlability */}
         {(() => {
-          const techNames = new Set(caseStudy.technologies.map((t) => t.name.toLowerCase()))
+          const techNames = new Set((caseStudy.technologies || []).map((t: any) => (typeof t === 'string' ? t : t.name).toLowerCase()))
           const related = (caseStudiesData as CaseStudy[])
             .filter((cs) => cs.slug !== caseStudy.slug)
             .map((cs) => ({
               ...cs,
-              score: cs.technologies.filter((t) => techNames.has(t.name.toLowerCase())).length
+              score: (cs.technologies || []).filter((t: any) => techNames.has((typeof t === 'string' ? t : t.name).toLowerCase())).length
             }))
             .filter((cs) => cs.score > 0)
             .sort((a, b) => b.score - a.score)

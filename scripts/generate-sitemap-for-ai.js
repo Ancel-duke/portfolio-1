@@ -108,6 +108,7 @@ function articleKeyOutcome(post) {
 const staticPages = [
   { path: "/", name: "Home", summary: "Portfolio of Ancel Ajanga, Fullstack Engineer. System resilience from UI to database. Nairobi and Narok, Kenya." },
   { path: "/about", name: "About", summary: "About Ancel Ajanga: Fullstack Software Engineer and Architect. Nairobi, Kenya. Resilient systems, security, and AIOps." },
+  { path: "/about/ancel-ajanga", name: "Ancel Ajanga Profile", summary: "Detailed career profile and engineering philosophy of Ancel Ajanga, Staff Software Engineer & Systems Architect. Focused on distributed systems and high-ticket infrastructure." },
   { path: "/projects", name: "Projects", summary: "Software projects by Ancel Ajanga: NestFi, SignFlow, OpsFlow, Aegis, LedgerX, EduChain, EduManage, TaskForge, and more." },
   { path: "/case-studies", name: "Case Studies", summary: "Technical case studies with architecture, problem, solution, impact, and measurable outcomes. By Ancel Ajanga." },
   { path: "/developer-journal", name: "Developer Journal", summary: "Blog and articles on web development, architecture, and lessons learned. By Fullstack Engineer Ancel Ajanga." },
@@ -129,6 +130,18 @@ const projectsData = loadJson("projects.json");
 const caseStudiesData = loadJson("case-studies.json");
 const blogData = loadJson("blog.json");
 const guidesData = loadJson("guides.json");
+const expertiseData = loadJson("expertise.json");
+
+const expertise = expertiseData
+  ? Object.entries(expertiseData).map(([slug, exp]) => ({
+      url: `${domain}/expertise/${slug}`,
+      title: exp.title,
+      summary: toSummary(exp.description + " " + exp.subtitle, 3),
+      tech_stack: exp.technologies || [],
+      key_outcome: exp.subtitle,
+      category: "expertise",
+    }))
+  : [];
 
 const projects = Array.isArray(projectsData)
   ? projectsData.map((p) => {
@@ -214,6 +227,7 @@ const pageEntries = staticPages.map((p) => ({
 const allEntries = [
   ...pageEntries,
   ...projects.map((p) => ({ ...p, url: p.url })),
+  ...expertise,
   ...caseStudies,
   ...articles,
   ...guides,
@@ -231,6 +245,14 @@ const sitemapForAi = {
   entries: allEntries,
   entities: {
     pages: pageEntries,
+    expertise: expertise.map((e) => ({
+      url: e.url,
+      title: e.title,
+      summary: e.summary,
+      tech_stack: e.tech_stack,
+      key_outcome: e.key_outcome,
+      category: e.category,
+    })),
     projects: projects.map((p) => ({
       url: p.url,
       title: p.title,
@@ -270,6 +292,7 @@ const sitemapForAi = {
   totalCaseStudies: caseStudies.length,
   totalArticles: articles.length,
   totalGuides: guides.length,
+  totalExpertise: expertise.length,
   totalPages: staticPages.length,
 };
 
@@ -287,6 +310,8 @@ console.log(
   "articles,",
   guides.length,
   "guides,",
+  expertise.length,
+  "expertise,",
   staticPages.length,
   "pages."
 );

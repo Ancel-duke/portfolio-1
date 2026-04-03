@@ -1,0 +1,130 @@
+{
+  "system-architecture": {
+    "title": "System Architecture & Scalable Infrastructure",
+    "subtitle": "Designing resilient, high-availability backbones for modern distributed applications. Engineered by Ancel Ajanga.",
+    "description": "System architecture is the bedrock of any mission-critical application. My approach focuses on 'Isolation of Failure,' 'Horizontal Scalability,' and 'Transactional Integrity.' By leveraging hybrid storage models (PostgreSQL for ledgers, MongoDB for audit logs, Redis for coordination) and Zero-Trust orchestration (Aegis), I ensure that systems remain performant and secure under extreme load. I prioritize declarative configuration (OPA), comprehensive observability (OpenTelemetry), and asynchronous messaging (Redis/BullMQ) to decouple failures and maintain 99.95%+ uptime targets.",
+    "coreCompetencies": [
+      {
+        "title": "High-Availability Design",
+        "description": "Implementing multi-cluster orchestration and fail-closed replicas to ensure zero single points of failure. Utilizing pull-based agents (Aegis) to secure the perimeter."
+      },
+      {
+        "title": "Hybrid Persistence Strategy",
+        "description": "Choosing the right tool for the job: ACID compliance for financial ledgers (NestFi) and flexible schema-less storage for high-velocity event streams (Inkly)."
+      },
+      {
+        "title": "AIOps & Self-Healing",
+        "description": "Architecting systems that monitor their own health and recommend remediations via ML-driven root cause analysis, gated by signed intents and OPA guardrails."
+      },
+      {
+        "title": "Event-Driven Orchestration",
+        "description": "Leveraging Redis, WebSockets, and message queues to build real-time, low-latency systems that scale horizontally across distributed nodes."
+      }
+    ],
+    "philosophy": "Infrastructure is code, and architecture is a constraint. I believe that safety must be baked into the design through strict policy-gating and cryptographic verification. My methodology avoids 'Blind Automation' in favor of 'Transparent Remediation,' where every system action is auditable, reversible, and policy-verified before execution.",
+    "methodology": [
+      "Zero-Trust Architecture: No implicit trust across service boundaries; every request is authenticated and signed.",
+      "Stateless Scaling: Backend services carry no local state, allowing for instant N+1 capacity expansion.",
+      "Redundancy & Failover: Automatic detection and recovery from node or database partition events.",
+      "Observability-First Development: Defining tracing, logging, and metrics before writing business logic."
+    ],
+    "relatedProjects": ["aegis", "nestfi", "inkly"],
+    "technologies": ["NestJS", "PostgreSQL", "Redis", "Docker", "Kubernetes", "Open Policy Agent", "OpenTelemetry"]
+  },
+  "backend-engineering": {
+    "title": "Backend Engineering & Distributed Systems",
+    "subtitle": "Building robust, correctness-first server-side logic and financial ledgers. Engineered by Ancel Ajanga.",
+    "description": "Backend engineering is about more than just APIs; it's about guaranteeing state integrity in complex, multi-agent environments. My work emphasizes 'Idempotent Operations,' 'Strict Transactional Boundaries,' and 'Failure-Aware Design.' Whether integrating with volatile payment providers like M-Pesa (NestFi) or managing high-concurrency real-time events (Inkly), I ensure that every database write is atomic and every external interaction is protected by timeouts, circuit breakers, and retries with exponential backoff.",
+    "coreCompetencies": [
+      {
+        "title": "Distributed Locking",
+        "description": "Utilizing Redlock and database-level constraints to prevent race conditions and double-spending in high-concurrency financial flows."
+      },
+      {
+        "title": "API Design & Security",
+        "description": "Building JWS-signed REST and WebSocket APIs with strict rate-limiting, HMAC validation, and role-based access control (RBAC)."
+      },
+      {
+        "title": "Database Optimization",
+        "description": "Advanced query optimization in PostgreSQL, indexing strategies for high-velocity MongoDB collections, and multi-layered caching with Redis."
+      },
+      {
+        "title": "Idempotent Reconciliation",
+        "description": "Designing background workers that use unique transaction IDs to guarantee that replayed callbacks never corrupt system state."
+      }
+    ],
+    "philosophy": "The backend is the source of truth. It must be pessimistic about external dependencies and optimistic about its own internal correctness. I write code that fails fast, fails safely, and provides a clear, machine-readable audit trail for every state transition.",
+    "methodology": [
+      "Schema-Driven Development: Using TypeScript and Prisma/PostgreSQL to enforce data integrity at every layer.",
+      "Circuit Breakers: Protecting systems from 'Death Spirals' by isolating failing external dependencies.",
+      "Idempotency Keys: Ensuring that replayed requests (network retries) lead to the same stable result.",
+      "Structured Logging: Emitting JSON-based logs (Pino) for instant ingestion and automated anomaly detection."
+    ],
+    "relatedProjects": ["nestfi", "ledgerx", "opsflow"],
+    "technologies": ["Node.js", "Express", "NestJS", "TypeScript", "Python", "Go", "Prisma", "BullMQ"]
+  },
+  "frontend-engineering": {
+    "title": "Frontend Engineering & High-Performance UX",
+    "subtitle": "Crafting premium, real-time web interfaces with Next.js 15 and extreme performance optimization.",
+    "description": "Modern frontend engineering demands a balance between stunning aesthetics and technical excellence. My approach leverages Next.js 15 (Sever Components, Streaming, and RSC) to deliver lightning-fast initial page loads while maintaining complex, interactive client-side state. I focus on 'Pessimistic State Transitions'—ensuring that users always see the true state of the system—and 'Optimistic Updates' for a fluid, lag-free experience. SEO and accessibility (WCAG) are integrated as first-class constraints, ensuring that applications rank, convert, and are usable by everyone.",
+    "coreCompetencies": [
+      {
+        "title": "Next.js 15 Architecture",
+        "description": "Implementing Server Actions, React Server Components (RSC), and Streaming to reduce Time-to-Interactive (TTI) and optimize for SEO."
+      },
+      {
+        "title": "Real-Time Interaction",
+        "description": "Building interactive dashboards with Socket.io and Framer Motion that react instantly to backend events with silky smooth animations."
+      },
+      {
+        "title": "Performance Tuning",
+        "description": "Optimizing Core Web Vitals through code-splitting, tree-shaking, and high-fidelity image optimization (WebP/AVIF)."
+      },
+      {
+        "title": "Responsive Design Systems",
+        "description": "Developing reusable component libraries with Tailwind CSS and CSS Variables that ensure a premium, consistent look across all devices."
+      }
+    ],
+    "philosophy": "The frontend is where technology meets human trust. It should be transparent about background work, resilient to network latency, and aesthetically uncompromising. UI should never 'Jump' or 'Flash'; every state change must be intentional and visually guided.",
+    "methodology": [
+      "Mobile-First, Performance-Always: Designing for constraints first to ensure speed on low-bandwidth networks.",
+      "Declarative UI: Using React state and props to make UI predictable and easy to test.",
+      "Strict Type Safety: Extending TypeScript to the UI layer to prevent runtime errors and layout shifts.",
+      "Atomic Design: Building UIs from the ground up with reusable atoms, molecules, and organisms."
+    ],
+    "relatedProjects": ["signflow", "inkly", "fitness-scheduler"],
+    "technologies": ["Next.js 15", "React", "Vue.js", "Tailwind CSS", "Framer Motion", "Chart.js", "Playwright"]
+  },
+  "distributed-systems": {
+    "title": "Distributed Systems & Real-Time Orchestration",
+    "subtitle": "Scaling state and logic across heterogeneous nodes with zero-trust security. Engineered by Ancel Ajanga.",
+    "description": "Scaling across VPC boundaries and multiple clouds requires a deep understanding of consistency models and the CAP theorem. My expertise lies in architecting 'Coordinated Distributed Systems'—where nodes pull work, verify intents, and update shared state via resilient message buses. I specialize in real-time communication (Inkly) and secure administrative orchestration (Aegis), ensuring that data remains consistent even during network partitions or node failures. I utilize 'Wait-Free' algorithms where possible and fallback to distributed consensus when transactional integrity is paramount.",
+    "coreCompetencies": [
+      {
+        "title": "Real-Time Communication",
+        "description": "Horizontal WebSocket scaling using Redis Pub/Sub to manage state across multiple backend instances."
+      },
+      {
+        "title": "Consensus & Locking",
+        "description": "Implementing distributed locks and state coordination to prevent conflicts in multi-agent environments."
+      },
+      {
+        "title": "Observability at Scale",
+        "description": "Aggregating distributed traces and logs via OpenTelemetry and Loki with HKDF masking for security."
+      },
+      {
+        "title": "Infrastructure Orchestration",
+        "description": "Building self-healing pull-based agents that execute signed intents in isolated Kubernetes clusters."
+      }
+    ],
+    "philosophy": "Distributed systems will fail. The goal is not to prevent failure but to manage it gracefully without human intervention. I prioritize 'Fail-Closed' semantics and 'Self-Registration' to build systems that automatically adapt to dynamic infrastructure.",
+    "methodology": [
+      "Pull-Based Orchestration: Moving away from vulnerable push models to secure, agent-led pull requests for tasks.",
+      "Eventually Consistent Auditing: Separating core transactions from non-critical logging to maintain performance.",
+      "Bounded Retries: Using jitter and exponential backoff to prevent 'Thundering Herd' problems during recovery.",
+      "Chaos-Tested Resilience: Designing for failure cases (Redis down, DB partition) as primary engineering constraints."
+    ],
+    "relatedProjects": ["aegis", "inkly", "ledgerx"],
+    "technologies": ["NestJS", "Redis", "BullMQ", "Go", "Docker", "Kubernetes", "Loki", "OpenTelemetry"]
+  }
+}

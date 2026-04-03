@@ -46,13 +46,16 @@ export interface CaseStudy {
   images: CaseStudyImages
   testimonial?: Testimonial
   architecture?: string
-  isolation?: string
+  scalability?: string
+  failureModes?: string
+  security?: string
+  frontendEngineering?: string
   tradeoffs?: string
   implementationStatus?: string
   potentialExpansion?: string
   problemSolutionBridge?: string
-  failureModes?: string
   keyTerms?: { term: string; explanation: string }[]
+  keyTakeaways?: string[]
   seo?: {
     title: string
     description: string

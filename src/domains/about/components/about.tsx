@@ -219,19 +219,36 @@ export function About({ className, fullPage }: AboutProps) {
                   <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">About Me</h3>
                   <div className="space-y-3 sm:space-y-4 text-muted-foreground text-sm sm:text-base leading-relaxed">
                     <p>
-                      Hi, I'm Ancel Ajanga (also known as Duke), a Fullstack Software Engineer specializing in scalable backend systems and high-performance frontend experiences. I build production-grade systems end-to-end — from meticulously crafted UIs to resilient distributed backends — with a relentless focus on performance, reliability, and long-term maintainability.
+                      Hi, I'm Ancel Ajanga (also known as Duke), a <strong className="text-foreground">Staff Software Engineer &amp; Lead Systems Architect</strong> specializing in distributed systems and high-performance engineering. I build production-grade backbones — from meticulously crafted UIs to resilient distributed backends — with a relentless focus on performance, reliability, and transactional integrity.
                     </p>
                     <p>
-                      Based in Nairobi, Kenya, I work across the full software lifecycle—from system design to deployment—turning complex ideas into robust, real-world applications. If you're looking to hire a <Link href="/nextjs-developer-kenya" className="text-primary hover:underline font-medium">Next.js developer in Kenya</Link> or a full-stack developer in Nairobi, I have a dedicated page with case studies and measurable outcomes. My approach is grounded in three core areas:
+                      Based in Nairobi, Kenya, I specialize in architecting systems that bridge the gap between AI-driven automation and production safety. My expertise spans four key domains:
+                    </p>
+                    <div className="grid grid-cols-2 gap-4 my-6">
+                      <Link href="/expertise/system-architecture" className="p-3 rounded-lg border border-slate-800 bg-slate-900/50 hover:border-blue-500/50 transition-all text-sm font-medium text-slate-300">
+                        System Architecture
+                      </Link>
+                      <Link href="/expertise/backend-engineering" className="p-3 rounded-lg border border-slate-800 bg-slate-900/50 hover:border-emerald-500/50 transition-all text-sm font-medium text-slate-300">
+                        Backend Engineering
+                      </Link>
+                      <Link href="/expertise/frontend-engineering" className="p-3 rounded-lg border border-slate-800 bg-slate-900/50 hover:border-purple-500/50 transition-all text-sm font-medium text-slate-300">
+                        Frontend Engineering
+                      </Link>
+                      <Link href="/expertise/distributed-systems" className="p-3 rounded-lg border border-slate-800 bg-slate-900/50 hover:border-orange-500/50 transition-all text-sm font-medium text-slate-300">
+                        Distributed Systems
+                      </Link>
+                    </div>
+                    <p>
+                      <strong className="text-foreground">Resilient Fullstack Systems:</strong> I build end-to-end platforms like <Link href="/projects/nestfi" className="text-primary hover:underline">NestFi</Link>, combining hybrid storage with strict ledger integrity to solve the 'Blind Trust' problem in financial engineering.
                     </p>
                     <p>
-                      <strong className="text-foreground">Resilient Fullstack Systems:</strong> I build end-to-end platforms like Fits by Aliv, combining Flutter frontends with NestJS backends and leading complex migrations from BaaS solutions to self-hosted PostgreSQL infrastructures.
+                      <strong className="text-foreground">Infrastructure &amp; Intelligent Operations:</strong> I design self-healing systems such as <Link href="/projects/aegis" className="text-primary hover:underline">Aegis</Link>, where machine learning is gated by OPA policies and cryptographically signed intents.
                     </p>
                     <p>
-                      <strong className="text-foreground">Infrastructure &amp; Intelligent Operations:</strong> I design self-healing systems such as Aegis, where machine learning is used to detect anomalies and automate Kubernetes remediation, helping maintain high availability in production environments.
+                      <strong className="text-foreground">Data &amp; Privacy Architecture:</strong> In projects like <Link href="/projects/inkly" className="text-primary hover:underline">Inkly</Link>, I implement Zero-Knowledge cryptographic lifecycles to ensure data sovereignty in collaborative environments.
                     </p>
                     <p>
-                      <strong className="text-foreground">Data &amp; Financial Integrity:</strong> In projects like LedgerX, I implement double-entry accounting engines secured with append-only cryptographic hash chains to ensure strong auditability and data correctness.
+                      <strong className="text-foreground">Frontend Engineering &amp; UI Systems:</strong> I engineer robust interactive architectures and fluid interfaces. Discover my <Link href="/#frontend-engineering" className="text-primary hover:underline">UI Experiments &amp; Frontend Labs</Link> to see how I balance rigorous performance metrics with highly creative interaction design.
                     </p>
                     <p>
                       From real-time WebSocket-driven platforms (SignFlow) to multi-tenant SaaS architectures (EduManage), I focus on service isolation, containerization, and fault-tolerant design patterns. I don't just build features—I design the systems that keep products stable, secure, and scalable as they grow.
