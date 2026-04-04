@@ -35,6 +35,7 @@ const staticPages = [
   { path: "/fun", changefreq: "weekly", priority: "0.8" },
   { path: "/labs-experiments", changefreq: "weekly", priority: "0.8" },
   { path: "/contact", changefreq: "weekly", priority: "0.8" },
+  { path: "/work-with-me", changefreq: "weekly", priority: "0.8" },
   { path: "/nextjs-developer-kenya", changefreq: "weekly", priority: "0.8" },
   { path: "/ai-index", changefreq: "weekly", priority: "0.9" },  // AI crawler hub
 ];
@@ -92,16 +93,24 @@ function slugFromTitle(title) {
   return title.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
 }
 
+const deletedSlugs = new Set([
+  "/developer-journal/solving-state-management",
+  "/developer-journal/vanilla-to-fullstack-journey"
+]);
+
 const blogData = loadJson("blog.json");
 if (Array.isArray(blogData)) {
   blogData.forEach((post) => {
     const slug = post.slug || slugFromTitle(post.title);
     if (slug) {
-      urls.push({
-        path: `/developer-journal/${slug}`,
-        changefreq: "weekly",
-        priority: "0.8",
-      });
+      const fullPath = `/developer-journal/${slug}`;
+      if (!deletedSlugs.has(fullPath)) {
+        urls.push({
+          path: fullPath,
+          changefreq: "weekly",
+          priority: "0.8",
+        });
+      }
     }
   });
 }
@@ -124,12 +133,17 @@ const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${urls
   .map(
-    (item) => `  <url>
-    <loc>${domain}${item.path}</loc>
+    (item) => {
+      // Protocol Enforcement
+      const resolvedUrl = new URL(item.path, domain).toString();
+      
+      return `  <url>
+    <loc>${resolvedUrl}</loc>
     <lastmod>${lastmod}</lastmod>
     <changefreq>${item.changefreq}</changefreq>
     <priority>${item.priority}</priority>
-  </url>`
+  </url>`;
+    }
   )
   .join("\n")}
 </urlset>`;

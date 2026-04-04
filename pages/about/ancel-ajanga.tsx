@@ -1,5 +1,5 @@
 import React from 'react'
-import Head from 'next/head'
+import { SEO } from '@/domains/seo/components/SEO'
 import Link from 'next/link'
 import { LazyMotion, domAnimation, m } from 'framer-motion'
 import { ArrowLeft } from 'lucide-react'
@@ -7,10 +7,23 @@ import { ArrowLeft } from 'lucide-react'
 export default function AboutAncelAjanga() {
   return (
     <>
-      <Head>
-        <title>Ancel Ajanga — The Fullstack Architect's Genesis</title>
-        <meta name="description" content="Deep dive into Ancel Ajanga's engineering philosophy, moving from traditional development to architecting resilient, self-healing distributed systems." />
-      </Head>
+      <SEO 
+        title="Ancel Ajanga — The Fullstack Architect's Genesis; Engineering Philosophy & System Architecture"
+        description="Deep dive into Ancel Ajanga's engineering philosophy, moving from traditional development to architecting resilient, self-healing distributed systems."
+        canonicalUrl="/about/ancel-ajanga"
+        keywords={[
+          "Ancel Ajanga",
+          "Engineering Philosophy",
+          "Systems Architect",
+          "Fullstack Developer",
+          "Software Engineering",
+          "Distributed Systems",
+          "Resilient Systems",
+          "Kenya"
+        ]}
+        ogTitle="Ancel Ajanga — Engineering Philosophy & System Architecture"
+        ogImage="/images/about/profile-photo.png"
+      />
 
       <LazyMotion features={domAnimation}>
         <article className="pt-24 pb-24 min-h-screen bg-background w-full">
