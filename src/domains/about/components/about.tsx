@@ -163,7 +163,7 @@ export function About({ className, fullPage }: AboutProps) {
                     </div>
                     <div className="flex items-center text-muted-foreground text-sm sm:text-base">
                       <Users className="h-4 w-4 sm:h-5 sm:w-5 mr-2 sm:mr-3 text-primary flex-shrink-0" /> 
-                      <span>Software Engineer (Independent Consultant) | 2024– Present</span>
+                      <span>{SITE.company.role}, {SITE.company.name} · {SITE.company.type}</span>
                     </div>
                   </div>
 
@@ -212,6 +212,19 @@ export function About({ className, fullPage }: AboutProps) {
 
           {/* Right Column: About Me, Skills & Achievements */}
           <div className="space-y-8">
+            {/* Current Role */}
+            <m.div variants={itemVariants}>
+              <Card>
+                <CardContent className="p-4 sm:p-5 md:p-6">
+                  <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">Current Role</h3>
+                  <div className="space-y-3 text-muted-foreground text-sm sm:text-base leading-relaxed">
+                    <p>{SITE.copy.currentRoleLead}</p>
+                    <p>{SITE.copy.aboutPortfolioIndependence}</p>
+                  </div>
+                </CardContent>
+              </Card>
+            </m.div>
+
             {/* About Me */}
             <m.div variants={itemVariants}>
               <Card>
@@ -391,7 +404,7 @@ export function About({ className, fullPage }: AboutProps) {
                 <Briefcase className="h-6 w-6 mr-2 text-primary" /> Professional Experience &amp; Education
               </h3>
               <div className="space-y-8">
-                {/* Lead Systems Engineer */}
+                {/* Lead Systems Engineer — independent portfolio & consulting */}
                 <div>
                   <h4 className="font-semibold text-lg text-foreground">Lead Systems Engineer (Independent Consultant)</h4>
                   <p className="text-sm text-primary font-medium mb-2">March 2024 – Present</p>

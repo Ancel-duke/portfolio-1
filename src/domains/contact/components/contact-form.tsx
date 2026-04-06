@@ -6,6 +6,7 @@ import { Textarea } from '@/shared/components/ui/textarea'
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/shared/components/ui/card'
 import { CheckCircle2, Phone, MessageCircle } from 'lucide-react'
 import { SITE, WHATSAPP_URL } from '@/shared/constants/site'
+import { AvailabilityBadge } from '@/shared/components/AvailabilityBadge'
 
 const PHONE = SITE.phone
 const WHATSAPP = SITE.whatsapp
@@ -34,6 +35,9 @@ export function ContactForm({ className, onSuccess }: ContactFormProps) {
             <CardDescription className="text-sm sm:text-base mt-2">
               Reach out to discuss building resilient, scalable, high-impact systems. Whether you need enterprise-grade architecture, hybrid database solutions, or real-time platforms, I design systems that scale with your business.
             </CardDescription>
+            <div className="mt-3 flex justify-center sm:justify-start">
+              <AvailabilityBadge />
+            </div>
             <div className="flex flex-wrap items-center gap-4 mt-4 pt-4 border-t border-border">
               <a href={`tel:${PHONE?.replace(/\s/g, '')}`} className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
                 <Phone className="h-4 w-4" />

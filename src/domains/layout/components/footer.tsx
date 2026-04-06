@@ -154,8 +154,9 @@ function FooterComponent({ className }: FooterProps) {
 
         {/* Bottom Bar */}
         <div className="py-4 sm:py-6 lg:py-6 border-t flex flex-col sm:flex-row items-center justify-between space-y-3 sm:space-y-0 gap-3">
-          <div className="text-xs sm:text-sm lg:text-base text-muted-foreground text-center sm:text-left">
-            © {currentYear} {SITE.name}. All rights reserved.
+          <div className="text-xs sm:text-sm lg:text-base text-muted-foreground text-center sm:text-left space-y-1">
+            <p className="text-[11px] sm:text-xs text-muted-foreground/80">{SITE.copy.footerTrustLine}</p>
+            <p>© {currentYear} {SITE.name}. All rights reserved.</p>
           </div>
           <div className="flex items-center gap-3">
             <a

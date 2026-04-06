@@ -7,6 +7,8 @@ import { getCaseStudySlugForProject } from '@/shared/utils/metadata';
 import { useAnimationsEnabled } from '@/contexts/AnimationsContext';
 import { getSectionVariants } from '@/shared/utils/animation-variants';
 import { getSortedProjects } from '../services/projects-data';
+import { ProfessionalContext } from '@/shared/components/ProfessionalContext';
+import { SITE } from '@/shared/constants/site';
 
 export default function ProjectsView() {
   const [selectedProject, setSelectedProject] = useState(null);
@@ -79,6 +81,15 @@ export default function ProjectsView() {
               Enterprise-grade systems engineered for scalability, resilience, and security. 
               From high-security coordination platforms to autonomous infrastructure guardrails.
             </m.p>
+            <m.p
+              variants={itemVariants}
+              className="text-xs sm:text-sm text-slate-500 max-w-2xl mx-auto mt-4 leading-relaxed"
+            >
+              {SITE.copy.projectsPageIntro}
+            </m.p>
+            <m.div variants={itemVariants} className="mt-4">
+              <ProfessionalContext variant="header" className="text-slate-500" />
+            </m.div>
           </m.div>
 
           {/* Section 1: Flagship Case Studies */}

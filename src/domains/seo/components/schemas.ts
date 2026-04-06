@@ -1,6 +1,7 @@
 // Note: JSON imports are handled dynamically in the components
 // This avoids build-time import issues with JSON files
 import { SITE } from '@/shared/constants/site'
+import { personSchema } from '@/shared/seo/personSchema'
 
 /** E-A-T: Build knowsAbout as Thing[] with sameAs to authoritative sources (Wikidata/official docs) */
 export function getKnowsAboutAsThings(
@@ -29,52 +30,11 @@ export const TOP_PROJECT_NAMES = ["NestFi", "SignFlow", "OpsFlow", "Aegis", "Led
 export const generatePersonSchema = (opts?: {
   knowsAboutThings?: Array<{ "@type": "Thing"; name: string; sameAs?: string }>;
 }) => {
-  return {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "@id": `${SITE.url}/#ancel-ajanga`,
-    "name": SITE.fullName,
-    "alternateName": ["Ancel", "Duke"],
-    "url": SITE.url,
-    "image": `${SITE.url}${SITE.profileImage}`,
-    "sameAs": [
-      SITE.github,
-      SITE.linkedin,
-      SITE.twitter,
-      SITE.url,
-    ],
-    "jobTitle": "Fullstack Software Engineer",
-    "description": "Fullstack Software Engineer from Nairobi, Kenya. Creator of Inkly, NestFi, LedgerX, Aegis, SignFlow, OpsFlow, EduManage.",
-    "address": { "@type": "PostalAddress", "addressLocality": "Nairobi", "addressCountry": "Kenya" },
-    "email": SITE.email,
-    "knowsAbout": [
-      "Distributed Systems",
-      "Microservices",
-      "Real-time Systems",
-      "AI Systems",
-      "Web Development",
-      "Frontend Development",
-      "Frontend Architecture",
-      "UI Engineering",
-      "React Systems",
-      "Design Systems",
-      "Performance Optimization",
-      "TypeScript",
-      "Node.js",
-      "NestJS",
-      "PostgreSQL",
-      "MongoDB",
-      "Redis",
-      "Flutter",
-      "Fintech Systems",
-      "M-Pesa Integration",
-      "Zero-Trust Security",
-    ],
-    "worksFor": {
-      "@type": "Organization",
-      "name": "Ancel Ajanga"
-    }
-  };
+  const base = { ...personSchema } as Record<string, unknown>
+  if (opts?.knowsAboutThings?.length) {
+    base.knowsAbout = opts.knowsAboutThings
+  }
+  return base
 };
 
 /** Software Developer profile JSON-LD: skills, top projects, location Kenya/East Africa, contact. For crawlers and rich results. */
@@ -85,15 +45,16 @@ export function generateSoftwareDeveloperSchema() {
     "mainEntity": {
       "@type": "Person",
       "@id": `${SITE.url}/#ancel-ajanga`,
-      "name": SITE.fullName,
+      "name": SITE.name,
       "alternateName": ["Ancel", "Duke"],
-      "jobTitle": "Fullstack Software Engineer",
+      "jobTitle": "Software Engineer",
       "description": "Fullstack Software Engineer specializing in scalable backend systems and high-performance frontend experiences. Based in Nairobi, Kenya. Projects: Inkly, NestFi, SignFlow, OpsFlow, Aegis, LedgerX, EduChain, EduManage, TaskForge.",
       "url": SITE.url,
       "image": `${SITE.url}${SITE.profileImage}`,
       "email": SITE.email,
       "telephone": SITE.phone,
-      "address": { "@type": "PostalAddress", "addressLocality": "Nairobi", "addressCountry": "Kenya" },
+      "address": { "@type": "PostalAddress", "addressLocality": "Nairobi", "addressCountry": "KE" },
+      "worksFor": { "@type": "Organization", "name": SITE.company.name },
       "knowsAbout": ["Full-stack development", "Frontend Architecture", "UI Engineering", "React Systems", "Design Systems", "Performance Optimization", "Interactive Systems", "Security", "AIOps", "System resilience", "NestFi", "SignFlow", "OpsFlow", "Aegis", "LedgerX", "EduChain", "EduManage", "TaskForge", "React", "Node.js", "TypeScript", "NestJS", "Flutter", "PostgreSQL", "MongoDB"],
       "hasCredential": [],
       "sameAs": [SITE.github, SITE.linkedin, SITE.twitter, SITE.url]
@@ -113,7 +74,7 @@ export const generateProjectSchema = (project: any) => {
     "creator": {
       "@type": "Person",
       "@id": `${SITE.url}/#ancel-ajanga`,
-      "name": SITE.fullName,
+      "name": SITE.name,
       "url": SITE.url,
       "sameAs": [SITE.github, SITE.linkedin, SITE.twitter],
     },
@@ -154,14 +115,14 @@ export const generateBlogPostSchema = (post: any) => ({
   "author": {
     "@type": "Person",
     "@id": `${SITE.url}/#ancel-ajanga`,
-    "name": post.author?.name || SITE.fullName,
+    "name": post.author?.name || SITE.name,
     "url": SITE.url,
     "image": post.author?.avatar ? `https://ancel.co.ke${post.author.avatar}` : `${SITE.url}${SITE.profileImage}`,
     "sameAs": [SITE.github, SITE.linkedin, SITE.twitter],
   },
   "publisher": {
     "@type": "Person",
-    "name": SITE.fullName,
+    "name": SITE.name,
     "image": `${SITE.url}${SITE.profileImage}`
   },
   "datePublished": post.date,
@@ -198,7 +159,7 @@ export function generateArticleSchema(guide: {
     'author': {
       '@type': 'Person',
       '@id': `${SITE.url}/#ancel-ajanga`,
-      'name': SITE.fullName,
+      'name': SITE.name,
       'jobTitle': 'Fullstack Software Engineer',
       'url': SITE.url,
       'sameAs': [SITE.github, SITE.linkedin, SITE.twitter],
@@ -221,7 +182,7 @@ export const generateCaseStudySchema = (caseStudy: any) => ({
   "author": {
     "@type": "Person",
     "@id": `${SITE.url}/#ancel-ajanga`,
-    "name": SITE.fullName,
+    "name": SITE.name,
     "url": SITE.url,
     "sameAs": [SITE.github, SITE.linkedin, SITE.twitter],
   },
@@ -272,7 +233,7 @@ export function generateTechArticleSchema(caseStudy: any) {
     "author": {
       "@type": "Person",
       "@id": `${SITE.url}/#ancel-ajanga`,
-      "name": SITE.fullName,
+      "name": SITE.name,
       "jobTitle": "Fullstack Software Engineer",
       "url": SITE.url,
       "sameAs": [SITE.github, SITE.linkedin, SITE.twitter],
@@ -395,7 +356,7 @@ export function generatePersonWithAreaServedSchema(opts?: { jobTitle?: string })
     '@context': 'https://schema.org',
     '@type': 'Person',
     '@id': `${SITE.url}/#ancel-ajanga`,
-    name: SITE.fullName,
+    name: SITE.name,
     alternateName: ['Ancel', 'Duke'],
     jobTitle,
     url: SITE.url,
@@ -448,7 +409,7 @@ export const generateOrganizationSchema = () => ({
   "founder": {
     "@type": "Person",
     "@id": `${SITE.url}/#ancel-ajanga`,
-    "name": SITE.fullName,
+    "name": SITE.name,
   },
   "address": {
     "@type": "PostalAddress",

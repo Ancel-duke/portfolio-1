@@ -1,5 +1,5 @@
 import { Html, Head, Main, NextScript } from 'next/document'
-import { SITE } from '@/shared/constants/site'
+import { personSchema } from '@/shared/seo/personSchema'
 
 const themeInitScript = `
 (function() {
@@ -34,51 +34,7 @@ export default function Document() {
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              '@context': 'https://schema.org',
-              '@type': 'Person',
-              '@id': 'https://ancel.co.ke/#ancel-ajanga',
-              name: 'Ancel Ajanga',
-              alternateName: ['Ancel', 'Duke'],
-              url: 'https://ancel.co.ke',
-              image: 'https://ancel.co.ke/images/about/profile.webp',
-              sameAs: [
-                SITE.github,
-                SITE.linkedin,
-                SITE.twitter,
-                SITE.url,
-              ],
-              jobTitle: 'Fullstack Software Engineer',
-              description: 'Fullstack Software Engineer from Nairobi, Kenya. Creator of Inkly, NestFi, LedgerX, Aegis, SignFlow, OpsFlow, EduManage.',
-              address: { '@type': 'PostalAddress', addressLocality: 'Nairobi', addressCountry: 'Kenya' },
-              knowsAbout: [
-                'Distributed Systems',
-                'Microservices',
-                'Real-time Systems',
-                'AI Systems',
-                'Web Development',
-                'Frontend Development',
-                'Frontend Architecture',
-                'UI Engineering',
-                'React Systems',
-                'Design Systems',
-                'Performance Optimization',
-                'TypeScript',
-                'Node.js',
-                'NestJS',
-                'PostgreSQL',
-                'MongoDB',
-                'Redis',
-                'Flutter',
-                'Fintech Systems',
-                'M-Pesa Integration',
-                'Zero-Trust Security',
-              ],
-              worksFor: {
-                '@type': 'Organization',
-                name: 'Ancel Ajanga',
-              }
-            }),
+            __html: JSON.stringify(personSchema),
           }}
         />
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />

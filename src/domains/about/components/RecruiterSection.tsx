@@ -4,6 +4,7 @@ import { getSectionVariants } from '@/shared/utils/animation-variants'
 import { Card, CardContent } from '@/shared/components/ui/card'
 import { useAnimationsEnabled } from '@/contexts/AnimationsContext'
 import { CheckCircle2, Award, Briefcase, Zap } from 'lucide-react'
+import { SITE } from '@/shared/constants/site'
 
 export function RecruiterSection() {
   const animationsEnabled = useAnimationsEnabled()
@@ -33,7 +34,7 @@ export function RecruiterSection() {
         <div className="container-custom max-w-5xl mx-auto">
           <m.div variants={containerVariants} initial="hidden" whileInView="visible" viewport={{ once: true }}>
             <m.div className="text-center mb-10 sm:mb-12" variants={itemVariants}>
-              <h2 className="text-3xl sm:text-4xl font-bold mb-4">Why Hire Ancel Ajanga?</h2>
+              <h2 className="text-3xl sm:text-4xl font-bold mb-4">Why Work With Ancel Ajanga?</h2>
               <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
                 Stop worrying about system architecture and scalability. I build solutions that just work—and keep working under load.
               </p>
@@ -58,7 +59,7 @@ export function RecruiterSection() {
             
             <m.div className="mt-12 text-center" variants={itemVariants}>
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/20 bg-primary/5 text-primary text-sm font-medium">
-                <CheckCircle2 className="h-4 w-4" /> Available for immediate deployment
+                <CheckCircle2 className="h-4 w-4" /> {SITE.availability.message}
               </div>
             </m.div>
 

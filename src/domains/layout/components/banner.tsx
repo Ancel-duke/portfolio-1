@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import Link from 'next/link'
 import { X, FileText, MessageSquare, Phone } from 'lucide-react'
 import { cn } from '@/shared/utils'
+import { SITE } from '@/shared/constants/site'
 
 export function Banner() {
   const [dismissed, setDismissed] = useState(false)
@@ -21,9 +22,9 @@ export function Banner() {
       <div className="container-custom mx-auto px-4 py-2.5 max-w-full">
         <div className="flex items-center justify-between gap-3 flex-wrap sm:flex-nowrap">
           {/* Status */}
-          <p className="font-medium text-xs sm:text-sm tracking-wide text-foreground flex items-center gap-2 shrink-0">
+          <p className="font-medium text-xs sm:text-sm tracking-wide text-foreground flex items-center gap-2 shrink-0 max-w-[min(100%,42rem)]">
             <span className="inline-block animate-pulse rounded-full bg-emerald-400 h-2 w-2 shrink-0" />
-            Available for senior fullstack &amp; systems engineering roles
+            {SITE.availability.message}
           </p>
 
           {/* Actions */}

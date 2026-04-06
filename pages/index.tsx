@@ -1,6 +1,7 @@
 import React, { Suspense, useState, useEffect } from 'react'
 import dynamic from 'next/dynamic'
 import SEO from '@/domains/seo'
+import { SITE, WHATSAPP_URL } from '@/shared/constants/site'
 import { SkipLink } from '@/shared/components/ui/skip-link'
 import { Hero } from '@/domains/hero'
 import {
@@ -124,10 +125,16 @@ export default function HomePage() {
           <About />
           <RecruiterSection />
           <TodaysHighlights />
-          <InlineCTA title="Looking to scale your distributed platforms?" subtitle="Available for direct engineering consulting and Staff-level roles." buttonText="View Project Portfolio" />
+          <InlineCTA title="Looking to scale your distributed platforms?" subtitle={SITE.availability.message} buttonText="Start a Project" />
           <CaseStudiesGrid limit={3} showViewAll={true} />
           <LabsExperiments limit={3} showViewAll={true} />
-          <InlineCTA title="Looking to stabilize a monolithic backend?" subtitle="Let's build infrastructure that scales reliably from day one." buttonText="Let's Talk Architecture" />
+          <InlineCTA
+            title="Looking to stabilize a monolithic backend?"
+            subtitle={SITE.availability.message}
+            buttonText="Chat on WhatsApp"
+            buttonHref={WHATSAPP_URL}
+            external
+          />
           <TechStack />
           <Fun />
           <CTA />

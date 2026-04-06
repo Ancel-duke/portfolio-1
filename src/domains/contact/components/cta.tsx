@@ -68,16 +68,9 @@ export function CTA({ className }: CTAProps) {
                 <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center mb-6">
                   <Button size="lg" className="group w-full sm:w-auto min-h-[48px] text-base sm:text-lg" asChild>
                     <Link href="/contact">
-                      <MessageCircle className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
-                      Start a Conversation
+                      Start a Project
                       <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5 group-hover:translate-x-1 transition-transform" />
                     </Link>
-                  </Button>
-                  <Button size="lg" variant="outline" className="w-full sm:w-auto min-h-[48px] text-base sm:text-lg" asChild>
-                    <a href={`mailto:${SITE.email}`}>
-                      <Mail className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
-                      Send Email
-                    </a>
                   </Button>
                   <Button size="lg" variant="outline" className="w-full sm:w-auto min-h-[48px] text-base sm:text-lg" asChild>
                     <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">

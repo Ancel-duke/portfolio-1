@@ -6,11 +6,15 @@ import { Button } from '@/shared/components/ui/button'
 export function InlineCTA({ 
   title = "Looking for production-grade systems?", 
   subtitle = "Let's build something scalable.",
-  buttonText = "Let's Talk"
+  buttonText = "Let's Talk",
+  buttonHref = '/contact',
+  external = false,
 }: { 
   title?: string
   subtitle?: string
-  buttonText?: string 
+  buttonText?: string
+  buttonHref?: string
+  external?: boolean
 }) {
   return (
     <LazyMotion features={domAnimation}>
@@ -25,8 +29,14 @@ export function InlineCTA({
             <h3 className="text-xl sm:text-2xl font-bold mb-2">{title}</h3>
             <p className="text-muted-foreground">{subtitle}</p>
           </div>
-          <Button size="lg" asChild className="whitespace-nowrap w-full sm:w-auto">
-            <Link href="/contact">{buttonText}</Link>
+          <Button size="lg" asChild className="whitespace-nowrap w-full sm:w-auto min-h-[48px]">
+            {external ? (
+              <a href={buttonHref} target="_blank" rel="noopener noreferrer">
+                {buttonText}
+              </a>
+            ) : (
+              <Link href={buttonHref}>{buttonText}</Link>
+            )}
           </Button>
         </div>
       </m.div>

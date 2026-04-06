@@ -8,12 +8,14 @@ import { getSectionVariants } from '@/shared/utils/animation-variants'
 import { ArrowRight, Download, Github, Linkedin, Mail, MessageCircle, Server, Smartphone, Cpu } from "lucide-react"
 import { useParallaxEnabled } from '../hooks/useParallaxEnabled'
 import { SITE, WHATSAPP_URL } from '@/shared/constants/site'
+import { ProfessionalContext } from '@/shared/components/ProfessionalContext'
+import { AvailabilityBadge } from '@/shared/components/AvailabilityBadge'
 
 interface HeroProps {
   className?: string
 }
 
-const HERO_SUBLINE = "Engineering infrastructure that survives failure. Optimizing pipelines for scale, security, and absolute transaction integrity."
+const HERO_SUBLINE = SITE.copy.heroSupportingLead
 const HERO_PARAGRAPH = "From executing zero-knowledge frontends to orchestrating asynchronous Kafka microservices, I design and ship production systems built to handle millions of requests natively. I don't just write features—I build the bedrock that allows companies to scale safely."
 
 const socialLinks = [
@@ -58,9 +60,13 @@ function HeroParallax({ className }: HeroProps) {
               <h1 className="text-[clamp(2rem,4vw,2.5rem)] sm:text-[clamp(2.5rem,4vw,3rem)] font-extrabold leading-[1.25] mb-5 mx-auto max-w-5xl">
                 Systems Engineer &amp; Fullstack Developer building fault-tolerant, scalable, and real-time applications.
               </h1>
-              <p className="text-[clamp(1.125rem,2.25vw,1.375rem)] sm:text-[clamp(1.25rem,2.5vw,1.5rem)] font-semibold text-foreground mb-4 sm:mb-5 max-w-3xl mx-auto">
+              <p className="text-[clamp(1.125rem,2.25vw,1.375rem)] sm:text-[clamp(1.25rem,2.5vw,1.5rem)] font-semibold text-foreground mb-3 sm:mb-4 max-w-3xl mx-auto">
                 {HERO_SUBLINE}
               </p>
+              <div className="flex flex-col items-center gap-2 sm:gap-3 mb-4 sm:mb-5">
+                <ProfessionalContext variant="hero" className="mb-0 mt-0" />
+                <AvailabilityBadge />
+              </div>
               <p className="text-[clamp(0.9375rem,2vw,1.125rem)] sm:text-[clamp(1rem,2.25vw,1.25rem)] text-muted-foreground mb-8 sm:mb-10 max-w-2xl mx-auto leading-relaxed">
                 {HERO_PARAGRAPH}
               </p>
@@ -105,9 +111,13 @@ function HeroStatic({ className }: HeroProps) {
           <h1 className="text-[clamp(2rem,4vw,2.5rem)] sm:text-[clamp(2.5rem,4vw,3rem)] font-extrabold leading-[1.25] mb-5 mx-auto max-w-5xl">
             Systems Engineer &amp; Fullstack Developer building fault-tolerant, scalable, and real-time applications.
           </h1>
-          <p className="text-[clamp(1.125rem,2.25vw,1.375rem)] sm:text-[clamp(1.25rem,2.5vw,1.5rem)] font-semibold text-foreground mb-4 sm:mb-5 max-w-3xl mx-auto">
+          <p className="text-[clamp(1.125rem,2.25vw,1.375rem)] sm:text-[clamp(1.25rem,2.5vw,1.5rem)] font-semibold text-foreground mb-3 sm:mb-4 max-w-3xl mx-auto">
             {HERO_SUBLINE}
           </p>
+          <div className="flex flex-col items-center gap-2 sm:gap-3 mb-4 sm:mb-5">
+            <ProfessionalContext variant="hero" className="mb-0 mt-0" />
+            <AvailabilityBadge />
+          </div>
           <p className="text-[clamp(0.9375rem,2vw,1.125rem)] sm:text-[clamp(1rem,2.25vw,1.25rem)] text-muted-foreground mb-8 sm:mb-10 max-w-2xl mx-auto leading-relaxed">
             {HERO_PARAGRAPH}
           </p>
