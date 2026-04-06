@@ -43,6 +43,8 @@
   ],
   "exclude": [
     "node_modules",
+    "out",
+    ".next",
     "src/App.tsx",
     "src/App.jsx",
     "src/index.tsx"

@@ -11,48 +11,20 @@
 import type { GetStaticProps, NextPage } from 'next'
 import Head from 'next/head'
 import Link from 'next/link'
-import projectsData from '@/data/projects.json'
-import caseStudiesData from '@/data/case-studies.json'
-import blogData from '@/data/blog.json'
-import guidesData from '@/data/guides.json'
 import { SITE } from '@/shared/constants/site'
-
-/* ── Types ──────────────────────────────────────────────────────────────── */
-interface Project {
-  slug: string
-  title: string
-  description: string
-  technologies: string[] | Array<{ name: string }>
-  liveUrl?: string
-}
-
-interface CaseStudy {
-  slug: string
-  title: string
-  description: string
-  role: string
-}
-
-interface BlogPost {
-  slug: string
-  title: string
-  excerpt: string
-  level?: string
-  tags?: string[]
-}
-
-interface Guide {
-  slug: string
-  title: string
-  summary: string
-  tech_stack?: string[]
-}
+import {
+  loadAiIndexPageProps,
+  type AiIndexProject,
+  type AiIndexCaseStudy,
+  type AiIndexBlogPost,
+  type AiIndexGuide,
+} from '@/shared/utils/ai-index-selector'
 
 interface PageProps {
-  projects: Project[]
-  caseStudies: CaseStudy[]
-  blogPosts: BlogPost[]
-  guides: Guide[]
+  projects: AiIndexProject[]
+  caseStudies: AiIndexCaseStudy[]
+  blogPosts: AiIndexBlogPost[]
+  guides: AiIndexGuide[]
 }
 
 /* ── JSON-LD schema ──────────────────────────────────────────────────────── */
@@ -112,7 +84,7 @@ function buildJsonLd(props: PageProps) {
         '@type': 'SoftwareApplication',
         name: p.title.split(' —')[0].split(' -')[0].trim(),
         url: p.liveUrl || `${base}/projects/${p.slug}`,
-        description: p.description,
+        description: p.excerpt,
       },
     })),
   }
@@ -128,7 +100,7 @@ function buildJsonLd(props: PageProps) {
       position: i + 1,
       name: p.title.split(' —')[0].split(' -')[0].trim(),
       url: p.liveUrl || `${base}/projects/${p.slug}`,
-      description: p.description,
+      description: p.excerpt,
     })),
   }
 
@@ -143,7 +115,7 @@ function buildJsonLd(props: PageProps) {
       position: i + 1,
       name: c.title,
       url: `${base}/case-studies/${c.slug}`,
-      description: c.description,
+      description: c.excerpt,
     })),
   }
 
@@ -174,15 +146,6 @@ function buildJsonLd(props: PageProps) {
   }
 
   return [personSchema, projectList, caseStudyList, articleList, webPage]
-}
-
-/* ── Helpers ─────────────────────────────────────────────────────────────── */
-function normalizeTech(technologies: string[] | Array<{ name: string }>): string {
-  if (!Array.isArray(technologies)) return ''
-  return technologies
-    .map((t) => (typeof t === 'string' ? t : t?.name ?? ''))
-    .filter(Boolean)
-    .join(', ')
 }
 
 /* ── Page ─────────────────────────────────────────────────────────────────── */
@@ -354,7 +317,6 @@ const AiIndexPage: NextPage<PageProps> = (props) => {
           </h2>
           <ol style={{ paddingLeft: '1.25rem', margin: 0 }}>
             {projects.map((p) => {
-              const tech = normalizeTech(p.technologies)
               return (
                 <li key={p.slug} style={{ marginBottom: '1.25rem' }}>
                   <strong>
@@ -366,9 +328,9 @@ const AiIndexPage: NextPage<PageProps> = (props) => {
                     </a>
                   </strong>
                   <br />
-                  {p.description}
-                  {tech && (
-                    <><br /><em>Tech: {tech}</em></>
+                  {p.excerpt}
+                  {p.techSummary && (
+                    <><br /><em>Tech: {p.techSummary}</em></>
                   )}
                   {' · '}
                   <Link href={`/projects/${p.slug}`} style={{ color: 'inherit', textDecoration: 'underline' }}>
@@ -403,8 +365,14 @@ const AiIndexPage: NextPage<PageProps> = (props) => {
                     {c.title}
                   </Link>
                 </strong>
+                {c.year && (
+                  <>
+                    {' '}
+                    · <time dateTime={c.year}>{c.year}</time>
+                  </>
+                )}
                 <br />
-                {c.description}
+                {c.excerpt}
                 <br />
                 <em>Role: {c.role}</em>
               </li>
@@ -431,10 +399,11 @@ const AiIndexPage: NextPage<PageProps> = (props) => {
                   </Link>
                 </strong>
                 {b.level && <> · <em>Level: {b.level}</em></>}
+                {b.date && <> · <time dateTime={b.date}>{b.date}</time></>}
                 <br />
                 {b.excerpt}
-                {b.tags && b.tags.length > 0 && (
-                  <><br /><em>Tags: {b.tags.join(', ')}</em></>
+                {b.tagsSummary && (
+                  <><br /><em>Tags: {b.tagsSummary}</em></>
                 )}
               </li>
             ))}
@@ -456,10 +425,16 @@ const AiIndexPage: NextPage<PageProps> = (props) => {
                     {g.title}
                   </Link>
                 </strong>
+                {g.date && (
+                  <>
+                    {' '}
+                    · <time dateTime={g.date}>{g.date}</time>
+                  </>
+                )}
                 <br />
-                {g.summary}
-                {g.tech_stack && g.tech_stack.length > 0 && (
-                  <><br /><em>Tech: {g.tech_stack.slice(0, 6).join(', ')}</em></>
+                {g.excerpt}
+                {g.techSummary && (
+                  <><br /><em>Tech: {g.techSummary}</em></>
                 )}
               </li>
             ))}
@@ -509,14 +484,8 @@ const AiIndexPage: NextPage<PageProps> = (props) => {
 
 /* ── Static props — runs at build time, content available to crawlers ──── */
 export const getStaticProps: GetStaticProps<PageProps> = async () => {
-  return {
-    props: {
-      projects: projectsData as Project[],
-      caseStudies: caseStudiesData as CaseStudy[],
-      blogPosts: blogData as BlogPost[],
-      guides: guidesData as Guide[],
-    },
-  }
+  const props = await loadAiIndexPageProps()
+  return { props }
 }
 
 export default AiIndexPage
