@@ -9,9 +9,9 @@
  */
 
 import type { GetStaticProps, NextPage } from 'next'
-import Head from 'next/head'
 import Link from 'next/link'
-import { SITE } from '@/shared/constants/site'
+import { SITE, WHATSAPP_URL } from '@/shared/constants/site'
+import { SEOHead } from '@/domains/seo'
 import {
   loadAiIndexPageProps,
   type AiIndexProject,
@@ -40,15 +40,15 @@ function buildJsonLd(props: PageProps) {
     alternateName: ['Ancel', 'Duke'],
     url: base,
     image: `${base}/images/about/profile.webp`,
-    jobTitle: 'Fullstack Software Engineer',
+    jobTitle: SITE.role,
     description:
-      'Fullstack Software Engineer from Nairobi, Kenya specializing in scalable backend systems and high-performance frontend experiences. Creator of Inkly, NestFi, LedgerX, Aegis, SignFlow, OpsFlow, and EduManage.',
+      'Software Engineer at Maxson Programming Limited. Fullstack engineer from Nairobi, Kenya. Creator of Inkly, NestFi, LedgerX, Aegis, SignFlow, OpsFlow, and EduManage.',
     address: {
       '@type': 'PostalAddress',
       addressLocality: 'Nairobi',
       addressCountry: 'Kenya',
     },
-    sameAs: [SITE.github, SITE.linkedin, base],
+    sameAs: [SITE.github, SITE.linkedin, SITE.twitter, base, WHATSAPP_URL],
     knowsAbout: [
       'Fullstack Engineering',
       'Frontend Architecture',
@@ -156,30 +156,25 @@ const AiIndexPage: NextPage<PageProps> = (props) => {
 
   return (
     <>
-      <Head>
-        <title>AI Index — Ancel Ajanga | Fullstack Software Engineer, Nairobi Kenya</title>
-        <meta
-          name="description"
-          content="Machine-readable portfolio index for Ancel Ajanga — Fullstack Software Engineer from Nairobi, Kenya. Projects: Inkly, NestFi, LedgerX, Aegis, SignFlow, OpsFlow, EduManage. Skills: React, Node.js, NestJS, PostgreSQL, distributed systems, UI engineering."
-        />
-        <meta name="robots" content="index, follow, max-image-preview:large" />
-        <meta property="og:title" content="AI Index — Ancel Ajanga | Fullstack Software Engineer" />
-        <meta
-          property="og:description"
-          content="Complete entity index for AI crawlers and knowledge graph systems. All projects, skills, case studies, and identity for Ancel Ajanga."
-        />
-        <meta property="og:url" content={`${base}/ai-index`} />
-        <meta property="og:type" content="website" />
-        <link rel="canonical" href={`${base}/ai-index`} />
-
-        {jsonLdArray.map((schema, i) => (
-          <script
-            key={i}
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-          />
-        ))}
-      </Head>
+      <SEOHead
+        title="AI Index — Ancel Ajanga | Software Engineer, Nairobi Kenya"
+        description="Machine-readable portfolio index for Ancel Ajanga — Software Engineer at Maxson Programming Limited, Nairobi, Kenya. Projects: Inkly, NestFi, LedgerX, Aegis, SignFlow, OpsFlow, EduManage. Skills: React, Node.js, NestJS, PostgreSQL, distributed systems, UI engineering."
+        canonical="/ai-index"
+        ogTitle="AI Index — Ancel Ajanga | Entity hub for AI crawlers"
+        keywords={[
+          'AI index',
+          'Ancel Ajanga',
+          'entity graph',
+          'GPTBot',
+          'software engineer Kenya',
+          'NestFi',
+          'LedgerX',
+          'Inkly',
+          'Aegis',
+          'fullstack engineer',
+        ]}
+        jsonLd={jsonLdArray}
+      />
 
       <main
         style={{

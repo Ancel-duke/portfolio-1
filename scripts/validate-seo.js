@@ -69,7 +69,7 @@ const validateSEO = () => {
     }
 
     // Check for AI crawler support
-    const aiCrawlers = ['GPTBot', 'ChatGPT-User', 'CCBot', 'Claude-Web', 'Google-Extended'];
+    const aiCrawlers = ['GPTBot', 'ChatGPT-User', 'CCBot', 'Claude-Web', 'Google-Extended', 'Bravebot', 'Bingbot', 'PerplexityBot', 'Amazonbot', 'ClaudeBot', 'anthropic-ai'];
     aiCrawlers.forEach(crawler => {
       if (robotsContent.includes(`User-agent: ${crawler}`)) {
         successes.push(`✅ Robots.txt supports ${crawler}`);

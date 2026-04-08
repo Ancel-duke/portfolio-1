@@ -10,6 +10,9 @@ export const SITE = {
   twitter: 'https://twitter.com/ancel_ajanga',
   profileImage: '/images/about/profile.webp',
 
+  /** Publisher label for HTML / Open Graph (organization-style site brand). */
+  publisherOrgName: 'Ancel Ajanga Portfolio',
+
   /** Public-facing role line (E-E-A-T + entity clarity). */
   role: 'Software Engineer at Maxson Programming Limited',
 

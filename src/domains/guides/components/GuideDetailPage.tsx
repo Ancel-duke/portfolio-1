@@ -12,6 +12,7 @@ import { Breadcrumb } from '@/shared/components/ui/breadcrumb'
 import type { Guide } from '../types/guide'
 import { getGuideBySlug } from '../services/guide-query'
 import { buildGuideFaqItems } from '@/shared/utils/metadata'
+import { buildGuideAiSummary } from '@/shared/utils/ai-summary'
 
 const caseStudies = caseStudiesData as Array<{ slug: string; title: string }>
 const clusters = topicClustersData?.clusters || []
@@ -136,16 +137,10 @@ export function GuideDetailView({ guide: guideProp, initialSlug }: GuideDetailVi
               )}
               <section
                 className="rounded-xl border border-border bg-muted/20 p-4 md:p-5 mb-6"
-                aria-labelledby="guide-quick-answer"
-                data-ai-summary="true"
+                aria-label="Guide summary for readers and AI extraction"
+                data-ai-summary=""
               >
-                <h2
-                  id="guide-quick-answer"
-                  className="text-sm font-semibold uppercase tracking-wide text-primary mb-2"
-                >
-                  Quick answer
-                </h2>
-                <p className="text-base text-foreground leading-relaxed">{guide.summary}</p>
+                <p className="text-base text-foreground leading-relaxed">{buildGuideAiSummary(guide)}</p>
               </section>
 
               {guide.related_topics?.length > 0 && (

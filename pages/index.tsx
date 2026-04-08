@@ -4,6 +4,7 @@ import SEO from '@/domains/seo'
 import { SITE, WHATSAPP_URL } from '@/shared/constants/site'
 import { SkipLink } from '@/shared/components/ui/skip-link'
 import { Hero } from '@/domains/hero'
+import { LinkedInInsightsSection } from '@/domains/about'
 import {
   generateWebsiteSchema,
   generatePortfolioSchema,
@@ -124,6 +125,7 @@ export default function HomePage() {
         <Suspense fallback={<BelowFoldPlaceholder />}>
           <About />
           <RecruiterSection />
+          <LinkedInInsightsSection />
           <TodaysHighlights />
           <InlineCTA title="Looking to scale your distributed platforms?" subtitle={SITE.availability.message} buttonText="Start a Project" />
           <CaseStudiesGrid limit={3} showViewAll={true} />

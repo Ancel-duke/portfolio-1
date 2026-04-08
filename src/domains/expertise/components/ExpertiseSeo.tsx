@@ -38,27 +38,27 @@ export function ExpertiseRelatedHub() {
       <ul className="space-y-2 text-muted-foreground text-sm sm:text-base list-disc list-inside">
         <li>
           <a href="/case-studies" className="text-primary hover:underline font-medium">
-            Case studies
+            Technical case studies index
           </a>{' '}
-          — production architecture write-ups (NestFi, LedgerX, Aegis, Inkly, and more).
+          — NestFi, LedgerX, Inkly, Aegis, and other architecture write-ups with TechArticle JSON-LD.
         </li>
         <li>
           <a href="/projects" className="text-primary hover:underline font-medium">
-            Projects
+            Portfolio projects hub
           </a>{' '}
-          — portfolio apps with SoftwareApplication metadata.
+          — SoftwareApplication schema for each build (live demos and repos where public).
         </li>
         <li>
           <a href="/developer-journal" className="text-primary hover:underline font-medium">
-            Developer Journal
+            Developer Journal (blog)
           </a>{' '}
-          — deeper articles tied to the same systems.
+          — narrative deep dives that pair with case studies and guides.
         </li>
         <li>
           <a href="/guides" className="text-primary hover:underline font-medium">
-            Guides
+            Step-by-step engineering guides
           </a>{' '}
-          — how-to breakdowns and comparisons.
+          — comparisons and how-tos linked to real systems in the portfolio.
         </li>
       </ul>
     </aside>

@@ -133,11 +133,11 @@ export const CaseStudiesGrid = React.memo(function CaseStudiesGrid({
           {/* CTA: Professional spacing (mt-16 = 64px) */}
           {showViewAll && limit && selectedCaseStudies.length > 0 && (
             <div className="text-center mt-16">
-              <Link 
-                href="/projects"
+              <Link
+                href="/case-studies"
                 className="inline-flex items-center justify-center gap-2 h-12 px-8 rounded-lg border-2 border-primary/20 bg-background hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all duration-300 text-base font-semibold"
               >
-                View All Systems
+                Browse all technical case studies (architecture &amp; outcomes)
                 <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
                 </svg>

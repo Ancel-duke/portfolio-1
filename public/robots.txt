@@ -2,6 +2,7 @@
 User-agent: *
 Allow: /
 
+# Search
 User-agent: Googlebot
 Allow: /
 
@@ -14,31 +15,41 @@ Allow: /
 User-agent: DuckDuckBot
 Allow: /
 
+# OpenAI
 User-agent: GPTBot
 Allow: /
 
 User-agent: ChatGPT-User
 Allow: /
 
+# Google AI (Gemini / AI Overviews)
+User-agent: Google-Extended
+Allow: /
+
+# Anthropic
 User-agent: ClaudeBot
 Allow: /
 
 User-agent: anthropic-ai
 Allow: /
 
-User-agent: PerplexityBot
-Allow: /
-
-User-agent: Amazonbot
-Allow: /
-
-User-agent: CCBot
-Allow: /
-
 User-agent: Claude-Web
 Allow: /
 
-User-agent: Google-Extended
+# Perplexity
+User-agent: PerplexityBot
+Allow: /
+
+# Amazon
+User-agent: Amazonbot
+Allow: /
+
+# Open commons / training (Common Crawl)
+User-agent: CCBot
+Allow: /
+
+# Brave Search
+User-agent: Bravebot
 Allow: /
 
 Sitemap: https://ancel.co.ke/sitemap.xml

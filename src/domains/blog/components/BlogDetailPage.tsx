@@ -20,14 +20,7 @@ import {
 import topicClustersData from '@/data/topic-clusters.json'
 import type { BlogPost } from '../types/blog-post'
 import { getBlogPostBySlug, postSlug } from '../services/blog-query'
-
-function directAnswerText(post: BlogPost): string {
-  if (post.businessOutcome?.trim()) return post.businessOutcome.trim()
-  const ex = post.excerpt?.trim() || ''
-  const parts = ex.split(/(?<=[.!?])\s+/)
-  if (parts.length >= 2) return `${parts[0]} ${parts[1]}`
-  return ex
-}
+import { buildJournalAiSummary } from '@/shared/utils/ai-summary'
 
 /** Renders content with optional code blocks (```) and injects "architect" CTA after solution paragraph. */
 function BlogContentWithCTAs({ content }: { content: string }) {
@@ -214,13 +207,12 @@ export function BlogDetailView({ post: postProp, initialSlug }: BlogDetailViewPr
                 </div>
                 <section
                   className="rounded-xl border border-border bg-muted/20 p-4 md:p-5 mb-6"
-                  aria-labelledby="direct-answer-heading"
-                  data-ai-summary="true"
+                  aria-label="Article summary for readers and AI extraction"
+                  data-ai-summary=""
                 >
-                  <h2 id="direct-answer-heading" className="text-sm font-semibold uppercase tracking-wide text-primary mb-2">
-                    Quick answer
-                  </h2>
-                  <p className="text-base md:text-lg text-foreground leading-relaxed">{directAnswerText(post)}</p>
+                  <p className="text-base md:text-lg text-foreground leading-relaxed">
+                    {buildJournalAiSummary(post)}
+                  </p>
                 </section>
                 <p className="text-lg text-muted-foreground italic">{post.excerpt}</p>
               </m.div>

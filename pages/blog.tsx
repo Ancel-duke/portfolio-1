@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Link from 'next/link'
 import { SITE } from '@/shared/constants/site'
+import { SEOHead } from '@/domains/seo'
 
 /**
  * /blog is legacy; canonical and indexing point at Developer Journal.
@@ -10,14 +11,14 @@ export default function BlogPage() {
   const target = `${SITE.url}/developer-journal`
   return (
     <>
+      <SEOHead
+        title="Developer Journal | Legacy /blog redirect"
+        description="Technical articles and engineering notes by Ancel Ajanga live on the Developer Journal. This URL redirects for backwards compatibility."
+        canonical={target}
+        noindex
+        keywords={['Developer Journal', 'Ancel Ajanga', 'blog redirect', 'engineering articles']}
+      />
       <Head>
-        <title>Developer Journal | {SITE.name}</title>
-        <meta
-          name="description"
-          content="Technical articles and engineering notes by Ancel Ajanga — architecture, fullstack systems, and production lessons. The Developer Journal is the canonical blog."
-        />
-        <meta name="robots" content="noindex, follow" />
-        <link rel="canonical" href={target} />
         <meta httpEquiv="refresh" content="0;url=/developer-journal" />
       </Head>
       <div className="min-h-[40vh] flex flex-col items-center justify-center gap-4 px-4">

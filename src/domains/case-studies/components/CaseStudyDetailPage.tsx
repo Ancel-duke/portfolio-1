@@ -23,6 +23,7 @@ import blogData from '@/data/blog.json'
 import { postSlug } from '@/domains/blog/services/blog-query'
 import { getProjectBySlug } from '@/domains/projects/services/projects-data'
 import { SITE } from '@/shared/constants/site'
+import { buildCaseStudyAiSummary } from '@/shared/utils/ai-summary'
 
 export interface CaseStudyDetailViewProps {
   caseStudy?: CaseStudy | null
@@ -172,20 +173,11 @@ export function CaseStudyDetailView({ caseStudy: caseStudyProp, initialSlug }: C
 
               <section
                 className="rounded-xl border border-border bg-muted/20 p-4 md:p-5"
-                aria-labelledby="case-study-quick-answer"
-                data-ai-summary="true"
+                aria-label="Case study summary for readers and AI extraction"
+                data-ai-summary=""
               >
-                <h2
-                  id="case-study-quick-answer"
-                  className="text-sm font-semibold uppercase tracking-wide text-primary mb-2"
-                >
-                  Quick answer
-                </h2>
                 <p className="text-base text-foreground leading-relaxed">
-                  {caseStudy.problemSolutionBridge?.trim() ||
-                    (caseStudy.description?.length > 360
-                      ? `${caseStudy.description.slice(0, 357).trim()}…`
-                      : caseStudy.description)}
+                  {buildCaseStudyAiSummary(caseStudy)}
                 </p>
               </section>
 
@@ -530,7 +522,8 @@ export function CaseStudyDetailView({ caseStudy: caseStudyProp, initialSlug }: C
               href={`/projects/${caseStudy.slug}`}
               className="text-primary hover:underline font-medium"
             >
-              Open project page: {caseStudy.slug}
+              View the{' '}
+              {caseStudy.title.split(' - ')[0].split('—')[0].trim()} portfolio project page
             </Link>
           </m.aside>
         )}

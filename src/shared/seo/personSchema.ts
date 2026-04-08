@@ -4,6 +4,7 @@ const KNOWS_ABOUT = [
   'Distributed Systems',
   'Microservices',
   'Real-time Systems',
+  'Real-time Messaging',
   'AI Systems',
   'Web Development',
   'Frontend Development',
@@ -15,13 +16,17 @@ const KNOWS_ABOUT = [
   'TypeScript',
   'Node.js',
   'NestJS',
+  'Next.js',
   'PostgreSQL',
   'MongoDB',
   'Redis',
   'Flutter',
   'Fintech Systems',
+  'Fintech Architecture',
   'M-Pesa Integration',
   'Zero-Trust Security',
+  'System Design',
+  'Event-driven Architecture',
 ] as const;
 
 export const EMPLOYER_ORG_ID = `${SITE.url}/#organization-maxson-programming-limited` as const;
@@ -32,12 +37,15 @@ export const employerOrganizationNode = {
   '@type': 'Organization',
   '@id': EMPLOYER_ORG_ID,
   name: SITE.company.name,
+  description:
+    'Kenya-based technology employer. Featured portfolio systems on ancel.co.ke are independently authored by Ancel Ajanga unless explicitly stated otherwise.',
   address: {
     '@type': 'PostalAddress',
     addressLocality: 'Nairobi',
     addressCountry: 'KE',
   },
   areaServed: 'Kenya',
+  sameAs: [SITE.linkedin],
 } as const;
 
 /** Person node for JSON-LD @graph (no root @context). */

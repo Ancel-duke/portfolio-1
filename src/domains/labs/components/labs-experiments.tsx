@@ -20,6 +20,7 @@ interface CaseStudy {
   id: number
   slug: string
   title: string
+  displayTitle?: string
   subtitle: string
   role: string
   timeline: string
@@ -308,7 +309,8 @@ export function LabsExperiments({ className, limit, showViewAll = true, fullPage
                     asChild
                   >
                     <Link href={`/case-studies/${project.slug}`}>
-                      View Details
+                      Open the {(project.displayTitle || project.title).split(':')[0].split('—')[0].trim()} lab
+                      case study
                       <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                     </Link>
                   </Button>
@@ -322,7 +324,7 @@ export function LabsExperiments({ className, limit, showViewAll = true, fullPage
           <div className="text-center mt-12">
             <Button size="lg" variant="outline" asChild>
               <Link href="/labs-experiments">
-                View All Experiments
+                See all labs &amp; frontend experiment case studies
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>
