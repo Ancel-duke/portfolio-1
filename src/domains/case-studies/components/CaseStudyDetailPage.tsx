@@ -13,8 +13,16 @@ import { ArrowLeft, ExternalLink, Github, FileText, Calendar, User, Zap, Lightbu
 import { SkipLink } from '@/shared/components/ui/skip-link'
 import { Breadcrumb } from '@/shared/components/ui/breadcrumb'
 import { TechSummaryTable } from './TechSummaryTable'
-import { getCaseStudyImageAlt, getClustersForCaseStudy } from '@/shared/utils/metadata'
+import {
+  getCaseStudyImageAlt,
+  getClustersForCaseStudy,
+  getRelatedArticleSlugsForCaseStudy,
+} from '@/shared/utils/metadata'
 import topicClustersData from '@/data/topic-clusters.json'
+import blogData from '@/data/blog.json'
+import { postSlug } from '@/domains/blog/services/blog-query'
+import { getProjectBySlug } from '@/domains/projects/services/projects-data'
+import { SITE } from '@/shared/constants/site'
 
 export interface CaseStudyDetailViewProps {
   caseStudy?: CaseStudy | null
@@ -143,7 +151,7 @@ export function CaseStudyDetailView({ caseStudy: caseStudyProp, initialSlug }: C
                 alt={getCaseStudyImageAlt(caseStudy.title, 'Hero Preview')}
                 width={520}
                 height={293}
-                priority={false}
+                priority
                 loading="eager"
                 skipNetlifyCDN
                 sizes="(max-width: 768px) 100vw, 260px"
@@ -162,9 +170,28 @@ export function CaseStudyDetailView({ caseStudy: caseStudyProp, initialSlug }: C
                 </p>
               </div>
 
+              <section
+                className="rounded-xl border border-border bg-muted/20 p-4 md:p-5"
+                aria-labelledby="case-study-quick-answer"
+                data-ai-summary="true"
+              >
+                <h2
+                  id="case-study-quick-answer"
+                  className="text-sm font-semibold uppercase tracking-wide text-primary mb-2"
+                >
+                  Quick answer
+                </h2>
+                <p className="text-base text-foreground leading-relaxed">
+                  {caseStudy.problemSolutionBridge?.trim() ||
+                    (caseStudy.description?.length > 360
+                      ? `${caseStudy.description.slice(0, 357).trim()}…`
+                      : caseStudy.description)}
+                </p>
+              </section>
+
               {/* Author section: E-E-A-T signals */}
               <div className="flex items-center text-sm md:text-base text-muted-foreground font-medium border-l-2 border-primary pl-3 py-1 my-2">
-                Written by Ancel — Software Engineer
+                Written by {SITE.name} — {SITE.role}
               </div>
 
               <div className="flex flex-wrap gap-2 sm:gap-3">
@@ -476,7 +503,7 @@ export function CaseStudyDetailView({ caseStudy: caseStudyProp, initialSlug }: C
           if (related.length === 0) return null
           return (
             <m.aside variants={itemVariants} className="mt-8 sm:mt-10" aria-label="Related case studies">
-              <h2 className="text-xl sm:text-2xl font-bold mb-4">Related</h2>
+              <h2 className="text-xl sm:text-2xl font-bold mb-4">Related case studies</h2>
               <ul className="space-y-2">
                 {related.map((cs) => (
                   <li key={cs.slug}>
@@ -485,6 +512,48 @@ export function CaseStudyDetailView({ caseStudy: caseStudyProp, initialSlug }: C
                       className="text-primary hover:underline font-medium"
                     >
                       {cs.title}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </m.aside>
+          )
+        })()}
+
+        {getProjectBySlug(caseStudy.slug) && (
+          <m.aside variants={itemVariants} className="mt-8 sm:mt-10" aria-label="Portfolio project">
+            <h2 className="text-xl sm:text-2xl font-bold mb-4">How to explore this build as a product</h2>
+            <p className="text-muted-foreground mb-3">
+              The same system appears as a portfolio project entry with SoftwareApplication metadata and launch links when available.
+            </p>
+            <Link
+              href={`/projects/${caseStudy.slug}`}
+              className="text-primary hover:underline font-medium"
+            >
+              Open project page: {caseStudy.slug}
+            </Link>
+          </m.aside>
+        )}
+
+        {(() => {
+          const articleSlugs = getRelatedArticleSlugsForCaseStudy(
+            topicClustersData?.clusters || [],
+            caseStudy.slug
+          ).filter((s) => s !== caseStudy.slug)
+          if (articleSlugs.length === 0) return null
+          const posts = (blogData as Array<{ title: string; slug?: string }>)
+            .map((p) => ({ post: p, slug: postSlug(p) }))
+            .filter(({ slug }) => articleSlugs.includes(slug))
+            .slice(0, 5)
+          if (posts.length === 0) return null
+          return (
+            <m.aside variants={itemVariants} className="mt-8 sm:mt-10" aria-label="Related developer journal articles">
+              <h2 className="text-xl sm:text-2xl font-bold mb-4">Related Developer Journal articles</h2>
+              <ul className="space-y-2">
+                {posts.map(({ post, slug: aSlug }) => (
+                  <li key={aSlug}>
+                    <Link href={`/developer-journal/${aSlug}`} className="text-primary hover:underline font-medium">
+                      {post.title}
                     </Link>
                   </li>
                 ))}

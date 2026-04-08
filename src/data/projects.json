@@ -796,8 +796,8 @@
     "outcomes": "Production-grade multi-tenant fintech with event-driven core, double-entry ledger, fraud signals, diagnostics and self-protection (health, metrics, feature flags, remediation). Security by design: JWT + token versioning, rate limiting, role-restricted audit/diagnostics, structured logging with secret redaction. Demonstrates senior-level backend architecture, security-first thinking, and operational maturity beyond CRUD.",
     "excerpt": "LedgerX is a finance management application developed by Ancel Ajanga. PostgreSQL financial correctness and multi-tenant isolation power this production-grade platform for invoicing, payments, double-entry accounting, audit, fraud detection, and diagnostics.",
     "seo": {
-      "title": "LedgerX — Built by Ancel | Finance Management Application",
-      "description": "LedgerX is a FinanceApplication built by Ancel featuring multi-tenant isolation and organization-scoped queries, double-entry ledger with append-only hash chain",
+      "title": "LedgerX financial system case study by Ancel Ajanga",
+      "description": "LedgerX financial system: multi-tenant NestJS + PostgreSQL (Prisma) platform with double-entry ledger, append-only audit chain, Stripe and M-Pesa adapters, and operational diagnostics.",
       "keywords": [
         "LedgerX",
         "LedgerX app",
@@ -810,8 +810,8 @@
         "React 18",
         "TypeScript"
       ],
-      "ogTitle": "LedgerX — Built by Ancel | Finance Management Application",
-      "ogDescription": "LedgerX is a FinanceApplication built by Ancel featuring multi-tenant isolation and organization-scoped queries, double-entry ledger with append-only hash chain",
+      "ogTitle": "LedgerX financial system case study by Ancel Ajanga",
+      "ogDescription": "LedgerX: production fintech with multi-tenant isolation, double-entry ledger, M-Pesa/Stripe adapters, and full auditability.",
       "ogImage": "/images/projects/ledgerx.webp",
       "twitterCard": "summary_large_image",
       "canonicalUrl": "/projects/ledgerx"
@@ -1003,8 +1003,8 @@
     ],
     "excerpt": "A production-grade financial platform engineered for correctness under failure, asynchronous payments, and unreliable networks.",
     "seo": {
-      "title": "NestFi — Built by Ancel | Resilient Financial Coordination Platform",
-      "description": "NestFi is a full-stack application built by Ancel featuring real-time, robust capabilities, and excellent performance. Designed with NestJS, TypeScript, Postgre",
+      "title": "NestFi by Ancel Ajanga | Resilient financial coordination platform",
+      "description": "NestFi by Ancel Ajanga: a production-grade financial coordination platform for correctness under failure, async payments (including M-Pesa), and unreliable networks—NestJS, PostgreSQL, Redis, RabbitMQ.",
       "keywords": [
         "NestFi",
         "NestFi app",
@@ -1017,8 +1017,8 @@
         "TypeScript",
         "PostgreSQL"
       ],
-      "ogTitle": "NestFi — Built by Ancel | Resilient Financial Coordination Platform",
-      "ogDescription": "NestFi is a full-stack application built by Ancel featuring real-time, robust capabilities, and excellent performance. Designed with NestJS, TypeScript, Postgre",
+      "ogTitle": "NestFi by Ancel Ajanga | Resilient financial coordination platform",
+      "ogDescription": "NestFi by Ancel Ajanga: financial coordination engineered for correctness under failure, async payments, and unreliable networks.",
       "ogImage": "/images/projects/nestfi.webp",
       "twitterCard": "summary_large_image",
       "canonicalUrl": "/projects/nestfi"
@@ -1134,8 +1134,8 @@
     ],
     "excerpt": "An AI-assisted reliability and remediation platform designed to detect anomalies, enforce policy, and prevent unsafe self-healing in production systems.",
     "seo": {
-      "title": "Aegis — Built by Ancel | Autonomous Infrastructure Guardrail System",
-      "description": "Aegis is a full-stack application built by Ancel featuring real-time, robust capabilities, and excellent performance. Designed with TypeScript, Node.js, OpenTel",
+      "title": "Aegis by Ancel Ajanga | Autonomous infrastructure guardrails",
+      "description": "Aegis by Ancel Ajanga: AI-assisted reliability with policy gates, pull-based execution, OpenTelemetry, OPA, and PostgreSQL—safe remediation without blind automation.",
       "keywords": [
         "Aegis",
         "Aegis app",
@@ -1148,8 +1148,8 @@
         "Node.js",
         "OpenTelemetry"
       ],
-      "ogTitle": "Aegis — Built by Ancel | Autonomous Infrastructure Guardrail System",
-      "ogDescription": "Aegis is a full-stack application built by Ancel featuring real-time, robust capabilities, and excellent performance. Designed with TypeScript, Node.js, OpenTel",
+      "ogTitle": "Aegis by Ancel Ajanga | Autonomous infrastructure guardrails",
+      "ogDescription": "Aegis: infrastructure guardrails with policy, observability, and restrained AI-assisted remediation.",
       "ogImage": "/images/projects/aegis.webp",
       "twitterCard": "summary_large_image",
       "canonicalUrl": "/projects/aegis"
@@ -1271,8 +1271,8 @@
     "outcomes": "Demonstrated horizontal scale and cryptographic integrity in a distributed messaging environment with a focus on privacy and resilience.",
     "excerpt": "Inkly is a high-availability secure messaging platform engineered for zero-knowledge privacy and horizontal scalability. Built with Node.js, PostgreSQL, MongoDB, and Redis; clients are Flutter-based.",
     "seo": {
-      "title": "Inkly — Built by Ancel | Secure, High-Availability Messaging Architecture",
-      "description": "Inkly is a production-grade secure messaging platform featuring zero-knowledge encryption, horizontal WebSocket scaling, and resilient 3-tier storage architecture.",
+      "title": "Inkly by Ancel Ajanga | Secure high-availability messaging",
+      "description": "Inkly by Ancel Ajanga: zero-knowledge messaging, horizontal WebSocket scaling (Redis), and resilient PostgreSQL + MongoDB + Redis storage for privacy at scale.",
       "keywords": [
         "Inkly",
         "Secure Messaging",
@@ -1289,8 +1289,8 @@
         "Cryptography",
         "distributed systems"
       ],
-      "ogTitle": "Inkly — Built by Ancel | Secure, High-Availability Messaging Architecture",
-      "ogDescription": "Inkly is a production-grade secure messaging platform featuring zero-knowledge encryption, horizontal WebSocket scaling, and resilient 3-tier storage architecture.",
+      "ogTitle": "Inkly by Ancel Ajanga | Secure high-availability messaging",
+      "ogDescription": "Inkly: zero-knowledge messaging architecture with horizontal WebSocket scale and resilient multi-tier storage.",
       "ogImage": "/images/projects/inkly.webp",
       "twitterCard": "summary_large_image",
       "canonicalUrl": "/projects/inkly"

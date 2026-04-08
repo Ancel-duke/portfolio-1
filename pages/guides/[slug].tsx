@@ -4,7 +4,9 @@ import {
   generateArticleSchema,
   generateTechArticleSchema,
   generateBreadcrumbSchema,
+  generateFAQPageSchema,
 } from '@/domains/seo/schemas'
+import { buildGuideFaqItems } from '@/shared/utils/metadata'
 import { getGuideBySlug } from '@/domains/guides/services/guide-query'
 import type { Guide } from '@/domains/guides/types/guide'
 import guidesData from '@/data/guides.json'
@@ -81,9 +83,11 @@ export default function GuideDetailRoute({ slug, guide }: { slug: string; guide:
       }
     : null
 
+  const guideFaqLd = generateFAQPageSchema(buildGuideFaqItems(guide))
   const jsonLd = [
     explicitInklyArticleJsonLd ?? baseArticleJsonLd,
     generateBreadcrumbSchema(breadcrumbItems),
+    ...(guideFaqLd ? [guideFaqLd] : []),
   ]
 
   return (

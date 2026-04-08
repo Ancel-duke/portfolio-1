@@ -58,7 +58,7 @@ function HeroParallax({ className }: HeroProps) {
                 Hi, I'm Ancel Ajanga
               </p>
               <h1 className="text-[clamp(2rem,4vw,2.5rem)] sm:text-[clamp(2.5rem,4vw,3rem)] font-extrabold leading-[1.25] mb-5 mx-auto max-w-5xl">
-                Systems Engineer &amp; Fullstack Developer building fault-tolerant, scalable, and real-time applications.
+                Software Engineer &amp; fullstack builder — fault-tolerant, scalable, and real-time systems from Kenya.
               </h1>
               <p className="text-[clamp(1.125rem,2.25vw,1.375rem)] sm:text-[clamp(1.25rem,2.5vw,1.5rem)] font-semibold text-foreground mb-3 sm:mb-4 max-w-3xl mx-auto">
                 {HERO_SUBLINE}

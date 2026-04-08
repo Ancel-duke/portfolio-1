@@ -1,13 +1,18 @@
 import { BlogDetailView } from '@/domains/blog'
 import { SEOHead } from '@/domains/seo'
-import { generateBlogPostSchema, generateBreadcrumbSchema } from '@/domains/seo/schemas'
+import {
+  generateBlogPostSchema,
+  generateBreadcrumbSchema,
+  generateFAQPageSchema,
+} from '@/domains/seo/schemas'
+import { buildBlogFaqItems } from '@/shared/utils/metadata'
 import blogData from '@/data/blog.json'
-import { getBlogPostBySlug, titleToSlug } from '@/domains/blog/services/blog-query'
+import { getBlogPostBySlug, postSlug } from '@/domains/blog/services/blog-query'
 import type { BlogPost } from '@/domains/blog/types/blog-post'
 
 export async function getStaticPaths() {
   const posts = blogData as { title: string }[]
-  const paths = posts.map((p) => ({ params: { slug: titleToSlug(p.title) } }))
+  const paths = posts.map((p) => ({ params: { slug: postSlug(p) } }))
   return { paths, fallback: false }
 }
 
@@ -24,12 +29,11 @@ export default function BlogDetailRoute({ slug, post }: { slug: string; post: Bl
     { name: 'Developer Journal', url: '/developer-journal' },
     { name: post.title, url: canonicalPath },
   ]
+  const faqLd = generateFAQPageSchema(buildBlogFaqItems(post))
   const jsonLd = [
-    generateBlogPostSchema({
-      ...post,
-      slug,
-    }),
+    generateBlogPostSchema({ ...post, slug }),
     generateBreadcrumbSchema(breadcrumbItems),
+    ...(faqLd ? [faqLd] : []),
   ]
 
   return (

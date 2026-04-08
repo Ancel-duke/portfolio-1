@@ -33,10 +33,10 @@ const validateSEO = () => {
 
     // Check for required pages
     const requiredPages = [
-  { path: '/', url: 'https://ancel.co.ke' },
+  { path: '/', url: 'https://ancel.co.ke/' },
   { path: '/about', url: 'https://ancel.co.ke/about' },
   { path: '/case-studies', url: 'https://ancel.co.ke/case-studies' },
-  { path: '/blog', url: 'https://ancel.co.ke/blog' },
+  { path: '/developer-journal', url: 'https://ancel.co.ke/developer-journal' },
   { path: '/contact', url: 'https://ancel.co.ke/contact' }
     ];
     
@@ -97,8 +97,8 @@ const validateSEO = () => {
   const seoComponents = [
     'src/domains/seo/components/SEOHead.tsx',
     'src/domains/seo/components/schemas.ts',
-    'src/components/shared/ui/breadcrumb.tsx',
-    'src/components/shared/ui/skip-link.tsx'
+    'src/shared/components/ui/breadcrumb.tsx',
+    'src/shared/components/ui/skip-link.tsx'
   ];
 
   seoComponents.forEach(component => {
@@ -113,8 +113,8 @@ const validateSEO = () => {
   // Check for performance components
   const performanceComponents = [
     'src/domains/performance/components/WebVitals.tsx',
-    'src/components/shared/ui/optimized-image.tsx',
-    'src/components/shared/ui/lazy-section.tsx'
+    'src/shared/components/ui/optimized-image.tsx',
+    'src/shared/components/ui/lazy-section.tsx'
   ];
 
   performanceComponents.forEach(component => {

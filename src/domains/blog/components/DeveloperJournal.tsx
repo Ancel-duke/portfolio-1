@@ -7,6 +7,7 @@ import { formatDate } from '@/shared/utils';
 
 // Import all blog posts
 import blogData from '@/data/blog.json';
+import { postSlug } from '@/domains/blog/services/blog-query';
 
 interface Post {
   id: number;
@@ -46,7 +47,7 @@ function getFeaturedIndex(title: string): number {
 
 const rawPosts = (blogData as Post[]).map((post) => ({
   ...post,
-  slug: post.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')
+  slug: postSlug(post),
 }));
 
 const posts = [...rawPosts].sort((a, b) => {

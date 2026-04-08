@@ -1,5 +1,6 @@
 import dynamic from 'next/dynamic'
 import SEO from '@/domains/seo'
+import { generateBreadcrumbSchema } from '@/domains/seo/schemas'
 
 const TechStack = dynamic(
   () => import('@/domains/tech-stack').then((m) => m.TechStack),
@@ -14,6 +15,10 @@ export default function StackPage() {
         description="Technology stack of Ancel Ajanga: Fullstack Software Engineer Narok & Nairobi, Kenya. React, NestJS, Flutter, TypeScript, PostgreSQL, Security, AIOps. Full-stack developer East Africa."
         canonicalUrl="https://ancel.co.ke/stack"
         keywords={['Tech stack', 'React', 'NestJS', 'Flutter', 'PostgreSQL', 'Narok software engineer', 'Nairobi software architect', 'Full-stack Kenya']}
+        jsonLd={generateBreadcrumbSchema([
+          { name: 'Home', url: '/' },
+          { name: 'Tech stack', url: '/stack' },
+        ])}
       />
       <TechStack fullPage />
     </>

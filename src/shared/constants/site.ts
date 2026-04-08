@@ -1,6 +1,7 @@
 export const SITE = {
   name: 'Ancel Ajanga',
   url: 'https://ancel.co.ke',
+  /** E.164 Kenya mobile */
   phone: '+25479355755',
   whatsapp: '+25479355755',
   email: 'ancel.ajanga@yahoo.com',
@@ -9,11 +10,11 @@ export const SITE = {
   twitter: 'https://twitter.com/ancel_ajanga',
   profileImage: '/images/about/profile.webp',
 
-  role: 'Systems Engineer & Fullstack Developer',
+  /** Public-facing role line (E-E-A-T + entity clarity). */
+  role: 'Software Engineer at Maxson Programming Limited',
 
   company: {
     name: 'Maxson Programming Limited',
-    role: 'Software Engineer',
     type: 'Full-time',
     note: 'All projects showcased on this portfolio are independently built and are not affiliated with my employer.',
   },
@@ -27,7 +28,7 @@ export const SITE = {
   /** UI copy derived from employment / portfolio boundaries (single source). */
   copy: {
     professionalContext:
-      'Currently working as a Software Engineer. All featured projects are independently designed and built.',
+      'Currently working as a Software Engineer at Maxson Programming Limited. All featured projects are independently designed and built.',
     projectsPageIntro:
       'All projects listed here are independently built and showcase my personal engineering work.',
     currentRoleLead:

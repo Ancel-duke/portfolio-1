@@ -1,4 +1,4 @@
-import { SITE } from '@/shared/constants/site';
+import { SITE, WHATSAPP_URL } from '@/shared/constants/site';
 
 const KNOWS_ABOUT = [
   'Distributed Systems',
@@ -24,30 +24,46 @@ const KNOWS_ABOUT = [
   'Zero-Trust Security',
 ] as const;
 
-/** Global Person JSON-LD — aligned with structured employment; extended fields preserve prior SEO signals. */
-export const personSchema = {
-  '@context': 'https://schema.org',
+export const EMPLOYER_ORG_ID = `${SITE.url}/#organization-maxson-programming-limited` as const;
+export const PERSON_ID = `${SITE.url}/#ancel-ajanga` as const;
+
+/** Employer entity (employee relationship via Person.worksFor). */
+export const employerOrganizationNode = {
+  '@type': 'Organization',
+  '@id': EMPLOYER_ORG_ID,
+  name: SITE.company.name,
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Nairobi',
+    addressCountry: 'KE',
+  },
+  areaServed: 'Kenya',
+} as const;
+
+/** Person node for JSON-LD @graph (no root @context). */
+export const personLdNode = {
   '@type': 'Person',
-  '@id': `${SITE.url}/#ancel-ajanga`,
+  '@id': PERSON_ID,
   name: SITE.name,
   alternateName: ['Ancel', 'Duke'],
   url: SITE.url,
   image: `${SITE.url}${SITE.profileImage}`,
-  jobTitle: 'Software Engineer',
+  jobTitle: SITE.role,
   description:
-    'Fullstack Software Engineer from Nairobi, Kenya. Creator of Inkly, NestFi, LedgerX, Aegis, SignFlow, OpsFlow, EduManage.',
-  worksFor: {
-    '@type': 'Organization',
-    name: SITE.company.name,
-  },
-  sameAs: [SITE.github, SITE.linkedin, SITE.url],
-  contactPoint: {
-    '@type': 'ContactPoint',
-    telephone: SITE.phone,
-    contactType: 'customer service',
-    areaServed: 'KE',
-    availableLanguage: ['English'],
-  },
+    'Software Engineer at Maxson Programming Limited. Fullstack engineer from Nairobi, Kenya. Creator of Inkly, NestFi, LedgerX, Aegis, SignFlow, OpsFlow, EduManage.',
+  worksFor: { '@id': EMPLOYER_ORG_ID },
+  sameAs: [SITE.github, SITE.linkedin, SITE.twitter, SITE.url, WHATSAPP_URL],
+  contactPoint: [
+    {
+      '@type': 'ContactPoint',
+      telephone: SITE.phone,
+      email: SITE.email,
+      contactType: 'professional service',
+      areaServed: 'Kenya',
+      availableLanguage: ['English', 'Swahili'],
+    },
+  ],
+  areaServed: 'Kenya',
   address: {
     '@type': 'PostalAddress',
     addressLocality: 'Nairobi',
@@ -56,3 +72,12 @@ export const personSchema = {
   email: SITE.email,
   knowsAbout: [...KNOWS_ABOUT],
 } as const;
+
+/**
+ * Global identity graph: Organization (employer) + Person. Injected once in _document.
+ */
+export const siteIdentityJsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [employerOrganizationNode, personLdNode],
+} as const;
+

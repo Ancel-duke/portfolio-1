@@ -25,7 +25,6 @@ const staticPages = [
   { path: "/", changefreq: "weekly", priority: "1.0" },
   { path: "/projects", changefreq: "weekly", priority: "0.9" },
   { path: "/case-studies", changefreq: "weekly", priority: "0.9" },
-  { path: "/blog", changefreq: "weekly", priority: "0.8" },
   { path: "/developer-journal", changefreq: "weekly", priority: "0.8" },
   { path: "/about", changefreq: "weekly", priority: "0.8" },
   { path: "/about/ancel-ajanga", changefreq: "weekly", priority: "0.9" },

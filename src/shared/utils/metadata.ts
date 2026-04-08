@@ -213,3 +213,93 @@ export function getClustersForArticle(
   return clusters.filter((c) => c.articleSlugs?.some((s) => (s || '').toLowerCase() === slug)).map((c) => ({ id: c.id, name: c.name, pillarPath: c.pillarPath }));
 }
 
+/** Developer journal posts: FAQ items for FAQPage JSON-LD (needs ≥2 for valid FAQ rich results). */
+export function buildBlogFaqItems(post: {
+  whoThisIsFor?: string;
+  problem?: string;
+  businessOutcome?: string;
+}): { question: string; answer: string }[] {
+  const out: { question: string; answer: string }[] = [];
+  if (post.whoThisIsFor?.trim()) {
+    out.push({ question: 'Who is this article for?', answer: post.whoThisIsFor.trim() });
+  }
+  if (post.problem?.trim()) {
+    out.push({ question: 'What problem does this article address?', answer: post.problem.trim() });
+  }
+  if (post.businessOutcome?.trim()) {
+    out.push({ question: 'What business outcome does this approach target?', answer: post.businessOutcome.trim() });
+  }
+  return out;
+}
+
+/** Guides: FAQ derived from structured fields (answers truncated when very long). */
+export function buildGuideFaqItems(guide: {
+  problem?: string;
+  architecture?: string;
+  measurable_outcome?: string;
+}): { question: string; answer: string }[] {
+  const out: { question: string; answer: string }[] = [];
+  if (guide.problem?.trim()) {
+    out.push({
+      question: 'What engineering problem does this guide tackle?',
+      answer: guide.problem.trim(),
+    });
+  }
+  if (guide.architecture?.trim()) {
+    const a = guide.architecture.trim();
+    out.push({
+      question: 'How is the system architected?',
+      answer: a.length > 450 ? `${a.slice(0, 447).trim()}…` : a,
+    });
+  }
+  if (guide.measurable_outcome?.trim()) {
+    out.push({
+      question: 'What measurable outcomes can you expect?',
+      answer: guide.measurable_outcome.trim(),
+    });
+  }
+  return out;
+}
+
+/** Case study → related developer-journal slugs via topic clusters. */
+export function getRelatedArticleSlugsForCaseStudy(
+  clusters: Array<{ caseStudySlugs?: string[]; articleSlugs?: string[] }>,
+  caseStudySlug: string
+): string[] {
+  if (!clusters?.length || !caseStudySlug) return [];
+  const key = caseStudySlug.toLowerCase().trim();
+  const seen = new Set<string>();
+  for (const c of clusters) {
+    if (!c.caseStudySlugs?.some((s) => (s || '').toLowerCase() === key)) continue;
+    for (const a of c.articleSlugs || []) {
+      if (a) seen.add(a);
+    }
+  }
+  return Array.from(seen);
+}
+
+/** Project portfolio slug → related developer-journal slugs (same cluster). */
+export function getRelatedArticleSlugsForProject(
+  clusters: Array<{ caseStudySlugs?: string[]; articleSlugs?: string[] }>,
+  projectSlug: string
+): string[] {
+  return getRelatedArticleSlugsForCaseStudy(clusters, projectSlug);
+}
+
+/** Developer Journal article slug → related case study slugs (topic cluster overlap). */
+export function getCaseStudySlugsForArticle(
+  clusters: Array<{ caseStudySlugs?: string[]; articleSlugs?: string[] }>,
+  articleSlug: string
+): string[] {
+  if (!clusters?.length || !articleSlug) return [];
+  const key = articleSlug.toLowerCase().trim();
+  const seen = new Set<string>();
+  for (const c of clusters) {
+    if (!c.articleSlugs?.some((s) => (s || '').toLowerCase() === key)) continue;
+    for (const s of c.caseStudySlugs || []) {
+      if (s) seen.add(s);
+    }
+  }
+  return Array.from(seen);
+}
+

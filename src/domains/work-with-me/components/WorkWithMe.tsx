@@ -1,6 +1,7 @@
 import React from 'react'
 import { LazyMotion, domAnimation, m } from 'framer-motion'
 import { SEOHead } from '@/domains/seo'
+import { generateBreadcrumbSchema } from '@/domains/seo/schemas'
 import { Card, CardContent } from '@/shared/components/ui/card'
 import { Button } from '@/shared/components/ui/button'
 import Link from 'next/link'
@@ -23,6 +24,10 @@ export function WorkWithMe() {
         title="Work With Me — Senior Fullstack & Systems Engineer"
         description="Available for senior fullstack and systems engineering roles. Specializing in high-performance architecture, scalable backends, and resilient infrastructure."
         canonical="/work-with-me"
+        jsonLd={generateBreadcrumbSchema([
+          { name: 'Home', url: '/' },
+          { name: 'Work with me', url: '/work-with-me' },
+        ])}
       />
       
       <LazyMotion features={domAnimation}>

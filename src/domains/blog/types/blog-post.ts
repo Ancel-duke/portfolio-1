@@ -1,6 +1,8 @@
 export interface BlogPost {
   id: number
   title: string
+  /** Canonical path segment under /developer-journal/; falls back to title slug when absent. */
+  slug?: string
   excerpt: string
   content: string
   tags: string[]

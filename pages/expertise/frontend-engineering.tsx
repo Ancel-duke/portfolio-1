@@ -1,16 +1,24 @@
 import React from 'react'
-import Head from 'next/head'
 import Link from 'next/link'
+import { ExpertiseSeo, ExpertiseRelatedHub } from '@/domains/expertise/components/ExpertiseSeo'
 import { LazyMotion, domAnimation, m } from 'framer-motion'
 import { ArrowLeft } from 'lucide-react'
 
 export default function FrontendEngineering() {
   return (
     <>
-      <Head>
-        <title>Frontend Engineering | High-Performance, Fluid Interfaces</title>
-        <meta name="description" content="A deep dive into Frontend Engineering focusing on state management at scale, rendering optimization, and designing responsive hybrid UI systems." />
-      </Head>
+      <ExpertiseSeo
+        title="Frontend Engineering | High-Performance, Fluid Interfaces"
+        description="Why use disciplined frontend architecture? State at scale, rendering performance, and UX patterns tied to real portfolio delivery."
+        path="/expertise/frontend-engineering"
+        keywords={[
+          'Frontend engineering',
+          'React performance',
+          'Design systems',
+          'UI engineering Kenya',
+          'Ancel Ajanga',
+        ]}
+      />
 
       <LazyMotion features={domAnimation}>
         <article className="pt-24 pb-24 min-h-screen bg-background w-full">
@@ -83,6 +91,7 @@ export default function FrontendEngineering() {
                 </ul>
               </div>
 
+              <ExpertiseRelatedHub />
             </div>
           </m.div>
         </article>

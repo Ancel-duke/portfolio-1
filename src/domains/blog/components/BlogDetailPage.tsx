@@ -12,10 +12,22 @@ import { formatDate } from '@/shared/utils'
 import { SkipLink } from '@/shared/components/ui/skip-link'
 import { Breadcrumb } from '@/shared/components/ui/breadcrumb'
 import { BlogCTA } from './BlogCTA'
-import { getRelatedCaseStudySlugForPost, getClustersForArticle } from '@/shared/utils/metadata'
+import {
+  getRelatedCaseStudySlugForPost,
+  getClustersForArticle,
+  getCaseStudySlugsForArticle,
+} from '@/shared/utils/metadata'
 import topicClustersData from '@/data/topic-clusters.json'
 import type { BlogPost } from '../types/blog-post'
-import { getBlogPostBySlug } from '../services/blog-query'
+import { getBlogPostBySlug, postSlug } from '../services/blog-query'
+
+function directAnswerText(post: BlogPost): string {
+  if (post.businessOutcome?.trim()) return post.businessOutcome.trim()
+  const ex = post.excerpt?.trim() || ''
+  const parts = ex.split(/(?<=[.!?])\s+/)
+  if (parts.length >= 2) return `${parts[0]} ${parts[1]}`
+  return ex
+}
 
 /** Renders content with optional code blocks (```) and injects "architect" CTA after solution paragraph. */
 function BlogContentWithCTAs({ content }: { content: string }) {
@@ -180,7 +192,7 @@ export function BlogDetailView({ post: postProp, initialSlug }: BlogDetailViewPr
                     alt={post.title}
                     width={1200}
                     height={630}
-                    priority={false}
+                    priority
                     loading="eager"
                     sizes="(max-width: 768px) 100vw, 1200px"
                     className="w-full h-64 rounded-lg mb-6"
@@ -200,6 +212,16 @@ export function BlogDetailView({ post: postProp, initialSlug }: BlogDetailViewPr
                     <Tag className="h-4 w-4 mr-1" /> {post.tags.join(', ')}
                   </span>
                 </div>
+                <section
+                  className="rounded-xl border border-border bg-muted/20 p-4 md:p-5 mb-6"
+                  aria-labelledby="direct-answer-heading"
+                  data-ai-summary="true"
+                >
+                  <h2 id="direct-answer-heading" className="text-sm font-semibold uppercase tracking-wide text-primary mb-2">
+                    Quick answer
+                  </h2>
+                  <p className="text-base md:text-lg text-foreground leading-relaxed">{directAnswerText(post)}</p>
+                </section>
                 <p className="text-lg text-muted-foreground italic">{post.excerpt}</p>
               </m.div>
 
@@ -275,35 +297,58 @@ export function BlogDetailView({ post: postProp, initialSlug }: BlogDetailViewPr
               )}
 
               {(() => {
-                const relatedSlug = getRelatedCaseStudySlugForPost(caseStudiesData || [], post)
-                if (!relatedSlug) return null
-                const caseStudy = (caseStudiesData as Array<{ slug: string; title: string }>).find(
-                  (cs) => cs.slug === relatedSlug
+                const articleKey = post ? postSlug(post) : slug || ''
+                const clusterCs = getCaseStudySlugsForArticle(
+                  topicClustersData?.clusters || [],
+                  articleKey
                 )
+                const heuristic = getRelatedCaseStudySlugForPost(caseStudiesData || [], post)
+                const slugs = Array.from(
+                  new Set([...clusterCs, ...(heuristic ? [heuristic] : [])])
+                ).slice(0, 5)
+                if (slugs.length === 0) return null
                 return (
-                  <aside className="mt-8" aria-label="Related case study">
-                    <h2 className="text-xl sm:text-2xl font-bold mb-4">Related case study</h2>
-                    <p className="text-muted-foreground mb-2">This article relates to a detailed technical case study.</p>
-                    <Link
-                      href={`/case-studies/${relatedSlug}`}
-                      className="text-primary hover:underline font-medium"
-                    >
-                      {caseStudy?.title || relatedSlug}
-                    </Link>
+                  <aside className="mt-8" aria-label="Related case studies and projects">
+                    <h2 className="text-xl sm:text-2xl font-bold mb-4">Related case studies &amp; projects</h2>
+                    <p className="text-muted-foreground mb-3">
+                      Same topic cluster as this article—deep dives plus portfolio project pages.
+                    </p>
+                    <ul className="space-y-2">
+                      {slugs.map((csSlug) => {
+                        const caseStudy = (caseStudiesData as Array<{ slug: string; title: string }>).find(
+                          (cs) => cs.slug === csSlug
+                        )
+                        return (
+                          <li key={csSlug} className="flex flex-wrap gap-x-3 gap-y-1 items-baseline">
+                            <Link
+                              href={`/case-studies/${csSlug}`}
+                              className="text-primary hover:underline font-medium"
+                            >
+                              {caseStudy?.title || csSlug}
+                            </Link>
+                            <span className="text-muted-foreground text-sm">·</span>
+                            <Link
+                              href={`/projects/${csSlug}`}
+                              className="text-sm text-primary/90 hover:underline"
+                            >
+                              Project page
+                            </Link>
+                          </li>
+                        )
+                      })}
+                    </ul>
                   </aside>
                 )
               })()}
 
               {(() => {
                 const postTags = new Set((post.tags || []).map((t) => t.toLowerCase()))
-                const slugFromTitle = (title: string) =>
-                  title?.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '') || ''
-                const currentSlug = slugFromTitle(post.title)
+                const currentSlug = postSlug(post)
                 const related = blogData
-                  .filter((p) => slugFromTitle(p.title) !== currentSlug)
+                  .filter((p) => postSlug(p) !== currentSlug)
                   .map((p) => ({
                     ...p,
-                    slug: slugFromTitle(p.title),
+                    slug: postSlug(p),
                     score: (p.tags || []).filter((t) => postTags.has(t.toLowerCase())).length,
                   }))
                   .filter((p) => p.score > 0)

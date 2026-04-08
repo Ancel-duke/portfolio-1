@@ -1,16 +1,26 @@
 import React from 'react'
-import Head from 'next/head'
 import Link from 'next/link'
+import { ExpertiseSeo, ExpertiseRelatedHub } from '@/domains/expertise/components/ExpertiseSeo'
 import { LazyMotion, domAnimation, m } from 'framer-motion'
 import { ArrowLeft } from 'lucide-react'
 
 export default function BackendEngineering() {
   return (
     <>
-      <Head>
-        <title>Backend Engineering | Building the Indestructible Codebase</title>
-        <meta name="description" content="In-depth insights into Backend Engineering, database tradeoffs (PostgreSQL vs MongoDB), caching layers, and zero-knowledge architectures." />
-      </Head>
+      <ExpertiseSeo
+        title="Backend Engineering | Building the Indestructible Codebase"
+        description="How to choose PostgreSQL vs MongoDB, layer Redis and Elasticsearch, and design zero-knowledge backends—patterns used in NestFi, Inkly, and Aegis."
+        path="/expertise/backend-engineering"
+        keywords={[
+          'Backend engineering Kenya',
+          'PostgreSQL vs MongoDB',
+          'Redis caching',
+          'NestFi',
+          'Aegis',
+          'Inkly',
+          'Ancel Ajanga',
+        ]}
+      />
 
       <LazyMotion features={domAnimation}>
         <article className="pt-24 pb-24 min-h-screen bg-background w-full">
@@ -91,6 +101,7 @@ export default function BackendEngineering() {
                 </ul>
               </div>
 
+              <ExpertiseRelatedHub />
             </div>
           </m.div>
         </article>

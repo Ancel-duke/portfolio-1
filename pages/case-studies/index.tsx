@@ -1,7 +1,7 @@
 import dynamic from 'next/dynamic'
 import SEO from '@/domains/seo'
 import caseStudiesData from '@/data/case-studies.json'
-import { generateCaseStudySchema } from '@/domains/seo/schemas'
+import { generateCaseStudySchema, generateBreadcrumbSchema } from '@/domains/seo/schemas'
 
 const CaseStudiesGrid = dynamic(
   () => import('@/domains/case-studies').then((m) => m.CaseStudiesGrid),
@@ -9,7 +9,14 @@ const CaseStudiesGrid = dynamic(
 )
 
 const caseStudies = (caseStudiesData as Array<{ slug: string; title: string; description: string }>).slice(0, 5)
-const jsonLd = caseStudies.map((cs) => generateCaseStudySchema(cs))
+const caseStudyJsonLd = caseStudies.map((cs) => generateCaseStudySchema(cs))
+const caseStudiesIndexJsonLd = [
+  generateBreadcrumbSchema([
+    { name: 'Home', url: '/' },
+    { name: 'Case studies', url: '/case-studies' },
+  ]),
+  ...caseStudyJsonLd,
+]
 
 export default function CaseStudiesPage() {
   return (
@@ -19,7 +26,7 @@ export default function CaseStudiesPage() {
         description="Case studies by Ancel Ajanga: Fullstack Software Engineer Narok & Nairobi, Kenya. Deep dives into NestFi, SignFlow, OpsFlow, Aegis, LedgerX, EduChain, EduManage. Security, AIOps, full-stack developer East Africa."
         canonicalUrl="https://ancel.co.ke/case-studies"
         keywords={['Case studies', 'NestFi', 'SignFlow', 'OpsFlow', 'Aegis', 'LedgerX', 'EduChain', 'Narok software engineer', 'Nairobi software architect', 'Full-stack Kenya']}
-        jsonLd={jsonLd}
+        jsonLd={caseStudiesIndexJsonLd}
       />
       <CaseStudiesGrid
         showHeader={true}

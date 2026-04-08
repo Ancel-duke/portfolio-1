@@ -11,6 +11,7 @@ import { SkipLink } from '@/shared/components/ui/skip-link'
 import { Breadcrumb } from '@/shared/components/ui/breadcrumb'
 import type { Guide } from '../types/guide'
 import { getGuideBySlug } from '../services/guide-query'
+import { buildGuideFaqItems } from '@/shared/utils/metadata'
 
 const caseStudies = caseStudiesData as Array<{ slug: string; title: string }>
 const clusters = topicClustersData?.clusters || []
@@ -133,7 +134,19 @@ export function GuideDetailView({ guide: guideProp, initialSlug }: GuideDetailVi
                   {guide.readTime && <span>{guide.readTime}</span>}
                 </div>
               )}
-              <p className="text-muted-foreground mb-6">{guide.summary}</p>
+              <section
+                className="rounded-xl border border-border bg-muted/20 p-4 md:p-5 mb-6"
+                aria-labelledby="guide-quick-answer"
+                data-ai-summary="true"
+              >
+                <h2
+                  id="guide-quick-answer"
+                  className="text-sm font-semibold uppercase tracking-wide text-primary mb-2"
+                >
+                  Quick answer
+                </h2>
+                <p className="text-base text-foreground leading-relaxed">{guide.summary}</p>
+              </section>
 
               {guide.related_topics?.length > 0 && (
                 <p className="text-sm text-muted-foreground mb-4">
@@ -165,21 +178,21 @@ export function GuideDetailView({ guide: guideProp, initialSlug }: GuideDetailVi
 
               <section className="mb-8">
                 <h2 className="text-xl font-bold mb-3 flex items-center">
-                  <BookOpen className="h-5 w-5 mr-2 text-primary" /> The Problem
+                  <BookOpen className="h-5 w-5 mr-2 text-primary" /> What problem does this guide address?
                 </h2>
                 <p className="text-muted-foreground leading-relaxed">{guide.problem}</p>
               </section>
 
               <section className="mb-8">
                 <h2 className="text-xl font-bold mb-3 flex items-center">
-                  <Layers className="h-5 w-5 mr-2 text-primary" /> Architecture
+                  <Layers className="h-5 w-5 mr-2 text-primary" /> How is the system architected?
                 </h2>
                 <p className="text-muted-foreground leading-relaxed">{guide.architecture}</p>
               </section>
 
               <section className="mb-8">
                 <h2 className="text-xl font-bold mb-3 flex items-center">
-                  <Target className="h-5 w-5 mr-2 text-primary" /> Measurable outcome
+                  <Target className="h-5 w-5 mr-2 text-primary" /> What outcomes can you measure?
                 </h2>
                 <p className="text-muted-foreground leading-relaxed">{guide.measurable_outcome}</p>
               </section>
@@ -193,26 +206,56 @@ export function GuideDetailView({ guide: guideProp, initialSlug }: GuideDetailVi
                 </section>
               )}
 
+              {(() => {
+                const faqItems = buildGuideFaqItems(guide)
+                if (faqItems.length < 2) return null
+                return (
+                  <section className="mb-8 border-t pt-8" aria-labelledby="guide-faq-heading">
+                    <h2 id="guide-faq-heading" className="text-xl font-bold mb-4">
+                      Frequently asked questions
+                    </h2>
+                    <dl className="space-y-4">
+                      {faqItems.map((item, i) => (
+                        <div key={i}>
+                          <dt className="font-semibold text-foreground mb-1">{item.question}</dt>
+                          <dd className="text-muted-foreground leading-relaxed">{item.answer}</dd>
+                        </div>
+                      ))}
+                    </dl>
+                  </section>
+                )
+              })()}
+
               <div className="border-t pt-6 mt-8 space-y-4">
                 {relatedCaseStudies.length > 0 && (
                   <div>
-                    <h3 className="font-semibold mb-2">Related case studies</h3>
-                    <ul className="flex flex-wrap gap-2">
+                    <h3 className="font-semibold mb-2">Related case studies &amp; projects</h3>
+                    <ul className="flex flex-col gap-2">
                       {relatedCaseStudies.map((cs) => (
-                        <li key={cs.slug}>
+                        <li key={cs.slug} className="flex flex-wrap items-center gap-2">
                           <Button variant="outline" size="sm" asChild>
                             <Link href={`/case-studies/${cs.slug}`}>{cs.title.split(' - ')[0] || cs.title}</Link>
                           </Button>
+                          <Link
+                            href={`/projects/${cs.slug}`}
+                            className="text-sm text-primary hover:underline font-medium"
+                          >
+                            Project page
+                          </Link>
                         </li>
                       ))}
                     </ul>
                   </div>
                 )}
                 <p className="text-sm text-muted-foreground">
-                  <Link href="/contact" className="text-primary hover:underline inline-flex items-center">
-                    <MessageCircle className="h-4 w-4 mr-1" /> Get in touch
+                  <Link href="/developer-journal" className="text-primary hover:underline font-medium mr-2">
+                    Developer Journal
                   </Link>
-                  {' for project discussions or technical questions.'}
+                  for narrative deep dives, or{' '}
+                  <Link href="/contact" className="text-primary hover:underline inline-flex items-center">
+                    <MessageCircle className="h-4 w-4 mr-1" /> get in touch
+                  </Link>
+                  {' for project discussions.'}
                 </p>
               </div>
             </Card>

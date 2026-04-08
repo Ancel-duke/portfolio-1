@@ -163,7 +163,7 @@ export function About({ className, fullPage }: AboutProps) {
                     </div>
                     <div className="flex items-center text-muted-foreground text-sm sm:text-base">
                       <Users className="h-4 w-4 sm:h-5 sm:w-5 mr-2 sm:mr-3 text-primary flex-shrink-0" /> 
-                      <span>{SITE.company.role}, {SITE.company.name} · {SITE.company.type}</span>
+                      <span>{SITE.role} · {SITE.company.type}</span>
                     </div>
                   </div>
 

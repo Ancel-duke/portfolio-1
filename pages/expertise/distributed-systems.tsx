@@ -1,16 +1,25 @@
 import React from 'react'
-import Head from 'next/head'
 import Link from 'next/link'
+import { ExpertiseSeo, ExpertiseRelatedHub } from '@/domains/expertise/components/ExpertiseSeo'
 import { LazyMotion, domAnimation, m } from 'framer-motion'
 import { ArrowLeft } from 'lucide-react'
 
 export default function DistributedSystems() {
   return (
     <>
-      <Head>
-        <title>Distributed Systems | Concurrency & Fault Tolerance</title>
-        <meta name="description" content="Explore my approach to Distributed Systems: consensus algorithms, multi-tenant containerization, message queuing, and building fault-tolerant communication loops." />
-      </Head>
+      <ExpertiseSeo
+        title="Distributed Systems | Concurrency & Fault Tolerance"
+        description="How to build distributed systems that survive partitions: queues, idempotency, circuit breakers, and multi-tenant ops—patterns reflected in NestFi and Aegis."
+        path="/expertise/distributed-systems"
+        keywords={[
+          'Distributed systems',
+          'Fault tolerance',
+          'Message queues',
+          'NestFi',
+          'Aegis',
+          'Ancel Ajanga',
+        ]}
+      />
 
       <LazyMotion features={domAnimation}>
         <article className="pt-24 pb-24 min-h-screen bg-background w-full">
@@ -74,6 +83,7 @@ export default function DistributedSystems() {
                 </ul>
               </div>
 
+              <ExpertiseRelatedHub />
             </div>
           </m.div>
         </article>

@@ -1,16 +1,26 @@
 import React from 'react'
-import Head from 'next/head'
 import Link from 'next/link'
+import { ExpertiseSeo, ExpertiseRelatedHub } from '@/domains/expertise/components/ExpertiseSeo'
 import { LazyMotion, domAnimation, m } from 'framer-motion'
 import { ArrowLeft } from 'lucide-react'
 
 export default function SystemArchitecture() {
   return (
     <>
-      <Head>
-        <title>System Architecture | Architecting for Scale & Survival</title>
-        <meta name="description" content="An exploration of System Architecture, distributed state, Event-Driven vs Request-Response models, and engineering infrastructure that survives failure." />
-      </Head>
+      <ExpertiseSeo
+        title="System Architecture | Architecting for Scale & Survival"
+        description="What is resilient system architecture? Event-driven vs request-response, failure design, and how it shows up in LedgerX, NestFi, and OpsFlow case studies."
+        path="/expertise/system-architecture"
+        keywords={[
+          'System architecture',
+          'Event-driven architecture',
+          'Distributed systems',
+          'LedgerX',
+          'NestFi',
+          'OpsFlow',
+          'Ancel Ajanga',
+        ]}
+      />
 
       <LazyMotion features={domAnimation}>
         <article className="pt-24 pb-24 min-h-screen bg-background w-full">
@@ -96,6 +106,7 @@ export default function SystemArchitecture() {
                 </ul>
               </div>
 
+              <ExpertiseRelatedHub />
             </div>
           </m.div>
         </article>

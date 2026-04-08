@@ -1,7 +1,12 @@
 // Note: JSON imports are handled dynamically in the components
 // This avoids build-time import issues with JSON files
 import { SITE } from '@/shared/constants/site'
-import { personSchema } from '@/shared/seo/personSchema'
+import {
+  personLdNode,
+  EMPLOYER_ORG_ID,
+  employerOrganizationNode,
+} from '@/shared/seo/personSchema'
+import { postSlug } from '@/domains/blog/services/blog-query'
 
 /** E-A-T: Build knowsAbout as Thing[] with sameAs to authoritative sources (Wikidata/official docs) */
 export function getKnowsAboutAsThings(
@@ -30,7 +35,17 @@ export const TOP_PROJECT_NAMES = ["NestFi", "SignFlow", "OpsFlow", "Aegis", "Led
 export const generatePersonSchema = (opts?: {
   knowsAboutThings?: Array<{ "@type": "Thing"; name: string; sameAs?: string }>;
 }) => {
-  const base = { ...personSchema } as Record<string, unknown>
+  const base = {
+    '@context': 'https://schema.org',
+    ...personLdNode,
+    worksFor: {
+      '@type': 'Organization',
+      '@id': EMPLOYER_ORG_ID,
+      name: SITE.company.name,
+      address: employerOrganizationNode.address,
+      areaServed: 'Kenya',
+    },
+  } as Record<string, unknown>
   if (opts?.knowsAboutThings?.length) {
     base.knowsAbout = opts.knowsAboutThings
   }
@@ -47,14 +62,19 @@ export function generateSoftwareDeveloperSchema() {
       "@id": `${SITE.url}/#ancel-ajanga`,
       "name": SITE.name,
       "alternateName": ["Ancel", "Duke"],
-      "jobTitle": "Software Engineer",
-      "description": "Fullstack Software Engineer specializing in scalable backend systems and high-performance frontend experiences. Based in Nairobi, Kenya. Projects: Inkly, NestFi, SignFlow, OpsFlow, Aegis, LedgerX, EduChain, EduManage, TaskForge.",
+      "jobTitle": SITE.role,
+      "description": "Software Engineer at Maxson Programming Limited. Fullstack engineer specializing in scalable backend systems and high-performance frontend experiences. Based in Nairobi, Kenya. Projects: Inkly, NestFi, SignFlow, OpsFlow, Aegis, LedgerX, EduChain, EduManage, TaskForge.",
       "url": SITE.url,
       "image": `${SITE.url}${SITE.profileImage}`,
       "email": SITE.email,
       "telephone": SITE.phone,
       "address": { "@type": "PostalAddress", "addressLocality": "Nairobi", "addressCountry": "KE" },
-      "worksFor": { "@type": "Organization", "name": SITE.company.name },
+      "worksFor": {
+        "@type": "Organization",
+        "@id": EMPLOYER_ORG_ID,
+        "name": SITE.company.name,
+        "areaServed": "Kenya",
+      },
       "knowsAbout": ["Full-stack development", "Frontend Architecture", "UI Engineering", "React Systems", "Design Systems", "Performance Optimization", "Interactive Systems", "Security", "AIOps", "System resilience", "NestFi", "SignFlow", "OpsFlow", "Aegis", "LedgerX", "EduChain", "EduManage", "TaskForge", "React", "Node.js", "TypeScript", "NestJS", "Flutter", "PostgreSQL", "MongoDB"],
       "hasCredential": [],
       "sameAs": [SITE.github, SITE.linkedin, SITE.twitter, SITE.url]
@@ -63,25 +83,37 @@ export function generateSoftwareDeveloperSchema() {
 }
 
 // Project Schema for individual projects (SoftwareApplication) — AI-Overview / SGE-friendly; includes contribution and links
-export const generateProjectSchema = (project: any) => {
+export const generateProjectSchema = (project: { slug?: string; seo?: { title?: string; description?: string }; displayTitle?: string; title?: string; applicationCategory?: string; type?: string; liveUrl?: string; longDescription?: string; description?: string; image?: string; repoUrl?: string; links?: { github?: string }; technologies?: unknown[]; featureList?: string[]; features?: string[]; year?: string }) => {
   const base = SITE.url;
+  const slug = project.slug || '';
+  const portfolioUrl = slug ? `${base}/projects/${slug}` : `${base}/projects`;
+  const appName = project.seo?.title || project.displayTitle || project.title;
   return {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    "name": project.seo?.title || project.displayTitle || project.title,
-    "applicationCategory": project.applicationCategory || getApplicationCategory(project.title, project.type),
+    "name": appName,
+    "applicationCategory": project.applicationCategory || getApplicationCategory(String(project.title || ''), project.type),
     "operatingSystem": "Web",
     "creator": {
       "@type": "Person",
       "@id": `${SITE.url}/#ancel-ajanga`,
       "name": SITE.name,
       "url": SITE.url,
-      "sameAs": [SITE.github, SITE.linkedin, SITE.twitter],
+      "jobTitle": SITE.role,
+      "sameAs": [SITE.github, SITE.linkedin, SITE.twitter, SITE.url],
     },
-    "url": project.liveUrl ? project.liveUrl : `${base}/projects`,
+    "url": portfolioUrl,
+    ...(() => {
+      const sameAs = [project.liveUrl, project.repoUrl || project.links?.github].filter(
+        (u): u is string => Boolean(u && String(u).trim())
+      )
+      return sameAs.length ? { sameAs } : {}
+    })(),
     "description": project.seo?.description || project.longDescription || project.description,
     "image": project.image ? (project.image.startsWith('http') ? project.image : base + (project.image.startsWith('/') ? project.image : '/' + project.image)) : undefined,
     "codeRepository": project.repoUrl || project.links?.github,
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD", "availability": "https://schema.org/OnlineOnly" },
+    "featureList": project.featureList || project.features || [],
   };
 };
 
@@ -89,6 +121,13 @@ export const generateProjectSchema = (project: any) => {
 export const generateSoftwareSourceCodeSchema = (project: any) => {
   const repoUrl = project.repoUrl || project.links?.github;
   if (!repoUrl) return null;
+  const portfolioUrl = project.slug ? `${SITE.url}/projects/${project.slug}` : `${SITE.url}/projects`;
+  const langs = Array.isArray(project.technologies)
+    ? project.technologies
+        .slice(0, 8)
+        .map((t: unknown) => (typeof t === 'string' ? t : (t as { name?: string }).name))
+        .filter(Boolean)
+    : [];
   return {
     "@context": "https://schema.org",
     "@type": "SoftwareSourceCode",
@@ -97,47 +136,80 @@ export const generateSoftwareSourceCodeSchema = (project: any) => {
     "codeRepository": repoUrl,
     "author": {
       "@type": "Person",
-      "name": SITE.name
+      "@id": `${SITE.url}/#ancel-ajanga`,
+      "name": SITE.name,
+      "jobTitle": SITE.role,
     },
-    "programmingLanguage": Array.isArray(project.technologies) ? project.technologies.slice(0, 5) : [],
+    "programmingLanguage": langs,
     "runtimePlatform": "Web Browser",
-    "url": project.liveUrl ? `https://ancel.co.ke/projects` : undefined
+    "url": portfolioUrl,
   };
 };
 
 // Blog Post Schema
-export const generateBlogPostSchema = (post: any) => ({
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": post.title,
-  "description": post.excerpt,
-  "image": post.image ? (post.image.startsWith("http") ? post.image : `https://ancel.co.ke${post.image.startsWith("/") ? "" : "/"}${post.image}`) : undefined,
-  "author": {
-    "@type": "Person",
-    "@id": `${SITE.url}/#ancel-ajanga`,
-    "name": post.author?.name || SITE.name,
-    "url": SITE.url,
-    "image": post.author?.avatar ? `https://ancel.co.ke${post.author.avatar}` : `${SITE.url}${SITE.profileImage}`,
-    "sameAs": [SITE.github, SITE.linkedin, SITE.twitter],
-  },
-  "publisher": {
-    "@type": "Person",
-    "name": SITE.name,
-    "image": `${SITE.url}${SITE.profileImage}`
-  },
-  "datePublished": post.date,
-  "dateModified": post.date,
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": `https://ancel.co.ke/developer-journal/${post.slug || post.id}`
-  },
-  "url": `https://ancel.co.ke/developer-journal/${post.slug || post.id}`,
-  "keywords": Array.isArray(post.tags) ? post.tags.join(", ") : "",
-  "articleSection": "Technology",
-  "wordCount": typeof post.content === "string" ? post.content.split(/\s+/).filter(Boolean).length : 0,
-  "timeRequired": post.readTime,
-  "educationalLevel": post.level ? post.level.charAt(0).toUpperCase() + post.level.slice(1) : undefined,
-});
+export const generateBlogPostSchema = (post: {
+  title?: string
+  excerpt?: string
+  image?: string
+  author?: { name?: string; avatar?: string }
+  date?: string
+  slug?: string
+  id?: string | number
+  content?: string
+  tags?: string[]
+  readTime?: string
+  level?: string
+}) => {
+  const slug = postSlug({ slug: post.slug, title: post.title || '' })
+  const pageUrl = `${SITE.url}/developer-journal/${slug}`
+  return {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": post.title,
+    "description": post.excerpt,
+    "abstract": post.excerpt,
+    "image": post.image
+      ? post.image.startsWith('http')
+        ? post.image
+        : `${SITE.url}${post.image.startsWith('/') ? '' : '/'}${post.image}`
+      : undefined,
+    "author": {
+      "@type": "Person",
+      "@id": `${SITE.url}/#ancel-ajanga`,
+      "name": post.author?.name || SITE.name,
+      "jobTitle": SITE.role,
+      "url": SITE.url,
+      "image": post.author?.avatar
+        ? `${SITE.url}${post.author.avatar.startsWith('/') ? '' : '/'}${post.author.avatar}`
+        : `${SITE.url}${SITE.profileImage}`,
+      "sameAs": [SITE.github, SITE.linkedin, SITE.twitter, SITE.url],
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": `${SITE.name} — Portfolio`,
+      "url": SITE.url,
+      "logo": {
+        "@type": "ImageObject",
+        "url": `${SITE.url}${SITE.profileImage}`,
+      },
+    },
+    "datePublished": post.date,
+    "dateModified": post.date,
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": pageUrl,
+    },
+    "url": pageUrl,
+    "keywords": Array.isArray(post.tags) ? post.tags.join(', ') : '',
+    "articleSection": "Technology",
+    "wordCount":
+      typeof post.content === 'string' ? post.content.split(/\s+/).filter(Boolean).length : 0,
+    "timeRequired": post.readTime,
+    "educationalLevel": post.level
+      ? post.level.charAt(0).toUpperCase() + post.level.slice(1)
+      : undefined,
+  }
+}
 
 // Article schema for guides (case_study_breakdown, comparison). Use TechArticle for technology_deep_dive.
 export function generateArticleSchema(guide: {
@@ -156,13 +228,14 @@ export function generateArticleSchema(guide: {
     '@type': 'Article',
     'headline': guide.title,
     'description': guide.summary,
+    'abstract': guide.summary,
     'author': {
       '@type': 'Person',
       '@id': `${SITE.url}/#ancel-ajanga`,
       'name': SITE.name,
-      'jobTitle': 'Fullstack Software Engineer',
+      'jobTitle': SITE.role,
       'url': SITE.url,
-      'sameAs': [SITE.github, SITE.linkedin, SITE.twitter],
+      'sameAs': [SITE.github, SITE.linkedin, SITE.twitter, SITE.url],
     },
     'datePublished': guide.date,
     'dateModified': guide.date,
@@ -183,8 +256,9 @@ export const generateCaseStudySchema = (caseStudy: any) => ({
     "@type": "Person",
     "@id": `${SITE.url}/#ancel-ajanga`,
     "name": SITE.name,
+    "jobTitle": SITE.role,
     "url": SITE.url,
-    "sameAs": [SITE.github, SITE.linkedin, SITE.twitter],
+    "sameAs": [SITE.github, SITE.linkedin, SITE.twitter, SITE.url],
   },
   "datePublished": caseStudy.year,
   "url": `https://ancel.co.ke/case-studies/${caseStudy.slug}`,
@@ -234,9 +308,9 @@ export function generateTechArticleSchema(caseStudy: any) {
       "@type": "Person",
       "@id": `${SITE.url}/#ancel-ajanga`,
       "name": SITE.name,
-      "jobTitle": "Fullstack Software Engineer",
+      "jobTitle": SITE.role,
       "url": SITE.url,
-      "sameAs": [SITE.github, SITE.linkedin, SITE.twitter],
+      "sameAs": [SITE.github, SITE.linkedin, SITE.twitter, SITE.url],
     },
     "programmingLanguage": programmingLanguage.length ? programmingLanguage : undefined,
     "about": { "@type": "Thing", "name": "Software Development", "description": caseStudy.problemSolutionBridge || caseStudy.description },
@@ -261,19 +335,17 @@ export const generateWebsiteSchema = () => ({
   "@type": "WebSite",
   "name": "Ancel Ajanga Portfolio",
   "alternateName": "Ajanga Ancel Portfolio",
-  "description": "Fullstack Software Engineer/Developer & App Developer Portfolio showcasing modern web applications and mobile apps",
+  "description":
+    "Portfolio of Ancel Ajanga, Software Engineer at Maxson Programming Limited — fullstack systems, case studies, developer journal, and projects (NestFi, LedgerX, Aegis, Inkly, and more).",
   "url": SITE.url,
+  "inLanguage": "en-KE",
   "author": {
     "@type": "Person",
+    "@id": `${SITE.url}/#ancel-ajanga`,
     "name": SITE.name,
-    "jobTitle": "Fullstack Engineer",
-    "url": SITE.url
+    "jobTitle": SITE.role,
+    "url": SITE.url,
   },
-  "potentialAction": {
-    "@type": "SearchAction",
-  "target": "https://ancel.co.ke/search?q={search_term_string}",
-    "query-input": "required name=search_term_string"
-  }
 });
 
 /** Speakable schema for AI voice / assistants: selectors for key content on homepage. */
@@ -296,6 +368,25 @@ export const generateSpeakableWebPageSchema = () => ({
 });
 
 export { generateSiteNavigationSchema } from '@/shared/utils/site-navigation-schema'
+
+/** FAQPage JSON-LD for answer engines (2+ items recommended). */
+export const generateFAQPageSchema = (
+  items: Array<{ question: string; answer: string }>
+): object | null => {
+  if (!items?.length || items.length < 2) return null
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: items.map((item) => ({
+      '@type': 'Question',
+      name: item.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: item.answer,
+      },
+    })),
+  }
+}
 
 // Breadcrumb Schema
 export const generateBreadcrumbSchema = (items: Array<{name: string, url: string}>) => ({

@@ -1,5 +1,6 @@
 import React from 'react'
 import { SEO } from '@/domains/seo/components/SEO'
+import { generateBreadcrumbSchema } from '@/domains/seo/schemas'
 import Link from 'next/link'
 import { LazyMotion, domAnimation, m } from 'framer-motion'
 import { ArrowLeft } from 'lucide-react'
@@ -23,6 +24,11 @@ export default function AboutAncelAjanga() {
         ]}
         ogTitle="Ancel Ajanga — Engineering Philosophy & System Architecture"
         ogImage="/images/about/profile-photo.png"
+        jsonLd={generateBreadcrumbSchema([
+          { name: 'Home', url: '/' },
+          { name: 'About', url: '/about' },
+          { name: 'Engineering philosophy', url: '/about/ancel-ajanga' },
+        ])}
       />
 
       <LazyMotion features={domAnimation}>
