@@ -392,12 +392,12 @@ export const generateFAQPageSchema = (
 export const generateBreadcrumbSchema = (items: Array<{name: string, url: string}>) => ({
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
-  "itemListElement": items.map((item, index) => ({
-    "@type": "ListItem",
-    "position": index + 1,
-    "name": item.name,
-  "item": `https://ancel.co.ke${item.url}`
-  }))
+  itemListElement: items.map((item, index) => ({
+    '@type': 'ListItem',
+    position: index + 1,
+    name: item.name,
+    item: `${SITE.url.replace(/\/$/, '')}${item.url.startsWith('/') ? item.url : `/${item.url}`}`,
+  })),
 });
 
 // Portfolio Collection Schema (ItemList of SoftwareApplications)

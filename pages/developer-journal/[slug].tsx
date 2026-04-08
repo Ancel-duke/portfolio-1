@@ -2,7 +2,6 @@ import { BlogDetailView } from '@/domains/blog'
 import { SEOHead } from '@/domains/seo'
 import {
   generateBlogPostSchema,
-  generateBreadcrumbSchema,
   generateFAQPageSchema,
 } from '@/domains/seo/schemas'
 import { buildBlogFaqItems } from '@/shared/utils/metadata'
@@ -24,15 +23,9 @@ export async function getStaticProps({ params }: { params: { slug: string } }) {
 
 export default function BlogDetailRoute({ slug, post }: { slug: string; post: BlogPost }) {
   const canonicalPath = `/developer-journal/${slug}`
-  const breadcrumbItems = [
-    { name: 'Home', url: '/' },
-    { name: 'Developer Journal', url: '/developer-journal' },
-    { name: post.title, url: canonicalPath },
-  ]
   const faqLd = generateFAQPageSchema(buildBlogFaqItems(post))
   const jsonLd = [
     generateBlogPostSchema({ ...post, slug }),
-    generateBreadcrumbSchema(breadcrumbItems),
     ...(faqLd ? [faqLd] : []),
   ]
 

@@ -3,8 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { HelmetProvider } from 'react-helmet-async'
 import { ThemeProvider } from './contexts/ThemeContext'
 import { AnimationsProvider } from './contexts/AnimationsContext'
-import { Header } from '@/domains/layout'
-import { Footer } from '@/domains/layout'
+import { Header, Footer, GlobalCraBreadcrumbs } from '@/domains/layout'
 import { Hero } from '@/domains/hero'
 import { Button } from '@/shared/components/ui/button'
 import SEO from '@/domains/seo'
@@ -216,6 +215,7 @@ function App() {
           <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
             <WebVitals />
             <Header />
+            <GlobalCraBreadcrumbs />
             <main id="main-content" role="main" className="overflow-x-hidden">
               <Suspense fallback={<PageLoader />}>
                 <Routes>

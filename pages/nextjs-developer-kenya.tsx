@@ -1,6 +1,6 @@
 import SEO from '@/domains/seo'
 import Link from 'next/link'
-import { generatePersonWithAreaServedSchema, generateBreadcrumbSchema } from '@/domains/seo/schemas'
+import { generatePersonWithAreaServedSchema } from '@/domains/seo/schemas'
 import { SkipLink } from '@/shared/components/ui/skip-link'
 import { Card, CardContent } from '@/shared/components/ui/card'
 import { Button } from '@/shared/components/ui/button'
@@ -8,14 +8,7 @@ import { Badge } from '@/shared/components/ui/badge'
 import { ArrowRight, Mail, FileText, Code, MapPin, MessageCircle, CheckCircle, Zap } from 'lucide-react'
 import { SITE, WHATSAPP_URL } from '@/shared/constants/site'
 
-const breadcrumbItems = [
-  { name: 'Home', url: '/' },
-  { name: 'Next.js Developer Kenya', url: '/nextjs-developer-kenya' },
-]
-const jsonLd = [
-  ...generatePersonWithAreaServedSchema({ jobTitle: 'Next.js Developer' }),
-  generateBreadcrumbSchema(breadcrumbItems),
-]
+const jsonLd = [...generatePersonWithAreaServedSchema({ jobTitle: 'Next.js Developer' })]
 
 export default function NextJsDeveloperKenyaPage() {
   return (
@@ -39,12 +32,6 @@ export default function NextJsDeveloperKenyaPage() {
       />
       <SkipLink />
       <div className="py-8 sm:py-12 md:py-16 container-custom max-w-4xl">
-        <nav className="text-sm text-muted-foreground mb-6" aria-label="Breadcrumb">
-          <Link href="/" className="hover:text-foreground">Home</Link>
-          <span className="mx-2">/</span>
-          <span className="text-foreground">Next.js Developer Kenya</span>
-        </nav>
-
         <article>
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 tracking-tight">
             Next.js Developer Kenya — Full-Stack & System Design

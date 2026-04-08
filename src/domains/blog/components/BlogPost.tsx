@@ -7,7 +7,6 @@ import { ArrowLeft } from 'lucide-react';
 import { Button } from '@/shared/components/ui/button';
 import { Card } from '@/shared/components/ui/card';
 import { formatDate } from '@/shared/utils';
-import { Breadcrumb } from '@/shared/components/ui/breadcrumb';
 import { BlogPost as BlogPostType } from '@/shared/types/blog';
 
 // Import all blog posts
@@ -83,14 +82,6 @@ export function BlogPost() {
           >
             {/* Breadcrumb & Back Button */}
             <m.div variants={itemVariants} className="mb-8">
-              <Breadcrumb 
-                items={[
-                  { name: 'Home', url: '/' },
-                  { name: 'Developer Journal', url: '/developer-journal' },
-                  { name: post.title, url: `/developer-journal/${slug}`, current: true }
-                ]}
-                className="mb-4"
-              />
               <Button variant="outline" asChild>
                 <Link href="/developer-journal">
                   <ArrowLeft className="mr-2 h-4 w-4" /> Back to Developer Journal

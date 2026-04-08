@@ -1,7 +1,7 @@
 import dynamic from 'next/dynamic'
 import SEO from '@/domains/seo'
 import caseStudiesData from '@/data/case-studies.json'
-import { generateCaseStudySchema, generateBreadcrumbSchema } from '@/domains/seo/schemas'
+import { generateCaseStudySchema } from '@/domains/seo/schemas'
 
 const CaseStudiesGrid = dynamic(
   () => import('@/domains/case-studies').then((m) => m.CaseStudiesGrid),
@@ -10,13 +10,7 @@ const CaseStudiesGrid = dynamic(
 
 const caseStudies = (caseStudiesData as Array<{ slug: string; title: string; description: string }>).slice(0, 5)
 const caseStudyJsonLd = caseStudies.map((cs) => generateCaseStudySchema(cs))
-const caseStudiesIndexJsonLd = [
-  generateBreadcrumbSchema([
-    { name: 'Home', url: '/' },
-    { name: 'Case studies', url: '/case-studies' },
-  ]),
-  ...caseStudyJsonLd,
-]
+const caseStudiesIndexJsonLd = [...caseStudyJsonLd]
 
 export default function CaseStudiesPage() {
   return (

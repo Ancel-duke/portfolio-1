@@ -4,7 +4,6 @@ import { StructuredData } from '@/domains/seo'
 import {
   generateProjectSchema,
   generatePortfolioSchema,
-  generateBreadcrumbSchema,
 } from '@/domains/seo/schemas'
 import { getSortedProjects } from '@/domains/projects/services/projects-data'
 import ProjectsView from '@/domains/projects/components/ProjectsView'
@@ -20,10 +19,6 @@ export default function ProjectsPage() {
         title="Projects — Inkly, NestFi, SignFlow, OpsFlow, Aegis, LedgerX, EduChain, EduManage, TaskForge | Ancel Ajanga"
         description="Software projects by Ancel Ajanga (Software Engineer at Maxson Programming Limited): Inkly, NestFi, LedgerX, Aegis, SignFlow, OpsFlow, and more — Narok & Nairobi, Kenya."
         canonicalUrl="https://ancel.co.ke/projects"
-        jsonLd={generateBreadcrumbSchema([
-          { name: 'Home', url: '/' },
-          { name: 'Projects', url: '/projects' },
-        ])}
         keywords={[
           'Inkly',
           'NestFi',

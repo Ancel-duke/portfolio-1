@@ -1,6 +1,6 @@
 import dynamic from 'next/dynamic'
 import SEO from '@/domains/seo'
-import { generateOrganizationSchema, generateBreadcrumbSchema } from '@/domains/seo/schemas'
+import { generateOrganizationSchema } from '@/domains/seo/schemas'
 
 const AboutSection = dynamic(
   () => import('@/domains/about').then((m) => () => <m.About fullPage />),
@@ -15,13 +15,7 @@ export default function AboutPage() {
         description="Software Engineer at Maxson Programming Limited. Fullstack engineer specializing in scalable backend systems and high-performance frontend experiences — Narok & Nairobi, Kenya."
         canonicalUrl="https://ancel.co.ke/about"
         keywords={['Narok software engineer', 'Nairobi software architect', 'Fullstack Engineer', 'Frontend Architecture', 'UI Engineering', 'Interactive Systems', 'Performance Optimization', 'Full-stack developer Kenya', 'About Ancel Ajanga', 'Software Engineer East Africa']}
-        jsonLd={[
-          generateBreadcrumbSchema([
-            { name: 'Home', url: '/' },
-            { name: 'About', url: '/about' },
-          ]),
-          generateOrganizationSchema(),
-        ]}
+        jsonLd={[generateOrganizationSchema()]}
       />
       <AboutSection />
     </>

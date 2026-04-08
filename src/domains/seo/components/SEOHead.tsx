@@ -94,6 +94,8 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
 
   const isHomepage = canonical === defaultSEO.canonical || canonical === `${defaultSEO.canonical}/`
   const lcpImage = isHomepage ? SITE.profileImage : null
+  /** Open Graph: article:* belongs on og:type article (project, case study, guide, journal, expertise). */
+  const isArticleOg = ogType === 'article'
 
   return (
     <Head>
@@ -127,11 +129,18 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
       <meta property="og:image:height" content="630" />
       <meta property="og:locale" content="en_US" />
       <meta property="og:site_name" content={PUBLISHER} />
-      <meta property="article:author" content={author} />
-      <meta property="article:publisher" content={SITE.url} />
-
-      {publishedTime && <meta property="article:published_time" content={publishedTime} />}
-      {modifiedTime && <meta property="article:modified_time" content={modifiedTime} />}
+      {isArticleOg ? (
+        <>
+          <meta property="article:author" content={author} />
+          <meta property="article:publisher" content={SITE.url} />
+          {publishedTime ? (
+            <meta property="article:published_time" content={publishedTime} />
+          ) : null}
+          {modifiedTime ? (
+            <meta property="article:modified_time" content={modifiedTime} />
+          ) : null}
+        </>
+      ) : null}
 
       {/* Twitter Card */}
       <meta name="twitter:card" content={twitterCard} />

@@ -10,7 +10,6 @@ import { OptimizedImage } from '@/shared/components/ui/optimized-image'
 import { ArrowLeft, Calendar, Tag, Clock, User, Target, BarChart3, AlertCircle } from 'lucide-react'
 import { formatDate } from '@/shared/utils'
 import { SkipLink } from '@/shared/components/ui/skip-link'
-import { Breadcrumb } from '@/shared/components/ui/breadcrumb'
 import { BlogCTA } from './BlogCTA'
 import {
   getRelatedCaseStudySlugForPost,
@@ -142,14 +141,6 @@ export function BlogDetailView({ post: postProp, initialSlug }: BlogDetailViewPr
       <SkipLink />
       <LazyMotion features={domAnimation}>
         <m.div className="py-16 container-custom" variants={containerVariants} initial="hidden" animate="visible">
-          <Breadcrumb
-            items={[
-              { name: 'Home', url: '/' },
-              { name: 'Developer Journal', url: '/developer-journal' },
-              { name: post.title, url: `/developer-journal/${slug}`, current: true },
-            ]}
-            className="mb-8"
-          />
           {(() => {
             const clusters = getClustersForArticle(topicClustersData?.clusters || [], slug || '')
             if (clusters.length === 0) return null

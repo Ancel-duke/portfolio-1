@@ -160,6 +160,7 @@ const AiIndexPage: NextPage<PageProps> = (props) => {
         title="AI Index — Ancel Ajanga | Software Engineer, Nairobi Kenya"
         description="Machine-readable portfolio index for Ancel Ajanga — Software Engineer at Maxson Programming Limited, Nairobi, Kenya. Projects: Inkly, NestFi, LedgerX, Aegis, SignFlow, OpsFlow, EduManage. Skills: React, Node.js, NestJS, PostgreSQL, distributed systems, UI engineering."
         canonical="/ai-index"
+        ogType="website"
         ogTitle="AI Index — Ancel Ajanga | Entity hub for AI crawlers"
         keywords={[
           'AI index',

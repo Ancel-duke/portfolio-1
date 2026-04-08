@@ -4,14 +4,13 @@ import Link from 'next/link'
 import { LazyMotion, domAnimation, m } from 'framer-motion'
 import caseStudiesData from '@/data/case-studies.json'
 import type { CaseStudy, Technology } from '../types/case-study'
-import { getCaseStudyBySlug } from '../services/case-study-query'
+import { getCaseStudyBySlug, isLabCaseStudy } from '../services/case-study-query'
 import { Card, CardContent, CardTitle } from '@/shared/components/ui/card'
 import { Button } from '@/shared/components/ui/button'
 import { Badge } from '@/shared/components/ui/badge'
 import { OptimizedImage } from '@/shared/components/ui/optimized-image'
 import { ArrowLeft, ExternalLink, Github, FileText, Calendar, User, Zap, Lightbulb, CheckCircle, Code, Layers, Shield, TrendingUp, Rocket, Settings, AlertTriangle, BookOpen, Smartphone } from 'lucide-react'
 import { SkipLink } from '@/shared/components/ui/skip-link'
-import { Breadcrumb } from '@/shared/components/ui/breadcrumb'
 import { TechSummaryTable } from './TechSummaryTable'
 import {
   getCaseStudyImageAlt,
@@ -36,18 +35,10 @@ export function CaseStudyDetailView({ caseStudy: caseStudyProp, initialSlug }: C
   const caseStudy = caseStudyProp ?? getCaseStudyBySlug(slug)
 
   // Determine if this is a lab/experiment project (frontend project)
-  const isLabProject = React.useMemo(() => {
-    if (!caseStudy) return false
-    const role = (caseStudy.role || '').toLowerCase()
-    const title = (caseStudy.title || '').toLowerCase()
-    // Include frontend projects and creative experiments
-    return role.includes('frontend') || 
-           title.includes('tracker') || 
-           title.includes('timer') || 
-           title.includes('travelogue') ||
-           title.includes('scheduler') ||
-           title.includes('academy')
-  }, [caseStudy])
+  const isLabProject = React.useMemo(
+    () => (caseStudy ? isLabCaseStudy(caseStudy) : false),
+    [caseStudy]
+  )
 
   if (!caseStudy) {
     return (
@@ -102,14 +93,6 @@ export function CaseStudyDetailView({ caseStudy: caseStudyProp, initialSlug }: C
         initial="hidden"
         animate="visible"
       >
-        <Breadcrumb 
-          items={[
-            { name: 'Home', url: '/' },
-            { name: parentSection, url: parentUrl },
-            { name: caseStudy.title, url: `/case-studies/${caseStudy.slug}`, current: true }
-          ]}
-          className="mb-4 sm:mb-6 md:mb-8"
-        />
         {(() => {
           const clusters = getClustersForCaseStudy(topicClustersData?.clusters || [], caseStudy.slug)
           if (clusters.length === 0) return null

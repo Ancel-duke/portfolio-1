@@ -1,6 +1,5 @@
 import dynamic from 'next/dynamic'
 import SEO from '@/domains/seo'
-import { generateBreadcrumbSchema } from '@/domains/seo/schemas'
 
 const Timeline = dynamic(
   () => import('@/domains/timeline').then((m) => m.Timeline),
@@ -15,10 +14,6 @@ export default function TimelinePage() {
         description="Career timeline of Ancel Ajanga: Fullstack Software Engineer and Architect in Narok and Nairobi, Kenya. Full-stack developer East Africa. Projects: NestFi, SignFlow, OpsFlow, Aegis, LedgerX, EduChain."
         canonicalUrl="https://ancel.co.ke/timeline"
         keywords={['Timeline', 'Ancel Ajanga', 'Narok software engineer', 'Nairobi software architect', 'Full-stack developer Kenya career']}
-        jsonLd={generateBreadcrumbSchema([
-          { name: 'Home', url: '/' },
-          { name: 'Timeline', url: '/timeline' },
-        ])}
       />
       <Timeline fullPage />
     </>

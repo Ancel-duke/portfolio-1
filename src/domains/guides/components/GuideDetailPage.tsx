@@ -8,7 +8,6 @@ import { Button } from '@/shared/components/ui/button'
 import { Badge } from '@/shared/components/ui/badge'
 import { ArrowLeft, BookOpen, Layers, Target, Code, MessageCircle } from 'lucide-react'
 import { SkipLink } from '@/shared/components/ui/skip-link'
-import { Breadcrumb } from '@/shared/components/ui/breadcrumb'
 import type { Guide } from '../types/guide'
 import { getGuideBySlug } from '../services/guide-query'
 import { buildGuideFaqItems } from '@/shared/utils/metadata'
@@ -109,15 +108,6 @@ export function GuideDetailView({ guide: guideProp, initialSlug }: GuideDetailVi
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
         >
-          <Breadcrumb
-            items={[
-              { name: 'Home', url: '/' },
-              { name: 'Guides', url: '/guides' },
-              { name: guide.title, url: `/guides/${guide.slug}`, current: true },
-            ]}
-            className="mb-4 sm:mb-6"
-          />
-
           <Button variant="outline" size="sm" className="mb-6" asChild>
             <Link href="/guides">
               <ArrowLeft className="mr-2 h-4 w-4" /> Back to Guides

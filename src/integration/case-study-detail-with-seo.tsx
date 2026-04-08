@@ -5,7 +5,6 @@ import { CaseStudyDetailView } from '@/domains/case-studies'
 import {
   generateCaseStudySchema,
   generateTechArticleSchema,
-  generateBreadcrumbSchema,
 } from '@/domains/seo/schemas'
 import { getCaseStudyBySlug } from '@/domains/case-studies/services/case-study-query'
 import { getCaseStudyMetaDescription, getCaseStudyOgTitle } from '@/shared/utils/metadata'
@@ -28,29 +27,11 @@ export default function CaseStudyDetailWithSeo() {
     )
   }
 
-  const role = (caseStudy.role || '').toLowerCase()
-  const title = (caseStudy.title || '').toLowerCase()
-  const isLabProject =
-    role.includes('frontend') ||
-    title.includes('tracker') ||
-    title.includes('timer') ||
-    title.includes('travelogue') ||
-    title.includes('scheduler') ||
-    title.includes('academy')
-
-  const parentSection = isLabProject ? 'Labs & Experiments' : 'Case Studies'
-  const parentUrl = isLabProject ? '/labs-experiments' : '/case-studies'
   const metaDescription = getCaseStudyMetaDescription(caseStudy)
   const ogTitle = getCaseStudyOgTitle(caseStudy)
-  const breadcrumbItems = [
-    { name: 'Home', url: '/' },
-    { name: parentSection, url: parentUrl },
-    { name: caseStudy.title, url: `/case-studies/${caseStudy.slug}` },
-  ]
   const jsonLd = [
     generateCaseStudySchema(caseStudy),
     generateTechArticleSchema(caseStudy),
-    generateBreadcrumbSchema(breadcrumbItems),
   ]
 
   return (

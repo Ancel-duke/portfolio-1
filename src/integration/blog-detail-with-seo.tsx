@@ -2,7 +2,7 @@ import React, { useMemo } from 'react'
 import { useParams } from 'react-router-dom'
 import { SEOHead } from '@/domains/seo'
 import { BlogDetailView } from '@/domains/blog'
-import { generateBlogPostSchema, generateBreadcrumbSchema } from '@/domains/seo/schemas'
+import { generateBlogPostSchema } from '@/domains/seo/schemas'
 import { getBlogPostBySlug } from '@/domains/blog/services/blog-query'
 
 export default function BlogDetailWithSeo() {
@@ -24,17 +24,11 @@ export default function BlogDetailWithSeo() {
   }
 
   const canonicalPath = `/developer-journal/${slug}`
-  const breadcrumbItems = [
-    { name: 'Home', url: '/' },
-    { name: 'Developer Journal', url: '/developer-journal' },
-    { name: post.title, url: canonicalPath },
-  ]
   const jsonLd = [
     generateBlogPostSchema({
       ...post,
       slug: slug || '',
     }),
-    generateBreadcrumbSchema(breadcrumbItems),
   ]
 
   return (

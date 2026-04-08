@@ -1,5 +1,4 @@
 import SEO from '@/domains/seo'
-import { generateBreadcrumbSchema } from '@/domains/seo/schemas'
 import Link from 'next/link'
 import guidesData from '@/data/guides.json'
 import { Card, CardContent, CardTitle } from '@/shared/components/ui/card'
@@ -25,10 +24,6 @@ export default function GuidesIndexPage() {
         description="Technical guides by Ancel Ajanga: building with Next.js, real-time systems, and stack comparisons. Fullstack Engineer Narok & Nairobi, Kenya."
         canonicalUrl="https://ancel.co.ke/guides"
         keywords={['Guides', 'Next.js', 'Django', 'SaaS', 'Architecture', 'Ancel Ajanga', 'Fullstack Engineer Kenya', 'Fullstack Engineer', 'Frontend Architecture', 'UI Engineering', 'Interactive Systems', 'Performance Optimization']}
-        jsonLd={generateBreadcrumbSchema([
-          { name: 'Home', url: '/' },
-          { name: 'Guides', url: '/guides' },
-        ])}
       />
       <div className="py-8 sm:py-12 md:py-16 container-custom max-w-4xl">
         <h1 className="text-3xl font-bold mb-2">Guides</h1>

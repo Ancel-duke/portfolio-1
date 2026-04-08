@@ -9,6 +9,11 @@ type SEOProps = {
   keywords?: string[]
   ogImage?: string
   ogTitle?: string
+  /** Default `website`. Use `article` for long-form / detail URLs only. */
+  ogType?: string
+  publishedTime?: string
+  modifiedTime?: string
+  author?: string
   noindex?: boolean
   nofollow?: boolean
 }
@@ -21,6 +26,10 @@ export const SEO: React.FC<SEOProps> = ({
   keywords,
   ogImage,
   ogTitle,
+  ogType,
+  publishedTime,
+  modifiedTime,
+  author,
   noindex,
   nofollow,
 }) => {
@@ -33,6 +42,10 @@ export const SEO: React.FC<SEOProps> = ({
       keywords={keywords}
       ogImage={ogImage}
       ogTitle={ogTitle}
+      ogType={ogType}
+      publishedTime={publishedTime}
+      modifiedTime={modifiedTime}
+      author={author}
       noindex={noindex}
       nofollow={nofollow}
     />

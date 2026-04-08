@@ -15,6 +15,7 @@ export default function BlogPage() {
         title="Developer Journal | Legacy /blog redirect"
         description="Technical articles and engineering notes by Ancel Ajanga live on the Developer Journal. This URL redirects for backwards compatibility."
         canonical={target}
+        ogType="website"
         noindex
         keywords={['Developer Journal', 'Ancel Ajanga', 'blog redirect', 'engineering articles']}
       />

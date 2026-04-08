@@ -6,7 +6,7 @@ import { ThemeProvider } from '@/contexts/ThemeContext'
 import { AnimationsProvider } from '@/contexts/AnimationsContext'
 import { BackgroundAudioProvider } from '@/contexts/BackgroundAudioContext'
 import { CustomCursorGate } from '@/shared/components/ui/custom-cursor-gate'
-import { Header, Footer, Banner } from '@/domains/layout'
+import { Header, Footer, Banner, GlobalSiteBreadcrumbs } from '@/domains/layout'
 import WebVitals from '@/domains/performance'
 import '@/index.css'
 import '@/styles/blog-content.css'
@@ -28,6 +28,7 @@ export default function App({ Component, pageProps }: AppProps) {
           <WebVitals />
           <CustomCursorGate />
           <Header />
+          <GlobalSiteBreadcrumbs />
           <main id="main-content" role="main" className="pt-12 pb-14 overflow-x-hidden">
             <Component {...pageProps} />
           </main>

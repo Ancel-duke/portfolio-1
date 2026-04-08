@@ -1,7 +1,6 @@
 import { SEOHead } from '@/domains/seo'
 import {
   generateProjectSchema,
-  generateBreadcrumbSchema,
   generateSoftwareSourceCodeSchema,
 } from '@/domains/seo/schemas'
 import projectsData from '@/data/projects.json'
@@ -48,14 +47,8 @@ export default function ProjectDetailRoute({ project }: { project: Record<string
     .slice(0, 5)
 
   const sourceSchema = generateSoftwareSourceCodeSchema(project)
-  const breadcrumbItems = [
-    { name: 'Home', url: '/' },
-    { name: 'Projects', url: '/projects' },
-    { name: title, url: `/projects/${slug}` },
-  ]
   const jsonLd = [
     generateProjectSchema(project as Parameters<typeof generateProjectSchema>[0]),
-    generateBreadcrumbSchema(breadcrumbItems),
     ...(sourceSchema ? [sourceSchema] : []),
   ]
 
@@ -72,7 +65,7 @@ export default function ProjectDetailRoute({ project }: { project: Record<string
         title={seo?.title || title}
         description={seo?.description || description}
         canonical={seo?.canonicalUrl || `/projects/${slug}`}
-        ogType="website"
+        ogType="article"
         jsonLd={jsonLd}
       />
       <div className="container-custom py-16 min-h-[60vh] flex flex-col items-center">

@@ -1,6 +1,5 @@
 import React from 'react'
 import { SEOHead } from '@/domains/seo'
-import { generateBreadcrumbSchema } from '@/domains/seo/schemas'
 
 type ExpertiseSeoProps = {
   title: string
@@ -10,11 +9,6 @@ type ExpertiseSeoProps = {
 }
 
 export function ExpertiseSeo({ title, description, path, keywords = [] }: ExpertiseSeoProps) {
-  const breadcrumbItems = [
-    { name: 'Home', url: '/' },
-    { name: 'Stack & expertise', url: '/stack' },
-    { name: title, url: path },
-  ]
   return (
     <SEOHead
       title={title}
@@ -22,7 +16,6 @@ export function ExpertiseSeo({ title, description, path, keywords = [] }: Expert
       canonical={path}
       keywords={keywords}
       ogType="article"
-      jsonLd={generateBreadcrumbSchema(breadcrumbItems)}
     />
   )
 }

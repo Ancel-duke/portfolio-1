@@ -3,7 +3,6 @@ import { SEOHead } from '@/domains/seo'
 import {
   generateArticleSchema,
   generateTechArticleSchema,
-  generateBreadcrumbSchema,
   generateFAQPageSchema,
 } from '@/domains/seo/schemas'
 import { buildGuideFaqItems } from '@/shared/utils/metadata'
@@ -38,12 +37,6 @@ export default function GuideDetailRoute({ slug, guide }: { slug: string; guide:
   const seoTitle = isInklyGuide ? INKLY_METADATA.title : guide.title
   const seoDescription = isInklyGuide ? INKLY_METADATA.description : guide.summary
   const seoCanonical = isInklyGuide ? INKLY_METADATA.canonical : `/guides/${guide.slug}`
-
-  const breadcrumbItems = [
-    { name: 'Home', url: '/' },
-    { name: 'Guides', url: '/guides' },
-    { name: guide.title, url: `/guides/${guide.slug}` },
-  ]
 
   const isTechDeepDive = guide.template_type === 'technology_deep_dive'
   const syntheticCaseStudy = {
@@ -86,7 +79,6 @@ export default function GuideDetailRoute({ slug, guide }: { slug: string; guide:
   const guideFaqLd = generateFAQPageSchema(buildGuideFaqItems(guide))
   const jsonLd = [
     explicitInklyArticleJsonLd ?? baseArticleJsonLd,
-    generateBreadcrumbSchema(breadcrumbItems),
     ...(guideFaqLd ? [guideFaqLd] : []),
   ]
 

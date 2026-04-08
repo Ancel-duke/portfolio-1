@@ -126,7 +126,23 @@ const validateSEO = () => {
     }
   });
 
-  // Check App.tsx for SEO implementation
+  // Check Next.js app shell for global breadcrumbs (primary production site)
+  const nextAppPath = path.join(__dirname, '../pages/_app.tsx');
+  if (fs.existsSync(nextAppPath)) {
+    const nextAppContent = fs.readFileSync(nextAppPath, 'utf8');
+    if (nextAppContent.includes('GlobalSiteBreadcrumbs')) {
+      successes.push('✅ pages/_app.tsx includes global breadcrumb navigation');
+    } else {
+      warnings.push('⚠️ pages/_app.tsx missing GlobalSiteBreadcrumbs');
+    }
+    if (nextAppContent.includes('role="main"')) {
+      successes.push('✅ pages/_app.tsx has semantic main element');
+    } else {
+      warnings.push('⚠️ pages/_app.tsx missing semantic main element');
+    }
+  }
+
+  // Check CRA App.tsx for SEO + breadcrumb parity (legacy / dev bundle)
   const appPath = path.join(__dirname, '../src/App.tsx');
   if (fs.existsSync(appPath)) {
     const appContent = fs.readFileSync(appPath, 'utf8');
@@ -143,16 +159,10 @@ const validateSEO = () => {
       warnings.push('⚠️ App.tsx missing SkipLink for accessibility');
     }
 
-    if (appContent.includes('Breadcrumb')) {
-      successes.push('✅ App.tsx includes Breadcrumb navigation');
+    if (appContent.includes('GlobalCraBreadcrumbs')) {
+      successes.push('✅ App.tsx includes global breadcrumb navigation');
     } else {
-      warnings.push('⚠️ App.tsx missing Breadcrumb navigation');
-    }
-
-    if (appContent.includes('role="main"')) {
-      successes.push('✅ App.tsx has semantic main element');
-    } else {
-      warnings.push('⚠️ App.tsx missing semantic main element');
+      warnings.push('⚠️ App.tsx missing GlobalCraBreadcrumbs');
     }
   }
 
